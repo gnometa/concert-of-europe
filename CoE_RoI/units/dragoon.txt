@@ -28,7 +28,7 @@ dragoon = {
 	
 	supply_consumption = 1
 	supply_cost = {
-		military_industry = 0.30
+		military_industry = 0.60
 	}
 	
 

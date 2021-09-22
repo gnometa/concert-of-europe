@@ -23,7 +23,7 @@ artillery = {
 	
 	supply_consumption = 1
 	supply_cost = {
-		military_industry = 1.0
+		military_industry = 2.0
 	}
 	
 

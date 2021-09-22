@@ -30,7 +30,7 @@ cuirassier = {
 	
 	supply_consumption = 1
 	supply_cost = {
-		military_industry = 0.40
+		military_industry = 0.80
 	}
 	
 

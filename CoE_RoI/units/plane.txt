@@ -22,7 +22,7 @@ plane = {
 	
 	supply_consumption = 1
 	supply_cost = {
-		military_industry = 1.5
+		military_industry = 3.0
 	}
 	
 
