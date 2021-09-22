@@ -429,7 +429,8 @@ migration_target =
 	modifier = {
 		factor = 0.10
 		has_province_modifier = southern_plantations
-	}	modifier = {
+	}	
+	modifier = {
 		factor = -10
 		state_scope = { state_scope = { soldiers = 0.11 } }
 	}
@@ -822,62 +823,66 @@ promote_to = {
 	{
 		factor = 0.01
 		modifier = {
+			factor = -50
+			NOT = { state_scope = { soldiers = 0.010 } }
+		}
+		modifier = {
 			factor = 30
 			NOT = { military_spending = 0.1 }
-			state_scope = { soldiers = 0.025 }
+			state_scope = { soldiers = 0.012 }
 		}
 		modifier = {
 			factor = 30
 			military_spending = 0.1
 			NOT = { military_spending = 0.2 }
-			state_scope = { soldiers = 0.030 }
+			state_scope = { soldiers = 0.014 }
 		}
 		modifier = {
 			factor = 30
 			military_spending = 0.2
 			NOT = { military_spending = 0.3 }
-			state_scope = { soldiers = 0.0325 }
+			state_scope = { soldiers = 0.016 }
 		}
 		modifier = {
 			factor = 30
 			military_spending = 0.3
 			NOT = { military_spending = 0.4 }
-			state_scope = { soldiers = 0.035 }
+			state_scope = { soldiers = 0.018 }
 		}
 		modifier = {
 			factor = 30
 			military_spending = 0.4
 			NOT = { military_spending = 0.5 }
-			state_scope = { soldiers = 0.0375 }
+			state_scope = { soldiers = 0.020 }
 		}
 		modifier = {
 			factor = 30
 			military_spending = 0.5
 			NOT = { military_spending = 0.6 }
-			state_scope = { soldiers = 0.040 }
+			state_scope = { soldiers = 0.022 }
 		}
 		modifier = {
 			factor = 30
 			military_spending = 0.7
 			NOT = { military_spending = 0.8 }
-			state_scope = { soldiers = 0.0425 }
+			state_scope = { soldiers = 0.024 }
 		}
 		modifier = {
 			factor = 30
 			military_spending = 0.8
 			NOT = { military_spending = 0.9 }
-			state_scope = { soldiers = 0.045 }
+			state_scope = { soldiers = 0.026 }
 		}
 		modifier = {
 			factor = 30
 			military_spending = 0.9
 			NOT = { military_spending = 0.99 }
-			state_scope = { soldiers = 0.0475 }
+			state_scope = { soldiers = 0.028 }
 		}
 		modifier = {
 			factor = 30
 			military_spending = 0.99
-			state_scope = { soldiers = 0.050 }
+			state_scope = { soldiers = 0.030 }
 		} 
 	}
 

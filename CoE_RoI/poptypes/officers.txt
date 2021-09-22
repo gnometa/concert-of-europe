@@ -766,7 +766,7 @@ promote_to =
 		}
 		modifier = {
 			factor = -50 #-500
-			state_scope = { officers = 0.005 }
+			NOT = { state_scope = { officers = 0.005 } }
 		}
 	}
 	clergymen =
