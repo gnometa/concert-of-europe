@@ -21,7 +21,7 @@ horse_artillery = {
 	
 	supply_consumption = 1
 	supply_cost = {
-		military_industry = 1.2
+		military_industry = 0.6
 	}
 	
 

@@ -27,7 +27,7 @@ hussar = {
 	
 	supply_consumption = 1
 	supply_cost = {
-		military_industry = 0.4
+		military_industry = 0.2
 	}
 	
 

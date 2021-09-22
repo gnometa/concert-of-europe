@@ -22,7 +22,7 @@ irregular = {
 
 	supply_consumption = 1
 	supply_cost = {
-		military_industry = 0.16
+		military_industry = 0.08
 	}
 
 
