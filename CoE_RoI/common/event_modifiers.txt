@@ -3483,3 +3483,39 @@ road_to_communism_paved = {
 	icon = 50
 }
 
+###State Population Display
+s_pop_not_100k = {
+	#farm_RGO_size = 0.00
+	#mine_RGO_size = 0.00
+	icon = 19
+}
+
+s_pop_100k = {
+	farm_RGO_size = 0.05
+	mine_RGO_size = 0.05
+	icon = 19	
+}
+
+s_pop_250k = {
+	farm_RGO_size = 0.10
+	mine_RGO_size = 0.10
+	icon = 19	
+}
+
+s_pop_500k = {
+	farm_RGO_size = 0.15
+	mine_RGO_size = 0.15
+	icon = 19	
+}
+
+s_pop_1000k = {
+	farm_RGO_size = 0.20
+	mine_RGO_size = 0.20
+	icon = 19	
+}
+
+s_pop_2500k = {
+	farm_RGO_size = 0.25
+	mine_RGO_size = 0.25
+	icon = 19	
+}
