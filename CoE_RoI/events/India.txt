@@ -679,36 +679,36 @@ country_event = {
 				value = -200
 			}
 		}
-		random_owned = {
-			limit = {
-				owner = {
-					civilized = no
-					has_global_flag = indian_call_to_union
-				}
-			}
-			owner = { set_country_flag = civilize_after_release }
-		}
-		random_owned = {
-			limit = {
-				owner = {
-					civilized = no
-					NOT = { has_global_flag = indian_call_to_union }
-					OR = {
-						tag = MAH
-						tag = MUG
-						tag = BNG
-					}
-				}
-			}
-			owner = { set_country_flag = civilize_after_release }
-		}
+		#random_owned = {
+		#	limit = {
+		#		owner = {
+		#			civilized = no
+		#			has_global_flag = indian_call_to_union
+		#		}
+		#	}
+		#	owner = { set_country_flag = civilize_after_release }
+		#}
+		#random_owned = {
+		#	limit = {
+		#		owner = {
+		#			civilized = no
+		#			NOT = { has_global_flag = indian_call_to_union }
+		#			OR = {
+		#				tag = MAH
+		#				tag = MUG
+		#				tag = BNG
+		#			}
+		#		}
+		#	}
+		#	owner = { set_country_flag = civilize_after_release }
+		#}
 	}
 }
 
 country_event = {
 	
 	id = 97125
-	title = "The collapse of British India"
+	title = "The Collapse of British India"
 	desc = "British government has abandoned us, our existence is unsustainable!"
 
 	trigger = { 
@@ -724,7 +724,7 @@ country_event = {
 
 	option = {
 		name = "All hail the free India"
-			set_country_flag = demanded_indian_retreat
+			#set_country_flag = demanded_indian_retreat
 			ENG = {
 				inherit = HND
 				country_event = 97122
