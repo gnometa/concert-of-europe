@@ -2375,7 +2375,7 @@ country_event = {
 	option = {
 		name = "They will have to take it from us!"
 		FROM = {
-			release_puppet = THIS
+			release_vassal = THIS
 			country_event = 2672
 		}
 		ai_chance = { 
