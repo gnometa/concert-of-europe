@@ -757,7 +757,38 @@ country_event = {
 				name = s_pop_2500k
 				duration = -1
 			}
-		}		
+		}
+	
+		any_country = {
+			limit = {
+				is_vassal = yes
+				overlord = {
+					exists = no
+				}	
+			}
+			country_event = 99991
+		}
+		
+	}
+}
+
+country_event = {
+	id = 99991
+	title = "Free at Last"
+	desc = "Our overlord perished, and so we are free..."
+
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = "Viva!"
+		prestige = 1
+		overlord = {
+			release_vassal = THIS
+		}
 	}
 }
 
