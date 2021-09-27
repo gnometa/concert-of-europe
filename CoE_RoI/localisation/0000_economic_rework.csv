@@ -1,4 +1,4 @@
-s_pop_not_100k;State Working Population >100k;;;;;;;;;;;;;;x,,
+s_pop_not_100k;State's Working Population >100k;;;;;;;;;;;;;;x,,
 s_pop_100k;State's Working Population 100k-250k;;;;;;;;;;;;;;x,,
 s_pop_250k;State's Working Population 250k-500k;;;;;;;;;;;;;;x,,
 s_pop_500k;State's Working Population 500k-1M;;;;;;;;;;;;;;x,,
