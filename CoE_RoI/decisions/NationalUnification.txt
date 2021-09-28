@@ -216,9 +216,10 @@ political_decisions = {
 								}
 								war = no
 								is_greater_power = no
+								NOT = { has_country_flag = north_german_rel }
 							}
 						}
-						NOT = { has_country_flag = north_german_rel }
+						#NOT = { has_country_flag = north_german_rel }
 						is_core = SCH
 						is_core = NET
 					}
