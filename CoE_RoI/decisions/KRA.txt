@@ -939,6 +939,7 @@ political_decisions = {
 		picture = form_baltic_states
 		potential = {
 			NOT = {
+				has_country_flag = north_german_rel
 				tag = RUS
 				tag = PLC
 				tag = SCA
