@@ -168,56 +168,56 @@ political_decisions = {
 		}
 	}
 	
-	rename_the_congo = {
-		potential = {
-			tag = BEL
-			OR = {
-				AND = {
-					exists = CNG
-					CNG = { vassal_of = THIS }
-				}
-				AND = {
-					owns = 1987
-					owns = 1982
-					owns = 1996
-				}
-			}
-			NOT = { has_global_flag = congo_renamed }
-		}
-		
-		allow = {
-			invention = mission_to_civilize
-		}
-		
-		effect = {
-			BEL_1977 = {
-				add_core = CNG
-			}
-			BEL_1984 = {
-				add_core = CNG
-			}
-			BEL_1987 = {
-				add_core = CNG
-			}
-			BEL_1990 = {
-				add_core = CNG
-			}
-			BEL_1992 = {
-				add_core = CNG
-			}
-			1987 = {
-				change_province_name = "Elisabethville"
-			}		
-			1982 = {
-				change_province_name = "Leopoldville"
-			}
-			1996 = {
-				change_province_name = "Stanleyville"
-			}
-			prestige = 10
-			set_global_flag = congo_renamed
-		}
-	}
+	#rename_the_congo = {
+	#	potential = {
+	#		tag = BEL
+	#		OR = {
+	#			AND = {
+	#				exists = CNG
+	#				CNG = { vassal_of = THIS }
+	#			}
+	#			AND = {
+	#				owns = 1987
+	#				owns = 1982
+	#				owns = 1996
+	#			}
+	#		}
+	#		NOT = { has_global_flag = congo_renamed }
+	#	}
+	#	
+	#	allow = {
+	#		invention = mission_to_civilize
+	#	}
+	#	
+	#	effect = {
+	#		BEL_1977 = {
+	#			add_core = CNG
+	#		}
+	#		BEL_1984 = {
+	#			add_core = CNG
+	#		}
+	#		BEL_1987 = {
+	#			add_core = CNG
+	#		}
+	#		BEL_1990 = {
+	#			add_core = CNG
+	#		}
+	#		BEL_1992 = {
+	#			add_core = CNG
+	#		}
+	#		1987 = {
+	#			change_province_name = "Elisabethville"
+	#		}		
+	#		1982 = {
+	#			change_province_name = "Leopoldville"
+	#		}
+	#		1996 = {
+	#			change_province_name = "Stanleyville"
+	#		}
+	#		prestige = 10
+	#		set_global_flag = congo_renamed
+	#	}
+	#}
 
 	become_flanders = {
 		picture = become_belgium

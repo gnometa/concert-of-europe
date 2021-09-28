@@ -164,7 +164,7 @@ country_event = {
 			limit = {
 				OR = {
 					region = ENG_1384 #Southern Malaya
-					region = ENG_1391 #Northern Malaya
+					#region = ENG_1391 #Northern Malaya
 					is_core = HND
 				}
 				NOT = { province_id = 2576 } #Natuna
@@ -182,13 +182,13 @@ country_event = {
 				limit = {
 					OR = {
 						region = NET_1398 #South Sumatra - Bencoolen
-						region = NET_1401 #Siak
-						region = PAG_1408 #East Sumatra
-						#region = PAG_1408 #West Sumatra
+						#region = NET_1401 #Siak
+						#region = PAG_1408 #East Sumatra
+						##region = PAG_1408 #West Sumatra
 						region = NET_1413 #West Java
-						region = NET_1415 #Central Java
-						region = NET_1416 #Princely States
-						region = NET_1418 #East Java
+						#region = NET_1415 #Central Java
+						#region = NET_1416 #Princely States
+						#region = NET_1418 #East Java
 					}
 				}
 				secede_province = NET
@@ -260,7 +260,7 @@ country_event = {
 			limit = {
 				OR = {
 					region = ENG_1384 #Southern Malaya
-					region = ENG_1391 #Northern Malaya
+					#region = ENG_1391 #Northern Malaya
 				}
 				NOT = { province_id = 2576 } #Natuna
 			}
@@ -684,17 +684,17 @@ country_event = {
 #		OR = {
 #			AND = { region = BAL_1438 NOT = { is_core = INO } } #Bali
 #			AND = { region = NET_1398 NOT = { is_core = INO } } #Djambi
-#			AND = { region = NET_1401 NOT = { is_core = INO } } #Siak
+#			AND = { #region = NET_1401 NOT = { is_core = INO } } #Siak
 #			AND = { region = ATJ_1405 NOT = { is_core = INO } } #Atjeh
-#			AND = { region = PAG_1408 NOT = { is_core = INO } } #East Sumatra
-#			AND = { region = PAG_1408 NOT = { is_core = INO } } #West Sumatra
+#			AND = { #region = PAG_1408 NOT = { is_core = INO } } #East Sumatra
+#			AND = { #region = PAG_1408 NOT = { is_core = INO } } #West Sumatra
 #			AND = { region = NET_1426 NOT = { is_core = INO } } #South Borneo
 #			AND = { region = NET_1422 NOT = { is_core = INO } } #Bandjar
 #			AND = { region = NET_1423 NOT = { is_core = INO } } #East Borneo
 #			AND = { region = BRU_1396 NOT = { is_core = INO } } #North Borneo
 #			AND = { region = BRU_1394 NOT = { is_core = INO } } #West Borneo
 #			AND = { region = ENG_1384 NOT = { is_core = INO } } #Southern Malaya
-#			AND = { region = ENG_1391 NOT = { is_core = INO } } #Northern Malaya
+#			AND = { #region = ENG_1391 NOT = { is_core = INO } } #Northern Malaya
 #		}
 #	}
 #		#owned_by = THIS
@@ -739,17 +739,17 @@ country_event = {
 #		            OR = {
 #		            	region = BAL_1438 #Bali
 #		            	region = NET_1398 #Djambi
-#		            	region = NET_1401 #Siak
+#		            	#region = NET_1401 #Siak
 #		            	region = ATJ_1405 #Atjeh
-#		            	region = PAG_1408 #East Sumatra
-#		            	region = PAG_1408 #West Sumatra
+#		            	#region = PAG_1408 #East Sumatra
+#		            	#region = PAG_1408 #West Sumatra
 #		            	region = NET_1426 #South Borneo
 #		            	region = NET_1422 #Bandjar
 #		            	region = NET_1423 #East Borneo
 #		            	region = BRU_1396 #North Borneo
 #		            	region = BRU_1394 #West Borneo
 #		            	region = ENG_1384 #Southern Malaya
-#		            	region = ENG_1391 #Northern Malaya
+#		            	#region = ENG_1391 #Northern Malaya
 #		            }
 #				}
 #				add_core = INO
@@ -823,17 +823,17 @@ country_event = {
 ##		            OR = {
 ##		            	region = BAL_1438 #Bali
 ##		            	region = NET_1398 #Djambi
-##		            	region = NET_1401 #Siak
+##		            	#region = NET_1401 #Siak
 ##		            	region = ATJ_1405 #Atjeh
-##		            	region = PAG_1408 #East Sumatra
-##		            	region = PAG_1408 #West Sumatra
+##		            	#region = PAG_1408 #East Sumatra
+##		            	#region = PAG_1408 #West Sumatra
 ##		            	region = NET_1426 #South Borneo
 ##		            	region = NET_1422 #Bandjar
 ##		            	region = NET_1423 #East Borneo
 ##		            	region = BRU_1396 #North Borneo
 ##		            	region = BRU_1394 #West Borneo
 ##		            	region = ENG_1384 #Southern Malaya
-##		            	region = ENG_1391 #Northern Malaya
+##		            	#region = ENG_1391 #Northern Malaya
 ##		            }					
 ##				}
 ##				add_core = INO
@@ -904,17 +904,17 @@ country_event = {
 #		            OR = {
 #		            	AND = { region = BAL_1438 NOT = { is_core = INO } } #Bali
 #		            	AND = { region = NET_1398 NOT = { is_core = INO } } #Djambi
-#		            	AND = { region = NET_1401 NOT = { is_core = INO } } #Siak
+#		            	AND = { #region = NET_1401 NOT = { is_core = INO } } #Siak
 #		            	AND = { region = ATJ_1405 NOT = { is_core = INO } } #Atjeh
-#		            	AND = { region = PAG_1408 NOT = { is_core = INO } } #East Sumatra
-#		            	AND = { region = PAG_1408 NOT = { is_core = INO } } #West Sumatra
+#		            	AND = { #region = PAG_1408 NOT = { is_core = INO } } #East Sumatra
+#		            	AND = { #region = PAG_1408 NOT = { is_core = INO } } #West Sumatra
 #		            	AND = { region = NET_1426 NOT = { is_core = INO } } #South Borneo
 #		            	AND = { region = NET_1422 NOT = { is_core = INO } } #Bandjar
 #		            	AND = { region = NET_1423 NOT = { is_core = INO } } #East Borneo
 #		            	AND = { region = BRU_1396 NOT = { is_core = INO } } #North Borneo
 #		            	AND = { region = BRU_1394 NOT = { is_core = INO } } #West Borneo
 #		            	AND = { region = ENG_1384 NOT = { is_core = INO } } #Southern Malaya
-#		            	AND = { region = ENG_1391 NOT = { is_core = INO } } #Northern Malaya
+#		            	AND = { #region = ENG_1391 NOT = { is_core = INO } } #Northern Malaya
 #		            }
 #				}
 #				add_core = INO

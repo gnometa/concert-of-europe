@@ -540,7 +540,7 @@ country_event = {
 			limit = {
 				OR = {
 					region = ENG_1384 #Southern Malaya
-					region = ENG_1391 #Northern Malaya
+					#region = ENG_1391 #Northern Malaya
 					is_core = HND
 				}
 				NOT = { province_id = 2576 } #Natuna
@@ -558,13 +558,13 @@ country_event = {
 				limit = {
 					OR = {
 						region = NET_1398 #South Sumatra - Bencoolen
-						region = NET_1401 #Siak
-						region = PAG_1408 #East Sumatra
-						region = PAG_1408 #West Sumatra
+						#region = NET_1401 #Siak
+						#region = PAG_1408 #East Sumatra
+						#region = PAG_1408 #West Sumatra
 						region = NET_1413 #West Java
-						region = NET_1415 #Central Java
-						region = NET_1416 #Princely States
-						region = NET_1418 #East Java
+						#region = NET_1415 #Central Java
+						#region = NET_1416 #Princely States
+						#region = NET_1418 #East Java
 					}
 				}
 				secede_province = NET
@@ -632,7 +632,7 @@ country_event = {
 			limit = {
 				OR = {
 					region = ENG_1384 #Southern Malaya
-					region = ENG_1391 #Northern Malaya
+					#region = ENG_1391 #Northern Malaya
 				}
 				NOT = { province_id = 2576 } #Natuna
 			}

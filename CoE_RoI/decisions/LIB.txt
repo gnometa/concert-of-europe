@@ -103,12 +103,12 @@ political_decisions = {
 			set_country_flag = immigration_contender
 			prestige = 20
 			FRA_1884 = { add_core = LIB }
-			FRA_1883 = { add_core = LIB }
-			FRA_1893 = { add_core = LIB }
+			#FRA_1883 = { add_core = LIB }
+			#FRA_1893 = { add_core = LIB }
 			FRA_1892 = { add_core = LIB }
 			FRA_1884 = { life_rating = 15 }
-			FRA_1883 = { life_rating = 15 }
-			FRA_1893 = { life_rating = 15 }
+			#FRA_1883 = { life_rating = 15 }
+			#FRA_1893 = { life_rating = 15 }
 			FRA_1892 = { life_rating = 15 }
 		}
 

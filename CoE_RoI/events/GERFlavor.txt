@@ -346,7 +346,7 @@ country_event = {
 					limit = {
 						OR = {
 							region = ENG_2024
-							region = ENG_2026
+							#region = ENG_2083
 						}
 					}
 					secede_province = ENG
