@@ -3879,64 +3879,178 @@ ideologies = {
 		}	
 		
 		modifier = {
+			factor = 1.10
+			political_reform_want = 0.01
+			NOT = { ruling_party_ideology = communist }
+			NOT = { is_ideology_enabled = socialist }
+		}
+		modifier = {
+			factor = 1.10
+			political_reform_want = 0.05
+			NOT = { ruling_party_ideology = communist }
+			NOT = { is_ideology_enabled = socialist }
+		}		
+		modifier = {
+			factor = 1.10
+			political_reform_want = 0.10
+			NOT = { ruling_party_ideology = communist }
+			NOT = { is_ideology_enabled = socialist }
+		}	
+		modifier = {
+			factor = 1.10
+			political_reform_want = 0.15
+			NOT = { ruling_party_ideology = communist }
+			NOT = { is_ideology_enabled = socialist }
+		}		
+		modifier = {
+			factor = 1.15
+			political_reform_want = 0.20
+			NOT = { ruling_party_ideology = communist }
+			NOT = { is_ideology_enabled = socialist }
+		}	
+		modifier = {
+			factor = 1.15
+			political_reform_want = 0.25
+			NOT = { ruling_party_ideology = communist }
+			NOT = { is_ideology_enabled = socialist }
+		}	
+		modifier = {
+			factor = 1.15
+			political_reform_want = 0.30
+			NOT = { ruling_party_ideology = communist }
+			NOT = { is_ideology_enabled = socialist }
+		}	
+		modifier = {
+			factor = 1.15
+			political_reform_want = 0.35
+			NOT = { ruling_party_ideology = communist }
+			NOT = { is_ideology_enabled = socialist }
+		}	
+		modifier = {
+			factor = 1.15
+			political_reform_want = 0.40
+			NOT = { ruling_party_ideology = communist }
+			NOT = { is_ideology_enabled = socialist }
+		}	
+		modifier = {
+			factor = 1.15
+			political_reform_want = 0.45
+			NOT = { ruling_party_ideology = communist }
+			NOT = { is_ideology_enabled = socialist }
+		}	
+		modifier = {
+			factor = 1.20
+			political_reform_want = 0.50
+			NOT = { ruling_party_ideology = communist }
+			NOT = { is_ideology_enabled = socialist }
+		}	
+		modifier = {
+			factor = 1.20
+			political_reform_want = 0.60
+			NOT = { ruling_party_ideology = communist }
+			NOT = { is_ideology_enabled = socialist }
+		}	
+		modifier = {
+			factor = 1.20
+			political_reform_want = 0.70
+			NOT = { ruling_party_ideology = communist }
+			NOT = { is_ideology_enabled = socialist }
+		}	
+		modifier = {
+			factor = 1.20
+			political_reform_want = 0.80
+			NOT = { ruling_party_ideology = communist }
+			NOT = { is_ideology_enabled = socialist }
+		}	
+		modifier = {
+			factor = 1.30
+			political_reform_want = 0.90
+			NOT = { ruling_party_ideology = communist }
+			NOT = { is_ideology_enabled = socialist }
+		}	
+		modifier = {
+			factor = 1.30
+			political_reform_want = 0.99
+			NOT = { ruling_party_ideology = communist }
+			NOT = { is_ideology_enabled = socialist }
+		}	
+		modifier = {
+			factor = 1.10
+			political_reform_want = 0.01
+			NOT = { ruling_party_ideology = communist }
+			is_ideology_enabled = socialist
+		}		
+		modifier = {
 			factor = 1.05
 			political_reform_want = 0.05
 			NOT = { ruling_party_ideology = communist }
+			is_ideology_enabled = socialist
 		}
 		modifier = {
 			factor = 1.05
 			political_reform_want = 0.10
 			NOT = { ruling_party_ideology = communist }
+			is_ideology_enabled = socialist
 		}
 		modifier = {
 			factor = 1.05
 			political_reform_want = 0.15
 			NOT = { ruling_party_ideology = communist }
+			is_ideology_enabled = socialist
 		}
 		modifier = {
 			factor = 1.1
 			political_reform_want = 0.20
 			NOT = { ruling_party_ideology = communist }
+			is_ideology_enabled = socialist
 		}
 		modifier = {
 			factor = 1.1
 			political_reform_want = 0.30
 			NOT = { ruling_party_ideology = communist }
+			is_ideology_enabled = socialist
 		}
 		modifier = {
 			factor = 1.1
 			political_reform_want = 0.40
 			NOT = { ruling_party_ideology = communist }
+			is_ideology_enabled = socialist
 		}
 		modifier = {
 			factor = 1.2
 			political_reform_want = 0.50
 			NOT = { ruling_party_ideology = communist }
+			is_ideology_enabled = socialist
 		}
 		modifier = {
 			factor = 1.2
 			political_reform_want = 0.60
 			NOT = { ruling_party_ideology = communist }
+			is_ideology_enabled = socialist
 		}
 		modifier = {
 			factor = 1.2
 			political_reform_want = 0.70
 			NOT = { ruling_party_ideology = communist }
+			is_ideology_enabled = socialist
 		}
 		modifier = {
 			factor = 1.4
 			political_reform_want = 0.80
 			NOT = { ruling_party_ideology = communist }
+			is_ideology_enabled = socialist
 		}
 		modifier = {
 			factor = 1.4
 			political_reform_want = 0.90
 			NOT = { ruling_party_ideology = communist }
+			is_ideology_enabled = socialist
 		}
 		modifier = {
 			factor = 1.4
 			political_reform_want = 0.99
 			NOT = { ruling_party_ideology = communist }
+			is_ideology_enabled = socialist
 		}
 		
 		#modifier = {

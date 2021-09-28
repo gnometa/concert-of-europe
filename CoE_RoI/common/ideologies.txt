@@ -339,7 +339,7 @@ conservative_group = {
 socialist_group = {
 	socialist = {
 		uncivilized = no
-		color = { 255 0 0 }
+		color = { 220 60 100 }
 		date = 1860.1.1
 
 		add_political_reform = {
@@ -383,7 +383,7 @@ socialist_group = {
 
 	communist = {
 		uncivilized = no
-		color = { 150 10 10 }
+		color = { 240 10 10 }
 		date = 1865.1.1
 
 		add_political_reform = {
