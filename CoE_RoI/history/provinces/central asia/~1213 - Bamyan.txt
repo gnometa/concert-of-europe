@@ -1,6 +1,5 @@
-owner = AFG
-controller = AFG
-add_core = AFG
+owner = HZJ
+controller = HZJ
 add_core = HZJ
 add_core = KHR
 trade_goods = opium

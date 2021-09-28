@@ -1,5 +1,5 @@
-owner = AFG
-controller = AFG
+owner = HRT
+controller = HRT
 add_core = HRT
 add_core = AFG
 add_core = KHR

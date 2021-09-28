@@ -251,12 +251,12 @@ country_event = {
 		name = "Long live the Emir!"
 		government = absolute_monarchy
 		1223 = { add_core = AFG }
-		any_country = {
-			limit = {
-				vassal_of = THIS
-			}
-			country_event = 301012 
-		}
+		#any_country = {
+		#	limit = {
+		#		vassal_of = THIS
+		#	}
+		#	country_event = 301012 
+		#}
 	}
 }
 
