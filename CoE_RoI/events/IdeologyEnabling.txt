@@ -174,7 +174,10 @@ country_event = {
 	news_desc_short = "EVTDESC1002_NEWS_SHORT"
 	picture = "AnarchoLiberals"
 	
+	is_triggered_only = yes
+	
 	trigger = {
+		always = no
 		exists = yes
 		NOT = {
 			is_ideology_enabled = anarcho_liberal 

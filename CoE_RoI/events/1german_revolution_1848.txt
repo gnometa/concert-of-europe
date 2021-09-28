@@ -1391,10 +1391,10 @@ country_event = {
 				value = liberal
 				factor = 0.3
 			}
-			ideology = {
-				value = anarcho_liberal
-				factor = 0.1
-			}
+			#ideology = {
+			#	value = anarcho_liberal
+			#	factor = 0.1
+			#}
 		}
 		any_pop = {
 			limit = {
@@ -1418,6 +1418,7 @@ country_event = {
 	}
 	option = {
 		name = "Long live Germany... a radical republic!"
+		enable_ideology = anarcho_liberal
 		change_tag = GER
 		inherit = FRM
 		capital = 564
