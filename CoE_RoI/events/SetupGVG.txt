@@ -1,6 +1,7 @@
 #=========================================================================================
 #		    NEW GVG Events to be placed here until categorised.
 #=========================================================================================
+
 country_event = {
 	id = 2000000
 	title = "EVTNAME2000000" #Standard Setup
@@ -8,12 +9,13 @@ country_event = {
 	picture = "crisis"
 
 	trigger = {
-		 NOT = { has_country_flag = setup_done
-			 OR = {	
-							tag = JAP
-			      }
-		    }
+		NOT = { 
+			has_country_flag = setup_done
+			#OR = {	
+			#	tag = JAP
+			#}
 		}
+	}
 
 	mean_time_to_happen = {
 		days = 1
@@ -27,6 +29,7 @@ country_event = {
 		}
 	}
 }
+
 #######OBSOLETE BUG FIXED################
 #country_event = {
 #	id = 2000001
@@ -53,33 +56,34 @@ country_event = {
 #}
 
 
-country_event = {
-	id = 2000002
-	title = "EVTNAME2000002" #JAP Setup
-	desc = "EVTDESC2000002"
-	picture = "crisis"
-
-	trigger = {
-		 NOT = { has_country_flag = setup_done  }
-		 OR = { tag = JAP
- 		 	tag = TKG
- 		 	tag = KAG
- 		 	tag = TOS
-		 	tag = CHO
- 		 	tag = SAT
-			tag = SEN
-			tag = YZW
-		  }
-    }
-	mean_time_to_happen = {
-		days = 1
-	}
-
-	option = {
-		name = "Not so splendid!"
-		set_country_flag = setup_done
-	}
-		ai_chance = {
-			factor = 1
-		}
-}
+#country_event = {
+#	id = 2000002
+#	title = "EVTNAME2000002" #JAP Setup
+#	desc = "EVTDESC2000002"
+#	picture = "crisis"
+#
+#	trigger = {
+#		 NOT = { has_country_flag = setup_done  }
+#		 OR = { 
+#			tag = JAP
+# 		 	tag = TKG
+# 		 	tag = KAG
+# 		 	tag = TOS
+#		 	tag = CHO
+# 		 	tag = SAT
+#			tag = SEN
+#			tag = YZW
+#		  }
+#    }
+#	mean_time_to_happen = {
+#		days = 1
+#	}
+#
+#	option = {
+#		name = "Not so splendid!"
+#		set_country_flag = setup_done
+#	}
+#		ai_chance = {
+#			factor = 1
+#		}
+#}
