@@ -27,7 +27,7 @@ military_factory_template = {
 			poptype = craftsmen
 			effect = throughput
 			effect_multiplier = 1.0
-			amount = 1.0 #amount = 0.25
+			amount = 0.5 #amount = 0.25
 		}
 		#{
 		#	poptype = 00_urban_poor
@@ -39,7 +39,7 @@ military_factory_template = {
 			poptype = clerks
 			effect = throughput
 			effect_multiplier = 2.00
-			amount = 1.0 #amount = 0.15
+			amount = 0.5 #amount = 0.15
 		}
 	}
 	type = factory
@@ -72,7 +72,7 @@ heavy_factory_template = {
 			poptype = craftsmen
 			effect = throughput
 			effect_multiplier = 1.0
-			amount = 1.0 #amount = 0.25
+			amount = 0.5 #amount = 0.25
 		}
 		#{
 		#	poptype = 00_urban_poor
@@ -84,7 +84,7 @@ heavy_factory_template = {
 			poptype = clerks
 			effect = throughput
 			effect_multiplier = 2.00
-			amount = 1.0 #amount = 0.15
+			amount = 0.5 #amount = 0.15
 		}
 	}
 	type = factory
@@ -118,7 +118,7 @@ food_factory_template = {
 			poptype = craftsmen
 			effect = throughput
 			effect_multiplier = 1.0
-			amount = 1.0 #amount = 0.25
+			amount = 0.5 #amount = 0.25
 		}
 		#{
 		#	poptype = 00_urban_poor
@@ -130,7 +130,7 @@ food_factory_template = {
 			poptype = clerks
 			effect = throughput
 			effect_multiplier = 2.00
-			amount = 1.0 #amount = 0.15
+			amount = 0.5 #amount = 0.15
 		}
 	}
 	type = factory
@@ -166,7 +166,7 @@ light_factory_template = {
 			poptype = craftsmen
 			effect = throughput
 			effect_multiplier = 1.0
-			amount = 1.0 #amount = 0.25
+			amount = 0.5 #amount = 0.25
 		}
 		#{
 		#	poptype = 00_urban_poor
@@ -178,7 +178,7 @@ light_factory_template = {
 			poptype = clerks
 			effect = throughput
 			effect_multiplier = 2.00
-			amount = 1.0 #amount = 0.15
+			amount = 0.5 #amount = 0.15
 		}
 	}
 	type = factory
@@ -234,7 +234,7 @@ luxury_factory_template = {
 			poptype = craftsmen
 			effect = throughput
 			effect_multiplier = 1.0
-			amount = 1.0 #amount = 0.25
+			amount = 0.5 #amount = 0.25
 		}
 		#{
 		#	poptype = 00_urban_poor
@@ -246,7 +246,7 @@ luxury_factory_template = {
 			poptype = clerks
 			effect = throughput
 			effect_multiplier = 2.00
-			amount = 2.0 #amount = 0.15
+			amount = 0.5 #amount = 0.15
 		}
 	}
 	type = factory
