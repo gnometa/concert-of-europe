@@ -691,7 +691,7 @@ promote_to = {
 			state_scope = { capitalists  = 0.051 }
 		}  		
 	}
-	farmers = {
+	aristocrats = {
 		factor = 0.01
 		#modifier = {
 		#	factor = -500
@@ -1190,86 +1190,86 @@ promote_to = {
 		#	state_scope = { craftsmen = 0.751 }
 		#}
 	}		
-	artisans = {
-		factor = 0.01
-		modifier = {
-			factor = -50
-			always = yes
-		}
-		modifier = {
-			factor = -200
-			NOT = { farmers = 0.10 }
-		}
-		modifier = {
-			factor = 120
-			NOT = { state_scope = { artisans = 0.05 } }
-		}
-		modifier = {
-			factor = 80
-			literacy = 0.01
-			NOT = { literacy = 0.02 }
-			NOT = { state_scope = { artisans = 0.15 } }
-		}
-		modifier = {
-			factor = 80
-			literacy = 0.02
-			NOT = { literacy = 0.04 }
-			NOT = { state_scope = { artisans = 0.14 } }
-		}
-		modifier = {
-			factor = 80
-			literacy = 0.04
-			NOT = { literacy = 0.06 }
-			NOT = { state_scope = { artisans = 0.13 } }
-		}
-		modifier = {
-			factor = 80
-			literacy = 0.06
-			NOT = { literacy = 0.08 }
-			NOT = { state_scope = { artisans = 0.12 } }
-		}
-		modifier = {
-			factor = 80
-			literacy = 0.08
-			NOT = { literacy = 0.10 }
-			NOT = { state_scope = { artisans = 0.11 } }
-		}
-		modifier = {
-			factor = 80
-			literacy = 0.10
-			NOT = { literacy = 0.12 }
-			NOT = { state_scope = { artisans = 0.10 } }
-		}
-		modifier = {
-			factor = 80
-			literacy = 0.12
-			NOT = { literacy = 0.14 }
-			NOT = { state_scope = { artisans = 0.09 } }
-		}
-		modifier = {
-			factor = 80
-			literacy = 0.14
-			NOT = { literacy = 0.16 }
-			NOT = { state_scope = { artisans = 0.8 } }
-		}
-		modifier = {
-			factor = 80
-			literacy = 0.16
-			NOT = { literacy = 0.18 }
-			NOT = { state_scope = { artisans = 0.7 } }
-		}
-		modifier = {
-			factor = 80
-			literacy = 0.18
-			NOT = { literacy = 0.20 }
-			NOT = { state_scope = { artisans = 0.06 } }
-		}
-		modifier = {
-			factor = 80
-			literacy = 0.20
-			NOT = { state_scope = { artisans = 0.05 } }
-		}
-	}
+	#artisans = {
+	#	factor = 0.01
+	#	modifier = {
+	#		factor = -50
+	#		always = yes
+	#	}
+	#	modifier = {
+	#		factor = -200
+	#		NOT = { farmers = 0.10 }
+	#	}
+	#	modifier = {
+	#		factor = 120
+	#		NOT = { state_scope = { artisans = 0.05 } }
+	#	}
+	#	modifier = {
+	#		factor = 80
+	#		literacy = 0.01
+	#		NOT = { literacy = 0.02 }
+	#		NOT = { state_scope = { artisans = 0.15 } }
+	#	}
+	#	modifier = {
+	#		factor = 80
+	#		literacy = 0.02
+	#		NOT = { literacy = 0.04 }
+	#		NOT = { state_scope = { artisans = 0.14 } }
+	#	}
+	#	modifier = {
+	#		factor = 80
+	#		literacy = 0.04
+	#		NOT = { literacy = 0.06 }
+	#		NOT = { state_scope = { artisans = 0.13 } }
+	#	}
+	#	modifier = {
+	#		factor = 80
+	#		literacy = 0.06
+	#		NOT = { literacy = 0.08 }
+	#		NOT = { state_scope = { artisans = 0.12 } }
+	#	}
+	#	modifier = {
+	#		factor = 80
+	#		literacy = 0.08
+	#		NOT = { literacy = 0.10 }
+	#		NOT = { state_scope = { artisans = 0.11 } }
+	#	}
+	#	modifier = {
+	#		factor = 80
+	#		literacy = 0.10
+	#		NOT = { literacy = 0.12 }
+	#		NOT = { state_scope = { artisans = 0.10 } }
+	#	}
+	#	modifier = {
+	#		factor = 80
+	#		literacy = 0.12
+	#		NOT = { literacy = 0.14 }
+	#		NOT = { state_scope = { artisans = 0.09 } }
+	#	}
+	#	modifier = {
+	#		factor = 80
+	#		literacy = 0.14
+	#		NOT = { literacy = 0.16 }
+	#		NOT = { state_scope = { artisans = 0.8 } }
+	#	}
+	#	modifier = {
+	#		factor = 80
+	#		literacy = 0.16
+	#		NOT = { literacy = 0.18 }
+	#		NOT = { state_scope = { artisans = 0.7 } }
+	#	}
+	#	modifier = {
+	#		factor = 80
+	#		literacy = 0.18
+	#		NOT = { literacy = 0.20 }
+	#		NOT = { state_scope = { artisans = 0.06 } }
+	#	}
+	#	modifier = {
+	#		factor = 80
+	#		literacy = 0.20
+	#		NOT = { state_scope = { artisans = 0.05 } }
+	#	}
+	#}
 	bureaucrats = {
 		factor = 0.01
 		modifier = {
@@ -1410,81 +1410,267 @@ promote_to = {
 
 	clerks = {
 		factor = 0.01
-		modifier = {
-			factor = -500
-			is_primary_culture = no
-			is_accepted_culture = no
-		}		
+		#modifier = {
+		#	factor = -500
+		#	is_primary_culture = no
+		#	is_accepted_culture = no
+		#}		
 		modifier = {
 			factor = -50
 			always = no
 		}
 		modifier = {
 			factor = -500
-		    state_scope = { has_factories = no }		
+		    civilized = no		
 		}				
-		modifier = {
-			factor = -500
-            unemployment_by_type = { value = 0.1 type = craftsmen }		
-		}	
+		#modifier = {
+		#	factor = -500
+        #    unemployment_by_type = { value = 0.1 type = craftsmen }		
+		#}	
 		modifier = {
 			factor = 150
-			literacy = 0.60
+			literacy = 0.51
+			NOT = { literacy = 0.52 }
+			NOT = { state_scope = { clerks = 0.005 } }
+		}
+		modifier = {
+			factor = 150
+			literacy = 0.52
+			NOT = { literacy = 0.53 }
+			NOT = { state_scope = { clerks = 0.01 } }
+		}
+		modifier = {
+			factor = 150
+			literacy = 0.53
+			NOT = { literacy = 0.54 }
+			NOT = { state_scope = { clerks = 0.015 } }
+		}
+		modifier = {
+			factor = 150
+			literacy = 0.54
 			NOT = { literacy = 0.55 }
+			NOT = { state_scope = { clerks = 0.02 } }
+		}
+		modifier = {
+			factor = 150
+			literacy = 0.55
+			NOT = { literacy = 0.56 }
+			NOT = { state_scope = { clerks = 0.025 } }
+		}
+		modifier = {
+			factor = 150
+			literacy = 0.56
+			NOT = { literacy = 0.57 }
 			NOT = { state_scope = { clerks = 0.03 } }
 		}
 		modifier = {
 			factor = 150
-			literacy = 0.65
+			literacy = 0.57
+			NOT = { literacy = 0.58 }
+			NOT = { state_scope = { clerks = 0.035 } }
+		}
+		modifier = {
+			factor = 150
+			literacy = 0.58
+			NOT = { literacy = 0.59 }
+			NOT = { state_scope = { clerks = 0.04 } }
+		}
+		modifier = {
+			factor = 150
+			literacy = 0.59
 			NOT = { literacy = 0.60 }
+			NOT = { state_scope = { clerks = 0.045 } }
+		}
+		modifier = {
+			factor = 150
+			literacy = 0.60
+			NOT = { literacy = 0.61 }
+			NOT = { state_scope = { clerks = 0.05 } }
+		}
+		modifier = {
+			factor = 150
+			literacy = 0.61
+			NOT = { literacy = 0.62 }
+			NOT = { state_scope = { clerks = 0.055 } }
+		}
+		modifier = {
+			factor = 150
+			literacy = 0.62
+			NOT = { literacy = 0.63 }
 			NOT = { state_scope = { clerks = 0.06 } }
 		}
 		modifier = {
 			factor = 150
-			literacy = 0.70
+			literacy = 0.63
+			NOT = { literacy = 0.64 }
+			NOT = { state_scope = { clerks = 0.065 } }
+		}
+		modifier = {
+			factor = 150
+			literacy = 0.64
 			NOT = { literacy = 0.65 }
+			NOT = { state_scope = { clerks = 0.07 } }
+		}
+		modifier = {
+			factor = 150
+			literacy = 0.65
+			NOT = { literacy = 0.66 }
+			NOT = { state_scope = { clerks = 0.075 } }
+		}
+		modifier = {
+			factor = 150
+			literacy = 0.66
+			NOT = { literacy = 0.67 }
+			NOT = { state_scope = { clerks = 0.08 } }
+		}
+		modifier = {
+			factor = 150
+			literacy = 0.67
+			NOT = { literacy = 0.68 }
+			NOT = { state_scope = { clerks = 0.085 } }
+		}
+		modifier = {
+			factor = 150
+			literacy = 0.68
+			NOT = { literacy = 0.69 }
 			NOT = { state_scope = { clerks = 0.09 } }
 		}
 		modifier = {
 			factor = 150
-			literacy = 0.75
+			literacy = 0.69
 			NOT = { literacy = 0.70 }
-			NOT = { state_scope = { clerks = 0.12 } }
+			NOT = { state_scope = { clerks = 0.095 } }
 		}
+		modifier = {
+			factor = 150
+			literacy = 0.70
+			NOT = { literacy = 0.72 }
+			NOT = { state_scope = { clerks = 0.10 } }
+		}
+		modifier = {
+			factor = 150
+			literacy = 0.71
+			NOT = { literacy = 0.72 }
+			NOT = { state_scope = { clerks = 0.105 } }
+		}		
+		modifier = {
+			factor = 150
+			literacy = 0.72
+			NOT = { literacy = 0.73 }
+			NOT = { state_scope = { clerks = 0.11 } }
+		}	
+		modifier = {
+			factor = 150
+			literacy = 0.73
+			NOT = { literacy = 0.74 }
+			NOT = { state_scope = { clerks = 0.115 } }
+		}	
+		modifier = {
+			factor = 150
+			literacy = 0.74
+			NOT = { literacy = 0.75 }
+			NOT = { state_scope = { clerks = 0.12 } }
+		}	
+		modifier = {
+			factor = 150
+			literacy = 0.75
+			NOT = { literacy = 0.76 }
+			NOT = { state_scope = { clerks = 0.125 } }
+		}	
+		modifier = {
+			factor = 150
+			literacy = 0.76
+			NOT = { literacy = 0.77 }
+			NOT = { state_scope = { clerks = 0.13 } }
+		}			
+		modifier = {
+			factor = 150
+			literacy = 0.77
+			NOT = { literacy = 0.78 }
+			NOT = { state_scope = { clerks = 0.135 } }
+		}
+		modifier = {
+			factor = 150
+			literacy = 0.78
+			NOT = { literacy = 0.79 }
+			NOT = { state_scope = { clerks = 0.14 } }
+		}	
+		modifier = {
+			factor = 150
+			literacy = 0.79
+			NOT = { literacy = 0.80 }
+			NOT = { state_scope = { clerks = 0.145 } }
+		}	
 		modifier = {
 			factor = 150
 			literacy = 0.80
-			NOT = { literacy = 0.75 }
+			NOT = { literacy = 0.81 }
 			NOT = { state_scope = { clerks = 0.15 } }
-		}
+		}		
+		modifier = {
+			factor = 150
+			literacy = 0.81
+			NOT = { literacy = 0.82 }
+			NOT = { state_scope = { clerks = 0.155 } }
+		}	
+		modifier = {
+			factor = 150
+			literacy = 0.82
+			NOT = { literacy = 0.83 }
+			NOT = { state_scope = { clerks = 0.16 } }
+		}		
+		modifier = {
+			factor = 150
+			literacy = 0.83
+			NOT = { literacy = 0.84 }
+			NOT = { state_scope = { clerks = 0.165 } }
+		}			
+		modifier = {
+			factor = 150
+			literacy = 0.84
+			NOT = { literacy = 0.85 }
+			NOT = { state_scope = { clerks = 0.17 } }
+		}	
 		modifier = {
 			factor = 150
 			literacy = 0.85
-			NOT = { literacy = 0.80 }
+			NOT = { literacy = 0.86 }
+			NOT = { state_scope = { clerks = 0.175 } }
+		}	
+		modifier = {
+			factor = 150
+			literacy = 0.86
+			NOT = { literacy = 0.87 }
 			NOT = { state_scope = { clerks = 0.18 } }
-		}
+		}			
+		modifier = {
+			factor = 150
+			literacy = 0.87
+			NOT = { literacy = 0.88 }
+			NOT = { state_scope = { clerks = 0.185 } }
+		}		
+		modifier = {
+			factor = 150
+			literacy = 0.88
+			NOT = { literacy = 0.89 }
+			NOT = { state_scope = { clerks = 0.19 } }
+		}			
+		modifier = {
+			factor = 150
+			literacy = 0.89
+			NOT = { literacy = 0.90 }
+			NOT = { state_scope = { clerks = 0.195 } }
+		}			
 		modifier = {
 			factor = 150
 			literacy = 0.90
-			NOT = { literacy = 0.85 }
-			NOT = { state_scope = { clerks = 0.21 } }
-		}
-		modifier = {
-			factor = 150
-			literacy = 0.95
-			NOT = { literacy = 0.90 }
-			NOT = { state_scope = { clerks = 0.23 } }
-		}
-		modifier = {
-			factor = 150
-			literacy = 0.99
-			NOT = { literacy = 0.95 }
-			NOT = { state_scope = { clerks = 0.25 } }
-		}
+			NOT = { state_scope = { clerks = 0.20 } }
+		}	
 		modifier = {
 			factor = -500
 			state_scope = { clerks = 0.201 }
-		}
+		}		
+
 		modifier = {
 			factor = -100
 			location = { is_colonial = yes }
