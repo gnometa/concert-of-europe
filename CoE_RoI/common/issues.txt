@@ -745,24 +745,24 @@ social_reforms = {
 	unemployment_subsidies = {
 		next_step_only = yes
 		no_subsidies = {
-		    unemployment_benefit = 1
+		    unemployment_benefit = 0.10
 		}
 		trinket_subsidies = {
-			unemployment_benefit = 2.5
+			unemployment_benefit = 0.25
 			global_immigrant_attract = 0.005
 			social_reform_desire = -0.025
 			political_reform_desire = -0.025
 			min_social_spending = 0.03
 		}
 		low_subsidies = {
-			unemployment_benefit = 5
+			unemployment_benefit = 0.5
 			global_immigrant_attract = 0.010
 			social_reform_desire = -0.05
 			political_reform_desire = -0.05
 			min_social_spending = 0.05
 		}
 		acceptable_subsidies = {
-			unemployment_benefit = 7.5
+			unemployment_benefit = 0.75
 			global_immigrant_attract = 0.015
 			global_pop_consciousness_modifier = -0.01
 			social_reform_desire = -0.075
@@ -770,7 +770,7 @@ social_reforms = {
 			min_social_spending = 0.07
 		}
 		good_subsidies = {
-			unemployment_benefit = 10
+			unemployment_benefit = 1.0
 			global_immigrant_attract = 0.020
 			global_pop_consciousness_modifier = -0.02
 			social_reform_desire = -0.10

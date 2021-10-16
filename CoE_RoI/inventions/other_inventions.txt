@@ -6958,7 +6958,12 @@ privatization = {
 		}
 	}
 	effect = {
-		administrative_efficiency = 0.025
+		factory_goods_throughput = {
+			light_industry = 0.01
+		}
+		factory_goods_throughput = {
+			luxury_industry = 0.01
+		}
 	}
 }
 
@@ -7693,7 +7698,7 @@ commerce_1 = {
 	}
 	effect = {
 		tax_eff = 2.5
-		administrative_efficiency = 0.025
+		#administrative_efficiency = 0.025
 	}
 }
 

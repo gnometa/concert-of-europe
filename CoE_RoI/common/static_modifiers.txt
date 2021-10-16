@@ -145,7 +145,7 @@ base_values = {
 	#min_social_spending = 0.10
 	education_efficiency_modifier = 2.00
 	land_unit_start_experience = -30
-	pension_level = 0.125
+	pension_level = 0.10
 	mobilisation_size = 0.05	
 	global_population_growth = 0.010
 	loan_interest = 1.0
@@ -155,6 +155,9 @@ base_values = {
 	#rich_luxury_needs = 25.0
 	#tariff_efficiency_modifier = -0.5
 	cb_generation_speed_modifier = 1.0
+	#poor_income_modifier = 1
+	#middle_income_modifier = 1
+	#rich_income_modifier = 1	
 }
 
 war = {
@@ -254,7 +257,7 @@ average_literacy = {
 	org_regain = 1
 	unit_start_experience = 30
 	tax_efficiency = -0.25
-	pension_level = 0.25
+	pension_level = 0.20
 	mobilisation_size = 0.10
 	education_efficiency_modifier = -1.0
 	global_immigrant_attract = 0.20
@@ -263,7 +266,7 @@ average_literacy = {
 	#ich_everyday_needs = 50.0
 	#rich_luxury_needs = 100.0
 	#goods_demand = 0.5
-	tariff_efficiency_modifier = -0.50
+	tariff_efficiency_modifier = -0.40
 }
 
 plurality = {
