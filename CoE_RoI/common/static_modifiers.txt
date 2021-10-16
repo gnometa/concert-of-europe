@@ -266,7 +266,7 @@ average_literacy = {
 	#ich_everyday_needs = 50.0
 	#rich_luxury_needs = 100.0
 	#goods_demand = 0.5
-	tariff_efficiency_modifier = -0.40
+	tariff_efficiency_modifier = -0.50
 }
 
 plurality = {
