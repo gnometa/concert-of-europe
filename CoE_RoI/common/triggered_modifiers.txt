@@ -266,7 +266,7 @@ no_navy = {
 respectable_navy = {
 	trigger = {
 		civilized = yes
-		total_amount_of_ships = 10
+		total_amount_of_ships = 25
 		NOT = { total_amount_of_ships = 100 }
 	}
 	prestige = 0.05
@@ -276,12 +276,12 @@ respectable_navy = {
 small_navy = {
 	trigger = {
 		civilized = yes
-		total_amount_of_ships = 1
+		#total_amount_of_ships = 1
 		not = { total_amount_of_ships = 10 }
 		num_of_ports = 1
 		year = 1837
 	}
-	prestige = -0.1
+	prestige = -0.05
 	icon = 9
 }
 
@@ -856,354 +856,356 @@ occupied_capital = {
 }
 
 
-admin_found_1 = {
-	trigger = {
-		administration_spending = 0.10
-		NOT = { administration_spending = 0.20 }
-	}
-	prestige = 0.02
-	research_points = 0.10
-	global_pop_consciousness_modifier = -0.01
-	#global_pop_militancy_modifier = -0.01
-	diplomatic_points_modifier = 0.05
-	influence = 0.05
-	war_exhaustion = -0.01
-	education_efficiency_modifier = 0.10
-	factory_maintenance = 0.02
-	factory_input = 0.02
-	factory_output = 0.02
-	rgo_output = 0.04
-	icon = 1
-}
+###Founding Benefits
 
-admin_found_2 = {
-	trigger = {
-		administration_spending = 0.20
-		NOT = { administration_spending = 0.30 }
-	}
-	prestige = 0.04
-	research_points = 0.20
-	global_pop_consciousness_modifier = -0.02
-	#global_pop_militancy_modifier = -0.02
-	diplomatic_points_modifier = 0.10
-	influence = 0.10
-	war_exhaustion = -0.02
-	education_efficiency_modifier = 0.20
-	factory_maintenance = 0.04
-	factory_input = 0.04
-	factory_output = 0.04
-	rgo_output = 0.08
-	icon = 1
-}
-
-admin_found_3 = {
-	trigger = {
-		administration_spending = 0.30
-		NOT = { administration_spending = 0.40 }
-	}
-	prestige = 0.06
-	research_points = 0.30
-	global_pop_consciousness_modifier = -0.03
-	#global_pop_militancy_modifier = -0.03
-	diplomatic_points_modifier = 0.15
-	influence = 0.15
-	war_exhaustion = -0.03
-	education_efficiency_modifier = 0.30
-	factory_maintenance = 0.06
-	factory_input = 0.06
-	factory_output = 0.06
-	rgo_output = 0.12
-	icon = 1
-}
-
-admin_found_4 = {
-	trigger = {
-		administration_spending = 0.40
-		NOT = { administration_spending = 0.50 }
-	}
-	prestige = 0.08
-	research_points = 0.40
-	global_pop_consciousness_modifier = -0.04
-	#global_pop_militancy_modifier = -0.04
-	diplomatic_points_modifier = 0.20
-	influence = 0.20
-	war_exhaustion = -0.04
-	education_efficiency_modifier = 0.40
-	factory_maintenance = 0.08
-	factory_input = 0.08
-	factory_output = 0.08
-	rgo_output = 0.16
-	icon = 1
-}
-
-admin_found_5 = {
-	trigger = {
-		administration_spending = 0.50
-		NOT = { administration_spending = 0.60 }
-	}
-	prestige = 0.10
-	research_points = 0.50
-	global_pop_consciousness_modifier = -0.05
-	#global_pop_militancy_modifier = -0.05
-	diplomatic_points_modifier = 0.25
-	influence = 0.25
-	war_exhaustion = -0.05
-	education_efficiency_modifier = 0.50
-	factory_maintenance = 0.10
-	factory_input = 0.10
-	factory_output = 0.10
-	rgo_output = 0.20
-	icon = 1
-}
-
-admin_found_6 = {
-	trigger = {
-		administration_spending = 0.60
-		NOT = { administration_spending = 0.70 }
-	}
-	prestige = 0.12
-	research_points = 0.60
-	global_pop_consciousness_modifier = -0.06
-	#global_pop_militancy_modifier = -0.06
-	diplomatic_points_modifier = 0.30
-	influence = 0.30
-	war_exhaustion = -0.06
-	education_efficiency_modifier = 0.60
-	factory_maintenance = 0.12
-	factory_input = 0.12
-	factory_output = 0.12
-	rgo_output = 0.24
-	icon = 1
-}
-
-admin_found_7 = {
-	trigger = {
-		administration_spending = 0.70
-		NOT = { administration_spending = 0.80 }
-	}
-	prestige = 0.14
-	research_points = 0.70
-	global_pop_consciousness_modifier = -0.07
-	#global_pop_militancy_modifier = -0.07
-	diplomatic_points_modifier = 0.35
-	influence = 0.35
-	war_exhaustion = -0.07
-	education_efficiency_modifier = 0.70
-	factory_maintenance = 0.14
-	factory_input = 0.14
-	factory_output = 0.14
-	rgo_output = 0.28
-	icon = 1
-}
-
-admin_found_8 = {
-	trigger = {
-		administration_spending = 0.80
-		NOT = { administration_spending = 0.90 }
-	}
-	prestige = 0.16
-	research_points = 0.80
-	global_pop_consciousness_modifier = -0.08
-	#global_pop_militancy_modifier = -0.08
-	diplomatic_points_modifier = 0.40
-	influence = 0.40
-	war_exhaustion = -0.08
-	education_efficiency_modifier = 0.80
-	factory_maintenance = 0.16
-	factory_input = 0.16
-	factory_output = 0.16
-	rgo_output = 0.32
-	icon = 1
-}
-
-admin_found_9 = {
-	trigger = {
-		administration_spending = 0.90
-		NOT = { administration_spending = 0.99 }
-	}
-	prestige = 0.18
-	research_points = 0.90
-	global_pop_consciousness_modifier = -0.09
-	#global_pop_militancy_modifier = -0.09
-	diplomatic_points_modifier = 0.45
-	influence = 0.45
-	war_exhaustion = -0.09
-	education_efficiency_modifier = 0.90
-	factory_maintenance = 0.18
-	factory_input = 0.18
-	factory_output = 0.18
-	rgo_output = 0.36
-	icon = 1
-}
-
-admin_found_10 = {
-	trigger = {
-		administration_spending = 0.99
-	}
-	prestige = 0.20
-	research_points = 1.00
-	global_pop_consciousness_modifier = -0.10
-	#global_pop_militancy_modifier = -0.10
-	diplomatic_points_modifier = 0.50
-	influence = 0.50
-	war_exhaustion = -0.10
-	education_efficiency_modifier = 1.00
-	factory_maintenance = 0.20
-	factory_input = 0.20
-	factory_output = 0.20
-	rgo_output = 0.40
-	icon = 1
-}
-
-
-milit_found_1 = {
-	trigger = {
-		military_spending = 0.10
-		NOT = { military_spending = 0.20 }
-	}
-	prestige = 0.01
-	land_organisation = 0.05
-	naval_organisation = 0.05
-	org_regain = 0.05
-	war_exhaustion = -0.05
-	influence = 0.05
-	global_pop_militancy_modifier = -0.01
-	icon = 1
-}
-
-milit_found_2 = {
-	trigger = {
-		military_spending = 0.20
-		NOT = { military_spending = 0.30 }
-	}
-	prestige = 0.02
-	land_organisation = 0.10
-	naval_organisation = 0.10
-	org_regain = 0.10
-	war_exhaustion = -0.10
-	influence = 0.10
-	global_pop_militancy_modifier = -0.02
-	icon = 1
-}
-
-milit_found_3 = {
-	trigger = {
-		military_spending = 0.30
-		NOT = { military_spending = 0.40 }
-	}
-	prestige = 0.03
-	land_organisation = 0.15
-	naval_organisation = 0.15
-	org_regain = 0.15
-	war_exhaustion = -0.15
-	influence = 0.15
-	global_pop_militancy_modifier = -0.03
-	icon = 1
-}
-
-milit_found_4 = {
-	trigger = {
-		military_spending = 0.40
-		NOT = { military_spending = 0.50 }
-	}
-	prestige = 0.04
-	land_organisation = 0.20
-	naval_organisation = 0.20
-	org_regain = 0.20
-	war_exhaustion = -0.20
-	influence = 0.20
-	global_pop_militancy_modifier = -0.04
-	icon = 1
-}
-
-milit_found_5 = {
-	trigger = {
-		military_spending = 0.50
-		NOT = { military_spending = 0.60 }
-	}
-	prestige = 0.05
-	land_organisation = 0.25
-	naval_organisation = 0.25
-	org_regain = 0.25
-	war_exhaustion = -0.25
-	influence = 0.25
-	global_pop_militancy_modifier = -0.05
-	icon = 1
-}
-
-milit_found_6 = {
-	trigger = {
-		military_spending = 0.60
-		NOT = { military_spending = 0.70 }
-	}
-	prestige = 0.06
-	land_organisation = 0.30
-	naval_organisation = 0.30
-	org_regain = 0.30
-	war_exhaustion = -0.30
-	influence = 0.30
-	global_pop_militancy_modifier = -0.06
-	icon = 1
-}
-
-milit_found_7 = {
-	trigger = {
-		military_spending = 0.70
-		NOT = { military_spending = 0.80 }
-	}
-	prestige = 0.07
-	land_organisation = 0.35
-	naval_organisation = 0.35
-	org_regain = 0.35
-	war_exhaustion = -0.35
-	influence = 0.35
-	global_pop_militancy_modifier = -0.07
-	icon = 1
-}
-
-milit_found_8 = {
-	trigger = {
-		military_spending = 0.80
-		NOT = { military_spending = 0.90 }
-	}
-	prestige = 0.08
-	land_organisation = 0.40
-	naval_organisation = 0.40
-	org_regain = 0.40
-	war_exhaustion = -0.40
-	influence = 0.40
-	global_pop_militancy_modifier = -0.08
-	icon = 1
-}
-
-milit_found_9 = {
-	trigger = {
-		military_spending = 0.90
-		NOT = { military_spending = 0.99 }
-	}
-	prestige = 0.09
-	land_organisation = 0.45
-	naval_organisation = 0.45
-	org_regain = 0.45
-	war_exhaustion = -0.45
-	influence = 0.45
-	global_pop_militancy_modifier = -0.09
-	icon = 1
-}
-
-milit_found_10 = {
-	trigger = {
-		military_spending = 0.99
-	}
-	prestige = 0.10
-	land_organisation = 0.50
-	naval_organisation = 0.50
-	org_regain = 0.50
-	war_exhaustion = -0.50
-	influence = 0.50
-	global_pop_militancy_modifier = -0.10
-	icon = 1
-}
+#admin_found_1 = {
+#	trigger = {
+#		administration_spending = 0.10
+#		NOT = { administration_spending = 0.20 }
+#	}
+#	prestige = 0.02
+#	research_points = 0.10
+#	global_pop_consciousness_modifier = -0.01
+#	#global_pop_militancy_modifier = -0.01
+#	diplomatic_points_modifier = 0.05
+#	influence = 0.05
+#	war_exhaustion = -0.01
+#	education_efficiency_modifier = 0.10
+#	factory_maintenance = 0.02
+#	factory_input = 0.02
+#	factory_output = 0.02
+#	rgo_output = 0.04
+#	icon = 1
+#}
+#
+#admin_found_2 = {
+#	trigger = {
+#		administration_spending = 0.20
+#		NOT = { administration_spending = 0.30 }
+#	}
+#	prestige = 0.04
+#	research_points = 0.20
+#	global_pop_consciousness_modifier = -0.02
+#	#global_pop_militancy_modifier = -0.02
+#	diplomatic_points_modifier = 0.10
+#	influence = 0.10
+#	war_exhaustion = -0.02
+#	education_efficiency_modifier = 0.20
+#	factory_maintenance = 0.04
+#	factory_input = 0.04
+#	factory_output = 0.04
+#	rgo_output = 0.08
+#	icon = 1
+#}
+#
+#admin_found_3 = {
+#	trigger = {
+#		administration_spending = 0.30
+#		NOT = { administration_spending = 0.40 }
+#	}
+#	prestige = 0.06
+#	research_points = 0.30
+#	global_pop_consciousness_modifier = -0.03
+#	#global_pop_militancy_modifier = -0.03
+#	diplomatic_points_modifier = 0.15
+#	influence = 0.15
+#	war_exhaustion = -0.03
+#	education_efficiency_modifier = 0.30
+#	factory_maintenance = 0.06
+#	factory_input = 0.06
+#	factory_output = 0.06
+#	rgo_output = 0.12
+#	icon = 1
+#}
+#
+#admin_found_4 = {
+#	trigger = {
+#		administration_spending = 0.40
+#		NOT = { administration_spending = 0.50 }
+#	}
+#	prestige = 0.08
+#	research_points = 0.40
+#	global_pop_consciousness_modifier = -0.04
+#	#global_pop_militancy_modifier = -0.04
+#	diplomatic_points_modifier = 0.20
+#	influence = 0.20
+#	war_exhaustion = -0.04
+#	education_efficiency_modifier = 0.40
+#	factory_maintenance = 0.08
+#	factory_input = 0.08
+#	factory_output = 0.08
+#	rgo_output = 0.16
+#	icon = 1
+#}
+#
+#admin_found_5 = {
+#	trigger = {
+#		administration_spending = 0.50
+#		NOT = { administration_spending = 0.60 }
+#	}
+#	prestige = 0.10
+#	research_points = 0.50
+#	global_pop_consciousness_modifier = -0.05
+#	#global_pop_militancy_modifier = -0.05
+#	diplomatic_points_modifier = 0.25
+#	influence = 0.25
+#	war_exhaustion = -0.05
+#	education_efficiency_modifier = 0.50
+#	factory_maintenance = 0.10
+#	factory_input = 0.10
+#	factory_output = 0.10
+#	rgo_output = 0.20
+#	icon = 1
+#}
+#
+#admin_found_6 = {
+#	trigger = {
+#		administration_spending = 0.60
+#		NOT = { administration_spending = 0.70 }
+#	}
+#	prestige = 0.12
+#	research_points = 0.60
+#	global_pop_consciousness_modifier = -0.06
+#	#global_pop_militancy_modifier = -0.06
+#	diplomatic_points_modifier = 0.30
+#	influence = 0.30
+#	war_exhaustion = -0.06
+#	education_efficiency_modifier = 0.60
+#	factory_maintenance = 0.12
+#	factory_input = 0.12
+#	factory_output = 0.12
+#	rgo_output = 0.24
+#	icon = 1
+#}
+#
+#admin_found_7 = {
+#	trigger = {
+#		administration_spending = 0.70
+#		NOT = { administration_spending = 0.80 }
+#	}
+#	prestige = 0.14
+#	research_points = 0.70
+#	global_pop_consciousness_modifier = -0.07
+#	#global_pop_militancy_modifier = -0.07
+#	diplomatic_points_modifier = 0.35
+#	influence = 0.35
+#	war_exhaustion = -0.07
+#	education_efficiency_modifier = 0.70
+#	factory_maintenance = 0.14
+#	factory_input = 0.14
+#	factory_output = 0.14
+#	rgo_output = 0.28
+#	icon = 1
+#}
+#
+#admin_found_8 = {
+#	trigger = {
+#		administration_spending = 0.80
+#		NOT = { administration_spending = 0.90 }
+#	}
+#	prestige = 0.16
+#	research_points = 0.80
+#	global_pop_consciousness_modifier = -0.08
+#	#global_pop_militancy_modifier = -0.08
+#	diplomatic_points_modifier = 0.40
+#	influence = 0.40
+#	war_exhaustion = -0.08
+#	education_efficiency_modifier = 0.80
+#	factory_maintenance = 0.16
+#	factory_input = 0.16
+#	factory_output = 0.16
+#	rgo_output = 0.32
+#	icon = 1
+#}
+#
+#admin_found_9 = {
+#	trigger = {
+#		administration_spending = 0.90
+#		NOT = { administration_spending = 0.99 }
+#	}
+#	prestige = 0.18
+#	research_points = 0.90
+#	global_pop_consciousness_modifier = -0.09
+#	#global_pop_militancy_modifier = -0.09
+#	diplomatic_points_modifier = 0.45
+#	influence = 0.45
+#	war_exhaustion = -0.09
+#	education_efficiency_modifier = 0.90
+#	factory_maintenance = 0.18
+#	factory_input = 0.18
+#	factory_output = 0.18
+#	rgo_output = 0.36
+#	icon = 1
+#}
+#
+#admin_found_10 = {
+#	trigger = {
+#		administration_spending = 0.99
+#	}
+#	prestige = 0.20
+#	research_points = 1.00
+#	global_pop_consciousness_modifier = -0.10
+#	#global_pop_militancy_modifier = -0.10
+#	diplomatic_points_modifier = 0.50
+#	influence = 0.50
+#	war_exhaustion = -0.10
+#	education_efficiency_modifier = 1.00
+#	factory_maintenance = 0.20
+#	factory_input = 0.20
+#	factory_output = 0.20
+#	rgo_output = 0.40
+#	icon = 1
+#}
+#
+#
+#milit_found_1 = {
+#	trigger = {
+#		military_spending = 0.10
+#		NOT = { military_spending = 0.20 }
+#	}
+#	prestige = 0.01
+#	land_organisation = 0.05
+#	naval_organisation = 0.05
+#	org_regain = 0.05
+#	war_exhaustion = -0.05
+#	influence = 0.05
+#	global_pop_militancy_modifier = -0.01
+#	icon = 1
+#}
+#
+#milit_found_2 = {
+#	trigger = {
+#		military_spending = 0.20
+#		NOT = { military_spending = 0.30 }
+#	}
+#	prestige = 0.02
+#	land_organisation = 0.10
+#	naval_organisation = 0.10
+#	org_regain = 0.10
+#	war_exhaustion = -0.10
+#	influence = 0.10
+#	global_pop_militancy_modifier = -0.02
+#	icon = 1
+#}
+#
+#milit_found_3 = {
+#	trigger = {
+#		military_spending = 0.30
+#		NOT = { military_spending = 0.40 }
+#	}
+#	prestige = 0.03
+#	land_organisation = 0.15
+#	naval_organisation = 0.15
+#	org_regain = 0.15
+#	war_exhaustion = -0.15
+#	influence = 0.15
+#	global_pop_militancy_modifier = -0.03
+#	icon = 1
+#}
+#
+#milit_found_4 = {
+#	trigger = {
+#		military_spending = 0.40
+#		NOT = { military_spending = 0.50 }
+#	}
+#	prestige = 0.04
+#	land_organisation = 0.20
+#	naval_organisation = 0.20
+#	org_regain = 0.20
+#	war_exhaustion = -0.20
+#	influence = 0.20
+#	global_pop_militancy_modifier = -0.04
+#	icon = 1
+#}
+#
+#milit_found_5 = {
+#	trigger = {
+#		military_spending = 0.50
+#		NOT = { military_spending = 0.60 }
+#	}
+#	prestige = 0.05
+#	land_organisation = 0.25
+#	naval_organisation = 0.25
+#	org_regain = 0.25
+#	war_exhaustion = -0.25
+#	influence = 0.25
+#	global_pop_militancy_modifier = -0.05
+#	icon = 1
+#}
+#
+#milit_found_6 = {
+#	trigger = {
+#		military_spending = 0.60
+#		NOT = { military_spending = 0.70 }
+#	}
+#	prestige = 0.06
+#	land_organisation = 0.30
+#	naval_organisation = 0.30
+#	org_regain = 0.30
+#	war_exhaustion = -0.30
+#	influence = 0.30
+#	global_pop_militancy_modifier = -0.06
+#	icon = 1
+#}
+#
+#milit_found_7 = {
+#	trigger = {
+#		military_spending = 0.70
+#		NOT = { military_spending = 0.80 }
+#	}
+#	prestige = 0.07
+#	land_organisation = 0.35
+#	naval_organisation = 0.35
+#	org_regain = 0.35
+#	war_exhaustion = -0.35
+#	influence = 0.35
+#	global_pop_militancy_modifier = -0.07
+#	icon = 1
+#}
+#
+#milit_found_8 = {
+#	trigger = {
+#		military_spending = 0.80
+#		NOT = { military_spending = 0.90 }
+#	}
+#	prestige = 0.08
+#	land_organisation = 0.40
+#	naval_organisation = 0.40
+#	org_regain = 0.40
+#	war_exhaustion = -0.40
+#	influence = 0.40
+#	global_pop_militancy_modifier = -0.08
+#	icon = 1
+#}
+#
+#milit_found_9 = {
+#	trigger = {
+#		military_spending = 0.90
+#		NOT = { military_spending = 0.99 }
+#	}
+#	prestige = 0.09
+#	land_organisation = 0.45
+#	naval_organisation = 0.45
+#	org_regain = 0.45
+#	war_exhaustion = -0.45
+#	influence = 0.45
+#	global_pop_militancy_modifier = -0.09
+#	icon = 1
+#}
+#
+#milit_found_10 = {
+#	trigger = {
+#		military_spending = 0.99
+#	}
+#	prestige = 0.10
+#	land_organisation = 0.50
+#	naval_organisation = 0.50
+#	org_regain = 0.50
+#	war_exhaustion = -0.50
+#	influence = 0.50
+#	global_pop_militancy_modifier = -0.10
+#	icon = 1
+#}
 
 #sustainable_education_1 = { #Changed to bonus
 #	trigger = {
