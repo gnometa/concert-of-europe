@@ -855,12 +855,13 @@ occupied_capital = {
 	icon = 1
 }
 
+
 admin_found_1 = {
 	trigger = {
-		administration_spending = 0.05
-		NOT = { administration_spending = 0.10 }
+		administration_spending = 0.10
+		NOT = { administration_spending = 0.20 }
 	}
-	prestige = 0.002
+	prestige = 0.02
 	research_points = 0.10
 	global_pop_consciousness_modifier = -0.01
 	#global_pop_militancy_modifier = -0.01
@@ -877,10 +878,10 @@ admin_found_1 = {
 
 admin_found_2 = {
 	trigger = {
-		administration_spending = 0.10
-		NOT = { administration_spending = 0.15 }
+		administration_spending = 0.20
+		NOT = { administration_spending = 0.30 }
 	}
-	prestige = 0.004
+	prestige = 0.04
 	research_points = 0.20
 	global_pop_consciousness_modifier = -0.02
 	#global_pop_militancy_modifier = -0.02
@@ -897,10 +898,10 @@ admin_found_2 = {
 
 admin_found_3 = {
 	trigger = {
-		administration_spending = 0.15
-		NOT = { administration_spending = 0.20 }
+		administration_spending = 0.30
+		NOT = { administration_spending = 0.40 }
 	}
-	prestige = 0.006
+	prestige = 0.06
 	research_points = 0.30
 	global_pop_consciousness_modifier = -0.03
 	#global_pop_militancy_modifier = -0.03
@@ -917,10 +918,10 @@ admin_found_3 = {
 
 admin_found_4 = {
 	trigger = {
-		administration_spending = 0.20
-		NOT = { administration_spending = 0.25 }
+		administration_spending = 0.40
+		NOT = { administration_spending = 0.50 }
 	}
-	prestige = 0.008
+	prestige = 0.08
 	research_points = 0.40
 	global_pop_consciousness_modifier = -0.04
 	#global_pop_militancy_modifier = -0.04
@@ -937,10 +938,10 @@ admin_found_4 = {
 
 admin_found_5 = {
 	trigger = {
-		administration_spending = 0.25
-		NOT = { administration_spending = 0.30 }
+		administration_spending = 0.50
+		NOT = { administration_spending = 0.60 }
 	}
-	prestige = 0.010
+	prestige = 0.10
 	research_points = 0.50
 	global_pop_consciousness_modifier = -0.05
 	#global_pop_militancy_modifier = -0.05
@@ -957,10 +958,10 @@ admin_found_5 = {
 
 admin_found_6 = {
 	trigger = {
-		administration_spending = 0.30
-		NOT = { administration_spending = 0.35 }
+		administration_spending = 0.60
+		NOT = { administration_spending = 0.70 }
 	}
-	prestige = 0.012
+	prestige = 0.12
 	research_points = 0.60
 	global_pop_consciousness_modifier = -0.06
 	#global_pop_militancy_modifier = -0.06
@@ -977,10 +978,10 @@ admin_found_6 = {
 
 admin_found_7 = {
 	trigger = {
-		administration_spending = 0.35
-		NOT = { administration_spending = 0.40 }
+		administration_spending = 0.70
+		NOT = { administration_spending = 0.80 }
 	}
-	prestige = 0.014
+	prestige = 0.14
 	research_points = 0.70
 	global_pop_consciousness_modifier = -0.07
 	#global_pop_militancy_modifier = -0.07
@@ -997,10 +998,10 @@ admin_found_7 = {
 
 admin_found_8 = {
 	trigger = {
-		administration_spending = 0.40
-		NOT = { administration_spending = 0.45 }
+		administration_spending = 0.80
+		NOT = { administration_spending = 0.90 }
 	}
-	prestige = 0.016
+	prestige = 0.16
 	research_points = 0.80
 	global_pop_consciousness_modifier = -0.08
 	#global_pop_militancy_modifier = -0.08
@@ -1017,10 +1018,10 @@ admin_found_8 = {
 
 admin_found_9 = {
 	trigger = {
-		administration_spending = 0.45
-		NOT = { administration_spending = 0.50 }
+		administration_spending = 0.90
+		NOT = { administration_spending = 0.99 }
 	}
-	prestige = 0.018
+	prestige = 0.18
 	research_points = 0.90
 	global_pop_consciousness_modifier = -0.09
 	#global_pop_militancy_modifier = -0.09
@@ -1037,10 +1038,9 @@ admin_found_9 = {
 
 admin_found_10 = {
 	trigger = {
-		administration_spending = 0.50
-		NOT = { administration_spending = 0.55 }
+		administration_spending = 0.99
 	}
-	prestige = 0.020
+	prestige = 0.20
 	research_points = 1.00
 	global_pop_consciousness_modifier = -0.10
 	#global_pop_militancy_modifier = -0.10
@@ -1058,10 +1058,10 @@ admin_found_10 = {
 
 milit_found_1 = {
 	trigger = {
-		military_spending = 0.05
-		NOT = { military_spending = 0.10 }
+		military_spending = 0.10
+		NOT = { military_spending = 0.20 }
 	}
-	prestige = 0.001
+	prestige = 0.01
 	land_organisation = 0.05
 	naval_organisation = 0.05
 	org_regain = 0.05
@@ -1073,10 +1073,10 @@ milit_found_1 = {
 
 milit_found_2 = {
 	trigger = {
-		military_spending = 0.10
-		NOT = { military_spending = 0.15 }
+		military_spending = 0.20
+		NOT = { military_spending = 0.30 }
 	}
-	prestige = 0.002
+	prestige = 0.02
 	land_organisation = 0.10
 	naval_organisation = 0.10
 	org_regain = 0.10
@@ -1088,10 +1088,10 @@ milit_found_2 = {
 
 milit_found_3 = {
 	trigger = {
-		military_spending = 0.15
-		NOT = { military_spending = 0.20 }
+		military_spending = 0.30
+		NOT = { military_spending = 0.40 }
 	}
-	prestige = 0.003
+	prestige = 0.03
 	land_organisation = 0.15
 	naval_organisation = 0.15
 	org_regain = 0.15
@@ -1103,10 +1103,10 @@ milit_found_3 = {
 
 milit_found_4 = {
 	trigger = {
-		military_spending = 0.20
-		NOT = { military_spending = 0.25 }
+		military_spending = 0.40
+		NOT = { military_spending = 0.50 }
 	}
-	prestige = 0.004
+	prestige = 0.04
 	land_organisation = 0.20
 	naval_organisation = 0.20
 	org_regain = 0.20
@@ -1118,10 +1118,10 @@ milit_found_4 = {
 
 milit_found_5 = {
 	trigger = {
-		military_spending = 0.25
-		NOT = { military_spending = 0.30 }
+		military_spending = 0.50
+		NOT = { military_spending = 0.60 }
 	}
-	prestige = 0.005
+	prestige = 0.05
 	land_organisation = 0.25
 	naval_organisation = 0.25
 	org_regain = 0.25
@@ -1133,10 +1133,10 @@ milit_found_5 = {
 
 milit_found_6 = {
 	trigger = {
-		military_spending = 0.30
-		NOT = { military_spending = 0.35 }
+		military_spending = 0.60
+		NOT = { military_spending = 0.70 }
 	}
-	prestige = 0.006
+	prestige = 0.06
 	land_organisation = 0.30
 	naval_organisation = 0.30
 	org_regain = 0.30
@@ -1148,10 +1148,10 @@ milit_found_6 = {
 
 milit_found_7 = {
 	trigger = {
-		military_spending = 0.35
-		NOT = { military_spending = 0.40 }
+		military_spending = 0.70
+		NOT = { military_spending = 0.80 }
 	}
-	prestige = 0.007
+	prestige = 0.07
 	land_organisation = 0.35
 	naval_organisation = 0.35
 	org_regain = 0.35
@@ -1163,10 +1163,10 @@ milit_found_7 = {
 
 milit_found_8 = {
 	trigger = {
-		military_spending = 0.40
-		NOT = { military_spending = 0.45 }
+		military_spending = 0.80
+		NOT = { military_spending = 0.90 }
 	}
-	prestige = 0.008
+	prestige = 0.08
 	land_organisation = 0.40
 	naval_organisation = 0.40
 	org_regain = 0.40
@@ -1178,10 +1178,10 @@ milit_found_8 = {
 
 milit_found_9 = {
 	trigger = {
-		military_spending = 0.45
-		NOT = { military_spending = 0.50 }
+		military_spending = 0.90
+		NOT = { military_spending = 0.99 }
 	}
-	prestige = 0.009
+	prestige = 0.09
 	land_organisation = 0.45
 	naval_organisation = 0.45
 	org_regain = 0.45
@@ -1193,10 +1193,9 @@ milit_found_9 = {
 
 milit_found_10 = {
 	trigger = {
-		military_spending = 0.50
-		NOT = { military_spending = 0.55 }
+		military_spending = 0.99
 	}
-	prestige = 0.010
+	prestige = 0.10
 	land_organisation = 0.50
 	naval_organisation = 0.50
 	org_regain = 0.50
