@@ -193,10 +193,10 @@ province_event = {
 			consciousness = -1
 			militancy = -2
 		}
-		clergymen = {
-			reduce_pop = 0.75
-			militancy = 7
-			consciousness = 5
+		bureaucrats = {
+			reduce_pop = 0.90
+			militancy = 5
+			consciousness = 3
 		}
 		any_pop = {
 			#limit = {
@@ -459,10 +459,10 @@ country_event = {
 		RUS = {
 			country_event = 301114
 		}
-		clergymen = {
-			reduce_pop = 0.6
-			militancy = 9
-			consciousness = 9
+		bureaucrats = {
+			reduce_pop = 0.85
+			militancy = 7
+			consciousness = 5
 		}
 		any_pop = {
 			#limit = {

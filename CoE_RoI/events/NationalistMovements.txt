@@ -576,7 +576,7 @@ province_event = {
 		is_primary_culture = no
 		is_accepted_culture = no
 		is_colonial = no
-		has_pop_type = clergymen
+		#has_pop_type = clergymen
 		controlled_by = owner
 	}
 	
@@ -676,19 +676,19 @@ province_event = {
 	
 	option = {
 		name = "EVTOPTA15040"
-		state_scope = {
-			clergymen = {
-				limit = {
-					is_primary_culture = no
-					is_accepted_culture = no
-				}
-				consciousness = 4
-				ideology = {
-					value = separatist
-					factor = 0.10
-				}
-			}
-		}
+		#state_scope = {
+		#	clergymen = {
+		#		limit = {
+		#			is_primary_culture = no
+		#			is_accepted_culture = no
+		#		}
+		#		consciousness = 4
+		#		ideology = {
+		#			value = separatist
+		#			factor = 0.10
+		#		}
+		#	}
+		#}
 		state_scope = {
 			any_pop = {
 				limit = {
@@ -706,17 +706,17 @@ province_event = {
 	
 	option = {
 		name = "EVTOPTB15040"
-		clergymen = {
-			limit = {
-				is_primary_culture = no
-				is_accepted_culture = no
-			}
-			reduce_pop = 0.98
-			ideology = {
-				value = separatist
-				factor = 0.25
-			}
-		}
+		#clergymen = {
+		#	limit = {
+		#		is_primary_culture = no
+		#		is_accepted_culture = no
+		#	}
+		#	reduce_pop = 0.98
+		#	ideology = {
+		#		value = separatist
+		#		factor = 0.25
+		#	}
+		#}
 		any_pop = {
 			limit = {
 				is_primary_culture = no
@@ -3605,8 +3605,8 @@ province_event = {
 		is_accepted_culture = no
 		is_state_religion = no
 		any_pop = {
-			type = clergymen
-			consciousness = 4
+			#type = clergymen
+			consciousness = 5 #4
 			is_state_religion = no
 			is_primary_culture = no
 			is_accepted_culture = no
@@ -3697,21 +3697,24 @@ province_event = {
 			set_country_flag = state_controlled_rite
 		}
 		state_scope = {
-			clergymen = {
+			any_pop = {
 				limit = {
 					is_primary_culture = no
 					is_accepted_culture = no
 				}
-				consciousness = 4
+				scaled_consciousness = {
+					ideology = reactionary
+					factor = 2
+				}
 			}
 			any_pop = {
 				limit = {
 					is_state_religion = no
 					is_primary_culture = no
 					is_accepted_culture = no
-					NOT = {
-						type = clergymen
-					}
+					#NOT = {
+					#	type = clergymen
+					#}
 				}
 				consciousness = -2
 			}

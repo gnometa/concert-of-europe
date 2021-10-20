@@ -41,16 +41,10 @@ country_event = {
 
 	option = {
 		name = "EVTOPTA37700"
-		clergymen = {
+		any_pop = {
 			scaled_militancy = {
-				factor = -2
-				ideology = conservative
-			}
-		}
-		clergymen = {
-			scaled_militancy = {
-				factor = -3
 				ideology = reactionary
+				factor = -2
 			}
 		}
 		capitalists = {
@@ -69,28 +63,14 @@ country_event = {
 
 	option = {
 		name = "EVTOPTB37700"
-		clergymen = {
+		any_pop = {
 			scaled_militancy = {
-				factor = 2
-				ideology = conservative
-			}
-		}
-		clergymen = {
-			scaled_militancy = {
-				factor = 3
 				ideology = reactionary
-			}
-		}
-		clergymen = {
-			scaled_consciousness = {
 				factor = 2
-				ideology = conservative
 			}
-		}
-		clergymen = {
 			scaled_consciousness = {
-				factor = 3
 				ideology = reactionary
+				factor = 2
 			}
 		}
 		capitalists = {
@@ -341,44 +321,28 @@ country_event = {
 
 	option = {
 		name = "EVTOPTB37707"
-		clergymen = {
+		any_pop = {
 			scaled_militancy = {
-				factor = 2
-				ideology = conservative
-			}
-		}
-		clergymen = {
-			scaled_militancy = {
-				factor = 3
 				ideology = reactionary
-			}
-		}
-		clergymen = {
-			scaled_consciousness = {
 				factor = 2
-				ideology = conservative
 			}
-		}
-		clergymen = {
 			scaled_consciousness = {
-				factor = 3
 				ideology = reactionary
+				factor = 2
 			}
 		}
 	}
 
 	option = {
 		name = "EVTOPTC37707"
-		clergymen = {
-			scaled_consciousness = {
-				factor = 2
-				ideology = conservative
-			}
-		}
-		clergymen = {
-			scaled_consciousness = {
-				factor = 3
+		any_pop = {
+			scaled_militancy = {
 				ideology = reactionary
+				factor = 2
+			}
+			scaled_consciousness = {
+				ideology = reactionary
+				factor = 2
 			}
 		}
 		capitalists = {

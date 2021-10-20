@@ -3202,6 +3202,10 @@ assimilation_chance =
 		type = 00_urban_poor
 	}
 	modifier = {
+    	factor = -50.0
+		type = clergymen
+	}
+	modifier = {
     	factor = 5.0
 		strata = middle 
 	}

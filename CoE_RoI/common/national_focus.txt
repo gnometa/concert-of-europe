@@ -48,14 +48,14 @@ promotion_focus = {
 		}
 	}
 	
-	promote_clergymen = {
-		clergymen = 0.15 #10% more likely to become this type
-		icon = 6
-		outliner_show_as_percent = yes
-		limit = { 
-			ai = no
-		}
-	}
+	#promote_clergymen = {
+	#	clergymen = 0.15 #10% more likely to become this type
+	#	icon = 6
+	#	outliner_show_as_percent = yes
+	#	limit = { 
+	#		ai = no
+	#	}
+	#}
 	#
 	#promote_clerks = {
 	#	clerks = 0.1 #10% more likely to become this type

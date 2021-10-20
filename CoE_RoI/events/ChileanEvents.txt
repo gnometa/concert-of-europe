@@ -555,12 +555,15 @@ country_event = {
 	
 		name = "He will have our support."
 		set_country_flag = sac_intervention
-		clergymen = {
-			militancy = -2
-			consciousness = 1
-#			ideology = {
-#						value = reactionary
-#						factor = 0.15}									
+		any_pop = {
+			scaled_consciousness = {
+				ideology = reactionary
+				factor = 1
+			}
+			scaled_militancy = {
+				ideology = reactionary
+				factor = -2
+			}
 		}
 		bureaucrats = {
 			militancy = 2
@@ -570,15 +573,22 @@ country_event = {
 	option = {
 	
 		name = "Do not intervene."
-		clergymen = {
-			militancy = 1
-			consciousness = 2
+		any_pop = {
+			scaled_consciousness = {
+				ideology = reactionary
+				factor = 2
+			}
+			scaled_militancy = {
+				ideology = reactionary
+				factor = 1
+			}
 		}
 		any_pop = {
-					ideology = {
-						value = conservative
-						factor = 0.03}
-						}		
+			ideology = {
+				value = conservative
+				factor = 0.03
+			}
+		}		
 		
 	}	
 	option = {
@@ -1006,13 +1016,13 @@ country_event = {
 				factor = 0.15
 			}
 			}
-		clergymen = {
-		literacy = 0.5
-			dominant_issue = {
-				value = moralism
-				factor = 0.95
-			}				
-		}
+		#clergymen = {
+		#literacy = 0.5
+		#	dominant_issue = {
+		#		value = moralism
+		#		factor = 0.95
+		#	}				
+		#}
 
     }
 

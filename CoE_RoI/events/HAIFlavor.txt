@@ -37,8 +37,11 @@ country_event = {
 		name = "EVTOPTA45100" 
 		prestige = 5
 		relation = { who = PAP value = 50 }
-		clergymen = {
-			militancy = -3
+		any_pop = {
+			scaled_militancy = {
+				ideology = reactionary
+				factor = -3
+			}
 		}
 	}
 }

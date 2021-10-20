@@ -127,6 +127,12 @@ country_event = {
 			}
 			pop_type = craftsmen
 		}
+		any_pop = { 
+			limit = { 
+				type = clergymen 
+			}
+			pop_type = bureaucrats
+		}
 		any_country = {
 			any_pop = { 
 				limit = { 
@@ -151,6 +157,12 @@ country_event = {
 				}
 				pop_type = craftsmen
 			}
+			any_pop = { 
+				limit = { 
+					type = clergymen 
+				}
+				pop_type = bureaucrats
+			}			
 		}
 		any_pop = { 
 			limit = { 
@@ -169,14 +181,14 @@ country_event = {
 			#	}
 			#	pop_type = farmers
 			#}	
-			any_pop = { 
-				limit = { 
-					type = clerks 
-					is_primary_culture = no
-					is_accepted_culture = no
-				}
-				pop_type = craftsmen
-			}				
+			#any_pop = { 
+			#	limit = { 
+			#		type = clerks 
+			#		is_primary_culture = no
+			#		is_accepted_culture = no
+			#	}
+			#	pop_type = craftsmen
+			#}				
 		}
 		
 		#random_country = { limit = { exists = yes ai = yes NOT = { tag = THIS } } country_event = 6016818 }

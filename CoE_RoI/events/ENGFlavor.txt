@@ -409,8 +409,11 @@ country_event = {
 		officers = {
 			consciousness = 1
 		}
-		clergymen = {
-			consciousness = 1
+		any_pop = {
+			scaled_consciousness = {
+				ideology = reactionary
+				factor = 1
+			}
 		}
 		clerks = {
 			consciousness = 1
@@ -1095,16 +1098,16 @@ country_event = {
 	option = {
 		name = "EVTOPTA36923" 
 		prestige = 25
-		clergymen = {
+		any_pop = {
 			dominant_issue = {
 				value = secularized
-				factor = 0.25
+				factor = 0.10
 			}
 			dominant_issue = {
 				value = pro_atheism
-				factor = 0.1
+				factor = 0.05
 			}
-			consciousness = 2
+			consciousness = 1
 		}
 		set_country_flag = Darwin
 	}

@@ -209,10 +209,15 @@ country_event = {
 				factor = 3
 			}
 		}
-		clergymen = {
-			reduce_pop = 0.95
-			consciousness = 5
-			militancy = 1
+		any_pop = {
+			scaled_consciousness = {
+				ideology = reactionary
+				factor = 5
+			}
+			scaled_militancy = {
+				ideology = reactionary
+				factor = 1
+			}
 		}
 		clerks = { 
 			consciousness = 2
@@ -260,9 +265,15 @@ country_event = {
 				factor = 3
 			}
 		}
-		clergymen = {
-			consciousness = 2
-			militancy = -1
+		any_pop = {
+			scaled_consciousness = {
+				ideology = reactionary
+				factor = 2
+			}
+			scaled_militancy = {
+				ideology = reactionary
+				factor = -1
+			}
 		}
 		clerks = { 
 			reduce_pop = 0.95

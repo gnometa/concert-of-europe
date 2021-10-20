@@ -160,9 +160,15 @@ political_decisions = {
 				duration = 1825
 			}
 			prestige_factor = -0.05
-			clergymen = {
-				militancy = 3
-				consciousness = 5
+			any_pop = {
+				scaled_militancy = {
+					ideology = reactionary
+					factor = 5
+				}
+				scaled_consciousness = {
+					ideology = reactionary
+					factor = 3
+				}
 			}
 		}
 		ai_will_do = {
@@ -198,8 +204,8 @@ political_decisions = {
 				militancy = 2
 				consciousness = -3
 			}
-			clergymen = {
-				reduce_pop = 0.9
+			bureaucrats = {
+				reduce_pop = 0.98
 			}
 		}
 		ai_will_do = {

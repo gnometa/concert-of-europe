@@ -1029,7 +1029,7 @@ country_event = {
 				OR = {
 					type = capitalists
 					type = officers
-					type = clergymen
+					type = bureaucrats
 				}
 			}
 			militancy = 4
@@ -1080,7 +1080,7 @@ country_event = {
 				OR = {
 					type = capitalists
 					type = officers
-					type = clergymen
+					type = bureaucrats
 				}
 			}
 			militancy = 4

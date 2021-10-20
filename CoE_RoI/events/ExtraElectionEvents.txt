@@ -2424,9 +2424,15 @@ country_event = {
 		any_pop = {
 			militancy = 0.5
 		}
-		clergymen = {
-			militancy = 4
-			consciousness = 2
+		any_pop = {
+			scaled_consciousness = {
+				ideology = reactionary
+				factor = 2
+			}
+			scaled_militancy = {
+				ideology = reactionary
+				factor = 4
+			}
 		}
 	}
 	
@@ -2957,9 +2963,15 @@ country_event = {
 	
 	option = { #Added by GAGA
 		name = "Use blackmail to silence him."
-		clergymen = {
-			militancy = 1
-			consciousness = 2
+		any_pop = {
+			scaled_consciousness = {
+				ideology = reactionary
+				factor = 2
+			}
+			scaled_militancy = {
+				ideology = reactionary
+				factor = 1
+			}
 		}
 		any_pop = {
 			dominant_issue = {
@@ -3135,7 +3147,7 @@ country_event = {
 	is_triggered_only = yes
 	trigger = {
 		is_colonial = no
-		has_pop_type = clergymen
+		#has_pop_type = clergymen
 		owner = {
 			is_ideology_enabled = socialist
 		}
@@ -3143,11 +3155,10 @@ country_event = {
 	}
 	option = {
 		name = "EVTOPTA140701"
-		clergymen = {
-			militancy = 2
-			ideology = {
-				value = reactionary
-				factor = 0.05
+		any_pop = {
+			scaled_militancy = {
+				ideology = reactionary
+				factor = 2
 			}
 		}
 		any_pop = {
@@ -3165,11 +3176,10 @@ country_event = {
 	}
 	option = { #Added by GAGA
 		name = "We could use this to lobby for the separation of state and church."
-		clergymen = {
-			militancy = 4
-			ideology = {
-				value = reactionary
-				factor = 0.15
+		any_pop = {
+			scaled_militancy = {
+				ideology = reactionary
+				factor = 4
 			}
 		}
 		any_pop = {
@@ -3184,8 +3194,11 @@ country_event = {
 		any_pop = {
 			consciousness = 1
 		}
-		clergymen = {
-			militancy = 1
+		any_pop = {
+			scaled_militancy = {
+				ideology = reactionary
+				factor = 1
+			}
 		}
 		random_list = {
 			50 = {
@@ -3196,8 +3209,11 @@ country_event = {
 			}
 			
 			25 = {
-				clergymen = {
-					militancy = 1
+				any_pop = {
+					scaled_militancy = {
+						ideology = reactionary
+						factor = 1
+					}
 				}
 				any_pop = {
 					dominant_issue = {
@@ -3213,9 +3229,15 @@ country_event = {
 				}
 			}
 			25 = {
-				clergymen = {
-					militancy = -2
-					consciousness = -2
+				any_pop = {
+					scaled_consciousness = {
+						ideology = reactionary
+						factor = -2
+					}
+					scaled_militancy = {
+						ideology = reactionary
+						factor = -2
+					}
 				}
 				any_pop = {
 					scaled_militancy = {
@@ -3327,8 +3349,11 @@ country_event = {
 	}
 	option = {
 		name = "EVTOPTB140801"
-		clergymen = {
-			militancy = 2
+		any_pop = {
+			scaled_militancy = {
+				ideology = reactionary
+				factor = 2
+			}
 		}
 		any_pop = {
 			scaled_militancy = {
@@ -4001,7 +4026,7 @@ country_event = {
 		is_colonial = no
 		has_pop_type = craftsmen
 		has_pop_type = capitalists
-		has_pop_type = clergymen
+		#has_pop_type = clergymen
 		owner = {
 			NOT = { trade_policy = free_trade }
 		}

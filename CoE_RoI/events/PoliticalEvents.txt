@@ -2979,9 +2979,12 @@ country_event = {
 	
 	option = {
 		name = "EVTOPTA4410"
-		clergymen = {
-			militancy = 2
-		}
+			any_pop = {
+				scaled_militancy = {
+					ideology = reactionary
+					factor = 2
+				}
+			}
 	}
 	
 	option = {
@@ -3041,8 +3044,11 @@ country_event = {
 					is_colonial = yes
 				}
 			}
-			clergymen = {
-				militancy = 2
+			any_pop = {
+				scaled_militancy = {
+					ideology = reactionary
+					factor = 2
+				}
 			}
 			poor_strata = {
 				militancy = 1

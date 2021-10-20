@@ -1491,11 +1491,11 @@ country_event = {
 		any_pop = {
 			limit = {
 				is_primary_culture = yes
-				type = clergymen
+				#type = clergymen
 			}
 			ideology = {
 				value = reactionary
-				factor = 0.1
+				factor = 0.05
 			}
 		}
 		any_pop = {

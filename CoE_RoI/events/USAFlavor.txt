@@ -651,7 +651,7 @@ country_event = {
 		clerks = {
 			consciousness = -1
 		}
-		clergymen = {
+		bureaucrats = {
 			consciousness = -1
 		}
 	}

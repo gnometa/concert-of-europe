@@ -6889,7 +6889,7 @@ MODIFIER_RICH_EVERYDAY_NEEDS;Everyday Needs for Rich Strata;Besoins quotidiens d
 MODIFIER_MIDDLE_EVERYDAY_NEEDS;Everyday Needs for Middle Strata;Besoins quotidiens des classes moyennes;Alltagsbedürfnisse für Mittelschicht;;;;;;;;;;;;x;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 MODIFIER_POOR_EVERYDAY_NEEDS;Everyday Needs for Poor Strata;Besoins quotidiens des classes défavorisées;Alltagsbedürfnisse für Armenschicht;;;;;;;;;;;;x;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 MODIFIER_UNEMPLOYMENT_BENEFIT;Unemployment Benefit;Bénéfice du chômage;Arbeitslosengeld;;;;;;;;;;;;x;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-MODIFIER_PENSION_LEVEL;Social Spendings;Niveau de pension;Rentenniveau;;;;;;;;;;;;x;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+MODIFIER_PENSION_LEVEL;Welfare Spendings;Niveau de pension;Rentenniveau;;;;;;;;;;;;x;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 MODIFIER_POPULATION_GROWTH;Population Growth;Croissance démographique;Bevölkerungswachstum;;;;;;;;;;;;x;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 MODIFIER_FACTORY_INPUT;Factory Input;Matières premières Usine;Fabrik-Input;;;;;;;;;;;;x;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 MODIFIER_FACTORY_OUTPUT;Factory Output;Rendement Usine;Fabrikleistung;;;;;;;;;;;;x;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -10076,7 +10076,7 @@ aristocrats;Rural Poor;Aristocrates;Aristokraten;;;;;;;;;;;;x;;;;;;;;;;;;;;
 artisans;Artisans;Artisans;Handwerker;;;;;;;;;;;;x;;;;;;;;;;;;;;
 bureaucrats;Bureaucrats;Bureaucrates;Bürokraten;;;;;;;;;;;;x;;;;;;;;;;;;;;
 capitalists;Owners;Capitalistes;Kapitalisten;;;;;;;;;;;;x;;;;;;;;;;;;;;
-clergymen;Teachers;Clergé;Geistliche;;;;;;;;;;;;x;;;;;;;;;;;;;;
+clergymen;Specialists in Training;Clergé;Geistliche;;;;;;;;;;;;x;;;;;;;;;;;;;;
 clerks;Industrial Specialists;Employés;Angestellte;;;;;;;;;;;;x;;;;;;;;;;;;;;
 craftsmen;Industrial Workers;Ouvriers;Facharbeiter;;;;;;;;;;;;x;;;;;;;;;;;;;;
 farmers;Extraction Workers;Fermiers;Bauern;;;;;;;;;;;;x;;;;;;;;;;;;;;

@@ -889,8 +889,8 @@ country_event = {
 			}
 		}
 		1121 = {
-			clergymen = {
-				reduce_pop = 0.80
+			bureaucrats = {
+				reduce_pop = 0.98
 			}
 			any_pop = {
 				ideology = {
@@ -903,9 +903,9 @@ country_event = {
 				}
 			}
 		}
-		clergymen = {
-			reduce_pop = 0.90
-			consciousness = 5
+		bureaucrats = {
+			reduce_pop = 0.99
+			consciousness = 1
 		}
 		any_pop = {
 			ideology = {
@@ -1285,12 +1285,12 @@ country_event = {
 				ideology = reactionary
 			}
 		}
-		clergymen = {
-			ideology = {
-				factor = 0.02
-				value = reactionary
-			}
-		}
+		#clergymen = {
+		#	ideology = {
+		#		factor = 0.02
+		#		value = reactionary
+		#	}
+		#}
 		capitalists = {
 			ideology = {
 				factor = 0.01

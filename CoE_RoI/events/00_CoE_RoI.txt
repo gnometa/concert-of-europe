@@ -567,6 +567,12 @@ country_event = {
 			}
 			pop_type = craftsmen
 		}
+		any_pop = { 
+			limit = { 
+				type = clergymen 
+			}
+			pop_type = clerks
+		}
 		#any_pop = { 
 		#	limit = { 
 		#		type = clerks 
@@ -588,6 +594,12 @@ country_event = {
 				}
 				pop_type = craftsmen
 			}
+			any_pop = { 
+				limit = { 
+					type = clergymen 
+				}
+				pop_type = clerks
+			}			
 			#any_pop = { 
 			#	limit = { 
 			#		type = clerks 
