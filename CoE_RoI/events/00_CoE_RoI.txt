@@ -824,3 +824,40 @@ country_event = {
 	}
 }
 
+country_event = {
+	id = 99988
+	title = "Enemy Lies Fallen"
+	desc = "Enemy country we happened to be at war does not hold any land anymore, in that case there is no need for our troops to be mobilised against them..."
+
+	trigger = { 
+		war = yes
+		war_countries = { exists = no }
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = "Poggers"
+		any_country = { limit = { exists = no war = yes } country_event = 99987 }
+	}
+}
+
+country_event = {
+	id = 99987
+	title = "Dead Man Can Wage No War"
+	desc = "God is dead. God remains dead. And we have killed him."
+
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = "How shall we comfort ourselves, the murderers of all murderers?"
+		end_war = FROM
+	}
+}
+

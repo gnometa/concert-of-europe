@@ -3,6 +3,7 @@ controller = TUR
 add_core = TUR
 add_core = CIR
 add_core = DON
+add_core = RUS
 trade_goods = fish
 life_rating = 30
 terrain = deciduous_forest_hills

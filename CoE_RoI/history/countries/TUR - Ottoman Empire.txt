@@ -47,7 +47,7 @@ upper_house = {
 }
 
 set_country_flag = existing_country
-decision = TUR_setup
+#decision = TUR_setup
 
 # Technologies
 post_napoleonic_thought = 1

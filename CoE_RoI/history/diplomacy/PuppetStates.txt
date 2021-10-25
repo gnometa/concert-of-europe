@@ -18,7 +18,7 @@ vassal = {
 vassal = {
 	first = NET
 	second = LUX
-	start_date = 1839.4.19
+	start_date = 1815.4.19
 	end_date = 1890.1.1
 }
 

@@ -3,6 +3,7 @@ controller = TUR
 add_core = TUR
 add_core = MOL
 add_core = ROM
+add_core = RUS
 trade_goods = fruit
 life_rating = 30
 terrain = rich_farmland
