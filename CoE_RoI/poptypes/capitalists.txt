@@ -3217,7 +3217,7 @@ ideologies = {
 }
 issues = {
 	protectionism = {
-		factor = 1.0
+		factor = 2.0
 		modifier = {
 			factor = 1.5
 			NOT = {
@@ -3236,7 +3236,7 @@ issues = {
 		}
 	}
 	free_trade = {
-		factor = 1.0
+		factor = 4.0
 		modifier = {
 			factor = 1.5
 			NOT = {
@@ -3255,7 +3255,7 @@ issues = {
 		}
 	}
 	laissez_faire = {
-		factor = 1.0
+		factor = 5.0
 		modifier = {
 			factor = 0.9
 			social_reform_want = 0.05
@@ -3311,7 +3311,7 @@ issues = {
 		}
 	} 
 	interventionism = {
-		factor = 1.0
+		factor = 3.0
 		modifier = {
 			factor = 0
 			NOT = {
@@ -3339,7 +3339,7 @@ issues = {
 		}
 	} 
 	state_capitalism = {
-		factor = 1.0
+		factor = 2.0
 		modifier = {
 			factor = 1.2
 			OR = {
@@ -3379,7 +3379,7 @@ issues = {
 		}
 	} 
 	anti_industrial = {
-		factor = 1.0
+		factor = 1.25
 		modifier = {
 			factor = 0
 			NOT = {
@@ -3435,7 +3435,7 @@ issues = {
 		}
 	} 
 	jingoism = {
-		factor = 1.0
+		factor = 2.0
 		modifier = {
 			factor = 1.1
 			OR = {
@@ -3510,7 +3510,7 @@ issues = {
 		}
 	}
 	pro_military = {
-		factor = 1.0
+		factor = 1.5
 		modifier = {
 			factor = 1.1
 			war = yes
@@ -3577,7 +3577,7 @@ issues = {
 		}
 	}
 	anti_military = {
-		factor = 1.0
+		factor = 1.25
 		modifier = {
 			factor = 1.5
 			war = yes
@@ -3716,7 +3716,7 @@ issues = {
 		}
 	}
 	secularized = {
-		factor = 1
+		factor = 1.1
 		modifier = {
 			factor = 1.5
 			NOT = { is_state_religion = yes }
@@ -3727,7 +3727,7 @@ issues = {
 		} 
 	}
 	pluralism = {
-		factor = 1.0
+		factor = 1.1
 		modifier = {
 			factor = 1.25
 			OR = {
@@ -3750,7 +3750,7 @@ issues = {
 		} 
 	}
 	moralism = {
-		factor = 1.0
+		factor = 1.1
 		modifier = {
 			factor = 1.05
 			nationalvalue = nv_order
@@ -3792,7 +3792,7 @@ issues = {
 		}
 	}
 	forced_assimilation = {
-		factor = 1.0
+		factor = 3.0
 		modifier = {
 			factor = 1.5
 			OR = {
@@ -3819,7 +3819,7 @@ issues = {
 		}
 	}
 	residency = {
-		factor = 0.5
+		factor = 2.0
 		modifier = {
 			factor = 1.1
 			OR = {
@@ -3846,7 +3846,7 @@ issues = {
 		}
 	}
 	limited_citizenship = {
-		factor = 0.5
+		factor = 1.5
 		modifier = {
 			factor = 1.5
 			is_accepted_culture = yes
@@ -3858,7 +3858,7 @@ issues = {
 		}
 	}
 	full_citizenship = {
-		factor = 1.0
+		factor = 1.25
 		modifier = {
 			factor = 1.1
 			OR = {
@@ -3880,7 +3880,7 @@ issues = {
 	}
 
 	yes_slavery = {
-		factor = 1
+		factor = 3
 		modifier = {
 			factor = 0 
 			country = {

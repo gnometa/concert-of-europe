@@ -3433,7 +3433,7 @@ ideologies = {
 }
 issues = {
 	protectionism = {
-		factor = 1.0
+		factor = 2.0
 		modifier = {
 			factor = 1.5
 			NOT = {
@@ -3527,7 +3527,7 @@ issues = {
 		}
 	} 
 	interventionism = {
-		factor = 1.0
+		factor = 2.0
 		modifier = {
 			factor = 0
 			NOT = {
@@ -3555,7 +3555,7 @@ issues = {
 		}
 	} 
 	state_capitalism = {
-		factor = 1.0
+		factor = 2.0
 		modifier = {
 			factor = 1.2
 			OR = {
@@ -3595,7 +3595,7 @@ issues = {
 		}
 	} 
 	anti_industrial = {
-		factor = 1.0
+		factor = 1.5
 		modifier = {
 			factor = 0
 			NOT = {
@@ -3623,7 +3623,7 @@ issues = {
 		}
 	} 
 	planned_economy = {
-		factor = 1.0
+		factor = 2.0
 		modifier = {
 			factor = 0
 			NOT = {
@@ -3793,7 +3793,7 @@ issues = {
 		}
 	}
 	anti_military = {
-		factor = 1.0
+		factor = 1.5
 		modifier = {
 			factor = 1.5
 			war = yes
@@ -3850,7 +3850,7 @@ issues = {
 		}
 	}
 	pacifism = {
-		factor = 1.0
+		factor = 1.25
 		modifier = {
 			factor = 1.1
 			OR = {
@@ -3914,7 +3914,7 @@ issues = {
 		}
 	}
 	pro_atheism = {
-		factor = 1.0
+		factor = 1.5
 		modifier = {
 			factor = 1.5
 			consciousness = 8
@@ -3932,7 +3932,7 @@ issues = {
 		}
 	}
 	secularized = {
-		factor = 1
+		factor = 1.5
 		modifier = {
 			factor = 1.5
 			NOT = { is_state_religion = yes }
@@ -3943,7 +3943,7 @@ issues = {
 		} 
 	}
 	pluralism = {
-		factor = 1.0
+		factor = 1.5
 		modifier = {
 			factor = 1.25
 			OR = {
@@ -4035,7 +4035,7 @@ issues = {
 		}
 	}
 	residency = {
-		factor = 0.5
+		factor = 1.0
 		modifier = {
 			factor = 1.1
 			OR = {
@@ -4062,7 +4062,7 @@ issues = {
 		}
 	}
 	limited_citizenship = {
-		factor = 0.5
+		factor = 1.5
 		modifier = {
 			factor = 1.5
 			is_accepted_culture = yes
@@ -4074,7 +4074,7 @@ issues = {
 		}
 	}
 	full_citizenship = {
-		factor = 1.0
+		factor = 1.25
 		modifier = {
 			factor = 1.1
 			OR = {
@@ -4148,7 +4148,7 @@ issues = {
 	}
 
 	no_slavery = {
-		factor = 1
+		factor = 2
 		modifier = {
 			factor = 0 
 			country = {
