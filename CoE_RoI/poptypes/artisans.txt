@@ -3425,7 +3425,7 @@ issues = {
 		}
 	}
 	laissez_faire = {
-		factor = 5.0
+		factor = 4.5
 		modifier = {
 			factor = 0.9
 			social_reform_want = 0.05
