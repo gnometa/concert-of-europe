@@ -839,7 +839,7 @@ country_event = {
 	}
 
 	option = {
-		name = "Poggers"
+		name = "Good"
 		any_country = { limit = { exists = no war = yes } country_event = 99987 }
 	}
 }
