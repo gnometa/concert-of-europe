@@ -55,7 +55,7 @@ political_decisions = {
 			2221 = {
 				any_pop = {
 					consciousness = 8
-					literacy = 0.05
+					literacy = 0.02
 				}
 			}
 			#291 = {

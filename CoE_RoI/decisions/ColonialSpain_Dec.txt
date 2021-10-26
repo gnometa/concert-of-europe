@@ -38,7 +38,7 @@ political_decisions = {
 					NOT = { literacy = 0.2 }
 					location = { is_core = PHL }
 				}
-				literacy = 0.05
+				literacy = 0.02
 			}
 			SPA_1455 = {
 				add_province_modifier = {
