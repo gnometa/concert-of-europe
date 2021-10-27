@@ -2,6 +2,7 @@ owner = EPI
 controller = TUR
 add_core = TUR
 add_core = ALB
+add_core = EPI
 trade_goods = grain
 life_rating = 30
 terrain = mountain_farmland

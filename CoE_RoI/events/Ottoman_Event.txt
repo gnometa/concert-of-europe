@@ -1951,13 +1951,13 @@ country_event = {
 		}
 		GRE = {
 			add_country_modifier = {
-				name = csa_draft
+				name = small_country_draft
 				duration = 1825
 			}
 		}
 		EPI = {
 			add_country_modifier = {
-				name = usa_draft
+				name = small_country_draft
 				duration = 1825
 			}
 		}
