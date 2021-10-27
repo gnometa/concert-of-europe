@@ -1957,7 +1957,7 @@ country_event = {
 		}
 		EPI = {
 			add_country_modifier = {
-				name = small_country_draft
+				name = csa_draft
 				duration = 1825
 			}
 		}
