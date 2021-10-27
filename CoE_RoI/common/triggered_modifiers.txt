@@ -864,7 +864,7 @@ admin_found_1 = {
 		NOT = { bureaucrats = 0.010 }
 	}
 	prestige = 0.02
-	research_points = 0.10
+	#research_points = 0.10
 	global_pop_consciousness_modifier = -0.01
 	#global_pop_militancy_modifier = -0.01
 	diplomatic_points_modifier = 0.05
@@ -884,7 +884,7 @@ admin_found_2 = {
 		NOT = { bureaucrats = 0.015 }
 	}
 	prestige = 0.04
-	research_points = 0.20
+	#research_points = 0.20
 	global_pop_consciousness_modifier = -0.02
 	#global_pop_militancy_modifier = -0.02
 	diplomatic_points_modifier = 0.10
@@ -904,7 +904,7 @@ admin_found_3 = {
 		NOT = { bureaucrats = 0.020 }
 	}
 	prestige = 0.06
-	research_points = 0.30
+	#research_points = 0.30
 	global_pop_consciousness_modifier = -0.03
 	#global_pop_militancy_modifier = -0.03
 	diplomatic_points_modifier = 0.15
@@ -924,7 +924,7 @@ admin_found_4 = {
 		NOT = { bureaucrats = 0.025 }
 	}
 	prestige = 0.08
-	research_points = 0.40
+	#research_points = 0.40
 	global_pop_consciousness_modifier = -0.04
 	#global_pop_militancy_modifier = -0.04
 	diplomatic_points_modifier = 0.20
@@ -944,7 +944,7 @@ admin_found_5 = {
 		NOT = { bureaucrats = 0.030 }
 	}
 	prestige = 0.10
-	research_points = 0.50
+	#research_points = 0.50
 	global_pop_consciousness_modifier = -0.05
 	#global_pop_militancy_modifier = -0.05
 	diplomatic_points_modifier = 0.25
@@ -964,7 +964,7 @@ admin_found_6 = {
 		NOT = { bureaucrats = 0.035 }
 	}
 	prestige = 0.12
-	research_points = 0.60
+	#research_points = 0.60
 	global_pop_consciousness_modifier = -0.06
 	#global_pop_militancy_modifier = -0.06
 	diplomatic_points_modifier = 0.30
@@ -984,7 +984,7 @@ admin_found_7 = {
 		NOT = { bureaucrats = 0.040 }
 	}
 	prestige = 0.14
-	research_points = 0.70
+	#research_points = 0.70
 	global_pop_consciousness_modifier = -0.07
 	#global_pop_militancy_modifier = -0.07
 	diplomatic_points_modifier = 0.35
@@ -1004,7 +1004,7 @@ admin_found_8 = {
 		NOT = { bureaucrats = 0.045 }
 	}
 	prestige = 0.16
-	research_points = 0.80
+	#research_points = 0.80
 	global_pop_consciousness_modifier = -0.08
 	#global_pop_militancy_modifier = -0.08
 	diplomatic_points_modifier = 0.40
@@ -1024,7 +1024,7 @@ admin_found_9 = {
 		NOT = { bureaucrats = 0.050 }
 	}
 	prestige = 0.18
-	research_points = 0.90
+	#research_points = 0.90
 	global_pop_consciousness_modifier = -0.09
 	#global_pop_militancy_modifier = -0.09
 	diplomatic_points_modifier = 0.45
@@ -1043,7 +1043,7 @@ admin_found_10 = {
 		bureaucrats = 0.050
 	}
 	prestige = 0.20
-	research_points = 1.00
+	#research_points = 1.00
 	global_pop_consciousness_modifier = -0.10
 	#global_pop_militancy_modifier = -0.10
 	diplomatic_points_modifier = 0.50

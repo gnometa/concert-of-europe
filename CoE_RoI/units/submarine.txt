@@ -25,6 +25,16 @@ submarine = {
 	supply_consumption = 1.0
 	supply_cost = {
 		military_industry = 0.075
+		coal = 0.25
+		horses = 0.10
+		lead = 0.40
+		copper = 0.40
+		sulphur = 0.20
+		timber = 0.20
+		cattle = 0.05
+		cotton = 0.05
+		wool = 0.10	
+		iron = 0.10
 	}
 	
 	#Naval Abilties
