@@ -1165,12 +1165,13 @@ PHL_liberal;Partido Liberal;Partido Liberal;Partido Liberal;;;;;;;;;;;x
 PHL_anarcho_liberal;Partido Libertad;Partido Libertad;Partido Libertad;;;;;;;;;;;x
 PHL_conservative;Partido Nacionalista;Partido Nacionalista;Partido Nacionalista;;;;;;;;;;;x
 PHL_fascist;Partido Fascista;Partido Fascista;Partido Fascista;;;;;;;;;;;x
-PLC;Polish-Lithuanian Commonwealth;;;;;;;;;;;;x
-PLC_ADJ;Polish-Lithuanian;;;;;;;;;;;;x
-PLC_proletarian_dictatorship;Polish-Lithuanian Republic;;;;;;;;;;;;x
+PLC;Poland-Lithuania-Ruthenia;;;;;;;;;;;;x
+PLC_ADJ;Polish-Lithuanian-Ruthenian;;;;;;;;;;;;x
+PLC_proletarian_dictatorship;Union of Central Europe;;;;;;;;;;;;x
+PLC_proletarian_dictatorship_ADJ;Central European;;;;;;;;;;;;x
 PLC_fascist_dictatorship;Sarmatia;;;;;;;;;;;;x
-PLC_presidential_dictatorship;Polish-Lithuanian Republic;;;;;;;;;;;;x
-PLC_democracy;Poland-Lithuania;;;;;;;;;;;;x
+PLC_presidential_dictatorship;Poland-Lithuania-Ruthenia;;;;;;;;;;;;x
+PLC_democracy;Poland-Lithuania-Ruthenia;;;;;;;;;;;;x
 PLC_conservative;Narodowa-Demokracja;National-démocratique;Narodowa-Demokracja;;Narodowa-Demokracja;;;;;;;;;x
 PLC_anarcho_liberal;Stronnictwo Radykalne;Parti radical;Stronnictwo Radykalne;;Stronnictwo Radykalne;;;;;;;;;x
 PLC_communist;Partia Komunistyczna;Parti communiste;Partia Komunistyczna;;Partia Komunistyczna;;;;;;;;;x
