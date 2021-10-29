@@ -3,6 +3,7 @@ controller = PER
 add_core = TUR
 add_core = ARM
 add_core = PER
+add_core = RUS
 trade_goods = wool
 life_rating = 30
 terrain = deciduous_forest_hills
