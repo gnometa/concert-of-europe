@@ -238,6 +238,7 @@ country_event = {
 	trigger = {
 		tag = NET
 		exists = yes
+		BEL = { exists = yes }
 		OR = {
 			OR = { government = absolute_monarchy government = absolute_monarchy2 government = absolute_monarchy3 }
 			OR = { government = prussian_constitutionalism government = prussian_constitutionalism2 government = prussian_constitutionalism3 }
