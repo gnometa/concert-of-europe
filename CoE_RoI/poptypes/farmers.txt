@@ -4742,7 +4742,7 @@ issues = {
 		}
 	} 
 	interventionism = {
-		factor = 2.5
+		factor = 2.0
 		modifier = {
 			factor = 0
 			NOT = {
@@ -4810,7 +4810,7 @@ issues = {
 		}
 	} 
 	anti_industrial = {
-		factor = 2.0
+		factor = 1.5
 		modifier = {
 			factor = 0
 			NOT = {
@@ -4838,7 +4838,7 @@ issues = {
 		}
 	} 
 	planned_economy = {
-		factor = 2.0
+		factor = 1.5
 		modifier = {
 			factor = 0
 			NOT = {
