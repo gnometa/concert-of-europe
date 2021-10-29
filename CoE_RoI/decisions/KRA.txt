@@ -340,7 +340,7 @@ political_decisions = {
 		potential = {
 			OR = {
 				primary_culture = polish
-				primary_culture = lithuanian
+				primary_culture = byelorussian
 			}
 			NOT = { exists = PLC }
 			NOT = { has_country_flag = post_colonial_country }
@@ -396,6 +396,7 @@ political_decisions = {
 		effect = {
 			prestige = 10
 			add_accepted_culture = polish
+			add_accepted_culture = byelorussian
 			#add_accepted_culture = lithuanian
 			political_reform = protected
 			all_core = {
