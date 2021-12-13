@@ -9,7 +9,8 @@ country_event = {
 		exists = yes
 		is_vassal = no
 		part_of_sphere = yes
-		NOT = { has_country_flag = military_access_granted }
+		#NOT = { has_country_flag = military_access_granted }
+		NOT = { sphere_owner = { military_access = THIS } }
 	}
 	
 	mean_time_to_happen = {
@@ -58,7 +59,8 @@ country_event = {
 	trigger = {
 		exists = yes
 		is_vassal = no
-		has_country_flag = military_access_granted
+		#has_country_flag = military_access_granted
+		sphere_owner = { military_access = THIS } }
 		OR = {
 			any_greater_power = {
 				military_access = THIS

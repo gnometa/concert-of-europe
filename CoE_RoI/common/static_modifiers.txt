@@ -71,7 +71,7 @@ overseas = {
 	#mine_RGO_size = 3
 	population_growth = -0.0002
 	assimilation_rate = -0.5
-	pop_consciousness_modifier = -0.1
+	pop_consciousness_modifier = -0.05
 }
 
 coastal = {
@@ -140,8 +140,8 @@ infrastructure = {
 ##########################################################################
 
 base_values = {
-	global_pop_militancy_modifier = -0.10
-	global_pop_consciousness_modifier = -0.05
+	global_pop_militancy_modifier = -0.05
+	global_pop_consciousness_modifier = -0.01
 	#min_social_spending = 0.10
 	education_efficiency_modifier = 2.00
 	land_unit_start_experience = -30

@@ -264,7 +264,7 @@ political_reforms = {
 			allow = {
 				always = no
 			}
-			#political_reform_desire = 0.05
+			political_reform_desire = 0.05
 			education_efficiency_modifier = -0.05
 		}
 		no_slavery = {
@@ -283,8 +283,8 @@ political_reforms = {
 			middle_vote = 0
 			poor_vote = 0
 			cb_generation_speed_modifier = 0.3
-			#political_reform_desire = 0.25
-			#social_reform_desire = 0.125
+			political_reform_desire = 0.25
+			social_reform_desire = 0.125
 		}
 		landed_voting = {
 			rich_vote = 1
@@ -292,16 +292,16 @@ political_reforms = {
 			poor_vote = 0.01
 			global_immigrant_attract = 0.005
 			cb_generation_speed_modifier = 0.1
-			#political_reform_desire = 0.20
-			#social_reform_desire = 0.10
+			political_reform_desire = 0.20
+			social_reform_desire = 0.10
 		}
 		wealth_weighted_voting = {
 			rich_vote = 2
 			middle_vote = 1
 			poor_vote = 0.01
 			global_immigrant_attract = 0.01
-			#political_reform_desire = 0.15
-			#social_reform_desire = 0.075
+			political_reform_desire = 0.15
+			social_reform_desire = 0.075
 		}
 		wealth_voting = {
 			rich_vote = 1
@@ -309,8 +309,8 @@ political_reforms = {
 			poor_vote = 0.05
 			global_immigrant_attract = 0.015
 			cb_generation_speed_modifier = -0.1
-			#political_reform_desire = 0.10
-			#social_reform_desire = 0.05
+			political_reform_desire = 0.10
+			social_reform_desire = 0.05
 		}
 		universal_weighted_voting = {
 			rich_vote = 3
@@ -318,8 +318,8 @@ political_reforms = {
 			poor_vote = 1
 			global_immigrant_attract = 0.02
 			cb_generation_speed_modifier = -0.2
-			#political_reform_desire = 0.05
-			#social_reform_desire = 0.025
+			political_reform_desire = 0.05
+			social_reform_desire = 0.025
 		}
 		universal_voting = {
 			rich_vote = 1
@@ -336,20 +336,20 @@ political_reforms = {
 			allow = {
 				always = no
 			}
-			#political_reform_desire = 0.10
+			political_reform_desire = 0.10
 		}
 		appointed = {
 			rules = { rich_only = yes }
-			#political_reform_desire = 0.05
-			#social_reform_desire = 0.025
+			political_reform_desire = 0.05
+			social_reform_desire = 0.025
 		}
 		state_equal_weight = {
 			rules = { state_vote = yes }
 			allow = {
 				NOT = { vote_franschise = none_voting }
 			}
-			#political_reform_desire = 0.025
-			#social_reform_desire = 0.01
+			political_reform_desire = 0.025
+			social_reform_desire = 0.01
 		}
 		population_equal_weight = {
 			rules = { population_vote = yes }
@@ -385,13 +385,13 @@ political_reforms = {
 		no_meeting = {
 			suppression_points_modifier = 0.25
 			global_pop_consciousness_modifier = -0.01
-			#political_reform_desire = 0.05
-			#social_reform_desire = 0.025
+			political_reform_desire = 0.05
+			social_reform_desire = 0.025
 		}
 		yes_meeting = {
 			issue_change_speed = 0.5
 			global_immigrant_attract = 0.005
-			#social_reform_desire = 0.025
+			social_reform_desire = 0.025
 		}
 	}
 	press_rights = {
@@ -401,16 +401,16 @@ political_reforms = {
 			global_pop_consciousness_modifier = -0.01
 			ruling_party_support = 0.10
 			global_immigrant_attract = -0.001
-			#political_reform_desire = 0.10
-			#social_reform_desire = 0.05
+			political_reform_desire = 0.10
+			social_reform_desire = 0.05
 		}
 		censored_press = {
 			literacy_con_impact = 0.5
 			suppression_points_modifier = -0.25
 			ruling_party_support = 0.05
 			issue_change_speed = 0.5
-			#political_reform_desire = 0.05
-			#social_reform_desire = 0.025
+			political_reform_desire = 0.05
+			social_reform_desire = 0.025
 		}
 		free_press = {
 			literacy_con_impact = 1
@@ -419,15 +419,15 @@ political_reforms = {
 			issue_change_speed = 1
 			global_immigrant_attract = 0.005
 			global_pop_consciousness_modifier = 0.01
-			#social_reform_desire = 0.025
+			social_reform_desire = 0.025
 		}
 	}
 	trade_unions = {
 		next_step_only = yes
 		no_trade_unions = {
-			#social_reform_desire = 0.00
+			social_reform_desire = 0.00
 			global_pop_consciousness_modifier = -0.01
-			#political_reform_desire = 0.05
+			political_reform_desire = 0.05
 		}
 		state_controlled = {
 			social_reform_desire = 0.10
@@ -461,8 +461,8 @@ political_reforms = {
 			allow = {
 				NOT = { vote_franschise = none_voting }
 			}
-		    #political_reform_desire = 0.10
-			#social_reform_desire = 0.05
+		    political_reform_desire = 0.10
+			social_reform_desire = 0.05
 		}
 		harassment = {
 			ruling_party_support = 0.15
@@ -471,8 +471,8 @@ political_reforms = {
 			allow = {
 				NOT = { vote_franschise = none_voting }
 			}
-			#political_reform_desire = 0.075
-			#social_reform_desire = 0.035
+			political_reform_desire = 0.075
+			social_reform_desire = 0.035
 		}
 		gerrymandering = {
 			ruling_party_support = 0.10
@@ -480,8 +480,8 @@ political_reforms = {
 			allow = {
 				NOT = { vote_franschise = none_voting }
 			}
-			#political_reform_desire = 0.05
-			#social_reform_desire = 0.025
+			political_reform_desire = 0.05
+			social_reform_desire = 0.025
 		}
 		non_secret_ballots = {
 			ruling_party_support = 0.05
@@ -490,8 +490,8 @@ political_reforms = {
 			allow = {
 				NOT = { vote_franschise = none_voting }
 			}
-			#political_reform_desire = 0.025
-			#social_reform_desire = 0.01
+			political_reform_desire = 0.025
+			social_reform_desire = 0.01
 		}
 		secret_ballots = {
 			global_immigrant_attract = 0.02
@@ -506,8 +506,8 @@ political_reforms = {
 		nobody_gets_out = {
 			global_immigrant_attract = -1.0
 			global_pop_consciousness_modifier = -0.01
-			#political_reform_desire = 0.10
-			#social_reform_desire = 0.05
+			political_reform_desire = 0.10
+			social_reform_desire = 0.05
 			education_efficiency_modifier = -0.50
 			goods_demand = -0.10
 			artisan_throughput = -0.10

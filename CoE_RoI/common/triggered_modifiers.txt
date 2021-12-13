@@ -863,7 +863,7 @@ admin_found_1 = {
 		bureaucrats = 0.005
 		NOT = { bureaucrats = 0.010 }
 	}
-	prestige = 0.02
+	prestige = 0.01
 	#research_points = 0.10
 	#global_pop_consciousness_modifier = -0.01
 	#global_pop_militancy_modifier = -0.01
@@ -883,7 +883,7 @@ admin_found_2 = {
 		bureaucrats = 0.010
 		NOT = { bureaucrats = 0.015 }
 	}
-	prestige = 0.04
+	prestige = 0.02
 	#research_points = 0.20
 	global_pop_consciousness_modifier = -0.01
 	#global_pop_militancy_modifier = -0.02
@@ -903,7 +903,7 @@ admin_found_3 = {
 		bureaucrats = 0.015
 		NOT = { bureaucrats = 0.020 }
 	}
-	prestige = 0.06
+	prestige = 0.03
 	#research_points = 0.30
 	global_pop_consciousness_modifier = -0.01
 	#global_pop_militancy_modifier = -0.03
@@ -923,7 +923,7 @@ admin_found_4 = {
 		bureaucrats = 0.020
 		NOT = { bureaucrats = 0.025 }
 	}
-	prestige = 0.08
+	prestige = 0.04
 	#research_points = 0.40
 	global_pop_consciousness_modifier = -0.02
 	#global_pop_militancy_modifier = -0.04
@@ -943,7 +943,7 @@ admin_found_5 = {
 		bureaucrats = 0.025
 		NOT = { bureaucrats = 0.030 }
 	}
-	prestige = 0.10
+	prestige = 0.05
 	#research_points = 0.50
 	global_pop_consciousness_modifier = -0.02
 	#global_pop_militancy_modifier = -0.05
@@ -963,7 +963,7 @@ admin_found_6 = {
 		bureaucrats = 0.030
 		NOT = { bureaucrats = 0.035 }
 	}
-	prestige = 0.12
+	prestige = 0.06
 	#research_points = 0.60
 	global_pop_consciousness_modifier = -0.03
 	#global_pop_militancy_modifier = -0.06
@@ -983,7 +983,7 @@ admin_found_7 = {
 		bureaucrats = 0.035
 		NOT = { bureaucrats = 0.040 }
 	}
-	prestige = 0.14
+	prestige = 0.07
 	#research_points = 0.70
 	global_pop_consciousness_modifier = -0.03
 	#global_pop_militancy_modifier = -0.07
@@ -1003,7 +1003,7 @@ admin_found_8 = {
 		bureaucrats = 0.040
 		NOT = { bureaucrats = 0.045 }
 	}
-	prestige = 0.16
+	prestige = 0.08
 	#research_points = 0.80
 	global_pop_consciousness_modifier = -0.04
 	#global_pop_militancy_modifier = -0.08
@@ -1023,7 +1023,7 @@ admin_found_9 = {
 		bureaucrats = 0.045
 		NOT = { bureaucrats = 0.050 }
 	}
-	prestige = 0.18
+	prestige = 0.09
 	#research_points = 0.90
 	global_pop_consciousness_modifier = -0.04
 	#global_pop_militancy_modifier = -0.09
@@ -1042,7 +1042,7 @@ admin_found_10 = {
 	trigger = {
 		bureaucrats = 0.050
 	}
-	prestige = 0.20
+	prestige = 0.10
 	#research_points = 1.00
 	global_pop_consciousness_modifier = -0.05
 	#global_pop_militancy_modifier = -0.10

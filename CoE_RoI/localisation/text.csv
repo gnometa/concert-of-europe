@@ -6564,7 +6564,7 @@ promotion_focus;Promotion;Promotion;Beförderung;;;;;;;;;;;;x;;;;;;;;;;;;;;
 promote_aristocrats;Encourage Aristocrats ;Encourager les aristocrates;Aristokraten fördern;;;;;;;;;;;;x;;;;;;;;;;;;;;
 promote_artisans;Encourage Artisans ;Encourager les artisans;Handwerker fördern;;;;;;;;;;;;x;;;;;;;;;;;;;;
 promote_bureaucrats;Encourage Bureaucrats ;Encourager les bureaucrates;Bürokraten fördern;;;;;;;;;;;;x;;;;;;;;;;;;;;
-promote_capitalists;Promote Local Develompent;Encourager les capitalistes;Kapitalisten fördern;;;;;;;;;;;;x;;;;;;;;;;;;;;
+promote_capitalists;Promote Local Development;Encourager les capitalistes;Kapitalisten fördern;;;;;;;;;;;;x;;;;;;;;;;;;;;
 promote_clergymen;Encourage Intellectuals ;Encourager les membres du clergé;Geistliche fördern;;;;;;;;;;;;x;;;;;;;;;;;;;;
 promote_clerks;Encourage Clerks ;Encourager les employés de bureau;Angestellte fördern;;;;;;;;;;;;x;;;;;;;;;;;;;;
 promote_craftsmen;Encourage Craftsmen ;Encourager les ouvriers;Facharbeiter fördern;;;;;;;;;;;;x;;;;;;;;;;;;;;
@@ -15056,7 +15056,7 @@ MORE_THAN_MIL;Militancy above §Y$VAL$§W.\n;Militantisme supérieur à §Y$VAL$§W;Mi
 NOT_MORE_THAN_MIL;Militancy below §Y$VAL$§W.\n;Militantisme inférieur à §Y$VAL$§W;Militanz unter §Y$VAL$§W;;;;;;;;;;;;x;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 UNEMPLOYMENT_HIGHER_THAN;Unemployment above §Y$VAL$§W%;Chômage supérieur à §Y$VAL$§W%;Arbeitslosigkeit über §Y$VAL$§W;;;;;;;;;;;;x;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 NOT_UNEMPLOYMENT_HIGHER_THAN;Unemployment below §Y$VAL$§W%;Chômage inférieur à §Y$VAL$§W%;Arbeitslosigkeit unter §Y$VAL$§W;;;;;;;;;;;;x;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-LITERACY_HIGHER_THAN;Develompent above §Y$VAL$§W%\n;Alphabétisation supérieure à §Y$VAL$§W%;Alphabetisierung über §Y$VAL$§W;;;;;;;;;;;;x;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+LITERACY_HIGHER_THAN;Development above §Y$VAL$§W%\n;Alphabétisation supérieure à §Y$VAL$§W%;Alphabetisierung über §Y$VAL$§W;;;;;;;;;;;;x;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 NOT_LITERACY_HIGHER_THAN;Development below §Y$VAL$§W%\n;Alphabétisation inférieure à §Y$VAL$§W%;Alphabetisierung unter §Y$VAL$§W;;;;;;;;;;;;x;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 MILITARY_SPENDING_OVER;Military Spending above §Y$VAL$§W%\n;Dépenses militaires supérieures à §Y$VAL$§W%;Wehretat über §Y$VAL$§W;;;;;;;;;;;;x;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 NOT_MILITARY_SPENDING_OVER;Military Spending below §Y$VAL$§W%\n;Dépenses militaires inférieures à §Y$VAL$§W%;Wehretat unter §Y$VAL$§W;;;;;;;;;;;;x;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
