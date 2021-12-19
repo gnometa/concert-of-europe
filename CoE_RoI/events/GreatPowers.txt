@@ -60,7 +60,7 @@ country_event = {
 		exists = yes
 		is_vassal = no
 		#has_country_flag = military_access_granted
-		sphere_owner = { military_access = THIS } }
+		sphere_owner = { military_access = THIS }
 		OR = {
 			any_greater_power = {
 				military_access = THIS
