@@ -22,7 +22,7 @@ political_decisions = {
 		allow = {
 			war = no
 			state_n_government = 1
-			GER = {
+			SGF = {
 				all_core = {
 					OR = {
 						OR = {
@@ -37,7 +37,6 @@ political_decisions = {
 								is_greater_power = no
 							}
 						}
-						NOT = { has_country_flag = south_german_rel }
 					}
 				}
 			}
@@ -112,7 +111,7 @@ political_decisions = {
 		allow = {
 			war = no
 			state_n_government = 1
-			GER = {
+			SGF = {
 				all_core = {
 					OR = {
 						OR = {
@@ -127,7 +126,6 @@ political_decisions = {
 								is_greater_power = no
 							}
 						}
-						NOT = { has_country_flag = south_german_rel }
 					}
 				}
 			}
@@ -203,7 +201,7 @@ political_decisions = {
 		allow = {
 			war = no
 			state_n_government = 1
-			GER = {
+			NGF = {
 				all_core = {
 					OR = {
 						OR = {
@@ -216,7 +214,6 @@ political_decisions = {
 								}
 								war = no
 								is_greater_power = no
-								NOT = { has_country_flag = north_german_rel }
 							}
 						}
 						#NOT = { has_country_flag = north_german_rel }
@@ -495,6 +492,7 @@ political_decisions = {
 				}
 				country_event = 11101
 			}
+			FRA_412 = { add_core = GER }
 		}
 		ai_will_do = {
 			factor = 1
@@ -659,6 +657,7 @@ political_decisions = {
 				}
 				country_event = 11101
 			}
+			FRA_412 = { add_core = GER }
 		}
 		ai_will_do = {
 			factor = 1
@@ -753,70 +752,71 @@ political_decisions = {
 				}
 				country_event = 11101
 			}
+			FRA_412 = { add_core = GER }
 		}
 		ai_will_do = {
 			factor = 1
 		}
 	}
 	
-	austria_annex_SGF = {
-		picture = austrian_form_south_german_confederation
-		potential = {
-			OR = {
-				tag = AUS
-				AND = {
-					tag = KUK
-					has_country_flag = austrian_greater_germany
-				}
-			}
-			SGF = { exists = yes }
-			OR = {
-				has_country_flag = austrian_greater_germany
-				NOT = {
-					any_owned_province = {
-						NOT = { 
-							OR = {
-								is_core = AUS
-								is_core = GER
-								is_colonial = yes
-							}
-						}
-					}
-				}
-			}
-		}
-		
-		allow = {
-			is_greater_power = yes
-			war = no
-			SGF = {
-				OR = {
-					in_sphere = THIS
-					vassal_of = THIS
-				}
-			}
-		}
-		
-		effect = {
-			prestige = 30
-			badboy = 10
-			SGF = {
-				all_core = {
-					add_core = THIS
-					remove_core = SGF
-				}
-			}
-			inherit = SGF
-		}
-		
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				factor = 0
-				badboy = 0.6
-			}
-		}
-	}
+	#austria_annex_SGF = {
+	#	picture = austrian_form_south_german_confederation
+	#	potential = {
+	#		OR = {
+	#			tag = AUS
+	#			AND = {
+	#				tag = KUK
+	#				has_country_flag = austrian_greater_germany
+	#			}
+	#		}
+	#		SGF = { exists = yes }
+	#		OR = {
+	#			has_country_flag = austrian_greater_germany
+	#			NOT = {
+	#				any_owned_province = {
+	#					NOT = { 
+	#						OR = {
+	#							is_core = AUS
+	#							is_core = GER
+	#							is_colonial = yes
+	#						}
+	#					}
+	#				}
+	#			}
+	#		}
+	#	}
+	#	
+	#	allow = {
+	#		is_greater_power = yes
+	#		war = no
+	#		SGF = {
+	#			OR = {
+	#				in_sphere = THIS
+	#				vassal_of = THIS
+	#			}
+	#		}
+	#	}
+	#	
+	#	effect = {
+	#		prestige = 30
+	#		badboy = 10
+	#		SGF = {
+	#			all_core = {
+	#				add_core = THIS
+	#				remove_core = SGF
+	#			}
+	#		}
+	#		inherit = SGF
+	#	}
+	#	
+	#	ai_will_do = {
+	#		factor = 1
+	#		modifier = {
+	#			factor = 0
+	#			badboy = 0.6
+	#		}
+	#	}
+	#}
 
 	form_italy = {
 		news = yes

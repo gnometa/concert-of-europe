@@ -2,6 +2,7 @@ owner = SWH
 controller = SWH
 add_core = SWH
 add_core = SCH
+add_core = NGF
 trade_goods = cattle
 life_rating = 30
 terrain = marginal_farmland

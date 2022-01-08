@@ -739,7 +739,7 @@ political_decisions = {
 			412 = {
 				NOT = {
 					is_core = GER
-					owned_by = GER
+					#owned_by = GER
 				}
 			}
 		}
@@ -751,6 +751,7 @@ political_decisions = {
 			OR = {
 				war_policy = jingoism
 				412 = { owner = { war_with = THIS } }
+				412 = { owned_by = GER }
 			}
 		}
 		
