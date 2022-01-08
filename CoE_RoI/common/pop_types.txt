@@ -624,7 +624,11 @@ demotion_chance =
 	modifier = {
 		factor = -2.00
 		strata = rich
-	}	
+	}
+	modifier = {
+		factor = -1.00
+		strata = middle
+	}		
 	#modifier = {
 	#	factor = 100.0
 	#	type = aristocrats
