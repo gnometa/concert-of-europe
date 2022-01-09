@@ -100,50 +100,50 @@ political_decisions = {
 		ai_will_do = { factor = 1 }
 	}
 
-	reorganize_south_africa = {
-		picture = form_south_africa
-		potential = {
-			civilized = yes
-			owns = 2087
-			SAF = {
-				exists = no
-				NOT = { is_culture_group = THIS }
-			}
-			NOT = {
-				capital_scope = { continent = africa }
-			}
-		}
-
-		allow = {
-			war = no
-			nationalism_n_imperialism = 1
-			owns = 2087
-		}
-
-		effect = {
-			prestige = 10
-			SAF = {
-				all_core = {
-					limit = {
-						NOT = { owned_by = THIS }
-					}
-					remove_core = SAF
-				}
-				primary_culture = THIS
-				add_accepted_culture = boer
-			}
-			any_pop = {
-				limit = {
-					location = { is_core = SAF }
-				}
-				militancy = -3
-			}
-		}
-	
-		ai_will_do = {
-			factor = 1
-		}
-	}
+	#reorganize_south_africa = {
+	#	picture = form_south_africa
+	#	potential = {
+	#		civilized = yes
+	#		owns = 2087
+	#		SAF = {
+	#			exists = no
+	#			NOT = { is_culture_group = THIS }
+	#		}
+	#		NOT = {
+	#			capital_scope = { continent = africa }
+	#		}
+	#	}
+	#
+	#	allow = {
+	#		war = no
+	#		nationalism_n_imperialism = 1
+	#		owns = 2087
+	#	}
+	#
+	#	effect = {
+	#		prestige = 10
+	#		SAF = {
+	#			all_core = {
+	#				limit = {
+	#					NOT = { owned_by = THIS }
+	#				}
+	#				remove_core = SAF
+	#			}
+	#			primary_culture = THIS
+	#			add_accepted_culture = boer
+	#		}
+	#		any_pop = {
+	#			limit = {
+	#				location = { is_core = SAF }
+	#			}
+	#			militancy = -3
+	#		}
+	#	}
+	#
+	#	ai_will_do = {
+	#		factor = 1
+	#	}
+	#}
 
 	appeal_to_the_british = {
 		picture = treaty_signing

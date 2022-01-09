@@ -1,112 +1,112 @@
 political_decisions = {
 
-	organize_angola = {
-		picture = map_africa
-		potential = {
-			civilized = yes
-			NOT = {
-				has_global_flag = angola_created
-				capital_scope = { continent = africa }
-			}
-			owns = 1999
-		}
-
-		allow = {
-			OR = {
-				any_owned_province = {
-					OR = {
-						province_id = 2000
-						region = POR_2003
-						region = POR_2006
-						region = POR_1999
-					}
-					culture = portuguese
-				}
-				state_n_government = 1
-			}
-		}
-
-		effect = {
-			set_global_flag = angola_created
-			prestige = 5
-			ANG = {
-				primary_culture = THIS
-				set_country_flag = civilize_after_release
-			}
-			any_owned = {
-				limit = {
-					OR = {
-						province_id = 2000
-						region = POR_2003
-						region = POR_2006
-						region = POR_1999
-					}
-				}
-				add_core = ANG
-				add_province_modifier = {
-					name = colonial_exploitation
-					duration = 365
-				}
-			}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	organize_mozambique = {
-		picture = map_africa
-		potential = {
-			owns = 2049
-			civilized = yes
-			NOT = {
-				has_global_flag = mozambique_created
-				capital_scope = { continent = africa }
-			}
-		}
-
-		allow = {
-			OR = {
-				any_owned_province = {
-					OR = {
-						region = POR_2049
-						region = POR_2053
-						region = POR_2060
-					}
-					culture = portuguese
-				}
-				state_n_government = 1
-			}
-		}
-
-		effect = {
-			set_global_flag = mozambique_created
-			prestige = 5
-			MOZ = {
-				primary_culture = THIS
-				set_country_flag = civilize_after_release
-			}
-			any_owned = {
-				limit = {
-					OR = {
-						region = POR_2049
-						region = POR_2053
-						region = POR_2060
-					}
-				}
-				add_core = MOZ
-				add_province_modifier = {
-					name = colonial_exploitation
-					duration = 1049
-				}
-			}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-	}
+	#organize_angola = {
+	#	picture = map_africa
+	#	potential = {
+	#		civilized = yes
+	#		NOT = {
+	#			has_global_flag = angola_created
+	#			capital_scope = { continent = africa }
+	#		}
+	#		owns = 1999
+	#	}
+	#
+	#	allow = {
+	#		OR = {
+	#			any_owned_province = {
+	#				OR = {
+	#					province_id = 2000
+	#					region = POR_2003
+	#					region = POR_2006
+	#					region = POR_1999
+	#				}
+	#				culture = portuguese
+	#			}
+	#			state_n_government = 1
+	#		}
+	#	}
+	#
+	#	effect = {
+	#		set_global_flag = angola_created
+	#		prestige = 5
+	#		ANG = {
+	#			primary_culture = THIS
+	#			set_country_flag = civilize_after_release
+	#		}
+	#		any_owned = {
+	#			limit = {
+	#				OR = {
+	#					province_id = 2000
+	#					region = POR_2003
+	#					region = POR_2006
+	#					region = POR_1999
+	#				}
+	#			}
+	#			add_core = ANG
+	#			add_province_modifier = {
+	#				name = colonial_exploitation
+	#				duration = 365
+	#			}
+	#		}
+	#	}
+	#
+	#	ai_will_do = {
+	#		factor = 1
+	#	}
+	#}
+	#
+	#organize_mozambique = {
+	#	picture = map_africa
+	#	potential = {
+	#		owns = 2049
+	#		civilized = yes
+	#		NOT = {
+	#			has_global_flag = mozambique_created
+	#			capital_scope = { continent = africa }
+	#		}
+	#	}
+	#
+	#	allow = {
+	#		OR = {
+	#			any_owned_province = {
+	#				OR = {
+	#					region = POR_2049
+	#					region = POR_2053
+	#					region = POR_2060
+	#				}
+	#				culture = portuguese
+	#			}
+	#			state_n_government = 1
+	#		}
+	#	}
+	#
+	#	effect = {
+	#		set_global_flag = mozambique_created
+	#		prestige = 5
+	#		MOZ = {
+	#			primary_culture = THIS
+	#			set_country_flag = civilize_after_release
+	#		}
+	#		any_owned = {
+	#			limit = {
+	#				OR = {
+	#					region = POR_2049
+	#					region = POR_2053
+	#					region = POR_2060
+	#				}
+	#			}
+	#			add_core = MOZ
+	#			add_province_modifier = {
+	#				name = colonial_exploitation
+	#				duration = 1049
+	#			}
+	#		}
+	#	}
+	#
+	#	ai_will_do = {
+	#		factor = 1
+	#	}
+	#}
 
 	portuguese_civil_code = {
 		picture = enact_the_homestead_act
