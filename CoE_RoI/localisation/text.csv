@@ -9727,7 +9727,7 @@ acceptable_subsidies;Extended Subsidies;Allocations étendues;Ausgedehnte Unterst
 acceptable_subsidies_desc;Extended unemployment subsidies.;Allocations chômage étendues.;Ausgedehnte Arbeitlosenunterstützung.;;;;;;;;;;;;x;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 good_subsidies;Generous Subsidies;Allocations généreuses;Großzügige Unterstützung;;;;;;;;;;;;x;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 good_subsidies_desc;Generous unemployment subsidies.;Généreuses allocations chômage.;Großzügige Arbeitlosenunterstützung.;;;;;;;;;;;;x;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-pensions;Pensions;Pensions;Renten;;;;;;;;;;;;x;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+pensions;Welfare;Pensions;Renten;;;;;;;;;;;;x;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 no_pensions;No Pensions;Aucune pension;Keine Renten;;;;;;;;;;;;x;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 no_pensions_desc;No state pensions.;Aucune pension d'État.;Keine staatlichen Renten.;;;;;;;;;;;;x;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 trinket_pensions;Trinket Pensions;Pensions dérisoires;Sachrente;;;;;;;;;;;;x;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
