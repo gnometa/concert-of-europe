@@ -82,7 +82,7 @@ PER_1132;Khuzestan;;;;;;;;;;;;x
 PER_1136;Fars;;;;;;;;;;;;x
 PER_1140;Kerman;;;;;;;;;;;;x
 YEM_1178;Sana'a;;;;;;;;;;;;x
-AFG_1209;Pashtunistan;;;;;;;;;;;;x
+AFG_1209;Western Pashtunistan;;;;;;;;;;;;x
 KOK_1210;Bandakshan;;;;;;;;;;;;x
 AFG_1214;Kandahar;;;;;;;;;;;;x
 PAN_1233;Amritsar;;;;;;;;;;;;x
@@ -173,19 +173,19 @@ ALD_1704;Oran;;;;;;;;;;;;x
 ALD_1708;Constantine;;;;;;;;;;;;x
 PROV1709;Bône;;;;;;;;;;;;x
 ALD_1713;North Central Sahara;;;;;;;;;;;;x
-TRI_1731;Tripolitania;;;;;;;;;;;;x
+TRI_1731;Lybia;;;;;;;;;;;;x
 TRI_1735;Cyrenaica;;;;;;;;;;;;x
 TRI_1740;Fezzan;;;;;;;;;;;;x
-EGY_1745;Cairo;;;;;;;;;;;;x
+EGY_1745;Egypt;;;;;;;;;;;;x
 EGY_1751;Alexandria;;;;;;;;;;;;x
 EGY_1753;Qattara;;;;;;;;;;;;x
 EGY_1755;Sinai;;;;;;;;;;;;x
 ENG_1844;Sudd;;;;;;;;;;;;x
 ETH_1852;Begemder;;;;;;;;;;;;x
 ETH_1853;Tigray;;;;;;;;;;;;x
-ETH_1859;Shewa;;;;;;;;;;;;x
+ETH_1859;Ethiopia;;;;;;;;;;;;x
 ETH_1862;Gibe;;;;;;;;;;;;x
-ETH_1865;Hararghe;;;;;;;;;;;;x
+ETH_1865;Ethiopian Somaliland;;;;;;;;;;;;x
 PROV1860;Hawassa;;;;;;;;;;;;x
 PROV1863;Jimma;;;;;;;;;;;;x
 PROV1864;Sidamo;;;;;;;;;;;;x
@@ -193,7 +193,7 @@ PROV1866;Bale;;;;;;;;;;;;x
 PROV1867;Ogaden;;;;;;;;;;;;x
 SOM_1868;South Somaliland;;;;;;;;;;;;x
 SOM_1872;North Somaliland;;;;;;;;;;;;x
-FRA_1878;Lower Guinea;;;;;;;;;;;;x
+FRA_1878;Middle Guinea;;;;;;;;;;;;x
 FRA_1883;Upper Guinea;;;;;;;;;;;;x
 ASH_1909;Gold Coast;;;;;;;;;;;;x
 FRA_1919;Dahomey;;;;;;;;;;;;x
@@ -212,7 +212,7 @@ ENG_2044;Tanganyika;;;;;;;;;;;;x
 ENG_2048;Zanzibar;;;;;;;;;;;;x
 POR_2054;Tete;;;;;;;;;;;;x
 ENG_2067;Nyasaland;;;;;;;;;;;;x
-ENG_2068;Mashonaland;;;;;;;;;;;;x
+ENG_2068;Zimbabwe;;;;;;;;;;;;x
 ENG_2071;Matabeleland;;;;;;;;;;;;x
 ENG_2074;Bechuanaland;;;;;;;;;;;;x
 ENG_2094;Kimberley;;;;;;;;;;;;x
@@ -240,6 +240,7 @@ PROV2554;Misiones;;;;;;;;;;;;x
 HES_2560;Hessen;;;;;;;;;;;;x
 RUS_2587;Kola;;;;;;;;;;;;x
 CHI_2678;Outer Mongolia;;;;;;;;;;;;x
+AFG_1218;Eastern Pashtunistan;;;;;;;;;;;;x
 PROV2834;Bay of Ayan;;;;;;;;;;;;x
 PROV2836;Coast of Kamchatka;;;;;;;;;;;;x
 PROV2837;Sea of Okhotsk;;;;;;;;;;;;x

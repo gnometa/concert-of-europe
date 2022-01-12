@@ -217,11 +217,11 @@ EGY_1842;Darfur;Darfour;Darfur;;Darfur;;;;;;;;;x
 EGY_1838;Kordofan;Kordofan;Kordofan;;Kordofan;;;;;;;;;x
 EGY_915;Lebanon;Liban;Libanon;;Líbano;;;;;;;;;x
 CHI_2562;Formosa;Formose;Formosa;;Formosa;;;;;;;;;x
-BEL_1977;Bas-Congo;Bas-Congo;Bas-Congo;;Bas-Congo;;;;;;;;;x
+BEL_1977;Congo-Kinshasa;Bas-Congo;Bas-Congo;;Bas-Congo;;;;;;;;;x
 BEL_1987;Katanga;Katanga;Katanga;;Katanga;;;;;;;;;x
 BEL_1990;Congo Orientale;Congo Oriental;Congo Orientale;;Congo Orientale;;;;;;;;;x
 BEL_1984;Kasai;Kasai;Kasai;;Kasai;;;;;;;;;x
-POR_1999;North Angola;Nord de l’Angola;Nord-Angola;;Angola del norte;;;;;;;;;x
+POR_1999;Angola;Nord de l’Angola;Nord-Angola;;Angola del norte;;;;;;;;;x
 ENG_1956;South Cameroon;Sud du Cameroun;Süd-Kamerun;;Camerún meridional;;;;;;;;;x
 ENG_1960;North Cameroon;Nord du Cameroun;Nord-Kamerun;;Camerún septentrional;;;;;;;;;x
 ENG_1868;Somaliland;Somalie;Somaliland;;Somalilandia;;;;;;;;;x
@@ -251,7 +251,7 @@ ENG_2083;Namaqualand;Namaqualand;Namaqualand;;Namaqualandia;;;;;;;;;x
 ENG_2096;Eastern Cape;Cap oriental;Eastern Cape;;Cabo oriental;;;;;;;;;x
 ENG_2087;Cape Colony;Colonie du Cap;Cape Colony;;Colonia del Cabo;;;;;;;;;x
 BEL_1992;Equateur;Equateur;Equateur;;Equateur;;;;;;;;;x
-FRA_1978;Congo;Congo;Kongo;;El Congo;;;;;;;;;x
+FRA_1978;Congo-Brazzaville;Congo;Kongo;;El Congo;;;;;;;;;x
 CNG;Congo;Congo;Kongo;;El Congo;;;;;;;;;x
 CNG_absolute_monarchy;Congo Free State;Etat libre du Congo;Kongo-Freistaat;;Estado libre del Congo;;;;;;;;;x
 CNG_presidential_dictatorship;Zaire;Zaïre;Zaire;;Zaire;;;;;;;;;x
