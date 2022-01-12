@@ -438,6 +438,7 @@ the_port_of_novorossiysk = {
 						has_global_flag = taiping_has_happened
 						in_sphere = RUS
 					}
+					has_country_flag = berlin_conference
 				}
 			}
 		}
