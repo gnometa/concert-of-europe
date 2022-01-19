@@ -29,15 +29,15 @@ rebel =
 #	weight = 1.0
 #}
 
-everyday_needs_income = {
-	type = education
-	weight = 1.0
-}
-
-#luxury_needs_income = {
+#everyday_needs_income = {
 #	type = education
 #	weight = 1.0
 #}
+
+luxury_needs_income = {
+	type = education
+	weight = 1.0
+}
 
 can_build = yes
 
