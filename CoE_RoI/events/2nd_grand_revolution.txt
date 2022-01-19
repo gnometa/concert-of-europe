@@ -796,8 +796,8 @@ country_event = {
 
 country_event = {
 	id = 99909
-	title = "Intervention By 'Traitors'" #Generic
-	desc = "The government of a state which has recently seceded from Germany is now - some may call it 'traitorously' - siding with the enemies of the 'true' revolution of the people, seeking an armed conflict with its German brothers."													
+	title = "Intervention By Traitors" #Generic
+	desc = "The government of a state which has recently seceded from Germany is now - some may call it 'traitorously' - siding with the enemies of the true revolution of the people, seeking an armed conflict with its German brothers."													
 	major = yes
 	fire_only_once = yes
 	
@@ -961,7 +961,7 @@ country_event = {
 country_event = {
 	id = 99905
 	title = "'Grossdeutschland' Unification"
-	desc = "The recent war against Austria - or what was left of its former glory - has been victorious. Now all the people of this 'Remnant Empire' disintegrate into various nations and states, a pity...Nonetheless, Austria has fallen!"													
+	desc = "The recent war against Austria - or what was left of its former glory - has been victorious. Now all the people of this 'Remnant Empire' disintegrate into various nations and states, a pity... Nonetheless, Austria has fallen!"													
 	major = yes
 	fire_only_once = yes
 	

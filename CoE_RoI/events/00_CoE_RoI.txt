@@ -304,10 +304,9 @@ country_event = {
 
 	trigger = {
 		land_property = commoners_properties
-		NOT = { 
-			NOT = { government = proletarian_dictatorship government = proletarian_dictatorship2 government = proletarian_dictatorship3 government = socialist_democracy government = socialist_democracy2 government = socialist_democracy3 }
-		}
-		economic_policy = planned_economy
+		NOT = { government = proletarian_dictatorship government = proletarian_dictatorship2 government = proletarian_dictatorship3 government = socialist_democracy government = socialist_democracy2 government = socialist_democracy3 }
+		NOT = { economic_policy = planned_economy }
+		NOT = { economic_policy = anti_industrial }
 	}
 	
 	mean_time_to_happen = {
@@ -327,7 +326,7 @@ country_event = {
 	}
 
 	option = {
-		name = "We should perhaps think of land reform..."
+		name = "We should perhaps think of a land reform..."
 		social_reform = land_purchase
 	}
 }
@@ -846,7 +845,7 @@ country_event = {
 
 country_event = {
 	id = 99987
-	title = "Dead Man Can Wage No War"
+	title = "Dead Man Wage No War"
 	desc = "God is dead. God remains dead. And we have killed him."
 
 	is_triggered_only = yes

@@ -20,10 +20,7 @@ country_event = {
 		add_country_modifier = {
 				name = road_to_communism_paved
 				duration = -1
-		}	
-		#inherit = MAD
-		#activate_technology = nationalism_n_imperialism
-		#political_reform = oppression
+		}
 	}
 }
 
@@ -52,8 +49,5 @@ country_event = {
 		remove_country_modifier = road_to_communism_paved
 		remove_country_modifier = nep_econ
 		remove_country_modifier = 5y_econ	
-		#inherit = MAD
-		#activate_technology = nationalism_n_imperialism
-		#political_reform = oppression
 	}
 }
