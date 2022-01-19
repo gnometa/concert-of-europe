@@ -90,6 +90,7 @@ cut_down_to_size
 cut_down_to_size_boxer
 humiliate
 place_in_the_sun
+place_in_the_sun1
 place_in_the_sun2
 place_in_the_sun3
 place_in_the_sun4
@@ -98,6 +99,7 @@ place_in_the_sun6
 #dismantle_forts
 china_acquire_state
 acquire_state
+acquire_state1
 acquire_state2
 acquire_state3
 acquire_state4
