@@ -17,6 +17,7 @@ political_decisions = {
 		effect = {
 			prestige = 10
 			badboy = -1
+			MAD = { all_core = { add_core = ISR } }
 			release = ISR
 			create_vassal = ISR
 			ISR = { set_country_flag = immigration_contender }
