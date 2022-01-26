@@ -17,14 +17,17 @@ country_event = {
 			is_ideology_enabled = communist 
 		}
 		has_country_flag = had_liberal_revolution
-		invention = pierre_joseph_proudhon
+		invention = karl_marx #invention = pierre_joseph_proudhon
 	}
 	major = yes
 	fire_only_once = yes
 
 	mean_time_to_happen = {
 		months = 24
-		
+		modifier = {
+			factor = 0.5
+			invention = friedrich_engels
+		}		
 		modifier = {
 			factor = 1.5
 			poor_strata_life_needs = 0.95
@@ -98,7 +101,7 @@ country_event = {
 			is_ideology_enabled = socialist 
 		}
 		is_ideology_enabled = communist 
-		invention = karl_marx
+		invention = vangaurd_party #invention = karl_marx
 	}
 	
 	major = yes
@@ -107,10 +110,10 @@ country_event = {
 	mean_time_to_happen = {
 		months = 24
 		
-		modifier = {
-			factor = 0.5
-			invention = friedrich_engels
-		}
+		#modifier = {
+		#	factor = 0.5
+		#	invention = friedrich_engels
+		#}
 		modifier = {
 			factor = 1.5
 			poor_strata_life_needs = 0.95
