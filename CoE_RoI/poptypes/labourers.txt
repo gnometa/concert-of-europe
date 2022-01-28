@@ -30,6 +30,7 @@ rebel =
 life_needs = {
 	food_industry = 26.0
 	light_industry = 5
+	heavy_industry = 2.5
 }
 everyday_needs = {
 	light_industry = 15
@@ -4552,7 +4553,7 @@ issues = {
 	}
 
 	no_slavery = {
-		factor = 5
+		factor = 1
 		modifier = {
 			factor = 0 
 			country = {

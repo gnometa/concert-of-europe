@@ -42,6 +42,7 @@ everyday_needs_income = {
 life_needs = {
 	food_industry = 76.0
 	light_industry = 6
+	heavy_industry = 3.0
 }
 everyday_needs = {
 	light_industry = 18

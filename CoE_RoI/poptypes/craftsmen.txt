@@ -45,6 +45,7 @@ can_build = yes
 life_needs = {
 	food_industry = 76.0
 	light_industry = 16
+	heavy_industry = 8.0
 }
 everyday_needs = {
 	light_industry = 48
@@ -5012,7 +5013,7 @@ issues = {
 	}
 
 	no_slavery = {
-		factor = 3
+		factor = 1
 		modifier = {
 			factor = 0 
 			country = {

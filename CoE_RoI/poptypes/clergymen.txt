@@ -37,44 +37,44 @@ demote_migrant = no
 #	weight = 1.0
 #}
 
-#life_needs = {
-#	food_industry = 52.0
-#	light_industry = 10.0
-#}
-#everyday_needs = {
-#	light_industry = 30.0
-#	food_industry = 120
-#}
-#luxury_needs = {
-#	luxury_industry = 12
-#	food_industry = 160
-#	light_industry = 24.00
-#	heavy_industry = 4.5
-#	
-#	#+ a bit of everything
-#	cotton = 15
-#	dye = 15
-#	wool = 15
-#	silk = 15
-#	coal = 15
-#	sulphur = 15
-#	iron = 15
-#	timber = 15
-#	tropical_wood = 15
-#	rubber = 15
-#	oil = 15 
-#	copper = 15
-#	lead = 15
-#	cattle = 15
-#	fish = 15
-#	fruit = 15
-#	grain = 15
-#	tobacco = 15
-#	tea = 15 
-#	coffee = 15
-#	opium = 15
-#	spices = 15	
-#}
+life_needs = {
+	#food_industry = 76.0
+	#light_industry = 16
+}
+everyday_needs = {
+	light_industry = 48
+	food_industry = 180
+}
+luxury_needs = {
+	luxury_industry = 18
+	food_industry = 240
+	light_industry = 24.0
+	heavy_industry = 18.0
+	
+	#+ a bit of everything
+	cotton = 10
+	dye = 10 
+	wool = 10
+	silk = 10
+	coal = 10
+	sulphur = 10
+	iron = 10
+	timber = 10
+	tropical_wood = 10
+	rubber = 10
+	oil = 10 
+	copper = 10
+	lead = 10
+	cattle = 10
+	fish = 10
+	fruit = 10
+	grain = 10 
+	tobacco = 10
+	tea = 10 
+	coffee = 10
+	opium = 10
+	spices = 10		
+}
 
 country_migration_target =
 {

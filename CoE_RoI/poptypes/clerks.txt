@@ -40,6 +40,7 @@ color = { 220 60 105 }
 life_needs = {
 	food_industry = 84.0
 	light_industry = 20
+	heavy_industry = 10.0
 }
 everyday_needs = {
 	light_industry = 60
@@ -4153,7 +4154,7 @@ issues = {
 	}
 
 	no_slavery = {
-		factor = 2
+		factor = 1
 		modifier = {
 			factor = 0 
 			country = {
