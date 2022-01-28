@@ -1262,15 +1262,15 @@ country_event = {
 			remove_country_modifier = no_more_war
 			relation = { who = FRA value = -50 }
 		}
-		398 = {
-			remove_core = BEL
-			remove_core = NET
-		}
-		397 = {
-			remove_core = BEL
-			remove_core = NET
-			owner = { release_vassal = LUX }
-		}
+		#398 = {
+		#	remove_core = BEL
+		#	remove_core = NET
+		#}
+		#397 = {
+		#	remove_core = BEL
+		#	remove_core = NET
+		#	owner = { release_vassal = LUX }
+		#}
 		
 		# Send acknowledgement to attending countries
 		any_country = {
