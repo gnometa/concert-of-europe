@@ -144,7 +144,7 @@ base_values = {
 	global_pop_consciousness_modifier = -0.01
 	#min_social_spending = 0.10
 	education_efficiency_modifier = 2.00
-	land_unit_start_experience = -30
+	land_unit_start_experience = -50
 	org_regain = 1.0
 	pension_level = 0.10
 	mobilisation_size = 0.05	
@@ -159,6 +159,7 @@ base_values = {
 	#poor_income_modifier = 1
 	#middle_income_modifier = 1
 	#rich_income_modifier = 1	
+	goods_demand = 0.10
 }
 
 war = {
@@ -256,7 +257,7 @@ average_literacy = {
 	research_points_modifier = 1
 	leadership = 1
 	org_regain = 0.5
-	land_unit_start_experience = 30
+	land_unit_start_experience = 50
 	tax_efficiency = -0.25
 	pension_level = 0.20
 	mobilisation_size = 0.10
