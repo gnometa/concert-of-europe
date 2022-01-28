@@ -19,14 +19,14 @@ military_factory_template = {
 	{
 		poptype = capitalists
 		effect = output
-		effect_multiplier = 10
+		effect_multiplier = 5
 	}
 
 	employees = {
 		{
 			poptype = craftsmen
 			effect = throughput
-			effect_multiplier = 1.0
+			effect_multiplier = 1.25
 			amount = 0.5 #amount = 0.25
 		}
 		#{
@@ -38,7 +38,7 @@ military_factory_template = {
 		{
 			poptype = clerks
 			effect = throughput
-			effect_multiplier = 2.00
+			effect_multiplier = 2.50
 			amount = 0.5 #amount = 0.15
 		}
 	}
@@ -64,14 +64,14 @@ heavy_factory_template = {
 	{
 		poptype = capitalists
 		effect = output
-		effect_multiplier = 10
+		effect_multiplier = 5
 	}
 
 	employees = {
 		{
 			poptype = craftsmen
 			effect = throughput
-			effect_multiplier = 1.0
+			effect_multiplier = 1.00
 			amount = 0.5 #amount = 0.25
 		}
 		#{
@@ -110,14 +110,14 @@ food_factory_template = {
 	{
 		poptype = capitalists
 		effect = output
-		effect_multiplier = 10
+		effect_multiplier = 5
 	}
 
 	employees = {
 		{
 			poptype = craftsmen
 			effect = throughput
-			effect_multiplier = 1.0
+			effect_multiplier = 1.00
 			amount = 0.5 #amount = 0.25
 		}
 		#{
@@ -158,14 +158,14 @@ light_factory_template = {
 	{
 		poptype = capitalists
 		effect = output
-		effect_multiplier = 10
+		effect_multiplier = 5
 	}
 
 	employees = {
 		{
 			poptype = craftsmen
 			effect = throughput
-			effect_multiplier = 1.0
+			effect_multiplier = 1.00
 			amount = 0.5 #amount = 0.25
 		}
 		#{
@@ -226,14 +226,14 @@ luxury_factory_template = {
 	{
 		poptype = capitalists
 		effect = output
-		effect_multiplier = 10
+		effect_multiplier = 5
 	}
 
 	employees = {
 		{
 			poptype = craftsmen
 			effect = throughput
-			effect_multiplier = 1.0
+			effect_multiplier = 1.00
 			amount = 0.5 #amount = 0.25
 		}
 		#{
@@ -739,7 +739,7 @@ artisan_food_maker = {
 	}
 	output_goods = food_industry
 
-	value = 180.0
+	value = 200.0
 	owner = {
 		poptype = artisan
 		effect = output
