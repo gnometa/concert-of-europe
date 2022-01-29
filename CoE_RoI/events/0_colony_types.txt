@@ -543,7 +543,7 @@ country_event = {
 		any_country = {
 			any_owned = {
 				limit = { 
-					is_colonial = yes
+					state_scope = { is_colonial = yes }
 					OR = { 
 						owner = { tag = FRA }
 						owner = { tag = NET }
