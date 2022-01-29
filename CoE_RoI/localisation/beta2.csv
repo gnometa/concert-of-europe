@@ -45,8 +45,8 @@ HAS_FACTORIES;Has factories.\n;Dispose d'usines.\n;Hat Fabriken.\n;;Tiene fábric
 RETREAT_DELAY_IRO;There is still §Y$VAL$§W day(s) left until a voluntary retreat can be made.;Il reste §Y$VAL$§W jour(s) jusqu'à ce qu'une retraite volontaire puisse intervenir.;Ein freiwilliger Rückzug ist erst in §Y$VAL$§W Tag(en) möglich.;;Aún falta(n) §Y$VAL$§W día(s) hasta que se pueda realizar una retirada voluntaria.;;;;;;;;x;;;
 PW_CANTCOLONIZE;Not possible to colonize here yet.;Impossible de coloniser ici pour le moment.;Kolonisierung hier noch nicht möglich.;;Aquí no se puede colonizar todavía.;;;;;;;;x;;;
 IS_COLONIAL_STATE_POPVIEW;Colonial State;État colonial;Kolonialstaat;;Estado colonial;;;;;;;;x;;;
-CULTURE_IS_NOT;Culture is NOT;La culture n'est PAS;Kultur ist NICHT;;La cultura NO es;;;;;;;;x;;;
-CULTURE_IS;Culture is;La culture est;Kultur ist;;La cultura es;;;;;;;;x;;;
+CULTURE_IS_NOT;Nationality is NOT;La culture n'est PAS;Kultur ist NICHT;;La cultura NO es;;;;;;;;x;;;
+CULTURE_IS;Nationality is;La culture est;Kultur ist;;La cultura es;;;;;;;;x;;;
 INVALID_WARTARGET_TROOPS_IN_THEM;We have troops inside their borders.;Nous avons des troupes à l'intérieur de leurs frontières.;Wir haben Truppen innerhalb ihrer Grenzen.;;Tenemos tropas dentro de sus fronteras.;;;;;;;;x;;;
 WEX_EFFECTS;Current Effects;Effets actuels;Aktuelle Effekte;;Efectos en curso;;;;;;;;x;;;
 NOBODY_CAN_VOTE_HERE;Nobody is allowed the vote.;Personne n'est autorisé à voter.;Niemand darf wählen.;;Nadie puede votar.;;;;;;;;x;;;
