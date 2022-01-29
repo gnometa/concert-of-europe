@@ -3929,7 +3929,7 @@ country_event = {
 		NOT = {
 			AND = {
 				OR = {
-					OR = { government = prussian_constitutionalism government = prussian_constitutionalism2 government = prussian_constitutionalism3 }
+					#OR = { government = prussian_constitutionalism government = prussian_constitutionalism2 government = prussian_constitutionalism3 }
 					OR = { government = hms_government government = hms_government2 government = hms_government3 }
 					OR = { government = democracy government = democracy2 government = democracy3 }
 				}
