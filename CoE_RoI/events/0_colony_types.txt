@@ -447,7 +447,7 @@ province_event = {
 				NOT = { owner = { total_pops = 12000000 } }
 			}		
 			AND = {
-				state_scope = { total_pops = 400000 } }
+				state_scope = { total_pops = 400000 }
 				owner = { total_pops = 12000000 }
 				NOT = { owner = { total_pops = 13000000 } }
 			}	
@@ -495,6 +495,54 @@ province_event = {
 	}
 }
 
+country_event = {
+	id = 999885
+	title = "Colonial SetUp2"
+	desc = "Colonial SetUp2."
+	
+	is_triggered_only = yes
+	
+	#allow_multiple_instances = yes	
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	option = {
+		name = "Colonial SetUp2!"
+		any_country = {
+			limit = {  
+				OR = { 
+					tag = FRA
+					tag = NET
+					tag = DEN
+					tag = SWE
+					tag = SPA
+				}
+			}
+			any_owned = {
+				limit = { 
+					state_scope = { is_colonial = yes }
+					#OR = { 
+					#	owner = { tag = FRA }
+					#	owner = { tag = NET }
+					#	owner = { tag = DEN }
+					#	owner = { tag = SWE }
+					#	owner = { tag = SPA }
+					#}
+				}
+				remove_province_modifier = exploitation_colony
+				remove_province_modifier = settlement_colony
+				add_province_modifier = {
+					name = exploitation_colony
+					duration = -1
+				}			
+			}
+		}
+		set_global_flag = colonial_setup_done
+	}
+}
+
 #province_event = {
 #	id = 999886
 #	title = "Colony No More"
@@ -524,42 +572,3 @@ province_event = {
 #		}		
 #	}
 #}
-
-country_event = {
-	id = 999885
-	title = "Colonial SetUp2"
-	desc = "Colonial SetUp2."
-	
-	is_triggered_only = yes
-	
-	#allow_multiple_instances = yes	
-	
-	mean_time_to_happen = {
-		months = 1
-	}
-	
-	option = {
-		name = "Colonial SetUp2!"
-		any_country = {
-			any_owned = {
-				limit = { 
-					state_scope = { is_colonial = yes }
-					OR = { 
-						owner = { tag = FRA }
-						owner = { tag = NET }
-						owner = { tag = DEN }
-						owner = { tag = SWE }
-						owner = { tag = SPA }
-					}
-				}
-				remove_province_modifier = exploitation_colony
-				remove_province_modifier = settlement_colony
-				add_province_modifier = {
-					name = exploitation_colony
-					duration = -1
-				}			
-			}
-		}
-		set_global_flag = colonial_setup_done
-	}
-}
