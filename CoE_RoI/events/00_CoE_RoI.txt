@@ -904,3 +904,43 @@ country_event = {
 	}
 }
 
+country_event = {
+	id = 99985
+	title = "Under new Management"
+	desc = "Our 'liberation' is near, as our liberators put it we will be more 'under new managment' than free..."
+	#picture = "greek_independance"
+
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+
+	option = {
+		name = "Forward to Victory!"
+		set_country_flag = { from_liberation_to_conquest }
+		sphere_owner  = {
+			country_event = 99985
+		}
+	}
+}
+
+country_event = {
+	id = 99984
+	title = "New Managment Established"
+	desc = "The people we 'liberated' can finally be 'free' under new management!"
+	#picture = "greek_independance"
+
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+
+	option = {
+		name = "Forward to Victory!"
+		inherit = FROM
+		FROM = { clr_country_flag = from_liberation_to_conquest }
+	}
+}
+
