@@ -1952,6 +1952,26 @@ colonialmigration_chance = {
 	modifier = {
 		factor = -100
 		country = { NOT = { has_country_flag = land_suitable_for_settlement } }
+	}
+	modifier = {
+		factor = -0.3
+		NOT = { country = { num_of_cities = 10 } }
+	}	
+	modifier = {
+		factor = -0.2
+		NOT = { country = { num_of_cities = 20 } }
+	}	
+	modifier = {
+		factor = -0.1
+		NOT = { country = { num_of_cities = 40 } }
+	}	
+	modifier = {
+		factor = -0.1
+		NOT = { country = { num_of_cities = 60 } }
+	}		
+	modifier = {
+		factor = -0.1
+		NOT = { country = { num_of_cities = 80 } }
 	}	
 	modifier = {
 		factor = 0.3
