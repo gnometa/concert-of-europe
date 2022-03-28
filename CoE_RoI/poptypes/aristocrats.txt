@@ -1828,7 +1828,7 @@ ideologies = {
 	}
 
 	conservative = {
-		factor = 0.75
+		factor = 0.40
 		modifier = {
 			factor = 1.2
 			country = { 
@@ -2677,7 +2677,7 @@ ideologies = {
 	}
 
 	liberal = {
-		factor = 1.5
+		factor = 0.75
 		modifier = {
 			factor = 1.2
 			country = { 
