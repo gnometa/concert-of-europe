@@ -197,19 +197,22 @@ political_decisions = {
 		allow = { 
 			OR = {
 				AND = {
-					economic_policy = planned_economy
-					literacy = 0.40
+					OR = {
+						economic_policy = planned_economy
+						economic_policy = anti_industrial
+					}
+					literacy = 0.60
 				}
 				AND = {
 					health_care = acceptable_health_care
 					pensions = acceptable_pensions
 					education = public
-					literacy = 0.50
+					literacy = 0.70
 				}
 				AND = {
 					economic_policy = laissez_faire
 					land_property = land_purchase
-					literacy = 0.60
+					literacy = 0.80
 				}
 				literacy = 0.90
 			}
@@ -218,7 +221,7 @@ political_decisions = {
 			set_country_flag = end_of_stagnation_fra
 			add_country_modifier = {
 				name = catching_up_economically
-				duration = 9125
+				duration = 7300
 			}
 			remove_country_modifier = demographic_collapse	
 			any_owned = {
@@ -229,7 +232,7 @@ political_decisions = {
 				limit = { is_core = FRA }
 				add_province_modifier = {				
 					name = catching_up_economically_prov
-					duration = 10800
+					duration = 3650
 				}
 			}				
 		}
