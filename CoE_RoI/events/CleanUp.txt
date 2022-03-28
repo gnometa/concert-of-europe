@@ -1881,7 +1881,10 @@ country_event = {
 	
 	trigger = {
 		exists = yes
-		government = democracy
+		OR = {
+			government = democracy
+			government = socialist_democracy
+		}
 		vote_franschise = none_voting
 		ruling_party_ideology = communist
 		civilized = yes
@@ -1918,7 +1921,10 @@ country_event = {
 	
 	trigger = {
 		exists = yes
-		government = democracy2
+		OR = {
+			government = democracy2
+			government = socialist_democracy2
+		}
 		vote_franschise = none_voting
 		ruling_party_ideology = communist
 		civilized = yes
@@ -1955,7 +1961,10 @@ country_event = {
 	
 	trigger = {
 		exists = yes
-		government = democracy3
+		OR = {
+			government = democracy3
+			government = socialist_democracy3
+		}
 		vote_franschise = none_voting
 		ruling_party_ideology = communist
 		civilized = yes
