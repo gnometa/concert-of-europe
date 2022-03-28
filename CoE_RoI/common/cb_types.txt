@@ -1966,6 +1966,22 @@ free_peoples = {
 				FROM = { tag = GEO }
 			}
 		}
+		NOT = { 
+			AND = { 
+				FROM = { tag = NGF }
+				NGF = { 
+					exists = no 
+				} 
+			} 
+		}
+		NOT = { 
+			AND = { 
+				FROM = { tag = SGF }
+				SGF = { 
+					exists = no 
+				} 
+			} 
+		}
 	}
 
 	# THIS - us
@@ -2358,6 +2374,22 @@ liberate_country = {
 				FROM = { tag = TUR }
 			}
 			THIS = { ai = no }
+		}
+		NOT = { 
+			AND = { 
+				FROM = { tag = NGF }
+				NGF = { 
+					exists = no 
+				} 
+			} 
+		}
+		NOT = { 
+			AND = { 
+				FROM = { tag = SGF }
+				SGF = { 
+					exists = no 
+				} 
+			} 
 		}
 	}
 
