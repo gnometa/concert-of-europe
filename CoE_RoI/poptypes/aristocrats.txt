@@ -2361,21 +2361,21 @@ ideologies = {
 			factor = 0.5
 			country = { civilized = no }
 		}
-		modifier = {
-			factor = 0.5
-			not = { militancy = 1 }
-			not = { OR = { government = proletarian_dictatorship government = proletarian_dictatorship2 government = proletarian_dictatorship3 } }
-		}			
-		modifier = {
-			factor = 0.75
-			not = { militancy = 3 }
-			not = { OR = { government = proletarian_dictatorship government = proletarian_dictatorship2 government = proletarian_dictatorship3 } }
-		}	
-		modifier = {
-			factor = 0.75
-			not = { militancy = 5 }
-			not = { OR = { government = proletarian_dictatorship government = proletarian_dictatorship2 government = proletarian_dictatorship3 } }
-		}
+		#modifier = {
+		#	factor = 0.5
+		#	not = { militancy = 1 }
+		#	not = { OR = { government = proletarian_dictatorship government = proletarian_dictatorship2 government = proletarian_dictatorship3 } }
+		#}			
+		#modifier = {
+		#	factor = 0.75
+		#	not = { militancy = 3 }
+		#	not = { OR = { government = proletarian_dictatorship government = proletarian_dictatorship2 government = proletarian_dictatorship3 } }
+		#}	
+		#modifier = {
+		#	factor = 0.75
+		#	not = { militancy = 5 }
+		#	not = { OR = { government = proletarian_dictatorship government = proletarian_dictatorship2 government = proletarian_dictatorship3 } }
+		#}
 		modifier = {
 			factor = 1.5
 			any_neighbor_country = {
@@ -2716,7 +2716,7 @@ ideologies = {
 		modifier = {
 			factor = 2.0
 			nationalvalue = nv_equality
-			NOT = { is_ideology_enabled = socialist }
+			NOT = { is_ideology_enabled = communist }
 		}
 		modifier = {
 			factor = 3.0
@@ -2905,7 +2905,7 @@ ideologies = {
 			factor = 5.0
 			strata = poor
 			NOT = { type = labourers }
-			NOT = { is_ideology_enabled = socialist }
+			NOT = { is_ideology_enabled = communist }
 		}
 		modifier = {
 			factor = 2.0
@@ -3171,7 +3171,7 @@ ideologies = {
 		#	factor = 2.5
 		#	strata = poor
 		#	NOT = { type = labourers }
-		#	NOT = { is_ideology_enabled = socialist }
+		#	NOT = { is_ideology_enabled = communist }
 		#}
 		#modifier = {
 		#	factor = 1.5
@@ -5435,7 +5435,7 @@ issues = {
 					is_next_reform = state_controlled
 				}
 				country = {	civilized = no }
-				NOT = { is_ideology_enabled = socialist }
+				NOT = { is_ideology_enabled = communist }
 			}
 		}
 
@@ -5518,7 +5518,7 @@ issues = {
 					is_next_reform = non_socialist
 				}
 				luxury_needs =  0.5
-				NOT = { is_ideology_enabled = socialist }
+				NOT = { is_ideology_enabled = communist }
 			}
 		}
 		modifier = {
@@ -5598,7 +5598,7 @@ issues = {
 				country = {	civilized = no }
 				trade_unions = all_trade_unions
 				luxury_needs =  0.5
-				NOT = { is_ideology_enabled = socialist }
+				NOT = { is_ideology_enabled = communist }
 			}
 		}
 		modifier = {
@@ -5882,7 +5882,7 @@ state_equal_weight = {
 					is_next_reform = trinket_wage
 				}
 				unemployment = 0.1
-				NOT = { is_ideology_enabled = socialist }
+				NOT = { is_ideology_enabled = communist }
 			}	
 		}
 		modifier = {
@@ -5953,7 +5953,7 @@ state_equal_weight = {
 					is_next_reform = low_minimum_wage
 				}
 				unemployment = 0.1
-				NOT = { is_ideology_enabled = socialist }
+				NOT = { is_ideology_enabled = communist }
 			}	
 		}
 		modifier = {
@@ -6024,7 +6024,7 @@ state_equal_weight = {
 					is_next_reform = acceptable_minimum_wage
 				}
 				unemployment = 0.1
-				NOT = { is_ideology_enabled = socialist }
+				NOT = { is_ideology_enabled = communist }
 			}	
 		}
 		modifier = {
@@ -6093,7 +6093,7 @@ state_equal_weight = {
 					country = {	civilized = no }
 				NOT = { is_next_reform = good_minimum_wage	}
 				unemployment = 0.1
-				NOT = { is_ideology_enabled = socialist }
+				NOT = { is_ideology_enabled = communist }
 			}	
 		}
 		modifier = {
@@ -6162,7 +6162,7 @@ trinket_safety = {
 				unemployment = 0.1
 				country = {	civilized = no }
 				NOT = {	is_next_reform = trinket_safety	}
-				NOT = { is_ideology_enabled = socialist }
+				NOT = { is_ideology_enabled = communist }
 			}	
 		}
 		modifier = {
@@ -6229,7 +6229,7 @@ trinket_safety = {
 				NOT = {
 					is_next_reform = low_safety
 				}
-				NOT = { is_ideology_enabled = socialist }
+				NOT = { is_ideology_enabled = communist }
 			}	
 		}
 		modifier = {
@@ -6296,7 +6296,7 @@ trinket_safety = {
 				NOT = {
 					is_next_reform = acceptable_safety
 				}
-				NOT = { is_ideology_enabled = socialist }
+				NOT = { is_ideology_enabled = communist }
 			}	
 		}
 		modifier = {
@@ -6363,7 +6363,7 @@ trinket_safety = {
 				NOT = {
 					is_next_reform = good_safety 
 				}
-				NOT = { is_ideology_enabled = socialist }
+				NOT = { is_ideology_enabled = communist }
 			}	
 		}
 		modifier = {
@@ -6430,7 +6430,7 @@ trinket_subsidies = {
 				NOT = {
 					is_next_reform = trinket_subsidies
 				}
-				NOT = { is_ideology_enabled = socialist }
+				NOT = { is_ideology_enabled = communist }
 			}
 		}	
 		modifier = {
@@ -6513,7 +6513,7 @@ trinket_subsidies = {
 				NOT = {
 					is_next_reform = low_subsidies
 				}
-				NOT = { is_ideology_enabled = socialist }
+				NOT = { is_ideology_enabled = communist }
 			}
 		}
 		modifier = {
@@ -6597,7 +6597,7 @@ trinket_subsidies = {
 				NOT = {
 					is_next_reform = acceptable_subsidies
 				}
-				NOT = { is_ideology_enabled = socialist }
+				NOT = { is_ideology_enabled = communist }
 			}
 		}	
 		modifier = {
@@ -6681,7 +6681,7 @@ trinket_subsidies = {
 				NOT = {
 					is_next_reform = good_subsidies
 				}
-				NOT = { is_ideology_enabled = socialist }
+				NOT = { is_ideology_enabled = communist }
 			}
 		}	
 		modifier = {
@@ -6764,7 +6764,7 @@ trinket_subsidies = {
 				NOT = {
 					is_next_reform = trinket_pensions
 				}
-				NOT = { is_ideology_enabled = socialist }
+				NOT = { is_ideology_enabled = communist }
 			}	
 		}
 		modifier = {
@@ -6835,7 +6835,7 @@ trinket_subsidies = {
 				NOT = {
 					is_next_reform = low_pensions
 				}
-				NOT = { is_ideology_enabled = socialist }
+				NOT = { is_ideology_enabled = communist }
 			}	
 		}
 		modifier = {
@@ -6906,7 +6906,7 @@ trinket_subsidies = {
 				NOT = {
 					is_next_reform = acceptable_pensions
 				}
-				NOT = { is_ideology_enabled = socialist }
+				NOT = { is_ideology_enabled = communist }
 			}	
 		}
 		modifier = {
@@ -6977,7 +6977,7 @@ trinket_subsidies = {
 				NOT = {
 					is_next_reform = good_pensions
 				}
-				NOT = { is_ideology_enabled = socialist }
+				NOT = { is_ideology_enabled = communist }
 			}	
 		}
 		modifier = {
@@ -7047,7 +7047,7 @@ trinket_subsidies = {
 				NOT = {
 					is_next_reform = trinket_health_care
 				}
-				NOT = { is_ideology_enabled = socialist }
+				NOT = { is_ideology_enabled = communist }
 			}	
 		}
 		modifier = {
@@ -7121,7 +7121,7 @@ trinket_subsidies = {
 				NOT = {
 					is_next_reform = low_health_care
 				}
-				NOT = { is_ideology_enabled = socialist }
+				NOT = { is_ideology_enabled = communist }
 			}	
 		}
 		modifier = {
@@ -7195,7 +7195,7 @@ trinket_subsidies = {
 				NOT = {
 					is_next_reform = acceptable_health_care
 				}
-				NOT = { is_ideology_enabled = socialist }
+				NOT = { is_ideology_enabled = communist }
 			}	
 		}
 		modifier = {
@@ -7269,7 +7269,7 @@ trinket_subsidies = {
 				NOT = {
 					is_next_reform = good_health_care
 				}
-				NOT = { is_ideology_enabled = socialist }
+				NOT = { is_ideology_enabled = communist }
 			}	
 		}
 		modifier = {
@@ -7343,7 +7343,7 @@ trinket_subsidies = {
 				NOT = {
 					is_next_reform = fourteen_hours
 				}
-				NOT = { is_ideology_enabled = socialist }
+				NOT = { is_ideology_enabled = communist }
 			}	
 		}
 		modifier = {
@@ -7413,7 +7413,7 @@ trinket_subsidies = {
 				NOT = {
 					is_next_reform = twelve_hours
 				}
-				NOT = { is_ideology_enabled = socialist }
+				NOT = { is_ideology_enabled = communist }
 			}	
 		}
 		modifier = {
@@ -7483,7 +7483,7 @@ trinket_subsidies = {
 				NOT = {
 					is_next_reform = ten_hours
 				}
-				NOT = { is_ideology_enabled = socialist }
+				NOT = { is_ideology_enabled = communist }
 			}	
 		}
 		modifier = {
@@ -7553,7 +7553,7 @@ trinket_subsidies = {
 				NOT = {
 					is_next_reform = eight_hours
 				}
-				NOT = { is_ideology_enabled = socialist }
+				NOT = { is_ideology_enabled = communist }
 			}	
 		}
 		modifier = {
@@ -7623,7 +7623,7 @@ trinket_subsidies = {
 					is_next_reform = landed_estates
 				}
 				country = {	civilized = no }
-				NOT = { is_ideology_enabled = socialist }
+				NOT = { is_ideology_enabled = communist }
 			}	
 		}
 		modifier = {
@@ -7661,7 +7661,7 @@ trinket_subsidies = {
 					is_next_reform = land_purchase
 				}
 				country = {	civilized = no }
-				NOT = { is_ideology_enabled = socialist }
+				NOT = { is_ideology_enabled = communist }
 			}	
 		}
 		modifier = {
@@ -7699,7 +7699,7 @@ trinket_subsidies = {
 					is_next_reform = commoners_properties
 				}
 				country = {	civilized = no }
-				NOT = { is_ideology_enabled = socialist }
+				NOT = { is_ideology_enabled = communist }
 			}	
 		}
 		modifier = {
@@ -7753,7 +7753,7 @@ trinket_subsidies = {
 					is_next_reform = collectivization
 				}
 				country = {	civilized = no }
-				NOT = { is_ideology_enabled = socialist }
+				NOT = { is_ideology_enabled = communist }
 			}	
 		}
 		modifier = {
@@ -7807,7 +7807,7 @@ trinket_subsidies = {
 					is_next_reform = child_labor_restricted
 				}
 				country = {	civilized = no }
-				NOT = { is_ideology_enabled = socialist }
+				NOT = { is_ideology_enabled = communist }
 			}	
 		}
 		modifier = {
@@ -7881,7 +7881,7 @@ trinket_subsidies = {
 					is_next_reform = child_labor_illegal
 				}
 				country = {	civilized = no }
-				NOT = { is_ideology_enabled = socialist }
+				NOT = { is_ideology_enabled = communist }
 			}	
 		}
 		modifier = {
@@ -7951,7 +7951,7 @@ trinket_subsidies = {
 		modifier = {
 			factor = 0 
 			OR = {
-				NOT = { is_ideology_enabled = socialist }
+				NOT = { is_ideology_enabled = communist }
 				country = {	civilized = no }
 				NOT = {	is_next_reform = church }
 			}
@@ -8035,7 +8035,7 @@ trinket_subsidies = {
 		modifier = {
 			factor = 0 
 			OR = {
-				NOT = { is_ideology_enabled = socialist }
+				NOT = { is_ideology_enabled = communist }
 				country = {	civilized = no }
 				NOT = {	is_next_reform = public }
 			}
@@ -8113,7 +8113,7 @@ trinket_subsidies = {
 			OR = {
 				NOT = {	is_next_reform = small_endowment }
 				country = {	civilized = no }
-				NOT = { is_ideology_enabled = socialist }
+				NOT = { is_ideology_enabled = communist }
 				NOT = { everyday_needs = 1 }
 			}	
 		}
@@ -8211,7 +8211,7 @@ trinket_subsidies = {
 					is_next_reform = medium_endowment
 				}
 				country = {	civilized = no }
-				NOT = { is_ideology_enabled = socialist }
+				NOT = { is_ideology_enabled = communist }
 				NOT = { everyday_needs = 1 }			
 			}	
 		}
@@ -8303,7 +8303,7 @@ trinket_subsidies = {
 					is_next_reform = large_endowment
 				}
 				country = {	civilized = no }
-				NOT = { is_ideology_enabled = socialist }
+				NOT = { is_ideology_enabled = communist }
 				NOT = { everyday_needs = 1 }
 			}	
 		}
@@ -8395,7 +8395,7 @@ trinket_subsidies = {
 					is_next_reform = massive_endowment
 				}
 				country = {	civilized = no }
-				NOT = { is_ideology_enabled = socialist }
+				NOT = { is_ideology_enabled = communist }
 				NOT = { everyday_needs = 1 }
 			}	
 		}
