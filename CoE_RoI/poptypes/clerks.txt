@@ -38,13 +38,22 @@ color = { 220 60 105 }
 #color = { 234 227 40 }
 
 life_needs = {
-	food_industry = 84.0
-	light_industry = 20
-	heavy_industry = 10.0
+	coal = 2.0
+ 	timber = 2.0
+    copper = 0.5
+	lead = 0.6
+	iron = 1.6
+	grain = 10.0
+	cattle = 6.0
+	fish = 5.0
+	fruit = 3.0
+	wool = 2.5
+	cotton = 3.5
 }
 everyday_needs = {
-	light_industry = 60
-	food_industry = 180
+	light_industry = 80
+	food_industry = 264
+	heavy_industry = 20
 }
 luxury_needs = {
 	luxury_industry = 36

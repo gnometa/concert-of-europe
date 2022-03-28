@@ -43,13 +43,22 @@ strata = poor
 can_build = yes
 
 life_needs = {
-	food_industry = 76.0
-	light_industry = 16
-	heavy_industry = 8.0
+	coal = 2.0
+ 	timber = 2.0
+    copper = 0.5
+	lead = 0.6
+	iron = 1.6
+	grain = 10.0
+	cattle = 6.0
+	fish = 5.0
+	fruit = 3.0
+	wool = 2.5
+	cotton = 3.5	
 }
 everyday_needs = {
-	light_industry = 48
-	food_industry = 180
+	light_industry = 64
+	food_industry = 256
+	heavy_industry = 16
 }
 luxury_needs = {
 	luxury_industry = 18

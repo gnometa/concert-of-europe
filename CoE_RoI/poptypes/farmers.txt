@@ -32,13 +32,22 @@ rebel =
 #}
 
 life_needs = {
-	food_industry = 52.0
-	light_industry = 8
-	heavy_industry = 4.0
+	coal = 2.0
+ 	timber = 2.0
+    copper = 0.5
+	lead = 0.6
+	iron = 1.6
+	grain = 10.0
+	cattle = 6.0
+	fish = 5.0
+	fruit = 3.0
+	wool = 2.5
+	cotton = 3.5	
 }
 everyday_needs = {
-	light_industry = 24
-	food_industry = 120
+	light_industry = 32
+	food_industry = 172
+	heavy_industry = 8
 }
 luxury_needs = {
 	luxury_industry = 12.0
