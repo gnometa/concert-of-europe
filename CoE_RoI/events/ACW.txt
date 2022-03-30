@@ -45,6 +45,21 @@ country_event = {
 			consciousness = -7
 			militancy = -3
 		}
+		
+		USA_196 = { add_core = CSA } #Alabama
+		USA_144 = { add_core = CSA } #Arkansas
+		USA_200 = { add_core = CSA } #Florida
+		USA_201 = { add_core = CSA } #Georgia
+		USA_185 = { add_core = CSA } #Kentucky
+		USA_139 = { add_core = CSA } #Louisiana
+		USA_219 = { add_core = CSA } #Maryland
+		USA_194 = { add_core = CSA } #Mississippi
+		USA_2556 = { add_core = CSA } #North Carolina
+		USA_205 = { add_core = CSA } #South Carolina
+		USA_188 = { add_core = CSA } #Tennessee
+		USA_211 = { add_core = CSA } #Virginia
+		USA_218 = { add_core = CSA } #West Virginia
+		
 		release_vassal = CSA
 		CSA = {
 			any_owned = {
