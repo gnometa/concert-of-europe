@@ -93,19 +93,19 @@ country_event = {
 		}
 		has_global_flag = the_new_army
 		civilized = yes
-		OR = {
-			any_owned_province = {
-				is_capital = yes
-				controlled_by_rebels = yes
-			}
-			revolt_percentage = 0.30
-			average_militancy = 6
-		}
+		#OR = {
+		#	any_owned_province = {
+		#		is_capital = yes
+		#		controlled_by_rebels = yes
+		#	}
+		#	revolt_percentage = 0.30
+		#	average_militancy = 6
+		#}
 		NOT = { has_global_flag = warlord_era_has_begun }
 	}
 	
 	mean_time_to_happen = {
-		months = 36
+		months = 12
 		modifier = {
 			factor = 0.025
 			capital_scope = { controlled_by_rebels = yes }
