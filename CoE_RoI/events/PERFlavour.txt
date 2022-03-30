@@ -3292,7 +3292,7 @@ country_event = {
 		2667 = {
 			add_core = RUS
 			remove_core = THIS
-			remove_core = TUR
+			#remove_core = TUR
 		}
 		RUS_1102 = {
 			add_core = RUS
