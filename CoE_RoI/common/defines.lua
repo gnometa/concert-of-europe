@@ -505,7 +505,7 @@ diplomacy = {
 	
 	MIN_WARSCORE_TO_INTERVENE = -1,
 	MIN_MONTHS_TO_INTERVENE = 0,
-	MAX_WARSCORE_FROM_BATTLES = 50,
+	MAX_WARSCORE_FROM_BATTLES = 75,
 	
 	GUNBOAT_DIPLOMATIC_COST = 1,
 	GUNBOAT_RELATION_ON_ACCEPT = 1,
@@ -700,7 +700,7 @@ ai =
 	CAPITALIST_FRACTION = 0.05, -- max amount of population AI wants to be capis
 	PRODUCTION_WEIGHT = 5.0, -- ai weight for new production
 	SPAM_PENALTY = 10, -- makes certain diplomatic action less common 
-	ONE_SIDE_MAX_WARSCORE = 100, -- don't add too many wargoals to one side in a war
+	ONE_SIDE_MAX_WARSCORE = 250, -- don't add too many wargoals to one side in a war
 	POP_PROJECT_INVESTMENT_MAX_BUDGET_FACTOR = 0.25, -- how much % of our current budget can be spend on the pop project investments.
 	RELATION_LIMIT_NO_ALLIANCE_OFFER = 100, -- if relation lower then this value, AI will not ally
 	NAVAL_SUPPLY_PENALTY_LIMIT = 0.2, -- AI will allow to have max X% of supply penalty (when too little naval bases)
