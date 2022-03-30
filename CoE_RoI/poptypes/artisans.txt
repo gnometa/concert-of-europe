@@ -686,11 +686,11 @@ promote_to = {
  		modifier = {
 			factor = 50
 			location = { is_colonial = no }
-			NOT = { state_scope = { capitalists  = 0.030 } }
+			NOT = { location = { capitalists  = 0.030 } }
 		}
 		modifier = {
 			factor = -50 #-500
-			state_scope = { capitalists  = 0.051 }
+			location = { capitalists  = 0.051 }
 		}  		
 	}
 	clergymen = {
@@ -4123,7 +4123,7 @@ issues = {
 			}
 		}
 		modifier = {
-			factor = 0.5
+			factor = 0.1
 			state_scope = {
 				is_slave = yes
 			}

@@ -3913,7 +3913,7 @@ issues = {
 			}
 		}
 		modifier = {
-			factor = 0.5
+			factor = 0.1
 			state_scope = {
 				is_slave = yes
 			}

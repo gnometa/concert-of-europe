@@ -131,7 +131,7 @@ country_event = {
 			limit = { 
 				type = clergymen 
 			}
-			pop_type = bureaucrats
+			pop_type = capitalists
 		}
 		any_country = {
 			any_pop = { 
@@ -161,7 +161,7 @@ country_event = {
 				limit = { 
 					type = clergymen 
 				}
-				pop_type = bureaucrats
+				pop_type = capitalists
 			}			
 		}
 		any_pop = { 
