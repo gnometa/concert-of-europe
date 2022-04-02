@@ -4023,14 +4023,14 @@ humiliate = {
 place_in_the_sun = {
 	sprite_index = 7
 	is_triggered_only = yes
-	constructing_cb = no
+	constructing_cb = yes
 	months = 12 #months = 12
 	
 	always = no #always = yes
 
 	construction_speed = 0.25 #construction_speed = 0.25 0.5
 
-	badboy_factor = 2.5
+	badboy_factor = 5.0
 	prestige_factor = 2
 	peace_cost_factor = 0.5
 	penalty_factor = 1
@@ -4044,7 +4044,8 @@ place_in_the_sun = {
 	good_relation_infamy_factor = 1
 	good_relation_militancy_factor = 1
 
-	can_use = {                                                                
+	can_use = {  
+		THIS = { ai = yes }
 		NOT = { is_our_vassal = THIS }
 		is_vassal = no
 		any_owned_province = { is_colonial = yes }
@@ -4740,14 +4741,14 @@ place_in_the_sun6 = {
 acquire_state = {
 	sprite_index = 6
 	is_triggered_only = yes
-	constructing_cb = no
+	constructing_cb = yes
 	months = 12 #months = 12
 	
 	always = no #always = yes
 
 	construction_speed = 0.25 #construction_speed = 0.25 0.25
 
-	badboy_factor = 10.0
+	badboy_factor = 15.0
 	prestige_factor = 2
 	peace_cost_factor = 1
 	penalty_factor = 1
@@ -4762,6 +4763,7 @@ acquire_state = {
 	good_relation_militancy_factor = 1
 
 	can_use = {
+		THIS = { ai = yes }
 		is_vassal = no
 		NOT = {
 			is_our_vassal = THIS
@@ -4776,7 +4778,7 @@ acquire_state = {
 			civilized = yes
 		}
 		THIS = {
-			number_of_states = 2
+			#number_of_states = 2
 			NOT = {
 				has_country_modifier = neutrality
 				war_policy = pacifism
@@ -4992,7 +4994,7 @@ acquire_state1 = {
 			civilized = yes
 		}
 		THIS = {
-			number_of_states = 2
+			#number_of_states = 2
 			NOT = {
 				has_country_modifier = neutrality
 				war_policy = pacifism
@@ -5208,7 +5210,7 @@ acquire_state2 = {
 			civilized = yes
 		}
 		THIS = {
-			number_of_states = 2
+			#number_of_states = 2
 			NOT = {
 				has_country_modifier = neutrality
 				war_policy = pacifism
@@ -5426,7 +5428,7 @@ acquire_state3 = {
 			civilized = yes
 		}
 		THIS = {
-			number_of_states = 2
+			#number_of_states = 2
 			NOT = {
 				has_country_modifier = neutrality
 				war_policy = pacifism
@@ -5644,7 +5646,7 @@ acquire_state4 = {
 			civilized = yes
 		}
 		THIS = {
-			number_of_states = 2
+			#number_of_states = 2
 			NOT = {
 				has_country_modifier = neutrality
 				war_policy = pacifism
@@ -5862,7 +5864,7 @@ acquire_state5 = {
 			civilized = yes
 		}
 		THIS = {
-			number_of_states = 2
+			#number_of_states = 2
 			NOT = {
 				has_country_modifier = neutrality
 				war_policy = pacifism
@@ -6080,7 +6082,7 @@ acquire_state6 = {
 			civilized = yes
 		}
 		THIS = {
-			number_of_states = 2
+			#number_of_states = 2
 			NOT = {
 				has_country_modifier = neutrality
 				war_policy = pacifism
@@ -6475,13 +6477,13 @@ sahel_jihad_cb = {
 demand_concession_casus_belli = {
 	sprite_index = 7
 	is_triggered_only = yes
-	constructing_cb = no
+	constructing_cb = yes
 	months = 12 #months = 0
 	crisis = no
 
 	construction_speed = 0.25 #construction_speed = 0.25 1.0
 
-	badboy_factor = 3.5
+	badboy_factor = 7.0
 	prestige_factor = 1
 	peace_cost_factor = 0.6
 	penalty_factor = 1
@@ -6498,6 +6500,7 @@ demand_concession_casus_belli = {
 	always = no #always = yes
 
 	can_use = {
+		THIS = { ai = yes }
 		NOT = { is_our_vassal = THIS }
 		THIS = {
 			civilized = yes
