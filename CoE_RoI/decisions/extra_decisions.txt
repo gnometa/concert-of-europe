@@ -1898,27 +1898,27 @@ political_decisions = {
 		}
 	}
 
-	demand_puppet_cores = {
-		alert = yes
-		potential = {
-			has_country_flag = election_initialized
-			num_of_vassals = 1
-		}
-		allow = {
-			NOT = { has_country_modifier = demanded_cores }
-		}
-		effect = {
-			add_country_modifier = {
-				name = demanded_cores
-				duration = 1460
-			}
-			any_country = {
-				limit = {
-					is_our_vassal = THIS
-					any_owned_province = { is_core = THIS }
-				}
-				country_event = 2670
-			}
-		}
-	}
+	#demand_puppet_cores = {
+	#	alert = yes
+	#	potential = {
+	#		has_country_flag = election_initialized
+	#		num_of_vassals = 1
+	#	}
+	#	allow = {
+	#		NOT = { has_country_modifier = demanded_cores }
+	#	}
+	#	effect = {
+	#		add_country_modifier = {
+	#			name = demanded_cores
+	#			duration = 1460
+	#		}
+	#		any_country = {
+	#			limit = {
+	#				is_our_vassal = THIS
+	#				any_owned_province = { is_core = THIS }
+	#			}
+	#			country_event = 2670
+	#		}
+	#	}
+	#}
 }
