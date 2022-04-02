@@ -30,6 +30,7 @@ country_event = {
 		NOT = {
 			has_global_flag = liberal_revolution_should_now_fire
 		}
+		NOT = { OR = { government = theocracy government = theocracy2 government = theocracy3 } } 
 	}
 
 	mean_time_to_happen = {
