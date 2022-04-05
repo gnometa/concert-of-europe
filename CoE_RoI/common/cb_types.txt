@@ -3914,7 +3914,7 @@ restore_british_raj = {
 # Humiliate
 humiliate = {
 	sprite_index = 11
-	is_triggered_only = no
+	is_triggered_only = yes
 	months = 12 #months = 12
 
 	construction_speed = 0.25 #construction_speed = 0.25 0.8
