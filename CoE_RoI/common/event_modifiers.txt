@@ -185,7 +185,7 @@ colonial_mismanagement = {
 
 colonial_recruitment = {
 	immigrant_attract = 1		#100%
-	life_rating = 1
+	life_rating = 0.10
 	icon = 100
 }
 
