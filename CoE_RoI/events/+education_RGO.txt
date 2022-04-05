@@ -133,6 +133,13 @@ country_event = {
 			}
 			pop_type = capitalists
 		}
+		any_pop = { 
+			limit = { 
+				type = bureaucrats 
+				location = { is_colonial = yes }
+			}
+			pop_type = capitalists
+		}
 		any_country = {
 			any_pop = { 
 				limit = { 
@@ -162,16 +169,23 @@ country_event = {
 					type = clergymen 
 				}
 				pop_type = capitalists
+			}	
+			any_pop = { 
+				limit = { 
+					type = bureaucrats 
+					location = { is_colonial = yes }
+				}
+				pop_type = capitalists
 			}			
 		}
-		any_pop = { 
-			limit = { 
-				type = clerks 
-				is_primary_culture = no
-				is_accepted_culture = no
-			}
-			pop_type = craftsmen
-		}
+		#any_pop = { 
+		#	limit = { 
+		#		type = clerks 
+		#		is_primary_culture = no
+		#		is_accepted_culture = no
+		#	}
+		#	pop_type = craftsmen
+		#}
 		any_country = {
 			#any_pop = { 
 			#	limit = { 

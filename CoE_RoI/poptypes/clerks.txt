@@ -819,6 +819,69 @@ promote_to = {
 			factor = -50 #-500
 			state_scope = { bureaucrats = 0.060 }
 		} 
+		modifier = {
+			factor = -50 #-500
+			location = { is_colonial = yes }
+			is_primary_culture = no
+			is_accepted_culture = no
+		}		
+		modifier = {
+			factor = -25 #-500
+			location = { is_colonial = yes }
+			OR = {
+				AND = { 
+					continent = europe
+					NOT = { capital_scope = { continent = europe } }
+					NOT = { is_core = THIS }
+				}
+				AND = { 
+					continent = asia
+					NOT = { capital_scope = { continent = asia } }
+					NOT = { is_core = THIS }
+				}
+				AND = { 
+					continent = east_indies
+					NOT = { capital_scope = { continent = east_indies } }
+					NOT = { is_core = THIS }
+				}	
+				AND = { 
+					continent = africa
+					NOT = { capital_scope = { continent = africa } }
+					NOT = { is_core = THIS }
+				}		
+				AND = { 
+					continent = oceania
+					NOT = { capital_scope = { continent = africa } }
+					NOT = { is_core = THIS }
+				}						
+				AND = { 
+					continent = north_america
+					NOT = {					
+						OR = {
+							capital_scope = { continent = north_america }
+							capital_scope = { continent = south_america }
+						}
+					}
+					NOT = { is_core = THIS }
+				}	
+				AND = { 
+					continent = south_america
+					NOT = {					
+						OR = {
+							capital_scope = { continent = north_america }
+							capital_scope = { continent = south_america }
+						}
+					}
+					NOT = { is_core = THIS }
+				}
+			}
+			NOT = {
+				AND = { 
+					tag = FRA
+					location = { is_core = ALG }
+				}	
+			}			
+		}		
 	}
 	soldiers =
 	{

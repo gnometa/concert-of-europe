@@ -902,6 +902,12 @@ promote_to = {
 			administration_spending = 0.99
 			state_scope = { bureaucrats = 0.052 }
 		}
+		modifier = {
+			factor = 50 #-500
+			location = { is_colonial = yes }
+			is_primary_culture = no
+			is_accepted_culture = no
+		}		
 	}
 	#aristocrats = {
 	#	factor = 0.01
