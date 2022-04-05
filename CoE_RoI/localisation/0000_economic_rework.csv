@@ -131,6 +131,8 @@ choose_econ_poli_NEP_title;Ennact New Economic Policy;;;;;;;;;;;;;x;
 choose_econ_poli_NEP_desc;Our government has decided that, for now, the best road to socialism leads through relaxation of our economic policies, and limited capitalism, until productive forces are sufficient enough for transition to communism.;;;;;;;;;;;;;x;
 choose_econ_poli_5y_title;Initiate Five-year Plans;;;;;;;;;;;;;x;
 choose_econ_poli_5y_desc;The fastest way to socialism leads through unconditional economic planning that will rapidly develop our productive forces through direct redistribution of value!;;;;;;;;;;;;;x;
+reset_colony_types_title;Restructurise Colonial Administration;;;;;;;;;;;;;x;
+reset_colony_types_desc;We can restructurise our colonial administration and decide wich colonies are to be settled and which exploited, however we have to keep in mind that it will be labour intensive process for our buraucarcy...;;;;;;;;;;;;;x;
 modern_army_doctrine_1930;Postmodern Army Doctrine;;;;;;;;;;;;x,,
 modern_army_doctrine_1930_decs;;;;;;;;;;;;;x,,
 modern_divisional_structure_1930;Mass Motorization;;;;;;;;;;;;x,,

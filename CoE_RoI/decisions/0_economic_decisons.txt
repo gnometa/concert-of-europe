@@ -368,4 +368,29 @@ political_decisions = {
 			}			
 		}
 	}	
+	reset_colony_types = {
+		#picture = econ_5y_pic
+		potential = {
+			exists = yes
+			ai = no
+			any_owned_province = {
+				is_colonial = yes
+			}
+			year = 1822
+		}
+		allow = {
+			money = 20000
+		}
+		effect = {
+			treasury = -10000
+			any_owned = {
+				limit = { is_colonial = yes }
+				remove_province_modifier = settlement_colony
+				remove_province_modifier = exploitation_colony
+			}			
+		}
+		ai_will_do = {
+			factor = 0			
+		}
+	}	
 }
