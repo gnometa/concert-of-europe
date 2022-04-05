@@ -723,6 +723,7 @@ social_dissent = {
 	global_pop_consciousness_modifier = 0.02
 	mobilisation_size = -0.005
 	issue_change_speed = 0.3
+	education_efficiency_modifier = -0.10
 	icon = 2
 }
 
@@ -735,6 +736,7 @@ social_tensions = {
 	mobilisation_size = -0.01
 	prestige = -0.05
 	issue_change_speed = 0.6
+	education_efficiency_modifier = -0.20
 	icon = 1
 }
 
@@ -747,6 +749,7 @@ social_disorder = {
 	mobilisation_size = -0.02
 	prestige = -0.1
 	issue_change_speed = 1.2
+	education_efficiency_modifier = -0.30
 	icon = 1
 }
 
@@ -758,6 +761,7 @@ social_chaos = {
 	mobilisation_size = -0.04
 	prestige = -0.2
 	issue_change_speed = 2.0
+	education_efficiency_modifier = -0.40
 	icon = 1
 }
 
@@ -1319,358 +1323,275 @@ milit_found_5 = {
 
 
 ###Dev
-#rich_development_1 = {
-#	trigger = {
-#		exists = yes
-#		NOT = { rich_strata_life_needs = 0.5 }
-#		NOT = { rich_strata_everyday_needs = 0.1 }
-#		NOT = { rich_strata_luxury_needs = 0.1 }
-#	}	
-#	education_efficiency_modifier = -0.10
-#	icon = 8
-#}
-#
-#rich_development_2 = {
-#	trigger = {
-#		exists = yes
-#		NOT = { rich_strata_life_needs = 0.9 }
-#		NOT = { rich_strata_everyday_needs = 0.1 }
-#		NOT = { rich_strata_luxury_needs = 0.1 }
-#	}	
-#	education_efficiency_modifier = -0.10
-#	icon = 8
-#}
-#
-#rich_development_3 = {
-#	trigger = {
-#		exists = yes
-#		OR = {
-#		      rich_strata_everyday_needs = 0.4
-#		      rich_strata_luxury_needs = 0.1 
-#		}
-#	}	
-#	education_efficiency_modifier = 0.10
-#	icon = 8
-#}
-#
-#rich_development_4 = {
-#	trigger = {
-#		exists = yes
-#		OR = {
-#		      rich_strata_everyday_needs = 0.6
-#		      rich_strata_luxury_needs = 0.1 
-#		}
-#	}	
-#	education_efficiency_modifier = 0.10
-#	icon = 8
-#}
-#
-#rich_development_5 = {
-#	trigger = {
-#		exists = yes
-#		OR = {
-#		      rich_strata_everyday_needs = 0.8
-#		      rich_strata_luxury_needs = 0.1 
-#		}
-#	}	
-#	education_efficiency_modifier = 0.10
-#	icon = 8
-#}
-#
-#rich_development_6 = {
-#	trigger = {
-#		exists = yes
-#		OR = {
-#		      rich_strata_everyday_needs = 0.95
-#		      rich_strata_luxury_needs = 0.1 
-#		}
-#	}	
-#	education_efficiency_modifier = 0.10
-#	icon = 8
-#}
-#
-#rich_development_7 = {
-#	trigger = {
-#		exists = yes
-#		AND = {
-#		      rich_strata_luxury_needs = 0.25
-#              rich_strata_everyday_needs = 0.50			  
-#		}
-#	}	
-#	education_efficiency_modifier = 0.10
-#	icon = 8
-#}
-#
-#rich_development_8 = {
-#	trigger = {
-#		exists = yes
-#		AND = {
-#		      rich_strata_luxury_needs = 0.5 
-#			  rich_strata_everyday_needs = 0.50
-#		}
-#	}	
-#	education_efficiency_modifier = 0.10
-#	icon = 8
-#}
-#
-#rich_development_9 = {
-#	trigger = {
-#		exists = yes
-#		AND = {
-#		      rich_strata_luxury_needs = 0.75 
-#			  rich_strata_everyday_needs = 0.50
-#		}
-#	}	
-#	education_efficiency_modifier = 0.10
-#	icon = 8
-#}
-#
-#rich_development_10 = {
-#	trigger = {
-#		exists = yes
-#		AND = {
-#		      rich_strata_luxury_needs = 0.9
-#	          rich_strata_everyday_needs = 0.50		  
-#		}
-#	}	
-#	education_efficiency_modifier = 0.10
-#	icon = 8
-#}
-#
-##Middle
-#middle_development_1 = {
-#	trigger = {
-#		exists = yes
-#		NOT = { middle_strata_life_needs = 0.5 }
-#		NOT = { middle_strata_everyday_needs = 0.1 }
-#		NOT = { middle_strata_luxury_needs = 0.1 }
-#	}	
-#	education_efficiency_modifier = -0.10
-#	icon = 8
-#}
-#
-#middle_development_2 = {
-#	trigger = {
-#		exists = yes
-#		NOT = { middle_strata_life_needs = 0.9 }
-#		NOT = { middle_strata_everyday_needs = 0.1 }
-#		NOT = { middle_strata_luxury_needs = 0.1 }
-#	}	
-#	education_efficiency_modifier = -0.10
-#	icon = 8
-#}
-#
-#middle_development_3 = {
-#	trigger = {
-#		exists = yes
-#		OR = {
-#		      middle_strata_everyday_needs = 0.4
-#		      middle_strata_luxury_needs = 0.1 
-#		}
-#	}	
-#	education_efficiency_modifier = 0.10
-#	icon = 8
-#}
-#
-#middle_development_4 = {
-#	trigger = {
-#		exists = yes
-#		OR = {
-#		      middle_strata_everyday_needs = 0.6
-#		      middle_strata_luxury_needs = 0.1 
-#		}
-#	}	
-#	education_efficiency_modifier = 0.10
-#	icon = 8
-#}
-#
-#middle_development_5 = {
-#	trigger = {
-#		exists = yes
-#		OR = {
-#		      middle_strata_everyday_needs = 0.8
-#		      middle_strata_luxury_needs = 0.1 
-#		}
-#	}	
-#	education_efficiency_modifier = 0.10
-#	icon = 8
-#}
-#
-#middle_development_6 = {
-#	trigger = {
-#		exists = yes
-#		OR = {
-#		      middle_strata_everyday_needs = 0.95
-#		      middle_strata_luxury_needs = 0.1 
-#		}
-#	}	
-#	education_efficiency_modifier = 0.10
-#	icon = 8
-#}
-#
-#middle_development_7 = {
-#	trigger = {
-#		exists = yes
-#		AND = {
-#		      middle_strata_luxury_needs = 0.25 
-#			  middle_strata_everyday_needs = 0.50
-#		}
-#	}	
-#	education_efficiency_modifier = 0.10
-#	icon = 8
-#}
-#
-#middle_development_8 = {
-#	trigger = {
-#		exists = yes
-#		AND = {
-#		      middle_strata_luxury_needs = 0.5
-#              middle_strata_everyday_needs = 0.50			  
-#		}
-#	}	
-#	education_efficiency_modifier = 0.10
-#	icon = 8
-#}
-#
-#middle_development_9 = {
-#	trigger = {
-#		exists = yes
-#		AND = {
-#		      middle_strata_luxury_needs = 0.75
-#              middle_strata_everyday_needs = 0.50			  
-#		}
-#	}	
-#	education_efficiency_modifier = 0.10
-#	icon = 8
-#}
-#
-#middle_development_10 = {
-#	trigger = {
-#		exists = yes
-#		AND = {
-#		      middle_strata_luxury_needs = 0.9
-#              middle_strata_everyday_needs = 0.50			  
-#		}
-#	}	
-#	education_efficiency_modifier = 0.10
-#	icon = 8
-#}
-#
-##Poor
-#poor_development_1 = {
-#	trigger = {
-#		exists = yes
-#		NOT = { poor_strata_life_needs = 0.5 }
-#		NOT = { poor_strata_everyday_needs = 0.1 }
-#		NOT = { poor_strata_luxury_needs = 0.1 }
-#	}	
-#	education_efficiency_modifier = -0.10
-#	icon = 8
-#}
-#
-#poor_development_2 = {
-#	trigger = {
-#		exists = yes
-#		NOT = { poor_strata_life_needs = 0.9 }
-#		NOT = { poor_strata_everyday_needs = 0.1 }
-#		NOT = { poor_strata_luxury_needs = 0.1 }
-#	}	
-#	education_efficiency_modifier = -0.10
-#	icon = 8
-#}
-#
-#poor_development_3 = {
-#	trigger = {
-#		exists = yes
-#		OR = {
-#		      poor_strata_everyday_needs = 0.4
-#		      poor_strata_luxury_needs = 0.1 
-#		}
-#	}	
-#	education_efficiency_modifier = 0.10
-#	icon = 8
-#}
-#
-#poor_development_4 = {
-#	trigger = {
-#		exists = yes
-#		OR = {
-#		      poor_strata_everyday_needs = 0.6
-#		      poor_strata_luxury_needs = 0.1 
-#		}
-#	}	
-#	education_efficiency_modifier = 0.10
-#	icon = 8
-#}
-#
-#poor_development_5 = {
-#	trigger = {
-#		exists = yes
-#		OR = {
-#		      poor_strata_everyday_needs = 0.8
-#		      poor_strata_luxury_needs = 0.1 
-#		}
-#	}	
-#	education_efficiency_modifier = 0.10
-#	icon = 8
-#}
-#
-#poor_development_6 = {
-#	trigger = {
-#		exists = yes
-#		OR = {
-#		      poor_strata_everyday_needs = 0.95
-#		      poor_strata_luxury_needs = 0.1 
-#		}
-#	}	
-#	education_efficiency_modifier = 0.10
-#	icon = 8
-#}
-#
-#poor_development_7 = {
-#	trigger = {
-#		exists = yes
-#		AND = {
-#		      poor_strata_luxury_needs = 0.25
-#              poor_strata_everyday_needs = 0.50			  
-#		}
-#	}	
-#	education_efficiency_modifier = 0.10
-#	icon = 8
-#}
-#
-#poor_development_8 = {
-#	trigger = {
-#		exists = yes
-#		AND = {
-#		      poor_strata_luxury_needs = 0.5
-#              poor_strata_everyday_needs = 0.50			  
-#		}
-#	}	
-#	education_efficiency_modifier = 0.10
-#	icon = 8
-#}
-#
-#poor_development_9 = {
-#	trigger = {
-#		exists = yes
-#		AND = {
-#		      poor_strata_luxury_needs = 0.75
-#              poor_strata_everyday_needs = 0.50			  
-#		}
-#	}	
-#	education_efficiency_modifier = 0.10
-#	icon = 8
-#}
-#
-#poor_development_10 = {
-#	trigger = {
-#		exists = yes
-#		AND = {
-#		      poor_strata_luxury_needs = 0.9
-#              poor_strata_everyday_needs = 0.50			  
-#		}
-#	}	
-#	education_efficiency_modifier = 0.10
-#	icon = 8
-#}
+#Rich
+rich_development_1 = {
+	trigger = {
+		exists = yes
+		NOT = { rich_tax = 0.99 }
+	}	
+	education_efficiency_modifier = 0.20
+	icon = 8
+}
+
+rich_development_2 = {
+	trigger = {
+		exists = yes
+		NOT = { rich_tax = 0.91 }
+	}	
+	education_efficiency_modifier = 0.20
+	icon = 8
+}
+
+rich_development_3 = {
+	trigger = {
+		exists = yes
+		NOT = { rich_tax = 0.81 }
+	}	
+	education_efficiency_modifier = 0.20
+	icon = 8
+}
+
+rich_development_4 = {
+	trigger = {
+		exists = yes
+		NOT = { rich_tax = 0.71 }
+	}	
+	education_efficiency_modifier = 0.20
+	icon = 8
+}
+
+rich_development_5 = {
+	trigger = {
+		exists = yes
+		NOT = { rich_tax = 0.61 }
+	}	
+	education_efficiency_modifier = 0.20
+	icon = 8
+}
+
+rich_development_6 = {
+	trigger = {
+		exists = yes
+		NOT = { rich_tax = 0.51 }
+	}	
+	education_efficiency_modifier = 0.20
+	icon = 8
+}
+
+rich_development_7 = {
+	trigger = {
+		exists = yes
+		NOT = { rich_tax = 0.41 }
+	}	
+	education_efficiency_modifier = 0.20
+	icon = 8
+}
+
+rich_development_8 = {
+	trigger = {
+		exists = yes
+		NOT = { rich_tax = 0.31 }
+	}	
+	education_efficiency_modifier = 0.20
+	icon = 8
+}
+
+rich_development_9 = {
+	trigger = {
+		exists = yes
+		NOT = { rich_tax = 0.21 }
+	}	
+	education_efficiency_modifier = 0.20
+	icon = 8
+}
+
+rich_development_10 = {
+	trigger = {
+		exists = yes
+		NOT = { rich_tax = 0.11 }
+	}	
+	education_efficiency_modifier = 0.20
+	icon = 8
+}
+
+#Middle
+middle_development_1 = {
+	trigger = {
+		exists = yes
+		NOT = { middle_tax = 0.99 }
+	}	
+	education_efficiency_modifier = 0.10
+	icon = 8
+}
+
+middle_development_2 = {
+	trigger = {
+		exists = yes
+		NOT = { middle_tax = 0.91 }
+	}	
+	education_efficiency_modifier = 0.10
+	icon = 8
+}
+
+middle_development_3 = {
+	trigger = {
+		exists = yes
+		NOT = { middle_tax = 0.81 }
+	}	
+	education_efficiency_modifier = 0.10
+	icon = 8
+}
+
+middle_development_4 = {
+	trigger = {
+		exists = yes
+		NOT = { middle_tax = 0.71 }
+	}	
+	education_efficiency_modifier = 0.10
+	icon = 8
+}
+
+middle_development_5 = {
+	trigger = {
+		exists = yes
+		NOT = { middle_tax = 0.61 }
+	}	
+	education_efficiency_modifier = 0.10
+	icon = 8
+}
+
+middle_development_6 = {
+	trigger = {
+		exists = yes
+		NOT = { middle_tax = 0.51 }
+	}	
+	education_efficiency_modifier = 0.10
+	icon = 8
+}
+
+middle_development_7 = {
+	trigger = {
+		exists = yes
+		NOT = { middle_tax = 0.41 }
+	}	
+	education_efficiency_modifier = 0.10
+	icon = 8
+}
+
+middle_development_8 = {
+	trigger = {
+		exists = yes
+		NOT = { middle_tax = 0.31 }
+	}	
+	education_efficiency_modifier = 0.10
+	icon = 8
+}
+
+middle_development_9 = {
+	trigger = {
+		exists = yes
+		NOT = { middle_tax = 0.21 }
+	}	
+	education_efficiency_modifier = 0.10
+	icon = 8
+}
+
+middle_development_10 = {
+	trigger = {
+		exists = yes
+		NOT = { middle_tax = 0.11 }
+	}	
+	education_efficiency_modifier = 0.10
+	icon = 8
+}
+
+#Poor
+poor_development_1 = {
+	trigger = {
+		exists = yes
+		NOT = { poor_tax = 0.99 }
+	}	
+	education_efficiency_modifier = 0.10
+	icon = 8
+}
+
+poor_development_2 = {
+	trigger = {
+		exists = yes
+		NOT = { poor_tax = 0.91 }
+	}	
+	education_efficiency_modifier = 0.10
+	icon = 8
+}
+
+poor_development_3 = {
+	trigger = {
+		exists = yes
+		NOT = { poor_tax = 0.81 }
+	}	
+	education_efficiency_modifier = 0.10
+	icon = 8
+}
+
+poor_development_4 = {
+	trigger = {
+		exists = yes
+		NOT = { poor_tax = 0.71 }
+	}	
+	education_efficiency_modifier = 0.10
+	icon = 8
+}
+
+poor_development_5 = {
+	trigger = {
+		exists = yes
+		NOT = { poor_tax = 0.61 }
+	}	
+	education_efficiency_modifier = 0.10
+	icon = 8
+}
+
+poor_development_6 = {
+	trigger = {
+		exists = yes
+		NOT = { poor_tax = 0.51 }
+	}	
+	education_efficiency_modifier = 0.10
+	icon = 8
+}
+
+poor_development_7 = {
+	trigger = {
+		exists = yes
+		NOT = { poor_tax = 0.41 }
+	}	
+	education_efficiency_modifier = 0.10
+	icon = 8
+}
+
+poor_development_8 = {
+	trigger = {
+		exists = yes
+		NOT = { poor_tax = 0.31 }
+	}	
+	education_efficiency_modifier = 0.10
+	icon = 8
+}
+
+poor_development_9 = {
+	trigger = {
+		exists = yes
+		NOT = { poor_tax = 0.21 }
+	}	
+	education_efficiency_modifier = 0.10
+	icon = 8
+}
+
+poor_development_10 = {
+	trigger = {
+		exists = yes
+		NOT = { poor_tax = 0.11 }
+	}	
+	education_efficiency_modifier = 0.10
+	icon = 8
+}
