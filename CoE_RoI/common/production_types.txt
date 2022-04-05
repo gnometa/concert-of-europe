@@ -573,13 +573,14 @@ artisan_steel_maker = {
 
 	value = 32.70
 	owner = {
-		poptype = artisan
+		poptype = artisans
 		effect = output
+		effect_multiplier = 1
 	}
 
 	type = artisan
 
-	workforce = 25000 #artisan
+	workforce = 10000 #artisan
 }
 
 artisan_bronze_maker = {
@@ -592,13 +593,14 @@ artisan_bronze_maker = {
 
 	value = 27.85
 	owner = {
-		poptype = artisan
+		poptype = artisans
 		effect = output
+		effect_multiplier = 1
 	}
 
 	type = artisan
 
-	workforce = 25000 #artisan
+	workforce = 10000 #artisan
 }
 
 artisan_cloths_maker = {
@@ -611,13 +613,14 @@ artisan_cloths_maker = {
 
 	value = 23.76
 	owner = {
-		poptype = artisan
+		poptype = artisans
 		effect = output
+		effect_multiplier = 1
 	}
 
 	type = artisan
 
-	workforce = 25000 #artisan
+	workforce = 10000 #artisan
 }
 
 artisan_furniture_maker = {
@@ -629,13 +632,14 @@ artisan_furniture_maker = {
 
 	value = 20.0
 	owner = {
-		poptype = artisan
+		poptype = artisans
 		effect = output
+		effect_multiplier = 1
 	}
 
 	type = artisan
 
-	workforce = 25000 #artisan
+	workforce = 10000 #artisan
 }
 
 artisan_luxury_maker = {
@@ -648,13 +652,14 @@ artisan_luxury_maker = {
 
 	value = 5.5
 	owner = {
-		poptype = artisan
+		poptype = artisans
 		effect = output
+		effect_multiplier = 1
 	}
 
 	type = artisan
 
-	workforce = 25000 #artisan
+	workforce = 10000 #artisan
 }
 
 artisan_imports_maker = {
@@ -667,13 +672,14 @@ artisan_imports_maker = {
 
 	value = 8.4
 	owner = {
-		poptype = artisan
+		poptype = artisans
 		effect = output
+		effect_multiplier = 1
 	}
 
 	type = artisan
 
-	workforce = 25000 #artisan
+	workforce = 10000 #artisan
 }
 
 artisan_stimulants_maker = {
@@ -685,13 +691,14 @@ artisan_stimulants_maker = {
 
 	value = 9.2
 	owner = {
-		poptype = artisan
+		poptype = artisans
 		effect = output
+		effect_multiplier = 1
 	}
 
 	type = artisan
 
-	workforce = 25000 #artisan
+	workforce = 10000 #artisan
 }
 
 artisan_military_maker = {
@@ -703,13 +710,14 @@ artisan_military_maker = {
 
 	value = 20.0
 	owner = {
-		poptype = artisan
+		poptype = artisans
 		effect = output
+		effect_multiplier = 1
 	}
 
 	type = artisan
 
-	workforce = 25000 #artisan
+	workforce = 10000 #artisan
 }
 
 artisan_electricity_maker = {
@@ -721,13 +729,14 @@ artisan_electricity_maker = {
 
 	value = 28.8
 	owner = {
-		poptype = artisan
+		poptype = artisans
 		effect = output
+		effect_multiplier = 1
 	}
 
 	type = artisan
 
-	workforce = 25000 #artisan
+	workforce = 10000 #artisan
 }
 
 artisan_food_maker = {
@@ -741,13 +750,14 @@ artisan_food_maker = {
 
 	value = 500.0
 	owner = {
-		poptype = artisan
+		poptype = artisans
 		effect = output
+		effect_multiplier = 1
 	}
 
 	type = artisan
 
-	workforce = 25000 #artisan
+	workforce = 10000 #artisan
 }
 
 #artisan_moderngear_maker = {
