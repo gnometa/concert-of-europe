@@ -1088,7 +1088,7 @@ milit_found_2 = {
 	org_regain = 0.10
 	war_exhaustion = -0.20
 	influence = 0.10
-	global_pop_militancy_modifier = -0.02
+	global_pop_militancy_modifier = -0.01
 	icon = 1
 }
 
@@ -1103,7 +1103,7 @@ milit_found_3 = {
 	org_regain = 0.15
 	war_exhaustion = -0.30
 	influence = 0.15
-	global_pop_militancy_modifier = -0.03
+	global_pop_militancy_modifier = -0.02
 	icon = 1
 }
 
@@ -1118,7 +1118,7 @@ milit_found_4 = {
 	org_regain = 0.20
 	war_exhaustion = -0.40
 	influence = 0.20
-	global_pop_militancy_modifier = -0.04
+	global_pop_militancy_modifier = -0.02
 	icon = 1
 }
 
@@ -1132,7 +1132,7 @@ milit_found_5 = {
 	org_regain = 0.25
 	war_exhaustion = -0.50
 	influence = 0.25
-	global_pop_militancy_modifier = -0.05
+	global_pop_militancy_modifier = -0.03
 	icon = 1
 }
 
