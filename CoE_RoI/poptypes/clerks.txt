@@ -5523,19 +5523,19 @@ issues = {
 			}
 		}
 		modifier = {
-			factor = 1.2
+			factor = 2
 			literacy = 0.50
 		}
 		modifier = {
-			factor = 1.2
+			factor = 2
 			literacy = 0.60
 		}
 		modifier = {
-			factor = 1.2
+			factor = 2
 			literacy = 0.70
 		}
 		modifier = {
-			factor = 1.2
+			factor = 2
 			literacy = 0.80
 		}
 		modifier = {
