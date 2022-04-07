@@ -978,7 +978,7 @@ ideologies = {
 	}
 	
 	social_liberal = {
-		factor = 3
+		factor = 3.0
 		#modifier = {
 		#	factor = 1.5
 		#	has_global_flag = post_colonial_era_fired
@@ -1053,7 +1053,7 @@ ideologies = {
 			literacy = 0.9
 		}
 		modifier = {
-			factor = 2.5
+			factor = 1.5
 			OR = {
 				nationalvalue = nv_liberty
 				nationalvalue = nv_prosperity
@@ -1061,12 +1061,8 @@ ideologies = {
 			}
 		}
 		modifier = {
-			factor = 4.0
+			factor = 2.0
 			nationalvalue = nv_freedom
-		}
-		modifier = {
-			factor = 0.3
-			militancy = 3
 		}
 		modifier = {
 			factor = 0
@@ -1110,117 +1106,77 @@ ideologies = {
 		}
 
 		modifier = {
-			factor = 1.2
+			factor = 1.25
 			social_reform_want = 0.01
 		}
 		modifier = {
-			factor = 1.2
+			factor = 1.25
 			social_reform_want = 0.05
 		}
 		modifier = {
-			factor = 1.2
+			factor = 1.25
 			social_reform_want = 0.10
 		}
 		modifier = {
-			factor = 1.2
+			factor = 1.25
 			social_reform_want = 0.15
 		}
 		modifier = {
-			factor = 1.2
+			factor = 1.25
 			social_reform_want = 0.20
 		}
 		modifier = {
-			factor = 1.2
+			factor = 1.25
 			social_reform_want = 0.25
 		}
 		modifier = {
-			factor = 1.2
+			factor = 1.25
 			social_reform_want = 0.30
 		}
 		modifier = {
-			factor = 1.2
+			factor = 1.25
 			social_reform_want = 0.40
 		}
 		modifier = {
-			factor = 1.2
+			factor = 1.25
 			social_reform_want = 0.50
-		}
-		modifier = {
-			factor = 1.2
-			social_reform_want = 0.60
-		}
-		modifier = {
-			factor = 1.2
-			social_reform_want = 0.70
-		}
-		modifier = {
-			factor = 1.2
-			social_reform_want = 0.80
-		}
-		modifier = {
-			factor = 1.2
-			social_reform_want = 0.90
-		}
-		modifier = {
-			factor = 1.2
-			social_reform_want = 0.99
 		}
 
 		modifier = {
-			factor = 1.3
+			factor = 1.25
 			political_reform_want = 0.01
 		}
 		modifier = {
-			factor = 1.3
+			factor = 1.25
 			political_reform_want = 0.05
 		}
 		modifier = {
-			factor = 1.3
+			factor = 1.25
 			political_reform_want = 0.10
 		}
 		modifier = {
-			factor = 1.3
+			factor = 1.25
 			political_reform_want = 0.15
 		}
 		modifier = {
-			factor = 1.3
+			factor = 1.25
 			political_reform_want = 0.20
 		}
 		modifier = {
-			factor = 1.3
+			factor = 1.25
 			political_reform_want = 0.25
 		}
 		modifier = {
-			factor = 1.3
+			factor = 1.25
 			political_reform_want = 0.30
 		}
 		modifier = {
-			factor = 1.3
+			factor = 1.25
 			political_reform_want = 0.40
 		}
 		modifier = {
-			factor = 1.3
+			factor = 1.25
 			political_reform_want = 0.50
-		}
-		modifier = {
-			factor = 1.3
-			political_reform_want = 0.60
-		}
-		modifier = {
-			factor = 1.3
-			political_reform_want = 0.70
-		}
-		modifier = {
-			factor = 1.3
-			political_reform_want = 0.80
-		}
-		modifier = {
-			factor = 1.3
-			political_reform_want = 0.90
-		}
-		modifier = {
-			factor = 1.3
-			political_reform_want = 0.99
 		}
 		#modifier = {
 		#	factor = 5.0
@@ -1242,6 +1198,42 @@ ideologies = {
 		#	factor = 1.5
 		#	type = craftsmen
 		#}
+		modifier = {
+			factor = 1.1
+			consciousness = 1
+		}
+		modifier = {
+			factor = 1.1
+			consciousness = 2
+		}
+		modifier = {
+			factor = 1.1
+			consciousness = 3
+		}	
+		modifier = {
+			factor = 1.1
+			consciousness = 4
+		}		
+		modifier = {
+			factor = 1.1
+			consciousness = 5
+		}		
+		modifier = {
+			factor = 1.1
+			consciousness = 6
+		}	
+		modifier = {
+			factor = 1.1
+			consciousness = 7
+		}		
+		modifier = {
+			factor = 1.1
+			consciousness = 8
+		}			
+		modifier = {
+			factor = 1.1
+			consciousness = 9
+		}			
 	}
 	
 	separatist = {
@@ -1455,7 +1447,7 @@ ideologies = {
 			ruling_party_ideology = fascist
 		}
 		modifier = {
-			factor = 2.5
+			factor = 2.0
 			OR = {
 				nationalvalue = nv_might
 				nationalvalue = nv_glory
@@ -1464,7 +1456,7 @@ ideologies = {
 			is_primary_culture = yes
 		}
 		modifier = {
-			factor = 2.5
+			factor = 1.25
 			OR = {
 				nationalvalue = nv_might
 				nationalvalue = nv_glory
@@ -1473,12 +1465,12 @@ ideologies = {
             is_accepted_culture = yes
 		}
 		modifier = {
-			factor = 4.0
+			factor = 2.5
 			nationalvalue = nv_supremacy
 			is_primary_culture = yes
 		}
 		modifier = {
-			factor = 4.0
+			factor = 1.75
 			nationalvalue = nv_supremacy
             is_accepted_culture = yes
 		}			
@@ -1532,58 +1524,50 @@ ideologies = {
 		#}
 
 		modifier = {
-			factor = 1.25	
-			militancy = 2
+			factor = 1.5
+			not = { political_reform_want = 0.01 }
+		}
+		modifier = {
+			factor = 1.5
 			not = { political_reform_want = 0.05 }
 		}
 		modifier = {
-			factor = 1.25	
-			militancy = 4
-			not = { political_reform_want = 0.05 }
+			factor = 1.5
+			not = { political_reform_want = 0.10 }
 		}
 		modifier = {
 			factor = 1.25
-			militancy = 6
-			not = { political_reform_want = 0.05 }
-		}
-		modifier = {
-			factor = 1.25	
-			militancy = 8
-			not = { political_reform_want = 0.05 }
-		}
-		modifier = {
-			factor = 1.5
-			not = { life_needs = 1.0 }
+			#not = { life_needs = 1.0 }
 			social_reform_want = 0.05
 		}
 		modifier = {
-			factor = 1.5
-			not = { life_needs = 1.0 }
+			factor = 1.25
+			#not = { life_needs = 1.0 }
 			social_reform_want = 0.10
 		}
 		modifier = {
-			factor = 1.5
-			not = { life_needs = 1.0 }
+			factor = 1.25
+			#not = { life_needs = 1.0 }
 			social_reform_want = 0.15
 		}
 		modifier = {
-			factor = 1.5
-			not = { life_needs = 1.0 }
+			factor = 1.25
+			#not = { life_needs = 1.0 }
 			social_reform_want = 0.20
 		}
 		modifier = {
-			factor = 1.5
-			not = { life_needs = 1.0 }
+			factor = 1.25
+			#not = { life_needs = 1.0 }
 			social_reform_want = 0.30
 		}
 		modifier = {
-			factor = 1.5
-			not = { life_needs = 1.0 }
+			factor = 1.25
+			#not = { life_needs = 1.0 }
 			social_reform_want = 0.40
 		}
 		modifier = {
-			factor = 1.5
-			not = { life_needs = 1.0 }
+			factor = 1.25
+			£not = { life_needs = 1.0 }
 			social_reform_want = 0.50
 		}
 		modifier = {
@@ -1615,16 +1599,16 @@ ideologies = {
 			not = { everyday_needs = 0.1 }
 		}
 		modifier = {
-			factor = 1.5
+			factor = 1.4
 			nationalvalue = nv_supremacy
-			pop_majority_ideology = socialist
+			#pop_majority_ideology = socialist
 			not = { political_reform_want = 0.1 }
 			not = { ruling_party_ideology = communist }
 		}
 		modifier = {
-			factor = 1.5
+			factor = 1.2
 			nationalvalue = nv_supremacy
-			pop_majority_ideology = reactionary
+			#pop_majority_ideology = reactionary
 			social_reform_want = 0.10
 		}
 		#modifier = {
@@ -1693,13 +1677,13 @@ ideologies = {
 			not = { OR = { government = absolute_monarchy government = absolute_monarchy2 government = absolute_monarchy3 } }
 		}
 		modifier = {
-			factor = 2.0
+			factor = 1.5
 			OR = {
 				nationalvalue = nv_might
 				nationalvalue = nv_glory
 				nationalvalue = nv_dominion
 			}
-			pop_majority_ideology = conservative
+			#pop_majority_ideology = conservative
 		}
 		modifier = {
 			factor = 5.0
@@ -1755,9 +1739,9 @@ ideologies = {
 		}
 		
 		modifier = {
-			factor = 4.0
+			factor = 1.8
 			nationalvalue = nv_supremacy
-			pop_majority_ideology = conservative
+			#pop_majority_ideology = conservative
 		}
 		modifier = {
 			factor = 2.0
@@ -1815,6 +1799,7 @@ ideologies = {
 			factor = 0.5
 			militancy = 4
 			is_accepted_culture = no
+			is_primary_culture = no
 		}
 		#modifier = {
 		#	factor = 1.5	
@@ -1899,7 +1884,7 @@ ideologies = {
 			NOT = { ruling_party_ideology = fascist }
 		}
 		modifier = {
-			factor = 3.0
+			factor = 2.5
 			nationalvalue = nv_productivity
 			NOT = { ruling_party_ideology = reactionary }
 			NOT = { ruling_party_ideology = fascist }
@@ -1953,19 +1938,19 @@ ideologies = {
 			nationalvalue = nv_order
 		}
 		modifier = {
-			factor = 1.5
+			factor = 1.3
 			not = { social_reform_want = 0.05 }
 		}
 		modifier = {
-			factor = 1.5	
+			factor = 1.3	
 			not = { social_reform_want = 0.15 }
 		}
 		modifier = {
-			factor = 1.5	
+			factor = 1.3	
 			not = { social_reform_want = 0.20 }
 		}
 		modifier = {
-			factor = 1.5	
+			factor = 1.3	
 			not = { social_reform_want = 0.25 }
 		}
 		modifier = {
@@ -2058,7 +2043,7 @@ ideologies = {
 		#	nationalvalue = nv_glory
 		#}
 		modifier = {
-			factor = 2.5
+			factor = 2.0
 			OR = {
 				nationalvalue = nv_unity
 				nationalvalue = nv_prosperity
@@ -2067,15 +2052,15 @@ ideologies = {
 			NOT = { ruling_party_ideology = communist }
 		}
 		modifier = {
-			factor = 4.0
+			factor = 3.0
 			nationalvalue = nv_fraternity
 			NOT = { ruling_party_ideology = communist }
 		}
-		modifier = {
-			factor = 1.5
-			militancy = 3
-			not = { is_ideology_enabled = communist }
-		}
+		#modifier = {
+		#	factor = 1.5
+		#	militancy = 3
+		#	not = { is_ideology_enabled = communist }
+		#}
 		#modifier = {
 		#	factor = 0.5
 		#	militancy = 3
@@ -2106,44 +2091,24 @@ ideologies = {
 			social_reform_want = 0.15
 		}
 		modifier = {
-			factor = 1.3
+			factor = 1.4
 			social_reform_want = 0.20
 		}
 		modifier = {
-			factor = 1.3
+			factor = 1.4
 			social_reform_want = 0.25
 		}
 		modifier = {
-			factor = 1.3
+			factor = 1.4
 			social_reform_want = 0.30
 		}
 		modifier = {
-			factor = 1.3
+			factor = 1.4
 			social_reform_want = 0.40
 		}
 		modifier = {
-			factor = 1.3
+			factor = 1.4
 			social_reform_want = 0.50
-		}
-		modifier = {
-			factor = 1.3
-			social_reform_want = 0.60
-		}
-		modifier = {
-			factor = 1.3
-			social_reform_want = 0.70
-		}
-		modifier = {
-			factor = 1.3
-			social_reform_want = 0.80
-		}
-		modifier = {
-			factor = 1.3
-			social_reform_want = 0.90
-		}
-		modifier = {
-			factor = 1.3
-			social_reform_want = 0.99
 		}
 
 		modifier = {
@@ -2181,26 +2146,6 @@ ideologies = {
 		modifier = {
 			factor = 1.2
 			political_reform_want = 0.50
-		}
-		modifier = {
-			factor = 1.2
-			political_reform_want = 0.60
-		}
-		modifier = {
-			factor = 1.2
-			political_reform_want = 0.70
-		}
-		modifier = {
-			factor = 1.2
-			political_reform_want = 0.80
-		}
-		modifier = {
-			factor = 1.2
-			political_reform_want = 0.90
-		}
-		modifier = {
-			factor = 1.2
-			political_reform_want = 0.99
 		}
 		modifier = {
 			factor = 1.25
@@ -2319,27 +2264,27 @@ ideologies = {
 		#		has_global_flag = the_great_experiment_communist
 		#	}
 		#}
-		#modifier = {
-		#	factor = 0.8
-		#	nationalvalue = nv_freedom
-		#}
-		#modifier = {
-		#	factor = 0.8
-		#	nationalvalue = nv_liberty
-		#}
 		modifier = {
-			factor = 2.0
+			factor = 0.9
+			nationalvalue = nv_freedom
+		}
+		modifier = {
+			factor = 0.9
+			nationalvalue = nv_liberty
+		}
+		modifier = {
+			factor = 1.5
 			OR = {
 				nationalvalue = nv_might
 				nationalvalue = nv_glory
 				nationalvalue = nv_dominion
 			}
-			pop_majority_ideology = socialist
+			#pop_majority_ideology = socialist
 		}
 		modifier = {
-			factor = 5.0
+			factor = 1.8
 			nationalvalue = nv_supremacy
-			pop_majority_ideology = socialist
+			#pop_majority_ideology = socialist
 		}
 		modifier = {
 			factor = 5
@@ -2352,7 +2297,7 @@ ideologies = {
 			not = { militancy = 4 }
 		}
 		modifier = {
-			factor = 2.0
+			factor = 1.5
 			OR = {
 				nationalvalue = nv_unity
 				nationalvalue = nv_prosperity
@@ -2365,7 +2310,7 @@ ideologies = {
 			ruling_party_ideology = communist 
 		}
 		modifier = {
-			factor = 4.0
+			factor = 2.0
 			nationalvalue = nv_equality
 			ruling_party_ideology = communist 
 		}
@@ -2396,150 +2341,101 @@ ideologies = {
 			}
 		}
 		modifier = {
-			factor = 1.10
+			factor = 1.30
 			social_reform_want = 0.05
 		}
 		modifier = {
-			factor = 1.10
+			factor = 1.30
 			social_reform_want = 0.10
 		}
 		modifier = {
-			factor = 1.10
+			factor = 1.30
 			social_reform_want = 0.15
 		}
 		modifier = {
-			factor = 1.20
+			factor = 1.50
 			social_reform_want = 0.20
 		}
 		modifier = {
-			factor = 1.20
+			factor = 1.50
 			social_reform_want = 0.30
 		}
 		modifier = {
-			factor = 1.20
+			factor = 1.50
 			social_reform_want = 0.40
 		}		
 		modifier = {
-			factor = 1.40
+			factor = 1.80
 			social_reform_want = 0.50
-		}	
-		modifier = {
-			factor = 1.40
-			social_reform_want = 0.60
-		}	
-		modifier = {
-			factor = 1.40
-			social_reform_want = 0.70
-		}	
-		modifier = {
-			factor = 1.60
-			social_reform_want = 0.80
-		}	
-		modifier = {
-			factor = 1.60
-			social_reform_want = 0.90
-		}	
-		modifier = {
-			factor = 1.60
-			social_reform_want = 0.99
-		}	
+		}
 		
 		modifier = {
-			factor = 1.10
+			factor = 1.15
 			political_reform_want = 0.01
 			NOT = { ruling_party_ideology = communist }
 			NOT = { is_ideology_enabled = socialist }
 		}
 		modifier = {
-			factor = 1.10
+			factor = 1.15
 			political_reform_want = 0.05
 			NOT = { ruling_party_ideology = communist }
 			NOT = { is_ideology_enabled = socialist }
 		}		
 		modifier = {
-			factor = 1.10
+			factor = 1.15
 			political_reform_want = 0.10
 			NOT = { ruling_party_ideology = communist }
 			NOT = { is_ideology_enabled = socialist }
 		}	
 		modifier = {
-			factor = 1.10
+			factor = 1.20
 			political_reform_want = 0.15
 			NOT = { ruling_party_ideology = communist }
 			NOT = { is_ideology_enabled = socialist }
 		}		
 		modifier = {
-			factor = 1.15
+			factor = 1.20
 			political_reform_want = 0.20
 			NOT = { ruling_party_ideology = communist }
 			NOT = { is_ideology_enabled = socialist }
 		}	
 		modifier = {
-			factor = 1.15
+			factor = 1.20
 			political_reform_want = 0.25
 			NOT = { ruling_party_ideology = communist }
 			NOT = { is_ideology_enabled = socialist }
 		}	
 		modifier = {
-			factor = 1.15
+			factor = 1.25
 			political_reform_want = 0.30
 			NOT = { ruling_party_ideology = communist }
 			NOT = { is_ideology_enabled = socialist }
 		}	
 		modifier = {
-			factor = 1.15
+			factor = 1.25
 			political_reform_want = 0.35
 			NOT = { ruling_party_ideology = communist }
 			NOT = { is_ideology_enabled = socialist }
 		}	
 		modifier = {
-			factor = 1.15
+			factor = 1.25
 			political_reform_want = 0.40
 			NOT = { ruling_party_ideology = communist }
 			NOT = { is_ideology_enabled = socialist }
 		}	
 		modifier = {
-			factor = 1.15
+			factor = 1.30
 			political_reform_want = 0.45
 			NOT = { ruling_party_ideology = communist }
 			NOT = { is_ideology_enabled = socialist }
 		}	
 		modifier = {
-			factor = 1.20
+			factor = 1.30
 			political_reform_want = 0.50
 			NOT = { ruling_party_ideology = communist }
 			NOT = { is_ideology_enabled = socialist }
 		}	
-		modifier = {
-			factor = 1.20
-			political_reform_want = 0.60
-			NOT = { ruling_party_ideology = communist }
-			NOT = { is_ideology_enabled = socialist }
-		}	
-		modifier = {
-			factor = 1.20
-			political_reform_want = 0.70
-			NOT = { ruling_party_ideology = communist }
-			NOT = { is_ideology_enabled = socialist }
-		}	
-		modifier = {
-			factor = 1.20
-			political_reform_want = 0.80
-			NOT = { ruling_party_ideology = communist }
-			NOT = { is_ideology_enabled = socialist }
-		}	
-		modifier = {
-			factor = 1.30
-			political_reform_want = 0.90
-			NOT = { ruling_party_ideology = communist }
-			NOT = { is_ideology_enabled = socialist }
-		}	
-		modifier = {
-			factor = 1.30
-			political_reform_want = 0.99
-			NOT = { ruling_party_ideology = communist }
-			NOT = { is_ideology_enabled = socialist }
-		}	
+
 		modifier = {
 			factor = 1.10
 			political_reform_want = 0.01
@@ -2565,56 +2461,26 @@ ideologies = {
 			is_ideology_enabled = socialist
 		}
 		modifier = {
-			factor = 1.1
+			factor = 1.10
 			political_reform_want = 0.20
 			NOT = { ruling_party_ideology = communist }
 			is_ideology_enabled = socialist
 		}
 		modifier = {
-			factor = 1.1
+			factor = 1.10
 			political_reform_want = 0.30
 			NOT = { ruling_party_ideology = communist }
 			is_ideology_enabled = socialist
 		}
 		modifier = {
-			factor = 1.1
+			factor = 1.10
 			political_reform_want = 0.40
 			NOT = { ruling_party_ideology = communist }
 			is_ideology_enabled = socialist
 		}
 		modifier = {
-			factor = 1.2
+			factor = 1.20
 			political_reform_want = 0.50
-			NOT = { ruling_party_ideology = communist }
-			is_ideology_enabled = socialist
-		}
-		modifier = {
-			factor = 1.2
-			political_reform_want = 0.60
-			NOT = { ruling_party_ideology = communist }
-			is_ideology_enabled = socialist
-		}
-		modifier = {
-			factor = 1.2
-			political_reform_want = 0.70
-			NOT = { ruling_party_ideology = communist }
-			is_ideology_enabled = socialist
-		}
-		modifier = {
-			factor = 1.4
-			political_reform_want = 0.80
-			NOT = { ruling_party_ideology = communist }
-			is_ideology_enabled = socialist
-		}
-		modifier = {
-			factor = 1.4
-			political_reform_want = 0.90
-			NOT = { ruling_party_ideology = communist }
-			is_ideology_enabled = socialist
-		}
-		modifier = {
-			factor = 1.4
-			political_reform_want = 0.99
 			NOT = { ruling_party_ideology = communist }
 			is_ideology_enabled = socialist
 		}
@@ -2824,25 +2690,20 @@ ideologies = {
 			political_reform_want = 0.50
 		}
 		modifier = {
-			factor = 1.5
-			political_reform_want = 0.60
-		}
+			factor = 1.2
+			social_reform_want = 0.01
+			NOT = { is_ideology_enabled = communist }
+		}		
 		modifier = {
-			factor = 1.5
-			political_reform_want = 0.70
-		}
+			factor = 1.2
+			social_reform_want = 0.05
+			NOT = { is_ideology_enabled = communist }
+		}			
 		modifier = {
-			factor = 1.5
-			political_reform_want = 0.80
-		}
-		modifier = {
-			factor = 1.5
-			political_reform_want = 0.90
-		}
-		modifier = {
-			factor = 1.5
-			political_reform_want = 0.99
-		}
+			factor = 1.2
+			social_reform_want = 0.10
+			NOT = { is_ideology_enabled = communist }
+		}			
 		modifier = {
 			factor = 0.9
 			social_reform_want = 0.10
@@ -2867,32 +2728,7 @@ ideologies = {
 			factor = 0.9
 			social_reform_want = 0.50
 			is_ideology_enabled = social_liberal
-		}
-		modifier = {
-			factor = 0.9
-			social_reform_want = 0.60
-			is_ideology_enabled = social_liberal
-		}		
-		modifier = {
-			factor = 0.9
-			social_reform_want = 0.70
-			is_ideology_enabled = social_liberal
-		}
-		modifier = {
-			factor = 0.9
-			social_reform_want = 0.80
-			is_ideology_enabled = social_liberal
-		}
-		modifier = {
-			factor = 0.9
-			social_reform_want = 0.90
-			is_ideology_enabled = social_liberal
-		}
-		modifier = {
-			factor = 0.9
-			social_reform_want = 0.99
-			is_ideology_enabled = social_liberal
-		}		
+		}	
 		modifier = {
 			factor = 1.25
 			OR = {
@@ -2935,7 +2771,7 @@ ideologies = {
 		#}
 	}
 	anarcho_liberal = {
-		factor = 1
+		factor = 1.0
 		modifier = {
 			factor = 1.2
 			country = { 
@@ -2967,18 +2803,18 @@ ideologies = {
 			}
 		}
 		modifier = {
-			factor = 3.0
+			factor = 1.5
 			OR = {
 				nationalvalue = nv_might
 				nationalvalue = nv_glory
 				nationalvalue = nv_dominion
 			}
-			pop_majority_ideology = liberal
+			#pop_majority_ideology = liberal
 		}
 		modifier = {
-			factor = 5.0
+			factor = 1.8
 			nationalvalue = nv_supremacy
-			pop_majority_ideology = liberal
+			#pop_majority_ideology = liberal
 		}
 		modifier = {
 			factor = 4
@@ -3199,7 +3035,7 @@ ideologies = {
 }
 issues = {
 	protectionism = {
-		factor = 1.0
+		factor = 2.0
 		modifier = {
 			factor = 1.5
 			NOT = {
@@ -3293,7 +3129,7 @@ issues = {
 		}
 	} 
 	interventionism = {
-		factor = 1.0
+		factor = 3.0
 		modifier = {
 			factor = 0
 			NOT = {
@@ -3321,7 +3157,7 @@ issues = {
 		}
 	} 
 	state_capitalism = {
-		factor = 1.0
+		factor = 2.0
 		modifier = {
 			factor = 1.2
 			OR = {
@@ -3361,7 +3197,7 @@ issues = {
 		}
 	} 
 	anti_industrial = {
-		factor = 1.0
+		factor = 2.0
 		modifier = {
 			factor = 0
 			NOT = {
@@ -3559,7 +3395,7 @@ issues = {
 		}
 	}
 	anti_military = {
-		factor = 1.0
+		factor = 1.5
 		modifier = {
 			factor = 1.5
 			war = yes
@@ -3616,7 +3452,7 @@ issues = {
 		}
 	}
 	pacifism = {
-		factor = 1.0
+		factor = 1.25
 		modifier = {
 			factor = 1.1
 			OR = {
@@ -3680,7 +3516,7 @@ issues = {
 		}
 	}
 	pro_atheism = {
-		factor = 1.0
+		factor = 1.25
 		modifier = {
 			factor = 1.5
 			consciousness = 8
@@ -3698,9 +3534,9 @@ issues = {
 		}
 	}
 	secularized = {
-		factor = 1
+		factor = 1.50
 		modifier = {
-			factor = 1.5
+			factor = 1.50
 			NOT = { is_state_religion = yes }
 		}
 		modifier = {
@@ -3709,7 +3545,7 @@ issues = {
 		} 
 	}
 	pluralism = {
-		factor = 1.0
+		factor = 1.10
 		modifier = {
 			factor = 1.25
 			OR = {
@@ -3732,7 +3568,7 @@ issues = {
 		} 
 	}
 	moralism = {
-		factor = 1.0
+		factor = 1.15
 		modifier = {
 			factor = 1.05
 			nationalvalue = nv_order
@@ -3801,7 +3637,7 @@ issues = {
 		}
 	}
 	residency = {
-		factor = 0.5
+		factor = 1.0
 		modifier = {
 			factor = 1.1
 			OR = {
@@ -3828,7 +3664,7 @@ issues = {
 		}
 	}
 	limited_citizenship = {
-		factor = 0.5
+		factor = 1.25
 		modifier = {
 			factor = 1.5
 			is_accepted_culture = yes
@@ -3914,7 +3750,7 @@ issues = {
 	}
 
 	no_slavery = {
-		factor = 1
+		factor = 1.0
 		modifier = {
 			factor = 0 
 			country = {
@@ -5883,17 +5719,19 @@ state_equal_weight = {
 			literacy = 0.80
 		}
 	}
+
+	
 	trinket_wage = { 
 		factor = 1.5
 		modifier = {
 			factor = 0 
 			OR = {
-				luxury_needs = 0.1
+				#luxury_needs = 0.1
 				country = {	civilized = no }
 				NOT = {
 					is_next_reform = trinket_wage
 				}
-				unemployment = 0.1
+				unemployment = 0.25
 				NOT = { is_ideology_enabled = communist }
 			}	
 		}
@@ -5959,12 +5797,12 @@ state_equal_weight = {
 		modifier = {
 			factor = 0 
 			OR = {
-				luxury_needs = 0.1
+				#luxury_needs = 0.1
 				country = {	civilized = no }
 				NOT = {
 					is_next_reform = low_minimum_wage
 				}
-				unemployment = 0.1
+				unemployment = 0.25
 				NOT = { is_ideology_enabled = communist }
 			}	
 		}
@@ -6030,12 +5868,12 @@ state_equal_weight = {
 		modifier = {
 			factor = 0 
 			OR = {
-				luxury_needs = 0.1
+				#luxury_needs = 0.1
 				country = {	civilized = no }
 				NOT = {
 					is_next_reform = acceptable_minimum_wage
 				}
-				unemployment = 0.1
+				unemployment = 0.25
 				NOT = { is_ideology_enabled = communist }
 			}	
 		}
@@ -6101,10 +5939,10 @@ state_equal_weight = {
 		modifier = {
 			factor = 0 
 			OR = {
-				luxury_needs = 0.1
-					country = {	civilized = no }
+				#luxury_needs = 0.1
+				country = {	civilized = no }
 				NOT = { is_next_reform = good_minimum_wage	}
-				unemployment = 0.1
+				unemployment = 0.25
 				NOT = { is_ideology_enabled = communist }
 			}	
 		}
@@ -6171,7 +6009,7 @@ trinket_safety = {
 			factor = 0 
 			OR = {
 				not = { everyday_needs = 0.1 }
-				unemployment = 0.1
+				unemployment = 0.25
 				country = {	civilized = no }
 				NOT = {	is_next_reform = trinket_safety	}
 				NOT = { is_ideology_enabled = communist }
@@ -6236,7 +6074,7 @@ trinket_safety = {
 			factor = 0 
 			OR = {
 				not = { everyday_needs = 0.1 }
-				unemployment = 0.1
+				unemployment = 0.25
 				country = {	civilized = no }
 				NOT = {
 					is_next_reform = low_safety
@@ -6304,7 +6142,7 @@ trinket_safety = {
 			OR = {
 				not = { everyday_needs = 0.1 }
 				country = {	civilized = no }
-				unemployment = 0.1
+				unemployment = 0.25
 				NOT = {
 					is_next_reform = acceptable_safety
 				}
@@ -6371,7 +6209,7 @@ trinket_safety = {
 			OR = {
 				not = { everyday_needs = 0.1 }
 				country = {	civilized = no }
-				unemployment = 0.1
+				unemployment = 0.25
 				NOT = {
 					is_next_reform = good_safety 
 				}
@@ -6436,7 +6274,7 @@ trinket_subsidies = {
 		modifier = {
 			factor = 0 
 			OR = {
-				luxury_needs = 0.1
+				#luxury_needs = 0.1
 				country = {	civilized = no }
 				NOT = { state_scope = {  unemployment = 0.03 } }
 				NOT = {
@@ -6519,7 +6357,7 @@ trinket_subsidies = {
 		modifier = {
 			factor = 0 
 			OR = {
-				luxury_needs = 0.1
+				#luxury_needs = 0.1
 				NOT = { state_scope = {  unemployment = 0.03 } }
 				country = {	civilized = no }
 				NOT = {
@@ -6603,7 +6441,7 @@ trinket_subsidies = {
 		modifier = {
 			factor = 0 
 			OR = {
-				luxury_needs = 0.1
+				#luxury_needs = 0.1
 				NOT = { state_scope = {  unemployment = 0.03 } }
 				country = {	civilized = no }
 				NOT = {
@@ -6687,7 +6525,7 @@ trinket_subsidies = {
 		modifier = {
 			factor = 0 
 			OR = {
-				luxury_needs = 0.1
+				#luxury_needs = 0.1
 				NOT = { state_scope = {  unemployment = 0.03 } }
 				country = {	civilized = no }
 				NOT = {
@@ -6770,8 +6608,8 @@ trinket_subsidies = {
 		modifier = {
 			factor = 0 
 			OR = {
-				not = { life_needs = 1 }
-				luxury_needs = 0.1
+				#not = { life_needs = 1 }
+				#luxury_needs = 0.1
 				country = {	civilized = no }
 				NOT = {
 					is_next_reform = trinket_pensions
@@ -6841,8 +6679,8 @@ trinket_subsidies = {
 		modifier = {
 			factor = 0 
 			OR = {
-				not = { life_needs = 1 }
-				luxury_needs = 0.1
+				#not = { life_needs = 1 }
+				#luxury_needs = 0.1
 				country = {	civilized = no }
 				NOT = {
 					is_next_reform = low_pensions
@@ -6912,8 +6750,8 @@ trinket_subsidies = {
 		modifier = {
 			factor = 0 
 			OR = {
-				not = { life_needs = 1 }
-				luxury_needs = 0.1
+				#not = { life_needs = 1 }
+				#luxury_needs = 0.1
 				country = {	civilized = no }
 				NOT = {
 					is_next_reform = acceptable_pensions
@@ -6983,8 +6821,8 @@ trinket_subsidies = {
 		modifier = {
 			factor = 0 
 			OR = {
-				not = { life_needs = 1 }
-				luxury_needs = 0.1
+				#not = { life_needs = 1 }
+				#luxury_needs = 0.1
 				country = {	civilized = no }
 				NOT = {
 					is_next_reform = good_pensions
@@ -7054,7 +6892,7 @@ trinket_subsidies = {
 		modifier = {
 			factor = 0 
 			OR = {
-				luxury_needs = 0.1
+				#luxury_needs = 0.1
 				country = {	civilized = no }
 				NOT = {
 					is_next_reform = trinket_health_care
@@ -7128,7 +6966,7 @@ trinket_subsidies = {
 		modifier = {
 			factor = 0 
 			OR = {
-				luxury_needs = 0.1
+				#luxury_needs = 0.1
 				country = {	civilized = no }
 				NOT = {
 					is_next_reform = low_health_care
@@ -7202,7 +7040,7 @@ trinket_subsidies = {
 		modifier = {
 			factor = 0 
 			OR = {
-				luxury_needs = 0.1
+				#luxury_needs = 0.1
 				country = {	civilized = no }
 				NOT = {
 					is_next_reform = acceptable_health_care
@@ -7276,7 +7114,7 @@ trinket_subsidies = {
 		modifier = {
 			factor = 0 
 			OR = {
-				luxury_needs = 0.1
+				#luxury_needs = 0.1
 				country = {	civilized = no }
 				NOT = {
 					is_next_reform = good_health_care
@@ -7626,187 +7464,56 @@ trinket_subsidies = {
 		}
 	}
 	landed_estates = { 
-		factor = 1.5
+		factor = 2.5
 		modifier = {
 			factor = 0 
 			OR = {
-				NOT = { consciousness = 7 }
 				NOT = {
 					is_next_reform = landed_estates
 				}
 				country = {	civilized = no }
-				NOT = { is_ideology_enabled = communist }
+				#NOT = { is_ideology_enabled = communist }
 			}	
-		}
-		modifier = {
-			factor = 2
-			consciousness = 8
-		}
-		modifier = {
-		factor = 1.2
-			state_scope = { total_pops = 150000 }
-		}
-		modifier = {
-		factor = 1.2
-			state_scope = { total_pops = 250000 }
-		}
-		modifier = {
-		factor = 1.2
-			state_scope = { total_pops = 500000 }
-		}
-		modifier = {
-		factor = 1.2
-			state_scope = {	total_pops = 750000 }
-		}	
-		modifier = {
-			factor = 2
-			consciousness = 9
 		}
 	}
 	land_purchase = { 
-		factor = 1.5
+		factor = 2.0
 		modifier = {
 			factor = 0 
 			OR = {
-				NOT = { consciousness = 7 }
 				NOT = {
 					is_next_reform = land_purchase
 				}
 				country = {	civilized = no }
-				NOT = { is_ideology_enabled = communist }
+				#NOT = { is_ideology_enabled = communist }
 			}	
-		}
-		modifier = {
-			factor = 2
-			consciousness = 8
-		}
-		modifier = {
-		factor = 1.2
-			state_scope = { total_pops = 150000 }
-		}
-		modifier = {
-		factor = 1.2
-			state_scope = { total_pops = 250000 }
-		}
-		modifier = {
-		factor = 1.2
-			state_scope = { total_pops = 500000 }
-		}
-		modifier = {
-		factor = 1.2
-			state_scope = {	total_pops = 750000 }
-		}
-		modifier = {
-			factor = 2
-			consciousness = 9
 		}
 	}
 		commoners_properties = { 
-		factor = 1.5
+		factor = 2.25
 		modifier = {
 			factor = 0 
 			OR = {
-				NOT = { consciousness = 7 }
 				NOT = {
 					is_next_reform = commoners_properties
 				}
 				country = {	civilized = no }
-				NOT = { is_ideology_enabled = communist }
+				#NOT = { is_ideology_enabled = communist }
 			}	
-		}
-		modifier = {
-			factor = 2
-			consciousness = 8
-		}
-		modifier = {
-		factor = 1.2
-			state_scope = { total_pops = 150000 }
-		}
-		modifier = {
-		factor = 1.2
-			state_scope = { total_pops = 250000 }
-		}
-		modifier = {
-		factor = 1.2
-			state_scope = { total_pops = 500000 }
-		}
-		modifier = {
-		factor = 1.2
-			state_scope = {	total_pops = 750000 }
-		}
-		modifier = {
-			factor = 2
-			consciousness = 9
-		}
-		modifier = {
-			factor = 0.5
-			not = { everyday_needs = 0.75 }
-		}
-		modifier = {
-			factor = 2
-			luxury_needs = 0.25
-		}	
-		modifier = {
-			factor = 2
-			luxury_needs = 0.50
-		}
-		modifier = {
-			factor = 2
-			luxury_needs = 0.75
 		}
 	}
 		collectivization = { 
-		factor = 1.5
+		factor = 1.75
 		modifier = {
 			factor = 0 
 			OR = {
-				NOT = { consciousness = 7 }
 				NOT = {
 					is_next_reform = collectivization
 				}
 				country = {	civilized = no }
-				NOT = { is_ideology_enabled = communist }
+				#NOT = { is_ideology_enabled = communist }
+				NOT = { ruling_party_ideology = communist }
 			}	
-		}
-		modifier = {
-			factor = 2
-			consciousness = 8
-		}
-		modifier = {
-		factor = 1.2
-			state_scope = { total_pops = 150000 }
-		}
-		modifier = {
-		factor = 1.2
-			state_scope = { total_pops = 250000 }
-		}
-		modifier = {
-		factor = 1.2
-			state_scope = { total_pops = 500000 }
-		}
-		modifier = {
-		factor = 1.2
-			state_scope = {	total_pops = 750000 }
-		}
-		modifier = {
-			factor = 2
-			consciousness = 9
-		}
-		modifier = {
-			factor = 0.5
-			not = { everyday_needs = 0.75 }
-		}
-		modifier = {
-			factor = 2
-			luxury_needs = 0.25
-		}	
-		modifier = {
-			factor = 2
-			luxury_needs = 0.50
-		}
-		modifier = {
-			factor = 2
-			luxury_needs = 0.75
 		}
 	}
 	
@@ -7969,27 +7676,27 @@ trinket_subsidies = {
 			}
 		}
 		modifier = {
-			factor = 2
+			factor = 1.2
 			literacy = 0.30
 		}
 		modifier = {
-			factor = 2
+			factor = 1.2
 			literacy = 0.40
 		}		
 		modifier = {
-			factor = 2
+			factor = 1.2
 			literacy = 0.50
 		}
 		modifier = {
-			factor = 2
+			factor = 1.2
 			literacy = 0.60
 		}
 		modifier = {
-			factor = 2
+			factor = 1.2
 			literacy = 0.70
 		}
 		modifier = {
-			factor = 2
+			factor = 1.2
 			literacy = 0.80
 		}
 		modifier = {
@@ -8053,19 +7760,19 @@ trinket_subsidies = {
 			}
 		}
 		modifier = {
-			factor = 2
+			factor = 1.2
 			literacy = 0.50
 		}
 		modifier = {
-			factor = 2
+			factor = 1.2
 			literacy = 0.60
 		}
 		modifier = {
-			factor = 2
+			factor = 1.2
 			literacy = 0.70
 		}
 		modifier = {
-			factor = 2
+			factor = 1.2
 			literacy = 0.80
 		}
 		modifier = {
