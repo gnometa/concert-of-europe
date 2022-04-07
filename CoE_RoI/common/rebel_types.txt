@@ -802,7 +802,7 @@ communist_rebels = {
 
 	allow_all_cultures = yes
 	allow_all_religions = yes
-	allow_all_ideologies = yes
+	allow_all_ideologies = no
 
 	resilient = yes					# Disbands on retreat
 	reinforcing = yes				# Does not receive reinforcements
