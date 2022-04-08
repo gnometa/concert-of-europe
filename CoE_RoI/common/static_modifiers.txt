@@ -269,7 +269,7 @@ average_literacy = {
 	global_pop_consciousness_modifier = 0.1
 	#ich_everyday_needs = 50.0
 	#rich_luxury_needs = 100.0
-	goods_demand = 0.5
+	goods_demand = 0.50
 	tariff_efficiency_modifier = -0.50
 	supply_consumption = 5.0
 }

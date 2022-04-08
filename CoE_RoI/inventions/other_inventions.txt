@@ -1929,15 +1929,15 @@ declaration_of_the_rights_of_man = {
 	effect = {
 		rebel_org_gain = {
 			faction = liberal_rebels
-			value = 0.25
+			value = 0.05
 		}
 		rebel_org_gain = {
 			faction = nationalist_rebels 
-			value = 0.50
+			value = 0.10
 		}
 		rebel_org_gain = {
 			faction = separatist_rebels
-			value = 0.50
+			value = 0.10
 		}
 	}
 }
@@ -1955,7 +1955,7 @@ caste_privileges = {
 		colonial_points = 0
 		rebel_org_gain = {
 			faction = indian_sepoys
-			value = 0.25
+			value = 0.05
 		}
 	}
 }
@@ -1991,7 +1991,7 @@ sati_abolished = {
 		colonial_points = 0
 		rebel_org_gain = {
 			faction = indian_sepoys
-			value = 0.25
+			value = 0.05
 		}
 	}
 }
@@ -2026,7 +2026,7 @@ pig_fat_cartridges = {
 		colonial_points = 0
 		rebel_org_gain = {
 			faction = indian_sepoys
-			value = 0.25
+			value = 0.05
 		}
 	}
 }
@@ -2649,7 +2649,7 @@ spirit_of_freedom = {
 	effect = {
 		rebel_org_gain = {
 			faction = liberal_rebels
-			value = 0.25
+			value = 0.05
 		}
 	}
 }
@@ -2677,11 +2677,11 @@ carlism = {
 	effect = {
 		rebel_org_gain = {
 			faction = carlist_rebels
-			value = 0.50
+			value = 0.10
 		}
 		rebel_org_gain = {
 			faction = christino_rebels
-			value = 0.50
+			value = 0.10
 		}
 	}
 }	
@@ -3936,7 +3936,7 @@ power_of_tradition = {
 	effect = {
 		rebel_org_gain = {
 			faction = unciv_reactionary_rebels
-			value = 0.25
+			value = 0.05
 		}
 	}
 }
@@ -3961,7 +3961,7 @@ self_determination = {
 	effect = {
 		rebel_org_gain = {
 			faction = independence_rebels
-			value = 0.50
+			value = 0.10
 		}
 	}
 }
@@ -3978,7 +3978,7 @@ turkish_nationalism = {
 	effect = {
 		rebel_org_gain = {
 			faction = turkish_nationalist_rebels
-			value = 1.00
+			value = 0.20
 		}
 	}
 }
@@ -4537,11 +4537,11 @@ revanchism = {
 		pop_militancy_modifier = 0.01
 		rebel_org_gain = {
 			faction = fascist_rebels
-			value = 0.50
+			value = 0.10
 		}
 		rebel_org_gain = {
 			faction = communist_rebels
-			value = 0.50
+			value = 0.10
 		}
 	}
 }
@@ -4678,15 +4678,15 @@ postwar_society = {
 	effect = {
 		rebel_org_gain = {
 			faction = fascist_rebels
-			value = -1.0
+			value = -0.2
 		}
 		rebel_org_gain = {
 			faction = communist_rebels
-			value = -0.25
+			value = -0.05
 		}
 		rebel_org_gain = {
 			faction = reactionary_rebels
-			value = -0.5
+			value = -0.1
 		}
 		seperatism = -0.5
 		shared_prestige = 100 
