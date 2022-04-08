@@ -892,7 +892,7 @@ promote_to = {
 			}			
 		}		
 	}
-	artisans =
+	aristocrats =
 	{
 		factor = 0.01
 		modifier = {
