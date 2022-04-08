@@ -140,8 +140,8 @@ infrastructure = {
 ##########################################################################
 
 base_values = {
-	global_pop_militancy_modifier = -0.05
-	global_pop_consciousness_modifier = -0.02
+	global_pop_militancy_modifier = -0.02
+	global_pop_consciousness_modifier = -0.01
 	#min_social_spending = 0.10
 	education_efficiency_modifier = 2.00
 	land_unit_start_experience = -50
@@ -166,7 +166,7 @@ base_values = {
 
 war = {
 	max_war_exhaustion = 100			#base max at war.
-	badboy = -0.030
+	badboy = -0.033
 	global_pop_consciousness_modifier = -0.03
 	war_exhaustion = -0.1
 	diplomatic_points_modifier = 0.25
@@ -174,7 +174,7 @@ war = {
 }
 
 peace = {
-	max_war_exhaustion = 75			#base max at peace.
+	max_war_exhaustion = 80			#base max at peace.
 	war_exhaustion = -0.5
 	badboy = -0.1
 }

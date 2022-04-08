@@ -3230,11 +3230,11 @@ assimilation_chance =
 		type = clergymen
 	}
 	modifier = {
-    	factor = 2.5
+    	factor = 5.0
 		strata = middle 
 	}
 	modifier = {
-    	factor = 1.0
+    	factor = 2.5
 		strata = rich
 	}
 	group = {
