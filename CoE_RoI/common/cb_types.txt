@@ -7920,7 +7920,7 @@ annex_africa_full = {
 
 	construction_speed = 0.25 #construction_speed = 0.25 1.5
 
-	badboy_factor = 0
+	badboy_factor = 3
 	prestige_factor = 0.5
 	peace_cost_factor = 0.6
 	penalty_factor = 2
