@@ -9,14 +9,14 @@ rebel =
 {
 	cavalry = 0.0
 	artillery = 0.2
-	horse_artillery = 0.1
-	cuirassier = 0.05
-	dragoon = 0.05
-	guard = 0.05
-	hussar = 0.05
-	infantry = 0.2
+	horse_artillery = 0.0
+	cuirassier = 0.0
+	dragoon = 0.0
+	guard = 0.0
+	hussar = 0.15
+	infantry = 0.0
 	irregular = 0
-	regular = 0.3
+	regular = 0.65
 }
 
 demote_migrant = no

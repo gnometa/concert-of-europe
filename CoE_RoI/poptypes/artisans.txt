@@ -30,15 +30,10 @@ strata = middle
 #}
 
 life_needs = {
-	coal = 2.0
- 	timber = 2.0
-    copper = 0.5
-	lead = 0.6
-	iron = 1.6
 	grain = 10.0
 	cattle = 6.0
 	fish = 5.0
-	fruit = 3.0
+	fruit = 5.0
 	wool = 2.5
 	cotton = 3.5
 }

@@ -14,16 +14,16 @@ allowed_to_vote = yes
 
 rebel =
 {
-	cavalry = 0.0
-	artillery = 0.1
-	horse_artillery = 0.1
-	cuirassier = 0.05
-	dragoon = 0.05
-	guard = 0.05
-	hussar = 0.05
-	infantry = 0.4
+	cavalry = 0.15
+	artillery = 0.0
+	horse_artillery = 0.2
+	cuirassier = 0.0
+	dragoon = 0.0
+	guard = 0.0
+	hussar = 0.0
+	infantry = 0.65
 	irregular = 0
-	regular = 0.2
+	regular = 0.0
 }
 
 #ife_needs_income = {
@@ -32,15 +32,10 @@ rebel =
 #}
 
 life_needs = {
-	coal = 2.0
- 	timber = 2.0
-    copper = 0.5
-	lead = 0.6
-	iron = 1.6
 	grain = 10.0
 	cattle = 6.0
 	fish = 5.0
-	fruit = 3.0
+	fruit = 5.0
 	wool = 2.5
 	cotton = 3.5	
 }

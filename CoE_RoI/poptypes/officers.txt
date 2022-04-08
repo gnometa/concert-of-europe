@@ -14,15 +14,15 @@ research_optimum = 0.005	#used for leadership as well.
 rebel =
 {
 	cavalry = 0.0
-	artillery = 0.4
+	artillery = 0.2
 	horse_artillery = 0.0
 	cuirassier = 0.0
-	dragoon = 0.05
-	guard = 0.05
-	hussar = 0.1
+	dragoon = 0.0
+	guard = 0.0
+	hussar = 0.15
 	infantry = 0.0
 	irregular = 0
-	regular = 0.4
+	regular = 0.65
 }
 
 life_needs_income = {
@@ -43,15 +43,10 @@ everyday_needs_income = {
 #}
 
 life_needs = {
-	coal = 2.0
- 	timber = 2.0
-    copper = 0.5
-	lead = 0.6
-	iron = 1.6
 	grain = 10.0
 	cattle = 6.0
 	fish = 5.0
-	fruit = 3.0
+	fruit = 5.0
 	wool = 2.5
 	cotton = 3.5
 }
