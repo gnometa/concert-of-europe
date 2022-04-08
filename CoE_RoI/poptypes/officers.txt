@@ -920,62 +920,54 @@ promote_to =
 			is_accepted_culture = no
 		}		
 		modifier = {
-			factor = -25 #-500
+			factor = -25
+			location = { is_colonial = yes }
+		}
+		modifier = {
+			factor = 25
 			location = { is_colonial = yes }
 			OR = {
+				has_culture_core = yes
 				AND = { 
-					continent = europe
-					NOT = { capital_scope = { continent = europe } }
-					NOT = { is_core = THIS }
+					location = { continent = europe }
+					location = { owner = { capital_scope = { continent = europe } } }
 				}
 				AND = { 
-					continent = asia
-					NOT = { capital_scope = { continent = asia } }
-					NOT = { is_core = THIS }
+					location = { continent = asia }
+					location = { owner = { capital_scope = { continent = asia } } }
 				}
 				AND = { 
-					continent = east_indies
-					NOT = { capital_scope = { continent = east_indies } }
-					NOT = { is_core = THIS }
+					location = { continent = east_indies }
+					location = { owner = { capital_scope = { continent = east_indies } } }
 				}	
 				AND = { 
-					continent = africa
-					NOT = { capital_scope = { continent = africa } }
-					NOT = { is_core = THIS }
+					location = { continent = africa }
+					location = { owner = { capital_scope = { continent = africa } } }
 				}		
 				AND = { 
-					continent = oceania
-					NOT = { capital_scope = { continent = africa } }
-					NOT = { is_core = THIS }
-				}						
+					location = { continent = oceania }
+					location = { owner = { capital_scope = { continent = oceania } } }
+				}							
 				AND = { 
-					continent = north_america
-					NOT = {					
-						OR = {
-							capital_scope = { continent = north_america }
-							capital_scope = { continent = south_america }
-						}
+					location = { continent = north_america }					
+					OR = {
+						owner = { capital_scope = { continent = north_america } }
+						owner = { capital_scope = { continent = south_america } }
 					}
-					NOT = { is_core = THIS }
 				}	
 				AND = { 
-					continent = south_america
-					NOT = {					
-						OR = {
-							capital_scope = { continent = north_america }
-							capital_scope = { continent = south_america }
-						}
+					location = { continent = south_america }					
+					OR = {
+						owner = { capital_scope = { continent = north_america } }
+						owner = { capital_scope = { continent = south_america } }
 					}
-					NOT = { is_core = THIS }
+				}
+				AND = { 
+					location = { owner = { tag = FRA } }
+					location = { is_core = ALG }
 				}
 			}
-			NOT = {
-				AND = { 
-					tag = FRA
-					location = { is_core = ALG }
-				}	
-			}			
-		}		
+		}	
 	}
 
 }

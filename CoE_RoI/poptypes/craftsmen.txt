@@ -1027,183 +1027,187 @@ promote_to = {
 			factor = 125
 			literacy = 0.70
 			#NOT = { literacy = 0.71 }
-			 state_scope = { craftsmen = 0.500 }
+			 state_scope = { craftsmen = 0.501 }
 		}
-		modifier = {
-			factor = -500
-			state_scope = { craftsmen = 0.501 }
-		}
-		
-		modifier = {
-			factor = 100
-			literacy = 0.71
-			NOT = { literacy = 0.72 }
-			 state_scope = { craftsmen = 0.51 }
-		}
-		modifier = {
-			factor = 100
-			literacy = 0.72
-			NOT = { literacy = 0.73 }
-			 state_scope = { craftsmen = 0.52 }
-		}
-		modifier = {
-			factor = 100
-			literacy = 0.73
-			NOT = { literacy = 0.74 }
-			 state_scope = { craftsmen = 0.53 }
-		}
-		modifier = {
-			factor = 100
-			literacy = 0.74
-			NOT = { literacy = 0.75 }
-			 state_scope = { craftsmen = 0.54 }
-		}
-		modifier = {
-			factor = 100
-			literacy = 0.75
-			NOT = { literacy = 0.76 }
-			 state_scope = { craftsmen = 0.55 }
-		}
-		modifier = {
-			factor = 100
-			literacy = 0.76
-			NOT = { literacy = 0.77 }
-			 state_scope = { craftsmen = 0.56 }
-		}
-		modifier = {
-			factor = 100
-			literacy = 0.77
-			NOT = { literacy = 0.78 }
-			 state_scope = { craftsmen = 0.57 }
-		}
-		modifier = {
-			factor = 100
-			literacy = 0.78
-			NOT = { literacy = 0.79 }
-			 state_scope = { craftsmen = 0.58 }
-		}
-		modifier = {
-			factor = 100
-			literacy = 0.79
-			NOT = { literacy = 0.80 }
-			 state_scope = { craftsmen = 0.59 }
-		}
-		modifier = {
-			factor = 100
-			literacy = 0.70
-			NOT = { literacy = 0.81 }
-			 state_scope = { craftsmen = 0.60 }
-		}
-		modifier = {
-			factor = 100
-			literacy = 0.71
-			NOT = { literacy = 0.82 }
-			 state_scope = { craftsmen = 0.61 }
-		}
-		modifier = {
-			factor = 100
-			literacy = 0.82
-			NOT = { literacy = 0.83 }
-			 state_scope = { craftsmen = 0.62 }
-		}
-		modifier = {
-			factor = 100
-			literacy = 0.83
-			NOT = { literacy = 0.84 }
-			 state_scope = { craftsmen = 0.63 }
-		}
-		modifier = {
-			factor = 100
-			literacy = 0.84
-			NOT = { literacy = 0.85 }
-			 state_scope = { craftsmen = 0.64 }
-		}
-		modifier = {
-			factor = 100
-			literacy = 0.85
-			NOT = { literacy = 0.86 }
-			 state_scope = { craftsmen = 0.65 }
-		}
-		modifier = {
-			factor = 100
-			literacy = 0.86
-			NOT = { literacy = 0.87 }
-			 state_scope = { craftsmen = 0.66 }
-		}
-		modifier = {
-			factor = 100
-			literacy = 0.87
-			NOT = { literacy = 0.88 }
-			 state_scope = { craftsmen = 0.67 }
-		}
-		modifier = {
-			factor = 100
-			literacy = 0.88
-			NOT = { literacy = 0.89 }
-			 state_scope = { craftsmen = 0.68 }
-		}
-		modifier = {
-			factor = 100
-			literacy = 0.89
-			NOT = { literacy = 0.90 }
-			 state_scope = { craftsmen = 0.69 }
-		}
-		modifier = {
-			factor = 100
-			literacy = 0.90
-			#NOT = { literacy = 0.91 }
-			 state_scope = { craftsmen = 0.70 }
-		}
-		modifier = {
-			factor = 100
-			literacy = 0.91
-			NOT = { literacy = 0.92 }
-			 state_scope = { craftsmen = 0.71 }
-		}
-		modifier = {
-			factor = 100
-			literacy = 0.92
-			NOT = { literacy = 0.93 }
-			 state_scope = { craftsmen = 0.72 }
-		}
-		modifier = {
-			factor = 100
-			literacy = 0.93
-			NOT = { literacy = 0.94 }
-			 state_scope = { craftsmen = 0.73 }
-		}
-		modifier = {
-			factor = 100
-			literacy = 0.94
-			NOT = { literacy = 0.95 }
-			 state_scope = { craftsmen = 0.74 }
-		}
-		modifier = {
-			factor = 100
-			literacy = 0.95
-			NOT = { literacy = 0.96 }
-			 state_scope = { craftsmen = 0.75 }
-		}
-		modifier = {
-			factor = 100
-			literacy = 0.96
-		}
+		#modifier = {
+		#	factor = -500
+		#	state_scope = { craftsmen = 0.501 }
+		#}
+		#
+		#modifier = {
+		#	factor = 100
+		#	literacy = 0.71
+		#	NOT = { literacy = 0.72 }
+		#	 state_scope = { craftsmen = 0.51 }
+		#}
+		#modifier = {
+		#	factor = 100
+		#	literacy = 0.72
+		#	NOT = { literacy = 0.73 }
+		#	 state_scope = { craftsmen = 0.52 }
+		#}
+		#modifier = {
+		#	factor = 100
+		#	literacy = 0.73
+		#	NOT = { literacy = 0.74 }
+		#	 state_scope = { craftsmen = 0.53 }
+		#}
+		#modifier = {
+		#	factor = 100
+		#	literacy = 0.74
+		#	NOT = { literacy = 0.75 }
+		#	 state_scope = { craftsmen = 0.54 }
+		#}
+		#modifier = {
+		#	factor = 100
+		#	literacy = 0.75
+		#	NOT = { literacy = 0.76 }
+		#	 state_scope = { craftsmen = 0.55 }
+		#}
+		#modifier = {
+		#	factor = 100
+		#	literacy = 0.76
+		#	NOT = { literacy = 0.77 }
+		#	 state_scope = { craftsmen = 0.56 }
+		#}
+		#modifier = {
+		#	factor = 100
+		#	literacy = 0.77
+		#	NOT = { literacy = 0.78 }
+		#	 state_scope = { craftsmen = 0.57 }
+		#}
+		#modifier = {
+		#	factor = 100
+		#	literacy = 0.78
+		#	NOT = { literacy = 0.79 }
+		#	 state_scope = { craftsmen = 0.58 }
+		#}
+		#modifier = {
+		#	factor = 100
+		#	literacy = 0.79
+		#	NOT = { literacy = 0.80 }
+		#	 state_scope = { craftsmen = 0.59 }
+		#}
+		#modifier = {
+		#	factor = 100
+		#	literacy = 0.70
+		#	NOT = { literacy = 0.81 }
+		#	 state_scope = { craftsmen = 0.60 }
+		#}
+		#modifier = {
+		#	factor = 100
+		#	literacy = 0.71
+		#	NOT = { literacy = 0.82 }
+		#	 state_scope = { craftsmen = 0.61 }
+		#}
+		#modifier = {
+		#	factor = 100
+		#	literacy = 0.82
+		#	NOT = { literacy = 0.83 }
+		#	 state_scope = { craftsmen = 0.62 }
+		#}
+		#modifier = {
+		#	factor = 100
+		#	literacy = 0.83
+		#	NOT = { literacy = 0.84 }
+		#	 state_scope = { craftsmen = 0.63 }
+		#}
+		#modifier = {
+		#	factor = 100
+		#	literacy = 0.84
+		#	NOT = { literacy = 0.85 }
+		#	 state_scope = { craftsmen = 0.64 }
+		#}
+		#modifier = {
+		#	factor = 100
+		#	literacy = 0.85
+		#	NOT = { literacy = 0.86 }
+		#	 state_scope = { craftsmen = 0.65 }
+		#}
+		#modifier = {
+		#	factor = 100
+		#	literacy = 0.86
+		#	NOT = { literacy = 0.87 }
+		#	 state_scope = { craftsmen = 0.66 }
+		#}
+		#modifier = {
+		#	factor = 100
+		#	literacy = 0.87
+		#	NOT = { literacy = 0.88 }
+		#	 state_scope = { craftsmen = 0.67 }
+		#}
+		#modifier = {
+		#	factor = 100
+		#	literacy = 0.88
+		#	NOT = { literacy = 0.89 }
+		#	 state_scope = { craftsmen = 0.68 }
+		#}
+		#modifier = {
+		#	factor = 100
+		#	literacy = 0.89
+		#	NOT = { literacy = 0.90 }
+		#	 state_scope = { craftsmen = 0.69 }
+		#}
+		#modifier = {
+		#	factor = 100
+		#	literacy = 0.90
+		#	#NOT = { literacy = 0.91 }
+		#	 state_scope = { craftsmen = 0.70 }
+		#}
+		#modifier = {
+		#	factor = 100
+		#	literacy = 0.91
+		#	NOT = { literacy = 0.92 }
+		#	 state_scope = { craftsmen = 0.71 }
+		#}
+		#modifier = {
+		#	factor = 100
+		#	literacy = 0.92
+		#	NOT = { literacy = 0.93 }
+		#	 state_scope = { craftsmen = 0.72 }
+		#}
+		#modifier = {
+		#	factor = 100
+		#	literacy = 0.93
+		#	NOT = { literacy = 0.94 }
+		#	 state_scope = { craftsmen = 0.73 }
+		#}
+		#modifier = {
+		#	factor = 100
+		#	literacy = 0.94
+		#	NOT = { literacy = 0.95 }
+		#	 state_scope = { craftsmen = 0.74 }
+		#}
+		#modifier = {
+		#	factor = 100
+		#	literacy = 0.95
+		#	NOT = { literacy = 0.96 }
+		#	 state_scope = { craftsmen = 0.75 }
+		#}
+		#modifier = {
+		#	factor = 100
+		#	literacy = 0.96
+		#}
 		modifier = {
 			factor = 100
 			NOT = { farmers = 0.05 }
 		}
-		modifier = {
-			factor = 100
-			#literacy = 0.99
-			NOT = { farmers = 0.05 }
-			#location = { any_pop = { NOT = { type = farmers }  NOT = { culture = THIS } } }
-			#NOT = { literacy = 1.00 }
-			#state_scope = { craftsmen = 0.75 }
-		}
+		#modifier = {
+		#	factor = 100
+		#	#literacy = 0.99
+		#	NOT = { farmers = 0.05 }
+		#	#location = { any_pop = { NOT = { type = farmers }  NOT = { culture = THIS } } }
+		#	#NOT = { literacy = 1.00 }
+		#	#state_scope = { craftsmen = 0.75 }
+		#}
 		#modifier = {
 		#	factor = 100
 		#	state_scope = { craftsmen = 0.751 }
 		#}
+		modifier = {
+			factor = 250
+			location = { is_colonial = yes }
+		}		
 	}		
 	#artisans = {
 	#	factor = 0.01
@@ -1357,62 +1361,54 @@ promote_to = {
 			is_accepted_culture = no
 		}		
 		modifier = {
-			factor = -25 #-500
+			factor = -25
+			location = { is_colonial = yes }
+		}
+		modifier = {
+			factor = 25
 			location = { is_colonial = yes }
 			OR = {
+				has_culture_core = yes
 				AND = { 
-					continent = europe
-					NOT = { capital_scope = { continent = europe } }
-					NOT = { is_core = THIS }
+					location = { continent = europe }
+					location = { owner = { capital_scope = { continent = europe } } }
 				}
 				AND = { 
-					continent = asia
-					NOT = { capital_scope = { continent = asia } }
-					NOT = { is_core = THIS }
+					location = { continent = asia }
+					location = { owner = { capital_scope = { continent = asia } } }
 				}
 				AND = { 
-					continent = east_indies
-					NOT = { capital_scope = { continent = east_indies } }
-					NOT = { is_core = THIS }
+					location = { continent = east_indies }
+					location = { owner = { capital_scope = { continent = east_indies } } }
 				}	
 				AND = { 
-					continent = africa
-					NOT = { capital_scope = { continent = africa } }
-					NOT = { is_core = THIS }
+					location = { continent = africa }
+					location = { owner = { capital_scope = { continent = africa } } }
 				}		
 				AND = { 
-					continent = oceania
-					NOT = { capital_scope = { continent = africa } }
-					NOT = { is_core = THIS }
-				}						
+					location = { continent = oceania }
+					location = { owner = { capital_scope = { continent = oceania } } }
+				}							
 				AND = { 
-					continent = north_america
-					NOT = {					
-						OR = {
-							capital_scope = { continent = north_america }
-							capital_scope = { continent = south_america }
-						}
+					location = { continent = north_america }					
+					OR = {
+						owner = { capital_scope = { continent = north_america } }
+						owner = { capital_scope = { continent = south_america } }
 					}
-					NOT = { is_core = THIS }
 				}	
 				AND = { 
-					continent = south_america
-					NOT = {					
-						OR = {
-							capital_scope = { continent = north_america }
-							capital_scope = { continent = south_america }
-						}
+					location = { continent = south_america }					
+					OR = {
+						owner = { capital_scope = { continent = north_america } }
+						owner = { capital_scope = { continent = south_america } }
 					}
-					NOT = { is_core = THIS }
+				}
+				AND = { 
+					location = { owner = { tag = FRA } }
+					location = { is_core = ALG }
 				}
 			}
-			NOT = {
-				AND = { 
-					tag = FRA
-					location = { is_core = ALG }
-				}	
-			}			
-		}		
+		}
 	}
 	soldiers =
 	{
