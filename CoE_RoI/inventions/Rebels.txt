@@ -11,7 +11,31 @@ rebels_casualties = {
 		}
 	}
 	effect = {
-	soldier_to_pop_loss = 0.85
+		soldier_to_pop_loss = 10.0
+		artillery = {
+			max_strength = 3
+		}	
+		dragoon = {
+			max_strength = 6
+		}	
+		guard = {
+			max_strength = 6
+		}	
+		hussar = {
+			max_strength = 3
+		}			
+		regular = {
+			max_strength = 3
+		}	
+		cavalry = {
+			max_strength = -2
+		}			
+		horse_artillery = {
+			max_strength = -2
+		}		
+		infantry = {
+			max_strength = -2
+		}				
 	}
 		
 }
