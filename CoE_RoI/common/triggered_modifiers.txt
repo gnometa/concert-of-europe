@@ -720,7 +720,7 @@ social_dissent = {
 		average_militancy = 1
 		not = { average_militancy = 2 }
 	}
-	#global_pop_consciousness_modifier = 0.02
+	global_pop_consciousness_modifier = 0.02
 	mobilisation_size = -0.005
 	issue_change_speed = 0.3
 	education_efficiency_modifier = -0.10
@@ -732,7 +732,7 @@ social_tensions = {
 		average_militancy = 2
 		not = { average_militancy = 4 }
 	}
-	#global_pop_consciousness_modifier = 0.04
+	global_pop_consciousness_modifier = 0.04
 	mobilisation_size = -0.01
 	prestige = -0.05
 	issue_change_speed = 0.6
@@ -745,7 +745,7 @@ social_disorder = {
 		average_militancy = 4
 		not = { average_militancy = 6 }
 	}
-	#global_pop_consciousness_modifier = 0.06
+	global_pop_consciousness_modifier = 0.06
 	mobilisation_size = -0.02
 	prestige = -0.1
 	issue_change_speed = 1.2
@@ -757,7 +757,7 @@ social_chaos = {
 	trigger = {
 		average_militancy = 6
 	}
-	#global_pop_consciousness_modifier = 0.1
+	global_pop_consciousness_modifier = 0.1
 	mobilisation_size = -0.04
 	prestige = -0.2
 	issue_change_speed = 2.0
