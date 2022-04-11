@@ -389,7 +389,7 @@ political_reforms = {
 			#social_reform_desire = 0.01
 		}
 		yes_meeting = {
-			issue_change_speed = 0.5
+			issue_change_speed = 0.10
 			global_immigrant_attract = 0.005
 		}
 	}
@@ -407,7 +407,7 @@ political_reforms = {
 			literacy_con_impact = 0.5
 			suppression_points_modifier = -0.25
 			ruling_party_support = 0.05
-			issue_change_speed = 0.5
+			issue_change_speed = 0.05
 			#political_reform_desire = 0.02
 			#social_reform_desire = 0.01
 		}
@@ -415,7 +415,7 @@ political_reforms = {
 			literacy_con_impact = 1
 			suppression_points_modifier = -0.50
 			cb_generation_speed_modifier = -0.1
-			issue_change_speed = 1
+			issue_change_speed = 0.10
 			global_immigrant_attract = 0.005
 			global_pop_consciousness_modifier = 0.01
 		}
