@@ -252,6 +252,7 @@ country_event = {
 		#capital_scope = { continent = africa }
 		exists = yes
 		NOT = { tag = BHU }
+		NOT = { tag = HND }
 		has_global_flag = berlin_conference
 		NOT = { is_culture_group = east_asian }
 		NOT = { primary_culture = japanese }
