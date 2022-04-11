@@ -80,6 +80,8 @@ political_decisions = {
 	#			}
 	#			militancy = -3
 	#		}
+	#		release = NGR
+	#		create_vassal = NGR				
 	#		NGR = {
 	#			primary_culture = THIS
 	#		}
@@ -153,8 +155,10 @@ political_decisions = {
 	#			}
 	#			militancy = -3
 	#		}
+	#		release = TOG
+	#		create_vassal = TOG				
 	#		TOG = {
-	#			primary_culture = THIS
+	#			primary_culture = THISs
 	#		}
 	#	}	
 	#}
