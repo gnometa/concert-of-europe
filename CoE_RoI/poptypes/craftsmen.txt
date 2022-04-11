@@ -16,16 +16,16 @@ color = { 127 3 3 }
 
 rebel =
 {
-	cavalry = 0.15
-	artillery = 0.0
-	horse_artillery = 0.2
-	cuirassier = 0.0
-	dragoon = 0.0
-	guard = 0.0
-	hussar = 0.0
-	infantry = 0.65
-	irregular = 0
-	regular = 0.0
+	#cavalry = 0.15
+	#artillery = 0.0
+	#horse_artillery = 0.2
+	#cuirassier = 0.0
+	#dragoon = 0.0
+	#guard = 0.0
+	#hussar = 0.0
+	infantry = 1.0
+	#irregular = 0
+	#regular = 0.0
 }
 
 #life_needs_income = {
