@@ -251,6 +251,7 @@ country_event = {
 	trigger = {
 		#capital_scope = { continent = africa }
 		exists = yes
+		NOT = { tag = BHU }
 		has_global_flag = berlin_conference
 		NOT = { is_culture_group = east_asian }
 		NOT = { primary_culture = japanese }
@@ -297,7 +298,7 @@ country_event = {
 		name = "We have no choice but to submit."
 		sphere_owner = { country_event = 95506 }
 		ai_chance = {
-			factor = 50
+			factor = 90
 			modifier = {
 				factor = 0.5
 				number_of_states = 3
@@ -311,8 +312,8 @@ country_event = {
 				total_amount_of_divisions = 12
 			}
 			modifier = {
-				factor = 2
-				NOT = { civilization_progress = 0.5 }
+				factor = 0.5
+				civilization_progress = 0.15
 			}
 		}
 	}

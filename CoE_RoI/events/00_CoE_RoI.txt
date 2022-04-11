@@ -834,7 +834,7 @@ country_event = {
 
 	option = {
 		name = "Good"
-		political_reforms = no_slavery
+		PBC = { inherit = BOL }
 		#inherit = MAD
 		#activate_technology = nationalism_n_imperialism
 		#political_reform = oppression
