@@ -158,6 +158,9 @@ country_event = {
 						tag = EFR
 					}
 					NOT = { 
+						tag = GER					
+						tag = SGF
+						tag = NGF
 						tag = KUK
 						tag = AUS
 						tag = DNB
@@ -372,6 +375,9 @@ country_event = {
 						tag = EFR
 					}
 					NOT = { 
+						tag = GER					
+						tag = SGF
+						tag = NGF
 						tag = KUK
 						tag = AUS
 						tag = DNB
@@ -475,6 +481,9 @@ country_event = {
 						tag = EFR
 					}
 					NOT = { 
+						tag = GER					
+						tag = SGF
+						tag = NGF
 						tag = KUK
 						tag = AUS
 						tag = DNB
@@ -588,6 +597,9 @@ country_event = {
 						tag = EFR
 					}
 					NOT = { 
+						tag = GER					
+						tag = SGF
+						tag = NGF
 						tag = KUK
 						tag = AUS
 						tag = DNB
@@ -811,6 +823,9 @@ country_event = {
 						tag = EFR
 					}
 					NOT = { 
+						tag = GER					
+						tag = SGF
+						tag = NGF
 						tag = KUK
 						tag = AUS
 						tag = DNB
@@ -907,6 +922,9 @@ country_event = {
 						tag = EFR
 					}
 					NOT = { 
+						tag = GER					
+						tag = SGF
+						tag = NGF
 						tag = KUK
 						tag = AUS
 						tag = DNB
@@ -1013,6 +1031,9 @@ country_event = {
 						tag = EFR
 					}
 					NOT = { 
+						tag = GER					
+						tag = SGF
+						tag = NGF
 						tag = KUK
 						tag = AUS
 						tag = DNB
