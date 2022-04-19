@@ -1388,6 +1388,9 @@ country_event = {
 						tag = EFR
 					}
 					NOT = { 
+						tag = GER
+						tag = NGF
+						tag = SGF
 					    tag = PRU
 						tag = KUK
 						tag = AUS
@@ -1464,7 +1467,10 @@ country_event = {
 						tag = EFR
 					}
 					NOT = {
-                        tag = PRU					
+						tag = GER
+						tag = NGF
+						tag = SGF
+					    tag = PRU
 						tag = KUK
 						tag = AUS
 						tag = DNB
