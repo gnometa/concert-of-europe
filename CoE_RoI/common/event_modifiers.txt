@@ -25,14 +25,14 @@ liberal_agitation = {
 springtime_of_nations = {
 	core_pop_militancy_modifier = 0.2
 	global_pop_consciousness_modifier = 0.4
-	issue_change_speed = 0.20
+	issue_change_speed = 1.0
 	icon = 85
 }
 
 global_liberal_agitation = {
 	global_pop_consciousness_modifier = 0.4
 	global_pop_militancy_modifier = 0.01
-	issue_change_speed = 0.10
+	issue_change_speed = 0.50
 	prestige = -0.05
 	icon = 75
 }

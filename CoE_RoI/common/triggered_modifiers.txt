@@ -63,6 +63,7 @@ populationsize_50k = {
 	global_immigrant_attract = -0.030
 	tax_efficiency = 0.10
 	education_efficiency_modifier = 0.60
+	core_pop_militancy_modifier = -0.05
 	icon = 11
 }
 
@@ -80,6 +81,7 @@ populationsize_100k = {
 	global_immigrant_attract = -0.040
 	tax_efficiency = 0.09
 	education_efficiency_modifier = 0.55
+	core_pop_militancy_modifier = -0.04
 	icon = 5
 }
 
@@ -96,7 +98,8 @@ populationsize_250k = {
 	leadership_modifier = 0.2
 	global_immigrant_attract = -0.020
 	tax_efficiency = 0.08
-	education_efficiency_modifier = 0.50	
+	education_efficiency_modifier = 0.50
+	core_pop_militancy_modifier = -0.03	
 	icon = 5
 }
 
@@ -114,6 +117,7 @@ populationsize_500k = {
 	#global_immigrant_attract = -0.010
 	tax_efficiency = 0.07
 	education_efficiency_modifier = 0.45	
+	core_pop_militancy_modifier = -0.02
 	icon = 5
 }
 
@@ -130,7 +134,8 @@ populationsize_1M = {
 	leadership_modifier = 0.4
 	global_immigrant_attract = 0.020
 	tax_efficiency = 0.06
-	education_efficiency_modifier = 0.40	
+	education_efficiency_modifier = 0.40
+	core_pop_militancy_modifier = -0.01
 	icon = 5
 }
 
