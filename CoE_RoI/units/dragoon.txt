@@ -23,7 +23,7 @@ dragoon = {
 	#Building Costs
 	build_time = 50
 	build_cost = {
-		military_industry = 3.0
+		military_industry = 30.0
 	}
 	
 	supply_consumption = 1

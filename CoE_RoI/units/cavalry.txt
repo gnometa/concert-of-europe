@@ -21,7 +21,7 @@ cavalry = {
 	#Building Costs
 	build_time = 40
 	build_cost = {
-		military_industry = 0.5
+		military_industry = 5
 	}
 	
 	supply_consumption = 1

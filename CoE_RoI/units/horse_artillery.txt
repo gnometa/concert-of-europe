@@ -16,7 +16,7 @@ horse_artillery = {
 	#Building Costs
 	build_time = 40
 	build_cost = {
-		military_industry = 6
+		military_industry = 60
 	}
 	
 	supply_consumption = 1

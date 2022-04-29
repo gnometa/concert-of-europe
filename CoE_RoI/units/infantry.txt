@@ -18,7 +18,7 @@ infantry = {
 	#Building Costs
 	build_time = 20
 	build_cost = {
-		military_industry = 1.2
+		military_industry = 12
 	}
 	
 	supply_consumption = 1

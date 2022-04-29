@@ -17,7 +17,7 @@ plane = {
 	#Building Costs
 	build_time = 80
 	build_cost = {
-		military_industry = 15.0
+		military_industry = 150.0
 	}
 	
 	supply_consumption = 1
