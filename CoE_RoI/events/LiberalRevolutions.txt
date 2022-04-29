@@ -14,7 +14,7 @@ country_event = {
 			tag = SIC
 			tag = MOL
 			tag = WAL
-			literacy = 0.3
+			literacy = 0.20
 		}
 		year = 1840
 		NOT = {
@@ -23,7 +23,7 @@ country_event = {
 				has_country_flag = liberal_revolution_fired
 				has_country_flag = had_liberal_revolution
 			}
-			is_ideology_enabled = socialist
+			is_ideology_enabled = communist
 			vote_franschise = universal_weighted_voting
 			vote_franschise = universal_voting
 		}
