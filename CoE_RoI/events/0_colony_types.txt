@@ -387,6 +387,8 @@ province_event = {
 	    state_scope = { is_colonial = yes }
 		has_province_modifier = settlement_colony
 		OR = {
+			unemployment_by_type = { type = farmers value = 0.05  }
+			unemployment_by_type = { type = labourers value = 0.05  }
 			AND = {
 				state_scope = { total_pops = 100000 }
 				NOT = { owner = { total_pops = 1000000 } }

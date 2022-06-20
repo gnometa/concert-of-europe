@@ -112,7 +112,7 @@ economy = {
 	SECOND_RANK_BASE_SHARE_FACTOR = 0.1,
 	CIV_BASE_SHARE_FACTOR = 0.2,
 	UNCIV_BASE_SHARE_FACTOR = 0.3,
-	FACTORY_PAYCHECKS_LEFTOVER_FACTOR = 0.25, -- % of how much we pay to the pops and capitalists, from the leftovers.
+	FACTORY_PAYCHECKS_LEFTOVER_FACTOR = 0.20, -- % of how much we pay to the pops and capitalists, from the leftovers.
 	MAX_FACTORY_MONEY_SAVE = 1000,	-- how much money is stored maximum in a factory.
 	SMALL_DEBT_LIMIT = 5000,
 	FACTORY_UPGRADE_EMPLOYEE_FACTOR = 0.9, -- determines how close to the employee limit we need to be before "upgrade all" will upgrade/expand a given factory (1 = 100%).
@@ -661,11 +661,11 @@ pops = {
 	POP_SAVINGS = 0.10,
 	
 	STATE_CREATION_ADMIN_LIMIT = 0.01,
-	MIL_TO_JOIN_REBEL = 7, -- Rebels over this will join a faction
-	MIL_TO_JOIN_RISING = 8, -- Rebels over this will join a general rising
-	MIL_TO_AUTORISE = 9, -- Rebels over this rise no matter what
+	MIL_TO_JOIN_REBEL = 8, -- Rebels over this will join a faction
+	MIL_TO_JOIN_RISING = 9, -- Rebels over this will join a general rising
+	MIL_TO_AUTORISE = 12, -- Rebels over this rise no matter what
 	REDUCTION_AFTER_RISEING = 0, -- After a pop spawns a rebellion, its militancy will be reduced this much
-	REDUCTION_AFTER_DEFEAT = 9.0, -- After a rebellion is being defeated in combat, its pop militancy will be divided by this number.
+	REDUCTION_AFTER_DEFEAT = 10.0, -- After a rebellion is being defeated in combat, its pop militancy will be divided by this number.
 																-- (if value < 1.0, the MIL will be increased) (Beware! value must be > 0)	
 	INVENTION_IMPACT_ON_DEMAND = 0.00, -- how much each invention in a country increases demand for a product in percent
 	POP_TO_LEADERSHIP = 0.00005, -- how much leadership every 1000 officers gives each day.

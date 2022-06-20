@@ -5724,7 +5724,7 @@ state_equal_weight = {
 	trinket_wage = { 
 		factor = 1.5
 		modifier = {
-			factor = 0 
+			factor = 0.1 
 			OR = {
 				#luxury_needs = 0.1
 				country = {	civilized = no }
@@ -5795,7 +5795,7 @@ state_equal_weight = {
 	low_minimum_wage = { 
 		factor = 1.5
 		modifier = {
-			factor = 0 
+			factor = 0.1 
 			OR = {
 				#luxury_needs = 0.1
 				country = {	civilized = no }
@@ -5866,7 +5866,7 @@ state_equal_weight = {
 	acceptable_minimum_wage = { 
 		factor = 1.5
 		modifier = {
-			factor = 0 
+			factor = 0.1 
 			OR = {
 				#luxury_needs = 0.1
 				country = {	civilized = no }
@@ -5937,7 +5937,7 @@ state_equal_weight = {
 	good_minimum_wage = { 
 		factor = 1.5
 		modifier = {
-			factor = 0 
+			factor = 0.1 
 			OR = {
 				#luxury_needs = 0.1
 				country = {	civilized = no }
@@ -6006,7 +6006,7 @@ state_equal_weight = {
 trinket_safety = { 
 		factor = 1.5
 		modifier = {
-			factor = 0 
+			factor = 0.1 
 			OR = {
 				not = { everyday_needs = 0.1 }
 				unemployment = 0.25
@@ -6071,7 +6071,7 @@ trinket_safety = {
 	low_safety = { 
 		factor = 1.5
 		modifier = {
-			factor = 0 
+			factor = 0.1 
 			OR = {
 				not = { everyday_needs = 0.1 }
 				unemployment = 0.25
@@ -6138,7 +6138,7 @@ trinket_safety = {
 	acceptable_safety = { 
 		factor = 1.5
 		modifier = {
-			factor = 0 
+			factor = 0.1 
 			OR = {
 				not = { everyday_needs = 0.1 }
 				country = {	civilized = no }
@@ -6205,7 +6205,7 @@ trinket_safety = {
 	good_safety  = { 
 		factor = 1.5
 		modifier = {
-			factor = 0 
+			factor = 0.1 
 			OR = {
 				not = { everyday_needs = 0.1 }
 				country = {	civilized = no }
@@ -6272,7 +6272,7 @@ trinket_safety = {
 trinket_subsidies = {
 		factor = 1.5
 		modifier = {
-			factor = 0 
+			factor = 0.1 
 			OR = {
 				#luxury_needs = 0.1
 				country = {	civilized = no }
@@ -6355,7 +6355,7 @@ trinket_subsidies = {
 	low_subsidies = {
 		factor = 1.5
 		modifier = {
-			factor = 0 
+			factor = 0.1 
 			OR = {
 				#luxury_needs = 0.1
 				NOT = { state_scope = {  unemployment = 0.03 } }
@@ -6439,7 +6439,7 @@ trinket_subsidies = {
 	acceptable_subsidies = {
 		factor = 1.5
 		modifier = {
-			factor = 0 
+			factor = 0.1 
 			OR = {
 				#luxury_needs = 0.1
 				NOT = { state_scope = {  unemployment = 0.03 } }
@@ -6523,7 +6523,7 @@ trinket_subsidies = {
 	good_subsidies = {
 		factor = 1.5
 		modifier = {
-			factor = 0 
+			factor = 0.1 
 			OR = {
 				#luxury_needs = 0.1
 				NOT = { state_scope = {  unemployment = 0.03 } }
@@ -6606,7 +6606,7 @@ trinket_subsidies = {
 	trinket_pensions = { 
 		factor = 1.5
 		modifier = {
-			factor = 0 
+			factor = 0.1 
 			OR = {
 				#not = { life_needs = 1 }
 				#luxury_needs = 0.1
@@ -6677,7 +6677,7 @@ trinket_subsidies = {
 	low_pensions = { 
 		factor = 1.5
 		modifier = {
-			factor = 0 
+			factor = 0.1 
 			OR = {
 				#not = { life_needs = 1 }
 				#luxury_needs = 0.1
@@ -6748,7 +6748,7 @@ trinket_subsidies = {
 	acceptable_pensions = { 
 		factor = 1.5
 		modifier = {
-			factor = 0 
+			factor = 0.1 
 			OR = {
 				#not = { life_needs = 1 }
 				#luxury_needs = 0.1
@@ -6819,7 +6819,7 @@ trinket_subsidies = {
 	good_pensions = { 
 		factor = 1.5
 		modifier = {
-			factor = 0 
+			factor = 0.1 
 			OR = {
 				#not = { life_needs = 1 }
 				#luxury_needs = 0.1
@@ -6890,7 +6890,7 @@ trinket_subsidies = {
 	trinket_health_care = { 
 		factor = 1.5
 		modifier = {
-			factor = 0 
+			factor = 0.1 
 			OR = {
 				#luxury_needs = 0.1
 				country = {	civilized = no }
@@ -6964,7 +6964,7 @@ trinket_subsidies = {
 	low_health_care = { 
 		factor = 1.5
 		modifier = {
-			factor = 0 
+			factor = 0.1 
 			OR = {
 				#luxury_needs = 0.1
 				country = {	civilized = no }
@@ -7038,7 +7038,7 @@ trinket_subsidies = {
 	acceptable_health_care = { 
 		factor = 1.5
 		modifier = {
-			factor = 0 
+			factor = 0.1 
 			OR = {
 				#luxury_needs = 0.1
 				country = {	civilized = no }
@@ -7112,7 +7112,7 @@ trinket_subsidies = {
 	good_health_care = { 
 		factor = 1.5
 		modifier = {
-			factor = 0 
+			factor = 0.1 
 			OR = {
 				#luxury_needs = 0.1
 				country = {	civilized = no }
@@ -7186,7 +7186,7 @@ trinket_subsidies = {
 	fourteen_hours = { 
 		factor = 1.5
 		modifier = {
-			factor = 0 
+			factor = 0.1 
 			OR = {
 				not = { everyday_needs = 0.25 }
 				country = {	civilized = no }
@@ -7256,7 +7256,7 @@ trinket_subsidies = {
 	twelve_hours = { 
 		factor = 1.5
 		modifier = {
-			factor = 0 
+			factor = 0.1 
 			OR = {
 				not = { everyday_needs = 0.25 }
 				country = {	civilized = no }
@@ -7326,7 +7326,7 @@ trinket_subsidies = {
 	ten_hours = { 
 		factor = 1.5
 		modifier = {
-			factor = 0 
+			factor = 0.1 
 			OR = {
 				not = { everyday_needs = 0.25 }
 				country = {	civilized = no }
@@ -7396,7 +7396,7 @@ trinket_subsidies = {
 	eight_hours = { 
 		factor = 1.5
 		modifier = {
-			factor = 0 
+			factor = 0.1 
 			OR = {
 				not = { everyday_needs = 0.25 }
 				country = {	civilized = no }
@@ -7520,7 +7520,7 @@ trinket_subsidies = {
 	child_labor_restricted = { 
 		factor = 1.5
 		modifier = {
-			factor = 0 
+			factor = 0.1 
 			OR = {
 				NOT = {
 					is_next_reform = child_labor_restricted
@@ -7594,7 +7594,7 @@ trinket_subsidies = {
 		child_labor_illegal = { 
 		factor = 1.5
 		modifier = {
-			factor = 0 
+			factor = 0.1 
 			OR = {
 				NOT = {
 					is_next_reform = child_labor_illegal
@@ -7668,7 +7668,7 @@ trinket_subsidies = {
 	church = { 
 		factor = 1.5
 		modifier = {
-			factor = 0 
+			factor = 0.1 
 			OR = {
 				NOT = { is_ideology_enabled = communist }
 				country = {	civilized = no }
@@ -7752,7 +7752,7 @@ trinket_subsidies = {
 	public = { 
 		factor = 1.5
 		modifier = {
-			factor = 0 
+			factor = 0.1 
 			OR = {
 				NOT = { is_ideology_enabled = communist }
 				country = {	civilized = no }
@@ -7828,7 +7828,7 @@ trinket_subsidies = {
 	small_endowment = { 
 		factor = 1.5
 		modifier = {
-			factor = 0 
+			factor = 0.1 
 			OR = {
 				NOT = {	is_next_reform = small_endowment }
 				country = {	civilized = no }
@@ -7924,7 +7924,7 @@ trinket_subsidies = {
 	medium_endowment = { 
 		factor = 1.5
 		modifier = {
-			factor = 0 
+			factor = 0.1 
 			OR = {
 				NOT = {
 					is_next_reform = medium_endowment
@@ -8016,7 +8016,7 @@ trinket_subsidies = {
 	large_endowment = { 
 		factor = 1.5
 		modifier = {
-			factor = 0 
+			factor = 0.1 
 			OR = {
 				NOT = {
 					is_next_reform = large_endowment
@@ -8108,7 +8108,7 @@ trinket_subsidies = {
 	massive_endowment = { 
 		factor = 1.5
 		modifier = {
-			factor = 0 
+			factor = 0.1 
 			OR = {
 				NOT = {
 					is_next_reform = massive_endowment
@@ -8200,7 +8200,7 @@ trinket_subsidies = {
 	oppression = {
 		factor = 1.5
 		modifier = {
-			factor = 0
+			factor = 0.1
 			or = {
 				minorities_reform = oppression
 				minorities_reform = protected

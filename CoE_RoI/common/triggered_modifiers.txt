@@ -1070,9 +1070,11 @@ admin_found_10 = {
 milit_found_1 = {
 	trigger = {
 		officers = 0.001
-		NOT = { military_spending = 0.002 }
+		NOT = { officers = 0.002 }
 	}
 	prestige = 0.01
+	mobilisation_size = 0.01
+	land_unit_start_experience = 5
 	land_organisation = 0.05
 	naval_organisation = 0.05
 	org_regain = 0.05
@@ -1085,9 +1087,11 @@ milit_found_1 = {
 milit_found_2 = {
 	trigger = {
 		officers = 0.002
-		NOT = { military_spending = 0.003 }
+		NOT = { officers = 0.003 }
 	}
 	prestige = 0.02
+	mobilisation_size = 0.02
+	land_unit_start_experience = 10
 	land_organisation = 0.10
 	naval_organisation = 0.10
 	org_regain = 0.10
@@ -1100,9 +1104,11 @@ milit_found_2 = {
 milit_found_3 = {
 	trigger = {
 		officers = 0.003
-		NOT = { military_spending = 0.004 }
+		NOT = { officers = 0.004 }
 	}
 	prestige = 0.03
+	mobilisation_size = 0.03
+	land_unit_start_experience = 15
 	land_organisation = 0.15
 	naval_organisation = 0.15
 	org_regain = 0.15
@@ -1115,9 +1121,11 @@ milit_found_3 = {
 milit_found_4 = {
 	trigger = {
 		officers = 0.004
-		NOT = { military_spending = 0.005 }
+		NOT = { officers = 0.005 }
 	}
 	prestige = 0.04
+	mobilisation_size = 0.04
+	land_unit_start_experience = 20
 	land_organisation = 0.20
 	naval_organisation = 0.20
 	org_regain = 0.20
@@ -1132,6 +1140,8 @@ milit_found_5 = {
 		officers = 0.005
 	}
 	prestige = 0.05
+	mobilisation_size = 0.05
+	land_unit_start_experience = 25
 	land_organisation = 0.25
 	naval_organisation = 0.25
 	org_regain = 0.25
