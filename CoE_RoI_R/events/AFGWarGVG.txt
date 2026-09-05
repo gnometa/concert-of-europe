@@ -9,6 +9,9 @@
 #   Retribution that burned the Kabul bazaar and then   #
 #   marched home. See docs/design/anglo-afghan-1839.md. #
 #                                                       #
+#   Windows: 1002300 fires 1838-1840, 1002301 1841-1843, #
+#   1002302 1842-1845, 1002303 is_triggered_only.        #
+#                                                       #
 #   ENG does not border AFG at the 1821 start - PNJ and #
 #   SIN lie between - so the trigger accepts a direct   #
 #   border, an ENG vassal on the frontier, or an AFG    #
@@ -165,9 +168,11 @@ country_event = {
 		prestige = -10
 		war_exhaustion = 5
 		leadership = -5
-		any_owned = {
-			limit = { is_core = HND }
-			any_pop = { militancy = 1 }
+		HND = {
+			any_owned = {
+				limit = { is_core = HND }
+				any_pop = { militancy = 1 }
+			}
 		}
 		random_country = {
 			limit = {
@@ -188,15 +193,16 @@ country_event = {
 		prestige = 2
 		badboy = 1
 		war_exhaustion = 2
-		any_owned = {
-			limit = { province_id = 1209 }
-			add_province_modifier = {
-				name = colonial_chaos
-				duration = 730
-			}
-			any_pop = {
-				militancy = 2
-				consciousness = 1
+		AFG = {
+			capital_scope = {
+				add_province_modifier = {
+					name = colonial_chaos
+					duration = 730
+				}
+				any_pop = {
+					militancy = 2
+					consciousness = 1
+				}
 			}
 		}
 		ai_chance = {
@@ -249,10 +255,11 @@ country_event = {
 		war_exhaustion = -3
 		end_war = AFG
 		relation = { who = AFG value = 50 }
-		any_owned = {
-			limit = { has_province_modifier = colonial_chaos }
-			remove_province_modifier = colonial_chaos
-			any_pop = { militancy = -1 }
+		AFG = {
+			capital_scope = {
+				remove_province_modifier = colonial_chaos
+				any_pop = { militancy = -1 }
+			}
 		}
 		ai_chance = {
 			factor = 75
@@ -274,9 +281,11 @@ country_event = {
 			type = establish_protectorate_casus_belli
 			months = 12
 		}
-		any_owned = {
-			limit = { is_core = HND }
-			any_pop = { consciousness = 1 }
+		HND = {
+			any_owned = {
+				limit = { is_core = HND }
+				any_pop = { consciousness = 1 }
+			}
 		}
 		ai_chance = {
 			factor = 25
