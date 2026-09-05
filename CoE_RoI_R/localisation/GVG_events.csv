@@ -484,3 +484,13 @@ EVTDESC1002004;Mizuno Tadakuni has the senior councillor's seat and a programme 
 EVTOPTA1002004;Sumptuary law, forced loans, dissolve the guilds;;;;;;;;;;;;;x
 EVTOPTB1002004;The merchants of Osaka will not bear it;;;;;;;;;;;;;x
 EVTDESC1002002;The rains did not stop and the rice did not ripen. In the north the crop has failed outright for a third year, and the reports from Mutsu and Dewa speak of villages eating straw and bark. Grain merchants are holding stock against a better price, and the domains that can feed themselves have closed their borders to relief convoys. The shogunal granaries at Edo and Osaka are not empty, but opening them would set a precedent, and the price of every koku released must be made up somewhere.;;;;;;;;;;;;;x
+EVTNAME1002100;Ayacucho;;;;;;;;;;;;;x
+EVTDESC1002100;On 9 December 1824 the Viceroy La Serna surrendered the last royal army in South America on the plain of Ayacucho. The treasury is empty, the fleet cannot supply Callao, and every squadron sent across the Atlantic dissolves in fever and desertion. The ministers ask whether the King will at last treat with the American governments as with sovereign states.;;;;;;;;;;;;;x
+EVTOPTA1002100;The Americas are lost. Make peace.;;;;;;;;;;;;;x
+EVTOPTB1002100;His Majesty will not abandon his subjects!;;;;;;;;;;;;;x
+EVTNAME1002101;Spain Recognises Our Independence;;;;;;;;;;;;;x
+EVTDESC1002101;Madrid has laid down the war. The royalist garrisons are to be embarked, the ports opened, and our republic dealt with as a sovereign power. The generation that took the field against the King has won the thing it fought for.;;;;;;;;;;;;;x
+EVTOPTA1002101;Independence, and an end to the war.;;;;;;;;;;;;;x
+EVTNAME1002102;The Cost of Empire;;;;;;;;;;;;;x
+EVTDESC1002102;Years after Ayacucho the war is still on the books, and nothing has come of it but debt, ruined regiments and a navy that dare not sail. The Cortes will vote no further supply for America. There is nothing left to do but sign.;;;;;;;;;;;;;x
+EVTOPTA1002102;Sign away the viceroyalties.;;;;;;;;;;;;;x

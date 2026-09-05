@@ -1,0 +1,223 @@
+#########################################################
+#                                                       #
+#   Ayacucho and the loss of the Americas, 1824-1834    #
+#   ids 1002100-1002102 (GVG)                           #
+#                                                       #
+#   history/wars starts SPA in the Peruvian (PEU, ARG,  #
+#   CHL) and Colombian (GCO) wars of independence with  #
+#   no scripted way out: the colonial war goals are     #
+#   make_puppet / cut_down_to_size across an ocean, so  #
+#   the AI can grind on for decades. This chain gives   #
+#   Spain the historical settlement after Ayacucho      #
+#   (9 December 1824) and, if she refuses, a forced     #
+#   peace once the treasury and the army are spent.     #
+#                                                       #
+#########################################################
+
+# Ayacucho
+country_event = {
+	id = 1002100
+	title = "EVTNAME1002100"
+	desc = "EVTDESC1002100"
+	picture = "war_ended"
+	major = yes
+
+	trigger = {
+		tag = SPA
+		exists = yes
+		year = 1824
+		NOT = { year = 1830 }
+		OR = {
+			war_with = PEU
+			war_with = GCO
+			war_with = CHL
+			war_with = ARG
+			war_with = MEX
+		}
+		any_country = {
+			war_with = SPA
+			OR = {
+				tag = PEU
+				tag = GCO
+				tag = CHL
+				tag = ARG
+				tag = MEX
+			}
+			NOT = { national_provinces_occupied = 0.25 }
+		}
+		NOT = {
+			war_score = 25
+			has_country_flag = ayacucho_offer_made
+			has_country_flag = ayacucho_settled
+			has_global_flag = spanish_american_independence
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 6
+		modifier = {
+			factor = 0.5
+			war_exhaustion = 10
+		}
+		modifier = {
+			factor = 0.75
+			NOT = { money = 10000 }
+		}
+	}
+
+	option = {
+		name = "EVTOPTA1002100" # The Americas are lost; make peace
+		set_country_flag = ayacucho_offer_made
+		set_country_flag = ayacucho_settled
+		set_global_flag = spanish_american_independence
+		prestige = -10
+		war_exhaustion = -10
+		any_country = {
+			limit = {
+				war_with = SPA
+				OR = {
+					tag = PEU
+					tag = GCO
+					tag = CHL
+					tag = ARG
+					tag = MEX
+					tag = CLM
+					tag = BOL
+					tag = ECU
+					tag = VNZ
+					tag = DOM
+				}
+			}
+			end_war = SPA
+			relation = { who = SPA value = 50 }
+			country_event = { id = 1002101 days = 5 }
+		}
+		any_pop = {
+			limit = { is_primary_culture = yes }
+			militancy = 1
+			scaled_militancy = {
+				factor = 2
+				ideology = reactionary
+			}
+		}
+		ai_chance = {
+			factor = 70
+		}
+	}
+
+	option = {
+		name = "EVTOPTB1002100" # The King will not abandon his subjects
+		set_country_flag = ayacucho_offer_made
+		set_country_flag = ayacucho_fight_on
+		prestige = 2
+		war_exhaustion = 10
+		any_pop = {
+			limit = { is_primary_culture = yes }
+			militancy = 2
+			scaled_militancy = {
+				factor = 3
+				ideology = liberal
+			}
+		}
+		ai_chance = {
+			factor = 30
+		}
+	}
+}
+
+# Recognition (American side)
+country_event = {
+	id = 1002101
+	title = "EVTNAME1002101"
+	desc = "EVTDESC1002101"
+	picture = "treaty"
+
+	is_triggered_only = yes
+
+	option = {
+		name = "EVTOPTA1002101" # Independence is ours
+		set_country_flag = recognised_by_spain
+		prestige = 10
+		war_exhaustion = -10
+		relation = { who = SPA value = 100 }
+		any_pop = {
+			limit = { is_primary_culture = yes }
+			militancy = -2
+			consciousness = 1
+		}
+	}
+}
+
+# The Cost of Empire
+country_event = {
+	id = 1002102
+	title = "EVTNAME1002102"
+	desc = "EVTDESC1002102"
+	picture = "derrota"
+
+	trigger = {
+		tag = SPA
+		exists = yes
+		year = 1827
+		NOT = { year = 1834 }
+		has_country_flag = ayacucho_fight_on
+		OR = {
+			war_with = PEU
+			war_with = GCO
+			war_with = CHL
+			war_with = ARG
+			war_with = MEX
+		}
+		NOT = {
+			war_score = 25
+			has_country_flag = ayacucho_settled
+			has_global_flag = spanish_american_independence
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 12
+		modifier = {
+			factor = 0.5
+			war_exhaustion = 20
+		}
+	}
+
+	option = {
+		name = "EVTOPTA1002102" # Sign away the viceroyalties
+		set_country_flag = ayacucho_settled
+		set_global_flag = spanish_american_independence
+		clr_country_flag = ayacucho_fight_on
+		prestige = -15
+		war_exhaustion = -20
+		any_country = {
+			limit = {
+				war_with = SPA
+				NOT = { has_country_flag = recognised_by_spain }
+				OR = {
+					tag = PEU
+					tag = GCO
+					tag = CHL
+					tag = ARG
+					tag = MEX
+					tag = CLM
+					tag = BOL
+					tag = ECU
+					tag = VNZ
+					tag = DOM
+				}
+			}
+			end_war = SPA
+			relation = { who = SPA value = 25 }
+			country_event = { id = 1002101 days = 5 }
+		}
+		any_pop = {
+			limit = { is_primary_culture = yes }
+			militancy = 2
+			scaled_militancy = {
+				factor = 3
+				ideology = reactionary
+			}
+		}
+	}
+}
