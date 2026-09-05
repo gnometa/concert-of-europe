@@ -85,16 +85,13 @@ belongs in a separate pass with its own rate check.
 | 3 | 130 | `TemperanceLeague.txt:204` | 37,530 | `has_province_modifier = beer_halls` already gates it, but the surviving `state_scope = { any_owned_province = { ... } }` is a nested iteration. |
 | 4-5, 8 | 20110/20111/20112 | `crises.txt:356,471,525` | 65,003 | `crisis_exist`/`has_flashpoint`/`flashpoint_tension` are all state- or globe-level. Nothing here is a leaf gate. |
 | 6-7 | 98225/98226 | `BoerWar.txt:641,676` | 43,290 | The Great Trek pair. `state_scope = { has_pop_culture = boer }` is the selective test but it is also the expensive one. |
-| 9-19 | 9999959-9999969 | `+education_RGO.txt` | ~10,800 each, ~119k total | 11 daily province events each doing `state_scope = { literacy = ... }`. Row 3 of the `core-systems.md` table, still open. |
+| ~~9-19~~ | ~~9999959-9999969~~ | `+education_RGO.txt` | **0** | **Done** — converted to `is_triggered_only` and dispatched quarterly; see "Education ladder" below. |
 
 Suggested shape for a later pass, in priority order:
 
-1. **`+education_RGO.txt` 9999959-9999969** — the cleanest candidate. Collapse the 11 literacy
-   buckets into one `is_triggered_only` province event dispatched from `on_yearly_pulse`, with
-   the buckets as internal `if`-style branches. The chain is already effectively a ladder, so
-   one `state_scope` read per province per year replaces 11 per day. Rate change is real
-   (daily -> yearly) and must be signed off, but the mechanic is a state-modifier refresh, not
-   a random event, so it is the least rate-sensitive of the group.
+1. ~~**`+education_RGO.txt` 9999959-9999969**~~ — **done**, see the next section. Kept as 11
+   separate events rather than one branching event, and dispatched quarterly rather than
+   yearly.
 2. **`crises.txt` 20110-20112 and `Ottoman_Event.txt` 31268** — flashpoint crises are already
    a slow, once-per-crisis mechanic. A country-scoped `on_yearly_pulse` event that finds the
    flashpoint state once and dispatches `province_event` would remove ~130k/day; the per-
@@ -110,3 +107,93 @@ Suggested shape for a later pass, in priority order:
 Rows 1, 2, 4, 7 and 9 of the `core-systems.md` performance table (`Goods.txt` 1107-1138,
 `RGOChangeEvents.txt` terrain scans, `0_colony_types.txt`, `CleanUp.txt`'s 48 country events,
 `Slave Popsize.txt`) are unchanged in kind by this pass; only their clause order improved.
+
+## Education ladder 9999959-9999969 — done (2026-09-06)
+
+### What the eleven steps do
+
+They are **province** events, not country events, and they are a *classifier*, not a random
+event. Each one owns one decile of state literacy:
+
+| id | modifier | state literacy | id | modifier | state literacy |
+|---|---|---|---|---|---|
+| 9999959 | `RGO_education_0` | 0.00-0.10 | 9999964 | `RGO_education_6` | 0.60-0.70 |
+| 9999969 | `RGO_education_1` | 0.10-0.20 | 9999963 | `RGO_education_7` | 0.70-0.80 |
+| 9999968 | `RGO_education_2` | 0.20-0.30 | 9999962 | `RGO_education_8` | 0.80-0.90 |
+| 9999967 | `RGO_education_3` | 0.30-0.40 | 9999961 | `RGO_education_9` | 0.90-0.99 |
+| 9999966 | `RGO_education_4` | 0.40-0.50 | 9999960 | `RGO_education_10` | 0.99+ |
+| 9999965 | `RGO_education_5` | 0.50-0.60 | | | |
+
+Trigger, identical in shape in all eleven (three clauses):
+
+```
+has_global_flag = education_setup
+NOT = { has_province_modifier = RGO_education_<N> }
+state_scope = { literacy = <lo>  NOT = { literacy = <hi> } }
+```
+
+Effect: `state_scope = { any_owned = { remove the other ten modifiers, add
+RGO_education_<N> duration = -1 } }` — so although the event fires *on a province*, it
+re-stamps **every province of that province's state**, and the remaining provinces of the
+state then fail their own `NOT = { has_province_modifier }` clause. MTTH was
+`months = 1` on all eleven. (Each also carries ~30 lines of commented-out `life_rating`
+inversion code; left untouched.)
+
+### Dispatch chosen
+
+`is_triggered_only = yes` on all eleven, `mean_time_to_happen` removed, **every trigger
+clause kept verbatim** (a triggered event's `trigger` is still checked when it is fired).
+The dispatch is a new block in the **quarterly** hub `00_CoE_RoI.txt` 99997 (already
+`is_triggered_only`, already fired from `common/on_actions.txt` `on_quarterly_pulse`):
+
+```
+any_country = {
+    limit = { has_global_flag = education_setup }
+    any_owned = {
+        limit = { NOT = { has_province_modifier = RGO_education_0 }
+                  state_scope = { literacy = 0 NOT = { literacy = 0.1 } } }
+        province_event = 9999959
+    }
+    ... x11
+}
+```
+
+The `has_global_flag` clause is hoisted to the country `limit` (one test per country
+instead of eleven); the other two clauses are the province `limit`, in the same
+cheap-gate-first order the events already used. No new event id, no `on_actions.txt`
+change.
+
+### Rate mapping
+
+| | old | new |
+|---|---|---|
+| evaluation | 11 triggers per owned province **per day** | 11 `limit`s per owned province **per quarterly pulse** |
+| firing | `mean_time_to_happen = { months = 1 }` per province | deterministic, at the pulse |
+| state resync latency | ~30/k days for a k-province state (~8-15 days typical) | 0-91 days, ~45 days mean |
+
+**No `random = { chance = X }` was introduced.** The instruction to convert an MTTH into a
+per-pulse probability does not apply here: the trigger is a state's own literacy decile,
+which does not stop being true if the event does not fire today, so the old MTTH was not a
+firing *rate* at all — it was purely a delay before a certain event. Converting it to a
+chance would make the classifier stochastic where it was not. (The precedent does exist —
+`events/GreatWar_Events.txt` has 11 instances of `random = { chance = N country_event = X }`
+inside `any_country` — so this was a choice, not a limitation.) The original MTTH was
+≤ 12 months, so per the brief the deterministic conversion is the sanctioned option;
+quarterly rather than the yearly suggested above keeps the added latency to a quarter.
+
+The behavioural change is therefore exactly this: **a state that crosses a literacy decile
+keeps its previous `RGO_education_*` modifier for up to one quarter instead of up to about
+a month.** The set of states, the modifier each ends up with, and the effect body are
+unchanged. This is a real, if small, rate change and is documented in a comment header
+above 9999969 in `+education_RGO.txt` and above the dispatch block in `00_CoE_RoI.txt`.
+
+### Cost
+
+`audit_perf.py`, whole mod, all self-firing events: **1,092,776 -> 975,655**
+clause-evals/day (-117,121, -10.7%). The eleven events are no longer counted at all
+(2330 -> 2319 self-firing events). The dispatcher's own work is not in that model: it is
+11 `any_owned` passes with a `state_scope` per country per quarter, i.e. the same
+~36k clause-evals the ladder used to spend *every day*, now spent four times a year.
+
+`refcheck.py` unchanged at 14/0/60/0/132/0/8 — the eleven are `is_triggered_only` but 99997
+fires them, so no new orphans. `audit_events.py` unknown keywords 0; cwtools at baseline.
