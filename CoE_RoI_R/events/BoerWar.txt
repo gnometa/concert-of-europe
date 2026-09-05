@@ -957,7 +957,7 @@ country_event = {
 			who = FROM
 			value = 200
 		}
-		add_casus_belli = {
+		casus_belli = {
 			target = FROM
 			type = establish_protectorate_casus_belli
 			months = 60
