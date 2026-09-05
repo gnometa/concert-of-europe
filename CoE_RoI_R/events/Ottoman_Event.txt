@@ -2151,7 +2151,6 @@ country_event = {
 				}
 			}
 		}
-		CRE = { all_core = { remove_core = TUR } }
 		TUR = { country_event = 31254 }
 		ai_chance = {
 			factor = 95
@@ -2218,7 +2217,6 @@ country_event = {
 				}
 			}
 		}
-		CYP = { all_core = { remove_core = TUR } }
 		TUR = { country_event = 31254 }
 		ai_chance = {
 			factor = 95
@@ -2227,7 +2225,6 @@ country_event = {
 	
 	option = {
 		name = "The Empire must fend for itself."
-		leave_alliance = TUR
 		TUR = { country_event = 31255 }
 		ai_chance = {
 			factor = 5
@@ -2637,6 +2634,8 @@ country_event = {
 	title = "EVTNAME31264" #The Greek Question
 	desc = "EVTDESC31264"
 	picture = "Rebellion"
+	
+	fire_only_once = yes
 	
 	trigger = {
 		is_greater_power = yes
