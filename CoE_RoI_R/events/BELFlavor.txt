@@ -731,11 +731,16 @@ country_event = {
 	trigger = {
 		tag = NET
 		exists = yes
-		year = 1825
+		year = 1830
 		BEL = { exists = no }
 		owns = 387 #Brussels
 		NOT = {
 			has_country_flag = belgium_seceded
+		}
+		# Fallback only: the BELRevolutionGVG.txt chain (1000301+) is the
+		# scripted 1830 revolution and sets this flag as soon as it starts.
+		NOT = {
+			has_country_flag = BEL_revolt_in_progress
 		}
 	}
 	

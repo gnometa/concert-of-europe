@@ -141,3 +141,41 @@ EVTDESC1000403;Colonel Pestel's manuscript, the Russkaya Pravda, has been recove
 EVTOPTA1000403;Let it be read and argued over.;;;;;;;;;;;;;x
 EVTOPTB1000403;Confiscate every copy, quietly.;;;;;;;;;;;;;x
 nicholas_reaction;Nicholaevan Reaction;;;;;;;;;;;;;x
+EVTNAME1000301;Riots in Brussels;;;;;;;;;;;;;x
+EVTDESC1000301;A performance of Auber's La Muette de Portici at the Theatre de la Monnaie has spilled out into the streets. The crowd has torn the arms of the House of Orange from the shopfronts, the colours of Brabant fly over the Hotel de Ville, and the burghers have armed themselves as a Garde Civique. The southern provinces have grievances enough - Dutch officials, the Dutch language, a Protestant king set over a Catholic people - and the news from Paris has taught them what a crowd may accomplish.;;;;;;;;;;;;;x
+EVTOPTA1000301;Restore order at the point of the bayonet.;;;;;;;;;;;;;x
+EVTOPTB1000301;Hear the petitions of the south.;;;;;;;;;;;;;x
+EVTNAME1000301_NEWS_TITLE;Disorder in Brussels;;;;;;;;;;;;;x
+EVTDESC1000301_NEWS_LONG;What began as an evening at the opera has become five days of tumult in the Belgian capital. The Garde Civique patrols the boulevards in place of the royal police, and correspondents report that the tricolour of Brabant has replaced the royal standard on public buildings. Whether The Hague answers with troops or with concessions is the question of the hour in every chancery in Europe.;;;;;;;;;;;;;x
+EVTDESC1000301_NEWS_MEDIUM;Brussels is in the hands of an armed citizens' guard after five days of rioting. The Hague has not yet said whether it will send soldiers.;;;;;;;;;;;;;x
+EVTDESC1000301_NEWS_SHORT;Rioting in Brussels. Royal authority suspended.;;;;;;;;;;;;;x
+EVTNAME1000302;The Provisional Government of Belgium;;;;;;;;;;;;;x
+EVTDESC1000302;The regiments sent to clear Brussels have been driven out of the Parc after four days of street fighting, and the men of the barricades have proclaimed a Provisional Government. It has declared the southern provinces independent and summoned a National Congress to give them a constitution. His Majesty must now decide whether the Kingdom of the United Netherlands is worth a war, and whether the Powers who assembled it at Vienna will lift a finger to hold it together.;;;;;;;;;;;;;x
+EVTOPTA1000302;Let them go, and let the Powers settle the rest.;;;;;;;;;;;;;x
+EVTOPTB1000302;The Kingdom will be preserved by force of arms.;;;;;;;;;;;;;x
+EVTOPTC1000302;Vienna and Petersburg made this kingdom - let them defend it.;;;;;;;;;;;;;x
+EVTNAME1000302_NEWS_TITLE;Belgium Declares Its Independence;;;;;;;;;;;;;x
+EVTDESC1000302_NEWS_LONG;A Provisional Government sitting in the Hotel de Ville at Brussels has declared the southern provinces of the Kingdom of the United Netherlands to be independent, and has called a National Congress to frame a constitution. The royal troops have withdrawn from the city. The settlement of 1815 has been unmade in a fortnight, and the Powers must decide whether to restore it, recognise the new state, or divide the spoils between them.;;;;;;;;;;;;;x
+EVTDESC1000302_NEWS_MEDIUM;A Provisional Government at Brussels has declared the southern provinces independent and summoned a National Congress. The royal troops have withdrawn.;;;;;;;;;;;;;x
+EVTDESC1000302_NEWS_SHORT;Belgium proclaims independence at Brussels.;;;;;;;;;;;;;x
+EVTNAME1000303;The Belgians Appeal to Paris;;;;;;;;;;;;;x
+EVTDESC1000303;Envoys of the Provisional Government have arrived in Paris. They speak French, they cheer the tricolour, and they remind the Citizen King that his own throne was raised on barricades only weeks ago. There are deputies in the Chamber who talk again of the natural frontiers, and of a French prince installed at Brussels. There are others who remember that the last time French armies crossed the Scheldt, Europe answered with a coalition.;;;;;;;;;;;;;x
+EVTOPTA1000303;The Armee du Nord will march for Belgium.;;;;;;;;;;;;;x
+EVTOPTB1000303;Leave the question to the conference table.;;;;;;;;;;;;;x
+EVTNAME1000304;Palmerston and the Belgian Question;;;;;;;;;;;;;x
+EVTDESC1000304;The barrier the Powers raised against France in 1815 is coming apart, and the Foreign Secretary must decide what to put in its place. A Belgium in French hands would be intolerable to this country. A Belgium independent, perpetually neutral, and guaranteed by all the Powers together is quite another matter - and the trade of Antwerp would be open to us in either case.;;;;;;;;;;;;;x
+EVTOPTA1000304;Belgium shall be independent, neutral, and guaranteed.;;;;;;;;;;;;;x
+EVTOPTB1000304;This is a quarrel for the continent.;;;;;;;;;;;;;x
+EVTNAME1000305;The Twenty-Four Articles;;;;;;;;;;;;;x
+EVTDESC1000305;The conference has drawn up its terms. Belgium is to be independent and perpetually neutral, the Scheldt is to be opened, the debt of the old kingdom divided, and Limburg and Luxembourg carved between the two crowns. The Powers have set their hands to it. They now expect the King of the Netherlands to do the same, and they have made it plain that the cost of a refusal will not be paid by them.;;;;;;;;;;;;;x
+EVTOPTA1000305;We will sign, and salvage what we can.;;;;;;;;;;;;;x
+EVTOPTB1000305;We have not yet been beaten. Let them come.;;;;;;;;;;;;;x
+EVTNAME1000306;The Crown of Belgium is Offered;;;;;;;;;;;;;x
+EVTDESC1000306;The National Congress has voted for a monarchy and must now find a monarch. The Powers have already vetoed one French prince. Leopold of Saxe-Coburg is a widower of the British royal house, acceptable in London, tolerable in Paris, and beholden to no faction in Brussels. There remain deputies on the benches who would rather have no king at all.;;;;;;;;;;;;;x
+EVTOPTA1000306;Leopold of Saxe-Coburg shall be King of the Belgians.;;;;;;;;;;;;;x
+EVTOPTB1000306;Offer the crown to the Duc de Nemours.;;;;;;;;;;;;;x
+EVTOPTC1000306;Belgium will be a republic.;;;;;;;;;;;;;x
+EVTNAME1000307;The Treaty of London, 1839;;;;;;;;;;;;;x
+EVTDESC1000307;Nine years of mobilisation have emptied the treasury, and the Powers have not moved an inch from the terms they set in 1831. Belgium is a fact - recognised, garrisoned, and prospering behind its guaranteed neutrality. The Chambers will vote no more money for an army that has done nothing but stand watch at Maastricht. His Majesty may sign, and keep Limburg and half of Luxembourg, or he may go on alone.;;;;;;;;;;;;;x
+EVTOPTA1000307;Sign. Nine years is long enough.;;;;;;;;;;;;;x
+EVTOPTB1000307;Not while the Orange flag can still be raised in Brussels.;;;;;;;;;;;;;x

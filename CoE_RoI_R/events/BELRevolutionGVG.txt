@@ -1,0 +1,429 @@
+#########################################################
+#                                                       #
+#      The Belgian Revolution, 1830-1839 (GVG)          #
+#      ids 1000301-1000307                              #
+#                                                       #
+#  Prelude to the PDM secession/London Conference       #
+#  chain in BELFlavor.txt (36720, 36725+). This file    #
+#  supplies the cause and the war; BELFlavor keeps the  #
+#  conference and the partition outcomes.               #
+#                                                       #
+#########################################################
+
+# Riots in Brussels
+country_event = {
+	id = 1000301
+	title = "EVTNAME1000301"
+	desc = "EVTDESC1000301"
+	picture = "DIM_muette_de_portici"
+	news = yes
+	news_title = "EVTNAME1000301_NEWS_TITLE"
+	news_desc_long = "EVTDESC1000301_NEWS_LONG"
+	news_desc_medium = "EVTDESC1000301_NEWS_MEDIUM"
+	news_desc_short = "EVTDESC1000301_NEWS_SHORT"
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = NET
+		exists = yes
+		owns = 387
+		BEL = { exists = no }
+		year = 1830
+		NOT = { year = 1841 }
+		NOT = { has_country_flag = belgium_seceded }
+		NOT = { has_country_flag = BEL_revolt_in_progress }
+	}
+
+	mean_time_to_happen = {
+		months = 3
+		modifier = {
+			factor = 0.5
+			FRA = { has_country_flag = july_revolution }
+		}
+		modifier = {
+			factor = 0.75
+			any_owned_province = {
+				is_core = BEL
+				average_militancy = 4
+			}
+		}
+	}
+
+	option = {
+		name = "EVTOPTA1000301"
+		set_country_flag = BEL_revolt_in_progress
+		prestige = -2
+		any_owned = {
+			limit = { is_core = BEL }
+			any_pop = {
+				militancy = 4
+				consciousness = 2
+			}
+		}
+		country_event = { id = 1000302 days = 40 }
+		ai_chance = {
+			factor = 70
+		}
+	}
+
+	option = {
+		name = "EVTOPTB1000301"
+		set_country_flag = BEL_revolt_in_progress
+		set_country_flag = BEL_concessions_offered
+		prestige = -5
+		any_owned = {
+			limit = { is_core = BEL }
+			any_pop = {
+				militancy = -1
+				consciousness = 1
+			}
+		}
+		country_event = { id = 1000302 days = 150 }
+		ai_chance = {
+			factor = 30
+		}
+	}
+}
+
+# The Provisional Government of Belgium
+country_event = {
+	id = 1000302
+	title = "EVTNAME1000302"
+	desc = "EVTDESC1000302"
+	picture = "DIM_belgian_revolution"
+	is_triggered_only = yes
+	major = yes
+	news = yes
+	news_title = "EVTNAME1000302_NEWS_TITLE"
+	news_desc_long = "EVTDESC1000302_NEWS_LONG"
+	news_desc_medium = "EVTDESC1000302_NEWS_MEDIUM"
+	news_desc_short = "EVTDESC1000302_NEWS_SHORT"
+
+	option = {
+		name = "EVTOPTA1000302"
+		set_country_flag = belgium_seceded
+		clr_country_flag = united_netherlands
+		prestige = -15
+		release = BEL
+		relation = { who = BEL value = -50 }
+		BEL = {
+			prestige = 5
+			leadership = 20
+			any_pop = { militancy = -4 }
+			country_event = { id = 1000306 days = 240 }
+		}
+		any_owned = {
+			limit = { is_core = NET }
+			any_pop = { consciousness = 2 }
+		}
+		FRA = { country_event = { id = 1000303 days = 5 } }
+		ENG = { country_event = { id = 1000304 days = 10 } }
+		ai_chance = {
+			factor = 30
+			modifier = {
+				factor = 2
+				has_country_flag = BEL_concessions_offered
+			}
+		}
+	}
+
+	option = {
+		name = "EVTOPTB1000302"
+		set_country_flag = belgium_seceded
+		set_country_flag = BEL_war_of_secession
+		clr_country_flag = united_netherlands
+		release = BEL
+		relation = { who = BEL value = -100 }
+		BEL = {
+			leadership = 20
+			any_pop = { militancy = -2 }
+			country_event = { id = 1000306 days = 240 }
+		}
+		any_pop = {
+			limit = { is_primary_culture = yes }
+			militancy = -1
+			consciousness = 1
+		}
+		war = {
+			target = BEL
+			attacker_goal = {
+				casus_belli = annex_core_country
+			}
+		}
+		FRA = { country_event = { id = 1000303 days = 5 } }
+		ENG = { country_event = { id = 1000304 days = 10 } }
+		ai_chance = {
+			factor = 70
+			modifier = {
+				factor = 0.5
+				has_country_flag = BEL_concessions_offered
+			}
+		}
+	}
+
+	option = {
+		name = "EVTOPTC1000302"
+		set_country_flag = belgium_seceded
+		set_country_flag = BEL_war_of_secession
+		clr_country_flag = united_netherlands
+		prestige = -5
+		release = BEL
+		relation = { who = BEL value = -100 }
+		BEL = {
+			leadership = 20
+			country_event = { id = 1000306 days = 240 }
+		}
+		war = {
+			target = BEL
+			attacker_goal = {
+				casus_belli = annex_core_country
+			}
+		}
+		random_country = {
+			limit = {
+				OR = {
+					tag = RUS
+					tag = PRU
+				}
+				relation = { who = THIS value = 100 }
+				war = no
+			}
+			random = {
+				chance = 40
+				create_alliance = THIS
+			}
+			relation = { who = THIS value = 25 }
+		}
+		FRA = { country_event = { id = 1000303 days = 5 } }
+		ENG = { country_event = { id = 1000304 days = 10 } }
+		ai_chance = {
+			factor = 15
+		}
+	}
+}
+
+# The Belgians Appeal to Paris
+country_event = {
+	id = 1000303
+	title = "EVTNAME1000303"
+	desc = "EVTDESC1000303"
+	picture = "DIM_garde_civique"
+	is_triggered_only = yes
+
+	option = {
+		name = "EVTOPTA1000303"
+		prestige = 5
+		diplomatic_influence = { who = BEL value = 100 }
+		relation = { who = BEL value = 100 }
+		relation = { who = NET value = -50 }
+		create_alliance = BEL
+		ai_chance = {
+			factor = 70
+		}
+	}
+
+	option = {
+		name = "EVTOPTB1000303"
+		prestige = -5
+		diplomatic_influence = { who = BEL value = 50 }
+		relation = { who = BEL value = 25 }
+		relation = { who = ENG value = 25 }
+		ai_chance = {
+			factor = 30
+		}
+	}
+}
+
+# Palmerston and the Belgian Question
+country_event = {
+	id = 1000304
+	title = "EVTNAME1000304"
+	desc = "EVTDESC1000304"
+	picture = "greatpowers"
+	is_triggered_only = yes
+
+	option = {
+		name = "EVTOPTA1000304"
+		prestige = 5
+		diplomatic_influence = { who = BEL value = 100 }
+		relation = { who = BEL value = 50 }
+		relation = { who = NET value = -25 }
+		NET = { country_event = { id = 1000305 days = 40 } }
+		ai_chance = {
+			factor = 70
+		}
+	}
+
+	option = {
+		name = "EVTOPTB1000304"
+		prestige = -5
+		relation = { who = NET value = 25 }
+		ai_chance = {
+			factor = 30
+		}
+	}
+}
+
+# The Twenty-Four Articles
+country_event = {
+	id = 1000305
+	title = "EVTNAME1000305"
+	desc = "EVTDESC1000305"
+	picture = "treaty"
+	is_triggered_only = yes
+
+	option = {
+		name = "EVTOPTA1000305"
+		prestige = -10
+		end_war = BEL
+		clr_country_flag = BEL_war_of_secession
+		relation = { who = ENG value = 50 }
+		relation = { who = FRA value = 25 }
+		relation = { who = BEL value = 25 }
+		add_country_modifier = {
+			name = no_more_war
+			duration = 730
+		}
+		BEL = {
+			prestige = 10
+			any_pop = { militancy = -3 }
+		}
+		ai_chance = {
+			factor = 30
+			modifier = {
+				factor = 3
+				war_exhaustion = 20
+			}
+		}
+	}
+
+	option = {
+		name = "EVTOPTB1000305"
+		badboy = 2
+		prestige = 5
+		relation = { who = ENG value = -50 }
+		relation = { who = FRA value = -50 }
+		any_pop = {
+			limit = { is_primary_culture = yes }
+			militancy = 1
+		}
+		ai_chance = {
+			factor = 70
+			modifier = {
+				factor = 0.25
+				war_exhaustion = 30
+			}
+		}
+	}
+}
+
+# The Crown of Belgium is Offered
+country_event = {
+	id = 1000306
+	title = "EVTNAME1000306"
+	desc = "EVTDESC1000306"
+	picture = "lion"
+	is_triggered_only = yes
+	major = yes
+
+	option = {
+		name = "EVTOPTA1000306"
+		government = hms_government
+		ruling_party_ideology = liberal
+		prestige = 10
+		relation = { who = ENG value = 50 }
+		relation = { who = FRA value = 25 }
+		ENG = { diplomatic_influence = { who = BEL value = 100 } }
+		any_pop = { militancy = -3 }
+		ai_chance = {
+			factor = 70
+		}
+	}
+
+	option = {
+		name = "EVTOPTB1000306"
+		government = hms_government
+		ruling_party_ideology = liberal
+		prestige = 5
+		relation = { who = FRA value = 100 }
+		relation = { who = ENG value = -50 }
+		FRA = { diplomatic_influence = { who = BEL value = 100 } }
+		ai_chance = {
+			factor = 20
+		}
+	}
+
+	option = {
+		name = "EVTOPTC1000306"
+		government = democracy
+		ruling_party_ideology = liberal
+		prestige = -5
+		relation = { who = ENG value = -50 }
+		relation = { who = FRA value = -25 }
+		any_pop = { consciousness = 2 }
+		add_country_modifier = {
+			name = national_confusion
+			duration = 365
+		}
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+
+# The Treaty of London, 1839
+country_event = {
+	id = 1000307
+	title = "EVTNAME1000307"
+	desc = "EVTDESC1000307"
+	picture = "treaty"
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = NET
+		exists = yes
+		exists = BEL
+		has_country_flag = BEL_war_of_secession
+		war_with = BEL
+		year = 1839
+	}
+
+	mean_time_to_happen = {
+		months = 2
+	}
+
+	option = {
+		name = "EVTOPTA1000307"
+		prestige = -20
+		end_war = BEL
+		clr_country_flag = BEL_war_of_secession
+		relation = { who = BEL value = 25 }
+		relation = { who = ENG value = 25 }
+		relation = { who = FRA value = 25 }
+		add_country_modifier = {
+			name = no_more_war
+			duration = 730
+		}
+		BEL = {
+			prestige = 10
+			any_pop = { militancy = -3 }
+		}
+		ai_chance = {
+			factor = 80
+		}
+	}
+
+	option = {
+		name = "EVTOPTB1000307"
+		badboy = 2
+		prestige = 5
+		war_exhaustion = 20
+		relation = { who = ENG value = -25 }
+		relation = { who = FRA value = -25 }
+		ai_chance = {
+			factor = 20
+		}
+	}
+}
