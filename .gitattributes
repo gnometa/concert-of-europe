@@ -1,2 +1,27 @@
-.githooks/* text eol=lf
-scripts/*.ps1 text eol=lf
+# Game files: the Clausewitz engine expects CRLF. Stored as LF in git, checked out as CRLF
+# on every platform regardless of core.autocrlf.
+CoE_RoI_R/**/*.txt  text eol=crlf
+CoE_RoI_R/**/*.csv  text eol=crlf
+CoE_RoI_R/**/*.lua  text eol=crlf
+CoE_RoI_R/**/*.gui  text eol=crlf
+CoE_RoI_R/**/*.gfx  text eol=crlf
+CoE_RoI_R/**/*.sfx  text eol=crlf
+CoE_RoI_R/**/*.map  text eol=crlf
+CoE_RoI_R.mod       text eol=crlf
+
+# Binary assets: never touch.
+*.tga binary
+*.dds binary
+*.bmp binary
+*.bin binary
+*.xsm binary
+*.xac binary
+
+# Tooling: LF everywhere.
+.githooks/*  text eol=lf
+scripts/*    text eol=lf
+.claude/**   text eol=lf
+*.py text eol=lf
+*.json text eol=lf
+*.md text eol=lf
+*.code-workspace text eol=lf
