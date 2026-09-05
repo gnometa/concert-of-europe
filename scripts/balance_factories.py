@@ -23,7 +23,14 @@ country-specific.
 Usage
   python scripts/balance_factories.py                 the mod
   python scripts/balance_factories.py --vanilla       the vanilla game files
+  python scripts/balance_factories.py --target 1.35   maintenance budget solver
   python scripts/balance_factories.py <folder>        any folder holding common/
+
+`--target R` is the tool the 2026-09-06 maintenance pass was derived with.  For
+every factory it prints the maintenance budget that puts the type at ratio R
+(budget = revenue / R - input) and the scale factor to apply to every good in
+its `efficiency` block to get there.  Scaling keeps the template's goods mix,
+which is the constraint the pass worked under.
 """
 import sys
 from pathlib import Path
@@ -134,11 +141,34 @@ def report(base, label):
     print()
 
 
+def targets(base, ratio):
+    """Print the maintenance budget and efficiency-block scale factor for `ratio`."""
+    prices, types = load(base)
+
+    def total(pairs):
+        return sum(q * prices.get(g, 0.0) for g, q in pairs)
+
+    print(f"=== maintenance budget at target ratio {ratio:g}: {base}")
+    print()
+    print(f"{'name':<28}{'input':>9}{'revenue':>9}{'maint now':>11}{'budget':>9}{'scale':>9}")
+    rows = [t for t in types if t["kind"] == "factory"]
+    for t in sorted(rows, key=lambda t: t["name"]):
+        icost = total(t["inputs"])
+        mnow = total(t["maint"])
+        rev = t["value"] * prices.get(t["output"], 0.0)
+        budget = rev / ratio - icost
+        scale = budget / mnow if mnow else float("nan")
+        print(f"{t['name']:<28}{icost:>9.2f}{rev:>9.2f}{mnow:>11.2f}{budget:>9.2f}{scale:>9.4f}")
+    print()
+
+
 def main(argv):
     if not argv:
         report(MOD, "mod")
     elif argv[0] in ("--vanilla", "-v"):
         report(VANILLA, "vanilla")
+    elif argv[0] in ("--target", "-t"):
+        targets(MOD, float(argv[1]) if len(argv) > 1 else 1.35)
     elif argv[0] in ("--both", "-b"):
         report(MOD, "mod")
         report(VANILLA, "vanilla")
