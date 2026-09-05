@@ -19,19 +19,41 @@ python scripts/modcheck.py provinces $(git diff --name-only HEAD -- CoE_RoI_R/ev
 python scripts/modcheck.py tags      $(git diff --name-only HEAD -- CoE_RoI_R/events CoE_RoI_R/decisions CoE_RoI_R/history)
 python scripts/gfxtool.py missing
 python scripts/refcheck.py
+for f in CoE_RoI_R/localisation/*.csv; do python scripts/modcheck.py loc-check "$f"; done
 ```
 
 If nothing is modified in the working tree, use `git diff --name-only HEAD~1` instead so the last commit is checked. For a full sweep use `CoE_RoI_R/events/*.txt CoE_RoI_R/decisions/*.txt CoE_RoI_R/common/*.txt`.
 
-Known pre-existing findings (re-measured 2026-09-06 after the post-`464f3abf` content batch — the 1831 Italian risings, USA sectional crisis, Java War, Russo-Turkish War and Qing opium chains) that are not regressions:
-- `ids`: duplicate 300999 inside `events/PERFlavour.txt`. Exactly 1 duplicate; the id total drifts upward as chains are added (3156 on 2026-09-06, after the ASH/Vormaerz/Brazil/Japan/Ayacucho/WarResolutions batch) - only the duplicate count is an invariant.
-- `encoding`: 12 vanilla-inherited localisation csvs contain NEL (0x85) or 0x9d bytes (`modcheck encoding CoE_RoI_R/localisation`). `modcheck encoding CoE_RoI_R/events`, `.../decisions`, `.../common` and `.../history` must all be 0 - every script `.txt` in the mod is CRLF.
-- `loc-check`: 161 malformed rows across 21 csvs, mostly `0000_economic_rework.csv` (55), `PDM_CE.csv` (28), `newCE.csv` (27) (UTF-8 and/or missing `x` terminator). `GVG_events.csv` is clean and must stay clean.
-- `loc-check` column checks (added 2026-09-06): the command now also reports (a) rows where a `;` typed inside the English text splits it across the English and French columns, and (b) a per-file count of rows that are not exactly 15 columns wide. Baseline over `CoE_RoI_R/localisation/*.csv`: **13 split rows** (all vanilla/PDM-inherited: `00_PDM_events.csv` 2, `00_PDM_GAGA.csv` 2, `00_PDM_goods.csv` 1, `000_persia_events.csv` 1, `000_persia_map.csv` 1, `PDM_CE.csv` 3, `Taiping(move_later).csv` 1, `text.csv` 2; `GVG_events.csv:16` `EVTDESC999999` was fixed in `48a906ce` and no longer counts) and **27904 odd-width rows across 48 files** (harmless trailing/missing empty language columns, dominated by `text.csv`). New GVG content must add none of either.
-- `refcheck` (baseline re-measured 2026-09-06): `events` 14 - the deliberately abandoned `is_triggered_only` events (1002, 90903, 95259, 95652, 95655, 97120, 98230, 99665, 99666, 99993, 290115, 375003) plus 99932 and 8016451 having a trigger with no MTTH (intentional: they fire the moment the trigger is true). `loc` 60 - 58 hidden/utility entries in `common/event_modifiers.txt` with no localisation, plus event 290115 (an abandoned event). `flags` 129 - orphan flags: 98 set but never checked and 31 checked but never set (the count drifts 129-133 as chains are added and as orphans are closed); none of the remaining ones is a spelling variant of a real flag. `options` 8 - events with 6-8 options. `onactions`, `modifiers` and `names` must stay at 0.
-- `provinces` and `tags` over the whole tree (events, decisions, history/countries, history/diplomacy, history/wars) must stay at 0.
+`braces`, `provinces` and `tags` take file paths, not directories, and the whole tree overflows
+the command line in one go — sweep it a directory at a time:
 
-Report any finding **not** in that list as a regression.
+```
+for d in events decisions history/countries history/diplomacy history/wars; do
+  find CoE_RoI_R/$d -name '*.txt' -print0 | xargs -0 python scripts/modcheck.py provinces
+done
+```
+
+### Stage 1 baseline (re-measured 2026-09-06)
+
+One line per check. Anything not on this list is a regression.
+
+| Check | Expected now | Note |
+|---|---|---|
+| `ids` duplicates | 1 | duplicate 300999 inside `events/PERFlavour.txt`. Only the duplicate count is an invariant; the id total (3156 on 2026-09-06) drifts up as chains are added |
+| `encoding` (`localisation`) | 12 files | vanilla-inherited csvs with NEL (0x85) or 0x9d bytes |
+| `encoding` (`events`, `decisions`, `common`, `history`) | 0 | every script `.txt` in the mod is CRLF |
+| `gfxtool missing` | 0 lines | must print nothing |
+| `provinces` / `tags`, whole tree | 0 | events, decisions, history/countries, history/diplomacy, history/wars |
+| `refcheck events` | 14 | 12 deliberately abandoned `is_triggered_only` events (1002, 90903, 95259, 95652, 95655, 97120, 98230, 99665, 99666, 99993, 290115, 375003) plus 99932 and 8016451, which have a trigger and no MTTH on purpose |
+| `refcheck loc` | 60 | 58 hidden/utility modifiers in `common/event_modifiers.txt` with no localisation, plus 2 rows for abandoned event 290115 |
+| `refcheck flags` | 129 | orphans: 98 set but never checked, 31 checked but never set. Drifts as chains land; none is a spelling variant of a real flag |
+| `refcheck options` | 8 | events with 6-8 options |
+| `refcheck onactions` / `modifiers` / `names` | 0 | |
+| `loc-check` malformed rows | 161 across 21 csvs | UTF-8 and/or missing `x` terminator; mostly `0000_economic_rework.csv`, `PDM_CE.csv`, `newCE.csv`. `GVG_events.csv` is clean and must stay clean |
+| `loc-check` split rows (`;` inside English text) | 13 | all vanilla/PDM-inherited: `00_PDM_events.csv` 2, `00_PDM_GAGA.csv` 2, `00_PDM_goods.csv` 1, `000_persia_events.csv` 1, `000_persia_map.csv` 1, `PDM_CE.csv` 3, `Taiping(move_later).csv` 1, `text.csv` 2 |
+| `loc-check` odd-width rows (not 15 columns) | 27904 across 48 files | harmless trailing/missing empty language columns, dominated by `text.csv` |
+
+New GVG content must add none of the localisation findings.
 
 ## Stage 1b: CWTools (headless, no game needed)
 
@@ -39,7 +61,7 @@ Report any finding **not** in that list as a regression.
 python scripts/cwtools_check.py
 ```
 
-Filtered output; see `.claude/skills/cwtools-lsp/SKILL.md` for what the filter drops. Known baseline (re-measured 2026-09-06): **14 diagnostics, 0 errors, 14 warnings** over ~760 files - "Too many attacker_goal" in `CBsAndCores.txt:2448` and `Indochina.txt:188` (multiple war goals in one `war` effect are valid; rule gap), and 12 "Too many clauses" warnings in `production_types.txt` (rule gap). Anything else is new.
+Filtered output; see `.claude/skills/cwtools-lsp/SKILL.md` for what the filter drops. Baseline (re-measured 2026-09-06): **14 diagnostics, 0 errors, 14 warnings** over ~780 files — 2 "Too many attacker_goal" (`CBsAndCores.txt:2448`, `Indochina.txt:188`; multiple war goals in one `war` effect are valid) and 12 "Too many clauses" in `common/production_types.txt`. Both are rule gaps. Anything else is new.
 
 ## Stage 1c: subsystem audits (optional, no game needed)
 
@@ -47,36 +69,24 @@ Slower than stage 1 (`audit_perf` and `audit_provinces` take the longest) and mo
 Run the set after a large or cross-cutting change; skip it for a one-file edit.
 
 ```
-for s in countries provinces diplomacy decisions common loc events perf; do python scripts/audit_$s.py; done
+for s in countries parties provinces diplomacy decisions common loc events perf; do python scripts/audit_$s.py; done
 python scripts/audit_fire_once.py
 python scripts/audit_pacing.py
 ```
 
-Expect **0 `[high]`** from every script except these known baselines (re-measured
-2026-09-06):
+Every script is expected at **0 `[high]`**. Baseline exceptions (re-measured 2026-09-06):
 
-- `audit_countries.py`: **39 highs**, all "history file for tag X is not registered in
-  `common/countries.txt`" (BMK, DUR, ERT, KRL, KYR, ...). Deferred — register or delete.
-  Its other counters must stay at 0: `capital_not_owned`, `party_inactive`, `party_undefined`,
-  `ideology_not_allowed`, `missing_common_file`.
-- `audit_events.py`: **0 highs** (was 2 - 14540 and 22540, the re-firing events that granted
-  a permanent `add_province_modifier`; both were given a country-flag guard in `70f3afaa` /
-  `9dd159f0`, so any new high is a regression). `unknown keywords` must stay at **0**.
-- `audit_fire_once.py`: **124 findings** (class A 77, B 10, C 37) and rising - it is a *list*,
-  not a defect count. `fire_only_once` is engine-wide, so it lists every self-firing
-  `country_event` with `fire_only_once` and no bare `tag =` / `owns =` test. Nearly all class-A
-  entries are alternative tags for the same nation (`OR(ENG,ENL)`, `OR(AUS,KUK)`, ...) and class C
-  is genuine world events. The verdicts are in `docs/audit/fire-only-once.md`; only check entries
-  that are new since that file was written.
-- `audit_pacing.py`: advisory report, **exit 0**, no `[high]` class. It lists the 1821-1836
-  event load per playable tag plus same-day cascades and runaway repeaters; the current
-  snapshot (28 repeaters, 0 narrow-window) is `docs/audit/pacing-1821-1836.md`, which also
-  records the entries that were reviewed and deliberately left. `--write` rewrites it.
+| Script | Expected now | Note |
+|---|---|---|
+| `audit_countries.py` | 39 highs | all "history file for tag X is not registered in `common/countries.txt`" (BMK, DUR, ERT, KRL, KYR, ...). Deferred — register or delete. Its other counters (`capital_not_owned`, `party_inactive`, `party_undefined`, `ideology_not_allowed`, `missing_common_file`) must stay 0 |
+| `audit_events.py` | 0 highs, 0 unknown keywords | any new high is a regression |
+| `audit_fire_once.py` | 124 findings (A 77, B 10, C 37) | a *list*, not a defect count: every self-firing `country_event` with engine-wide `fire_only_once` and no bare `tag =` / `owns =` test. Most class-A entries are alternative tags for one nation (`OR(ENG,ENL)`, ...); class C is genuine world events. Verdicts in `docs/audit/fire-only-once.md` — only review entries newer than that file |
+| `audit_pacing.py` | exit 0, no `[high]` class | advisory. Current snapshot (28 runaway repeaters, 0 narrow-window) is `docs/audit/pacing-1821-1836.md`; `--write` rewrites it |
+| `audit_parties.py`, `audit_provinces.py`, `audit_diplomacy.py`, `audit_decisions.py`, `audit_common.py`, `audit_loc.py`, `audit_perf.py` | 0 highs | medium/low findings are carried in the reports under `docs/audit/` |
 
-`audit_provinces.py`, `audit_diplomacy.py`, `audit_decisions.py`, `audit_common.py`
-(`DEFECTS high=0`), `audit_loc.py` and `audit_perf.py` are all at 0 high. Their medium/low
-findings are carried in the reports under `docs/audit/`; `audit_provinces.py` and
-`audit_loc.py` rewrite their report file, so `git diff docs/audit/` after a run is expected.
+`audit_provinces.py` and `audit_loc.py` rewrite their report file, so `git diff docs/audit/`
+after a run is expected. `scripts/audit_events2.py` emits JSON rather than `[high]` lines and
+is read on demand, not as part of this loop.
 
 ## Stage 2: deploy
 
