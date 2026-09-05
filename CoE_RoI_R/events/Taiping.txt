@@ -123,6 +123,9 @@ country_event = {
 			}
 		}
 		set_global_flag = taiping_has_happened
+		ai_chance = {
+			factor = 100
+		}
 	}
 	
 	option = {
@@ -184,6 +187,9 @@ country_event = {
 		}
 		set_global_flag = taiping_has_happened
 		change_tag_no_core_switch = TPG
+		ai_chance = {
+			factor = 0
+		}
 	}
 }
 
@@ -755,7 +761,7 @@ province_event = {
 		name = "Collect the pamphlets and silence these missionaries-- now."
 		any_pop = {
 			limit = { is_primary_culture = no }
-			militancy = 10
+			militancy = 4
 			reduce_pop = 0.98
 		}
 		state_scope = {
@@ -1071,7 +1077,7 @@ province_event = {
 				limit = {
 					location = { is_core = TPG }
 				}
-				militancy = 10
+				militancy = 4
 			}
 		}
 	}
@@ -1351,7 +1357,7 @@ country_event = {
 			owner = {
 				prestige = 10
 				change_tag = QNG
-				add_accepted_culture = manchu
+				add_accepted_culture = nanfaren
 			}
 		}
 		ai_chance = {
