@@ -205,3 +205,19 @@ EVTDESC60040_NEWS_SHORT;The monarch of $COUNTRY$ has restored royal rule over pa
 EVTNEWS190359_title;Unveiled Women Protest in Persia;;;;;;;;;;;;;x
 EVTDESC97606_NEWS_SHORT;Commodore Perry has returned from Japan, and the isolation of the islands is at an end.;;;;;;;;;;;;;x
 EVTDESC97000_NEWS_LONG;Dissatisfaction with Portugal's government has grown into open rebellion. The instigator of the first riots is a woman named Maria da Fonte, who led the peasants of the Minho against the prohibition on burials inside churches and against the new taxes. The revolt has spread from village to village, and royal troops sent to restore order have found the countryside against them.;;;;;;;;;;;;;x
+EVTNAME1000600;The Catholic Question;;;;;;;;;;;;;x
+EVTDESC1000600;Daniel O'Connell has won the by-election in County Clare by a landslide, and as a Catholic he may not take the seat the freeholders have given him. The Catholic Association has forty thousand men under discipline in Ireland and not a shot has been fired. Mr Peel writes to the Duke that the question is no longer whether we shall concede, but whether we shall concede before or after a civil war. The Ultra-Tories answer that the coronation oath binds His Majesty to the Protestant constitution, and that a Parliament opened to Rome is no longer an English Parliament.;;;;;;;;;;;;;x
+EVTOPTA1000600;Emancipation is the cheaper price;;;;;;;;;;;;;x
+EVTOPTB1000600;The Protestant constitution stands;;;;;;;;;;;;;x
+EVTNAME1000601;The Reform Crisis;;;;;;;;;;;;;x
+EVTDESC1000601;Old Sarum returns two members for a green mound. Manchester returns none. Earl Grey's ministry has laid the Reform Bill before the Commons, and the country has taken it up with a violence no ministry expected - the political unions drilling in Birmingham, the papers counting the rotten boroughs by name, and every window in London lit for reform. The Lords have the Bill now. Their lordships may pass it, or they may discover what an unenfranchised nation does when it is told to wait.;;;;;;;;;;;;;x
+EVTOPTA1000601;Let the Bill pass;;;;;;;;;;;;;x
+EVTOPTB1000601;The Lords will throw it out;;;;;;;;;;;;;x
+EVTNAME1000601_NEWS_TITLE;Reform Crisis in Britain;;;;;;;;;;;;;x
+EVTDESC1000601_NEWS_LONG;The British Parliament is convulsed by Earl Grey's Reform Bill, which would sweep away the rotten boroughs and give the new manufacturing towns their own members. Crowds gather nightly in Birmingham and London, and the House of Lords must now decide whether to yield or to test the temper of a nation that has just watched Paris unseat a king.;;;;;;;;;;;;;x
+EVTDESC1000601_NEWS_MEDIUM;Earl Grey's Reform Bill has reached the House of Lords, and Britain waits in the streets for their lordships' answer.;;;;;;;;;;;;;x
+EVTDESC1000601_NEWS_SHORT;Britain debates the Reform Bill.;;;;;;;;;;;;;x
+EVTNAME1000602;The Days of May;;;;;;;;;;;;;x
+EVTDESC1000602;The Lords have wrecked the Bill and the ministry has resigned. The country has answered in a week - placards for 'Go for Gold, to Stop the Duke', a run on the Bank that no chancellor can survive, the Birmingham union promising a hundred thousand men on the road to London, and half the magistrates in the north declining to read the Riot Act to their own neighbours. His Majesty may create as many new peers as are needed to carry the Bill, or the government may hold firm and find out what comes after.;;;;;;;;;;;;;x
+EVTOPTA1000602;His Majesty will create the peers;;;;;;;;;;;;;x
+EVTOPTB1000602;We do not legislate under duress;;;;;;;;;;;;;x

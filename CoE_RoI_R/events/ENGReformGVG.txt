@@ -1,0 +1,219 @@
+#############################################################
+#															#
+#        The Age of Reform - Britain, 1828-1832				#
+#                  (ENGReformGVG)							#
+#															#
+#############################################################
+
+# The Catholic Question - O'Connell and the Clare election
+country_event = {
+
+	id = 1000600
+
+	title = "EVTNAME1000600"
+	desc = "EVTDESC1000600"
+	picture = "religious_question"
+
+	trigger = {
+		tag = ENG
+		year = 1828
+		NOT = { year = 1831 }
+	}
+
+	fire_only_once = yes
+
+	mean_time_to_happen = {
+		months = 4
+	}
+
+	option = {
+		name = "EVTOPTA1000600" # Grant emancipation
+		prestige = 5
+		minorities_reform = protected
+		any_owned = {
+			limit = {
+				OR = {
+					region = ENG_254
+					region = ENG_258
+					region = ENG_260
+					region = ENG_263
+				}
+			}
+			any_pop = {
+				militancy = -3
+				consciousness = 1
+			}
+		}
+		upper_house = {
+			ideology = reactionary
+			value = 0.05
+		}
+		set_country_flag = catholic_emancipation
+		ai_chance = {
+			factor = 75
+		}
+	}
+
+	option = {
+		name = "EVTOPTB1000600" # The Protestant constitution stands
+		prestige = -5
+		any_owned = {
+			limit = {
+				OR = {
+					region = ENG_254
+					region = ENG_258
+					region = ENG_260
+					region = ENG_263
+				}
+			}
+			any_pop = {
+				militancy = 3
+				consciousness = 2
+			}
+			add_province_modifier = {
+				name = nationalist_agitation
+				duration = 1825
+			}
+		}
+		set_country_flag = eng_emancipation_refused
+		ai_chance = {
+			factor = 25
+		}
+	}
+}
+
+# The Reform Crisis
+country_event = {
+
+	id = 1000601
+
+	title = "EVTNAME1000601"
+	desc = "EVTDESC1000601"
+	picture = "deliberation"
+
+	major = yes
+	news = yes
+	news_title = "EVTNAME1000601_NEWS_TITLE"
+	news_desc_long = "EVTDESC1000601_NEWS_LONG"
+	news_desc_medium = "EVTDESC1000601_NEWS_MEDIUM"
+	news_desc_short = "EVTDESC1000601_NEWS_SHORT"
+
+	trigger = {
+		tag = ENG
+		NOT = { year = 1834 }
+		OR = {
+			AND = {
+				year = 1830
+				FRA = { has_country_flag = july_revolution }
+			}
+			year = 1831
+		}
+	}
+
+	fire_only_once = yes
+
+	mean_time_to_happen = {
+		months = 3
+	}
+
+	option = {
+		name = "EVTOPTA1000601" # Pass the Reform Bill
+		prestige = 10
+		vote_franschise = wealth_voting
+		any_pop = {
+			militancy = -2
+			consciousness = -1
+		}
+		upper_house = {
+			ideology = liberal
+			value = 0.10
+		}
+		add_country_modifier = {
+			name = great_reformer
+			duration = 1825
+		}
+		set_country_flag = great_reform_act
+		ai_chance = {
+			factor = 80
+		}
+	}
+
+	option = {
+		name = "EVTOPTB1000601" # The Lords throw out the Bill
+		any_owned = {
+			limit = {
+				OR = {
+					region = ENG_273
+					region = ENG_277
+					region = ENG_280
+					region = ENG_284
+					region = ENG_291
+					region = ENG_296
+					region = ENG_300
+				}
+			}
+			any_pop = {
+				militancy = 3
+				consciousness = 2
+			}
+		}
+		add_country_modifier = {
+			name = growing_unrest
+			duration = 730
+		}
+		country_event = {
+			id = 1000602
+			days = 180
+		}
+		ai_chance = {
+			factor = 20
+		}
+	}
+}
+
+# The Days of May
+country_event = {
+
+	id = 1000602
+
+	title = "EVTNAME1000602"
+	desc = "EVTDESC1000602"
+	picture = "streetriot"
+
+	is_triggered_only = yes
+
+	option = {
+		name = "EVTOPTA1000602" # The King will create the peers
+		prestige = -5
+		vote_franschise = wealth_voting
+		any_pop = {
+			militancy = -2
+			consciousness = -1
+		}
+		upper_house = {
+			ideology = liberal
+			value = 0.10
+		}
+		set_country_flag = great_reform_act
+		ai_chance = {
+			factor = 85
+		}
+	}
+
+	option = {
+		name = "EVTOPTB1000602" # Hold firm
+		prestige = -10
+		any_pop = {
+			militancy = 3
+			consciousness = 1
+		}
+		add_country_modifier = {
+			name = global_liberal_agitation
+			duration = 1095
+		}
+		set_country_flag = eng_reform_refused
+		ai_chance = {
+			factor = 15
+		}
+	}
+}
