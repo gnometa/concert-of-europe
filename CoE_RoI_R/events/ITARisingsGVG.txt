@@ -1,0 +1,386 @@
+#########################################################
+#                                                       #
+#   The Italian Risings of 1831 (GVG)                   #
+#   ids 1001100-1001104                                 #
+#                                                       #
+#   Carbonari undercurrent, Ciro Menotti's conspiracy   #
+#   in Modena, the revolt of the Papal Legations and    #
+#   the Austrian intervention of 1831. The 1820-21      #
+#   Naples and Piedmont revolts are over before the     #
+#   1821.9.1 start; they survive here only as the       #
+#   Carbonari event and its reaction modifier.          #
+#                                                       #
+#   Design: docs/design/italian-risings-1831.md         #
+#                                                       #
+#########################################################
+
+# The Carbonari
+country_event = {
+	id = 1001100
+	title = "EVTNAME1001100"
+	desc = "EVTDESC1001100"
+	picture = "national_congress"
+
+	fire_only_once = yes
+
+	trigger = {
+		OR = {
+			tag = SAR
+			tag = SIC
+			tag = PAP
+			tag = TUS
+			tag = MOD
+			tag = PAR
+			tag = LUC
+		}
+		exists = yes
+		year = 1821
+		NOT = { year = 1836 }
+		NOT = { has_country_flag = carbonari_active }
+	}
+
+	mean_time_to_happen = {
+		months = 30
+		modifier = {
+			factor = 0.6
+			FRA = { has_country_flag = july_revolution }
+		}
+		modifier = {
+			factor = 0.75
+			militancy = 2
+		}
+	}
+
+	option = {
+		name = "EVTOPTA1001100"
+		set_country_flag = carbonari_active
+		any_pop = {
+			consciousness = 1
+		}
+		capital_scope = {
+			add_province_modifier = {
+				name = liberal_agitation
+				duration = 1095
+			}
+		}
+		ai_chance = {
+			factor = 40
+		}
+	}
+
+	option = {
+		name = "EVTOPTB1001100"
+		set_country_flag = carbonari_active
+		prestige = -1
+		add_country_modifier = {
+			name = conservative_reaction
+			duration = 1825
+		}
+		any_pop = {
+			limit = {
+				OR = {
+					type = officers
+					type = bureaucrats
+					type = artisans
+				}
+			}
+			militancy = 1
+		}
+		ai_chance = {
+			factor = 60
+		}
+	}
+}
+
+# Ciro Menotti's Conspiracy
+country_event = {
+	id = 1001101
+	title = "EVTNAME1001101"
+	desc = "EVTDESC1001101"
+	picture = "streetriot"
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = MOD
+		exists = yes
+		owns = 739
+		year = 1830
+		NOT = { year = 1836 }
+		NOT = { has_country_flag = mod_menotti_resolved }
+		OR = {
+			year = 1831
+			FRA = { has_country_flag = july_revolution }
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 6
+		modifier = {
+			factor = 0.5
+			has_country_flag = carbonari_active
+		}
+		modifier = {
+			factor = 0.75
+			FRA = { has_country_flag = july_revolution }
+		}
+	}
+
+	option = {
+		name = "EVTOPTA1001101"
+		set_country_flag = mod_menotti_resolved
+		prestige = 1
+		relation = { who = AUS value = 25 }
+		add_country_modifier = {
+			name = conservative_reaction
+			duration = 1825
+		}
+		any_pop = {
+			militancy = 2
+			consciousness = 1
+		}
+		ai_chance = {
+			factor = 70
+		}
+	}
+
+	option = {
+		name = "EVTOPTB1001101"
+		set_country_flag = mod_menotti_resolved
+		set_global_flag = italian_risings_1831
+		prestige = -2
+		relation = { who = AUS value = -25 }
+		any_owned = {
+			limit = {
+				OR = {
+					province_id = 739 #Modena
+					province_id = 740 #Massa
+				}
+			}
+			add_province_modifier = {
+				name = liberal_agitation
+				duration = 730
+			}
+		}
+		any_pop = {
+			consciousness = 2
+			militancy = 1
+		}
+		ai_chance = {
+			factor = 30
+		}
+	}
+}
+
+# Revolt in the Legations
+country_event = {
+	id = 1001102
+	title = "EVTNAME1001102"
+	desc = "EVTDESC1001102"
+	picture = "DIM_pope_pius_ix"
+	major = yes
+	news = yes
+	news_title = "EVTNAME1001102_NEWS_TITLE"
+	news_desc_long = "EVTDESC1001102_NEWS_LONG"
+	news_desc_medium = "EVTDESC1001102_NEWS_MEDIUM"
+	news_desc_short = "EVTDESC1001102_NEWS_SHORT"
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = PAP
+		exists = yes
+		owns = 741
+		year = 1831
+		NOT = { year = 1836 }
+		NOT = { has_country_flag = pap_legations_revolt }
+	}
+
+	mean_time_to_happen = {
+		months = 4
+		modifier = {
+			factor = 0.5
+			has_global_flag = italian_risings_1831
+		}
+		modifier = {
+			factor = 0.75
+			has_country_flag = carbonari_active
+		}
+	}
+
+	option = {
+		name = "EVTOPTA1001102"
+		set_country_flag = pap_legations_revolt
+		prestige = -3
+		any_owned = {
+			limit = {
+				OR = {
+					province_id = 741 #Bologna
+					province_id = 742 #Ferrara
+					province_id = 743 #Ravenna
+				}
+			}
+			add_province_modifier = {
+				name = nationalist_agitation
+				duration = 365
+			}
+		}
+		AUS = { country_event = { id = 1001103 days = 6 } }
+		ai_chance = {
+			factor = 80
+		}
+	}
+
+	option = {
+		name = "EVTOPTB1001102"
+		set_country_flag = pap_legations_revolt
+		prestige = -5
+		relation = { who = AUS value = -25 }
+		relation = { who = FRA value = 25 }
+		add_country_modifier = {
+			name = liberal_reaction
+			duration = 1825
+		}
+		any_pop = {
+			militancy = -2
+			consciousness = 2
+		}
+		FRA = { diplomatic_influence = { who = PAP value = 50 } }
+		ai_chance = {
+			factor = 20
+		}
+	}
+}
+
+# The Austrian Intervention
+country_event = {
+	id = 1001103
+	title = "EVTNAME1001103"
+	desc = "EVTDESC1001103"
+	picture = "Oldsoldiers"
+	is_triggered_only = yes
+	major = yes
+	news = yes
+	news_title = "EVTNAME1001103_NEWS_TITLE"
+	news_desc_long = "EVTDESC1001103_NEWS_LONG"
+	news_desc_medium = "EVTDESC1001103_NEWS_MEDIUM"
+	news_desc_short = "EVTDESC1001103_NEWS_SHORT"
+
+	option = {
+		name = "EVTOPTA1001103"
+		set_country_flag = aus_intervened_1831
+		prestige = 5
+		badboy = 1
+		relation = { who = PAP value = 50 }
+		diplomatic_influence = { who = PAP value = 50 }
+		PAP = {
+			any_pop = { militancy = -3 }
+			add_country_modifier = {
+				name = conservative_reaction
+				duration = 1825
+			}
+		}
+		random_country = {
+			limit = {
+				tag = MOD
+				exists = yes
+			}
+			relation = { who = THIS value = 25 }
+			any_pop = { militancy = -2 }
+			add_country_modifier = {
+				name = conservative_reaction
+				duration = 1825
+			}
+		}
+		random_country = {
+			limit = {
+				tag = PAR
+				exists = yes
+			}
+			relation = { who = THIS value = 25 }
+			any_pop = { militancy = -2 }
+			add_country_modifier = {
+				name = conservative_reaction
+				duration = 1825
+			}
+		}
+		ENG = { country_event = { id = 1001104 days = 10 } }
+		FRA = { country_event = { id = 1001104 days = 10 } }
+		RUS = { country_event = { id = 1001104 days = 12 } }
+		PRU = { country_event = { id = 1001104 days = 12 } }
+		ai_chance = {
+			factor = 80
+		}
+	}
+
+	option = {
+		name = "EVTOPTB1001103"
+		prestige = -5
+		relation = { who = PAP value = -25 }
+		PAP = {
+			any_pop = {
+				militancy = 2
+				consciousness = 2
+			}
+			add_country_modifier = {
+				name = global_liberal_agitation
+				duration = 1095
+			}
+		}
+		FRA = {
+			relation = { who = PAP value = 25 }
+			diplomatic_influence = { who = PAP value = 50 }
+			country_event = { id = 1001104 days = 10 }
+		}
+		ENG = { country_event = { id = 1001104 days = 10 } }
+		RUS = { country_event = { id = 1001104 days = 12 } }
+		PRU = { country_event = { id = 1001104 days = 12 } }
+		ai_chance = {
+			factor = 20
+		}
+	}
+}
+
+# The Powers and the Legations
+country_event = {
+	id = 1001104
+	title = "EVTNAME1001104"
+	desc = "EVTDESC1001104"
+	picture = "greatpowers"
+	is_triggered_only = yes
+	news = yes
+	news_title = "EVTNAME1001104_NEWS_TITLE"
+	news_desc_long = "EVTDESC1001104_NEWS_LONG"
+	news_desc_medium = "EVTDESC1001104_NEWS_MEDIUM"
+	news_desc_short = "EVTDESC1001104_NEWS_SHORT"
+
+	option = {
+		name = "EVTOPTA1001104"
+		prestige = 1
+		relation = { who = AUS value = -10 }
+		relation = { who = PAP value = 10 }
+		ai_chance = {
+			factor = 40
+			modifier = {
+				factor = 2
+				tag = FRA
+				AUS = { has_country_flag = aus_intervened_1831 }
+			}
+		}
+	}
+
+	option = {
+		name = "EVTOPTB1001104"
+		relation = { who = AUS value = 10 }
+		ai_chance = {
+			factor = 60
+			modifier = {
+				factor = 2
+				OR = {
+					tag = RUS
+					tag = PRU
+				}
+			}
+		}
+	}
+}
