@@ -732,7 +732,6 @@ political_decisions = {
 	become_mali_empire = {
 		potential = {
 			OR = {
-				tag = BDO
 				tag = DAM
 				tag = DND
 				tag = JAL

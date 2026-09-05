@@ -209,7 +209,6 @@ country_event = {
 		any_owned = { 
 			limit = {
 				OR = {
-					region = ASH_1909
 					region = FRA_1892
 					region = FRA_1907
 					region = FRA_1914
@@ -321,7 +320,7 @@ province_event = {
 	option = {
 		name = "Establish a plantation economy"
 		trade_goods = coffee
-		money = -20000
+		owner = { treasury = -20000 }
 		add_province_modifier = {
 			name = new_production
 			duration = 1095
@@ -503,6 +502,6 @@ country_event = {
 	
 	option = {
 		name = "Better to keep things hushed up."
-		owner = { prestige = -1 }
+		prestige = -1
 	}
 }

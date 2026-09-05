@@ -1075,8 +1075,8 @@ province_event = {
 	
 	option = {
 		name = "Odd people. What is so interesting about some stones in the jungle?"
-		plurality = 1
-		money = 10000
+		owner = { plurality = 1 }
+		owner = { treasury = 10000 }
 		FROM = {
 			random_owned = {
 				limit = { is_capital = yes }
@@ -1093,7 +1093,7 @@ province_event = {
 	
 	option = {
 		name = "No! That's our jungle!"
-		prestige = 2
+		owner = { prestige = 2 }
 		FROM = {
 			random_owned = {
 				limit = { is_capital = yes }
@@ -1265,7 +1265,7 @@ province_event = {
 	
 	option = {
 		name = "We refuse out of sheer spite."
-		prestige = 1
+		owner = { prestige = 1 }
 		FROM = {
 			random_owned = {
 				limit = { is_capital = yes }

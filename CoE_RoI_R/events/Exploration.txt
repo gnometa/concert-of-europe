@@ -778,7 +778,7 @@ country_event = {
 	}
 	option = {
 		name = "Put a stop to this nonsense"
-		prestige = -2
+		owner = { prestige = -2 }
 		ai_chance = {
 			factor = 10
 			modifier = {

@@ -418,8 +418,8 @@ political_decisions = {
 						change_variable = { which = dt_rating  value = 15 }
 					}
 			}
-		ai_will_do = { factor = 1 }
 	}
+		ai_will_do = { factor = 1 }
 }
 
 	bushmen_expedition = {
@@ -446,7 +446,7 @@ political_decisions = {
 					life_rating = 15
 				}
 		}
-		ai_will_do = { factor = 1 }
 	}
+		ai_will_do = { factor = 1 }
 }
 }

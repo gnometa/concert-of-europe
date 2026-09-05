@@ -1436,7 +1436,7 @@ country_event = {
 	option = {
 		name = "Refuse."
 		set_global_flag = refused_canal_treaty_once
-		prestige = 5
+		owner = { prestige = 5 }
 		relation = { who = FROM value = -100 }
 		FROM = { country_event = 97392 }
 		ai_chance = {

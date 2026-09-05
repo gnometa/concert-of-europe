@@ -3095,7 +3095,7 @@ country_event = {
 		create_alliance = FROM
 		689 = { #Tesin
 			remove_core = POL
-			remove_core = FROM
+			remove_core = PLC
 		}
 		2584 = { #Bielsko
 			remove_core = AUS

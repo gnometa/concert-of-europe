@@ -904,7 +904,7 @@ promote_to = {
 				}
 				AND = { 
 					location = { owner = { tag = FRA } }
-					location = { is_core = ALG }
+					location = { is_core = ALD }
 				}
 			}
 		}

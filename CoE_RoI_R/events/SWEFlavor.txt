@@ -837,7 +837,7 @@ province_event = {
 			duration = 120
 		}
 		consciousness = 1
-		money = -3000
+		owner = { treasury = -3000 }
 		ai_chance = {
 			factor = 80
 			modifier = {

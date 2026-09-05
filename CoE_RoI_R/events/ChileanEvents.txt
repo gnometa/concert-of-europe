@@ -638,7 +638,7 @@ country_event = {
 		prestige = 1		
 		#ini oscar7211
 		#remove_country_modifier =  sac_intervention
-		remove_country_flag =  sac_intervention
+		clr_country_flag =  sac_intervention
 		#end oscar7211
 		any_pop = {
 					ideology = {
@@ -655,7 +655,7 @@ country_event = {
 		name = "Make vague promises of change."
 		#ini oscar7211
 		#remove_country_modifier =  sac_intervention
-		remove_country_flag =  sac_intervention
+		clr_country_flag =  sac_intervention
 		#end oscar7211
 		prestige = -1
 		any_pop = {
@@ -673,7 +673,7 @@ country_event = {
 		name = "Apologize and present your resignation."
 		#ini oscar7211
 		#remove_country_modifier =  sac_internvention
-		remove_country_flag =  sac_internvention
+		clr_country_flag =  sac_intervention
 		#end oscar7211
 		prestige = -5
 		remove_country_modifier = expert_diplomat
@@ -1158,7 +1158,6 @@ country_event = {
 		prestige = -1
 		badboy = 1}
 		set_country_flag = monroe_doctrine1 # Will give a huge influence bonus in southamerica if you become World Power
-		}
 		ai_chance = {
 			factor = 1
 			modifier = {
@@ -1166,6 +1165,7 @@ country_event = {
 				tag = CHL
 			}
 		}
+	}
 	
 	
 }
