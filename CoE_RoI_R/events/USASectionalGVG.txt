@@ -1,0 +1,244 @@
+#############################################################
+#															#
+#     The Monroe Doctrine, the Tariff of Abominations		#
+#          and the Nullification Crisis 1823-1833			#
+#                  (USASectionalGVG)						#
+#															#
+#############################################################
+
+# The Monroe Doctrine
+country_event = {
+
+	id = 1001200
+
+	title = "EVTNAME1001200"
+	desc = "EVTDESC1001200"
+	picture = "greatpowers"
+
+	major = yes
+
+	trigger = {
+		tag = USA
+		year = 1823
+		NOT = { year = 1828 }
+	}
+
+	fire_only_once = yes
+
+	mean_time_to_happen = {
+		months = 3
+	}
+
+	option = {
+		name = "EVTOPTA1001200" # America for the Americans
+		prestige = 10
+		any_country = {
+			limit = {
+				exists = yes
+				NOT = { tag = USA }
+				NOT = { has_country_flag = monroe_doctrine2 }
+				OR = {
+					continent = north_america
+					continent = south_america
+				}
+			}
+			relation = {
+				who = USA
+				value = 15
+			}
+			set_country_flag = monroe_doctrine2
+		}
+		ai_chance = {
+			factor = 85
+		}
+	}
+
+	option = {
+		name = "EVTOPTB1001200" # The Old World is not our concern
+		prestige = -5
+		any_pop = {
+			consciousness = -1
+		}
+		ai_chance = {
+			factor = 15
+		}
+	}
+}
+
+# The Tariff of Abominations
+country_event = {
+
+	id = 1001201
+
+	title = "EVTNAME1001201"
+	desc = "EVTDESC1001201"
+	picture = "anticorn"
+
+	trigger = {
+		tag = USA
+		year = 1828
+		NOT = { year = 1832 }
+	}
+
+	fire_only_once = yes
+
+	mean_time_to_happen = {
+		months = 3
+	}
+
+	option = {
+		name = "EVTOPTA1001201" # Sign the bill
+		add_country_modifier = {
+			name = tariff_of_abominations
+			duration = 3650
+		}
+		set_country_flag = tariff_of_abominations
+		any_owned = {
+			limit = {
+				OR = {
+					region = USA_205
+					region = USA_201
+					region = USA_211
+					region = USA_194
+					region = USA_196
+				}
+			}
+			any_pop = {
+				militancy = 1
+				consciousness = 1
+			}
+		}
+		ai_chance = {
+			factor = 80
+		}
+	}
+
+	option = {
+		name = "EVTOPTB1001201" # Strike out the higher schedule
+		prestige = -5
+		any_owned = {
+			limit = {
+				OR = {
+					region = USA_205
+					region = USA_201
+					region = USA_211
+					region = USA_194
+					region = USA_196
+				}
+			}
+			any_pop = {
+				militancy = -1
+			}
+		}
+		any_pop = {
+			limit = {
+				strata = rich
+			}
+			militancy = 1
+		}
+		ai_chance = {
+			factor = 20
+		}
+	}
+}
+
+# The Nullification Crisis
+country_event = {
+
+	id = 1001202
+
+	title = "EVTNAME1001202"
+	desc = "EVTDESC1001202"
+	picture = "senate_debate"
+
+	major = yes
+	news = yes
+	news_title = "EVTNAME1001202_NEWS_TITLE"
+	news_desc_long = "EVTDESC1001202_NEWS_LONG"
+	news_desc_medium = "EVTDESC1001202_NEWS_MEDIUM"
+	news_desc_short = "EVTDESC1001202_NEWS_SHORT"
+
+	trigger = {
+		tag = USA
+		has_country_flag = tariff_of_abominations
+		owns = 205
+		year = 1832
+		NOT = { year = 1836 }
+	}
+
+	fire_only_once = yes
+
+	mean_time_to_happen = {
+		months = 2
+	}
+
+	option = {
+		name = "EVTOPTA1001202" # The Force Bill and a compromise tariff
+		prestige = 10
+		remove_country_modifier = tariff_of_abominations
+		clr_country_flag = tariff_of_abominations
+		set_country_flag = nullification_resolved
+		any_owned = {
+			limit = {
+				OR = {
+					region = USA_205
+					region = USA_201
+					region = USA_211
+					region = USA_194
+					region = USA_196
+				}
+			}
+			any_pop = {
+				militancy = -2
+			}
+		}
+		ai_chance = {
+			factor = 80
+		}
+	}
+
+	option = {
+		name = "EVTOPTB1001202" # Let the tariff die
+		prestige = -10
+		remove_country_modifier = tariff_of_abominations
+		clr_country_flag = tariff_of_abominations
+		set_country_flag = us_sectional_tension
+		add_country_modifier = {
+			name = sectional_tension
+			duration = 3650
+		}
+		any_owned = {
+			limit = {
+				region = USA_205
+			}
+			any_pop = {
+				militancy = -1
+			}
+		}
+		ai_chance = {
+			factor = 15
+		}
+	}
+
+	option = {
+		name = "EVTOPTC1001202" # March the army into Charleston
+		prestige = -5
+		set_country_flag = us_sectional_tension
+		add_country_modifier = {
+			name = sectional_tension
+			duration = 3650
+		}
+		any_owned = {
+			limit = {
+				region = USA_205
+			}
+			any_pop = {
+				militancy = 3
+				consciousness = 2
+			}
+		}
+		ai_chance = {
+			factor = 5
+		}
+	}
+}

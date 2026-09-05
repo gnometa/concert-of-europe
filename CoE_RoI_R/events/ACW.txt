@@ -37,6 +37,14 @@ country_event = {
 
 	mean_time_to_happen = {
 		months = 12
+		modifier = {
+			factor = 0.8
+			has_country_flag = us_sectional_tension
+		}
+		modifier = {
+			factor = 1.1
+			has_country_flag = nullification_resolved
+		}
 	}
 
 	option = {

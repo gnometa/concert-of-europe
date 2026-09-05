@@ -3565,3 +3565,35 @@ zollverein_leader = {
 	tax_efficiency = 0.05
 	icon = 7
 }
+
+#### USA - Nullification Crisis (USASectionalGVG) ####
+tariff_of_abominations = {
+	tariff_efficiency_modifier = 0.15
+	global_pop_militancy_modifier = 0.02
+	global_pop_consciousness_modifier = 0.02
+	rgo_output = -0.05
+	icon = 1
+}
+
+sectional_tension = {
+	global_pop_consciousness_modifier = 0.03
+	global_pop_militancy_modifier = 0.01
+	icon = 4
+}
+
+
+##### JAVA WAR (JavaWarGVG) #####
+java_war = {
+	local_RGO_output = -0.10
+	farm_RGO_size = -0.10
+	local_ruling_party_support = -0.05
+	population_growth = -0.001
+	icon = 15
+}
+
+cultuurstelsel = {
+	tax_efficiency = 0.05
+	farm_RGO_size = 0.10
+	global_pop_militancy_modifier = 0.01
+	icon = 7
+}

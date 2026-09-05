@@ -299,3 +299,76 @@ EVTNAME1001003;The Miguelite Revolt;;;;;;;;;;;;;x
 EVTDESC1001003;The Cortes has kept the Charter, but the King's brother has not gone quietly. Absolutist bands are up in Tras-os-Montes and the Alentejo under the cry of 'King Miguel and the Holy Faith', friars preach against the constitution from every pulpit, and whole regiments have gone over to the pretender. The loyalty of the army is now the whole question.;;;;;;;;;;;;;x
 EVTOPTA1001003;The Charter holds. Scatter them.;;;;;;;;;;;;;x
 EVTOPTB1001003;The army has declared for Miguel. It is over.;;;;;;;;;;;;;x
+EVTNAME1001200;The Monroe Doctrine;;;;;;;;;;;;;x
+EVTOPTA1001200;America for the Americans!;;;;;;;;;;;;;x
+EVTOPTB1001200;The Old World is no concern of ours;;;;;;;;;;;;;x
+EVTNAME1001201;The Tariff of Abominations;;;;;;;;;;;;;x
+EVTOPTA1001201;Sign the bill;;;;;;;;;;;;;x
+EVTOPTB1001201;Strike out the higher schedule;;;;;;;;;;;;;x
+EVTNAME1001202;The Nullification Crisis;;;;;;;;;;;;;x
+EVTOPTA1001202;The Force Bill in one hand, Clay's compromise in the other;;;;;;;;;;;;;x
+EVTOPTC1001202;March the army into Charleston;;;;;;;;;;;;;x
+EVTNAME1001202_NEWS_TITLE;South Carolina Nullifies the Tariff;;;;;;;;;;;;;x
+tariff_of_abominations;Tariff of Abominations;;;;;;;;;;;;;x
+sectional_tension;Sectional Tension;;;;;;;;;;;;;x
+EVTDESC1001200;In his annual message to Congress, President Monroe has set out a principle for the whole hemisphere. The American continents are no longer open to European colonisation, and any attempt by the powers of the Holy Alliance to extend their system to the new republics would be regarded as dangerous to our peace and safety. In return we pledge not to meddle in the wars of Europe. Canning's Britain would welcome such a declaration. Metternich will call it insolence.;;;;;;;;;;;;;x
+EVTDESC1001201;The tariff bill that has come out of committee raises duties on raw wool, hemp, iron and molasses to rates no manufacturer ever asked for. New England mills are protected. The cotton planters of the South, who buy in a protected market and sell in a free one, call it a tariff of abominations and say plainly that it taxes them for the benefit of Northern industry. Vice President Calhoun is said to be drafting an Exposition against it.;;;;;;;;;;;;;x
+EVTDESC1001202;A convention at Columbia has declared the tariffs of 1828 and 1832 null and void within South Carolina, forbidden the collection of duties in Charleston after February, and threatened secession should force be used. President Jackson answers that disunion by armed force is treason, and asks Congress for a Force Bill. In the same breath Henry Clay offers a compromise tariff falling by degrees over ten years. The Union has never been tested in this manner.;;;;;;;;;;;;;x
+EVTOPTB1001202;Let the tariff die - the Union is worth more;;;;;;;;;;;;;x
+EVTDESC1001202_NEWS_LONG;A state convention at Columbia has pronounced the federal tariffs of 1828 and 1832 unauthorised by the Constitution and void within South Carolina, and has forbidden the collection of duties at Charleston. The President has replied that the laws of the Union will be executed, and has asked Congress for authority to use the army and navy. Senator Clay meanwhile lays before the chamber a tariff descending by stages over ten years. Whether the quarrel ends in a compromise or in the first use of federal arms against a state is the question of the hour in every counting-house from Boston to New Orleans.;;;;;;;;;;;;;x
+EVTDESC1001202_NEWS_MEDIUM;South Carolina has declared the federal tariff void within her borders and forbidden its collection at Charleston. The President demands a Force Bill, while Senator Clay offers a compromise schedule instead.;;;;;;;;;;;;;x
+EVTDESC1001202_NEWS_SHORT;South Carolina declares the tariff void. The President asks for a Force Bill.;;;;;;;;;;;;;x
+EVTNAME1001300;Diponegoro's Rising;;;;;;;;;;;;;x
+EVTDESC1001300;Prince Diponegoro of Yogyakarta has raised the green banner of holy war. A road driven through his ancestral graves at Tegalreja was the spark, but the grievance is older - the land rents, the toll gates and the Resident's tutelage over the courts of Java. Regents, santri and peasants are flocking to him, and our garrisons in the interior are too few and too scattered to hold the passes.;;;;;;;;;;;;;x
+EVTOPTA1001300;General de Kock will pacify the interior.;;;;;;;;;;;;;x
+EVTOPTB1001300;Buy off the princes before the island burns.;;;;;;;;;;;;;x
+EVTOPTC1001300;We are stretched too thin in Europe to fight in Asia.;;;;;;;;;;;;;x
+EVTNAME1001300_NEWS_TITLE;Holy War Proclaimed in Java;;;;;;;;;;;;;x
+EVTDESC1001300_NEWS_LONG;A prince of the house of Yogyakarta has proclaimed a holy war against the Dutch in central Java. Reports from Batavia speak of the interior in flames, of Netherlands columns ambushed on the mountain roads, and of the old regents deserting to the rebel camp.;;;;;;;;;;;;;x
+EVTDESC1001300_NEWS_MEDIUM;A Javanese prince has proclaimed a holy war against the Dutch, and the interior of the island is in flames.;;;;;;;;;;;;;x
+EVTDESC1001300_NEWS_SHORT;Java rises against the Dutch.;;;;;;;;;;;;;x
+EVTNAME1001301;Diponegoro Captured at Magelang;;;;;;;;;;;;;x
+EVTDESC1001301;Five years of guerrilla war, the benteng-stelsel of fortified posts and the slow starvation of the rebel districts have ended the rising. Invited to Magelang under a flag of truce to negotiate, Diponegoro was seized and is to be exiled to Celebes. The victory has cost us fifteen thousand soldiers and a treasury we no longer have. Java is quiet, ruined and must now be made to pay.;;;;;;;;;;;;;x
+EVTOPTA1001301;Van den Bosch shall introduce the Cultivation System.;;;;;;;;;;;;;x
+EVTOPTB1001301;Java must be governed with a lighter hand.;;;;;;;;;;;;;x
+EVTNAME1001301_NEWS_TITLE;The Java War Is Over;;;;;;;;;;;;;x
+EVTDESC1001301_NEWS_LONG;The rebel prince of Yogyakarta has been taken at Magelang, having come to the Dutch camp under a flag of truce, and is to be carried into exile in the eastern islands. Five years of war in the interior are said to have cost the Netherlands fifteen thousand soldiers and the greater part of the colonial revenue.;;;;;;;;;;;;;x
+EVTDESC1001301_NEWS_MEDIUM;The rebel prince of Yogyakarta has been taken at Magelang and exiled. The Java War is over.;;;;;;;;;;;;;x
+EVTDESC1001301_NEWS_SHORT;The Java War ends in Dutch victory.;;;;;;;;;;;;;x
+EVTNAME1001302;The Bargain with the Regents;;;;;;;;;;;;;x
+EVTDESC1001302;Rather than march into the mountains we have gone to the courts with money. The land rents of the princely districts are remitted, the toll gates on the Progo are pulled down, and the regents keep their apanages and their dignity. Diponegoro's following melts away before it can become an army. The Indies will earn us less for some years - but they will not cost us an army either.;;;;;;;;;;;;;x
+EVTOPTA1001302;A cheap peace is still a peace.;;;;;;;;;;;;;x
+java_war;Java War;;;;;;;;;;;;;x
+cultuurstelsel;Cultivation System;;;;;;;;;;;;;x
+EVTNAME1001100;The Carbonari;;;;;;;;;;;;;x
+EVTOPTA1001100;Watch the lodges, and do not make martyrs.;;;;;;;;;;;;;x
+EVTOPTB1001100;Break them. Arrests, and the galleys.;;;;;;;;;;;;;x
+EVTNAME1001101;Ciro Menotti's Conspiracy;;;;;;;;;;;;;x
+EVTDESC1001101;Ciro Menotti of Carpi has been meeting our Duke in private for a year, dangling before him a crown: let Francesco IV put himself at the head of a rising, and a united Italy of the north might be his. Paris has driven out its Bourbon and the news has emboldened every liberal from Turin to Bologna. Now Menotti's men are arming in a house on the Via Grande, and the Duke must decide whether he is their patron or their gaoler.;;;;;;;;;;;;;x
+EVTOPTA1001101;Surround the house. Menotti hangs.;;;;;;;;;;;;;x
+EVTOPTB1001101;Hesitate - and let the rising come.;;;;;;;;;;;;;x
+EVTNAME1001102;Revolt in the Legations;;;;;;;;;;;;;x
+EVTDESC1001102;Bologna has risen. The papal legate was put in a carriage and sent north, the tricolour flies over the Palazzo d'Accursio, and an assembly has proclaimed the United Italian Provinces, declaring the temporal power of the Holy See at an end. Ferrara, Ravenna and Ancona have followed within the week, and the whole of the Romagna is lost to us. Rome has no army worth the name. Austria has a corps at Ferrara and Vienna needs only to be asked.;;;;;;;;;;;;;x
+EVTOPTA1001102;Ask Vienna to restore order.;;;;;;;;;;;;;x
+EVTOPTB1001102;Concede: a lay administration and reform.;;;;;;;;;;;;;x
+EVTNAME1001102_NEWS_TITLE;BOLOGNA PROCLAIMS THE UNITED ITALIAN PROVINCES;;;;;;;;;;;;;x
+EVTDESC1001102_NEWS_LONG;An assembly at Bologna has declared the temporal power of the Pope at an end and proclaimed the United Italian Provinces. The papal legate has been escorted from the city and the revolt has carried Ferrara, Ravenna and Ancona with it. Correspondents report that the Holy See, possessing no field army, has turned its eyes to the Austrian garrisons north of the Po.;;;;;;;;;;;;;x
+EVTDESC1001102_NEWS_MEDIUM;The Legations have risen against the Holy See and proclaimed the United Italian Provinces at Bologna. Rome has no army to send against them.;;;;;;;;;;;;;x
+EVTDESC1001102_NEWS_SHORT;The Papal Legations are in revolt.;;;;;;;;;;;;;x
+EVTDESC1001100;Charcoal-burners, they call themselves, and their lodges have spread from the Abruzzi into every city of the peninsula. The vendite meet by night, swear their oaths on daggers, and pass tracts calling for a constitution and for Italy. Naples and Turin rose on their word in 1820 and 1821, and Austrian bayonets put both risings down - the lodges themselves were never broken. Our police know the names of half their leaders. The question is what we mean to do with them.;;;;;;;;;;;;;x
+EVTNAME1001103;The Austrian Intervention;;;;;;;;;;;;;x
+EVTDESC1001103;The Holy Father has asked for our troops. Prince Metternich reminds the Council that Troppau and Laibach bound the powers to put down revolution wherever it raises its head, and that we did precisely this at Naples and at Turin ten years ago. General Frimont's corps can be over the Po in a fortnight and in Bologna before the rebels have found a general. France, however, has a citizen king who has proclaimed the principle of non-intervention, and Paris will not be silent.;;;;;;;;;;;;;x
+EVTOPTA1001103;Frimont will cross the Po.;;;;;;;;;;;;;x
+EVTOPTB1001103;Let it burn. We will not be Europe's gendarme.;;;;;;;;;;;;;x
+EVTNAME1001103_NEWS_TITLE;AUSTRIAN COLUMNS CROSS THE PO;;;;;;;;;;;;;x
+EVTDESC1001103_NEWS_LONG;At the request of the Holy See, Austrian troops have entered the Papal Legations to put down the revolt of the United Italian Provinces. Vienna justifies the march by the principles agreed at Troppau and Laibach, under which the powers undertook to suppress revolution in the states of Italy. The cabinets of Paris and London have been informed rather than consulted.;;;;;;;;;;;;;x
+EVTDESC1001103_NEWS_MEDIUM;Austrian troops have entered the Papal Legations at the request of Rome, invoking the Troppau principles against the Bolognese revolt.;;;;;;;;;;;;;x
+EVTDESC1001103_NEWS_SHORT;Austria marches into the Legations.;;;;;;;;;;;;;x
+EVTNAME1001104;The Powers and the Legations;;;;;;;;;;;;;x
+EVTDESC1001104;The Italian question is on every desk in Europe. Vienna claims a right of intervention in the peninsula that no treaty of 1815 ever wrote down, and the courts must decide whether to say so aloud. Our ambassador wants instructions: a note of protest and a memorandum demanding reform of the papal administration, or a polite silence that leaves Italy to Austria as the price of quiet elsewhere.;;;;;;;;;;;;;x
+EVTOPTA1001104;Protest, and demand reform in the Legations.;;;;;;;;;;;;;x
+EVTOPTB1001104;Say nothing. Italy is Austria's affair.;;;;;;;;;;;;;x
+EVTNAME1001104_NEWS_TITLE;THE CABINETS AND THE ITALIAN QUESTION;;;;;;;;;;;;;x
+EVTDESC1001104_NEWS_LONG;The revolt in the Papal Legations has put the Italian question before every cabinet in Europe. At issue is whether Austria may act as the police of the peninsula on the invitation of any prince who asks, and whether the powers who signed at Vienna in 1815 have anything to say about how the Holy See governs its subjects.;;;;;;;;;;;;;x
+EVTDESC1001104_NEWS_MEDIUM;The powers weigh a protest against Austrian intervention in Italy, and a memorandum on the government of the Papal Legations.;;;;;;;;;;;;;x
+EVTDESC1001104_NEWS_SHORT;Europe debates the Italian question.;;;;;;;;;;;;;x
