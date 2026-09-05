@@ -18,7 +18,7 @@ country_event = {
 		tag = RUS
 		year = 1825
 		month = 10
-		NOT = { year = 1826 }
+		NOT = { year = 1827 }
 	}
 
 	fire_only_once = yes
@@ -51,6 +51,7 @@ country_event = {
 
 	major = yes
 	news = yes
+	news_title = "EVTNAME1000401_NEWS_TITLE"
 	news_desc_long = "EVTDESC1000401_NEWS_LONG"
 	news_desc_medium = "EVTDESC1000401_NEWS_MEDIUM"
 	news_desc_short = "EVTDESC1000401_NEWS_SHORT"
