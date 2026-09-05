@@ -301,6 +301,7 @@ def cmd_loc_add(csv, key, text, force=False):
 def cmd_loc_check(csv):
     csv = Path(csv)
     problems = list(encoding_issues(csv))
+    odd_width = 0
     for lineno, ln in enumerate(read_cp1252(csv).split("\n"), 1):
         s = ln.rstrip("\r")
         if not s or s.startswith("#"):
@@ -308,8 +309,28 @@ def cmd_loc_check(csv):
         fields = s.split(";")
         if len(fields) < 3:
             problems.append(f"line {lineno}: fewer than 3 columns")
-        elif not any(f.rstrip(", ").strip() == "x" for f in fields[2:]):
+            continue
+        if not any(f.rstrip(", ").strip() == "x" for f in fields[2:]):
             problems.append(f"line {lineno}: no 'x' terminator column")
+        if len(fields) != 15:
+            odd_width += 1
+        # A ';' typed inside the English text splits it across the English and
+        # French columns. Signature: French filled, every later language empty.
+        term = next(
+            (i for i, f in enumerate(fields) if i >= 2 and f.rstrip(", ").strip() == "x"),
+            len(fields),
+        )
+        if term > 3 and fields[2].strip() and not any(
+            f.strip() for f in fields[3:term]
+        ):
+            problems.append(
+                f"line {lineno}: ';' inside the text splits it across columns [{fields[0]}]"
+            )
+    if odd_width:
+        problems.append(
+            f"{odd_width} row(s) do not have exactly 15 columns "
+            "(usually harmless trailing/missing empty columns; see validate SKILL.md baseline)"
+        )
     for p in problems:
         print(f"{rel(csv)}: {p}")
     if not problems:
