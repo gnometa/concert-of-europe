@@ -10,6 +10,7 @@ country_event = {
 	
 	trigger = {
 		tag = ENG
+		year = 1828 # the Great Game proper begins with Turkmenchay; before that Persia, not Russia, is the power on the Afghan frontier
 		exists = yes
 		is_disarmed = no
 		is_greater_power = yes
@@ -449,6 +450,7 @@ country_event = {
 	
 	trigger = {
 		tag = RUS
+		year = 1828 # the Great Game proper begins with Turkmenchay; before that Persia, not Russia, is the power on the Afghan frontier
 		exists = yes
 		is_disarmed = no
 		is_greater_power = yes
@@ -879,6 +881,7 @@ country_event = {
 	picture = "rebellion"
 	
 	trigger = {
+		year = 1828
 		OR = {
 			tag = SIN
 			tag = BLC

@@ -40,10 +40,13 @@ in an 1821 game either). ORA/TRN follow from 98215/98220 (`owns = 2093`,
 
 There is no scripted Anglo-Afghan war anywhere in `events/`. `TheGreatGame.txt`
 (95610 ENG / 95611 RUS) is a generic influence-and-CB framework over SIN, BLC,
-AFG, HRT, KDH, PNJ, the khanates. It is *reachable* - its trigger has no year
+AFG, HRT, KDH, PNJ, the khanates. It is *reachable* - its trigger had no year
 gate at all, only `is_greater_power` on ENG and RUS plus a government check - but
-that also means it can start in 1821, well before the historical Great Game.
-Not a blocker, so left alone; adding a dedicated 1839 war is new content.
+that also meant it could start in 1821, well before the historical Great Game.
+**Fixed:** the three self-firing entry events 95610 (ENG), 95611 (RUS) and 95612
+(the target's side) now carry `year = 1828`, the Treaty of Turkmenchay; the
+chained events 95613-95616 are untouched. Adding a dedicated 1839 war is still
+new content, and is deferred.
 
 ## 3. First Carlist War 1833-40 - REACHABLE
 
