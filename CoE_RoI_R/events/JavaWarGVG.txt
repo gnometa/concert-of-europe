@@ -1,0 +1,246 @@
+#########################################################
+#                                                       #
+#      The Java War, 1825-1830 (GVG)                    #
+#      ids 1001300-1001302                              #
+#                                                       #
+#  Diponegoro's rising against the Dutch on Java, and   #
+#  the Cultivation System that paid for it. The nine    #
+#  Java provinces are listed explicitly: the NET_1413   #
+#  region in map/region.txt also contains three Saharan  #
+#  provinces (1716, 1717, 1724) and must not be used.   #
+#                                                       #
+#########################################################
+
+# Diponegoro's Rising
+country_event = {
+	id = 1001300
+	title = "EVTNAME1001300"
+	desc = "EVTDESC1001300"
+	picture = "DIM_java_manuscript"
+	news = yes
+	news_title = "EVTNAME1001300_NEWS_TITLE"
+	news_desc_long = "EVTDESC1001300_NEWS_LONG"
+	news_desc_medium = "EVTDESC1001300_NEWS_MEDIUM"
+	news_desc_short = "EVTDESC1001300_NEWS_SHORT"
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = NET
+		exists = yes
+		owns = 1416
+		owns = 1413
+		year = 1825
+		NOT = { year = 1831 }
+		NOT = { has_country_flag = java_war_in_progress }
+		NOT = { has_country_flag = java_war_settled }
+		NOT = { has_country_flag = cultuurstelsel }
+	}
+
+	mean_time_to_happen = {
+		months = 3
+	}
+
+	option = {
+		name = "EVTOPTA1001300"
+		set_country_flag = java_war_in_progress
+		prestige = -3
+		treasury = -20000
+		war_exhaustion = 3
+		any_owned = {
+			limit = {
+				OR = {
+					province_id = 1413
+					province_id = 1414
+					province_id = 1415
+					province_id = 1416
+					province_id = 1417
+					province_id = 1418
+					province_id = 1419
+					province_id = 1420
+					province_id = 1421
+				}
+			}
+			add_province_modifier = {
+				name = java_war
+				duration = 1825
+			}
+			any_pop = {
+				militancy = 2
+				consciousness = 1
+			}
+		}
+		country_event = { id = 1001301 days = 1825 }
+		ai_chance = {
+			factor = 80
+		}
+	}
+
+	option = {
+		name = "EVTOPTB1001300"
+		set_country_flag = java_war_settled
+		prestige = -5
+		treasury = -5000
+		any_owned = {
+			limit = {
+				OR = {
+					province_id = 1416
+					province_id = 1419
+				}
+			}
+			add_province_modifier = {
+				name = java_war
+				duration = 730
+			}
+		}
+		country_event = { id = 1001302 days = 60 }
+		ai_chance = {
+			factor = 15
+			modifier = {
+				factor = 2
+				war = yes
+			}
+		}
+	}
+
+	option = {
+		name = "EVTOPTC1001300"
+		set_country_flag = java_war_in_progress
+		set_country_flag = java_war_neglected
+		prestige = -8
+		treasury = -5000
+		any_owned = {
+			limit = {
+				OR = {
+					province_id = 1413
+					province_id = 1414
+					province_id = 1415
+					province_id = 1416
+					province_id = 1417
+					province_id = 1418
+					province_id = 1419
+					province_id = 1420
+					province_id = 1421
+				}
+			}
+			add_province_modifier = {
+				name = java_war
+				duration = 2555
+			}
+			any_pop = {
+				militancy = 3
+				consciousness = 1
+			}
+		}
+		country_event = { id = 1001301 days = 1825 }
+		ai_chance = {
+			factor = 5
+			modifier = {
+				factor = 4
+				war = yes
+			}
+			modifier = {
+				factor = 4
+				has_country_flag = BEL_war_of_secession
+			}
+		}
+	}
+}
+
+# Diponegoro Captured at Magelang
+country_event = {
+	id = 1001301
+	title = "EVTNAME1001301"
+	desc = "EVTDESC1001301"
+	picture = "DIM_cultuurstelsel_banner"
+	news = yes
+	news_title = "EVTNAME1001301_NEWS_TITLE"
+	news_desc_long = "EVTDESC1001301_NEWS_LONG"
+	news_desc_medium = "EVTDESC1001301_NEWS_MEDIUM"
+	news_desc_short = "EVTDESC1001301_NEWS_SHORT"
+
+	is_triggered_only = yes
+
+	option = {
+		name = "EVTOPTA1001301"
+		clr_country_flag = java_war_in_progress
+		set_country_flag = cultuurstelsel
+		prestige = 10
+		war_exhaustion = -5
+		any_owned = {
+			limit = { has_province_modifier = java_war }
+			remove_province_modifier = java_war
+			any_pop = {
+				militancy = 1
+				consciousness = -1
+			}
+		}
+		add_country_modifier = {
+			name = cultuurstelsel
+			duration = 7300
+		}
+		ai_chance = {
+			factor = 75
+		}
+	}
+
+	option = {
+		name = "EVTOPTB1001301"
+		clr_country_flag = java_war_in_progress
+		set_country_flag = java_war_settled
+		prestige = 5
+		war_exhaustion = -5
+		any_owned = {
+			limit = { has_province_modifier = java_war }
+			remove_province_modifier = java_war
+			any_pop = {
+				militancy = -2
+				consciousness = 1
+			}
+		}
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 2
+				has_country_flag = java_war_neglected
+			}
+		}
+	}
+}
+
+# The Bargain with the Regents
+country_event = {
+	id = 1001302
+	title = "EVTNAME1001302"
+	desc = "EVTDESC1001302"
+	picture = "DIM_indies_nobles"
+
+	is_triggered_only = yes
+
+	option = {
+		name = "EVTOPTA1001302"
+		prestige = -2
+		any_owned = {
+			limit = {
+				OR = {
+					province_id = 1413
+					province_id = 1414
+					province_id = 1415
+					province_id = 1416
+					province_id = 1417
+					province_id = 1418
+					province_id = 1419
+					province_id = 1420
+					province_id = 1421
+				}
+			}
+			any_pop = {
+				militancy = -2
+				consciousness = 1
+			}
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
