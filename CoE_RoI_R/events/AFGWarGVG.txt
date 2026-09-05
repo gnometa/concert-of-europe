@@ -1,0 +1,311 @@
+#########################################################
+#                                                       #
+#   The First Anglo-Afghan War, 1839-1842 (GVG)         #
+#   ids 1002300-1002303                                 #
+#                                                       #
+#   The Simla Manifesto and the Army of the Indus, the  #
+#   rising of November 1841, the destruction of         #
+#   Elphinstone's column at Gandamak, and the Army of   #
+#   Retribution that burned the Kabul bazaar and then   #
+#   marched home. See docs/design/anglo-afghan-1839.md. #
+#                                                       #
+#   ENG does not border AFG at the 1821 start - PNJ and #
+#   SIN lie between - so the trigger accepts a direct   #
+#   border, an ENG vassal on the frontier, or an AFG    #
+#   neighbour inside the British sphere.                #
+#                                                       #
+#########################################################
+
+# The Simla Manifesto
+country_event = {
+	id = 1002300
+	title = "EVTNAME1002300"
+	desc = "EVTDESC1002300"
+	picture = "persia_anglo_afghan"
+
+	trigger = {
+		tag = ENG
+		exists = yes
+		is_greater_power = yes
+		year = 1838
+		NOT = { year = 1841 }
+		AFG = {
+			exists = yes
+			owns = 1209
+		}
+		OR = {
+			neighbour = AFG
+			any_country = {
+				vassal_of = ENG
+				neighbour = AFG
+			}
+			AFG = {
+				any_neighbor_country = { in_sphere = ENG }
+			}
+		}
+		NOT = {
+			war_with = AFG
+			truce_with = AFG
+			alliance_with = AFG
+			vassal_of = AFG
+			has_country_flag = simla_manifesto_issued
+			has_country_flag = anglo_afghan_stayed_out
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 6
+		modifier = {
+			factor = 0.5
+			AFG = { in_sphere = RUS }
+		}
+		modifier = {
+			factor = 0.5
+			AFG = { has_country_modifier = border_incident }
+		}
+		modifier = {
+			factor = 0.75
+			NOT = { relation = { who = AFG value = 0 } }
+		}
+	}
+
+	option = {
+		name = "EVTOPTA1002300" # Send the Army of the Indus
+		set_country_flag = simla_manifesto_issued
+		set_country_flag = anglo_afghan_intervention
+		prestige = 2
+		badboy = 1
+		relation = { who = AFG value = -200 }
+		casus_belli = {
+			target = AFG
+			type = cut_down_to_size
+			months = 12
+		}
+		war = {
+			target = AFG
+			attacker_goal = {
+				casus_belli = cut_down_to_size
+			}
+		}
+		ai_chance = {
+			factor = 70
+			modifier = {
+				factor = 0.5
+				war = yes
+			}
+			modifier = {
+				factor = 1.25
+				AFG = { in_sphere = RUS }
+			}
+		}
+	}
+
+	option = {
+		name = "EVTOPTB1002300" # Keep the frontier on the Sutlej
+		set_country_flag = simla_manifesto_issued
+		set_country_flag = anglo_afghan_stayed_out
+		prestige = -1
+		relation = { who = AFG value = 50 }
+		diplomatic_influence = { who = AFG value = 25 }
+		ai_chance = {
+			factor = 30
+			modifier = {
+				factor = 2
+				war = yes
+			}
+		}
+	}
+}
+
+# The Retreat from Kabul
+country_event = {
+	id = 1002301
+	title = "EVTNAME1002301"
+	desc = "EVTDESC1002301"
+	picture = "derrota"
+	news = yes
+	news_title = "EVTNAME1002301_NEWS_TITLE"
+	news_desc_long = "EVTDESC1002301_NEWS_LONG"
+	news_desc_medium = "EVTDESC1002301_NEWS_MEDIUM"
+	news_desc_short = "EVTDESC1002301_NEWS_SHORT"
+
+	trigger = {
+		tag = ENG
+		exists = yes
+		has_country_flag = anglo_afghan_intervention
+		AFG = { exists = yes }
+		year = 1841
+		NOT = { year = 1844 }
+		OR = {
+			war_with = AFG
+			controls = 1209
+		}
+		NOT = {
+			has_country_flag = kabul_retreat_disaster
+			has_country_flag = kabul_held_1841
+			has_country_flag = anglo_afghan_settled
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 5
+		modifier = {
+			factor = 0.75
+			controls = 1209
+		}
+		modifier = {
+			factor = 0.75
+			year = 1842
+		}
+	}
+
+	option = {
+		name = "EVTOPTA1002301" # The army of Kabul is destroyed
+		set_country_flag = kabul_retreat_disaster
+		prestige = -10
+		war_exhaustion = 5
+		leadership = -5
+		any_owned = {
+			limit = { is_core = HND }
+			any_pop = { militancy = 1 }
+		}
+		random_country = {
+			limit = {
+				tag = AFG
+				exists = yes
+			}
+			country_event = { id = 1002303 days = 3 }
+		}
+		ai_chance = {
+			factor = 60
+		}
+	}
+
+	option = {
+		name = "EVTOPTB1002301" # Hold the cantonments through the winter
+		set_country_flag = kabul_held_1841
+		set_country_flag = anglo_afghan_settled
+		prestige = 2
+		badboy = 1
+		war_exhaustion = 2
+		any_owned = {
+			limit = { province_id = 1209 }
+			add_province_modifier = {
+				name = colonial_chaos
+				duration = 730
+			}
+			any_pop = {
+				militancy = 2
+				consciousness = 1
+			}
+		}
+		ai_chance = {
+			factor = 40
+			modifier = {
+				factor = 0.5
+				war_policy = pacifism
+			}
+		}
+	}
+}
+
+# The Army of Retribution
+country_event = {
+	id = 1002302
+	title = "EVTNAME1002302"
+	desc = "EVTDESC1002302"
+	picture = "war_ended"
+
+	trigger = {
+		tag = ENG
+		exists = yes
+		has_country_flag = kabul_retreat_disaster
+		AFG = { exists = yes }
+		year = 1842
+		NOT = { year = 1846 }
+		NOT = {
+			has_country_flag = anglo_afghan_settled
+			has_country_flag = kabul_held_1841
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 6
+		modifier = {
+			factor = 0.5
+			year = 1843
+		}
+		modifier = {
+			factor = 0.75
+			AFG = { has_country_flag = afghan_gandamak_victory }
+		}
+	}
+
+	option = {
+		name = "EVTOPTA1002302" # Burn the bazaar and come home
+		set_country_flag = anglo_afghan_settled
+		clr_country_flag = kabul_retreat_disaster
+		prestige = 5
+		war_exhaustion = -3
+		end_war = AFG
+		relation = { who = AFG value = 50 }
+		any_owned = {
+			limit = { has_province_modifier = colonial_chaos }
+			remove_province_modifier = colonial_chaos
+			any_pop = { militancy = -1 }
+		}
+		ai_chance = {
+			factor = 75
+			modifier = {
+				factor = 1.5
+				AFG = { has_country_flag = afghan_gandamak_victory }
+			}
+		}
+	}
+
+	option = {
+		name = "EVTOPTB1002302" # Afghanistan must be held
+		set_country_flag = anglo_afghan_settled
+		prestige = 2
+		badboy = 2
+		relation = { who = AFG value = -50 }
+		casus_belli = {
+			target = AFG
+			type = establish_protectorate_casus_belli
+			months = 12
+		}
+		any_owned = {
+			limit = { is_core = HND }
+			any_pop = { consciousness = 1 }
+		}
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 0.5
+				war_exhaustion = 20
+			}
+		}
+	}
+}
+
+# Gandamak, the Afghan Side
+country_event = {
+	id = 1002303
+	title = "EVTNAME1002303"
+	desc = "EVTDESC1002303"
+	picture = "dost_mohammad_khan"
+
+	is_triggered_only = yes
+
+	option = {
+		name = "EVTOPTA1002303" # Not one of them shall return
+		set_country_flag = afghan_gandamak_victory
+		prestige = 5
+		war_exhaustion = -3
+		any_pop = {
+			limit = { is_primary_culture = yes }
+			militancy = -2
+			consciousness = 1
+		}
+	}
+}

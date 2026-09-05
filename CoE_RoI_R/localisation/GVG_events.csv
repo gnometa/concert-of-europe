@@ -501,3 +501,22 @@ EVTNAME1002201;The Emirate Is Spent;;;;;;;;;;;;;x
 EVTDESC1002201;The herds are thin, the granaries of Hamdullahi are opened to feed men who no longer march, and the levies of the delta answer the call in ever smaller numbers. Segu has not been broken and will not be broken. Whatever the pulpit proclaims, there is nothing left in the emirate to fight with.;;;;;;;;;;;;;x
 EVTOPTA1002201;There is nothing left to fight with;;;;;;;;;;;;;x
 EVTOPTA1002200;The Diina is secure - make peace with the Bamana;;;;;;;;;;;;;x
+EVTNAME1002300;The Simla Manifesto;;;;;;;;;;;;;x
+EVTDESC1002300;Lord Auckland has published at Simla a manifesto explaining to the world why the Company must march. Dost Mohammad Khan, it says, has shown himself the friend of Persia and of Russia, has demanded Peshawar as the price of friendship, and has received a Russian envoy in Kabul. Against him is set Shah Shuja, the exile of Ludhiana, the rightful sovereign, who asks only to be restored by British bayonets and who will retire the moment his people rally to him. The Governor-General's council is assured that the Army of the Indus need only cross the passes, place the Shah on the throne of the Durranis, and come away again before the second winter.;;;;;;;;;;;;;x
+EVTOPTA1002300;Send the Army of the Indus;;;;;;;;;;;;;x
+EVTOPTB1002300;Keep the frontier on the Sutlej;;;;;;;;;;;;;x
+EVTNAME1002301;The Retreat from Kabul;;;;;;;;;;;;;x
+EVTOPTA1002301;The army of Kabul is destroyed;;;;;;;;;;;;;x
+EVTOPTB1002301;Hold the cantonments through the winter;;;;;;;;;;;;;x
+EVTNAME1002301_NEWS_TITLE;Disaster in the Afghan Passes;;;;;;;;;;;;;x
+EVTDESC1002301_NEWS_LONG;Of the column that left Kabul for Jalalabad, one exhausted surgeon reached the walls alive. The remainder - regulars, sepoys, camp followers, women and children - lie in the snow of the Khurd Kabul and Jagdalak passes or are held as hostages in the hills. It is the heaviest reverse British arms have suffered in Asia, and it has been suffered in a war of choice begun by a manifesto.;;;;;;;;;;;;;x
+EVTDESC1002301_NEWS_MEDIUM;The Kabul garrison has been annihilated in the passes on the road to Jalalabad. A single survivor reached the walls.;;;;;;;;;;;;;x
+EVTDESC1002301_NEWS_SHORT;The Kabul column is destroyed in the passes.;;;;;;;;;;;;;x
+EVTNAME1002302;The Army of Retribution;;;;;;;;;;;;;x
+EVTOPTA1002302;Burn the bazaar and come home;;;;;;;;;;;;;x
+EVTOPTB1002302;Afghanistan must be held;;;;;;;;;;;;;x
+EVTNAME1002303;Gandamak;;;;;;;;;;;;;x
+EVTDESC1002303;The safe conduct was worthless and the passes did the rest. From the Khurd Kabul to the last stand of the 44th on the hillock at Gandamak, the army that came to give us a king has ceased to exist, and Dost Mohammad Khan will return from his exile in Hindustan to a throne no foreign bayonet now props up. The tribes have learned what their own ground is worth to them.;;;;;;;;;;;;;x
+EVTOPTA1002303;Not one of them shall return;;;;;;;;;;;;;x
+EVTDESC1002301;The cantonments were built on low ground outside the walls, with the commissariat stores beyond the ditch, and General Elphinstone is too ill to give an order and too honourable to refuse command. Since Burnes was cut down in his own house the city has been in arms. Macnaghten has been murdered at the conference, and the chiefs have granted a safe conduct that they cannot enforce and do not intend to honour. Sixteen thousand souls are on the Jalalabad road in January snow, with the Ghilzai jezails on the heights above the Khurd Kabul and the Jagdalak passes.;;;;;;;;;;;;;x
+EVTDESC1002302;Pollock has forced the Khyber and Nott has come up from Kandahar. The prisoners are recovered, the gates said to be Somnath's are carried off, and the great covered bazaar of Kabul where Macnaghten's body was hung is blown up and burned. Honour, the Governor-General is advised, has now been satisfied. What remains is the question the Simla Manifesto never answered - whether Afghanistan is to be a British possession, or a country left to govern itself so long as it faces the right way.;;;;;;;;;;;;;x
