@@ -6,7 +6,10 @@ political_decisions = {
 				primary_culture = boer
 				}
 				year = 1860
-				has_global_flag = boer_convention_denied
+				OR = {
+					has_global_flag = boer_convention_denied
+					has_global_flag = transvaal_sovereignty
+				}
 			NOT = { has_country_flag = republic_founded }
 		}
 
@@ -296,17 +299,15 @@ political_decisions = {
 				relation = { who = THIS value = -100 }
 				leave_alliance = THIS
 			}
-			ENG = {
-				war = {
-					target = XHO
-					attacker_goal = {
-						casus_belli = establish_protectorate_casus_belli
-					}
-					defender_goal = {
-						casus_belli = status_quo
-					}
-					call_ally = no
+			war = {
+				target = XHO
+				attacker_goal = {
+					casus_belli = establish_protectorate_casus_belli
 				}
+				defender_goal = {
+					casus_belli = status_quo
+				}
+				call_ally = no
 			}
 		}
 
