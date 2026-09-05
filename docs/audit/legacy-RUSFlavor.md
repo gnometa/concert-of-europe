@@ -1,0 +1,49 @@
+# Logic review: `CoE_RoI_R/events/RUSFlavor.txt`
+
+*2026-09-06. Hand review of all 3504 lines (46 events). Mechanical audits (`modcheck`,
+`refcheck`, `audit_events`, cwtools) were at baseline before and after; everything below is
+behavioural. Line numbers are post-fix.*
+
+**Scope note.** `THIS` in this file (and in Vic2 generally) resolves to the *root* country the
+event fired on, not the immediately enclosing scope - `1088 = { secede_province = THIS }` inside
+JAP's event 32524 only makes sense that way. So the many `any_country = { limit = { war_with =
+THIS } }` / `relation = { who = THIS }` constructs (95070, 95075, 95076, 32515, 32560) are
+**correct**, not self-referential no-ops. Multi-statement `NOT = { a b }` is NOR and is likewise
+not a defect (32509, 32560, 95076, 375000).
+
+## Fixed in place
+
+| line | id | problem | fix |
+|---|---|---|---|
+| 445 | 32510 | **[high]** Option C ("Alaska is not for sale") is the only branch of the purchase chain that never answers the buyer. The buyer paid `treasury = -250000` up front in 32509; options A and B both reach a follow-up (32511 / 32514) but C ends the chain silently, so the buyer loses a quarter-million with no message and keeps `alaska_purchase_interest` set forever. | Added `FROM = { clr_country_flag = alaska_purchase_interest country_event = 32514 }`; 32514 already refunds the 250,000 and applies the -5 prestige / -25 relation. |
+| 882 | 95070 | **[high]** Crushing the November Uprising ("Those fools!" - declares war on CPL, agitates every Polish core) also ran `ruling_party_ideology = liberal`: the effect flatly contradicts the option text and hands Nicholas I a liberal cabinet in 1830. Almost certainly a copy-paste from a CPL-side option. | `ruling_party_ideology = reactionary` (RUS_reactionary is available from 1820, `common/countries/Russia.txt:76`), which also lines up with the `nicholas_reaction` modifier 95073 and RUSDecembristGVG 1000401 apply. |
+| 3436 | 375008 | **[high]** "Provinces defect to Kazakstan" fires for KAZ one day after RUS sets `kenesary_kasymov`, and ran `all_core = { remove_province_modifier = nationalist_agitation }`. `all_core` in KAZ scope is *every KAZ core regardless of owner*, so it stripped the permanent agitation 375006 had just placed on all of RUS_1182 + RUS_1184 - cancelling the whole Kenesary rebellion mechanic (and any route to 375009) within 24 hours. | `any_owned = { ... }`, so KAZ only calms its own provinces. |
+| 888 | 95070 | **[medium]** `relation = { who = CPL value = -400 }`; relation is capped at +/-200, so the tooltip promises twice what the engine can do. | `-200`. |
+| 1580 | 32512 | **[medium]** `relation = { who = AUS value = 300 }` in the AI-vs-AI branch of the Hungarian intervention - same cap. | `200`. |
+| 1245 | 95075 | **[medium]** Refusing the Treaty of Adrianople gave `badboy = 15` - 60% of the infamy limit from one option, on top of `war_exhaustion = 25`; nothing else in the file exceeds 5. | `badboy = 5`. |
+
+## Proposals (not applied)
+
+| line | id | problem | suggested fix |
+|---|---|---|---|
+| 2377 | 32530 | **[medium]** Dead-end risk in the Sakhalin war. 32526's war goal is `acquire_any_state` on 1087 and 32530 (Russia wins) needs `owns = 1087` **and** `owns = 1089` plus a live JAP/TKG truce. `JAP_1086 = { 1086 1087 1088 1089 }`, so a won state transfer does deliver 1089 - but if TKG is annexed or JAP forms mid-war there is no truce partner, 32528 also cannot fire (it needs a japanese-culture owner of 1087), and `fought_for_sakhalin` is never cleared. | Add a third closer, or relax 32530's `OR` to `NOT = { 1087 = { owner = { primary_culture = japanese } } }`. |
+| 2523 | 32560 | **[medium]** The Caucasus War has no `DAG = { exists = yes }` guard and no `war = no`. If RUS has already annexed DAG the `war = { target = DAG }` has no target; and because the mtth has `factor = 0.2, war = yes` it is *more* likely to fire mid-war, so it routinely opens a second front during the 1828 Russo-Turkish war (RUSTurkishWarGVG 1001400-1001403, which itself has no `war = no`). | `OR = { DAG = { exists = yes } any_owned = { is_core = DAG } }` in the trigger; optionally `NOT = { has_country_flag = russo_turkish_war_1828 }` in the mtth. |
+| 2596 | 32561 | **[medium]** Human AZB/CIR option A does `inherit = DAG` + `change_tag = DAG` and then `RUS = { war = { target = DAG } }`, but 32560 already declared that exact war two effects earlier - a duplicate declaration. Option B's `overlord = { release_vassal = THIS ... }` silently no-ops unless AZB/CIR is a RUS vassal, which neither is at the 1821 start (1056 = CIR, 1102 = AZB, both independent). | Drop the second `war` block; replace `overlord = { ... }` with an explicit `RUS = { ... }`. |
+| 2647 | 32565 | **[medium]** Caucasian Separatism has `mean_time_to_happen = { days = 1 }`, no `fire_only_once`, and applies `nationalist_agitation` for `duration = 10950` (30 years) plus `militancy = 9` (max 10) to every non-primary pop across three whole regions. It fires the instant RUS takes 1056/1053/1102, which after 32560 (1827+) means a permanent revolt zone as the automatic price of any Caucasus conquest. | Shorten to ~3650 days and drop militancy to 4-5, or gate it behind `has_country_flag = caucasus_war` so it reads as the aftermath of the war. |
+| 1348 | 95076 | **[medium]** January Uprising option B "Be lenient" *raises* Polish/Lithuanian/Byelorussian/Ukrainian militancy by 4 and consciousness by 3 while granting `prestige = 10`; option A ("no mercy") gives `prestige = -20` and militancy 8. Leniency costing nearly as much militancy as repression contradicts the option text. | `militancy = -2, consciousness = 3` for option B, keeping the consciousness rise as the "emboldened" effect. |
+| 299 | 32509 | **[medium]** The buyer pays `treasury = -250000` with no `money = 250000` in the trigger; the `ai_chance` only checks `money = 100000`, so an AI holding 120k still makes the offer and goes deeply negative. | Add `money = 250000` to the trigger, or raise the ai_chance threshold to 250000. |
+| 429 | 32510 | **[low]** Option B ("find another buyer") sets `alaska_purchase_interest` on any GP *or secondary power* holding land near the Pacific, but 32509 requires `is_greater_power = yes`, so flagged secondary powers can never act on it. It also does not exclude `FROM`, whose flag it just cleared, so the same country can be re-offered the purchase. | Match the two lists and add `NOT = { tag = FROM }` to the limit. |
+| 1171 | 95075 | **[low]** `diplomatic_influence = { who = MOL value = -200 }` / `who = WAL value = -200` (also 32515 `who = FIN value = 200`, 32526 `value = -200`): influence is 0-100, so these are clamped. Cosmetic. | Use +/-100. |
+| 1821 | 32522 | **[low]** Option A's ai_chance stacks `badboy = 0.2`, `0.4`, `0.6` **and** `badboy = 20`, each at `factor = 2`. `badboy` is an absolute infamy comparison, so the first three are true for almost any Russia and the option's weight silently balloons from 10 to 160 - written as if those were fractions of the infamy limit (option C uses them the same way). | Replace with a single `badboy = 15`-style threshold. |
+| 3063 | 375003 | **[low]** `province_event = 375003` ("we welcome them into our patrimony", permanent `nationalist_agitation`) is defined but never fired; 375000 and 375001 both fire 375002. Listed among the deliberately abandoned events in the Audax baseline. | Leave, or wire 375001's option to 375003 so its "carrot" flavour text is reachable. |
+| 3213 | 375005 | **[low]** Option A runs `inherit = AKH` and *then* `AKH = { primary_culture = tatar civilized = yes }` on a country that no longer exists - both changes are dead. | Reorder, or drop them. |
+| 3087 | 375004 | **[low]** Option A is captioned "We should support the Khan" but releases AKH and immediately declares a `make_puppet` war on it, which is what option B does with 4 infamy on top; the branches differ only in war goal and infamy. | Retitle A to "Restore the Khan under our protection", or give it a distinct effect. |
+| 258 | 32506 | **[low]** `994 = { #has_building = railroad }` - an empty province scope whose only statement is commented out, so it is unconditionally true. Harmless but misleading. | Delete the block or restore the check. |
+
+## Interactions with tonight's RUS content - no defects found
+
+- **`nicholas_reaction` double-apply**: RUSDecembristGVG 1000401 option A adds it for 3650 days from Dec 1825; 95073 option A (1831-1836) also adds it for 3650 days but is correctly wrapped in `NOT = { has_country_modifier = nicholas_reaction }`, so it cannot stack. The Decembrist copy simply absorbs the Organic Statute's, which is the right precedence.
+- **Adrianople is not duplicated**: 95074/95075 fire only from `decisions/RUS.txt treaty_of_adrianople`, which sets `adrianople_treaty` and is gated on it; RUSTurkishWarGVG 1001400/1001401 stand down on the same global flag. One treaty per game.
+- **Decembrist flags vs. the Polish chain**: 1000401's three branches set `rus_nicholas_reaction` / `rus_decembrist_compromise` / `rus_constantine_tsar`; 1000402 and 1000403 each require one of the first two, so the Constantine branch is a deliberate dead end, not a dropped thread. 95070's only prerequisite is `CPL = { vassal_of = RUS }`, which no Decembrist branch touches, so the November Uprising stays reachable from all three.
+- **Flags with a single setter**: `cpl_uprising` (95070, one option), `caucasus_war` (32560, one option), `fought_for_sakhalin` (32526 option B), `kenesary_kasymov` (375006 option A) - every consumer is reachable from a branch that sets it. No dead branches.
+- **Year windows**: no window here is unreachable from the 1821.9.1 start; the earliest gate is 32560's `year = 1827`. `audit_events` reports the usual 1836-vanilla-start `[info]` rows for the late-century culture events (32500-32508), which is by design.

@@ -454,6 +454,10 @@ country_event = {
 		name = "We have changed our mind. Alaska is not for sale."
 		prestige = -10
 		USA_1 = { add_core = RUS }
+		FROM = {
+			clr_country_flag = alaska_purchase_interest
+			country_event = 32514
+		}
 		ai_chance = {
 			factor = 0
 		}
@@ -875,7 +879,7 @@ country_event = {
 	option = {
 		name = "Those fools!"
 		set_country_flag = cpl_uprising
-		ruling_party_ideology = liberal
+		ruling_party_ideology = reactionary
 		any_owned = {
 			limit = {
 				OR = {
@@ -891,7 +895,7 @@ country_event = {
 			}
 		}
 		release_vassal = CPL
-		relation = { who = CPL value = -400 }
+		relation = { who = CPL value = -200 }
 		diplomatic_influence = { who = CPL value = -100 }
 		any_country = {
 			limit = {
@@ -1238,7 +1242,7 @@ country_event = {
 	option = {
 		name = "We will never give up!"
 		war_exhaustion = 25
-		badboy = 15
+		badboy = 5
 		any_pop = {
 			limit = {
 				OR = {
@@ -1573,7 +1577,7 @@ country_event = {
 			owner = {
 				relation = {
 					who = AUS
-					value = 300
+					value = 200
 				}
 			}
 		}
@@ -3441,7 +3445,7 @@ country_event = {
 			militancy = -5
 			consciousness = -7
 		}
-		all_core = {
+		any_owned = {
 			remove_province_modifier = nationalist_agitation
 		}
 	}
