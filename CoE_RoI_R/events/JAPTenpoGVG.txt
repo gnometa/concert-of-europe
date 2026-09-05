@@ -122,11 +122,14 @@ country_event = {
 
 	option = {
 		name = "EVTOPTB1002001" # A few maps are a small matter
-		years_of_research = 0.5
+		add_country_modifier = {
+			name = rangaku
+			duration = 3650
+		}
 		any_pop = {
 			consciousness = 1
 		}
-		set_country_flag = rangaku_tolerated
+		set_country_flag = tkg_rangaku_tolerated
 		ai_chance = {
 			factor = 30
 		}
@@ -169,6 +172,9 @@ country_event = {
 			any_pop = { reduce_pop = 0.97 }
 		}
 		random_owned = {
+			limit = {
+				NOT = { has_province_modifier = famine }
+			}
 			add_province_modifier = {
 				name = famine
 				duration = 730
@@ -279,7 +285,7 @@ country_event = {
 		months = 5
 		modifier = {
 			factor = 0.8
-			has_country_flag = rangaku_tolerated
+			has_country_flag = tkg_rangaku_tolerated
 		}
 	}
 
@@ -326,7 +332,7 @@ country_event = {
 			factor = 40
 			modifier = {
 				factor = 2
-				has_country_flag = rangaku_tolerated
+				has_country_flag = tkg_rangaku_tolerated
 			}
 			modifier = {
 				factor = 1.5
