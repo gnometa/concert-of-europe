@@ -46,7 +46,7 @@ One line per check. Anything not on this list is a regression.
 | `provinces` / `tags`, whole tree | 0 | events, decisions, history/countries, history/diplomacy, history/wars |
 | `refcheck events` | 14 | 12 deliberately abandoned `is_triggered_only` events (1002, 90903, 95259, 95652, 95655, 97120, 98230, 99665, 99666, 99993, 290115, 375003) plus 99932 and 8016451, which have a trigger and no MTTH on purpose |
 | `refcheck loc` | 60 | 58 hidden/utility modifiers in `common/event_modifiers.txt` with no localisation, plus 2 rows for abandoned event 290115 |
-| `refcheck flags` | 129 | orphans: 98 set but never checked, 31 checked but never set. Drifts as chains land; none is a spelling variant of a real flag |
+| `refcheck flags` | 128 | orphans: 98 set but never checked, 30 checked but never set. Drifts as chains land; none is a spelling variant of a real flag |
 | `refcheck options` | 8 | events with 6-8 options |
 | `refcheck onactions` / `modifiers` / `names` | 0 | |
 | `loc-check` malformed rows | 161 across 21 csvs | UTF-8 and/or missing `x` terminator; mostly `0000_economic_rework.csv`, `PDM_CE.csv`, `newCE.csv`. `GVG_events.csv` is clean and must stay clean |

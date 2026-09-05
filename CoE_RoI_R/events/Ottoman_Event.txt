@@ -2635,8 +2635,6 @@ country_event = {
 	desc = "EVTDESC31264"
 	picture = "Rebellion"
 	
-	fire_only_once = yes
-	
 	trigger = {
 		is_greater_power = yes
 		capital_scope = { continent = europe }
@@ -2648,6 +2646,7 @@ country_event = {
 			tag = TUR
 			tag = RUS
 			has_country_flag = greek_question
+			has_country_flag = greek_question_answered
 			has_global_flag = london_conference_1832_held
 		}
 	}
@@ -2659,6 +2658,7 @@ country_event = {
 	option = {
 		name = "We condemn their rebellion against a legitimate government."
 		set_country_flag = greek_question
+		set_country_flag = greek_question_answered
 		relation = { who = GRE value = -50 }
 		diplomatic_influence = { who = GRE value = -100 }
 		relation = { who = TUR value = 50 }
@@ -2702,6 +2702,7 @@ country_event = {
 	option = {
 		name = "We cautiously acknowledge their government."
 		set_country_flag = greek_question
+		set_country_flag = greek_question_answered
 		relation = { who = GRE value = 50 }
 		diplomatic_influence = { who = GRE value = 50 }
 		relation = { who = TUR value = -25 }
@@ -2714,6 +2715,7 @@ country_event = {
 	option = {
 		name = "We support the Greeks fully."
 		set_country_flag = greek_question
+		set_country_flag = greek_question_answered
 		relation = { who = GRE value = 400 }
 		create_alliance = GRE
 		diplomatic_influence = { who = GRE value = 100 }
