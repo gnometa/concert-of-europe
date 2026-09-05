@@ -1,7 +1,7 @@
 capital = 599
 primary_culture = german   set_country_flag = south_german_rel
 religion = catholic
-government = absolute_monarchy
+government = prussian_constitutionalism	# 1818 constitution: bicameral Landtag under Max I Joseph
 plurality = 0.0
 nationalvalue = nv_order
 literacy = 0.01  non_state_culture_literacy = 0.01   #literacy = 0.59
@@ -12,7 +12,7 @@ prestige = 2
 # Political reforms
 slavery = no_slavery
 upper_house_composition = appointed
-vote_franschise = none_voting
+vote_franschise = landed_voting	# Kammer der Abgeordneten elected on a property/estate franchise
 public_meetings = yes_meeting
 press_rights = state_press
 trade_unions = no_trade_unions
@@ -35,6 +35,7 @@ arts_endowment = no_endowment
 education = elite
 
 ruling_party = BAY_conservative_2
+last_election = 1819.5.1	# Landtag elections of 1819; next due 1824
 upper_house = {
 	fascist = 0
 	liberal = 35
