@@ -211,10 +211,12 @@ party_issues = {
 			non_accepted_pop_militancy_modifier = 0.01
 		}
 		limited_citizenship = {
+			non_accepted_pop_consciousness_modifier = -0.01
+			non_accepted_pop_militancy_modifier = -0.01
 		}
 		full_citizenship = {
-			non_accepted_pop_consciousness_modifier = -0.02
-			non_accepted_pop_militancy_modifier = -0.01
+			non_accepted_pop_consciousness_modifier = -0.04
+			non_accepted_pop_militancy_modifier = -0.02
 		}
 	}
 	war_policy = {
@@ -269,10 +271,12 @@ political_reforms = {
 		}
 		no_slavery = {
 			rules = { slavery_allowed = no }
-			prestige = 0.01
 			global_immigrant_attract = 0.005
 			allow = {
-				NOT = { has_country_flag = the_slavery_debate }
+				OR = {
+					NOT = { has_country_flag = the_slavery_debate }
+					year = 1875
+				}
 			}
 		}
 	}

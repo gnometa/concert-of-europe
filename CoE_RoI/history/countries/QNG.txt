@@ -7,7 +7,6 @@ nationalvalue = nv_tradition
 literacy = 0.01  non_state_culture_literacy = 0.01   #literacy = 0.045
  # #literacy = 0
 
-# Political reforms
 slavery = yes_slavery
 upper_house_composition = appointed
 vote_franschise = none_voting
@@ -20,7 +19,6 @@ minorities_reform = oppression
 immigration_policy = nobody_gets_out
 conscription=mandatory_service
 
-# Social Reforms
 wage_reform = no_minimum_wage
 work_hours = no_work_hour_limit
 safety_regulations = no_safety
@@ -45,16 +43,14 @@ upper_house = {
 
 set_country_flag = existing_country
 
+schools = chinese_tech_school
+
 academic_institutions = madrasahs  late_enlightenment_philosophy = 1
 taxation_reform = tax_farmers
 
-# Technologies
 late_enlightenment_philosophy = 1
 freedom_of_trade = 1
 
-# Inventions
-
-# Starting Consciousness
 consciousness = 0
 nonstate_consciousness = 0
 

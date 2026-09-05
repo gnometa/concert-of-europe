@@ -1,6 +1,4 @@
-color = { 25 88 217 }
-proletarian_dictatorship = { 220 10 15 }
-fascist_dictatorship = { 42 42 42 }
+color = { 87  130  199 }
 graphical_culture = SwedishGC
 
 party = {

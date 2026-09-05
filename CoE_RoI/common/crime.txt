@@ -8,18 +8,21 @@ anarchic_bomb_throwers = {
 }
 
 citizen_guard = {
-	pop_militancy_modifier = 0.05
+	life_rating = -0.02
+	local_rgo_output = -0.1
+	local_factory_throughput = -0.05
+	local_artisan_throughput = -0.1
 	icon = 2	
 	
-	trigger = {
-	}		
+	trigger = { owner = { has_crime = citizen_guard } }		
 }
 
 immoral_business = {
 
 	active = yes
 	
-	local_rgo_throughput = -0.2
+	local_rgo_output = -0.2
+	local_artisan_output = -0.1
 	icon = 3	
 	
 	trigger = {
@@ -29,18 +32,32 @@ immoral_business = {
 machine_politics = {
 	active = yes
 
-	random_party_votes = 0.1
-	pop_militancy_modifier = 0.02
+	boost_strongest_party = 5.0
 	icon = 4
 	
 	trigger = {
+		NOT = { owner = { vote_franschise = none_voting } }
+		is_colonial = no
+		OR = {
+			owner = { citizenship_policy = full_citizenship }
+			AND = { any_pop = { is_primary_culture = yes } owner = { OR = { citizenship_policy = residency citizenship_policy = forced_assimilation } } }
+			AND = {
+				OR = {
+					any_pop = { is_primary_culture = yes }
+					any_pop = { is_accepted_culture = yes }
+				}
+				owner = { citizenship_policy = limited_citizenship }
+			}
+		}
 	}		
 }
 
 mafia = {
 	active = yes
 
-	local_factory_output = -0.1
+	local_factory_output = -0.05
+	local_rgo_output = -0.05
+	local_artisan_output = -0.05
 	icon = 5	
 	
 	trigger = {
@@ -50,29 +67,46 @@ mafia = {
 rotten_boroughs = {
 
 	active = yes
-	local_ruling_party_support = 2.0
+	number_of_voters = 1.0
 	icon = 6	
 	
 	trigger = {
-	}		
-}
-
-spoil_system = {
-	active = yes
-
-
-	number_of_voters = 1.0	#double voters.
-	icon = 7	
-	
-	trigger = {
+		NOT = { owner = { vote_franschise = none_voting } }
+		is_colonial = no
+		OR = {
+			owner = { citizenship_policy = full_citizenship }
+			AND = { any_pop = { is_primary_culture = yes } owner = { OR = { citizenship_policy = residency citizenship_policy = forced_assimilation } } }
+			AND = {
+				OR = {
+					any_pop = { is_primary_culture = yes }
+					any_pop = { is_accepted_culture = yes }
+				}
+				owner = { citizenship_policy = limited_citizenship } 
+			}
+		}
 	}	
 }
 
-terrorist_cells = {
+spoil_system = {
 
-	pop_militancy_modifier = 0.4
+	active = yes
+	local_ruling_party_support = 2.0
+	pop_consciousness_modifier = 0.01
+	icon = 7
+	
+	trigger = {
+		NOT = { owner = { vote_franschise = none_voting } }
+		is_colonial = no
+	}
+}
+
+terrorist_cells = {
+	
+	local_factory_throughput = -0.15
+	local_artisan_throughput = -0.1
 	icon = 8	
 
 	trigger = {
+		average_militancy = 3
 	}	
 }
