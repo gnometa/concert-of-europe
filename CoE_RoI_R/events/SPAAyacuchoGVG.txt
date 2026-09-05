@@ -32,7 +32,7 @@ country_event = {
 			war_with = GCO
 			war_with = CHL
 			war_with = ARG
-			war_with = MEX
+			war_with = DOM
 		}
 		any_country = {
 			war_with = SPA
@@ -41,7 +41,7 @@ country_event = {
 				tag = GCO
 				tag = CHL
 				tag = ARG
-				tag = MEX
+				tag = DOM
 			}
 			NOT = { national_provinces_occupied = 0.25 }
 		}
@@ -160,13 +160,29 @@ country_event = {
 		exists = yes
 		year = 1827
 		NOT = { year = 1834 }
-		has_country_flag = ayacucho_fight_on
+		OR = {
+			has_country_flag = ayacucho_fight_on
+			NOT = { has_country_flag = ayacucho_offer_made }
+		}
 		OR = {
 			war_with = PEU
 			war_with = GCO
 			war_with = CHL
 			war_with = ARG
-			war_with = MEX
+			war_with = DOM
+		}
+		any_country = {
+			war_with = SPA
+			OR = {
+				tag = PEU
+				tag = GCO
+				tag = CHL
+				tag = ARG
+				tag = DOM
+			}
+			capital_scope = {
+				NOT = { controlled_by = SPA }
+			}
 		}
 		NOT = {
 			war_score = 25
