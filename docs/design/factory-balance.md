@@ -1,79 +1,105 @@
 # Factory and artisan profitability balance pass
 
 *2026-09-06. Scope: `CoE_RoI_R/common/production_types.txt` only. `common/goods.txt` was
-**not** touched. Closes the [high] `production_types.txt:258-305` finding in
+**not** touched. Addresses the [high] `production_types.txt:258-305` finding in
 `docs/audit/ai-balance.md` (Tables 3 and 4). **Untested in game — needs a play test.***
 
-## Method
+## Correction, second pass
 
-`scripts/balance_factories.py` prints, per production type, input cost and output value at
-base prices (`ratio = value x price(output) / sum(qty x price(input))`). Throughput
-multipliers, the owner output bonus and the `efficiency` bonus-goods blocks are ignored:
-throughput scales inputs and output together and cancels; the efficiency block only pays out
-when its goods are actually on the market. What is left is what the AI factory builder and
-artisan promotion see. Run `--vanilla` for the same table over the vanilla game files.
+The first cut of this pass (and the audit's Table 3) costed factories on `input_goods`
+alone and dismissed the template's `efficiency` block as an optional bonus. **That is
+wrong.** In Vic2 the `efficiency` block is the factory's *maintenance* goods: the engine
+buys them every day and a shortfall cuts efficiency (vanilla's own comment,
+`common/production_types.txt:5`, "if no cement, work at 75% efficiency"). Vanilla annotates
+factories with `total input+maint`, e.g. `aeroplane_factory` sums its four inputs (80.99)
+plus `cement 0.5 x 16.0` plus `machine_parts 0.05 x 36.5` to "= 90". `scripts/balance_factories.py`
+now includes maintenance and reports `margin` (revenue - input - maint) as well as the ratio.
 
-Reference: **vanilla factories sit in a 1.02-1.74x band**, vanilla artisans 1.12-1.74x. This
-mod runs richer margins by design, so the target band here is **1.5-3.5x**. Targets:
+This changes the picture completely, because this mod's maintenance blocks are 40-90x
+vanilla's:
 
-- military and luxury at the top of the band (3.3-3.5x) — high-margin end tiers, but they now
-  have to buy the intermediate goods they consume;
-- heavy in the middle (~2.7x), light and food at the bottom but clearly above 1.5x;
-- every artisan >= 1.2x, and `artisan_food_maker` profitable at all.
+| | vanilla | this mod |
+|---|---|---|
+| maintenance cost / level / day | 4.00 - 9.88 | **339 - 872** |
+| `input_goods` cost / level / day | 20 - 411 | 30 - 175 |
+| factory ratio band (input+maint) | 0.80 - 1.28 | 0.15 - 1.12 |
+| factory margin band | -7 to +17 | -745 to +58 |
+
+Vanilla parks every factory just above break-even at base prices. Here maintenance is 70-90%
+of total cost, and **`heavy_factory` (0.26), `light_factory` (0.15) and `food_factory` (0.21)
+cannot be profitable at base prices under any employment level** — throughput scales inputs
+and output together, so it does not close a 4-6x gap. They only run because scarcity pushes
+the *output* good's market price far above `cost` in `goods.txt`. That is the mod's real
+economic defect and it is **not fixed here**: closing it means rescaling the `efficiency`
+blocks (or the output `value`s) by roughly 4x, which moves world supply of every good and
+belongs in its own pass with a play test. Logged as a new [high] item in the audit.
+
+What *is* fixed here is that the first cut, optimising the wrong objective, pushed the only
+two factories that were above break-even below it.
 
 ## Design rules used
 
 1. **Move `input_goods` amounts and `value`, never `goods.txt` prices.** A price change
-   ripples into every pop need, RGO income and unit cost in the mod; an amount change is
-   local to one production type. No price change turned out to be necessary, so goods.txt is
-   unchanged.
-2. **Fix military/luxury by raising inputs, not by cutting output.** Cutting `value` on
-   `military_factory` would shrink world `military_industry` supply, which only units buy
-   (`units/*.txt`), and on `luxury_factory` would shrink a good every pop type needs. Raising
-   the input instead keeps end-tier supply intact and turns the two most attractive factories
-   into the demand sink for `heavy_industry` and `light_industry` — which is exactly the tier
-   the audit found nobody had a reason to build.
-3. **Offset the new demand with modest output rises one tier down** (`heavy_factory` 20 -> 24,
-   `light_factory` 10 -> 13), which also lifts `light_factory` out of its 1.67x last place.
-4. **Fix `food_factory` on the input side** (grain 30 -> 45). Its 400-unit output is what pop
-   food needs are scaled against and was left alone; the audit's separate concern that 400
-   units of a 0.5-cost good floods the market is a `goods.txt` question, deferred.
-5. Employees, owner blocks, workforce, templates, efficiency blocks and the factory list are
+   ripples into every pop need, RGO income and unit cost; an amount change is local.
+2. **Judge a factory by margin including maintenance, not by the `input_goods` ratio.**
+3. Keep `military_factory` and `luxury_factory` in vanilla's 1.0-1.3 ratio band while still
+   making them the demand sink for `heavy_industry` and `light_industry` — the tier the audit
+   found nobody had a reason to build. `military_factory` absorbs 2x the old
+   `heavy_industry`; `luxury_factory` absorbs 1.7x the old `light_industry` and its `value`
+   rises to pay for it.
+4. Employees, owner blocks, workforce, templates, efficiency blocks and the factory list are
    untouched, per the audit's "don't restructure" note.
-6. Artisans: only the three outliers moved. The other eight already sat at 1.50-1.60x. The
-   audit's separate observation that artisans are undifferentiated (a tight margin band gives
-   the pop AI no reason to prefer a good) is **not** addressed here — that is a design change,
-   not a defect.
+5. Artisans have **no template and therefore no maintenance**, so the plain input-vs-output
+   ratio is correct for them and only the three outliers moved.
 
-## Before / after
+## Changes
 
-Ratio = revenue / input cost at base prices. Full table from
-`python scripts/balance_factories.py`.
+Ratio = revenue / (input + maintenance). "1st cut" is commit `1005f94e`.
 
-| factory | change | before | after |
-|---|---|---:|---:|
-| military_factory | `heavy_industry` 10 -> 35 | **12.00** | 3.43 |
-| luxury_factory | `light_industry` 6 -> 22 | **12.50** | 3.41 |
-| heavy_factory | `value` 20 -> 24 | 2.27 | 2.72 |
-| light_factory | `value` 10 -> 13 | **1.67** | 2.17 |
-| food_factory | `grain` 30 -> 45 | 2.78 | 1.85 |
-| | | spread 7.5x | spread 1.9x |
+| factory | change | before | 1st cut | now |
+|---|---|---:|---:|---:|
+| military_factory | `heavy_industry` 10 -> **20** | 1.22 (+108) | 0.97 (-17) | **1.11 (+58)** |
+| luxury_factory | `light_industry` 6 -> **10**, `value` 25 -> **29** | 1.02 (+6) | 0.83 (-74) | **1.12 (+46)** |
+| heavy_factory | `value` 20 -> 24 | 0.22 (-354) | 0.26 (-334) | 0.26 (-334) |
+| light_factory | `value` 10 -> 13 | 0.12 (-384) | 0.15 (-369) | 0.15 (-369) |
+| food_factory | `grain` unchanged at 30 | 0.21 (-744) | 0.20 (-780) | 0.21 (-744) |
 
-| artisan | change | before | after |
-|---|---|---:|---:|
-| artisan_food_maker | grain 60 -> 30, cattle/fish/fruit 30 -> 10 | **0.58** | 1.49 |
-| artisan_horsebreeder | grain 3.8 -> 11, fruit 2 -> 6, iron 0.5 -> 1.5 | **4.66** | 1.58 |
-| artisan_military_maker | sulphur 20 -> 12, `heavy_industry` 45 -> 40 | **1.19** | 1.50 |
-| (other eight, unchanged) | — | 1.50-1.60 | 1.50-1.60 |
+The `grain 30 -> 45` raise on `food_factory` from the first cut is reverted: it deepened the
+worst loss in the file to no purpose.
 
-`artisan_horsebreeder` is not in the audit's Table 4 (it was missed) but was the largest
-artisan outlier at 4.66x; it also carries `effect_multiplier = 2` on its owner block, which
-the ratio above does not include.
+| artisan | change | before | 1st cut | now |
+|---|---|---:|---:|---:|
+| artisan_food_maker | grain 60 -> 30, cattle/fish/fruit 30 -> 10 | **0.58** | 1.49 | 1.49 |
+| artisan_horsebreeder | grain 3.8 -> **7**, fruit 2 -> **4**, iron 0.5 -> **1.0** | **4.66** | 1.58 | **2.42** |
+| artisan_military_maker | sulphur 20 -> 12, `heavy_industry` 45 -> 40 | 1.19 | 1.50 | 1.50 |
+| (other eight, unchanged) | — | 1.49-1.60 | | 1.49-1.60 |
+
+`artisan_horsebreeder` is deliberately left as the most profitable artisan rather than
+flattened to 1.5x. **No province anywhere on the map has `trade_goods = horses`** (0 of 2,827)
+and no event grants one, so artisan horsebreeders are the world's only source of horses —
+while every unit in `units/*.txt` burns `horses = 0.10`/day in supply and four of the five
+factory templates buy horses as maintenance (`food` 12.5, `military` 7.5, `heavy` 5.4,
+`luxury` 1.25 per level per day). Demoting the sole producer to mid-pack risks a world-wide
+army-supply squeeze. 2.42x removes the 4.66x outlier without doing that. Note it also carries
+`workforce = 5000` (half the other artisans) and `effect_multiplier = 2` on its owner block,
+so its per-pop income is about twice what the ratio column suggests.
+
+## Start-state supply, checked
+
+At the 1821 bookmark the world has **376 levels of `heavy_factory` and nothing else** (290
+`state_building` blocks across 135 province files, all `heavy_factory_building`). So world
+supply is ~9,000 `heavy_industry`/day at full employment, and `light_industry`,
+`luxury_industry`, `military_industry` and `food_industry` come **only from artisans** until
+someone builds. Pop demand dwarfs that (`heavy_industry` alone is an everyday need of 5-24
+per pop type). A single `military_factory` at 20/day is 0.2% of world heavy output, so the
+constraint is not "can the world supply one factory" — it is that `heavy_industry` and
+`light_industry` sit at their price ceiling for decades, which makes the two end tiers
+cost more than the base-price table shows. Hence the conservative 1.1x targets.
 
 ## What to watch in a play test
 
-Whether `heavy_industry` and `light_industry` markets can actually supply 35/22 units per
-military/luxury factory-day: if they cannot, prices spike, the top two tiers stall and the
-2.72x/2.17x tiers below them absorb the investment. That is the intended feedback loop, but
-the magnitude is untested. Check the AI's factory mix around 1840-1860 and whether artisans
-still demote en masse.
+- Whether `military_factory` and `luxury_factory` are still built once `heavy_industry` /
+  `light_industry` trade above base price. If not, cut their inputs back toward 15 / 8.
+- Whether horse supply holds up: watch army supply/attrition on large AI armies after 1840.
+- The maintenance-scale defect above: `light_factory` and `food_factory` will look
+  permanently unprofitable in the factory UI. Expected, not caused by this pass.

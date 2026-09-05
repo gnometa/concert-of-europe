@@ -4,17 +4,21 @@
 Reads common/production_types.txt and common/goods.txt and prints, for every
 production type of type `factory` or `artisan`:
 
-    inputs        input_goods amounts x base price, summed  (cost per day at
+    input         input_goods amounts x base price, summed  (cost per day at
                   full employment, before throughput modifiers)
+    maint         the template's `efficiency` block x base price.  These are
+                  *maintenance* goods: the engine buys them every day and a
+                  shortfall cuts efficiency ("if no cement, work at 75%
+                  efficiency" in vanilla).  Vanilla's own annotations sum them
+                  with input_goods ("total input+maint = 90" on
+                  aeroplane_factory), so they are a real cost, not a bonus.
     output        output_goods amount (`value`) x base price
-    ratio         output value / input cost
-    rev/worker    output value / workforce
+    ratio         output value / (input + maint)
+    margin        output value - (input + maint), per level per day
 
-Throughput multipliers, owner output bonuses and the `efficiency` (bonus goods)
-blocks are ignored on purpose: throughput scales inputs and output together and
-so cancels out of the ratio, and the efficiency block only adds output when the
-bonus goods are present in the market. What is left is the base ratio the AI
-factory builder and the artisan-promotion code see at base prices.
+Throughput multipliers, owner bonuses and technology output modifiers are
+ignored: throughput scales input_goods and output together, and the rest are
+country-specific.
 
 Usage
   python scripts/balance_factories.py                 the mod
@@ -65,6 +69,14 @@ def load(base):
             for g in blk.children or []:
                 if g.key and g.value is not None:
                     inputs.append((g.key, float(g.value)))
+        maint = []
+        holder = node
+        if not node.get("efficiency"):
+            holder = by_name.get(node.first("template")) or node
+        for blk in holder.get("efficiency"):
+            for g in blk.children or []:
+                if g.key and g.value is not None:
+                    maint.append((g.key, float(g.value)))
         out = field(node, "output_goods")
         val = field(node, "value")
         if out is None or val is None:
@@ -73,6 +85,7 @@ def load(base):
             "name": node.key,
             "kind": kind,
             "inputs": inputs,
+            "maint": maint,
             "output": out,
             "value": float(val),
             "workforce": float(field(node, "workforce") or 0),
@@ -85,32 +98,37 @@ def report(base, label):
     missing = set()
     rows = []
     for t in types:
-        cost = 0.0
-        for good, qty in t["inputs"]:
-            if good not in prices:
-                missing.add(good)
-            cost += qty * prices.get(good, 0.0)
+        def total(pairs):
+            s = 0.0
+            for good, qty in pairs:
+                if good not in prices:
+                    missing.add(good)
+                s += qty * prices.get(good, 0.0)
+            return s
+        icost = total(t["inputs"])
+        mcost = total(t["maint"])
+        cost = icost + mcost
         if t["output"] not in prices:
             missing.add(t["output"])
         rev = t["value"] * prices.get(t["output"], 0.0)
-        wf = t["workforce"] or 1
-        rows.append((t, cost, rev, (rev / cost if cost else float("inf")), rev / wf))
+        rows.append((t, icost, mcost, cost, rev,
+                     (rev / cost if cost else float("inf")), rev - cost))
 
     print(f"=== {label}: {base}")
     for kind in ("factory", "artisan"):
         sel = [r for r in rows if r[0]["kind"] == kind]
         if not sel:
             continue
-        sel.sort(key=lambda r: -r[3])
+        sel.sort(key=lambda r: -r[5])
         print(f"\n-- {kind} ({len(sel)})")
-        print(f"{'name':<28}{'inputs':<46}{'cost':>10}  {'output':<26}{'revenue':>9}{'ratio':>8}{'rev/worker':>12}")
-        for t, cost, rev, ratio, per in sel:
+        print(f"{'name':<28}{'inputs':<34}{'input':>9}{'maint':>9}{'cost':>9}  {'output':<24}{'revenue':>9}{'ratio':>7}{'margin':>10}")
+        for t, icost, mcost, cost, rev, ratio, margin in sel:
             ins = ", ".join(f"{g} {q:g}" for g, q in t["inputs"]) or "-"
             out = f"{t['output']} {t['value']:g}"
-            print(f"{t['name']:<28}{ins[:45]:<46}{cost:>10.2f}  {out:<26}{rev:>9.2f}{ratio:>8.2f}{per:>12.5f}")
-        r = [x[3] for x in sel if x[3] != float("inf")]
+            print(f"{t['name']:<28}{ins[:33]:<34}{icost:>9.2f}{mcost:>9.2f}{cost:>9.2f}  {out:<24}{rev:>9.2f}{ratio:>7.2f}{margin:>10.2f}")
+        r = [x[5] for x in sel if x[5] != float("inf")]
         if r:
-            print(f"{'':<28}{'':<46}{'':>10}  {'':<26}{'':>9}{'':>8}   band {min(r):.2f}-{max(r):.2f}")
+            print(f"{'':<28}{'':<34}{'':>9}{'':>9}{'':>9}  {'':<24}{'':>9}   band {min(r):.2f}-{max(r):.2f}")
     if missing:
         print("\n!! goods with no price in goods.txt:", ", ".join(sorted(missing)))
     print()

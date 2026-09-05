@@ -240,6 +240,17 @@ New, no vanilla equivalent: `military_industry` 20.0, `luxury_industry` 15.0,
 
 ## Table 3 — factory profitability at base prices
 
+> **Corrected 2026-09-06 (see `docs/design/factory-balance.md`).** This table costs factories
+> on `input_goods` only. The template `efficiency` block is **maintenance**, not a bonus: the
+> engine buys those goods daily and vanilla sums them into the factory's cost
+> ("total input+maint"). In this mod maintenance is 339-872 per level per day against 30-175
+> of `input_goods`, so the ratios below are wrong by 3-12x and the ordering below is wrong
+> too. Real ratios (input+maint): military 1.22, luxury 1.02, heavy 0.22, food 0.21,
+> light 0.12. New **[high]**: `heavy_factory`, `light_factory` and `food_factory` cannot break
+> even at base prices at any employment level; the maintenance blocks (or the output `value`s)
+> need rescaling by ~4x in a dedicated pass. Table 4 (artisans) is unaffected — artisans have
+> no template and so no maintenance.
+
 `revenue = value x price(output)`, `cost = sum(qty x price(input))`, per unit of production.
 Efficiency and `workforce` are identical across the five templates and do not change the
 ordering.

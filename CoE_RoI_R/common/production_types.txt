@@ -268,7 +268,7 @@ heavy_factory = {
 military_factory = {
 	template = military_factory_template #98
 	input_goods = {
-		heavy_industry = 35.0 #balance pass 2026-09-06: was 10.0
+		heavy_industry = 20.0 #balance pass 2026-09-06: was 10.0 (35 overshot: maintenance is 442/day)
 	}
 	output_goods = military_industry
 	value = 30.0
@@ -277,7 +277,7 @@ military_factory = {
 food_factory = {
 	template = food_factory_template #98
 	input_goods = {
-		grain = 45 #balance pass 2026-09-06: was 30
+		grain = 30 #balance pass 2026-09-06: reverted, maintenance already costs 872/day
 	}
 	output_goods = food_industry
 	value = 400.0
@@ -295,10 +295,10 @@ light_factory = {
 luxury_factory = {
 	template = luxury_factory_template #98
 	input_goods = {
-		light_industry = 22 #balance pass 2026-09-06: was 6
+		light_industry = 10 #balance pass 2026-09-06: was 6 (22 overshot: maintenance is 339/day)
 	}
 	output_goods = luxury_industry
-	value = 25
+	value = 29 #balance pass 2026-09-06: was 25, pays for the larger light_industry input
 }
 
 ### RGOs #####################################################################################
@@ -1598,9 +1598,9 @@ artisan_food_maker = {
 #
 artisan_horsebreeder = {
 	input_goods = {
-		grain = 11.0 #balance pass 2026-09-06: was 3.8
-		fruit = 6.0 #was 2.0
-		iron = 1.5 #was 0.5
+		grain = 7.0 #balance pass 2026-09-06: was 3.8 (sole world source of horses, keep it the top artisan)
+		fruit = 4.0 #was 2.0
+		iron = 1.0 #was 0.5
 	}
 
 	output_goods = horses
