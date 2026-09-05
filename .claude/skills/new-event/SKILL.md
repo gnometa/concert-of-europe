@@ -15,7 +15,7 @@ Follow these steps in order. Do not skip the id registry or localisation.
 | Japan flavour | 1000000-1000099 | `events/JAPFlavorGVG.txt` |
 | USA flavour | 1000100-1000199 | `events/USAFlavorGVG.txt` |
 | Byzantium flavour | 1000200-1000299 | `events/BYZFlavorGVG.txt` |
-| Game-start setup | 2000000+ | `decisions/SetupGVG.txt` (yes, decisions folder) |
+| Game-start setup | 2000000+ | `events/SetupGVG.txt` (welcome event) and `events/00_CoE_RoI.txt` (economy pulse host 2000100) |
 | New country/theme | next free 100-block above 1000299 | new `events/<TAG>FlavorGVG.txt` |
 
 For a new country, reserve a fresh block (e.g. 1000300-1000399) and add a line to `CoE_RoI_R/events/GVG Event IDs.txt`.
