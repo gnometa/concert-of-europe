@@ -29,6 +29,8 @@ new event chains. Nothing in this pass has been tested in a running game.
 - `history/countries`: 9 capitals moved into provinces the tag owns, 8 undefined and 14 out-of-window `ruling_party` names repointed, HAI/KMT government fixes, 35 dominion party start dates, ETH registration, ENG -> `ENG_conservative`.
 - The 11 RGO education ladder events (`+education_RGO.txt` 9999959-9999969) are `is_triggered_only` and dispatched per state from the quarterly pulse 99997 instead of being evaluated for every province every day: -117k clause-evals/day. Resync latency goes from ~8-15 days to up to a quarter; see `docs/audit/performance.md`.
 - Event trigger clauses in 26 files reordered cheap-gates-first (121 triggers). A permutation of a pure predicate cannot change what fires; modelled daily trigger work drops ~22%. See `docs/audit/performance.md`.
+- The six archaeology excavation ask/answer chains were province events read with `FROM` as a province, so the requesting great power was never in scope and the refusal flags landed on the wrong country. They are country events now, fired with `any_country`/`owns` from `decisions/archaeology.txt`, which also gates the Maya dig on actually owning Yucatan. Same sweep: `owner = { }` wrappers on BRZFlavor 46302 and GERFlavor 33004, `random_owned` in EconomicalEvents 22540, country-flag guards on the repeatable permanent province modifiers in 14540/22540, `major = no` on newEvents 1100132-1100143, `protector_of_eastern_christendom` made permanent and removed again by BYZ 1000205, and the missing news loc keys. `docs/audit/events-second-opinion.md`.
+- `common/countries/D33.txt` had `start_date = 1848.1.11860.1.1` on `dominion_communist` — two dates run together. Found by the new `scripts/audit_parties.py`; it was the only high-severity party defect in the tree.
 
 ### Balance — **UNTESTED IN GAME**
 
@@ -45,6 +47,11 @@ new event chains. Nothing in this pass has been tested in a running game.
 - **Belgian Revolution prelude**, `events/BELRevolutionGVG.txt` ids 1000301-1000308: Brussels riots after the July Revolution, crack down or concede, the Provisional Government (recognise / fight / appeal to the Holy Alliance), French and British reactions, the Twenty-Four Articles, Leopold's accession, and an 1839 Treaty of London fallback, handing off to PDM's existing London Conference (36720, now gated to 1830 and to `BEL_revolt_in_progress`). No new provinces, modifiers or pictures. `docs/design/belgian-revolution.md`.
 - **Decembrist revolt**, `events/RUSDecembristGVG.txt` ids 1000400-1000403: the death of Alexander I and the interregnum, the rising on Senate Square (crush / negotiate / let Constantine reign, with a news article), then the Third Section and Pestel's *Russkaya Pravda*. Fills the 1821-1836 gap; `RUSFlavor.txt` only starts in 1827. One new modifier, `nicholas_reaction`. `docs/design/decembrist-revolt.md`.
 - **Greek kingdom**, `events/GREKingdomGVG.txt` ids 1000500-1000502: the London Protocol crown offer, Otto of Wittelsbach landing at Nafplion under the Bavarian regency, and the 3 September 1843 revolution (mutually exclusive with the `hellenic_parliament` decision via its `voule_ton_ellinon` flag). One new modifier, `bavarian_regency`. `docs/design/greek-kingdom.md`.
+- **English Age of Reform**, `events/ENGReformGVG.txt` ids 1000600-1000602: the Clare election and Catholic Emancipation 1829 (`minorities_reform` limited -> protected), the 1830-32 Reform Crisis triggered by the July Revolution, and the Days of May if the Lords throw out the Bill (`vote_franschise` -> `wealth_voting`, the value ENG's own 1836 history block uses). Pop effects are filtered to the home islands; the chain's flags are read by `Irish woes.txt` 1010020 and `LiberalRevolutions.txt` 10330. No new modifiers or pictures. `docs/design/eng-reform-era.md`.
+- **Auspicious Incident**, `events/TURAuspiciousGVG.txt` ids 1000700-1000702: the Eskinci mutiny of June 1826 with a crush/back-down branch, the Mansure Army follow-up, and a second chance in 1831. Two new modifiers (`nizam_i_cedid`, `janissary_ascendancy`) and an additive `ai_will_do` hook on `tanzimat_reforms` in `decisions/TUR.txt`. `docs/design/auspicious-incident.md`.
+- **November Uprising repair**, `events/RUSFlavor.txt`: 95070 was gated `year = 1828` with a 48-month MTTH, so the rising could fire any time from 1828. Re-gated to 1830.11-1832 at a 1-month MTTH, and new 95073 is the Organic Statute settlement — it also fires after a white peace, inherits CPL on the abolition option, and only stacks `nicholas_reaction` when the Decembrist copy is not already running. The CPL vassalage in `history/diplomacy/PuppetStates.txt` no longer lapses in 1832.
+- **Zollverein**, `decisions/ZollvereinGVG.txt` + `events/ZollvereinGVG.txt` ids 1000900-1000904: a `found_the_zollverein` decision for Prussia (1833+, at peace, prestige) that offers accession to every eligible German minor outside Austria's sphere, the accept/refuse branches, Vienna's reaction ten days later, and the completion of the union — gated on a `zollverein_founder` country flag so it survives Prussia becoming NGF/GER. Plus a cheap `form_the_southern_customs_union` counter-decision for Austria, reusing the existing `customs_union` modifier. Two new modifiers (`zollverein_member`, `zollverein_leader`). `docs/design/zollverein.md`.
+- **Miguelist / Liberal Wars**, `events/PORMiguelistGVG.txt` ids 1001000-1001003: continues `PORFlavor.txt` 97030 (whose two options now set `por_charter_granted` / `miguelist_usurpation`) with the Charter and Miguel's usurpation, the liberal regency at Terceira and the convention of Evora Monte 1834. The civil war is fought by engine rebels via pop ideology and militancy, following the Carlist model in `SPAFlavor.txt` 37711/37712 — no new tag, war or release. `docs/design/miguelist-wars.md`.
 
 ### Start-state history (1821.9.1)
 
@@ -68,6 +75,8 @@ new event chains. Nothing in this pass has been tested in a running game.
 - `scripts/audit_events.py` — unknown trigger/effect keywords, re-firing events with permanent effects, `year = 1836` gates that lock out the 1821 start.
 - `scripts/audit_perf.py` — scores every self-firing event by trigger cost and ranks the hotspots.
 - `scripts/balance_factories.py` — factory and artisan margins including maintenance; `--vanilla` for the reference band, `--target R` for the budget solver.
+- `scripts/audit_parties.py` — every party block in `common/countries` against `ideologies.txt`, the `party_issues` groups in `issues.txt`, `countries.txt` and `IdeologyEnabling.txt`: ideology/issue/option names, date sanity, per-year coverage 1821-1947, conservative fallback, dead and duplicate parties. Snapshot in `docs/audit/parties.md`.
+- `scripts/audit_events2.py` — second-opinion event sweep: `FROM`/`THIS` scope misuse, country effects in province scope, unguarded repeatable permanent modifiers, `major = yes` on non-news events. Snapshot in `docs/audit/events-second-opinion.md`.
 
 ### Removed files
 
@@ -75,6 +84,16 @@ new event chains. Nothing in this pass has been tested in a running game.
 - `events/money.txt` — a debug handout with an id past the int32 event-id range and a `TAG = HAW` line that is not a condition.
 - `decisions/SetupGVG.txt` — a stale duplicate of `events/SetupGVG.txt`.
 - `history/wars/EgyptianConquestofSudan.txt` and the four duplicate province files listed above.
+
+### Play-test checklist
+
+Nothing below has been run in a game. In the first in-game years, watch:
+
+- `E:\OneDrive\Documents\Paradox Interactive\Victoria II\CoE_RoI_R\logs\error.log` for unknown effects/scopes coming from the new GVG files (`ENGReformGVG`, `TURAuspiciousGVG`, `ZollvereinGVG`, `PORMiguelistGVG`, `RUSFlavor` 95073). Note the log's size before launching.
+- The quarterly economy pulse actually running: some great power must hold `economy_pulse_host`. In the console, `tag <GP>` and check the flag (or watch for 99997's effects each quarter); the election 2000100 is now self-healing, so if no country ever holds it the trigger is wrong.
+- The education ladder: `RGO_education_N` modifiers should appear on states within two quarters of the start, now that 9999959-9999969 are dispatched per state from the pulse rather than daily.
+- `heavy_factory` profitability at the 1821 start — the 376 existing levels are the whole point of the maintenance rescale; if they still bleed, see `docs/design/factory-balance.md`.
+- The Decembrist chain firing in November-December 1825, the Brussels riots after the July Revolution in 1830, and `found_the_zollverein` showing up for Prussia from 1833.
 
 ### Deferred / design questions
 
