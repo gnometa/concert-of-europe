@@ -278,8 +278,8 @@ CNG_communist;Communist Party;Parti Communiste;Kommunistische Partei;;Partido Co
 CNG_reactionary;Reactionary Party;Parti Réactionnaire;Reaktionäre Partei;;Partido Reaccionario;;;;;;;;;x
 CNG_fascist;Fascist Party;Parti Fasciste;Faschistische Partei;;Partido Fascista;;;;;;;;;x
 CNG_anarcho_liberal;Radical Party;Party Anarcho-libéral;Anarcho-liberale Partei;;Partido anarcoliberal;;;;;;;;;x
-EVTNAME70000;$STATE$ Granted Statehood!;$STATE$ se voit accorder le statut d’état  !;$STATE$ erlangt Souveränität!;;¡$STATE$ - condición de estado!;;;;;;;;;x
-EVTNAME70001;$STATE$ Granted Statehood!;$STATE$ se voit accorder le statut d’état  !;$STATE$ erlangt Souveränität!;;¡$STATE$ - condición de estado!;;;;;;;;;x
+EVTNAME70000;$STATE$ Joins $COUNTRY$;$STATE$ se voit accorder le statut d’état  !;$STATE$ erlangt Souveränität!;;¡$STATE$ - condición de estado!;;;;;;;;;x
+EVTNAME70001;$STATE$ Joins $COUNTRY$!;$STATE$ se voit accorder le statut d’état  !;$STATE$ erlangt Souveränität!;;¡$STATE$ - condición de estado!;;;;;;;;;x
 IS_SECONDARY_NATION;Is Secondary Power;est une puissance de second rang;Ist Großmacht zweiten Ranges;;es una potencia secundaria;;;;;;;;;x
 IS_NOT_SECONDARY_NATION;Is Not Secondary Power;nn’est pas une puissance de second rang;Ist keine Großmacht zweiten Ranges;;NO es una potencia secundaria;;;;;;;;;x
 SET_PRIMARY_CULTURE;§Y$CULTURE$§W set to primary culture.\n;§Y$CULTURE$§W est la culture principale.\n;§Y$CULTURE$§W als Primärkultur eingestellt.\n;;§Y$CULTURE$§W se convierte en cultura principal.\n;;;;;;;;;x

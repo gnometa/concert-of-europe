@@ -524,12 +524,12 @@ country_event = {
 			tag = FSA
 			tag = TEX
 		}
+		NOT = { has_country_flag = passenger_elevator_seen }
 		year = 1854
 		NOT = {
 			year = 1864
 		}
 	}
-	fire_only_once = yes
 	
 	mean_time_to_happen = {
 		months = 26
@@ -540,6 +540,7 @@ country_event = {
 	}
 	option = {
 		name = "Raise me up, Elisha!"
+		set_country_flag = passenger_elevator_seen
 		prestige = 2
 		years_of_research = 0.1
 	}
@@ -558,12 +559,12 @@ country_event = {
 			tag = FSA
 			tag = TEX
 		}
+		NOT = { has_country_flag = barnum_circus_seen }
 		year = 1871
 		NOT = {
 			year = 1891
 		}
 	}
-	fire_only_once = yes
 	
 	mean_time_to_happen = {
 		months = 24
@@ -574,6 +575,7 @@ country_event = {
 	}
 	option = {
 		name = "There's a sucker born every minute."
+		set_country_flag = barnum_circus_seen
 		prestige = 2
 		any_pop = {
 			consciousness = -1
@@ -594,13 +596,13 @@ country_event = {
 			tag = FSA
 			tag = TEX
 		}
+		NOT = { has_country_flag = standard_time_adopted }
 		any_pop = {
 			consciousness = 2.5
 		}
 		year = 1883
 		steel_railroad = 1
 	}
-	fire_only_once = yes
 	
 	mean_time_to_happen = {
 		months = 84
@@ -611,6 +613,7 @@ country_event = {
 	}
 	option = {
 		name = "I reckon this came just in time."
+		set_country_flag = standard_time_adopted
 		prestige = 3
 		plurality = 1
 	}

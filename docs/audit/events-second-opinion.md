@@ -208,7 +208,23 @@ decision or news layout references an absent picture.
   `protector_of_eastern_christendom` these have no removal machinery to tell which side is
   authoritative, and each pair sits in a different author's content (PDM vs DIM vs GVG); picking a
   duration would be a guess about intent, not a bug fix. `e_mixed_duration` therefore stays at 19.
-- **#11/#12 global flags carrying per-country state**, **#13 gtfo release targets**, **#14 QNG
+- **#13 gtfo release targets** — handled 2026-09-06. Giving PAK, MLY and LXA cores is a map/design
+  call (which provinces should Pakistan, Malaya and Lan Xang claim, and from whom), not a bug fix,
+  so instead the three unreachable decisions `gtfo_PAK` (`decisions/gtfo.txt:96`), `gtfo_MLY`
+  (`:191`) and `gtfo_LXA` (`:354`) now carry `always = no` in their `potential` with a comment
+  saying to enable them once cores exist. `audit_events2` still lists the three `release_vassal`
+  targets as "no cores in history/provinces"; that is expected until cores are added.
+- **#11 the 1848 global flags** — read through 2026-09-06 and **left as is**. The nine flags
+  (`1848_full_fra`, `1848_full_fra_rejected`, `1848_limited_fra`, `1848_ger_victory_fra`, the RUS
+  quartet, `1848_aus_ger_war`) embed the tag in the name, and only one FRA and one RUS can exist,
+  so no two countries can collide on the same flag: every setter sits in a `tag = FRA` / `tag = RUS`
+  branch and every reader is a GER-side `OR` over the fra/rus variants. The `clr_global_flag`
+  calls at `2nd_grand_revolution.txt:178,861,948` are end-of-chain cleanups, not cross-branch
+  clobbers. One cosmetic wart left in place: `2nd_grand_revolution.txt:951` uses
+  `clr_country_flag = 1848_aus_ger_war` where the flag is global everywhere else, so that line is a
+  no-op — changing it would let the stalemate branch suppress the Grossdeutschland event 99905, a
+  behaviour change rather than a typo fix.
+- **#12 other suspect global flags**, **#14 QNG
   filename**, **#15 empty options / ungated `owner = {}`** - unchanged; all are design decisions or
   cosmetic, and #11 in particular needs the 1848 chain redesigned rather than patched.
 - The workshop ladder still has a design wart: because `fire_only_once` is engine-wide, a country

@@ -441,7 +441,7 @@ country_event = {
 
 	id = 90055
 
-	title = "EVTNAME90054"
+	title = "EVTNAME90055"
 	desc = "EVTDESC90055"
 	news = yes
 	news_desc_long = "EVTDESC90055_NEWS_LONG"

@@ -53,9 +53,12 @@ Left as intended world events:
 
 Ambiguous, **not** touched (listed for a human):
 
-- `CSAFlavor.txt:514,548,584` 16650/16651/16652 — `OR(USA,CSA,FSA,TEX)`. USA and
-  CSA/TEX *can* coexist after the ACW, so one of them silently loses the flavour
-  event. Low impact (Passenger Elevator / Barnum / Standard Time).
+- ~~`CSAFlavor.txt:514,548,584` 16650/16651/16652 — `OR(USA,CSA,FSA,TEX)`~~ —
+  **fixed 2026-09-06**: USA and CSA/TEX can coexist after the ACW, so `fire_only_once`
+  silently denied the flavour event to all but one of them. Replaced with per-country
+  flag guards — `NOT = { has_country_flag = passenger_elevator_seen /
+  barnum_circus_seen / standard_time_adopted }` in each trigger, the matching
+  `set_country_flag` in each event's single option.
 - `ITARisingsGVG.txt` and `JavaWarGVG.txt` — being edited by another agent; their
   cases were not inspected here.
 
@@ -95,8 +98,11 @@ Remaining B cases — verdict *intended world event* or self-disabling, not touc
 - `LANFlavour.txt:88` 190133 — gated on `has_country_modifier =
   lanfang_republic_modifier` (unique) and the option removes it.
 - `SWHFlavor.txt:440` 90055 — a GP absorbing Schleswig-Holstein; only one country
-  can, and the outcome is global. Ambiguous but left alone. (Note: its `title`
-  points at `EVTNAME90054`, a separate pre-existing bug.)
+  can, and the outcome is global. Ambiguous but left alone — re-confirmed 2026-09-06,
+  **not** a defect, so `fire_only_once` stays. Its `title` bug *was* real and is fixed:
+  it now points at `EVTNAME90055` ("The Schleswig-Holstein Question Resolved", added to
+  `localisation/GVG_events.csv`) instead of borrowing 90054's
+  "The Schleswig-Holstein Question".
 - `MostlyHarmless.txt:2` 23300 "Mysterious Whale Sinks Ship!" — a deliberate
   once-per-game Moby Dick joke chain.
 - `PORFlavor.txt:830` 97020 "The Republican Coup D'Etat" — reachable only by a
