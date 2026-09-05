@@ -12,7 +12,7 @@ province_event = {
 	
 	trigger = {
 		is_core = HND
-		controlled_by = THIS
+		NOT = { controlled_by = REB }
 		OR = {
 			culture = assamese
 			culture = bengali
@@ -295,7 +295,6 @@ country_event = {
 	option = {
 		name = "Interesting."
 		set_global_flag = indian_call_to_union
-		clr_country_flag = sepoy_rebellion
 		any_owned = {
 			limit = {
 				owner = {
@@ -363,7 +362,6 @@ country_event = {
 	
 	option = {
 		name = "This could be trouble."
-		clr_country_flag = sepoy_rebellion
 		any_owned = {
 			limit = {
 				owner = {
@@ -406,6 +404,8 @@ country_event = {
 						duration = 730
 					}
 				}
+				25 = {
+				}
 			}
 		}
 	}
@@ -431,7 +431,7 @@ country_event = {
 			neighbour = ENG
 			AND = { 
 				neighbour = HND
-				HND = { vassal_of ENG }
+				HND = { vassal_of = ENG }
 			}
 		}
 		has_country_flag = singh
@@ -489,22 +489,6 @@ country_event = {
 			limit = {
 				owner = {
 					nationalism_n_imperialism = 1
-					NOT = { has_global_flag = berlin_conference }
-				}
-			}
-			owner = {
-				casus_belli = {
-					target = PNJ
-					type = establish_protectorate_casus_belli
-					months = 60
-				}
-			}
-		}
-		random_owned = {
-			limit = {
-				owner = {
-					nationalism_n_imperialism = 1
-					has_global_flag = berlin_conference
 				}
 			}
 			owner = {
@@ -715,6 +699,7 @@ country_event = {
 	    tag = HND
 		primary_culture = british
 		is_vassal = no
+		ENG = { exists = yes }
 	}
 	
 	mean_time_to_happen = {

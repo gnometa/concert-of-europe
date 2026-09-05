@@ -30,11 +30,22 @@ country_event = {
 		}		
 	}	
 	option = {
-		name = "Situation escalates into full-blown rebellion!"
+		name = "The mutiny spreads through the ranks."
 		ai_chance = {
 			factor = 5
 		}
-		country_event = 90040		
+		soldiers = {
+			limit = { is_primary_culture = no }
+			consciousness = 5
+			militancy = 5
+		}
+		random_owned = {
+			limit = { is_core = HND }
+			add_province_modifier = {
+				name = nationalist_agitation
+				duration = 730
+			}
+		}
 	}
 }
 
@@ -106,7 +117,7 @@ country_event = {
 		ENG = { release_vassal = HND }
 		#civilized = yes
 		prestige = 50
-		primary_culture = panjabi
+		primary_culture = avadhi
         add_accepted_culture = assamese
         add_accepted_culture = bengali
         add_accepted_culture = bihari
@@ -114,9 +125,9 @@ country_event = {
         add_accepted_culture = nepali
         add_accepted_culture = oriya
         add_accepted_culture = sinhala
-        add_accepted_culture = avadhi
+        add_accepted_culture = panjabi
         add_accepted_culture = kanauji
-        #add_accepted_culture = panjabi
+        #add_accepted_culture = avadhi
         add_accepted_culture = kashmiri
         add_accepted_culture = gujarati
         add_accepted_culture = marathi
@@ -226,7 +237,6 @@ country_event = {
 	picture = "sepoy"
     is_triggered_only = yes
 	
-	fire_only_once = yes
 
 	mean_time_to_happen = {
 		months = 1
@@ -377,7 +387,7 @@ country_event = {
 	option = {
 		name = "All hail the free India!"
         prestige = 100
-		years_of_research = 5
+		years_of_research = 1
         ENG = { prestige_factor = -0.25 }
         #country_event = 		
 	}
@@ -416,9 +426,9 @@ country_event = {
                     remove_accepted_culture = nepali
                     remove_accepted_culture = oriya
                     remove_accepted_culture = sinhala
-                    remove_accepted_culture = avadhi
+                    remove_accepted_culture = panjabi
                     remove_accepted_culture = kanauji
-                    #remove_accepted_culture = panjabi
+                    #remove_accepted_culture = avadhi
                     remove_accepted_culture = kashmiri
                     remove_accepted_culture = gujarati
                     remove_accepted_culture = marathi
@@ -456,7 +466,6 @@ country_event = {
 	#		   is_vassal = no
 	#}
 	
-	fire_only_once = yes
 
 	mean_time_to_happen = {
 		days = 1
