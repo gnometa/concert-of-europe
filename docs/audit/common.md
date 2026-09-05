@@ -16,10 +16,10 @@ Read-only audit produced by `scripts/audit_common.py` (re-runnable). Vanilla ref
 | governments | 30 | - |
 | issues / reform options | 45 / 175 | - |
 | technologies | 200 | - |
-| event modifiers | 458 | - |
+| event modifiers | 466 | - |
 | casus belli | 81 | 32 |
 | defines.lua keys | 639 | 640 |
-| distinct modifier keys used | 491 | 429 |
+| distinct modifier keys used | 492 | 429 |
 
 Valid modifier vocabulary = 66 wiki entries + 429 keys vanilla itself uses = 439 accepted names.
 Vanilla `defines.lua` keys absent from the mod copy: 1 (LONE_BACKER_PRESTIGE_FACTOR)
