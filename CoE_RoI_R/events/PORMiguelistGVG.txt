@@ -1,0 +1,457 @@
+#########################################################
+#                                                       #
+#   The Miguelist / Liberal Wars, 1826-1834 (GVG)       #
+#   ids 1001000-1001003                                 #
+#                                                       #
+#   Continues events/PORFlavor.txt 97030 (Death of      #
+#   John VI, 1825). POR only - UPB has become POR by    #
+#   way of 97024 before any of this can fire. The       #
+#   civil war is fought by the engine's rebels, the     #
+#   Carlist way (SPAFlavor.txt 37711/37712), not by a   #
+#   scripted release + war.                             #
+#                                                       #
+#########################################################
+
+# The Constitutional Charter and Dom Miguel's Return
+country_event = {
+	id = 1001000
+	title = "EVTNAME1001000"
+	desc = "EVTDESC1001000"
+	picture = "carlists"
+	major = yes
+	news = yes
+	news_title = "EVTNAME1001000_NEWS_TITLE"
+	news_desc_long = "EVTDESC1001000_NEWS_LONG"
+	news_desc_medium = "EVTDESC1001000_NEWS_MEDIUM"
+	news_desc_short = "EVTDESC1001000_NEWS_SHORT"
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = POR
+		exists = yes
+		year = 1826
+		NOT = { year = 1836 }
+		has_country_flag = por_charter_granted
+		OR = { government = hms_government government = hms_government2 government = hms_government3 }
+		NOT = { has_country_flag = miguelist_usurpation }
+		NOT = { has_country_flag = por_cortes_resists }
+		NOT = { has_country_flag = por_charter_upheld }
+	}
+
+	mean_time_to_happen = {
+		months = 5
+		modifier = {
+			factor = 0.75
+			ruling_party_ideology = reactionary
+		}
+		modifier = {
+			factor = 0.75
+			militancy = 3
+		}
+	}
+
+	option = {
+		name = "EVTOPTA1001000"
+		set_country_flag = miguelist_usurpation
+		prestige = -5
+		government = absolute_monarchy
+		ruling_party_ideology = reactionary
+		political_reform = none_voting
+		political_reform = party_appointed
+		political_reform = no_meeting
+		political_reform = state_press
+		political_reform = underground_parties
+		clr_country_flag = liberal_election_win
+		set_country_flag = reactionary_election_win
+		add_country_modifier = {
+			name = conservative_reaction
+			duration = 3650
+		}
+		add_country_modifier = {
+			name = national_instability
+			duration = 1825
+		}
+		relation = { who = ENG value = -25 }
+		random_country = {
+			limit = {
+				tag = BRZ
+				exists = yes
+			}
+			relation = { who = THIS value = -100 }
+		}
+		any_owned = {
+			limit = {
+				OR = {
+					province_id = 518 #Oporto
+					province_id = 519 #Vila Real
+					province_id = 520 #Covilha
+					province_id = 2134 #Azores
+				}
+			}
+			any_pop = {
+				ideology = {
+					value = liberal
+					factor = 0.25
+				}
+				scaled_militancy = {
+					ideology = liberal
+					factor = 12
+				}
+				consciousness = 2
+			}
+		}
+		any_pop = {
+			limit = {
+				OR = {
+					type = capitalists
+					type = bureaucrats
+					type = artisans
+				}
+			}
+			ideology = {
+				value = liberal
+				factor = 0.15
+			}
+		}
+		ai_chance = {
+			factor = 60
+		}
+	}
+
+	option = {
+		name = "EVTOPTB1001000"
+		set_country_flag = por_cortes_resists
+		prestige = 3
+		add_country_modifier = {
+			name = national_instability
+			duration = 1095
+		}
+		any_pop = {
+			ideology = {
+				value = reactionary
+				factor = 0.15
+			}
+			scaled_militancy = {
+				ideology = reactionary
+				factor = 12
+			}
+		}
+		any_pop = {
+			limit = {
+				OR = {
+					type = aristocrats
+					type = clergymen
+					type = officers
+				}
+			}
+			ideology = {
+				value = reactionary
+				factor = 0.15
+			}
+			consciousness = 2
+		}
+		ai_chance = {
+			factor = 40
+		}
+	}
+}
+
+# The Liberals at Terceira
+country_event = {
+	id = 1001001
+	title = "EVTNAME1001001"
+	desc = "EVTDESC1001001"
+	picture = "streetriot"
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = POR
+		exists = yes
+		year = 1829
+		NOT = { year = 1836 }
+		has_country_flag = miguelist_usurpation
+		NOT = { has_country_flag = por_liberal_war }
+		NOT = { has_country_flag = por_charter_upheld }
+	}
+
+	mean_time_to_happen = {
+		months = 4
+		modifier = {
+			factor = 0.75
+			BRZ = { exists = yes }
+		}
+	}
+
+	option = {
+		name = "EVTOPTA1001001"
+		set_country_flag = por_liberal_war
+		prestige = -3
+		any_owned = {
+			limit = {
+				OR = {
+					province_id = 518 #Oporto
+					province_id = 519 #Vila Real
+					province_id = 2134 #Azores
+				}
+			}
+			add_province_modifier = {
+				name = liberal_agitation
+				duration = 1825
+			}
+			any_pop = {
+				ideology = {
+					value = liberal
+					factor = 0.30
+				}
+				scaled_militancy = {
+					ideology = liberal
+					factor = 16
+				}
+				consciousness = 3
+			}
+		}
+		ai_chance = {
+			factor = 55
+		}
+	}
+
+	option = {
+		name = "EVTOPTB1001001"
+		set_country_flag = por_liberal_war
+		any_owned = {
+			limit = {
+				OR = {
+					province_id = 518 #Oporto
+					province_id = 2134 #Azores
+				}
+			}
+			any_pop = {
+				ideology = {
+					value = liberal
+					factor = 0.15
+				}
+				scaled_militancy = {
+					ideology = liberal
+					factor = 8
+				}
+				consciousness = 1
+			}
+		}
+		ai_chance = {
+			factor = 45
+		}
+	}
+}
+
+# The Convention of Evora Monte
+country_event = {
+	id = 1001002
+	title = "EVTNAME1001002"
+	desc = "EVTDESC1001002"
+	picture = "Monarchy"
+	major = yes
+	news = yes
+	news_title = "EVTNAME1001002_NEWS_TITLE"
+	news_desc_long = "EVTDESC1001002_NEWS_LONG"
+	news_desc_medium = "EVTDESC1001002_NEWS_MEDIUM"
+	news_desc_short = "EVTDESC1001002_NEWS_SHORT"
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = POR
+		exists = yes
+		year = 1833
+		NOT = { year = 1838 }
+		has_country_flag = por_liberal_war
+		NOT = { has_country_flag = por_charter_upheld }
+	}
+
+	mean_time_to_happen = {
+		months = 4
+		modifier = {
+			factor = 0.6
+			num_of_revolts = 1
+		}
+		modifier = {
+			factor = 0.75
+			any_owned_province = { controlled_by = REB }
+		}
+	}
+
+	immediate = {
+		clr_country_flag = por_liberal_war
+	}
+
+	option = {
+		name = "EVTOPTA1001002"
+		clr_country_flag = miguelist_usurpation
+		set_country_flag = por_charter_upheld
+		prestige = 10
+		government = hms_government
+		ruling_party_ideology = liberal
+		political_reform = wealth_voting
+		political_reform = state_equal_weight
+		political_reform = yes_meeting
+		political_reform = censored_press
+		political_reform = non_secret_ballots
+		clr_country_flag = reactionary_election_win
+		set_country_flag = liberal_election_win
+		remove_country_modifier = conservative_reaction
+		remove_country_modifier = national_instability
+		add_country_modifier = {
+			name = liberal_reaction
+			duration = 1825
+		}
+		any_owned = {
+			limit = { has_province_modifier = liberal_agitation }
+			remove_province_modifier = liberal_agitation
+		}
+		relation = { who = ENG value = 50 }
+		relation = { who = FRA value = 25 }
+		ENG = { diplomatic_influence = { who = THIS value = 50 } }
+		any_pop = {
+			militancy = -4
+			ideology = {
+				value = liberal
+				factor = 0.15
+			}
+		}
+		ai_chance = {
+			factor = 70
+		}
+	}
+
+	option = {
+		name = "EVTOPTB1001002"
+		prestige = -10
+		relation = { who = ENG value = -50 }
+		relation = { who = FRA value = -50 }
+		relation = { who = SPA value = -50 }
+		add_country_modifier = {
+			name = national_instability
+			duration = 3650
+		}
+		any_pop = {
+			ideology = {
+				value = liberal
+				factor = 0.10
+			}
+			scaled_militancy = {
+				ideology = liberal
+				factor = 8
+			}
+		}
+		any_pop = {
+			limit = {
+				OR = {
+					type = aristocrats
+					type = clergymen
+				}
+			}
+			militancy = -4
+			consciousness = -2
+		}
+		ai_chance = {
+			factor = 30
+		}
+	}
+}
+
+# The Miguelite Revolt
+country_event = {
+	id = 1001003
+	title = "EVTNAME1001003"
+	desc = "EVTDESC1001003"
+	picture = "deliberation"
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = POR
+		exists = yes
+		year = 1828
+		NOT = { year = 1836 }
+		has_country_flag = por_cortes_resists
+	}
+
+	mean_time_to_happen = {
+		months = 6
+		modifier = {
+			factor = 0.75
+			num_of_revolts = 1
+		}
+	}
+
+	immediate = {
+		clr_country_flag = por_cortes_resists
+	}
+
+	option = {
+		name = "EVTOPTA1001003"
+		set_country_flag = por_charter_upheld
+		prestige = 5
+		add_country_modifier = {
+			name = liberal_reaction
+			duration = 1825
+		}
+		remove_country_modifier = national_instability
+		any_pop = {
+			scaled_militancy = {
+				ideology = reactionary
+				factor = -8
+			}
+			ideology = {
+				value = liberal
+				factor = 0.10
+			}
+		}
+		ai_chance = {
+			factor = 60
+		}
+	}
+
+	option = {
+		name = "EVTOPTB1001003"
+		set_country_flag = miguelist_usurpation
+		prestige = -5
+		government = absolute_monarchy
+		ruling_party_ideology = reactionary
+		political_reform = none_voting
+		political_reform = party_appointed
+		political_reform = no_meeting
+		political_reform = state_press
+		political_reform = underground_parties
+		clr_country_flag = liberal_election_win
+		set_country_flag = reactionary_election_win
+		add_country_modifier = {
+			name = conservative_reaction
+			duration = 3650
+		}
+		relation = { who = ENG value = -25 }
+		any_owned = {
+			limit = {
+				OR = {
+					province_id = 518 #Oporto
+					province_id = 519 #Vila Real
+					province_id = 2134 #Azores
+				}
+			}
+			any_pop = {
+				ideology = {
+					value = liberal
+					factor = 0.25
+				}
+				scaled_militancy = {
+					ideology = liberal
+					factor = 12
+				}
+			}
+		}
+		ai_chance = {
+			factor = 40
+		}
+	}
+}
