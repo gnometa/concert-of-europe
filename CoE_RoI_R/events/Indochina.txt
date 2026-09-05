@@ -352,7 +352,7 @@ country_event = {
 
 country_event = {
 	id = 95678
-	title = "EVTNAME95677" #Anglo-Burmese War - Treaty of Yandabo Signed
+	title = "EVTNAME95678" #Anglo-Burmese War - Treaty of Yandabo Signed
 	desc = "EVTDESC95678"
 	major = yes
 	
@@ -375,6 +375,7 @@ country_event = {
 
 	option = {
 		name = "We will show them their error."
+		clr_country_flag = yandabo_treaty
 		war_exhaustion = -5
 	}
 }
@@ -385,13 +386,14 @@ country_event = {
 
 country_event = {
 	id = 95639
-	title = "EVTNAME95640" #Persecution of French Missionaries
+	title = "EVTNAME95639" #Persecution of French Missionaries
 	desc = "EVTDESC95639"
 	picture = "missionaries"
 	
 	trigger = {
 		owns = 1380
 		civilized = no
+		year = 1850
 		is_vassal = no
 		part_of_sphere = no
 		FRA = {
@@ -649,7 +651,7 @@ country_event = {
 	}
 	
 	option = {
-		name = "Throw out the Thai! We will risk war."
+		name = "Throw out the Vietnamese! We will risk war."
 		DAI = {
 			release_vassal = CAM
 			leave_alliance = CAM
@@ -702,7 +704,7 @@ country_event = {
 
 country_event = {
 	id = 95647
-	title = "EVTNAME95645" #The Suzerainty of Cambodia - To Dai Nam
+	title = "EVTNAME95647" #The Suzerainty of Cambodia - To Dai Nam
 	desc = "EVTDESC95645"
 	picture = "asian_administration"
 	
