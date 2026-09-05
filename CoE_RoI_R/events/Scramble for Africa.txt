@@ -325,8 +325,8 @@ country_event = {
 		any_greater_power = {
 			limit = {
 				NOT = { is_sphere_leader_of = THIS }
-				diplomatic_influence = { who = THIS value = -100 }
 			}
+			diplomatic_influence = { who = THIS value = -100 }
 		}
 		sphere_owner = {
 			prestige = -10
@@ -414,40 +414,15 @@ country_event = {
 	option = {
 		name = "How unwise of them."
 		relation = { who = FROM value = -200 }
-		random_owned = {
-			limit = {
-				owner = { has_global_flag = berlin_conference }
-			}
-			owner = {
-				casus_belli = {
-					target = FROM
-					type = establish_protectorate_casus_belli
-					months = 60
-				}
-				war = {
-					target = FROM
-					attacker_goal = {
-						casus_belli = establish_protectorate_casus_belli
-					}
-				}
-			}
+		casus_belli = {
+			target = FROM
+			type = establish_protectorate_casus_belli
+			months = 60
 		}
-		random_owned = {
-			limit = {
-				owner = { NOT = { has_global_flag = berlin_conference } }
-			}
-			owner = {
-				casus_belli = {
-					target = FROM
-					type = establish_protectorate_casus_belli
-					months = 60
-				}
-				war = {
-					target = FROM
-					attacker_goal = {
-						casus_belli = establish_protectorate_casus_belli
-					}
-				}
+		war = {
+			target = FROM
+			attacker_goal = {
+				casus_belli = establish_protectorate_casus_belli
 			}
 		}
 		ai_chance = {
@@ -956,8 +931,6 @@ country_event = {
 		random_owned = {
 			limit = {
 				1864 = { empty = yes }
-				1866 = { empty = yes }
-				1867 = { empty = yes }
 			}
 			1864 = {
 				life_rating = 15

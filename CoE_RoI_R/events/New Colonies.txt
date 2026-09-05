@@ -4419,10 +4419,6 @@ province_event = {
 	
 	mean_time_to_happen = {
 		months = 60
-		modifier = {
-			factor = 5
-			#region = ENG_2083
-		}
 	}
 	
 	option = {
