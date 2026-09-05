@@ -810,9 +810,20 @@ country_event = 999887
 # After: is_triggered_only = yes.  Every trigger clause is unchanged and
 # is still evaluated - the same clauses now sit in the dispatch `limit`
 # in events/00_CoE_RoI.txt 99997 (the quarterly economy pulse, fired
-# from on_quarterly_pulse), which runs
-#     any_country = { any_owned = { limit = { <trigger> } province_event = N } }
-# and the event's own trigger block is re-checked when it is fired.
+# from on_quarterly_pulse), which runs, once per state rather than once
+# per province so a human player gets one popup per state and not one per
+# province (state_scope = { random_owned = { ... } } is the vanilla idiom,
+# events/TemperanceLeague.txt 130):
+#     any_country = {
+#         limit = { has_global_flag = education_setup }
+#         any_state = {
+#             random_owned = {
+#                 limit = { <the other two trigger clauses> }
+#                 province_event = { id = N }
+#             }  x11
+#         }
+#     }
+# The event's own trigger block is re-checked when it is fired.
 #
 # RATE MAPPING - months = 1 (self-firing) -> deterministic, once per
 # quarterly pulse.  No `random`/`random_list` chance is introduced,

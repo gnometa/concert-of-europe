@@ -10,7 +10,6 @@ on_yearly_pulse = {
 }
 
 on_quarterly_pulse = {
-	100 = 2000101 # economy pulse host watchdog - a dead host is replaced within a quarter
 	100 = 99997
 	##100 = 99986
 	#100 = 20122

@@ -1,6 +1,6 @@
 #Event ID overview:
 #2000000+ Setup Events
-#2000100-2000199: Economy pulse host election / watchdog (00_CoE_RoI.txt)
+#2000100-2000199: Economy pulse host election (00_CoE_RoI.txt 2000100; self-healing, no watchdog)
 #1000000-1000099: JAPFlavorGVG
 #1000100-1000199: USAFlavorGVG
 #1000200-1000299: BYZFlavorGVG

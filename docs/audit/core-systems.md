@@ -218,13 +218,20 @@ sections above still refer to `cab739e0` and are now stale for the files listed 
   id and a non-existent trigger; nothing referenced it and nothing wanted it.
 - **The Bhutan gate** — `tag = BHU` is replaced everywhere it was acting as a
   "run this global effect for exactly one country" host by the country flag
-  `economy_pulse_host`. Two new events in `00_CoE_RoI.txt` maintain it: **2000100**
-  (election, daily, O(1) trigger `NOT = { has_global_flag = economy_pulse_lock }`) and
-  **2000101** (watchdog, `is_triggered_only`, fired from both `on_quarterly_pulse` and
-  `on_yearly_pulse`, clears the lock when no country carries the flag any more so 2000100
-  elects a replacement the next day; a dead host is therefore replaced within a quarter).
-  The election is idempotent: it strips `economy_pulse_host` from any previous holder before
-  setting it, so two countries can never carry it at once.
+  `economy_pulse_host`. One new event in `00_CoE_RoI.txt` maintains it: **2000100**
+  (election, daily), whose trigger is `is_greater_power = yes` + `ai = yes` +
+  `NOT = { any_country = { has_country_flag = economy_pulse_host } }`. That is
+  self-healing — the day the host is annexed the scan goes true again and one of the (at
+  most 8) greater powers elects itself the next day — so there is no watchdog event and
+  nothing is added to `on_actions`. The election is idempotent: it strips
+  `economy_pulse_host` from any previous holder before setting it, so two countries can
+  never carry it at once.
+  *2026-09-06, second pass:* the first version of this used a global flag
+  `economy_pulse_lock` plus a watchdog **2000101** listed on `on_quarterly_pulse`. That was
+  a rate bug: `on_actions` fires exactly one entry from the list per country per pulse, so
+  the watchdog sitting next to 99997 at equal weight halved the rate of the whole quarterly
+  economy pulse. 2000101, the lock flag and the `on_actions` entry are all gone;
+  `on_quarterly_pulse` contains only 99997, as it originally did.
   Consumers converted: `00_CoE_RoI.txt` 99997, `+education_RGO.txt` 999958 (Education Setup
   II), and all 27 dispatchers in `WorkPlaceEvents_triggers.txt` (12000-12780). The pattern is
   documented in a comment block above 2000100. Exactly one country is still evaluated per

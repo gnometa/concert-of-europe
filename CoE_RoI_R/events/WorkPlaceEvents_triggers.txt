@@ -6,7 +6,7 @@
 # country per day.  That used to be done with trigger = { tag = BHU }, which meant
 # the entire file stopped working as soon as Bhutan was annexed.  They are now
 # gated on the country flag economy_pulse_host instead: one arbitrary surviving AI
-# country carries it, and 00_CoE_RoI.txt 2000100/2000101 elect a replacement if the
+# country carries it, and 00_CoE_RoI.txt 2000100 elects a replacement the day the
 # host dies.  Exactly one country is still evaluated per day, so the
 # mean_time_to_happen rates below are unchanged.
 

@@ -149,12 +149,14 @@ The dispatch is a new block in the **quarterly** hub `00_CoE_RoI.txt` 99997 (alr
 ```
 any_country = {
     limit = { has_global_flag = education_setup }
-    any_owned = {
-        limit = { NOT = { has_province_modifier = RGO_education_0 }
-                  state_scope = { literacy = 0 NOT = { literacy = 0.1 } } }
-        province_event = 9999959
+    any_state = {
+        random_owned = {
+            limit = { NOT = { has_province_modifier = RGO_education_0 }
+                      state_scope = { literacy = 0 NOT = { literacy = 0.1 } } }
+            province_event = { id = 9999959 }
+        }
+        ... x11
     }
-    ... x11
 }
 ```
 
@@ -162,6 +164,18 @@ The `has_global_flag` clause is hoisted to the country `limit` (one test per cou
 instead of eleven); the other two clauses are the province `limit`, in the same
 cheap-gate-first order the events already used. No new event id, no `on_actions.txt`
 change.
+
+Two details worth recording:
+
+- The dispatch is **per state**, via `any_state = { random_owned = { ... } }`. The event's
+  effect re-stamps every province of its state anyway, so firing it once per matching
+  province would queue one popup *per province* for a human player — the AI resolves events
+  immediately and was therefore self-limiting, the player is not. `state_scope = {
+  random_owned = { ... } }` is the vanilla idiom for picking one province of a state
+  (`events/TemperanceLeague.txt` 130).
+- `province_event` takes the block form `province_event = { id = N }`. The bare-int
+  shorthand is documented only for `country_event` (`docs/wiki/list-of-effects.md`), and
+  `.cwtools/effects.cwt` defines `province_event` as block-only.
 
 ### Rate mapping
 

@@ -531,15 +531,27 @@ country_event = {
 # which behaves exactly like the old tag gate (one country, evaluated
 # daily, so MTTH rates are unchanged) but survives annexation.
 #
-# 2000100 elects the host.  The global flag economy_pulse_lock is the
-# once-only lock: while it is set the (O(1)) trigger of 2000100 is false,
-# so the election costs nothing on a normal day.
-# 2000101 is the watchdog: it runs off on_quarterly_pulse and clears the
-# lock if the host has died, which makes 2000100 elect a new one the next
-# day.  It is deliberately NOT also listed on on_yearly_pulse: on_actions
-# picks ONE event from the list per country per pulse, so a second entry
-# there would have cut the Canals.txt 97200/97250/97350 rate from 1/3 to
-# 1/4 for no gain (quarterly already covers the watchdog four times over).
+# 2000100 elects the host, and is the ONLY moving part: it is self-healing,
+# so there is no watchdog and nothing has to be added to on_actions.
+# Its trigger is
+#     is_greater_power = yes
+#     ai = yes
+#     NOT = { any_country = { has_country_flag = economy_pulse_host } }
+# The greater-power gate keeps the daily cost to at most 8 evaluations of
+# the any_country scan (~200 countries), and the scan is false - so it
+# short-circuits after the first hit - on every day a host exists, which
+# is every day but the first and the day after a host is annexed.
+# `ai = yes` keeps the (invisible book-keeping) host off the human player.
+# The option strips economy_pulse_host from any previous holder before
+# setting its own, so even a same-day double election ends with exactly
+# one host.  Latency: the host dies -> a new one is elected the next day;
+# the work it does is then picked up at the next pulse it is due on.
+#
+# An earlier version used a global flag economy_pulse_lock plus a
+# watchdog event 2000101 listed on on_quarterly_pulse.  That was wrong:
+# on_actions fires exactly ONE entry from the list per country per pulse,
+# so listing the watchdog alongside 99997 halved the rate of the entire
+# quarterly economy pulse.  on_quarterly_pulse contains only 99997 again.
 #
 # Users of the flag: 99997 (below), +education_RGO.txt 999958,
 # WorkPlaceEvents_triggers.txt 12000-12780.
@@ -551,10 +563,9 @@ country_event = {
 	desc = "Economy Pulse Host"
 
 	trigger = {
-		NOT = { has_global_flag = economy_pulse_lock }
-		exists = yes
+		is_greater_power = yes
 		ai = yes
-		civilized = yes
+		NOT = { any_country = { has_country_flag = economy_pulse_host } }
 	}
 
 	mean_time_to_happen = {
@@ -569,26 +580,7 @@ country_event = {
 			limit = { has_country_flag = economy_pulse_host }
 			clr_country_flag = economy_pulse_host
 		}
-		set_global_flag = economy_pulse_lock
 		set_country_flag = economy_pulse_host
-	}
-}
-
-country_event = {
-	id = 2000101
-	title = "Economy Pulse Host Watchdog"
-	desc = "Economy Pulse Host Watchdog"
-
-	is_triggered_only = yes
-
-	trigger = {
-		has_global_flag = economy_pulse_lock
-		NOT = { any_country = { has_country_flag = economy_pulse_host } }
-	}
-
-	option = {
-		name = "OK"
-		clr_global_flag = economy_pulse_lock
 	}
 }
 
@@ -920,87 +912,94 @@ country_event = {
 		# from ~8-15 days to up to one quarter.  See the comment header above
 		# 9999969 in +education_RGO.txt and docs/audit/performance.md.
 		#
-		# The buckets are mutually exclusive, so the order of the eleven passes does
-		# not matter, and a province that fires stamps its whole state, which makes
-		# the remaining provinces of that state fail their own limit.
+		# The dispatch is per STATE, not per province: the event's effect re-stamps
+		# every province of its state anyway, and firing it once per matching
+		# province would queue one popup per province for a human player (the AI
+		# resolves events immediately, so only the AI was self-limiting).
+		# state_scope = { random_owned = { ... } } is the vanilla idiom for picking
+		# one province of a state (events/TemperanceLeague.txt 130).
+		# The buckets are mutually exclusive, so at most one of the eleven fires per
+		# state and their order does not matter.
 		any_country = {
 			limit = { has_global_flag = education_setup }
-			any_owned = {
-				limit = {
-					NOT = { has_province_modifier = RGO_education_0 }
-					state_scope = { literacy = 0 NOT = { literacy = 0.1 } }
+			any_state = {
+				random_owned = {
+					limit = {
+						NOT = { has_province_modifier = RGO_education_0 }
+						state_scope = { literacy = 0 NOT = { literacy = 0.1 } }
+					}
+					province_event = { id = 9999959 }
 				}
-				province_event = 9999959
-			}
-			any_owned = {
-				limit = {
-					NOT = { has_province_modifier = RGO_education_1 }
-					state_scope = { literacy = 0.1 NOT = { literacy = 0.2 } }
+				random_owned = {
+					limit = {
+						NOT = { has_province_modifier = RGO_education_1 }
+						state_scope = { literacy = 0.1 NOT = { literacy = 0.2 } }
+					}
+					province_event = { id = 9999969 }
 				}
-				province_event = 9999969
-			}
-			any_owned = {
-				limit = {
-					NOT = { has_province_modifier = RGO_education_2 }
-					state_scope = { literacy = 0.2 NOT = { literacy = 0.3 } }
+				random_owned = {
+					limit = {
+						NOT = { has_province_modifier = RGO_education_2 }
+						state_scope = { literacy = 0.2 NOT = { literacy = 0.3 } }
+					}
+					province_event = { id = 9999968 }
 				}
-				province_event = 9999968
-			}
-			any_owned = {
-				limit = {
-					NOT = { has_province_modifier = RGO_education_3 }
-					state_scope = { literacy = 0.3 NOT = { literacy = 0.4 } }
+				random_owned = {
+					limit = {
+						NOT = { has_province_modifier = RGO_education_3 }
+						state_scope = { literacy = 0.3 NOT = { literacy = 0.4 } }
+					}
+					province_event = { id = 9999967 }
 				}
-				province_event = 9999967
-			}
-			any_owned = {
-				limit = {
-					NOT = { has_province_modifier = RGO_education_4 }
-					state_scope = { literacy = 0.4 NOT = { literacy = 0.5 } }
+				random_owned = {
+					limit = {
+						NOT = { has_province_modifier = RGO_education_4 }
+						state_scope = { literacy = 0.4 NOT = { literacy = 0.5 } }
+					}
+					province_event = { id = 9999966 }
 				}
-				province_event = 9999966
-			}
-			any_owned = {
-				limit = {
-					NOT = { has_province_modifier = RGO_education_5 }
-					state_scope = { literacy = 0.5 NOT = { literacy = 0.6 } }
+				random_owned = {
+					limit = {
+						NOT = { has_province_modifier = RGO_education_5 }
+						state_scope = { literacy = 0.5 NOT = { literacy = 0.6 } }
+					}
+					province_event = { id = 9999965 }
 				}
-				province_event = 9999965
-			}
-			any_owned = {
-				limit = {
-					NOT = { has_province_modifier = RGO_education_6 }
-					state_scope = { literacy = 0.6 NOT = { literacy = 0.7 } }
+				random_owned = {
+					limit = {
+						NOT = { has_province_modifier = RGO_education_6 }
+						state_scope = { literacy = 0.6 NOT = { literacy = 0.7 } }
+					}
+					province_event = { id = 9999964 }
 				}
-				province_event = 9999964
-			}
-			any_owned = {
-				limit = {
-					NOT = { has_province_modifier = RGO_education_7 }
-					state_scope = { literacy = 0.7 NOT = { literacy = 0.8 } }
+				random_owned = {
+					limit = {
+						NOT = { has_province_modifier = RGO_education_7 }
+						state_scope = { literacy = 0.7 NOT = { literacy = 0.8 } }
+					}
+					province_event = { id = 9999963 }
 				}
-				province_event = 9999963
-			}
-			any_owned = {
-				limit = {
-					NOT = { has_province_modifier = RGO_education_8 }
-					state_scope = { literacy = 0.8 NOT = { literacy = 0.9 } }
+				random_owned = {
+					limit = {
+						NOT = { has_province_modifier = RGO_education_8 }
+						state_scope = { literacy = 0.8 NOT = { literacy = 0.9 } }
+					}
+					province_event = { id = 9999962 }
 				}
-				province_event = 9999962
-			}
-			any_owned = {
-				limit = {
-					NOT = { has_province_modifier = RGO_education_9 }
-					state_scope = { literacy = 0.9 NOT = { literacy = 0.99 } }
+				random_owned = {
+					limit = {
+						NOT = { has_province_modifier = RGO_education_9 }
+						state_scope = { literacy = 0.9 NOT = { literacy = 0.99 } }
+					}
+					province_event = { id = 9999961 }
 				}
-				province_event = 9999961
-			}
-			any_owned = {
-				limit = {
-					NOT = { has_province_modifier = RGO_education_10 }
-					state_scope = { literacy = 0.99 }
+				random_owned = {
+					limit = {
+						NOT = { has_province_modifier = RGO_education_10 }
+						state_scope = { literacy = 0.99 }
+					}
+					province_event = { id = 9999960 }
 				}
-				province_event = 9999960
 			}
 		}
 		
