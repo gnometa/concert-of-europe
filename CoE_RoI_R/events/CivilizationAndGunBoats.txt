@@ -3956,7 +3956,7 @@ country_event = {
 			remove_province_modifier = boxer_agitation
 		}
 		#activate_building = heavy_factory_building 
-		activate_unit = regular
+		#activate_unit = regular #not an event effect; units are unlocked by technology
 	}
 }
 

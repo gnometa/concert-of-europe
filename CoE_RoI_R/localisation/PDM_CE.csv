@@ -1346,3 +1346,8 @@ democracy3_ruler;President;;;;;;;;;x;
 theocracy_ruler;Holiness;;;;;;;;;x;
 theocracy2_ruler;Holiness;;;;;;;;;x;
 theocracy3_ruler;Pope;;;;;;;;;x;
+EVTNAME31201;Goals for the Conference;;;;;;;;;;;;;x
+EVTNAME31203;The $CAPITAL$ Protocol: An Independent Greece;;;;;;;;;;;;;x
+EVTNAME31204;The $CAPITAL$ Protocol: A Greater Greece;;;;;;;;;;;;;x
+EVTNAME31206;The Treaty of Constantinople: An Independent Greece;;;;;;;;;;;;;x
+EVTNAME31207;The Treaty of Constantinople: A Greater Greece;;;;;;;;;;;;;x

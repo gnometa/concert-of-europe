@@ -11,7 +11,7 @@ country_event = {
 			relation = { who = THIS value = 10 }
 		}
 		NOT = {
-			has_truce = RUS
+			truce_with = RUS
 			has_global_flag = france_protector_of_eastern_christians
 			has_global_flag = byz_eastern_protector
 			has_country_flag = questioned_christian_dominance
@@ -135,7 +135,7 @@ country_event = {
 		war = no
 		has_global_flag = eastern_christian_protector_questioned
 		has_recently_lost_war = no
-		has_truce = RUS
+		truce_with = RUS
 	}
 	
 	mean_time_to_happen = {
@@ -166,7 +166,7 @@ country_event = {
 		war = no
 		has_global_flag = eastern_christian_protector_questioned
 		has_recently_lost_war = yes
-		has_truce = RUS
+		truce_with = RUS
 	}
 	
 	mean_time_to_happen = {

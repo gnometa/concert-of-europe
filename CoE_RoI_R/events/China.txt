@@ -30,7 +30,7 @@ country_event = {
 
 
 
-				substate_of = CHI
+				substate_of = THIS
 				num_of_cities = 1
 			}
 			country_event = 90901
@@ -276,7 +276,7 @@ country_event = {
 		}
 		civilized = yes
 		release_vassal = THIS
-		leave_alliance = CHI
+		leave_alliance = FROM
 	}
 }
 
@@ -297,7 +297,7 @@ country_event = {
 	option = {
 		name = "EVTOPTA90902"
 		release_vassal = THIS
-		leave_alliance = CHI
+		leave_alliance = FROM
 		civilized = yes
 	}
 }

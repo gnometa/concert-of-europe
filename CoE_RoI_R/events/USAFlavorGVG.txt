@@ -9,7 +9,7 @@ country_event = {
 		tag = TEX
 		MEX = { war_with = THIS }
 		NOT = {
-			has_truce = USA
+			truce_with = USA
 			has_country_flag = usstatehood_we_have_applied
 			has_country_flag = texas_asked_for_help
 			has_country_flag = texas_is_brave
@@ -23,7 +23,7 @@ country_event = {
 	option = {
 		name = "We must seek help from the USA"
 		set_country_flag = texas_asked_for_help
-		realtion = { who = USA value = 100 }
+		relation = { who = USA value = 100 }
 		USA = { country_event = 1000101 }
 		ai_chance = {
 			factor = 90

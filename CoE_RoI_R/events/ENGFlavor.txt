@@ -1638,7 +1638,7 @@ country_event = {
 			tag = ENL
 		}
 		exists = yes
-		year = 1836
+		year = 1821
 		exists = COB
 		OR = {
 			war_with = GER
