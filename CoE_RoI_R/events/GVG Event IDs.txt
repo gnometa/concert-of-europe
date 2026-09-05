@@ -17,6 +17,7 @@
 #1001300-1001399: JavaWarGVG (1825-1830 Java War / Cultuurstelsel; 1001300-1001302 used)
 #1001400-1001499: RUSTurkishWarGVG (1828-1829 Russo-Turkish War and the Treaty of Adrianople; 1001400-1001403 used)
 #1001500-1001599: CHIOpiumGVG (1821-1839 Daoguang opium edicts, silver drain, Canton trade; 1001500-1001502 used)
+#1001600-1001699: ASHWarGVG (1823-1831 First Anglo-Ashanti War, Nsamankow and the Pra; 1001600-1001603 used)
 #
 #Reserved, currently unused (the files that defined them were 100% commented out
 #and were deleted 2026-09-06; recover them from git history if the system is revived):

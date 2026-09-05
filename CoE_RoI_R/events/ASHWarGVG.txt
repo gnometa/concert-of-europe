@@ -1,0 +1,230 @@
+#########################################################
+#                                                       #
+#   The First Anglo-Ashanti War, 1823-1831 (GVG)        #
+#   ids 1001600-1001603                                 #
+#                                                       #
+#   MacCarthy's march inland and his death at           #
+#   Nsamankow in January 1824, the recovery at Dodowa    #
+#   in 1826 and the 1831 treaty on the Pra. ENG's only  #
+#   Gold Coast holding at the 1821 start is 1908 Cape   #
+#   Coast - 1907 Accra is Danish until 1861 - and 1908  #
+#   borders ASH's capital 1910 Kumasi, so neighbour     #
+#   = ASH holds from the start.                         #
+#                                                       #
+#########################################################
+
+# MacCarthy's Expedition
+country_event = {
+	id = 1001600
+	title = "EVTNAME1001600"
+	desc = "EVTDESC1001600"
+	picture = "mfecane"
+
+	trigger = {
+		tag = ENG
+		exists = yes
+		owns = 1908
+		neighbour = ASH
+		ASH = {
+			exists = yes
+			owns = 1910
+		}
+		year = 1823
+		NOT = { year = 1827 }
+		NOT = {
+			war_with = ASH
+			truce_with = ASH
+			alliance_with = ASH
+			vassal_of = ASH
+			has_country_flag = anglo_ashanti_war_declared
+			has_country_flag = anglo_ashanti_coast_held
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 6
+		modifier = {
+			factor = 0.75
+			NOT = { relation = { who = ASH value = 0 } }
+		}
+	}
+
+	option = {
+		name = "EVTOPTA1001600" # March on Kumasi
+		set_country_flag = anglo_ashanti_war_declared
+		prestige = 1
+		relation = { who = ASH value = -200 }
+		casus_belli = {
+			target = ASH
+			type = cut_down_to_size
+			months = 12
+		}
+		war = {
+			target = ASH
+			attacker_goal = {
+				casus_belli = cut_down_to_size
+			}
+		}
+		country_event = { id = 1001601 days = 60 }
+		ai_chance = {
+			factor = 70
+		}
+	}
+
+	option = {
+		name = "EVTOPTB1001600" # Hold the coast and the forts
+		set_country_flag = anglo_ashanti_coast_held
+		prestige = -1
+		relation = { who = ASH value = 25 }
+		diplomatic_influence = { who = ASH value = 25 }
+		any_owned = {
+			limit = { province_id = 1908 }
+			any_pop = { militancy = -1 }
+		}
+		ai_chance = {
+			factor = 30
+			modifier = {
+				factor = 2
+				war = yes
+			}
+		}
+	}
+}
+
+# Disaster at Nsamankow
+country_event = {
+	id = 1001601
+	title = "EVTNAME1001601"
+	desc = "EVTDESC1001601"
+	picture = "derrota"
+	news = yes
+	news_title = "EVTNAME1001601_NEWS_TITLE"
+	news_desc_long = "EVTDESC1001601_NEWS_LONG"
+	news_desc_medium = "EVTDESC1001601_NEWS_MEDIUM"
+	news_desc_short = "EVTDESC1001601_NEWS_SHORT"
+
+	is_triggered_only = yes
+
+	option = {
+		name = "EVTOPTA1001601" # Avenge the Governor
+		set_country_flag = nsamankow_disaster
+		prestige = -5
+		war_exhaustion = 3
+		any_owned = {
+			limit = { province_id = 1908 }
+			add_province_modifier = {
+				name = colonial_chaos
+				duration = 730
+			}
+			any_pop = {
+				militancy = 2
+				consciousness = 1
+			}
+		}
+		random_country = {
+			limit = {
+				tag = ASH
+				exists = yes
+			}
+			country_event = 1001603
+		}
+	}
+}
+
+# Peace on the Pra
+country_event = {
+	id = 1001602
+	title = "EVTNAME1001602"
+	desc = "EVTDESC1001602"
+	picture = "war_ended"
+
+	trigger = {
+		tag = ENG
+		exists = yes
+		has_country_flag = anglo_ashanti_war_declared
+		ASH = { exists = yes }
+		year = 1826
+		NOT = { year = 1832 }
+		NOT = { has_country_flag = anglo_ashanti_settled }
+	}
+
+	mean_time_to_happen = {
+		months = 8
+		modifier = {
+			factor = 0.5
+			year = 1829
+		}
+		modifier = {
+			factor = 0.75
+			has_country_flag = nsamankow_disaster
+		}
+	}
+
+	option = {
+		name = "EVTOPTA1001602" # Fix the boundary on the Pra
+		set_country_flag = anglo_ashanti_settled
+		clr_country_flag = nsamankow_disaster
+		prestige = 5
+		war_exhaustion = -3
+		end_war = ASH
+		relation = { who = ASH value = 100 }
+		diplomatic_influence = { who = ASH value = 50 }
+		any_owned = {
+			limit = { has_province_modifier = colonial_chaos }
+			remove_province_modifier = colonial_chaos
+			any_pop = { militancy = -2 }
+		}
+		ai_chance = {
+			factor = 75
+			modifier = {
+				factor = 1.5
+				has_country_flag = nsamankow_disaster
+			}
+			modifier = {
+				factor = 1.5
+				ASH = { has_country_flag = ashanti_nsamankow_victory }
+			}
+		}
+	}
+
+	option = {
+		name = "EVTOPTB1001602" # Press on to Kumasi
+		set_country_flag = anglo_ashanti_settled
+		prestige = 2
+		badboy = 1
+		relation = { who = ASH value = -50 }
+		any_owned = {
+			limit = { province_id = 1908 }
+			any_pop = { consciousness = 1 }
+		}
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 0.5
+				has_country_flag = nsamankow_disaster
+			}
+		}
+	}
+}
+
+# Nsamankow, the Ashanti Side
+country_event = {
+	id = 1001603
+	title = "EVTNAME1001603"
+	desc = "EVTDESC1001603"
+	picture = "timbuctu"
+
+	is_triggered_only = yes
+
+	option = {
+		name = "EVTOPTA1001603" # The Golden Stool stands
+		set_country_flag = ashanti_nsamankow_victory
+		prestige = 10
+		war_exhaustion = -3
+		any_pop = {
+			limit = { is_primary_culture = yes }
+			militancy = -1
+			consciousness = 1
+		}
+	}
+}

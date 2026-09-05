@@ -404,3 +404,21 @@ EVTNAME1001403;The Peace of Adrianople;;;;;;;;;;;;;x
 EVTDESC1001403;The infidel armies stood at Adrianople and the capital was defenceless, yet the Tsar has offered terms rather than the sword. We must yield the mouth of the Danube and the Georgian fortresses, open the Straits to Russian commerce, confirm the privileges of the principalities and of the Serbs, and abandon the Greek provinces. The Empire survives, humbled, and the reforms of our late army can no longer be delayed.;;;;;;;;;;;;;x
 EVTOPTA1001403;The Empire endures. We shall rebuild.;;;;;;;;;;;;;x
 EVTDESC1001400;The Porte has flouted the Convention of Akkerman, closed the Straits to our merchantmen and answered the protocols of the powers with silence. Since the allied fleets destroyed the Ottoman navy at Navarino the Sultan has proclaimed a holy war against us and disavowed every article we signed. Wittgenstein's armies stand ready on the Prut, and the principalities of Moldavia and Wallachia would welcome them as liberators. The Greeks look to Saint Petersburg, and so does the whole of the Orthodox world.;;;;;;;;;;;;;x
+EVTNAME1001600;MacCarthy's Expedition;;;;;;;;;;;;;x
+EVTDESC1001600;Since the Crown took the African Company's forts into its own hands, Ashanti claims over the Fante states have pressed hard upon the Gold Coast. Sir Charles MacCarthy, Governor at Cape Coast, is convinced that a single show of force will settle the question, and would march inland with the militia and what allies the coast will furnish. The Asantehene's army is reckoned in tens of thousands.;;;;;;;;;;;;;x
+EVTOPTA1001600;March on Kumasi;;;;;;;;;;;;;x
+EVTOPTB1001600;Hold the coast and the forts;;;;;;;;;;;;;x
+EVTNAME1001601;Disaster at Nsamankow;;;;;;;;;;;;;x
+EVTOPTA1001601;Avenge the Governor;;;;;;;;;;;;;x
+EVTNAME1001602;Peace on the Pra;;;;;;;;;;;;;x
+EVTDESC1001602;Since the field of Dodowa the Asantehene's army has kept behind the Pra, and neither side gains by another season in the bush. The traders want a boundary they can name, the Fante states want a guarantee, and Whitehall wants the Gold Coast off the estimates. A treaty fixing the Pra as the frontier, with the coastal states left outside Ashanti authority, is within reach.;;;;;;;;;;;;;x
+EVTOPTA1001602;Fix the boundary on the Pra;;;;;;;;;;;;;x
+EVTOPTB1001602;Press on to Kumasi;;;;;;;;;;;;;x
+EVTNAME1001603;The Golden Stool Stands;;;;;;;;;;;;;x
+EVTDESC1001603;The white governor's column has been swallowed whole in the forest, and his head is borne to Kumasi. The Asantehene's authority over the interior is confirmed before every tributary chief, and the coastal states must reckon again with whom they deal.;;;;;;;;;;;;;x
+EVTOPTA1001603;The Golden Stool stands;;;;;;;;;;;;;x
+EVTNAME1001601_NEWS_TITLE;Governor MacCarthy Killed on the Gold Coast;;;;;;;;;;;;;x
+EVTDESC1001601_NEWS_LONG;News has reached the coast of the destruction of Sir Charles MacCarthy's column at Nsamankow. The Governor is dead, the militia scattered, and the Ashanti army stands between the forts and the interior. The merchants of Cape Coast petition for regular troops.;;;;;;;;;;;;;x
+EVTDESC1001601_NEWS_MEDIUM;Sir Charles MacCarthy's column has been destroyed at Nsamankow and the Governor is dead. The Gold Coast forts stand exposed.;;;;;;;;;;;;;x
+EVTDESC1001601_NEWS_SHORT;MacCarthy killed at Nsamankow.;;;;;;;;;;;;;x
+EVTDESC1001601;At Nsamankow on the Bonsa the Governor's small column was surrounded, its ammunition reserve found to hold the wrong stores, and destroyed. Sir Charles MacCarthy is dead, and his skull is carried to Kumasi as a war trophy. The coast is in a panic and the merchants of Cape Coast are writing to London for regular troops.;;;;;;;;;;;;;x
