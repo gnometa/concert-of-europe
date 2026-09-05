@@ -196,7 +196,15 @@ country_event = {
 		prestige = 2
 		badboy = 4
 		any_pop = {
-			limit = { has_pop_religion = orthodox }
+			# Pops carry no real religion in this mod (the religion field holds the
+			# culture name), so the Orthodox subjects are matched by culture.
+			limit = {
+				OR = {
+					culture = russian
+					culture = byelorussian
+					culture = ukrainian
+				}
+			}
 			militancy = -1
 		}
 		any_country = {
