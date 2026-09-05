@@ -3535,3 +3535,19 @@ bavarian_regency = {
 	prestige = -0.01
 	icon = 6
 }
+
+
+### The Zollverein (GVG) ###
+zollverein_member = {
+	tax_efficiency = 0.05
+	factory_input = -0.05
+	RGO_throughput = 0.05
+	icon = 7
+}
+
+zollverein_leader = {
+	prestige = 0.05
+	influence_modifier = 0.15
+	tax_efficiency = 0.05
+	icon = 7
+}

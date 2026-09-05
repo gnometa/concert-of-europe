@@ -1,0 +1,169 @@
+#########################################################
+#                                                       #
+#      The Zollverein, 1834 (GVG)                       #
+#      decisions: found_the_zollverein,                 #
+#                 form_the_southern_customs_union       #
+#      events:    1000900-1000904 (ZollvereinGVG.txt)   #
+#                                                       #
+#  See docs/design/zollverein.md. The German states are #
+#  identified by the north_german_rel / south_german_rel#
+#  flags set in history/countries/*.                    #
+#                                                       #
+#########################################################
+
+political_decisions = {
+
+	found_the_zollverein = {
+		picture = SCA_customs_union
+		potential = {
+			civilized = yes
+			has_country_flag = north_german_rel
+			year = 1833
+			NOT = {
+				tag = AUS
+				tag = KUK
+				tag = DNB
+				tag = SWI
+				tag = LUX
+				has_global_flag = zollverein_founded
+			}
+			OR = {
+				tag = PRU
+				AND = {
+					is_greater_power = yes
+					any_owned_province = { is_core = PRU }
+				}
+			}
+		}
+
+		allow = {
+			war = no
+			prestige = 50
+			state_n_government = 1
+			any_country = {
+				is_greater_power = no
+				is_vassal = no
+				OR = {
+					has_country_flag = north_german_rel
+					has_country_flag = south_german_rel
+				}
+				NOT = {
+					tag = THIS
+					tag = AUS
+					tag = KUK
+					tag = DNB
+					tag = SWI
+					tag = LUX
+					tag = NET
+					in_sphere = AUS
+				}
+			}
+		}
+
+		effect = {
+			prestige = 10
+			set_global_flag = zollverein_founded
+			add_country_modifier = {
+				name = zollverein_leader
+				duration = -1
+			}
+			any_country = {
+				limit = {
+					exists = yes
+					civilized = yes
+					is_vassal = no
+					is_greater_power = no
+					OR = {
+						has_country_flag = north_german_rel
+						has_country_flag = south_german_rel
+					}
+					NOT = {
+						tag = THIS
+						tag = AUS
+						tag = KUK
+						tag = DNB
+						tag = SWI
+						tag = LUX
+						tag = NET
+						in_sphere = AUS
+					}
+				}
+				set_country_flag = zollverein_offered
+				country_event = 1000900
+			}
+			AUS = {
+				relation = { who = THIS value = -25 }
+				country_event = { id = 1000903 days = 3 }
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				war = yes
+			}
+		}
+	}
+
+	form_the_southern_customs_union = {
+		picture = conference1
+		potential = {
+			civilized = yes
+			has_global_flag = zollverein_founded
+			OR = {
+				tag = AUS
+				tag = KUK
+			}
+			NOT = { has_global_flag = southern_customs_union }
+		}
+
+		allow = {
+			war = no
+			prestige = 50
+			state_n_government = 1
+			any_country = {
+				has_country_flag = zollverein_refused
+				has_country_flag = south_german_rel
+				NOT = { has_country_flag = southern_union_member }
+			}
+		}
+
+		effect = {
+			prestige = 5
+			set_global_flag = southern_customs_union
+			add_country_modifier = {
+				name = customs_union
+				duration = -1
+			}
+			any_country = {
+				limit = {
+					exists = yes
+					is_vassal = no
+					is_greater_power = no
+					has_country_flag = south_german_rel
+					has_country_flag = zollverein_refused
+					NOT = {
+						tag = THIS
+						has_country_flag = zollverein_member
+						has_country_flag = southern_union_member
+					}
+				}
+				set_country_flag = southern_union_member
+				add_country_modifier = {
+					name = customs_union
+					duration = -1
+				}
+				relation = { who = THIS value = 25 }
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				war = yes
+			}
+		}
+	}
+}

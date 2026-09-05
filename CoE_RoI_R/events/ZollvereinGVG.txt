@@ -1,0 +1,223 @@
+#########################################################
+#                                                       #
+#      The Zollverein, 1834 (GVG)                       #
+#      ids 1000900-1000904                              #
+#                                                       #
+#  Fired from decisions/ZollvereinGVG.txt. In 1000900   #
+#  FROM is the founder (Prussia); in 1000901/1000902    #
+#  FROM is the German minor that answered.              #
+#                                                       #
+#########################################################
+
+# Accession to the Zollverein (the German minor)
+country_event = {
+	id = 1000900
+	title = "EVTNAME1000900"
+	desc = "EVTDESC1000900"
+	picture = "national_congress"
+	is_triggered_only = yes
+	major = yes
+	news = yes
+	news_title = "EVTNAME1000900_NEWS_TITLE"
+	news_desc_long = "EVTDESC1000900_NEWS_LONG"
+	news_desc_medium = "EVTDESC1000900_NEWS_MEDIUM"
+	news_desc_short = "EVTDESC1000900_NEWS_SHORT"
+
+	option = {
+		name = "EVTOPTA1000900"
+		set_country_flag = zollverein_member
+		add_country_modifier = {
+			name = zollverein_member
+			duration = -1
+		}
+		prestige = 2
+		relation = { who = FROM value = 50 }
+		relation = { who = AUS value = -25 }
+		FROM = {
+			diplomatic_influence = { who = THIS value = 100 }
+			country_event = { id = 1000901 days = 2 }
+		}
+		any_pop = {
+			limit = { is_primary_culture = yes }
+			consciousness = 1
+		}
+		ai_chance = {
+			factor = 55
+			modifier = {
+				factor = 3
+				in_sphere = FROM
+			}
+			modifier = {
+				factor = 2
+				relation = { who = FROM value = 100 }
+			}
+			modifier = {
+				factor = 1.5
+				NOT = { relation = { who = AUS value = 50 } }
+			}
+			modifier = {
+				factor = 0.25
+				in_sphere = AUS
+			}
+			modifier = {
+				factor = 0.5
+				has_country_flag = south_german_rel
+			}
+		}
+	}
+
+	option = {
+		name = "EVTOPTB1000900"
+		set_country_flag = zollverein_refused
+		prestige = 5
+		relation = { who = FROM value = -25 }
+		relation = { who = AUS value = 25 }
+		AUS = { diplomatic_influence = { who = THIS value = 50 } }
+		FROM = { country_event = { id = 1000902 days = 2 } }
+		ai_chance = {
+			factor = 45
+			modifier = {
+				factor = 3
+				in_sphere = AUS
+			}
+			modifier = {
+				factor = 0.2
+				in_sphere = FROM
+			}
+			modifier = {
+				factor = 0.5
+				relation = { who = FROM value = 100 }
+			}
+		}
+	}
+}
+
+# A German state accedes (the founder)
+country_event = {
+	id = 1000901
+	title = "EVTNAME1000901"
+	desc = "EVTDESC1000901"
+	picture = "factory"
+	is_triggered_only = yes
+
+	option = {
+		name = "EVTOPTA1000901"
+		prestige = 1
+		relation = { who = FROM value = 25 }
+	}
+}
+
+# A German state stays out (the founder)
+country_event = {
+	id = 1000902
+	title = "EVTNAME1000902"
+	desc = "EVTDESC1000902"
+	picture = "treaty"
+	is_triggered_only = yes
+
+	option = {
+		name = "EVTOPTA1000902"
+		relation = { who = FROM value = -10 }
+		ai_chance = { factor = 60 }
+	}
+
+	option = {
+		name = "EVTOPTB1000902"
+		prestige = -1
+		relation = { who = FROM value = 25 }
+		diplomatic_influence = { who = FROM value = 50 }
+		ai_chance = { factor = 40 }
+	}
+}
+
+# Vienna hears of the customs union (Austria)
+country_event = {
+	id = 1000903
+	title = "EVTNAME1000903"
+	desc = "EVTDESC1000903"
+	picture = "greatpowers"
+	is_triggered_only = yes
+
+	option = {
+		name = "EVTOPTA1000903"
+		prestige = -5
+		any_country = {
+			limit = {
+				has_country_flag = south_german_rel
+				has_country_flag = zollverein_offered
+				is_greater_power = no
+				NOT = { has_country_flag = zollverein_member }
+			}
+			relation = { who = THIS value = 25 }
+		}
+		ai_chance = { factor = 70 }
+	}
+
+	option = {
+		name = "EVTOPTB1000903"
+		prestige = -2
+		badboy = 1
+		relation = { who = FROM value = -50 }
+		ai_chance = { factor = 30 }
+	}
+}
+
+# The German Customs Union is complete (the founder)
+country_event = {
+	id = 1000904
+	title = "EVTNAME1000904"
+	desc = "EVTDESC1000904"
+	picture = "national_congress"
+	major = yes
+	news = yes
+	news_title = "EVTNAME1000904_NEWS_TITLE"
+	news_desc_long = "EVTDESC1000904_NEWS_LONG"
+	news_desc_medium = "EVTDESC1000904_NEWS_MEDIUM"
+	news_desc_short = "EVTDESC1000904_NEWS_SHORT"
+
+	fire_only_once = yes
+
+	trigger = {
+		has_global_flag = zollverein_founded
+		has_country_modifier = zollverein_leader
+		NOT = { has_global_flag = zollverein_complete }
+		any_country = {
+			has_country_flag = zollverein_offered
+			has_country_flag = zollverein_member
+		}
+		NOT = {
+			any_country = {
+				exists = yes
+				has_country_flag = zollverein_offered
+				NOT = {
+					has_country_flag = zollverein_member
+					has_country_flag = zollverein_refused
+					has_country_flag = southern_union_member
+				}
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 2
+	}
+
+	option = {
+		name = "EVTOPTA1000904"
+		set_global_flag = zollverein_complete
+		prestige = 10
+		any_country = {
+			limit = { has_country_flag = zollverein_member }
+			relation = { who = THIS value = 10 }
+			any_pop = {
+				limit = { is_primary_culture = yes }
+				consciousness = 1
+			}
+		}
+		any_pop = {
+			limit = { is_primary_culture = yes }
+			consciousness = 1
+			militancy = -1
+		}
+	}
+}

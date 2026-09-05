@@ -221,3 +221,36 @@ EVTNAME1000602;The Days of May;;;;;;;;;;;;;x
 EVTDESC1000602;The Lords have wrecked the Bill and the ministry has resigned. The country has answered in a week - placards for 'Go for Gold, to Stop the Duke', a run on the Bank that no chancellor can survive, the Birmingham union promising a hundred thousand men on the road to London, and half the magistrates in the north declining to read the Riot Act to their own neighbours. His Majesty may create as many new peers as are needed to carry the Bill, or the government may hold firm and find out what comes after.;;;;;;;;;;;;;x
 EVTOPTA1000602;His Majesty will create the peers;;;;;;;;;;;;;x
 EVTOPTB1000602;We do not legislate under duress;;;;;;;;;;;;;x
+
+found_the_zollverein_title;Found the Zollverein;;;;;;;;;;;;;x
+found_the_zollverein_desc;Our tariff law of 1818 swept away the internal customs barriers of the Prussian lands, and the middle states have been drifting into our commercial orbit ever since. Let us now invite every German state outside Vienna's shadow into a single customs union: one tariff, one market, from the Rhine to the Memel. Austria cannot join without dismantling her own protective system, and what begins as a matter of tolls may one day be a matter of crowns.;;;;;;;;;;;;;x
+form_the_southern_customs_union_title;Form the Southern Customs Union;;;;;;;;;;;;;x
+form_the_southern_customs_union_desc;Berlin's customs union threatens to make the German question an economic one, on ground of Prussia's choosing. Those states that have kept faith with Vienna must not be left to trade at a disadvantage. Let us bind them to our own tariff system instead, and remind Germany that the presidency of the Confederation still sits in the Hofburg.;;;;;;;;;;;;;x
+zollverein_member;Zollverein Member;;;;;;;;;;;;;x
+zollverein_leader;Leader of the Zollverein;;;;;;;;;;;;;x
+EVTNAME1000900;Accession to the Zollverein;;;;;;;;;;;;;x
+EVTDESC1000900;An embassy has arrived with a draft treaty of accession to the German customs union. Our tolls would be abolished at the frontier, our merchants would trade freely as far as the Baltic, and our share of the common revenue would be paid to us in coin each year. The price is that our tariff policy would no longer be our own, and that Vienna would read our signature as a defection.;;;;;;;;;;;;;x
+EVTOPTA1000900;Sign the treaty of accession;;;;;;;;;;;;;x
+EVTOPTB1000900;Our customs are our sovereignty;;;;;;;;;;;;;x
+EVTNAME1000900_NEWS_TITLE;A German Customs Union Is Proposed;;;;;;;;;;;;;x
+EVTDESC1000900_NEWS_LONG;Delegates from the German states have been summoned to consider a treaty abolishing internal tariffs across much of the Confederation. The union would create a single market of some twenty-five million people, with a common external tariff and revenues divided by population. Observers in Vienna have received the news coldly, noting that the Austrian protective system makes accession impossible for the imperial government.;;;;;;;;;;;;;x
+EVTDESC1000900_NEWS_MEDIUM;A treaty abolishing internal German tariffs has been laid before the middle states. Vienna cannot accede without abandoning its own protective system.;;;;;;;;;;;;;x
+EVTDESC1000900_NEWS_SHORT;German states weigh a common customs union.;;;;;;;;;;;;;x
+EVTNAME1000901;A German State Accedes;;;;;;;;;;;;;x
+EVTDESC1000901;The treaty of accession has been signed and the customs posts on that frontier are to be taken down within the year. Every state that joins makes the next accession easier, for the holdouts find themselves ringed by a market they cannot enter on equal terms.;;;;;;;;;;;;;x
+EVTOPTA1000901;One tariff, one Germany;;;;;;;;;;;;;x
+EVTNAME1000902;A German State Stays Out;;;;;;;;;;;;;x
+EVTDESC1000902;Our embassy has returned empty-handed. The court in question prefers its own tolls, its own bridge dues and the goodwill of Vienna to a share of our common revenue. It may yet be brought round by patience, or by the simple arithmetic of being left outside.;;;;;;;;;;;;;x
+EVTOPTA1000902;Let them count the cost of exclusion;;;;;;;;;;;;;x
+EVTOPTB1000902;Offer better terms and keep talking;;;;;;;;;;;;;x
+EVTNAME1000903;Berlin's Customs Union;;;;;;;;;;;;;x
+EVTDESC1000903;Reports from our envoys in the smaller courts are unanimous: Prussia is assembling a commercial union across Germany that we cannot join without dismantling the protective tariffs on which our own industry depends. Prince Metternich observes that the Confederation was built to contain exactly this, and that a union of tolls will not stop at tolls.;;;;;;;;;;;;;x
+EVTOPTA1000903;Hold the loyal courts by other means;;;;;;;;;;;;;x
+EVTOPTB1000903;Denounce this breach of the Confederation;;;;;;;;;;;;;x
+EVTNAME1000904;The German Customs Union Is Complete;;;;;;;;;;;;;x
+EVTDESC1000904;On the first of January the barriers came down. Thirty-eight tariff frontiers, with their gaugers and their toll-houses and their thirty-eight schedules of duties, have been reduced to one. Goods now travel from the Rhine to the eastern provinces without inspection, weights and measures are being brought into line, and the states that stayed outside are already asking on what terms they might be admitted. We did not set out to unify Germany. We may have begun to.;;;;;;;;;;;;;x
+EVTOPTA1000904;The barriers are down;;;;;;;;;;;;;x
+EVTNAME1000904_NEWS_TITLE;The Customs Barriers Come Down;;;;;;;;;;;;;x
+EVTDESC1000904_NEWS_LONG;At midnight the chains were lifted at the internal frontiers of the German customs union and long files of waggons, which had been drawn up on the roads since the previous evening, passed through without inspection. Merchants describe the change as the greatest single alteration to German trade in living memory. Political observers are less sanguine: a union of tariffs, they note, has a way of becoming a union of something else.;;;;;;;;;;;;;x
+EVTDESC1000904_NEWS_MEDIUM;The internal tariff frontiers of the German customs union were lifted at midnight, creating a single market across most of the Confederation.;;;;;;;;;;;;;x
+EVTDESC1000904_NEWS_SHORT;German internal tariffs abolished at midnight.;;;;;;;;;;;;;x
