@@ -71,8 +71,8 @@ D49;$REGION$;;Das Hohe Königreich von $REGION$;;;;;;;;x;;;
 D49_ADJ;$REGION$;;hochköniglich;;;;;;;;x;;;
 D50;$REGION$;;Das Kleinere Fürstentum von $REGION$;;;;;;;;x;;;
 D50_ADJ;$REGION$;;fürstlich;;;;;;;;x;;;
-ABU;Trucial States;;;;;;;;;;;;x
-ABU_ADJ;Trucial;;;;;;;;;;;;x
+ABU;Abu Dhabi;;;;;;;;;;;;x
+ABU_ADJ;Abu Dhabian;;;;;;;;;;;;x
 ACR;Acre;;;;;;;;;;;;;x
 ACR_ADJ;Acrean;;;;;;;;;;;;;x
 ACR_liberal;Partido Liberal;Partido Liberal;Partido Liberal;;;;;;;;;;;;x;;;;;;;;;;;;;;
@@ -371,8 +371,8 @@ CLM_prussian_constitutionalism;New Granada;;;;;;;;;;;;;x
 CLM_hms_government;New Granada;;;;;;;;;;;;;x
 CMR;Cameroon;;;;;;;;;;;;x
 CMR_ADJ;Cameroonian;;;;;;;;;;;;x
-CNG;Zaire;;;;;;;;;;;;x
-CNG_ADJ;Zairean;;;;;;;;;;;;x
+CNG;Congo;;;;;;;;;;;;x
+CNG_ADJ;Congolese;;;;;;;;;;;;x
 CNG_absolute_monarchy;Zaire;;;;;;;;;;;;x
 CNG_hms_government;Zaire;;;;;;;;;;;;x
 CPL;Congress Poland;Royaume du Congres;Kongresspolen;;Zarato de Polonia;;;;;;;;;;x;;;;;;;;;;;;;;
