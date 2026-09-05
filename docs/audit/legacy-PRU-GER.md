@@ -6,15 +6,19 @@ finding. Items marked **FIXED** were corrected in place in the same commit.
 
 ## PRUFlavor.txt (ids 34600-34609)
 
-- `PRUFlavor.txt:94,98` 34601 — `has_pop_religion = north_german` /
-  `south_german`: those are *cultures* (`common/cultures.txt:36,53`), never
-  religions, so the `limit` matched nothing and the option was a silent no-op.
-  Fix: `has_pop_culture`. **[high] FIXED**
-- `PRUFlavor.txt:454,458` 34608 — same religion/culture confusion in the child
-  labour option. Fix: `has_pop_culture`. **[high] FIXED**
-  (The identical pattern exists in `1german_revolution_1848.txt:315`,
+- `PRUFlavor.txt:94,98` 34601 — reported as `has_pop_religion = north_german` /
+  `south_german` being a religion/culture confusion. **This finding was wrong and the
+  "fix" has been reverted.** In this mod the German sub-culture lives in the pop
+  *religion* field (`history/pops/1821.9.1/*.txt`: 604 `religion = north_german`,
+  534 `religion = south_german`, zero live `culture = north_german/south_german`), and
+  `common/religion.txt` appends the culture list so the names resolve. The original
+  `has_pop_religion` was correct. **[not a bug] REVERTED 2026-09-06**
+- `PRUFlavor.txt:454,458` 34608 — same story in the child labour option; the
+  `has_pop_culture` edit matched nothing. **[not a bug] REVERTED 2026-09-06**
+  (~~The identical pattern exists in `1german_revolution_1848.txt:315`,
   `ScandinavianEvents.txt:836`, `SWHFlavor.txt:118,216`, `VIP Events.txt:300,319`
-  — out of scope here, worth a follow-up sweep.)
+  — out of scope here, worth a follow-up sweep.~~ Struck: those files are correct
+  as written; do **not** sweep them.)
 - `PRUFlavor.txt:349` 34607 — mean_time_to_happen modifiers were keyed to
   `year = 1850` / `1851` while the trigger window is 1856-1859, so both factors
   were permanently on and the event effectively had mtth 3.6 months instead of

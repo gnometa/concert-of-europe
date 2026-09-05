@@ -24,12 +24,16 @@ proposals (design changes) left for the maintainers.
 - **984 (37224) — [medium]** — Ballets Russes event's only option is named
   `EVTOPTA37221` (Sarah Bernhardt). **Fix:** own key `EVTOPTA37224`, added to
   `localisation/newCE.csv`.
-- **1067 (37226) — [high]** — Corsican Rebellion option applies the militancy relief with
-  `limit = { has_pop_religion = north_italian }`. `north_italian` is a *culture*
-  (`common/cultures.txt`), not a religion; the limit matches nothing, so the -8 militancy
-  the option promises is never applied to anybody and the province secedes with its
-  rebellion intact. **Fix:** `has_pop_culture = north_italian` (the sister events 37227/
-  37228 already use `has_pop_culture = greek` / no filter).
+- **1067 (37226) — [not a bug, REVERTED 2026-09-06]** — Corsican Rebellion option applies
+  the militancy relief with `limit = { has_pop_religion = north_italian }`. This was
+  reported as a religion/culture confusion; **the finding was wrong and the "fix" has been
+  reverted.** Corsica (province 473) has `culture = italian` / `religion = north_italian`
+  — the Italian sub-culture is stored in the pop *religion* field mod-wide (206
+  `religion = north_italian` lines in `history/pops/1821.9.1/`, zero live
+  `culture = north_italian`), and `common/religion.txt` appends the culture list so the
+  name resolves. `has_pop_religion = north_italian` was already correct;
+  `has_pop_culture` matched nothing. (37227's `has_pop_culture = greek` is fine: `greek`
+  is used as both a culture and a religion.)
 - **1614 (37244) — [high]** — Option B of the July Revolution ("Kings do not bow to
   shopkeepers", i.e. Charles X *wins* and the revolution is crushed) set
   `set_country_flag = july_revolution`, the same flag option A sets. That flag is read

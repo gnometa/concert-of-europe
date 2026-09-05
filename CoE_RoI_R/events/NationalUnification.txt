@@ -617,14 +617,14 @@ country_event = {
 				tag = NGF
 				any_owned_province = {
 					is_core = GER
-					culture = south_german
+					religion = south_german
 				}
 			}
 			AND = {
 				tag = SGF
 				any_owned_province = {
 					is_core = GER
-					culture = north_german
+					religion = north_german
 				}
 			}
 		}
@@ -964,7 +964,7 @@ country_event = {
 					any_core = {
 						NOT = { province_id = 370 }
 						NOT = { province_id = 371 }
-						culture = north_german
+						religion = north_german
 						owner = { NOT = { is_culture_group = germanic } }
 					}
 				}
@@ -980,7 +980,7 @@ country_event = {
 				any_core = {
 					NOT = { province_id = 370 }
 					NOT = { province_id = 371 }
-					culture = north_german
+					religion = north_german
 					owned_by = FRA
 				}
 			}

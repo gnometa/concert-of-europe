@@ -70,6 +70,7 @@ Pick a new id from a free range and record it in the registry. Events reference 
 - `province_event` needs the block form `province_event = { id = X days = N }`; the bare `province_event = X` does not work.
 - `random_neighbor_country` does not exist (use `any_neighbor_country`).
 - `efficiency` goods in `common/production_types.txt` are daily maintenance per level summed with `input_goods`, not a multiplier.
+- German/Italian sub-cultures (`north_german`, `south_german`, `north_italian`...) live in the pop RELIGION field; test them with `religion`/`has_pop_religion`/`pop_majority_religion`, never culture. (`common/religion.txt` appends the culture list; `history/pops/1821.9.1/*.txt` has 1138 `religion = north_german|south_german` and zero live `culture =` for them. Same for `anglo_canadian`, `australian`, `dixie`, `occitan`, `picard`. Conversely no pop has `religion = catholic/protestant/orthodox`.)
 - `sed -i` writes LF — never use it on `CoE_RoI_R/**`; script `.txt` must stay CRLF. Use Python with `newline=''`.
 
 **Map** (`map/`): `default.map` references the definition file by mod-relative path (`../mod/CoE_RoI_R/map/definition.csv`), so it must be updated if the mod folder is ever renamed; search with no extension filter, since `.map` is easy to miss. `definition.csv` maps province IDs to colors; `region.txt` groups provinces into states; `positions.txt`, `adjacencies.csv`, `terrain.txt`. Province history lives in `history/provinces/<region>/<id> - Name.txt`.

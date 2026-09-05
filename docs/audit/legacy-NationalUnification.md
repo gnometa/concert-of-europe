@@ -14,12 +14,15 @@ grants the **target** a CB on the scoped country (docs/wiki/list-of-effects.md:2
 
 - **620 / 11107 — `religion = south_german` where the twin branch uses `culture = north_german` — [high]**
   The NGF half of the "three hurrahs" trigger asked for an owned GER-core province whose
-  *religion* is `south_german`. `north_german`/`south_german` are cultures (they are pop
-  cultures in `history/pops/1821.9.1/German States.txt`); `common/religion.txt` only
-  matches because the whole culture list is appended to it by mistake (pre-existing, out of
-  scope, see Observations). This is the exact twin of the earlier `:969` fix, which sets
-  `culture = north_german` in 11110, and of 11107's own SGF branch at 624-629.
-  *Fixed:* `culture = south_german`. Both halves of 11107 are now symmetric and live.
+  *religion* is `south_german`. **This finding was wrong and the "fix" has been reverted.**
+  In this mod the German/Italian sub-culture is stored in the pop *religion* field:
+  `history/pops/1821.9.1/*.txt` has 604 `religion = north_german` and 534
+  `religion = south_german` lines and **zero** live `culture = north_german/south_german`
+  (the culture field says `german`, with the sub-culture only in a trailing `#comment`).
+  `common/religion.txt` appending the culture list is what makes this work, by design.
+  So `religion = south_german` was already correct, and `culture = south_german` matched
+  nothing. *Reverted 2026-09-06:* lines 620, 627, 967 and 983 are back to the
+  `religion = north_german/south_german` form.
 
 - **1032 / 11110 — `is_cultural_union = no` trapped inside a NOR — [high]**
   `NOT = { tag = THIS  has_country_flag = post_colonial_country  is_cultural_union = no }`
