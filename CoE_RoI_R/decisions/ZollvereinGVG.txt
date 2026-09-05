@@ -41,6 +41,8 @@ political_decisions = {
 			prestige = 50
 			state_n_government = 1
 			any_country = {
+				exists = yes
+				civilized = yes
 				is_greater_power = no
 				is_vassal = no
 				OR = {
@@ -63,6 +65,7 @@ political_decisions = {
 		effect = {
 			prestige = 10
 			set_global_flag = zollverein_founded
+			set_country_flag = zollverein_founder
 			add_country_modifier = {
 				name = zollverein_leader
 				duration = -1
@@ -93,7 +96,7 @@ political_decisions = {
 			}
 			AUS = {
 				relation = { who = THIS value = -25 }
-				country_event = { id = 1000903 days = 3 }
+				country_event = { id = 1000903 days = 10 }
 			}
 		}
 

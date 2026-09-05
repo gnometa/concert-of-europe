@@ -4,7 +4,7 @@ Fills the largest 1821-1836 hole (see `1821-1836-coverage.md`, item 1). Prussia'
 tariff law grew into the German Customs Union on 1 January 1834, binding the middle
 states to Berlin a generation before political unification. Austria stayed out.
 
-Files: `decisions/ZollvereinGVG.txt`, `events/ZollvereinGVG.txt` (ids 1000900-1000903),
+Files: `decisions/ZollvereinGVG.txt`, `events/ZollvereinGVG.txt` (ids 1000900-1000904),
 two modifiers in `common/event_modifiers.txt`, loc in `localisation/GVG_events.csv`.
 
 ## Who counts as an eligible German minor
@@ -22,10 +22,13 @@ excluded by tag. Countries already `in_sphere = AUS` are skipped by the offer on
 
 ## Decision `found_the_zollverein` (decisions/ZollvereinGVG.txt)
 
-- potential: `civilized`, `north_german_rel`, not AUS/KUK/DNB, `NOT = { has_global_flag = zollverein_founded }`,
+- potential: `civilized`, `north_german_rel`, not AUS/KUK/DNB, `NOT = { has_global_flag = zollverein_founded }`, `year = 1833`,
   and `tag = PRU` or (greater power owning a Prussian core - covers PRU being eaten/renamed).
-- allow: `year = 1833`, `war = no`, `prestige = 50`, `state_n_government = 1`.
+- allow: `war = no`, `prestige = 50`, `state_n_government = 1`, and at least one eligible minor (`year = 1833` sits in
+  the potential, so the decision is simply not offered before then).
 - effect: prestige +10, `zollverein_leader` (permanent), `set_global_flag = zollverein_founded`,
+  `set_country_flag = zollverein_founder` (a flag, not the modifier, because flags survive `change_tag`
+  when Prussia later becomes NGF/GER),
   then `any_country = { limit = { <eligible> NOT = { in_sphere = AUS } } set_country_flag = zollverein_offered
   country_event = 1000900 }`.
 - ai_will_do: factor 1, `modifier = { factor = 0 war = yes }`.
@@ -43,11 +46,13 @@ excluded by tag. Countries already `in_sphere = AUS` are skipped by the offer on
   `AUS = { diplomatic_influence = { who = THIS value = 50 } }`, small prestige.
   ai_chance weighted up by `in_sphere = AUS`.
 
-1000901/1000902 are the founder-side acceptance/refusal notes (`FROM` = the minor).
+1000901/1000902 are the founder-side acceptance/refusal notes (`FROM` = the minor). 1000903 is
+Vienna's reaction, fired at the founder's decision with a ten-day delay so that offers a human
+player has to answer are settled first.
 
-## Event 1000903 - "The Customs Union Complete" (founder)
+## Event 1000904 - "The Customs Union Complete" (founder)
 
-Not `is_triggered_only`; trigger = `has_country_modifier = zollverein_leader`,
+Not `is_triggered_only`; trigger = `has_country_flag = zollverein_founder`,
 `has_global_flag = zollverein_founded`, `NOT = { has_global_flag = zollverein_complete }`,
 at least one member exists, and no country still carries `zollverein_offered` without
 `zollverein_member`/`zollverein_refused`/`southern_union_member`. `zollverein_offered` is

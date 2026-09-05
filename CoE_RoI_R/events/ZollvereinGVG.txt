@@ -179,7 +179,7 @@ country_event = {
 
 	trigger = {
 		has_global_flag = zollverein_founded
-		has_country_modifier = zollverein_leader
+		has_country_flag = zollverein_founder
 		NOT = { has_global_flag = zollverein_complete }
 		any_country = {
 			has_country_flag = zollverein_offered
