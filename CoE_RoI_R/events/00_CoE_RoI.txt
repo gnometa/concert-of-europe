@@ -559,6 +559,12 @@ country_event = {
 
 	option = {
 		name = "OK"
+		# Idempotent: strip the flag from any previous host first, so a re-election can
+		# never leave two countries carrying it (which would run every global effect twice).
+		any_country = {
+			limit = { has_country_flag = economy_pulse_host }
+			clr_country_flag = economy_pulse_host
+		}
 		set_global_flag = economy_pulse_lock
 		set_country_flag = economy_pulse_host
 	}
@@ -603,21 +609,64 @@ country_event = {
 		any_country = { limit = { NOT = { any_owned_province = { has_province_modifier = settlement_colony } } } clr_country_flag = land_suitable_for_settlement }
 		any_country = { limit = { war_with = BHU } end_war = BHU }
 		#any_country = { add_tax_relative_income = 1.0 }
-		# Anti-hoarding drain.  Vic2 AI never spends down a large surplus, so by the
-		# late game several majors sit on nine-figure treasuries, which wrecks the
-		# world market (they outbid everyone for every good) and makes the great-power
-		# score meaningless.  This quarterly sink burns the excess back out of the game.
+		# Anti-hoarding drain -- DISABLED, see always = no below.
 		#
-		# The brackets are mutually EXCLUSIVE (each has a NOT on the next threshold up),
-		# so a country loses at most one bracket per quarter -- previously they stacked
-		# and a country holding 300M lost 250M in one go.  Each deduction is also <= the
-		# bracket's lower bound minus the 100M floor, so the drain can never push a
-		# treasury below 100M, and nothing is taken below 150M at all.
-		any_country = { limit = { money = 150000000  NOT = { money = 200000000 } } treasury = -50000000 }
-		any_country = { limit = { money = 200000000  NOT = { money = 300000000 } } treasury = -100000000 }
-		any_country = { limit = { money = 300000000  NOT = { money = 500000000 } } treasury = -200000000 }
-		any_country = { limit = { money = 500000000  NOT = { money = 1000000000 } } treasury = -400000000 }
-		any_country = { limit = { money = 1000000000 } treasury = -900000000 }
+		# Intent: the Vic2 AI never spends down a large surplus, so by the late game
+		# several majors sit on huge treasuries, outbid everyone on the world market and
+		# make the great-power score meaningless.  This quarterly sink burned the excess
+		# back out of the game.
+		#
+		# Why it is off: every money value in Paradox script is parsed as fixed point,
+		# int32 hundredths, so the largest number that survives the parser is 2^31/100 =
+		# 2147483 (docs/wiki/list-of-effects.md, "treasury").  The nine- and ten-figure
+		# constants below are far past that in BOTH halves of each line:
+		#   - the treasury effect wraps, so -50000000 can PAY the country instead of
+		#     draining it;
+		#   - the money trigger wraps the same way, so "money = 100000000" actually tests
+		#     something like "money >= 14100654" -- it never meant what it reads as.
+		# Nothing anywhere in vanilla, PDM or this mod uses a money value above 1000000,
+		# so there is no precedent to copy for a working large-treasury test.
+		#
+		# Rewriting the effect as repeated "treasury = -2000000" fixes only half of it;
+		# the brackets themselves cannot be expressed above 2147483, and redesigning them
+		# around a 2M threshold would drain most of the world rather than a few hoarders.
+		# Picking real thresholds needs the economy balance pass that also owns
+		# production_types.txt and goods.txt, so the sink is parked until then.
+		any_country = {
+			limit = {
+				always = no
+				money = 150000000  NOT = { money = 200000000 }
+			}
+			treasury = -50000000
+		}
+		any_country = {
+			limit = {
+				always = no
+				money = 200000000  NOT = { money = 300000000 }
+			}
+			treasury = -100000000
+		}
+		any_country = {
+			limit = {
+				always = no
+				money = 300000000  NOT = { money = 500000000 }
+			}
+			treasury = -200000000
+		}
+		any_country = {
+			limit = {
+				always = no
+				money = 500000000  NOT = { money = 1000000000 }
+			}
+			treasury = -400000000
+		}
+		any_country = {
+			limit = {
+				always = no
+				money = 1000000000
+			}
+			treasury = -900000000
+		}
 		BHU = { any_pop = { money = -100000 } }
 		#any_pop = { limit = { country = { NOT = { education_spending = 0.01 } } literacy = -0.01 } }
 		#any_country = { limit = { NOT = { education_spending = 0.01 } } any_pop = { literacy = -0.01 } }
@@ -684,128 +733,11 @@ country_event = {
 			#}				
 		}
 		
-		# Trade-goods switcher (Goods.txt ids 1107-1138).  Those 32 province events had
-		# no is_triggered_only, so each trigger -- a 22-term province_id OR plus an
-		# any_greater_power scan and an owner = { any_neighbor_country = { ... } } scan --
-		# was evaluated for every province every day: ~106,000 nested country iterations
-		# per day.  They are is_triggered_only now and dispatched from here, i.e. four
-		# times a year instead of 365.  Their triggers are unchanged and are still checked
-		# when the event is fired, so exactly the same provinces are eligible as before.
-		#
-		# The per-province mean_time_to_happen (60 months for 1107 and 1109-1117, 36 for
-		# 1108, 8 for 1118-1138) is replaced by random_owned: every country rolls three
-		# random not-recently-switched provinces per quarter, so conversions still trickle
-		# in over years instead of all landing on the same day.  Vic2 has no `random = N`
-		# trigger, and a random_list that is not a top-level effect returns the same branch
-		# for every scope it runs in, so random_owned is the only per-province randomness
-		# available here.
-		any_country = {
-			random_owned = {
-				limit = { NOT = { has_province_modifier = switched_production } }
-				province_event = 1107
-				province_event = 1108
-				province_event = 1109
-				province_event = 1110
-				province_event = 1111
-				province_event = 1112
-				province_event = 1113
-				province_event = 1114
-				province_event = 1115
-				province_event = 1116
-				province_event = 1117
-				province_event = 1118
-				province_event = 1119
-				province_event = 1120
-				province_event = 1121
-				province_event = 1122
-				province_event = 1123
-				province_event = 1124
-				province_event = 1125
-				province_event = 1126
-				province_event = 1127
-				province_event = 1128
-				province_event = 1129
-				province_event = 1130
-				province_event = 1131
-				province_event = 1132
-				province_event = 1133
-				province_event = 1134
-				province_event = 1135
-				province_event = 1136
-				province_event = 1137
-				province_event = 1138
-			}
-			random_owned = {
-				limit = { NOT = { has_province_modifier = switched_production } }
-				province_event = 1107
-				province_event = 1108
-				province_event = 1109
-				province_event = 1110
-				province_event = 1111
-				province_event = 1112
-				province_event = 1113
-				province_event = 1114
-				province_event = 1115
-				province_event = 1116
-				province_event = 1117
-				province_event = 1118
-				province_event = 1119
-				province_event = 1120
-				province_event = 1121
-				province_event = 1122
-				province_event = 1123
-				province_event = 1124
-				province_event = 1125
-				province_event = 1126
-				province_event = 1127
-				province_event = 1128
-				province_event = 1129
-				province_event = 1130
-				province_event = 1131
-				province_event = 1132
-				province_event = 1133
-				province_event = 1134
-				province_event = 1135
-				province_event = 1136
-				province_event = 1137
-				province_event = 1138
-			}
-			random_owned = {
-				limit = { NOT = { has_province_modifier = switched_production } }
-				province_event = 1107
-				province_event = 1108
-				province_event = 1109
-				province_event = 1110
-				province_event = 1111
-				province_event = 1112
-				province_event = 1113
-				province_event = 1114
-				province_event = 1115
-				province_event = 1116
-				province_event = 1117
-				province_event = 1118
-				province_event = 1119
-				province_event = 1120
-				province_event = 1121
-				province_event = 1122
-				province_event = 1123
-				province_event = 1124
-				province_event = 1125
-				province_event = 1126
-				province_event = 1127
-				province_event = 1128
-				province_event = 1129
-				province_event = 1130
-				province_event = 1131
-				province_event = 1132
-				province_event = 1133
-				province_event = 1134
-				province_event = 1135
-				province_event = 1136
-				province_event = 1137
-				province_event = 1138
-			}
-		}
+		# NOTE: events/Goods.txt 1107-1138 used to be dispatched from here on a
+		# random_owned roll.  That was reverted: three picks per country per quarter over
+		# every unswitched province is a 10-30x rate cut for large countries compared with
+		# the per-province mean_time_to_happen, and the error scales with country size.
+		# They are ordinary MTTH province events again.  See docs/audit/core-systems.md.
 
 		#State Population Display
         any_country = {

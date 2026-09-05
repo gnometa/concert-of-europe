@@ -220,8 +220,11 @@ sections above still refer to `cab739e0` and are now stale for the files listed 
   "run this global effect for exactly one country" host by the country flag
   `economy_pulse_host`. Two new events in `00_CoE_RoI.txt` maintain it: **2000100**
   (election, daily, O(1) trigger `NOT = { has_global_flag = economy_pulse_lock }`) and
-  **2000101** (watchdog, `is_triggered_only`, added to `on_yearly_pulse`, clears the lock
-  when no country carries the flag any more so 2000100 elects a replacement the next day).
+  **2000101** (watchdog, `is_triggered_only`, fired from both `on_quarterly_pulse` and
+  `on_yearly_pulse`, clears the lock when no country carries the flag any more so 2000100
+  elects a replacement the next day; a dead host is therefore replaced within a quarter).
+  The election is idempotent: it strips `economy_pulse_host` from any previous holder before
+  setting it, so two countries can never carry it at once.
   Consumers converted: `00_CoE_RoI.txt` 99997, `+education_RGO.txt` 999958 (Education Setup
   II), and all 27 dispatchers in `WorkPlaceEvents_triggers.txt` (12000-12780). The pattern is
   documented in a comment block above 2000100. Exactly one country is still evaluated per
@@ -229,12 +232,16 @@ sections above still refer to `cab739e0` and are now stale for the files listed 
   Bhutan no longer silently switches the economy rework off. `bhu_paradise` in 999958 is now
   applied inside an explicit `BHU = { ... }` scope, since the host is no longer Bhutan.
   Ids 2000100-2000199 are registered in `events/GVG Event IDs.txt`.
-- **Treasury sink (`00_CoE_RoI.txt` 99997)** — the three cumulative brackets became five
-  mutually exclusive ones (150M/200M/300M/500M/1000M, each with a `NOT` on the next
-  threshold). Each deduction is at most the bracket's lower bound minus a 100M floor, so a
-  country loses one bracket per quarter at most and the drain can never push a treasury
-  below 100M. Nothing is taken below 150M at all. The top bracket (-900M at 1bn+) makes the
-  ladder converge instead of leaving 10bn hoards permanently.
+- **Treasury sink (`00_CoE_RoI.txt` 99997)** — **disabled** with `always = no`, not
+  repaired. The first pass made the brackets mutually exclusive and floored, but a review
+  caught that every constant in them is unusable: Paradox script parses money as fixed-point
+  int32 hundredths, so anything above 2^31/100 = 2,147,483 wraps
+  (`docs/wiki/list-of-effects.md`, `treasury`). That breaks both halves of each line — the
+  `treasury = -50000000` effect can *pay* the country, and `money = 100000000` in the trigger
+  really tests something near `money >= 14100654`. No money value above 1,000,000 appears
+  anywhere in vanilla, PDM or this mod, so there is no working precedent for a
+  large-treasury test, and re-scaling the brackets to fit under 2,147,483 would drain most of
+  the world instead of a few hoarders. Moved to Deferred, behind the economy balance pass.
 - **Pop-type rewrite (`00_CoE_RoI.txt` 99997)** — the duplicated copy that ran in the host
   country's own scope is removed; the `any_country` copy is kept. It is **intentionally
   continuous**, not a one-off migration: `poptypes/*.txt` still lists `aristocrats`,
@@ -242,15 +249,16 @@ sections above still refer to `cab739e0` and are now stale for the files listed 
   labourers, clerks and farmers), so pops keep being created in those types every month and
   a start-of-game migration would be undone within a year. That reasoning is now a comment
   in the file, with the condition under which it could be flag-gated.
-- **`Goods.txt` 1107-1138** — all 32 province events are `is_triggered_only = yes` with
-  their `mean_time_to_happen` blocks removed, and are dispatched from the quarterly hub
-  99997. That takes them from ~106,000 nested-country trigger evaluations per day to the
-  same number four times a year. Their triggers are untouched and are still checked when the
-  event is fired, so eligibility is identical. The per-province MTTH is replaced by three
-  `random_owned` rolls per country per quarter (limited to provinces without
-  `switched_production`), which keeps conversions trickling in; Victoria 2 has no
-  `random = N` trigger and a non-top-level `random_list` returns the same branch for every
-  scope, so `random_owned` is the only per-province randomness available.
+- **`Goods.txt` 1107-1138** — **reverted.** The first pass made them
+  `is_triggered_only` and dispatched them from 99997 on three `random_owned` rolls per
+  country per quarter; a review measured that as a 10-30x cut in conversion rate versus the
+  per-province `mean_time_to_happen` of 8/36/60 months, with the error growing with country
+  size (three picks are shared across every unswitched province a country owns). They are
+  ordinary MTTH province events again and the dispatch block is gone from 99997. Their
+  triggers were re-ordered cheap-first (`year`, then the `province_id` OR, then the
+  `has_province_modifier` / `trade_goods` tests, then the `any_greater_power` and
+  `any_neighbor_country` scans) — but in practice the originals were already in that order,
+  so the reorder is cosmetic and row 1 of the performance table below is still open.
 - **`RGOChangeEvents.txt` vs `Goods.txt`** — the audit above overstated this. 20 of the 22
   live events already carried `has_province_modifier = switched_production` inside a
   multi-statement `NOT`, which *is* a valid guard: Victoria 2's `NOT` with several children
@@ -272,6 +280,15 @@ sections above still refer to `cab739e0` and are now stale for the files listed 
 - `common/production_types.txt` efficiency blocks and `common/goods.txt` prices — the whole
   factory-profitability section above. Explicitly held back for a balance pass; changing
   either half alone makes the mismatch worse.
+- The treasury sink in 99997. It is parsed but never evaluated (`always = no`). Reviving it
+  needs thresholds and deductions that all fit under 2,147,483, which means first deciding
+  what a "hoard" is on this mod's economy scale — the same balance pass as above. If the
+  brackets are ever re-enabled, each deduction has to be written as repeated
+  `treasury = -2000000` lines rather than one large value.
+- `events/Goods.txt` 1107-1138 remain 32 always-evaluated province events (row 1 of the
+  performance table). Any future hoist has to preserve the per-province MTTH rate, which
+  `random_owned` cannot do; a per-province dispatch that fires all eligible provinces on a
+  slower pulse, with the rate folded into the pulse period, is the shape to aim for.
 - `00_CoE_RoI.txt` state-population display (six `any_country = { any_owned = { ... } }`
   passes per quarter, up to 36 modifier removals per province). Still quarterly, still
   reshuffling every province. The redundant host-scope copy of the same six passes that sits
