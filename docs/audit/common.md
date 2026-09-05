@@ -16,7 +16,7 @@ Read-only audit produced by `scripts/audit_common.py` (re-runnable). Vanilla ref
 | governments | 30 | - |
 | issues / reform options | 45 / 175 | - |
 | technologies | 200 | - |
-| event modifiers | 456 | - |
+| event modifiers | 457 | - |
 | casus belli | 81 | 32 |
 | defines.lua keys | 639 | 640 |
 | distinct modifier keys used | 491 | 429 |
