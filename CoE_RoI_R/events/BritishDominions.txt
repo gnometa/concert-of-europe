@@ -58,7 +58,7 @@ country_event = {
 			militancy = -10
 		}
 		NEW = {
-			all_core = { remove_core = ENG }
+			all_core = { remove_core = THIS }
 		}
 		release_vassal = NEW
 		NEW = {
@@ -176,7 +176,7 @@ country_event = {
 			militancy = -10
 		}
 		NEW = {
-			all_core = { remove_core = ENG }
+			all_core = { remove_core = THIS }
 		}
 		release_vassal = NEW
 		NEW = {
@@ -222,6 +222,7 @@ country_event = {
 			vassal_of = ENG
 			vassal_of = ENL
 		}
+		NOT = { has_country_flag = NEW_will_prevail }
 	}
 
 	mean_time_to_happen = {
@@ -238,6 +239,7 @@ country_event = {
 
 	option = {
 		name = "We shall prevail."
+		set_country_flag = NEW_will_prevail
 		prestige = -20
 		any_pop = { consciousness = 4 }
 	}
@@ -303,7 +305,7 @@ country_event = {
 			militancy = -10
 		}
 		AST = {
-			all_core = { remove_core = ENG }
+			all_core = { remove_core = THIS }
 		}
 		release_vassal = AST
 		AST = { prestige = -80 }
@@ -420,7 +422,7 @@ country_event = {
 			militancy = -10
 		}
 		AST = {
-			all_core = { remove_core = ENG }
+			all_core = { remove_core = THIS }
 		}
 		release_vassal = AST
 		AST = { prestige = -80 }
@@ -452,6 +454,11 @@ country_event = {
 	major = yes
 
 	trigger = {
+		OR = {
+			tag = ENG
+			tag = ENL
+		}
+		exists = yes
 		any_owned_province = { is_core = NZL }
 		NZL = {
 			exists = no
@@ -710,7 +717,7 @@ country_event = {
 			militancy = -10
 		}
 		SAF = {
-			all_core = { remove_core = ENG }
+			all_core = { remove_core = THIS }
 		}
 		release_vassal = SAF
 		SAF = {
@@ -829,7 +836,7 @@ country_event = {
 			militancy = -10
 		}
 		SAF = {
-			all_core = { remove_core = ENG }
+			all_core = { remove_core = THIS }
 		}
 		release_vassal = SAF
 		SAF = {
@@ -1318,7 +1325,7 @@ country_event = {
 			militancy = -10
 		}
 		LSK = {
-			all_core = { remove_core = ENG }
+			all_core = { remove_core = THIS }
 		}
 		release_vassal = LSK
 		LSK = {
@@ -1340,9 +1347,6 @@ country_event = {
 	
 	option = {
 		name = "It shall remain a $COUNTRY_ADJ$ colony."
-		USA_1 = {
-			remove_core = THIS
-		}
 		any_owned = {
 			limit = { is_core = LSK }
 			any_pop = {
@@ -1361,7 +1365,7 @@ country_event = {
 			militancy = -10
 		}
 		LSK = {
-			all_core = { remove_core = ENG }
+			all_core = { remove_core = THIS }
 		}
 		release_vassal = LSK
 		LSK = {
@@ -1428,7 +1432,7 @@ country_event = {
 		}
 		modifier = {
 			factor = 0.5
-			year = 1910
+			year = 1930
 			NOT = { has_country_flag = RHO_independence_refused }
 		}
 	}
@@ -1443,7 +1447,7 @@ country_event = {
 			militancy = -10
 		}
 		RHO = {
-			all_core = { remove_core = ENG }
+			all_core = { remove_core = THIS }
 		}
 		release_vassal = RHO
 		RHO = { prestige = -80 }
@@ -1559,7 +1563,7 @@ country_event = {
 			militancy = -10
 		}
 		RHO = {
-			all_core = { remove_core = ENG }
+			all_core = { remove_core = THIS }
 		}
 		release_vassal = RHO
 		RHO = { prestige = -80 }

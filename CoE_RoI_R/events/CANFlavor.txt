@@ -109,7 +109,7 @@ country_event = {
 					is_core = CAN
 					is_core = QUE
 				}
-				NOT = { controlled_by = ENG }
+				NOT = { controlled_by = THIS }
 			}
 		}
 	}
@@ -167,7 +167,7 @@ country_event = {
 			}
 		}
 		USA = {
-			relation = { who = ENG value = -50 }
+			relation = { who = THIS value = -50 }
 		}
 		ai_chance = {
 			factor = 10
@@ -278,10 +278,10 @@ country_event = {
 			}
 		}
 		USA = {
-			relation = { who = ENG value = -50 }
-			leave_alliance = ENG
+			relation = { who = THIS value = -50 }
+			leave_alliance = THIS
 			casus_belli = {
-				target = ENG
+				target = THIS
 				type = free_allied_cores
 				months = 600
 			}
@@ -361,11 +361,12 @@ country_event = {
 			limit = { location = { is_core = CAN } }
 			militancy = -10
 		}
+		any_owned = {
+			limit = { is_core = CAN }
+			change_controller = THIS
+		}
 		CAN = {
-			all_core = {
-				change_controller = ENG
-				remove_core = ENG
-			}
+			all_core = { remove_core = THIS }
 		}
 		release_vassal = CAN
 		CAN = {
@@ -490,11 +491,12 @@ country_event = {
 			limit = { location = { is_core = CAN } }
 			militancy = -10
 		}
+		any_owned = {
+			limit = { is_core = CAN }
+			change_controller = THIS
+		}
 		CAN = {
-			all_core = {
-				change_controller = ENG
-				remove_core = ENG
-			}
+			all_core = { remove_core = THIS }
 		}
 		release_vassal = CAN
 		CAN = {
@@ -580,11 +582,12 @@ country_event = {
 			add_core = QUE
 			remove_core = RPL
 		}
+		any_owned = {
+			limit = { is_core = QUE }
+			change_controller = THIS
+		}
 		QUE = {
-			all_core = {
-				change_controller = ENG
-				remove_core = ENG
-			}
+			all_core = { remove_core = THIS }
 		}
 		release_vassal = QUE
 		QUE = {
@@ -713,11 +716,12 @@ country_event = {
 			add_core = QUE
 			remove_core = RPL
 		}
+		any_owned = {
+			limit = { is_core = QUE }
+			change_controller = THIS
+		}
 		QUE = {
-			all_core = {
-				change_controller = ENG
-				remove_core = ENG
-			}
+			all_core = { remove_core = THIS }
 		}
 		release_vassal = QUE
 		QUE = {
@@ -799,11 +803,12 @@ country_event = {
 			limit = { location = { is_core = MRU } }
 			militancy = -10
 		}
+		any_owned = {
+			limit = { is_core = MRU }
+			change_controller = THIS
+		}
 		MRU = {
-			all_core = {
-				change_controller = ENG
-				remove_core = ENG
-			}
+			all_core = { remove_core = THIS }
 		}
 		release_vassal = MRU
 		MRU = {
@@ -928,11 +933,12 @@ country_event = {
 			limit = { location = { is_core = MRU } }
 			militancy = -10
 		}
+		any_owned = {
+			limit = { is_core = MRU }
+			change_controller = THIS
+		}
 		MRU = {
-			all_core = {
-				change_controller = ENG
-				remove_core = ENG
-			}
+			all_core = { remove_core = THIS }
 		}
 		release_vassal = MRU
 		MRU = {
@@ -1016,11 +1022,12 @@ country_event = {
 			limit = { location = { is_core = COL } }
 			militancy = -10
 		}
+		any_owned = {
+			limit = { is_core = COL }
+			change_controller = THIS
+		}
 		COL = {
-			all_core = {
-				change_controller = ENG
-				remove_core = ENG
-			}
+			all_core = { remove_core = THIS }
 		}
 		release_vassal = COL
 		COL = {
@@ -1145,11 +1152,12 @@ country_event = {
 			limit = { location = { is_core = COL } }
 			militancy = -10
 		}
+		any_owned = {
+			limit = { is_core = COL }
+			change_controller = THIS
+		}
 		COL = {
-			all_core = {
-				change_controller = ENG
-				remove_core = ENG
-			}
+			all_core = { remove_core = THIS }
 		}
 		release_vassal = COL
 		COL = {
