@@ -34,6 +34,14 @@ political_decisions = {
 		}
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				factor = 5
+				has_country_flag = janissaries_abolished
+			}
+			modifier = {
+				factor = 0.5
+				has_country_flag = janissary_question_settled
+			}
 		}
 	}
 	

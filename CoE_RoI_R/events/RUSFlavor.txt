@@ -849,13 +849,15 @@ country_event = {
 	
 	trigger = {
 		tag = RUS
-		year = 1828
+		year = 1830
+		month = 10
+		NOT = { year = 1832 }
 		NOT = { has_country_flag = cpl_uprising }
 		CPL = { vassal_of = THIS }
 	}
 	
 	mean_time_to_happen = {
-		months = 48
+		months = 2
 		modifier = {
 			factor = 0.2
 			war = yes
@@ -1046,6 +1048,87 @@ country_event = {
 					is_core = POL
 				}
 			}
+		}
+	}
+}
+
+country_event = {
+	id = 95073
+	title = "EVTNAME95073" #The Organic Statute
+	desc = "EVTDESC95073"
+	picture = "rebellion"
+	
+	trigger = {
+		tag = RUS
+		has_country_flag = cpl_uprising
+		NOT = { has_country_flag = cpl_organic_statute }
+		NOT = { war_with = CPL }
+		year = 1831
+		NOT = { year = 1836 }
+		OR = {
+			NOT = { exists = CPL }
+			CPL = { vassal_of = THIS }
+		}
+	}
+	
+	fire_only_once = yes
+	
+	mean_time_to_happen = {
+		months = 3
+	}
+	
+	option = {
+		name = "EVTOPTA95073" #Abolish the Kingdom's separate institutions
+		set_country_flag = cpl_organic_statute
+		prestige = 10
+		any_owned = {
+			limit = {
+				OR = {
+					is_core = POL
+					is_core = CPL
+				}
+			}
+			add_province_modifier = {
+				name = nationalist_agitation
+				duration = 3650
+			}
+		}
+		add_country_modifier = {
+			name = nicholas_reaction
+			duration = 3650
+		}
+		any_pop = {
+			limit = {
+				culture = polish
+			}
+			consciousness = 2
+		}
+		ai_chance = {
+			factor = 80
+		}
+	}
+	
+	option = {
+		name = "EVTOPTB95073" #Restore the Kingdom's charter
+		set_country_flag = cpl_organic_statute
+		prestige = -10
+		any_pop = {
+			limit = {
+				culture = polish
+			}
+			militancy = -3
+		}
+		CPL = {
+			relation = {
+				who = RUS
+				value = 100
+			}
+			any_pop = {
+				militancy = -3
+			}
+		}
+		ai_chance = {
+			factor = 20
 		}
 	}
 }

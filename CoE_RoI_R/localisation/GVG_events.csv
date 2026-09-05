@@ -221,7 +221,6 @@ EVTNAME1000602;The Days of May;;;;;;;;;;;;;x
 EVTDESC1000602;The Lords have wrecked the Bill and the ministry has resigned. The country has answered in a week - placards for 'Go for Gold, to Stop the Duke', a run on the Bank that no chancellor can survive, the Birmingham union promising a hundred thousand men on the road to London, and half the magistrates in the north declining to read the Riot Act to their own neighbours. His Majesty may create as many new peers as are needed to carry the Bill, or the government may hold firm and find out what comes after.;;;;;;;;;;;;;x
 EVTOPTA1000602;His Majesty will create the peers;;;;;;;;;;;;;x
 EVTOPTB1000602;We do not legislate under duress;;;;;;;;;;;;;x
-
 found_the_zollverein_title;Found the Zollverein;;;;;;;;;;;;;x
 found_the_zollverein_desc;Our tariff law of 1818 swept away the internal customs barriers of the Prussian lands, and the middle states have been drifting into our commercial orbit ever since. Let us now invite every German state outside Vienna's shadow into a single customs union: one tariff, one market, from the Rhine to the Memel. Austria cannot join without dismantling her own protective system, and what begins as a matter of tolls may one day be a matter of crowns.;;;;;;;;;;;;;x
 form_the_southern_customs_union_title;Form the Southern Customs Union;;;;;;;;;;;;;x
@@ -254,3 +253,25 @@ EVTNAME1000904_NEWS_TITLE;The Customs Barriers Come Down;;;;;;;;;;;;;x
 EVTDESC1000904_NEWS_LONG;At midnight the chains were lifted at the internal frontiers of the German customs union and long files of waggons, which had been drawn up on the roads since the previous evening, passed through without inspection. Merchants describe the change as the greatest single alteration to German trade in living memory. Political observers are less sanguine: a union of tariffs, they note, has a way of becoming a union of something else.;;;;;;;;;;;;;x
 EVTDESC1000904_NEWS_MEDIUM;The internal tariff frontiers of the German customs union were lifted at midnight, creating a single market across most of the Confederation.;;;;;;;;;;;;;x
 EVTDESC1000904_NEWS_SHORT;German internal tariffs abolished at midnight.;;;;;;;;;;;;;x
+EVTNAME1000700;The Eskinci Corps;;;;;;;;;;;;;x
+EVTOPTA1000700;Turn the guns on the barracks!;;;;;;;;;;;;;x
+EVTOPTB1000700;Let the kettles lie.;;;;;;;;;;;;;x
+EVTNAME1000700_NEWS_TITLE;Cannon in the Etmeydani;;;;;;;;;;;;;x
+EVTDESC1000700_NEWS_LONG;Constantinople is under martial law after the destruction of the Janissary corps. Reports reaching Vienna describe the guns of the Sultan's artillery firing upon the Janissary barracks at close range until the buildings were alight, and the survivors hunted through the quarters of the city for three days. The corps that once carried the Ottoman standard to the walls of Vienna has been abolished by imperial edict, its name forbidden, its dervish protectors banished. The Porte styles the affair the Auspicious Incident. Whether the Sultan can now conjure a modern army from the ashes of the old is the question every chancellery in Europe is asking.;;;;;;;;;;;;;x
+EVTDESC1000700_NEWS_MEDIUM;The Sultan's artillery has destroyed the Janissary corps in its Constantinople barracks. The order is abolished by edict and its name forbidden. The Porte calls the affair the Auspicious Incident.;;;;;;;;;;;;;x
+EVTDESC1000700_NEWS_SHORT;The Janissary corps is destroyed by cannon in Constantinople.;;;;;;;;;;;;;x
+EVTNAME1000701;The Mansure Army;;;;;;;;;;;;;x
+EVTDESC1000701;The Janissaries are gone and with them the greater part of the army's officers, its drill, and its supply. What remains is the Asakir-i Mansure-i Muhammediye - the Victorious Soldiers of Muhammad - a paper establishment that must be turned into regiments before the next war finds us. Uniforms have been ordered, barracks are building, and the treasury groans. The one thing that cannot be bought in the bazaar is instruction.;;;;;;;;;;;;;x
+EVTOPTA1000701;Engage Prussian and French instructors.;;;;;;;;;;;;;x
+EVTOPTB1000701;Send to Egypt for officers.;;;;;;;;;;;;;x
+EVTNAME1000702;A Second Reckoning;;;;;;;;;;;;;x
+EVTOPTA1000702;Strike now, before it is too late.;;;;;;;;;;;;;x
+EVTOPTB1000702;The corps has earned its place.;;;;;;;;;;;;;x
+nizam_i_cedid;New Order Army;;;;;;;;;;;;;x
+janissary_ascendancy;Janissary Ascendancy;;;;;;;;;;;;;x
+EVTNAME95073;The Organic Statute;;;;;;;;;;;;;x
+EVTOPTA95073;Abolish the Kingdom's separate institutions.;;;;;;;;;;;;;x
+EVTOPTB95073;Restore the charter and rule by conciliation.;;;;;;;;;;;;;x
+EVTDESC1000700;Sultan Mahmud II has spent a decade waiting. The Janissary corps, once the terror of Christendom, has become a corporation of shopkeepers and street bullies that has deposed three sultans and butchered a fourth. On the fourteenth of June the Sultan proclaims the Eskinci - a new corps of picked men to be drilled, uniformed and paid in the European manner. Within two days the Janissaries of Istanbul have overturned their soup kettles in the Etmeydani, the ancient signal of mutiny, and the crowd is calling for the heads of the Sultan's ministers. Loyal artillery stands ready in the Hippodrome, and the Sheikh ul-Islam has been sounded out for a fetva. The Sultan must decide whether this is the reckoning at last.;;;;;;;;;;;;;x
+EVTDESC1000702;Five years have passed since the Sultan drew back from the Etmeydani, and the corps has not grown more tractable for the reprieve. The aghas sit in the divan as though they had won a battle. Every proposal for a new levy dies in committee, and the provinces take their cue from the capital. The Sultan's ministers argue that what was possible in 1826 is still possible now, and that it will not be possible for much longer.;;;;;;;;;;;;;x
+EVTDESC95073;The Polish rising is broken. Warsaw has fallen, the Sejm that dared depose the Tsar is scattered across Prussia and Galicia, and thousands of officers and gentry have taken the road to Paris rather than the road home. What remains is to settle what the Kingdom of Poland shall be. The Constitution of 1815 gave the Poles their own Sejm, their own army and their own coinage under the Tsar's crown, and His Majesty's advisers are unanimous that it gave them the means of the rebellion as well. An Organic Statute has been drafted that would replace the constitution altogether, abolishing the Sejm and the Polish army and administering the Kingdom as a Russian province in all but name.;;;;;;;;;;;;;x

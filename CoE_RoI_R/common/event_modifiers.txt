@@ -3536,6 +3536,20 @@ bavarian_regency = {
 	icon = 6
 }
 
+##### AUSPICIOUS INCIDENT (TURAuspiciousGVG) #####
+nizam_i_cedid = {
+	land_organisation = -0.10
+	mobilisation_size = 0.02
+	global_pop_consciousness_modifier = 0.02
+	icon = 15
+}
+
+janissary_ascendancy = {
+	land_organisation = -0.15
+	issue_change_speed = -0.25
+	leadership_modifier = -0.15
+	icon = 15
+}
 
 ### The Zollverein (GVG) ###
 zollverein_member = {

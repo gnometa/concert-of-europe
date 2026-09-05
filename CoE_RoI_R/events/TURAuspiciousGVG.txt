@@ -1,0 +1,207 @@
+#############################################################
+#															#
+#          The Auspicious Incident - June 1826				#
+#                  (TURAuspiciousGVG)						#
+#															#
+#############################################################
+
+# The Eskinci Corps - the Janissaries overturn their kettles
+country_event = {
+
+	id = 1000700
+
+	title = "EVTNAME1000700"
+	desc = "EVTDESC1000700"
+	picture = "military_reform"
+
+	trigger = {
+		tag = TUR
+		year = 1826
+		NOT = { year = 1832 }
+		NOT = { has_country_flag = janissaries_abolished }
+		NOT = { has_country_flag = janissary_ascendancy_flag }
+	}
+
+	fire_only_once = yes
+
+	major = yes
+	news = yes
+	news_title = "EVTNAME1000700_NEWS_TITLE"
+	news_desc_long = "EVTDESC1000700_NEWS_LONG"
+	news_desc_medium = "EVTDESC1000700_NEWS_MEDIUM"
+	news_desc_short = "EVTDESC1000700_NEWS_SHORT"
+
+	mean_time_to_happen = {
+		months = 3
+	}
+
+	option = {
+		name = "EVTOPTA1000700" # Turn the guns on the barracks
+		prestige = 15
+		capital_scope = {
+			any_pop = {
+				militancy = 4
+				consciousness = 2
+			}
+		}
+		any_pop = {
+			limit = {
+				type = soldiers
+			}
+			militancy = 3
+		}
+		any_pop = {
+			ideology = {
+				value = reactionary
+				factor = -0.05
+			}
+		}
+		add_country_modifier = {
+			name = nizam_i_cedid
+			duration = 3650
+		}
+		add_country_modifier = {
+			name = purge
+			duration = 730
+		}
+		set_country_flag = janissaries_abolished
+		country_event = {
+			id = 1000701
+			days = 400
+		}
+		ai_chance = {
+			factor = 80
+		}
+	}
+
+	option = {
+		name = "EVTOPTB1000700" # Let the kettles lie
+		prestige = -10
+		add_country_modifier = {
+			name = janissary_ascendancy
+			duration = 3650
+		}
+		upper_house = {
+			ideology = reactionary
+			value = 0.10
+		}
+		any_pop = {
+			ideology = {
+				value = reactionary
+				factor = 0.05
+			}
+		}
+		set_country_flag = janissary_ascendancy_flag
+		country_event = {
+			id = 1000702
+			days = 1825
+		}
+		ai_chance = {
+			factor = 20
+		}
+	}
+}
+
+# The Mansure Army - raising the new-model troops
+country_event = {
+
+	id = 1000701
+
+	title = "EVTNAME1000701"
+	desc = "EVTDESC1000701"
+	picture = "coloured_troops_line"
+
+	is_triggered_only = yes
+
+	option = {
+		name = "EVTOPTA1000701" # Prussian and French instructors
+		add_country_modifier = {
+			name = military_reform
+			duration = 3650
+		}
+		research_points = 200
+		any_pop = {
+			consciousness = 1
+		}
+		relation = {
+			who = PRU
+			value = 25
+		}
+		relation = {
+			who = FRA
+			value = 25
+		}
+		ai_chance = {
+			factor = 70
+		}
+	}
+
+	option = {
+		name = "EVTOPTB1000701" # Officers from Egypt
+		prestige = 5
+		add_country_modifier = {
+			name = military_reform
+			duration = 1825
+		}
+		relation = {
+			who = EGY
+			value = 50
+		}
+		ai_chance = {
+			factor = 30
+		}
+	}
+}
+
+# A Second Reckoning - the question reopens five years on
+country_event = {
+
+	id = 1000702
+
+	title = "EVTNAME1000702"
+	desc = "EVTDESC1000702"
+	picture = "Execution"
+
+	is_triggered_only = yes
+
+	option = {
+		name = "EVTOPTA1000702" # Strike now
+		prestige = 5
+		remove_country_modifier = janissary_ascendancy
+		capital_scope = {
+			any_pop = {
+				militancy = 2
+				consciousness = 1
+			}
+		}
+		any_pop = {
+			limit = {
+				type = soldiers
+			}
+			militancy = 2
+		}
+		add_country_modifier = {
+			name = nizam_i_cedid
+			duration = 1825
+		}
+		clr_country_flag = janissary_ascendancy_flag
+		set_country_flag = janissaries_abolished
+		ai_chance = {
+			factor = 60
+		}
+	}
+
+	option = {
+		name = "EVTOPTB1000702" # The corps has earned its place
+		prestige = -5
+		remove_country_modifier = janissary_ascendancy
+		add_country_modifier = {
+			name = janissary_ascendancy
+			duration = -1
+		}
+		set_country_flag = janissary_question_settled
+		ai_chance = {
+			factor = 40
+		}
+	}
+}

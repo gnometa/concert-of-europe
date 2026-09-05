@@ -9,6 +9,7 @@
 #1000400-1000499: RUSDecembristGVG
 #1000500-1000599: GREKingdomGVG (1830-1843 Greek Kingdom; 1000500-1000502 used)
 #1000600-1000699: ENGReformGVG (1828-1832 Catholic Emancipation / Great Reform Act; 1000600-1000602 used)
+#1000700-1000799: TURAuspiciousGVG (1826 Auspicious Incident, Janissaries; 1000700-1000702 used)
 #1000900-1000999: ZollvereinGVG (1834 German customs union; 1000900-1000904 used)
 #
 #Reserved, currently unused (the files that defined them were 100% commented out
