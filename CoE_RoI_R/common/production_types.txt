@@ -262,13 +262,13 @@ heavy_factory = {
 		iron = 2.5
 	}
 	output_goods = heavy_industry
-	value = 20 #1.6
+	value = 24 #balance pass 2026-09-06: was 20
 }
 
 military_factory = {
 	template = military_factory_template #98
 	input_goods = {
-		heavy_industry = 10.0
+		heavy_industry = 35.0 #balance pass 2026-09-06: was 10.0
 	}
 	output_goods = military_industry
 	value = 30.0
@@ -277,7 +277,7 @@ military_factory = {
 food_factory = {
 	template = food_factory_template #98
 	input_goods = {
-		grain = 30
+		grain = 45 #balance pass 2026-09-06: was 30
 	}
 	output_goods = food_industry
 	value = 400.0
@@ -289,13 +289,13 @@ light_factory = {
 		heavy_industry = 6
 	}
 	output_goods = light_industry
-	value = 10
+	value = 13 #balance pass 2026-09-06: was 10
 }
 
 luxury_factory = {
 	template = luxury_factory_template #98
 	input_goods = {
-		light_industry = 6
+		light_industry = 22 #balance pass 2026-09-06: was 6
 	}
 	output_goods = luxury_industry
 	value = 25
@@ -703,8 +703,8 @@ artisan_stimulants_maker = {
 
 artisan_military_maker = {
 	input_goods = {
-		sulphur = 20.0 #112
-		heavy_industry = 45.0 #225
+		sulphur = 12.0 #balance pass 2026-09-06: was 20.0
+		heavy_industry = 40.0 #was 45.0
 	}
 	output_goods = military_industry
 
@@ -741,10 +741,10 @@ artisan_electricity_maker = {
 
 artisan_food_maker = {
 	input_goods = {
-		grain = 60.0 #144
-		cattle = 30.0 #128
-		fish = 30.0 #128
-		fruit = 30.0 #128
+		grain = 30.0 #balance pass 2026-09-06: was 60.0
+		cattle = 10.0 #was 30.0
+		fish = 10.0 #was 30.0
+		fruit = 10.0 #was 30.0
 	}
 	output_goods = food_industry
 
@@ -1598,9 +1598,9 @@ artisan_food_maker = {
 #
 artisan_horsebreeder = {
 	input_goods = {
-		grain = 3.8
-		fruit = 2.0
-		iron = 0.5
+		grain = 11.0 #balance pass 2026-09-06: was 3.8
+		fruit = 6.0 #was 2.0
+		iron = 1.5 #was 0.5
 	}
 
 	output_goods = horses
