@@ -1121,6 +1121,7 @@ country_event = {
 			}
 		}	
 		NOT = { year = 1825 }	
+		NOT = { has_country_flag = independence_chaos_liberation }
 	}	
 	
 	mean_time_to_happen = {
@@ -1129,6 +1130,7 @@ country_event = {
 
 	option = {
 		name = "Forward to Victory!"
+		set_country_flag = independence_chaos_liberation
 		war_exhaustion = -1
 		TUR = { 
 			any_owned = {

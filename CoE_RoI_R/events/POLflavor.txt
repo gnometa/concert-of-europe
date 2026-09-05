@@ -547,6 +547,7 @@ country_event = {
 		OR = { tag = POL  tag = PLC }
 		vassal_of = AUS
 		KRA = { sphere_owner = { tag = AUS } }
+		NOT = { has_country_flag = krakow_integrated }
 	}
 
 	title = "Integration of Krakow"
@@ -555,6 +556,7 @@ country_event = {
 
 	option = {
 		name = "But I hope that they don't keep the Dragon under the city anymore!" 
+		set_country_flag = krakow_integrated
 		POL = { inherit = KRA }
 		badboy = 3
 		prestige = 1

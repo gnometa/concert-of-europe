@@ -179,7 +179,7 @@ the_port_of_novorossiysk = {
 			tag = RUS
 			has_country_flag = transcaucasia_claimed
 			NOT = { 
-				has_global_flag = treaty_of_adrianople 
+				has_global_flag = adrianople_treaty
 				has_country_flag = novorossiysk_port
 			}
 		}

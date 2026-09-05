@@ -35,7 +35,7 @@ country_event = {
 		relation = { who = AUS value = -25 }
 		FROM = {
 			diplomatic_influence = { who = THIS value = 100 }
-			country_event = { id = 1000901 days = 2 }
+			country_event = { id = 1000901 days = 30 }
 		}
 		any_pop = {
 			limit = { is_primary_culture = yes }
@@ -73,7 +73,7 @@ country_event = {
 		relation = { who = FROM value = -25 }
 		relation = { who = AUS value = 25 }
 		AUS = { diplomatic_influence = { who = THIS value = 50 } }
-		FROM = { country_event = { id = 1000902 days = 2 } }
+		FROM = { country_event = { id = 1000902 days = 60 } }
 		ai_chance = {
 			factor = 45
 			modifier = {

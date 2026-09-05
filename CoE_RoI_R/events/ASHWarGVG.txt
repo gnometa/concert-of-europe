@@ -22,7 +22,6 @@ country_event = {
 
 	trigger = {
 		tag = ENG
-		exists = yes
 		owns = 1908
 		neighbour = ASH
 		ASH = {
@@ -126,7 +125,7 @@ country_event = {
 				tag = ASH
 				exists = yes
 			}
-			country_event = 1001603
+			country_event = { id = 1001603 days = 5 }
 		}
 	}
 }

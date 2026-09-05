@@ -183,7 +183,7 @@ country_event = {
 				exists = yes
 				NOT = { has_country_flag = adrianople_signed }
 			}
-			country_event = 1001403
+			country_event = { id = 1001403 days = 3 }
 		}
 		ai_chance = {
 			factor = 80
@@ -209,7 +209,7 @@ country_event = {
 				}
 			}
 			relation = { who = THIS value = -25 }
-			country_event = 1001402
+			country_event = { id = 1001402 days = 7 }
 		}
 		ai_chance = {
 			factor = 20
