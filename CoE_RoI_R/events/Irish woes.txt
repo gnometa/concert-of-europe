@@ -468,6 +468,10 @@ country_event = {
 			has_country_flag = no_help_for_the_irish
 		}
 		modifier = {
+			factor = 0.75
+			has_country_flag = eng_emancipation_refused
+		}
+		modifier = {
 			factor = 1.5
 			has_country_flag = help_for_the_irish
 		}

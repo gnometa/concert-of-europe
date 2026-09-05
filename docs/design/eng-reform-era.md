@@ -29,19 +29,19 @@ Flavour: O'Connell wins the Clare by-election and cannot take his seat; Peel and
 face the Catholic Association. Picture `religious_question`.
 - **A - Grant emancipation** (historical, `ai_chance = 75`): `minorities_reform = protected`,
   prestige +5, Irish pops militancy -3 / consciousness +1, `upper_house` reactionary +0.05
-  (the Ultra-Tory backlash), `set_country_flag = catholic_emancipation`.
+  (the Ultra-Tory backlash).
 - **B - The Protestant constitution stands** (`ai_chance = 25`): Irish pops militancy +3 /
-  consciousness +2, `add_province_modifier = { name = nationalist_agitation duration = 1825 }`
+  consciousness +2, `add_province_modifier = { name = nationalist_agitation duration = 1095 }`
   on Irish provinces, `set_country_flag = eng_emancipation_refused`, prestige -5.
 
 ### 1000601 - The Reform Crisis (1830-1833), `major = yes`, `news = yes`
-Trigger `tag = ENG`, `fire_only_once`, `NOT = { year = 1834 }`, and
+Trigger `tag = ENG`, `fire_only_once`, `NOT = { year = 1833 }`, and
 `OR = { AND = { year = 1830 FRA = { has_country_flag = july_revolution } } year = 1831 }` -
 i.e. the Paris July Revolution pulls the crisis forward, otherwise it starts in 1831.
 MTTH 3 months. Grey's Whig ministry, Birmingham Political Union, rotten boroughs. Picture
 `deliberation`. News gives the other GPs the "Reform Crisis in Britain" headline.
 - **A - Pass the Reform Bill** (historical, `ai_chance = 80`): `vote_franschise = wealth_voting`,
-  prestige +10, `any_pop = { militancy = -2 consciousness = -1 }`, `upper_house` liberal +0.10,
+  prestige +10, home-islands pops militancy -2 / consciousness -1, `upper_house` liberal +0.10,
   `add_country_modifier = { name = great_reformer duration = 1825 }`,
   `set_country_flag = great_reform_act`.
 - **B - The Lords throw out the Bill** (`ai_chance = 20`): English/Welsh pops militancy +3 /
@@ -52,9 +52,8 @@ MTTH 3 months. Grey's Whig ministry, Birmingham Political Union, rotten boroughs
 Picture `streetriot`. "Go for gold, stop the Duke."
 - **A - The King will create the peers** (`ai_chance = 85`): as 1000601 option A but prestige
   -5 instead of +10 and no `great_reformer`; sets `great_reform_act`.
-- **B - Hold firm** (`ai_chance = 15`): prestige -10, all pops militancy +3 / consciousness +1,
-  `add_country_modifier = { name = global_liberal_agitation duration = 1095 }`,
-  `set_country_flag = eng_reform_refused`.
+- **B - Hold firm** (`ai_chance = 15`): prestige -10, home-islands pops militancy +3 /
+  consciousness +1, `add_country_modifier = { name = global_liberal_agitation duration = 1095 }`.
 
 ## Reuse
 
@@ -62,4 +61,9 @@ No new modifiers and no new pictures: `nationalist_agitation`, `growing_unrest`,
 `great_reformer` and `global_liberal_agitation` are all in `common/event_modifiers.txt`, and
 `religious_question` / `deliberation` / `streetriot` are already in `gfx/pictures/events/`, so
 `gfxtool.py missing` stays silent. Only localisation is new (`localisation/GVG_events.csv`).
-Flags `catholic_emancipation` and `great_reform_act` are free for later ENG content to test.
+Every pop effect is scoped to the home islands (Irish or English/Welsh regions) rather than
+left bare, so none of it reaches the colonies. The two flags the chain keeps are both read:
+`Irish woes.txt` 1010020 (the Irish Republican Brotherhood) fires sooner (`factor = 0.75`)
+when `eng_emancipation_refused` is set, and `LiberalRevolutions.txt` 10330 (Chartist Rallies -
+the mod keeps its Chartism there, not in `ENGFlavor.txt`) fires later (`factor = 1.25`) when
+`great_reform_act` is set.

@@ -48,7 +48,6 @@ country_event = {
 			ideology = reactionary
 			value = 0.05
 		}
-		set_country_flag = catholic_emancipation
 		ai_chance = {
 			factor = 75
 		}
@@ -72,7 +71,7 @@ country_event = {
 			}
 			add_province_modifier = {
 				name = nationalist_agitation
-				duration = 1825
+				duration = 1095
 			}
 		}
 		set_country_flag = eng_emancipation_refused
@@ -100,7 +99,7 @@ country_event = {
 
 	trigger = {
 		tag = ENG
-		NOT = { year = 1834 }
+		NOT = { year = 1833 }
 		OR = {
 			AND = {
 				year = 1830
@@ -120,9 +119,22 @@ country_event = {
 		name = "EVTOPTA1000601" # Pass the Reform Bill
 		prestige = 10
 		vote_franschise = wealth_voting
-		any_pop = {
-			militancy = -2
-			consciousness = -1
+		any_owned = {
+			limit = {
+				OR = {
+					region = ENG_273
+					region = ENG_277
+					region = ENG_280
+					region = ENG_284
+					region = ENG_291
+					region = ENG_296
+					region = ENG_300
+				}
+			}
+			any_pop = {
+				militancy = -2
+				consciousness = -1
+			}
 		}
 		upper_house = {
 			ideology = liberal
@@ -186,9 +198,22 @@ country_event = {
 		name = "EVTOPTA1000602" # The King will create the peers
 		prestige = -5
 		vote_franschise = wealth_voting
-		any_pop = {
-			militancy = -2
-			consciousness = -1
+		any_owned = {
+			limit = {
+				OR = {
+					region = ENG_273
+					region = ENG_277
+					region = ENG_280
+					region = ENG_284
+					region = ENG_291
+					region = ENG_296
+					region = ENG_300
+				}
+			}
+			any_pop = {
+				militancy = -2
+				consciousness = -1
+			}
 		}
 		upper_house = {
 			ideology = liberal
@@ -203,15 +228,27 @@ country_event = {
 	option = {
 		name = "EVTOPTB1000602" # Hold firm
 		prestige = -10
-		any_pop = {
-			militancy = 3
-			consciousness = 1
+		any_owned = {
+			limit = {
+				OR = {
+					region = ENG_273
+					region = ENG_277
+					region = ENG_280
+					region = ENG_284
+					region = ENG_291
+					region = ENG_296
+					region = ENG_300
+				}
+			}
+			any_pop = {
+				militancy = 3
+				consciousness = 1
+			}
 		}
 		add_country_modifier = {
 			name = global_liberal_agitation
 			duration = 1095
 		}
-		set_country_flag = eng_reform_refused
 		ai_chance = {
 			factor = 15
 		}

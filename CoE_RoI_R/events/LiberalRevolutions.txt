@@ -5124,6 +5124,10 @@ country_event = {
 			has_country_flag = liberal_revolution_in_progress
 		}
 		modifier = {
+			factor = 1.25
+			has_country_flag = great_reform_act
+		}
+		modifier = {
 			factor = 0.9
 			average_consciousness = 3
 		}
