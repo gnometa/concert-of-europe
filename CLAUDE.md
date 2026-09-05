@@ -60,6 +60,26 @@ Pick a new ID from an appropriate free range and record it in the registry file.
 - CSV column order: `KEY;English;French;German;Polish;Spanish;Italian;Swedish;Czech;Hungarian;Dutch;Portuguese;Russian;Finnish;x`. Only English is filled in for most mod strings.
 - Comments in script files use `#`. Files must have balanced braces; a single mismatched brace can silently break every file parsed after it.
 
+## Graphics (gfx/) and sourcing free pictures
+
+Formats the mod actually ships, by folder (the engine also accepts the other extension, and falls back to the vanilla file of the same name when the mod lacks one):
+
+| Folder | Size | Format | Referenced from |
+|---|---|---|---|
+| `gfx/pictures/events/` | 521x203 | TGA 32-bit, bottom-up | `picture = "name"` in `events/*.txt` (and the event blocks in `decisions/SetupGVG.txt`) |
+| `gfx/pictures/decisions/` | 95x95 | DDS uncompressed (some DXT1) | `picture = "name"` in `decisions/*.txt` |
+| `gfx/pictures/news/` | 521x203 images, 714x104 mastheads | DDS uncompressed | `picture = "news/x.dds"` / `"events/x.tga"` in `news/news_layout.txt` (path relative to `gfx/pictures/`) |
+| `gfx/flags/` | 93x64 | TGA 24-bit | `TAG.tga` plus `TAG_communist/_fascist/_monarchy/_republic.tga` |
+| `gfx/loadingscreens/` | 1024x1024 | DDS | engine |
+
+`scripts/gfxtool.py` (needs `python -m pip install Pillow`) is the only supported way to add pictures; there is no ImageMagick on this machine.
+- `python scripts/gfxtool.py missing` lists pictures referenced by events/decisions/news that exist in neither the mod nor the game folder. It is part of `/validate` stage 1 and should print nothing.
+- `python scripts/gfxtool.py search "<query>"` searches Wikimedia Commons and keeps only files whose licence is public domain / CC0 / CC-BY / CC-BY-SA **and** whose date is 1820–1914 (the Victorian-era filter; `--any-era` to disable, e.g. for maps). Engravings from *The Illustrated London News* / *The Graphic*, Barth/Angas-style travel lithographs and pre-1900 paintings pass; modern photos of monuments do not.
+- `python scripts/gfxtool.py fetch "File:Name.jpg" --kind event|decision|news|masthead|loading --name <file>` downloads, crops to size (`--crop TOP|CENTER|BOTTOM`), applies the house "Victorian" look (sepia, vignette, light grain; `--no-filter` to skip) and writes the correctly formatted file. It refuses non-free or out-of-era files unless `--force`, and appends a row to `CoE_RoI_R/gfx/CREDITS.md`. Keep that file up to date; it is the mod's licence record for redistributed art.
+- `convert <local image> ...` does the same from a file on disk; `preview <x.tga|x.dds> out.png` decodes a game image so it can be looked at.
+
+Do not hand-copy pictures from other mods or image-search results: the licence must be checked and recorded, which is what `fetch` does. Missing decision pictures found by Audax were closed in commit `c47239e9`; missing event pictures (`derrota`, `mfecane`, `military_industry`, `timbuctu`) and the `GBR_communist` masthead were added on 2026-09-06 with this tool.
+
 ## Git workflow
 
 Since the 2022 Roar of Industry rework, commits land directly on `master` (short informal messages, no PRs). In September 2026 all remote branches were consolidated into `master`: `Development` -> `Remake` -> `economic-rework` were a linear chain (fast-forwarded), and the still-applicable parts of the 2018 `autonomous_india` branch (country colours, HPM-derived defines/crime/tech-school changes) were ported by hand onto the `CoE_RoI_R/` tree. Those remote branches are now historical only. There is no license file in `CoE_RoI_R/`.
