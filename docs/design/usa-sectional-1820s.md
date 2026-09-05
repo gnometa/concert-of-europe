@@ -26,7 +26,8 @@ New file `events/USASectionalGVG.txt`, ids 1001200-1001299 (1001200-1001202 used
 MTTH 3 months, `major = yes`).
 - *Proclaim* (ai 85): prestige +10, `set_global_flag = monroe_doctrine`,
   `set_country_flag = monroe_doctrine_proclaimed`, and for every existing country whose
-  capital is in north/south America (not USA, flag not already set): `relation = 15` and
+  capital is in north/south America (tested with `capital_scope = { OR = { continent = ... } }`,
+  since `continent` is a province-scope condition) (not USA, flag not already set): `relation = 15` and
   `set_country_flag = monroe_doctrine2`, which makes the existing Chilean event reachable.
 - *Say nothing* (ai 15): prestige -5, `set_country_flag = monroe_doctrine_declined`.
 
@@ -37,7 +38,8 @@ MTTH 3 months).
   the five southern regions.
 - *Strike out the higher schedule* (ai 20): prestige -5, southern militancy -1,
   rich pops +1 militancy (New England manufacturers), no modifier and no flag - the
-  nullification event then never fires.
+  nullification event then never fires. That is deliberate: refusing the 1828 schedule
+  is the historical off-ramp, so the crisis is a consequence of the player's own choice.
 
 **1001202 - The Nullification Crisis** (USA, `has_country_flag = tariff_of_abominations`,
 `owns = 205`, `year = 1832`, before 1836, fire_only_once, MTTH 2 months, `major`, news).

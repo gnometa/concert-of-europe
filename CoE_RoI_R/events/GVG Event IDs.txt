@@ -13,8 +13,8 @@
 #1000900-1000999: ZollvereinGVG (1834 German customs union; 1000900-1000904 used)
 #1001000-1001099: PORMiguelistGVG (1826-1834 Miguelist / Liberal Wars; 1001000-1001003 used)
 #1001100-1001199: ITARisingsGVG (1821-1835 Carbonari, Modena and the Papal Legations 1831, Austrian intervention; 1001100-1001104 used)
-#1001300-1001399: JavaWarGVG (1825-1830 Java War / Cultuurstelsel; 1001300-1001302 used)
 #1001200-1001299: USASectionalGVG (1823-1833 Monroe Doctrine / Tariff of Abominations / Nullification Crisis; 1001200-1001202 used)
+#1001300-1001399: JavaWarGVG (1825-1830 Java War / Cultuurstelsel; 1001300-1001302 used)
 #
 #Reserved, currently unused (the files that defined them were 100% commented out
 #and were deleted 2026-09-06; recover them from git history if the system is revived):

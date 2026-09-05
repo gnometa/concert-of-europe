@@ -37,9 +37,11 @@ country_event = {
 				exists = yes
 				NOT = { tag = USA }
 				NOT = { has_country_flag = monroe_doctrine2 }
-				OR = {
-					continent = north_america
-					continent = south_america
+				capital_scope = {
+					OR = {
+						continent = north_america
+						continent = south_america
+					}
 				}
 			}
 			relation = {
