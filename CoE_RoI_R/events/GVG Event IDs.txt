@@ -15,6 +15,8 @@
 #1001100-1001199: ITARisingsGVG (1821-1835 Carbonari, Modena and the Papal Legations 1831, Austrian intervention; 1001100-1001104 used)
 #1001200-1001299: USASectionalGVG (1823-1833 Monroe Doctrine / Tariff of Abominations / Nullification Crisis; 1001200-1001202 used)
 #1001300-1001399: JavaWarGVG (1825-1830 Java War / Cultuurstelsel; 1001300-1001302 used)
+#1001400-1001499: RUSTurkishWarGVG (1828-1829 Russo-Turkish War and the Treaty of Adrianople; 1001400-1001403 used)
+#1001500-1001599: CHIOpiumGVG (1821-1839 Daoguang opium edicts, silver drain, Canton trade; 1001500-1001502 used)
 #
 #Reserved, currently unused (the files that defined them were 100% commented out
 #and were deleted 2026-09-06; recover them from git history if the system is revived):

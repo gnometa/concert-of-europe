@@ -1378,6 +1378,22 @@ country_event = {
 			year = 1838
 		}
 		modifier = {
+			factor = 0.75
+			has_country_flag = qing_opium_prohibition
+		}
+		modifier = {
+			factor = 0.75
+			has_country_flag = qing_opium_crackdown
+		}
+		modifier = {
+			factor = 0.8
+			ENG = { has_country_flag = eng_canton_lobby }
+		}
+		modifier = {
+			factor = 3
+			has_country_flag = qing_opium_legalised
+		}
+		modifier = {
 			factor = 0.8
 			year = 1839
 		}

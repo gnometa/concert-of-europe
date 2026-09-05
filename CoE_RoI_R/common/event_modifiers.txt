@@ -3596,3 +3596,24 @@ cultuurstelsel = {
 	global_pop_militancy_modifier = 0.01
 	icon = 7
 }
+
+##### DAOGUANG OPIUM EDICTS (CHIOpiumGVG) #####
+opium_prohibition = {
+	tax_efficiency = -0.05
+	global_pop_consciousness_modifier = 0.01
+	prestige = 0.01
+	icon = 15
+}
+
+canton_squeeze = {
+	tax_efficiency = 0.05
+	global_pop_militancy_modifier = 0.01
+	prestige = -0.01
+	icon = 4
+}
+
+silver_drain = {
+	tax_efficiency = -0.10
+	global_pop_militancy_modifier = 0.02
+	icon = 12
+}

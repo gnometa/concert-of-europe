@@ -1,0 +1,203 @@
+#############################################################
+#															#
+#      Daoguang's Opium Edicts - Qing China 1821-1839		#
+#                  (CHIOpiumGVG)							#
+#															#
+#############################################################
+
+# The Daoguang Edicts
+country_event = {
+
+	id = 1001500
+
+	title = "EVTNAME1001500"
+	desc = "EVTDESC1001500"
+	picture = "Opium"
+
+	trigger = {
+		tag = QNG
+		civilized = no
+		year = 1821
+		NOT = { year = 1827 }
+	}
+
+	fire_only_once = yes
+
+	mean_time_to_happen = {
+		months = 12
+	}
+
+	option = {
+		name = "EVTOPTA1001500" # Enforce the prohibition
+		add_country_modifier = {
+			name = opium_prohibition
+			duration = 3650
+		}
+		set_country_flag = qing_opium_prohibition
+		any_pop = {
+			consciousness = 1
+		}
+		relation = {
+			who = ENG
+			value = -25
+		}
+		ENG = {
+			country_event = {
+				id = 1001502
+				days = 30
+			}
+		}
+		ai_chance = {
+			factor = 70
+		}
+	}
+
+	option = {
+		name = "EVTOPTB1001500" # Tolerate the Canton trade
+		treasury = 25000
+		add_country_modifier = {
+			name = canton_squeeze
+			duration = 3650
+		}
+		set_country_flag = qing_opium_tolerated
+		relation = {
+			who = ENG
+			value = 10
+		}
+		ai_chance = {
+			factor = 30
+		}
+	}
+}
+
+# The Silver Drain
+country_event = {
+
+	id = 1001501
+
+	title = "EVTNAME1001501"
+	desc = "EVTDESC1001501"
+	picture = "Opium"
+
+	trigger = {
+		tag = QNG
+		civilized = no
+		year = 1830
+		NOT = { year = 1840 }
+		OR = {
+			has_country_flag = qing_opium_prohibition
+			has_country_flag = qing_opium_tolerated
+		}
+	}
+
+	fire_only_once = yes
+
+	mean_time_to_happen = {
+		months = 15
+		modifier = {
+			factor = 0.75
+			year = 1836
+		}
+	}
+
+	option = {
+		name = "EVTOPTA1001501" # Debase the coinage
+		treasury = 50000
+		add_country_modifier = {
+			name = silver_drain
+			duration = 3650
+		}
+		any_pop = {
+			militancy = 1
+		}
+		ai_chance = {
+			factor = 25
+		}
+	}
+
+	option = {
+		name = "EVTOPTB1001501" # Crack down harder
+		set_country_flag = qing_opium_crackdown
+		remove_country_modifier = opium_prohibition
+		add_country_modifier = {
+			name = opium_prohibition
+			duration = 3650
+		}
+		set_country_flag = qing_opium_prohibition
+		prestige = 5
+		any_owned = {
+			limit = {
+				port = yes
+			}
+			any_pop = {
+				militancy = 1
+			}
+		}
+		relation = {
+			who = ENG
+			value = -25
+		}
+		ai_chance = {
+			factor = 60
+		}
+	}
+
+	option = {
+		name = "EVTOPTC1001501" # Legalise and tax it
+		set_country_flag = qing_opium_legalised
+		clr_country_flag = qing_opium_prohibition
+		remove_country_modifier = opium_prohibition
+		treasury = 75000
+		add_country_modifier = {
+			name = canton_squeeze
+			duration = 3650
+		}
+		any_pop = {
+			consciousness = 1
+		}
+		relation = {
+			who = ENG
+			value = 25
+		}
+		ai_chance = {
+			factor = 15
+		}
+	}
+}
+
+# The Canton Trade - the British reaction to the edicts
+country_event = {
+
+	id = 1001502
+
+	title = "EVTNAME1001502"
+	desc = "EVTDESC1001502"
+	picture = "Opium"
+
+	is_triggered_only = yes
+
+	option = {
+		name = "EVTOPTA1001502" # The trade must go on
+		set_country_flag = eng_canton_lobby
+		prestige = 5
+		relation = {
+			who = FROM
+			value = -20
+		}
+		ai_chance = {
+			factor = 70
+		}
+	}
+
+	option = {
+		name = "EVTOPTB1001502" # Respect the edicts of the Emperor
+		prestige = -5
+		relation = {
+			who = FROM
+			value = 25
+		}
+		ai_chance = {
+			factor = 30
+		}
+	}
+}

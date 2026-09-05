@@ -372,3 +372,35 @@ EVTNAME1001104_NEWS_TITLE;THE CABINETS AND THE ITALIAN QUESTION;;;;;;;;;;;;;x
 EVTDESC1001104_NEWS_LONG;The revolt in the Papal Legations has put the Italian question before every cabinet in Europe. At issue is whether Austria may act as the police of the peninsula on the invitation of any prince who asks, and whether the powers who signed at Vienna in 1815 have anything to say about how the Holy See governs its subjects.;;;;;;;;;;;;;x
 EVTDESC1001104_NEWS_MEDIUM;The powers weigh a protest against Austrian intervention in Italy, and a memorandum on the government of the Papal Legations.;;;;;;;;;;;;;x
 EVTDESC1001104_NEWS_SHORT;Europe debates the Italian question.;;;;;;;;;;;;;x
+EVTNAME90055;The Schleswig-Holstein Question Resolved;;;;;;;;;;;;;x
+EVTNAME1001500;The Daoguang Edicts;;;;;;;;;;;;;x
+EVTOPTA1001500;Let the edicts be proclaimed and obeyed!;;;;;;;;;;;;;x
+EVTOPTB1001500;The Canton trade pays for itself.;;;;;;;;;;;;;x
+EVTNAME1001501;The Silver Drain;;;;;;;;;;;;;x
+EVTOPTA1001501;Debase the coinage and be done with it.;;;;;;;;;;;;;x
+EVTOPTB1001501;Send a High Commissioner to Canton!;;;;;;;;;;;;;x
+EVTOPTC1001501;Legalise the drug and take our duty on it.;;;;;;;;;;;;;x
+EVTNAME1001502;The Canton Trade;;;;;;;;;;;;;x
+EVTDESC1001502;Word reaches London that the Emperor has renewed the prohibition of opium and means it this time. The Company's monopoly is dead, the free traders of Jardine and Matheson are loud in Parliament, and the Indian revenue leans heavily on the drug. The Superintendent at Canton asks for instructions, and behind him the merchants ask for frigates.;;;;;;;;;;;;;x
+EVTOPTA1001502;The trade must go on - and be protected.;;;;;;;;;;;;;x
+EVTOPTB1001502;We shall respect the edicts of the Emperor.;;;;;;;;;;;;;x
+opium_prohibition;Opium Prohibition;;;;;;;;;;;;;x
+canton_squeeze;The Canton Squeeze;;;;;;;;;;;;;x
+silver_drain;Silver Drain;;;;;;;;;;;;;x
+EVTDESC1001500;The new Emperor has scarcely been enthroned before the censors lay before him a mountain of memorials on the foreign drug. Opium chests land at Lintin by the thousand, paid for in Spanish silver that never returns, and magistrates, customs officers and the Hong merchants alike take their cut of the traffic. The Son of Heaven may thunder against the poison, or he may quietly acknowledge what every official at Canton already knows.;;;;;;;;;;;;;x
+EVTDESC1001501;For a decade the edicts have been read aloud and ignored. The exchange rate of copper cash to silver has collapsed, taxes assessed in silver ruin the peasantry, and the treasury of the Board of Revenue empties into the holds of foreign clippers. Huang Juezi demands death for the smoker, while others urge that the trade be legalised, taxed, and paid for in tea rather than bullion.;;;;;;;;;;;;;x
+EVTNAME1001400;The Tsar's Ultimatum;;;;;;;;;;;;;x
+EVTOPTA1001400;Cross the Prut - the army marches on the Danube!;;;;;;;;;;;;;x
+EVTOPTB1001400;Press the Porte at the conference table.;;;;;;;;;;;;;x
+EVTNAME1001401;The Treaty of Adrianople;;;;;;;;;;;;;x
+EVTDESC1001401;Diebitsch has crossed the Balkan range and stands at Adrianople, two days' march from Constantinople itself. The Sultan's envoys sue for terms. Nesselrode counsels moderation: a weak Ottoman Empire on the Straits serves us better than a scramble among the powers over its corpse. The Danubian principalities can be placed under our protection, the Serbs granted their privileges, Greek freedom recognised - or the army can march on the capital and take the prize outright, whatever London and Vienna may say.;;;;;;;;;;;;;x
+EVTOPTA1001401;Moderation. Sign the peace at Adrianople.;;;;;;;;;;;;;x
+EVTOPTB1001401;The road to Constantinople is open.;;;;;;;;;;;;;x
+EVTNAME1001402;The Powers and the Straits;;;;;;;;;;;;;x
+EVTDESC1001402;Russian columns are on the road to Constantinople and no Ottoman army stands between them and the Bosphorus. Should the Tsar seat himself astride the Straits, the balance of Europe settled at Vienna is undone at a stroke, and the road to the Mediterranean lies open to the Russian fleet. Our ambassadors must decide whether a note of protest suffices, or whether the Sultan is to be propped up with more than words.;;;;;;;;;;;;;x
+EVTOPTA1001402;A formal protest will be lodged.;;;;;;;;;;;;;x
+EVTOPTB1001402;The Porte must be sustained.;;;;;;;;;;;;;x
+EVTNAME1001403;The Peace of Adrianople;;;;;;;;;;;;;x
+EVTDESC1001403;The infidel armies stood at Adrianople and the capital was defenceless, yet the Tsar has offered terms rather than the sword. We must yield the mouth of the Danube and the Georgian fortresses, open the Straits to Russian commerce, confirm the privileges of the principalities and of the Serbs, and abandon the Greek provinces. The Empire survives, humbled, and the reforms of our late army can no longer be delayed.;;;;;;;;;;;;;x
+EVTOPTA1001403;The Empire endures. We shall rebuild.;;;;;;;;;;;;;x
+EVTDESC1001400;The Porte has flouted the Convention of Akkerman, closed the Straits to our merchantmen and answered the protocols of the powers with silence. Since the allied fleets destroyed the Ottoman navy at Navarino the Sultan has proclaimed a holy war against us and disavowed every article we signed. Wittgenstein's armies stand ready on the Prut, and the principalities of Moldavia and Wallachia would welcome them as liberators. The Greeks look to Saint Petersburg, and so does the whole of the Orthodox world.;;;;;;;;;;;;;x
