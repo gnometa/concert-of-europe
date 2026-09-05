@@ -1,5 +1,15 @@
 #Event ID overview:
 #2000000+ Setup Events
+#2000100-2000199: Economy pulse host election / watchdog (00_CoE_RoI.txt)
 #1000000-1000099: JAPFlavorGVG
 #1000100-1000199: USAFlavorGVG
 #1000200-1000299: BYZFlavorGVG
+#
+#Reserved, currently unused (the files that defined them were 100% commented out
+#and were deleted 2026-09-06; recover them from git history if the system is revived):
+#999971-999999: consumption/demand growth system (+demand.txt, industrial_demand.txt)
+#99902-99904:   demographic transition (0_demographic_transition.txt) - note 99902 is
+#               now in live use by "Sepoy rebellion.txt", so pick fresh ids if revived
+#99958, 999959-999969: earlier education/RGO drafts (+education_RGO1/2.txt); the live
+#               chain uses 999958 and 9999959-9999969 in +education_RGO.txt
+#2260601-2260607: population trends ("population trends.txt")
