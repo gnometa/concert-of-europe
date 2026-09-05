@@ -198,3 +198,10 @@ EVTOPTA1000502;Summon the National Assembly.;;;;;;;;;;;;;x
 EVTOPTB1000502;The crown does not treat with mutineers.;;;;;;;;;;;;;x
 bavarian_regency;Bavarian Regency;;;;;;;;;;;;;x
 EVTDESC1000502;Colonel Kallergis has drawn up the Athens garrison before the palace, and the crowd behind the bayonets is chanting for a constitution. Not a shot has been fired. The King is simply informed that the troops will not disperse until he consents to a national assembly and dismisses the last of his Bavarian advisers, and the guaranteeing powers have signalled that they will not intervene on his behalf.;;;;;;;;;;;;;x
+EVTNAME60040_NEWS_TITLE;Monarchy Restored in $COUNTRY$;;;;;;;;;;;;;x
+EVTDESC60040_NEWS_LONG;With parliament deadlocked and the ministries paralysed, the crown of $COUNTRY$ has reclaimed the prerogatives it had ceded. Ministers will henceforth answer to the monarch rather than to the chamber, and the constitution has been rewritten along Prussian lines. Liberals denounce a coup in all but name, while conservatives call it the only remedy to a decade of parliamentary chaos.;;;;;;;;;;;;;x
+EVTDESC60040_NEWS_MEDIUM;The crown of $COUNTRY$ has reclaimed the prerogatives it once ceded to parliament. Ministers now answer to the monarch, and the constitution has been rewritten along Prussian lines.;;;;;;;;;;;;;x
+EVTDESC60040_NEWS_SHORT;The monarch of $COUNTRY$ has restored royal rule over parliament.;;;;;;;;;;;;;x
+EVTNEWS190359_title;Unveiled Women Protest in Persia;;;;;;;;;;;;;x
+EVTDESC97606_NEWS_SHORT;Commodore Perry has returned from Japan, and the isolation of the islands is at an end.;;;;;;;;;;;;;x
+EVTDESC97000_NEWS_LONG;Dissatisfaction with Portugal's government has grown into open rebellion. The instigator of the first riots is a woman named Maria da Fonte, who led the peasants of the Minho against the prohibition on burials inside churches and against the new taxes. The revolt has spread from village to village, and royal troops sent to restore order have found the countryside against them.;;;;;;;;;;;;;x

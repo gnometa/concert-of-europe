@@ -48,8 +48,9 @@ political_decisions = {
 		}
 		
 		effect = {		
-			1767 = {
-				province_event = { id = 19040 }
+			any_country = {
+				limit = { owns = 1767 }
+				country_event = { id = 19040 }
 			}
 		}
 	}
@@ -120,8 +121,9 @@ political_decisions = {
 		
 		effect = {
 			set_country_flag = maya_excavations_requested
-			2189 = {
-				province_event = { id = 201004 }
+			any_country = {
+				limit = { owns = 2189 }
+				country_event = { id = 201004 }
 			}
 		}
 	}
@@ -214,8 +216,9 @@ political_decisions = {
 		}
 		
 		effect = {		
-			840 = {
-				province_event = { id = 190401 }
+			any_country = {
+				limit = { owns = 840 }
+				country_event = { id = 190401 }
 			}
 		}
 	}
@@ -282,8 +285,9 @@ political_decisions = {
 		}
 		
 		effect = {
-			847 = {
-				province_event = { id = 1904012	}
+			any_country = {
+				limit = { owns = 847 }
+				country_event = { id = 1904012 }
 			}
 		}
 	}
@@ -351,8 +355,9 @@ political_decisions = {
 		}
 		
 		effect = {		
-			2302 = {
-				province_event = { id = 201007 }
+			any_country = {
+				limit = { owns = 2302 }
+				country_event = { id = 201007 }
 			}
 		}
 	}
@@ -423,8 +428,9 @@ political_decisions = {
 		}
 		
 		effect = {		
-			926 = {
-				province_event = { id = 201010 }
+			any_country = {
+				limit = { owns = 926 }
+				country_event = { id = 201010 }
 			}
 		}
 	}

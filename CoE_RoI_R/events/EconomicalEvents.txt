@@ -405,6 +405,7 @@ country_event = {
 	trigger = {
 		exists = yes
 		stock_exchange = 1
+		NOT = { has_country_flag = local_stock_exchange_built }
 		NOT = {
 			OR = { government = proletarian_dictatorship government = proletarian_dictatorship2 government = proletarian_dictatorship3 government = socialist_democracy government = socialist_democracy2 government = socialist_democracy3 }
 		}
@@ -432,6 +433,7 @@ country_event = {
 	
 	option = {
 		name = "EVTOPTA22540"
+		set_country_flag = local_stock_exchange_built
 		random_province = {
 			limit = {
 				is_colonial = no

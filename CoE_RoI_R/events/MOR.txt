@@ -110,11 +110,6 @@ country_event = {
 	id = 290115
 	title = "EVTNAME290115" #Morocco submits
 	desc = "EVTDESC290115"
-	news = yes
-	news_title = "EVTNEWS290115_title"
-	news_desc_long = "EVTNEWS290115_long"
-	news_desc_medium = "EVTNEWS290115_medium"
-	news_desc_short = "EVTNEWS290115_short"
 	picture = "treaty"
 	
 	is_triggered_only = yes

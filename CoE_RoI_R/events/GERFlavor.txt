@@ -104,7 +104,7 @@ province_event = {
 				factor = 0.1
 			}
 		}
-		relation = { who = DEN value = 100 }
+		owner = { relation = { who = DEN value = 100 } }
 		set_global_flag = NOGermanizeSchlewsigDanes
 	}
 }

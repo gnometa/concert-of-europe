@@ -177,6 +177,8 @@ country_event = {
 		name = "How could this happen?"
 		prestige = -10
 		clr_global_flag = eastern_christian_protector_questioned
+		clr_global_flag = byz_eastern_protector
 		set_global_flag = rus_eastern_protector
+		remove_country_modifier = protector_of_eastern_christendom
 	}
 }

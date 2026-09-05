@@ -702,7 +702,7 @@ country_event = {
 		diplomatic_influence = { who = ROM value = 400 }
 		add_country_modifier = {
 			name = protector_of_eastern_christendom
-			duration = 730
+			duration = -1
 		}
 		create_alliance = ROM
 		military_access = ROM

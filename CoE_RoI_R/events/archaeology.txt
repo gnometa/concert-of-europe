@@ -1,5 +1,5 @@
 # Valley of The Kings
-province_event = {
+country_event = {
 	id = 19040
 	title = "EVTNAME19040"
 	desc = "EVTDESC19040"
@@ -9,13 +9,8 @@ province_event = {
 	
 	option = {
 		name = "EVTOPTA19040"
-		owner = { set_global_flag = egyptian_excavation_rights }
-		FROM = {
-			random_owned = { 
-				limit = { is_capital = yes }
-				province_event = { id = 19041 }
-			}
-		}
+		set_global_flag = egyptian_excavation_rights
+		FROM = { country_event = { id = 19041 } }
 		ai_chance = {
 			factor = 100
 		}
@@ -23,17 +18,12 @@ province_event = {
 	
 	option = {
 		name = "EVTOPTB19040"
-		FROM = {
-			random_owned = { 
-				limit = { is_capital = yes }
-				province_event = { id = 19042 }
-			}
-		}
+		FROM = { country_event = { id = 19042 } }
 	}
 }
 
 #Egypt Allows
-province_event = {
+country_event = {
 	id = 19041
 	title = "EVTNAME19041"
 	desc = "EVTDESC19041"
@@ -43,23 +33,21 @@ province_event = {
 	
 	option = {
 		name = "EVTOPTA19041"
-		owner = {
-			add_country_modifier = {
-				name = egyptian_excavations
-				duration = -1
-			}
-			relation = {
-				who = FROM
-				value = 20
-			}
-			set_global_flag = egyptian_excavation_rights
-			prestige = 5
+		add_country_modifier = {
+			name = egyptian_excavations
+			duration = -1
 		}
+		relation = {
+			who = FROM
+			value = 20
+		}
+		set_global_flag = egyptian_excavation_rights
+		prestige = 5
 	}
 }
 
 #Egypt Refuses
-province_event = {
+country_event = {
 	id = 19042
 	title = "EVTNAME19042"
 	desc = "EVTDESC19042"
@@ -69,14 +57,12 @@ province_event = {
 	
 	option = {
 		name = "EVTOPTA19042"
-		owner = {
-			relation = {
-				who = FROM
-				value = -20
-			}
-			prestige = -5
-			set_country_flag = egypt_refused
+		relation = {
+			who = FROM
+			value = -20
 		}
+		prestige = -5
+		set_country_flag = egypt_refused
 	}
 }
 
@@ -345,7 +331,7 @@ country_event = {
 }
 
 #Greek Excavations
-province_event = {
+country_event = {
 	id = 190401
 	title = "Mycenaean Excavations"
 	desc = "A great power has come to us asking to excavate local ruins."
@@ -355,13 +341,8 @@ province_event = {
 	
 	option = {
 		name = "Certainly."
-		owner = { set_global_flag = greek_excavation_rights }
-		FROM = {
-			random_owned = {
-				limit = { is_capital = yes }
-				province_event = { id = 190411 }
-			}
-		}
+		set_global_flag = greek_excavation_rights
+		FROM = { country_event = { id = 190411 } }
 		ai_chance = {
 			factor = 100
 		}
@@ -369,17 +350,12 @@ province_event = {
 	
 	option = {
 		name = "Never!"
-		FROM = {
-			random_owned = {
-				limit = { is_capital = yes }
-				province_event = { id = 190421 }
-			}
-		}
+		FROM = { country_event = { id = 190421 } }
 	}
 }
 
 #Greece Allows
-province_event = {
+country_event = {
 	id = 190411
 	title = "Greece Permits!"
 	desc = "The Greeks have agreed that we may excavate at Mycenae"
@@ -389,23 +365,21 @@ province_event = {
 	
 	option = {
 		name = "Hurrah!"
-		owner = {
-			add_country_modifier = {
-				name = mycenaean_excavations
-				duration = -1
-			}
-			relation = {
-				who = FROM
-				value = 20
-			}
-			set_global_flag = mycenaean_excavation_rights
-			prestige = 5
+		add_country_modifier = {
+			name = mycenaean_excavations
+			duration = -1
 		}
+		relation = {
+			who = FROM
+			value = 20
+		}
+		set_global_flag = mycenaean_excavation_rights
+		prestige = 5
 	}
 }
 
 #Greece Refuses
-province_event = {
+country_event = {
 	id = 190421
 	title = "Greece Refuses!"
 	desc = "The foolish Greeks have refused our antiquarians access!"
@@ -415,14 +389,12 @@ province_event = {
 	
 	option = {
 		name = "Damnation!"
-		owner = {
-			relation = {
-				who = FROM
-				value = -20
-			}
-			prestige = -5
-			set_country_flag = greece_refused
+		relation = {
+			who = FROM
+			value = -20
 		}
+		prestige = -5
+		set_country_flag = greece_refused
 	}
 }
 
@@ -603,7 +575,7 @@ country_event = {
 	}
 }
 
-province_event = {
+country_event = {
 	id = 1904012
 	title = "Minoan Excavations"
 	desc = "A great power has come to us asking to excavate local ruins."
@@ -613,13 +585,8 @@ province_event = {
 	
 	option = {
 		name = "Certainly."
-		owner = { set_global_flag = crete_excavation_rights }
-		FROM = {
-			random_owned = {
-				limit = { is_capital = yes }
-				province_event = { id = 1904112 }
-			}
-		}
+		set_global_flag = crete_excavation_rights
+		FROM = { country_event = { id = 1904112 } }
 		ai_chance = {
 			factor = 100
 		}
@@ -627,17 +594,12 @@ province_event = {
 	
 	option = {
 		name = "Never!"
-		FROM = {
-			random_owned = {
-				limit = { is_capital = yes }
-				province_event = { id = 1904212 }
-			}
-		}
+		FROM = { country_event = { id = 1904212 } }
 	}
 }
 
 #Crete Allows
-province_event = {
+country_event = {
 	id = 1904112
 	title = "Crete permits!"
 	desc = "The Cretans have agreed that we may excavate at Knossos."
@@ -647,23 +609,21 @@ province_event = {
 	
 	option = {
 		name = "Hurrah!"
-		owner = {
-			add_country_modifier = {
-				name = minoan_excavations
-				duration = -1
-			}
-			relation = {
-				who = FROM
-				value = 20
-			}
-			set_global_flag = minoan_excavation_rights
-			prestige = 5
+		add_country_modifier = {
+			name = minoan_excavations
+			duration = -1
 		}
+		relation = {
+			who = FROM
+			value = 20
+		}
+		set_global_flag = minoan_excavation_rights
+		prestige = 5
 	}
 }
 
 #Crete Refuses
-province_event = {
+country_event = {
 	id = 1904212
 	title = "Crete refuses!"
 	desc = "The foolish Cretans have refused our antiquarians access!"
@@ -673,14 +633,12 @@ province_event = {
 	
 	option = {
 		name = "Damnation!"
-		owner = {
-			relation = {
-				who = FROM
-				value = -20
-			}
-			prestige = -5
-			set_country_flag = crete_refused
+		relation = {
+			who = FROM
+			value = -20
 		}
+		prestige = -5
+		set_country_flag = crete_refused
 	}
 }
 
@@ -1065,7 +1023,7 @@ province_event = {
 }
 
 ### Guatemala questioned
-province_event = {
+country_event = {
 	id = 201004
 	title = "EVTNAME201004"
 	desc = "EVTDESC201004"
@@ -1075,17 +1033,9 @@ province_event = {
 	
 	option = {
 		name = "Odd people. What is so interesting about some stones in the jungle?"
-		owner = { plurality = 1 }
-		owner = { treasury = 10000 }
-		FROM = {
-			random_owned = {
-				limit = { is_capital = yes }
-				#ini oscar7211
-				#province_event = 201005
-				province_event = { id = 201005 }
-				#end
-			}
-		}
+		plurality = 1
+		treasury = 10000
+		FROM = { country_event = { id = 201005 } }
 		ai_chance = {
 			factor = 100
 		}
@@ -1093,21 +1043,13 @@ province_event = {
 	
 	option = {
 		name = "No! That's our jungle!"
-		owner = { prestige = 2 }
-		FROM = {
-			random_owned = {
-				limit = { is_capital = yes }
-				#ini oscar7211
-				#province_event = 201006
-				province_event = { id = 201006 }
-				#end
-			}
-		}
+		prestige = 2
+		FROM = { country_event = { id = 201006 } }
 	}
 }
 
 ### Guatemala gives access
-province_event = {
+country_event = {
 	id = 201005
 	title = "EVTNAME201005"
 	desc = "EVTDESC201005"
@@ -1117,23 +1059,21 @@ province_event = {
 	
 	option = {
 		name = "Where is my fedora?"
-		owner = {
-			money = -10000
-			add_country_modifier = {
-				name = maya_excavations
-				duration = -1
-			}
-			relation = {
-				who = FROM
-				value = 10
-			}
-			prestige = 5
+		money = -10000
+		add_country_modifier = {
+			name = maya_excavations
+			duration = -1
 		}
+		relation = {
+			who = FROM
+			value = 10
+		}
+		prestige = 5
 	}
 }
 
 ### Guatemala refuses
-province_event = {
+country_event = {
 	id = 201006
 	title = "EVTNAME201006"
 	desc = "EVTDESC201006"
@@ -1143,11 +1083,9 @@ province_event = {
 	
 	option = {
 		name = "But I've already bought this handsome leather jacket!"
-		owner = {
-			relation = { who = FROM value = -10 }
-			prestige = -5
-			set_country_flag = maya_refused
-		}
+		relation = { who = FROM value = -10 }
+		prestige = -5
+		set_country_flag = maya_refused
 		ai_chance = {
 			factor = 90
 		}
@@ -1155,7 +1093,7 @@ province_event = {
 }
 
 ### Peru questioned
-province_event = {
+country_event = {
 	id = 201007
 	title = "EVTNAME201007"
 	desc = "EVTDESC201007"
@@ -1165,16 +1103,9 @@ province_event = {
 	
 	option = {
 		name = "They should have access to our mountains. If they pay, naturally."
-		owner = {
-			plurality = 1
-			money = 10000
-		}
-		FROM = {
-			random_owned = {
-				limit = { is_capital = yes }
-				province_event = { id = 201008 }
-			}
-		}
+		plurality = 1
+		money = 10000
+		FROM = { country_event = { id = 201008 } }
 		ai_chance = {
 			factor = 100
 		}
@@ -1182,18 +1113,13 @@ province_event = {
 	
 	option = {
 		name = "Our mountains, our heritage!"
-		owner = { prestige = 1 }
-		FROM = {
-			random_owned = {
-				limit = { is_capital = yes }
-				province_event = { id = 201009 }
-			}
-		}
+		prestige = 1
+		FROM = { country_event = { id = 201009 } }
 	}
 }
 
 ### Peru gives access
-province_event = {
+country_event = {
 	id = 201008
 	title = "EVTNAME201008"
 	desc = "EVTDESC201008"
@@ -1203,19 +1129,17 @@ province_event = {
 	
 	option = {
 		name = "Bye, Junior, I've got something to do..."
-		owner = {
-			money = -10000
-			add_country_modifier = {
-				name = inca_excavations
-				duration = -1
-			}
-			relation = { who = FROM value = 10 }
+		money = -10000
+		add_country_modifier = {
+			name = inca_excavations
+			duration = -1
 		}
+		relation = { who = FROM value = 10 }
 	}
 }
 
 ### Peru refuses
-province_event = {
+country_event = {
 	id = 201009
 	title = "EVTNAME201009"
 	desc = "EVTDESC201009"
@@ -1225,19 +1149,17 @@ province_event = {
 	
 	option = {
 		name = "Bah, I don't even like climbing..."
-		owner = { 
-			relation = {
-				who = FROM
-				value = -10
-			}
-			prestige = -5
+		relation = {
+			who = FROM
+			value = -10
 		}
+		prestige = -5
 		set_country_flag = inca_refused
 	}
 }
 
 ### OE questioned
-province_event = {
+country_event = {
 	id = 201010
 	title = "EVTNAME201010"
 	desc = "EVTDESC201010"
@@ -1247,17 +1169,10 @@ province_event = {
 	
 	option = {
 		name = "If they want to dig in the desert, they're welcome to it."
-		owner = {
-			plurality = 1
-			money = 10000
-			set_global_flag = mesopotamian_excavation_rights
-		}
-		FROM = {
-			random_owned = {
-				limit = { is_capital = yes }
-				province_event = { id = 201011}
-			}
-		}
+		plurality = 1
+		money = 10000
+		set_global_flag = mesopotamian_excavation_rights
+		FROM = { country_event = { id = 201011 } }
 		ai_chance = {
 			factor = 100
 		}
@@ -1265,18 +1180,13 @@ province_event = {
 	
 	option = {
 		name = "We refuse out of sheer spite."
-		owner = { prestige = 1 }
-		FROM = {
-			random_owned = {
-				limit = { is_capital = yes }
-				province_event = { id = 201012 }
-			}
-		}
+		prestige = 1
+		FROM = { country_event = { id = 201012 } }
 	}
 }
 
 # OE Allows
-province_event = {
+country_event = {
 	id = 201011
 	title = "EVTNAME201011"
 	desc = "EVTDESC201011"
@@ -1286,21 +1196,19 @@ province_event = {
 	
 	option = {
 		name = "We knew they would cooperate."
-		owner = {
-			money = -10000
-			add_country_modifier = {
-				name = mesopotamian_excavations
-				duration = -1
-			}
-			relation = { who = FROM value = 20 }
-			set_global_flag = mesopotamian_excavation_rights
-			prestige = 5
+		money = -10000
+		add_country_modifier = {
+			name = mesopotamian_excavations
+			duration = -1
 		}
+		relation = { who = FROM value = 20 }
+		set_global_flag = mesopotamian_excavation_rights
+		prestige = 5
 	}
 }
 
 # OE Refuses
-province_event = {
+country_event = {
 	id = 201012
 	title = "EVTNAME201012"
 	desc = "EVTDESC201012"
@@ -1310,11 +1218,9 @@ province_event = {
 	
 	option = {
 		name = "This is... unexpected."
-		owner = {
-			relation = { who = FROM value = -20 }
-			prestige = -5
-			set_country_flag = mesopotamian_refused
-		}
+		relation = { who = FROM value = -20 }
+		prestige = -5
+		set_country_flag = mesopotamian_refused
 	}
 }
 
