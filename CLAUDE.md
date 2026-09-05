@@ -144,6 +144,7 @@ Alongside it sits a family of read-only audit scripts, one per subsystem, each p
 | `audit_events.py` | unknown trigger/effect keywords, re-firing events with permanent effects, `year = 1836` gates that lock out the 1821 start |
 | `audit_events2.py` | second-opinion structural pass over events and decisions (FROM misuse, scope of effects, random_list weights, ...); emits JSON |
 | `audit_fire_once.py` | self-firing events relying on engine-wide `fire_only_once` |
+| `audit_owner_scope.py` | `any_owned` / `random_owned` blocks that can never match, because the enclosing country scope owns none of the provinces the `limit` names (the silent no-op the Anglo-Afghan chain shipped) |
 | `audit_perf.py` | scores self-firing events by trigger cost and ranks the hotspots |
 | `audit_pacing.py` | player-facing event load 1821-1836 per major playable tag: fires per year, `major = yes` popups, same-day cascades, runaway repeaters |
 | `balance_factories.py` | factory and artisan margins including maintenance goods (`--vanilla` for the reference band, `--target R` for the budget solver) |
