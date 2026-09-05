@@ -3585,7 +3585,6 @@ sectional_tension = {
 ##### JAVA WAR (JavaWarGVG) #####
 java_war = {
 	local_RGO_output = -0.10
-	farm_RGO_size = -0.10
 	local_ruling_party_support = -0.05
 	population_growth = -0.001
 	icon = 15
@@ -3593,7 +3592,7 @@ java_war = {
 
 cultuurstelsel = {
 	tax_efficiency = 0.05
-	farm_RGO_size = 0.10
+	farm_RGO_eff = 0.10
 	global_pop_militancy_modifier = 0.01
 	icon = 7
 }

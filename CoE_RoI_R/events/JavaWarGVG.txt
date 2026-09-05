@@ -139,10 +139,6 @@ country_event = {
 				factor = 4
 				war = yes
 			}
-			modifier = {
-				factor = 4
-				has_country_flag = BEL_war_of_secession
-			}
 		}
 	}
 }
