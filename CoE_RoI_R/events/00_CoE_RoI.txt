@@ -608,6 +608,8 @@ country_event = {
 		any_country = { limit = { any_owned_province = { has_province_modifier = settlement_colony } } set_country_flag = land_suitable_for_settlement }
 		any_country = { limit = { NOT = { any_owned_province = { has_province_modifier = settlement_colony } } } clr_country_flag = land_suitable_for_settlement }
 		any_country = { limit = { war_with = BHU } end_war = BHU }
+		# Release the 99988 "Enemy Lies Fallen" once-per-war guard once the war is over.
+		any_country = { limit = { has_country_flag = enemy_lies_fallen war = no } clr_country_flag = enemy_lies_fallen }
 		#any_country = { add_tax_relative_income = 1.0 }
 		# Anti-hoarding drain -- DISABLED, see always = no below.
 		#
@@ -961,14 +963,19 @@ country_event = {
 	trigger = { 
 		war = yes
 		war_countries = { exists = no }
+		NOT = { has_country_flag = enemy_lies_fallen }
 	}
 	
 	mean_time_to_happen = {
-		days = 1
+		months = 1
 	}
 
 	option = {
 		name = "Good"
+		# Fire once per war: the flag blocks the daily re-fire if end_war below does not
+		# take (or a second annexed-out belligerent is still on the war list).  99997
+		# (quarterly POPs Maintenance) clears it again for every country at peace.
+		set_country_flag = enemy_lies_fallen
 		any_country = { limit = { exists = no war = yes } country_event = 99987 }
 	}
 }

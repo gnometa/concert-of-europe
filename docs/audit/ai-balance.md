@@ -11,16 +11,9 @@ tagged [high].*
 
 ### [high]
 
-`CoE_RoI_R/history/countries/*.txt:8` (all 521 files) — **every country starts at
-`literacy = 0.01`**, with the historical value commented out on the same line
-(`ENG ... #literacy = 0.58`, `PRU ... #literacy = 0.785`). Combined with the mod's education
-rework this erases the single largest research-speed differentiator in the game: Britain,
-Prussia and the USA begin no more literate than Ashanti. Whatever the rework intended, the
-GP field is now separated only by tech count and prestige. *Fix:* decide deliberately —
-either restore a compressed historical spread (e.g. 0.30 for ENG/PRU/USA/NET, 0.15 for
-FRA/AUS/SAR, 0.02 for uncivs) or document the flat start in `CLAUDE.md` as intended and
-delete the misleading commented values. Do not do this piecemeal; it is one edit across all
-history files.
+~~`CoE_RoI_R/history/countries/*.txt:8` (all 521 files) - every country starts at
+`literacy = 0.01`.~~ **Investigated 2026-09-06: intentional, left as is.** See
+"Literacy: why the flat 0.01 start stays" below.
 
 `CoE_RoI_R/common/production_types.txt:258-305` — the five factory chains are mis-priced
 against `common/goods.txt`. `military_factory` returns **12.0x** its input cost and
@@ -31,15 +24,11 @@ to build. See Table 3. *Fix:* balance pass, not a patch — the two halves (`val
 `input_goods` here, `cost` in `goods.txt`) have to move together. Target a 1.5-2.5x band for
 every tier. Held for the same pass as the `core-systems.md` "Deferred" items.
 
-`CoE_RoI_R/events/GreatPowers.txt:2` (id 800004) and `:78` (id 800006) — the flag guard is
-commented out in both triggers (`#NOT = { has_country_flag = military_access_granted }`,
-`#has_country_flag = military_access_granted`). 800004 has `days = 1`, no `fire_only_once`,
-and a trigger satisfied by *every sphered nation* whose sphere leader has not yet been
-granted access; its option only *asks* the sphere leader (event 800005). Nothing in the
-option changes 800004's own trigger, so if the leader's `military_access = FROM` fails or is
-later revoked the event re-fires the next day, forever, as a titled popup. 800006 mirrors it.
-*Fix:* uncomment both flag guards, or add `NOT = { has_country_flag = military_access_granted }`
-to 800004 and rely on the `clr_country_flag` the 800006 option already does.
+~~`CoE_RoI_R/events/GreatPowers.txt:2` (id 800004) and `:78` (id 800006) - flag guard
+commented out in both triggers.~~ **Fixed 2026-09-06.** Both guards uncommented. The chain
+was already complete: 800004's option does `set_country_flag = military_access_granted`
+and 800006's option does `clr_country_flag = military_access_granted`, so with the guards
+live 800004 fires at most once per sphering and 800006 at most once per release.
 
 ### [medium]
 
@@ -83,48 +72,75 @@ three-month defection timer is the fastest-collapsing rebel in the file by a wid
 *Fix:* raise `defect_delay` to 12 (matching `colonial_rebels`) or drop `occupation_mult` to
 3.0, in the same pass.
 
-`CoE_RoI_R/history/countries/CSA - Confederate States of America.txt` — **CSA starts with 49
-techs**, nearly double Britain's 27 and more than any existing country. Thirteen further
-unformed release tags carry **24** starting techs each (BRE, CZH, HOL, LUX, OLD, ORA, PHL,
-RHI, SAA, SPC, TRN, WES, YUG) — more than Russia (17), Austria (14) or Sweden (14). A tag
-released mid-game inherits its history file, so any of these appears instantly ahead of the
-great power it was carved out of. `SPC` additionally carries `prestige = 50`, equal to the
-USA, for a tag that does not exist at start. *Fix:* clamp unformed tags to the tech level of
-their most likely parent (Austria's 14 for CZH, Prussia's 21 for the German minors) and zero
-the prestige on non-existent tags.
+~~CSA 49 techs; thirteen unformed release tags at 24; `SPC` prestige 50.~~ **Fixed
+2026-09-06.** All thirteen release tags (BRE, CZH, HOL, LUX, OLD, ORA, PHL, RHI, SAA, SPC,
+TRN, WES, YUG) carried the *identical* 24-tech list, which is the vanilla/PDM **1836**
+European standard - the same list Prussia's `1836.1.1` block has. It is an un-backdated
+leftover from the move to an 1821 start, not a design choice. All thirteen were trimmed to
+the mod's own 1821 minor tier (the 14-tech list shared by BAV, BAD and WUR), which sits
+below every plausible parent (Prussia 21, Netherlands 17, Spain 17, Austria 19). `SPC`
+prestige 50 -> 0.
 
-`CoE_RoI_R/history/countries/AUS - Austria.txt` — Austria, a starting great power with
-prestige 100 and 8.1M pop, has **14 techs**, fewer than Portugal (18), Spain (17),
-Sardinia-Piedmont (16), Sicily (16) and the Netherlands (16), and level with Bavaria (14).
-*Fix:* raise to ~18-20, in line with Prussia's 21, unless a deliberately brittle Habsburg
-start is intended — in which case say so in the file.
+CSA was trimmed from 49 to the USA's 22-tech list verbatim, so the Confederacy can no
+longer be released ahead of the Union.
 
-`CoE_RoI_R/events/00_CoE_RoI.txt:956` (id 99988, "Enemy Lies Fallen") — `days = 1`, no
-`fire_only_once`, trigger `war = yes` + `war_countries = { exists = no }`, and the option does
-not end the war. Any war against an annexed-out opponent produces a titled popup every day
-until the peace resolves. *Fix:* add flag bookkeeping or `fire_only_once`, and lengthen the
-MTTH to `months = 1`.
-
-### [low]
-
-`CoE_RoI_R/events/China.txt:244` (id 90901) — the AI is weighted 100 vs 10 toward the option
-that fires `release_vassal`, with no `ai_chance` modifiers. It is the only entry in the
-release/`change_tag` scan (14 events) where the give-away option wins by 10:1 and is
-unguarded; the other thirteen are unification `change_tag` (intended) or colonial-empire
-events where the release is the historical outcome. *Fix:* add a modifier lowering the weight
-when the AI is a great power, or reverse the ratio.
-
-`CoE_RoI_R/common/cb_types.txt:988,1214` — `east_indian_unification` and
-`east_indian_unification_annex` set both `always = yes` and `is_triggered_only = yes`. The
-latter wins; `always` is dead script. *Fix:* drop the `always` line.
-
-`CoE_RoI_R/common/rebel_types.txt` — `boxer_rebels` exists in vanilla but not in the mod, and
-`localisation/newtext.csv` still carries its strings. Harmless (nothing scripts it); noted so
-it is not "fixed" twice.
+Austria was raised from 14 to 19 by adding the 1821-tier techs Prussia has and it lacked:
+`military_staff_system`, `army_command_principle` (army), `naval_design_bureaus` (navy),
+`early_classical_theory_and_critique`, `freedom_of_trade` (commerce). All five are already
+in Austria's own `1836.1.1` block, so nothing was invented. `guild_based_production` and
+`mechanized_mining` were deliberately left out - Austria stays two industry techs behind
+Prussia (19 vs 21), which is the "first-rank power, weaker industry" shape asked for.
 
 `CoE_RoI_R/history/countries/PER - Persia.txt` — Persia starts with 5 army techs, equal to
 France, Prussia and Russia, and 0 navy/industry techs. Probably an artefact of the
 `000_persia_*` submod merge. *Fix:* drop to 3.
+
+## Literacy: why the flat 0.01 start stays
+
+Every country - and every dated block inside every country file, not just the 1821 head -
+carries `literacy = 0.01  non_state_culture_literacy = 0.01` with the old value commented
+out. This was checked on 2026-09-06 and is **intentional**; the commented values are kept
+as historical reference and were not restored.
+
+Evidence:
+
+- `git log -S"literacy = 0.01" -- CoE_RoI_R/history/countries` bottoms out at **8f5e1248
+  "economic rework base"** (Mitusonator, 2020-12-09) - the same commit that rewrote
+  `common/buildings.txt` and `common/goods.txt`. It flattened `literacy` *and*
+  `non_state_culture_literacy` in the head block **and in the `1836.1.1` and `1861.1.1`
+  blocks of every file**. An accident of the start-date change would have touched only the
+  head block; wiping the whole literacy timeline is a design decision.
+- `f5231d50 "literacy fix"` (2021-10-26) is only a reformat of the comment placement
+  (`literacy = 0.01 #literacy = 0.69` became
+  `literacy = 0.01  non_state_culture_literacy = 0.01   #literacy = 0.69`), not a revert.
+- The surrounding commit stream tunes literacy *growth* rather than the start value:
+  `92081418 "lower base literacy"`, `149285a2 "lower literacy speed"`,
+  `31970187 "balanced literacy and state services"`, `a4c2e485 "lowered education effects"`,
+  `6836458b "more exp for literacy"`, `7ea32ef1 "fixed education modifiers not aplying correctly"`.
+
+How literacy is meant to move in this mod:
+
+- There is **no script effect in Victoria 2 that sets pop literacy**; `literacy` in
+  `events/`, `decisions/` and `+education_RGO*.txt` is only ever a *trigger*. Nothing
+  outside the history files can seed it, so the education rework grows it purely through
+  the engine's clergy / education-spending loop.
+- `common/defines.lua:619-621` - `LITERACY_CHANGE_SPEED = 0.0050` (vanilla 0.1),
+  `BASE_CLERGY_FOR_LITERACY = 0.003` (vanilla 0.005), `MAX_CLERGY_FOR_LITERACY = 0.05`
+  (vanilla 0.04). Slower per tick, but rewarding a larger clergy.
+- `common/static_modifiers.txt:157-161` - `base_values` grants a flat
+  `education_efficiency_modifier = 2.00` to every country (vanilla grants none), tripling
+  that base rate. On top of it sit well over a hundred further
+  `education_efficiency_modifier` entries in `event_modifiers.txt`, `static_modifiers.txt`,
+  `triggered_modifiers.txt`, `issues.txt`, `national_focus.txt` and all five
+  `technologies/*.txt` files - education output is the mod's intended differentiator,
+  replacing the historical head start.
+- `events/+education_RGO.txt:505-750` reads state literacy in 0.1-wide brackets
+  (`RGO_education_0` ... `RGO_education_9`) and stamps a matching RGO province modifier.
+  That ladder starting at 0-0.1 only pays off if everyone starts at the bottom.
+
+Consequence to keep in mind for the economy pass: because literacy is flat, the great-power
+field really is separated only by tech count, prestige and education modifiers - which is
+why the tech-count outliers above were worth fixing.
 
 ## Checks that came back clean
 
@@ -161,7 +177,7 @@ mod and is omitted.
 | ENG | 6,872,958 | 250 | 15 | 27 | 3 | 5 | 9 | 4 | 6 |
 | FRA | 7,746,775 | 150 | 5 | 25 | 5 | 5 | 5 | 6 | 4 |
 | RUS | 12,106,502 | 200 | 0 | 17 | 5 | 4 | 2 | 4 | 2 |
-| AUS | 8,148,433 | 100 | 5 | **14** | 3 | 2 | 2 | 4 | 3 |
+| AUS | 8,148,433 | 100 | 5 | 19 | 5 | 3 | 4 | 4 | 3 |
 | PRU | 3,265,125 | 80 | 0 | 21 | 5 | 3 | 5 | 4 | 4 |
 | USA | 2,475,839 | 50 | 20 | 22 | 4 | 4 | 7 | 4 | 3 |
 | TUR | 4,645,989 | 60 | 0 | 8 | 3 | 1 | 1 | 2 | 1 |
@@ -181,9 +197,10 @@ mod and is omitted.
 | HND | 21,384,048 | 0 | 0 | 7 | 3 | 3 | 0 | 1 | 0 |
 | JAP | 1,009,965 | 0 | 0 | 4 | 0 | 0 | 1 | 3 | 0 |
 | KOR | 4,349,362 | 0 | 0 | 3 | 0 | 0 | 1 | 2 | 0 |
-| **CSA** | — | 0 | 0 | **49** | — | — | — | — | — |
+| CSA | — | 0 | 0 | 22 | — | — | — | — | — |
 
-Unformed tags with 24 techs: BRE, CZH, HOL, LUX, OLD, ORA, PHL, RHI, SAA, SPC, TRN, WES, YUG.
+Unformed tags formerly at 24 techs, now at 14: BRE, CZH, HOL, LUX, OLD, ORA, PHL, RHI, SAA,
+SPC, TRN, WES, YUG.
 Tech-count histogram over all 521 tags: 226 at 0, 67 at 2, 41 at 4, 23 at 5, 13 at 19, then
 the list above. Qing and Japan at 3-4 techs and Korea at 3 are consistent with an unciv start;
 no unciv outlier was found.
@@ -271,9 +288,9 @@ false permanently.
 
 | # | event | MTTH | note |
 |---|---|---|---|
-| 1 | `GreatPowers.txt:2` 800004 | 1 day | flag guard commented out — see [high] above |
-| 2 | `GreatPowers.txt:78` 800006 | 1 day | same, mirrored |
-| 3 | `00_CoE_RoI.txt:956` 99988 | 1 day | option does not clear the trigger |
+| 1 | `GreatPowers.txt:2` 800004 | 1 day | ~~flag guard commented out~~ fixed, guard restored |
+| 2 | `GreatPowers.txt:78` 800006 | 1 day | ~~same, mirrored~~ fixed, guard restored |
+| 3 | `00_CoE_RoI.txt:956` 99988 | 1 month | ~~option does not clear the trigger~~ fixed, once-per-war flag |
 | 4 | `GreatWar_Events.txt:363` 96006 | 1 day | "Total Collapse"; guarded by a `great_war*` modifier plus 75% occupation, self-limiting in practice |
 | 5 | `Revolution_Nationalism_Event.txt:414` 97180 | 1 day | annexes the province; self-clearing |
 | 6 | `Revolution_Nationalism_Event.txt:859` 97185 | 1 day | removes `colonial_chaos`; self-clearing |
@@ -287,4 +304,29 @@ false permanently.
 | 14 | `NationalValues.txt:965,1060,1158` 18540/18541/18542 | 10 days | fires for anyone on `nv_progress`; the option changes the NV so it is self-clearing, but it is three near-identical `major = yes` popups per newly-civilised nation |
 | 15 | `0_colony_types.txt:381` 999886 | 1 month | 142-token trigger evaluated for every country every month; performance, not spam (already row 3 of the `core-systems.md` performance table) |
 
-Only rows 1-3 are genuine defects; 4-15 are recorded so a later pass does not re-derive them.
+Only rows 1-3 were genuine defects; all three are fixed. 4-15 are recorded so a later pass
+does not re-derive them.
+
+## Fixed in this pass (2026-09-06)
+
+- `events/GreatPowers.txt` 800004 / 800006 - flag guards restored.
+- `events/00_CoE_RoI.txt` 99988 - once-per-war flag plus `months = 1` MTTH; the flag is
+  released by 99997.
+- `history/countries/AUS - Austria.txt` - 14 -> 19 techs.
+- `history/countries/CSA - CSA.txt` - 49 -> 22 techs (the USA's list).
+- 13 release tags (BRE, CZH, HOL, LUX, OLD, ORA, PHL, RHI, SAA, SPC, TRN, WES, YUG) -
+  24 -> 14 techs; `SPC` prestige 50 -> 0.
+- Literacy investigated and deliberately left flat (section above).
+
+## Deferred
+
+- `common/production_types.txt` / `common/goods.txt` factory pricing (Table 3) and
+  `artisan_food_maker`'s negative margin (Table 4) - one economy balance pass, shared with
+  the `core-systems.md` deferred items.
+- `common/cb_types.txt` - 24 event CBs at `badboy_factor = 0` against 7-14x infamy on the
+  ordinary CBs; `always = yes` plus `is_triggered_only = yes` on the two
+  `east_indian_unification` entries.
+- `common/rebel_types.txt` - `defection = none` on five types, the 1-100 `spawn_chance`
+  rebase, and `separatist_rebels`' `occupation_mult = 5.0` / `defect_delay = 3`.
+- `events/China.txt` 90901 - 100:10 AI weight toward `release_vassal`.
+- `history/countries/PER - Persia.txt` - 5 army techs, drop to 3.
