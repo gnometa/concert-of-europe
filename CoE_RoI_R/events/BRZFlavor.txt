@@ -506,6 +506,7 @@ country_event = {
 		tag = BRZ
 		year = 1840
 		has_country_flag = pedro_events_begun
+		NOT = { has_country_flag = brazil_majority } #BRZRegencyGVG 1001903 already settled the majority
 	}
 	
 	mean_time_to_happen = {

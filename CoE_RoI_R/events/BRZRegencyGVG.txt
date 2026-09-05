@@ -121,7 +121,8 @@ country_event = {
 		tag = BRZ
 		exists = yes
 		has_country_flag = brazil_regency
-		owns = 2410 #Belem
+		owns = 2410 #Belem - UPB at the 1821 start, seceded to BRZ by PORFlavor 97023;
+		             #the 1836.1.1 history block only matters to a 1836 start
 		year = 1835
 		NOT = { year = 1841 }
 		NOT = { has_country_flag = brazil_cabanagem }

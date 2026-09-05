@@ -24,10 +24,16 @@ provincial revolts and the 1840 golpe da maioridade - has nothing.
 - **46325 (Farroupilha) and `history/wars/FarroupilhaWar.txt` are untouched.**
   1001901 is deliberately about Para (province 2410) only, so the two 1835
   revolts do not overlap: no `release`, no war, no core changes, no RGS mention.
+- **Belem (2410) ownership**: the province is `owner = UPB` with `add_core = BRZ`
+  at the 1821 start and only becomes Brazilian in history on 1836.1.1, which is
+  the 1836 bookmark's state. In an 1821 game it reaches BRZ through the
+  independence secession in `PORFlavor.txt:97023`, so `owns = 2410` is kept
+  rather than moving the window to 1836; the 1835-1841 window absorbs any delay.
 - **46316** ("Pedro II comes of age", `year = 1840`, needs `pedro_events_begun`
   from 46315, which itself needs POR to be an absolute monarchy) stays in place.
-  1001903-A does `clr_country_flag = pedro_events_begun` so the two coming-of-age
-  events cannot both fire; if 46316 has already fired, 1001903 simply grants the
+  1001903 sets `brazil_majority`, which 46316's trigger now excludes, and
+  1001903-A also does `clr_country_flag = pedro_events_begun`, so the two
+  coming-of-age events cannot both fire; if 46316 has already fired, 1001903 simply grants the
   political outcome the older event never had.
 - 1001900 reads the Cisplatine state through `URU = { exists = yes }` /
   `has_country_flag = cisplatina_is_ours` only; it never re-opens that war.
