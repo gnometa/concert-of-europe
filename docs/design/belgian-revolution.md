@@ -35,6 +35,7 @@ context-free secession cannot pre-empt or double-fire the new chain:
 | 1000304 | ENG | triggered | A independence and neutrality (influence BEL, sends NET the treaty) / B stay out |
 | 1000305 | NET | triggered by 1000304-A only (avoids a double fire) | A accept the Twenty-Four Articles: `end_war = BEL` / B refuse: infamy +2, ENG/FRA relations |
 | 1000306 | BEL | triggered 240 days after release | A Leopold of Saxe-Coburg (`hms_government`, ENG influence) / B the Duc de Nemours (FRA) / C a republic (`democracy`) |
+| 1000308 | NET | flag set, `war = no`, MTTH 1 month, fire_only_once | clears `BEL_war_of_secession` after any peace |
 | 1000307 | NET | 1839+, still at war with BEL, fire_only_once | A sign the Treaty of London / B fight on (infamy, war exhaustion) |
 
 AI weights follow history: crack down 70/30; fight 70 / recognise 30 / Holy

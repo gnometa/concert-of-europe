@@ -5,7 +5,7 @@
 #1000100-1000199: USAFlavorGVG
 #1000200-1000299: BYZFlavorGVG
 #1000300:         TAKEN by PORFlavor.txt (new capital) - not part of a GVG range
-#1000301-1000399: BELRevolutionGVG (1830-1839 Belgian Revolution; 1000301-1000307 used)
+#1000301-1000399: BELRevolutionGVG (1830-1839 Belgian Revolution; 1000301-1000308 used)
 #1000400-1000499: RUSDecembristGVG
 #
 #Reserved, currently unused (the files that defined them were 100% commented out

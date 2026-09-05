@@ -249,7 +249,7 @@ country_event = {
 		diplomatic_influence = { who = BEL value = 100 }
 		relation = { who = BEL value = 50 }
 		relation = { who = NET value = -25 }
-		NET = { country_event = { id = 1000305 days = 40 } }
+		NET = { country_event = { id = 1000305 days = 300 } }
 		ai_chance = {
 			factor = 70
 		}
@@ -384,7 +384,6 @@ country_event = {
 	trigger = {
 		tag = NET
 		exists = yes
-		exists = BEL
 		has_country_flag = BEL_war_of_secession
 		war_with = BEL
 		year = 1839
@@ -424,6 +423,35 @@ country_event = {
 		relation = { who = FRA value = -25 }
 		ai_chance = {
 			factor = 20
+		}
+	}
+}
+
+# The Guns Fall Silent (clean-up: the secession war ended by any other means)
+country_event = {
+	id = 1000308
+	title = "EVTNAME1000308"
+	desc = "EVTDESC1000308"
+	picture = "treaty"
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = NET
+		has_country_flag = BEL_war_of_secession
+		war = no
+	}
+
+	mean_time_to_happen = {
+		months = 1
+	}
+
+	option = {
+		name = "EVTOPTA1000308"
+		clr_country_flag = BEL_war_of_secession
+		add_country_modifier = {
+			name = no_more_war
+			duration = 365
 		}
 	}
 }
