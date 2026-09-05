@@ -1,0 +1,5 @@
+#!/bin/sh
+# Deploy the working tree to the Victoria 2 mod folder before every push.
+# Enabled with: git config core.hooksPath .githooks
+repo="$(git rev-parse --show-toplevel)"
+pwsh -NoProfile -File "$repo/scripts/deploy.ps1" || exit 1
