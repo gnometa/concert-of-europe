@@ -234,10 +234,10 @@ country_event = {
 				}
 				OR = {
 					has_pop_type = capitalists
-					has_pop_type = capitalists
+					has_pop_type = aristocrats
 				}
 			}
-			capitalists = {
+			aristocrats = {
 				militancy = 7
 			}
 			capitalists = {
@@ -1097,10 +1097,10 @@ country_event = {
 				is_colonial = no
 				OR = {
 					has_pop_type = capitalists
-					has_pop_type = capitalists
+					has_pop_type = aristocrats
 				}
 			}
-			capitalists = {
+			aristocrats = {
 				consciousness = 2
 				militancy = -1
 			}
@@ -1118,10 +1118,10 @@ country_event = {
 				is_colonial = no
 				OR = {
 					has_pop_type = capitalists
-					has_pop_type = capitalists
+					has_pop_type = aristocrats
 				}
 			}
-			capitalists = {
+			aristocrats = {
 				consciousness = -2
 				militancy = 1
 			}
@@ -1490,7 +1490,7 @@ country_event = {
 	}
 	
 	option = {
-		name = "EVTOPTB14100"
+		name = "EVTOPTB4100"
 		plurality = 2
 	}
 }
@@ -3098,7 +3098,7 @@ country_event = {
 		}
 		modifier = {
 			factor = 1.3
-			NOT = { consciousness = 7 }
+			NOT = { average_consciousness = 7 }
 		}
 	}
 	
