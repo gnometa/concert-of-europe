@@ -1,0 +1,282 @@
+#########################################################
+#                                                       #
+#   Brazil 1831-1840 (GVG)                              #
+#   ids 1001900-1001903                                 #
+#                                                       #
+#   The Seventh of April 1831, the Regency, the         #
+#   Cabanagem in Para 1835-1840 and the golpe da        #
+#   maioridade of July 1840.                            #
+#                                                       #
+#   Independence is handled UPB-side in PORFlavor.txt   #
+#   97022-97029 and the Cisplatine War in               #
+#   URUFlavor.txt 46410-46420. The Farroupilha          #
+#   (BRZFlavor.txt 46325 + history/wars) is left        #
+#   alone: 1001901 is about Para only.                  #
+#                                                       #
+#########################################################
+
+# The Seventh of April
+country_event = {
+	id = 1001900
+	title = "EVTNAME1001900"
+	desc = "EVTDESC1001900"
+	picture = "pedro_ii"
+	major = yes
+	news = yes
+	news_title = "EVTNAME1001900_NEWS_TITLE"
+	news_desc_long = "EVTDESC1001900_NEWS_LONG"
+	news_desc_medium = "EVTDESC1001900_NEWS_MEDIUM"
+	news_desc_short = "EVTDESC1001900_NEWS_SHORT"
+
+	trigger = {
+		tag = BRZ
+		exists = yes
+		is_vassal = no
+		year = 1830
+		NOT = { year = 1838 }
+		NOT = { has_country_flag = brazil_regency }
+		NOT = { has_country_flag = brazil_pedro_stays }
+		OR = {
+			year = 1831
+			exists = URU
+			has_country_flag = cisplatina_is_ours
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 6
+		modifier = {
+			factor = 0.75
+			militancy = 3
+		}
+		modifier = {
+			factor = 0.75
+			war = yes
+		}
+	}
+
+	option = {
+		name = "EVTOPTA1001900"
+		set_country_flag = brazil_regency
+		prestige = -5
+		ruling_party_ideology = liberal
+		add_country_modifier = {
+			name = brazilian_regency
+			duration = 3285
+		}
+		add_country_modifier = {
+			name = national_instability
+			duration = 1095
+		}
+		upper_house = {
+			ideology = liberal
+			value = 0.20
+		}
+		any_pop = {
+			ideology = {
+				value = liberal
+				factor = 0.15
+			}
+			militancy = -1
+		}
+		ai_chance = {
+			factor = 75
+		}
+	}
+
+	option = {
+		name = "EVTOPTB1001900"
+		set_country_flag = brazil_pedro_stays
+		prestige = 2
+		add_country_modifier = {
+			name = national_instability
+			duration = 1825
+		}
+		upper_house = {
+			ideology = reactionary
+			value = 0.15
+		}
+		any_pop = {
+			militancy = 2
+			consciousness = 1
+			ideology = {
+				value = reactionary
+				factor = 0.10
+			}
+		}
+		ai_chance = {
+			factor = 25
+		}
+	}
+}
+
+# The Cabanagem
+country_event = {
+	id = 1001901
+	title = "EVTNAME1001901"
+	desc = "EVTDESC1001901"
+	picture = "streetriot"
+
+	trigger = {
+		tag = BRZ
+		exists = yes
+		has_country_flag = brazil_regency
+		owns = 2410 #Belem
+		year = 1835
+		NOT = { year = 1841 }
+		NOT = { has_country_flag = brazil_cabanagem }
+	}
+
+	mean_time_to_happen = {
+		months = 8
+		modifier = {
+			factor = 0.75
+			war = yes
+		}
+	}
+
+	option = {
+		name = "EVTOPTA1001901"
+		set_country_flag = brazil_cabanagem
+		prestige = 2
+		any_owned = {
+			limit = {
+				province_id = 2410
+			}
+			add_province_modifier = {
+				name = patriot_uprising
+				duration = 1825
+			}
+			any_pop = {
+				militancy = 4
+				consciousness = 2
+			}
+		}
+		country_event = {
+			id = 1001902
+			days = 365
+		}
+		ai_chance = {
+			factor = 60
+		}
+	}
+
+	option = {
+		name = "EVTOPTB1001901"
+		set_country_flag = brazil_cabanagem
+		prestige = -3
+		any_owned = {
+			limit = {
+				province_id = 2410
+			}
+			add_province_modifier = {
+				name = nationalist_agitation
+				duration = 1095
+			}
+			any_pop = {
+				militancy = 1
+				consciousness = 1
+			}
+		}
+		ai_chance = {
+			factor = 40
+		}
+	}
+}
+
+# The Price of the Cabanagem
+country_event = {
+	id = 1001902
+	title = "EVTNAME1001902"
+	desc = "EVTDESC1001902"
+	picture = "streetriot"
+
+	is_triggered_only = yes
+
+	option = {
+		name = "EVTOPTA1001902"
+		prestige = -3
+		leadership = -20
+		add_country_modifier = {
+			name = national_instability
+			duration = 730
+		}
+		any_owned = {
+			limit = {
+				province_id = 2410
+			}
+			any_pop = {
+				militancy = 2
+			}
+		}
+	}
+}
+
+# The Majority Coup
+country_event = {
+	id = 1001903
+	title = "EVTNAME1001903"
+	desc = "EVTDESC1001903"
+	picture = "pedro_ii_grand"
+	major = yes
+
+	trigger = {
+		tag = BRZ
+		exists = yes
+		has_country_flag = brazil_regency
+		year = 1840
+		NOT = { year = 1846 }
+		NOT = { has_country_flag = brazil_majority }
+	}
+
+	mean_time_to_happen = {
+		months = 4
+		modifier = {
+			factor = 0.75
+			militancy = 4
+		}
+	}
+
+	option = {
+		name = "EVTOPTA1001903"
+		set_country_flag = brazil_majority
+		clr_country_flag = brazil_regency
+		clr_country_flag = pedro_events_begun
+		prestige = 10
+		ruling_party_ideology = conservative
+		remove_country_modifier = brazilian_regency
+		remove_country_modifier = national_instability
+		upper_house = {
+			ideology = conservative
+			value = 0.15
+		}
+		any_pop = {
+			militancy = -3
+			consciousness = -1
+		}
+		ai_chance = {
+			factor = 85
+		}
+	}
+
+	option = {
+		name = "EVTOPTB1001903"
+		set_country_flag = brazil_majority
+		prestige = -3
+		add_country_modifier = {
+			name = brazilian_regency
+			duration = 1095
+		}
+		add_country_modifier = {
+			name = national_instability
+			duration = 1095
+		}
+		any_pop = {
+			militancy = 2
+			consciousness = 1
+		}
+		ai_chance = {
+			factor = 15
+		}
+	}
+}

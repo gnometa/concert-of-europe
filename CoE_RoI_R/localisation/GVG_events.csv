@@ -444,3 +444,43 @@ EVTOPTA1001803;Endow the Academy;;;;;;;;;;;;;x
 EVTOPTB1001803;Let the censor read Hitel first;;;;;;;;;;;;;x
 metternich_system;Metternich System;;;;;;;;;;;;;x
 kolowrat_administration;Kolowrat's Administration;;;;;;;;;;;;;x
+EVTNAME1001900;The Seventh of April;;;;;;;;;;;;;x
+EVTDESC1001900;Rio de Janeiro has turned against the Emperor. Ever since the humiliation in the Cisplatina, the Brazilian-born have accused Dom Pedro I of ruling through a Portuguese camarilla and of caring more for his daughter's throne in Lisbon than for the Empire. Officers, magistrates and the crowd of the Campo de Santana now demand that he dismiss his ministry. If he yields to them he is no longer Emperor in anything but name - and his heir is five years old.;;;;;;;;;;;;;x
+EVTOPTA1001900;I abdicate in favour of my son.;;;;;;;;;;;;;x
+EVTOPTB1001900;The Emperor does not take orders from a mob.;;;;;;;;;;;;;x
+EVTNAME1001900_NEWS_TITLE;Emperor Pedro I Abdicates;;;;;;;;;;;;;x
+EVTDESC1001900_NEWS_LONG;In the small hours of the seventh of April the Emperor Dom Pedro I signed his abdication in favour of his son, a boy of five, and withdrew to a British warship in the bay. A Regency chosen by the General Assembly now governs the Empire of Brazil. The Brazilian-born party celebrates the departure of the Portuguese court, but no one pretends that a regency can hold together provinces that reach from the Plata to the Amazon.;;;;;;;;;;;;;x
+EVTDESC1001900_NEWS_MEDIUM;Dom Pedro I has abdicated in favour of his infant son and sailed for Europe. A Regency now governs Brazil in the name of Pedro II.;;;;;;;;;;;;;x
+EVTDESC1001900_NEWS_SHORT;Pedro I abdicates - Brazil under a Regency;;;;;;;;;;;;;x
+EVTNAME1001901;The Cabanagem;;;;;;;;;;;;;x
+EVTDESC1001901;Para has risen. The cabanos - riverside labourers, freedmen, Indians and small traders led by Vinagre and Eduardo Angelim - have taken Belem, killed the president of the province and proclaimed a government of their own. It is not a separatist movement so much as the collapse of the Regency's authority at the mouth of the Amazon, and the further we are from Rio de Janeiro the less our writ runs.;;;;;;;;;;;;;x
+EVTOPTA1001901;Retake Belem by force of arms.;;;;;;;;;;;;;x
+EVTOPTB1001901;Treat with Angelim and buy the province back.;;;;;;;;;;;;;x
+EVTNAME1001902;The Price of the Cabanagem;;;;;;;;;;;;;x
+EVTDESC1001902;Belem is ours again, and it is a ruin. The naval blockade, the reprisals of the loyalist columns and the sickness in the prison hulks have carried off a share of the population of Para that no report dares state plainly. The Amazon has been pacified in the manner of a conquered country, and the Regency is blamed for both the revolt and the remedy.;;;;;;;;;;;;;x
+EVTOPTA1001902;A province of graves and empty houses.;;;;;;;;;;;;;x
+EVTNAME1001903;The Majority Coup;;;;;;;;;;;;;x
+EVTDESC1001903;Nine years of Regency have brought the Farroupilha in the south, the Cabanagem in the north and a chamber that changes its mind with every session. The Clube da Maioridade now proposes the one remedy on which liberals and conservatives can agree - that the Assembly simply declare the boy Emperor of age at fourteen, and let a crowned monarch rather than a temporary regent hold the Empire together.;;;;;;;;;;;;;x
+EVTOPTA1001903;Let His Majesty be declared of age at once.;;;;;;;;;;;;;x
+EVTOPTB1001903;The regent will serve out his term.;;;;;;;;;;;;;x
+brazilian_regency;Brazilian Regency;;;;;;;;;;;;;x
+EVTNAME1002000;The Edict to Repel Foreign Vessels;;;;;;;;;;;;;x
+EVTDESC1002000;British whalers water at Uraga, Russian boats put in at Ezo, and last year Englishmen came ashore on Hitachi and were only driven off with matchlocks. The roju have drafted an order for every domain with a coast: any foreign vessel that approaches is to be fired upon and turned away without deliberation. Only the Dutch at Nagasaki and the Korean and Ryukyuan missions are excepted. The scholars of Dutch learning warn that the barbarians will not take this quietly.;;;;;;;;;;;;;x
+EVTOPTA1002000;Drive them off without a second thought;;;;;;;;;;;;;x
+EVTOPTB1002000;Water and firewood for any ship that asks;;;;;;;;;;;;;x
+EVTNAME1002001;The Siebold Incident;;;;;;;;;;;;;x
+EVTDESC1002001;The physician von Siebold, Dutch by employment if not by birth, has taught our students at Narutaki and healed where our own doctors failed. Now a typhoon has grounded his ship and the customs men have found in his baggage maps of the northern coasts, given to him by the shogunal astronomer Takahashi Kageyasu. Carrying charts of the realm abroad is a capital matter. Yet half the useful medicine in Edo came through this man's hands.;;;;;;;;;;;;;x
+EVTOPTA1002001;Try the astronomer, expel the doctor;;;;;;;;;;;;;x
+EVTOPTB1002001;A few maps are a small matter;;;;;;;;;;;;;x
+EVTNAME1002002;The Tenpo Famine;;;;;;;;;;;;;x
+EVTOPTA1002002;Open the granaries of Edo;;;;;;;;;;;;;x
+EVTOPTB1002002;The domains must feed themselves;;;;;;;;;;;;;x
+EVTNAME1002003;Oshio Heihachiro's Rising;;;;;;;;;;;;;x
+EVTDESC1002003;Oshio Heihachiro served this government as a police inspector in Osaka and is known as a teacher of the Wang Yangming school. He sold his library to buy rice for the poor, petitioned the city magistrate for relief, and was refused. This morning he set fire to his own house, raised a banner reading 'Save the People', and marched on the merchant quarter with a few hundred followers and two small cannon. A quarter of Osaka is burning. That a shogunal official has turned on the shogunate is a worse wound than the fire.;;;;;;;;;;;;;x
+EVTOPTA1002003;Burn out the quarter and take his head;;;;;;;;;;;;;x
+EVTOPTB1002003;Open the rice stores and pardon his followers;;;;;;;;;;;;;x
+EVTNAME1002004;The Tenpo Reforms;;;;;;;;;;;;;x
+EVTDESC1002004;Mizuno Tadakuni has the senior councillor's seat and a programme to go with it. Sumptuary edicts to drive luxury out of Edo, the theatres pushed to the edge of the city, the merchant guilds dissolved to break their hold on prices, peasants sent back from the towns to the fields they left, and forced loans from the houses of Osaka to fill a treasury the famine emptied. It is the Kansei medicine again, in a stronger dose. The merchants and the fudai lords who borrow from them are already at the gates.;;;;;;;;;;;;;x
+EVTOPTA1002004;Sumptuary law, forced loans, dissolve the guilds;;;;;;;;;;;;;x
+EVTOPTB1002004;The merchants of Osaka will not bear it;;;;;;;;;;;;;x
+EVTDESC1002002;The rains did not stop and the rice did not ripen. In the north the crop has failed outright for a third year, and the reports from Mutsu and Dewa speak of villages eating straw and bark. Grain merchants are holding stock against a better price, and the domains that can feed themselves have closed their borders to relief convoys. The shogunal granaries at Edo and Osaka are not empty, but opening them would set a precedent, and the price of every koku released must be made up somewhere.;;;;;;;;;;;;;x
