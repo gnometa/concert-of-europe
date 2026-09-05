@@ -659,7 +659,7 @@ country_event = {
 		random_country = {
 			limit = {
 				tag = GER
-				THIS = { tag = AUS }
+				THIS = { tag = KUK }
 			}
 			diplomatic_influence = { who = THIS value = 200 }
 		}
@@ -973,7 +973,7 @@ country_event = {
 		clr_country_flag = delay_unciv_annexation
 		prestige = -5
 		FROM = { prestige = 5 }
-		relation = { who = FROM value = 400 }
+		relation = { who = FROM value = 200 }
 		FROM = { diplomatic_influence = { who = THIS value = 50 } }
 		any_owned = {
 			limit = {
