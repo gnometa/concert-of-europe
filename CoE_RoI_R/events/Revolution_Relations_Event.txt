@@ -813,6 +813,7 @@ country_event = {
 					OR = { government = hms_government government = hms_government2 government = hms_government3 }
 				}
 				NOT = {
+					tag = THIS
 					OR = {
 						ruling_party_ideology = communist
 						ruling_party_ideology = fascist
@@ -905,6 +906,7 @@ country_event = {
 				is_greater_power = yes
 				OR = { government = proletarian_dictatorship government = proletarian_dictatorship2 government = proletarian_dictatorship3 government = socialist_democracy government = socialist_democracy2 government = socialist_democracy3 }
 				NOT = {
+					tag = THIS
 					war_with = THIS
 					truce_with = THIS
 					any_owned_province = {
@@ -1165,6 +1167,7 @@ country_event = {
 				is_greater_power = yes
 				OR = { government = fascist_dictatorship government = fascist_dictatorship2 government = fascist_dictatorship3 }
 				NOT = {
+					tag = THIS
 					war_with = THIS
 					truce_with = THIS
 					any_owned_province = {
@@ -1242,6 +1245,7 @@ country_event = {
 				is_greater_power = yes
 				OR = { government = bourgeois_dictatorship government = bourgeois_dictatorship2 government = bourgeois_dictatorship3 }
 				NOT = {
+					tag = THIS
 					war_with = THIS
 					truce_with = THIS
 					any_owned_province = {
@@ -1383,6 +1387,7 @@ country_event = {
 					OR = { government = hms_government government = hms_government2 government = hms_government3 }
 				}
 				NOT = {
+					tag = THIS
 					OR = {
 						ruling_party_ideology = communist
 						ruling_party_ideology = fascist
@@ -1458,7 +1463,7 @@ country_event = {
 		}
 		modifier = {
 			factor = 2
-			war_policy = pro_military
+			war_policy = pacifism
 		}
 		modifier = {
 			factor = 0.9
@@ -1622,7 +1627,7 @@ country_event = {
 		}
 		modifier = {
 			factor = 2
-			war_policy = pro_military
+			war_policy = pacifism
 		}
 		modifier = {
 			factor = 0.9
@@ -1787,7 +1792,7 @@ country_event = {
 		}
 		modifier = {
 			factor = 2
-			war_policy = pro_military
+			war_policy = pacifism
 		}
 		modifier = {
 			factor = 0.9
@@ -1963,7 +1968,7 @@ country_event = {
 		}
 		modifier = {
 			factor = 2
-			war_policy = pro_military
+			war_policy = pacifism
 		}
 		modifier = {
 			factor = 0.9
@@ -2574,7 +2579,7 @@ country_event = {
 		}
 		modifier = {
 			factor = 2
-			war_policy = pro_military
+			war_policy = pacifism
 		}
 		modifier = {
 			factor = 0.9
@@ -2658,7 +2663,7 @@ country_event = {
 		}
 		modifier = {
 			factor = 2
-			war_policy = pro_military
+			war_policy = pacifism
 		}
 		modifier = {
 			factor = 0.9
@@ -2691,7 +2696,7 @@ country_event = {
 				}
 				relation = {
 					who = THIS
-					value = -50
+					value = -150
 				}
 			}
 			country_event = 800098
@@ -2742,7 +2747,7 @@ country_event = {
 		}
 		modifier = {
 			factor = 2
-			war_policy = pro_military
+			war_policy = pacifism
 		}
 		modifier = {
 			factor = 0.9
@@ -2835,7 +2840,7 @@ country_event = {
 		}
 		modifier = {
 			factor = 2
-			war_policy = pro_military
+			war_policy = pacifism
 		}
 		modifier = {
 			factor = 0.9

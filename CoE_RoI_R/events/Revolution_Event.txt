@@ -846,8 +846,6 @@ country_event = {
 		any_owned = {
 			remove_province_modifier = liberal_agitation
 		}
-		remove_country_modifier = springtime_of_nations
-		remove_country_modifier = global_liberal_agitation
 		random_owned = {
 			limit = {
 				owner = {
@@ -861,6 +859,8 @@ country_event = {
 			}
 			owner = { set_country_flag = 2nd_republic }
 		}
+		remove_country_modifier = springtime_of_nations
+		remove_country_modifier = global_liberal_agitation
 		random_owned = {
 			limit = {
 				owner = { tag = TUR }
@@ -2241,6 +2241,7 @@ country_event = {
 
 	option = {
 		name = "Let them go."
+		clr_country_flag = former_overlord
 		badboy = -1
 		any_pop = {
 			scaled_militancy = {
@@ -2829,8 +2830,10 @@ country_event = {
 		set_country_flag = called_for_help
 		any_country = {
 			limit = {
-				is_our_vassal = THIS
-				is_sphere_leader_of = THIS
+				OR = {
+					is_our_vassal = THIS
+					is_sphere_leader_of = THIS
+				}
 			}
 			country_event = 97566
 		}
