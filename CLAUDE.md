@@ -15,7 +15,7 @@ Layout:
 
 There is no automated test. Verification means:
 1. Launch Victoria 2 with the mod selected and check `error.log` in the user dir (`user_dir = "CoE_RoI"`).
-2. Optionally run the Audax Validator against `CoE_RoI/` (it picks up `CoE_RoI/ValidatorSettings.txt`) and look for new errors.
+2. Optionally run the Audax Validator against `CoE_RoI/` (it picks up `CoE_RoI/ValidatorSettings.txt`) and look for new errors. A local copy of the validator lives in `Audax.Validator/` at the repo root; it is git-ignored, so install it there yourself if missing.
 
 Historical crashes in this repo have come from **wrong province IDs** in history/event files (e.g. commit `31764737` fixed an 1830 crash from province 3309 vs 1408). When editing anything that references a province, confirm the ID exists in `CoE_RoI/map/definition.csv`.
 
