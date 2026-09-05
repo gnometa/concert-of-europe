@@ -182,3 +182,19 @@ EVTOPTB1000307;Not while the Orange flag can still be raised in Brussels.;;;;;;;
 EVTNAME1000308;The Guns Fall Silent;;;;;;;;;;;;;x
 EVTDESC1000308;Whatever the terms, the war in the south is over. The regiments are coming back to their depots, the Chambers are counting the cost, and the question of Belgium has passed out of the hands of our generals and into those of the diplomats.;;;;;;;;;;;;;x
 EVTOPTA1000308;Let the diplomats have it, then.;;;;;;;;;;;;;x
+EVTNAME1000500;The London Protocol;;;;;;;;;;;;;x
+EVTDESC1000500;On the third of February the plenipotentiaries of Britain, France and Russia signed at London a protocol declaring Greece a fully independent state under the guarantee of the three courts. The protocol settles more than our borders: it settles our form of government, for the powers have resolved that the new state shall be a monarchy under a prince drawn from a neutral house. Leopold of Saxe-Coburg has already declined the offer, and the search for a sovereign continues. The klephts and primates of the Peloponnese, who fought nine years for a free Hellas, are not universally delighted.;;;;;;;;;;;;;x
+EVTOPTA1000500;Let the powers choose our king.;;;;;;;;;;;;;x
+EVTOPTB1000500;Greece shall be a republic!;;;;;;;;;;;;;x
+EVTNAME1000501;Otto of Wittelsbach Lands at Nafplion;;;;;;;;;;;;;x
+EVTDESC1000501;The seventeen-year-old second son of King Ludwig of Bavaria has stepped ashore at Nafplion from a British frigate, greeted by cannon salutes and a crowd that cannot pronounce his name. Being a minor, he does not rule: a regency of three Bavarian councillors governs in his stead, funded by a loan from the guaranteeing powers and protected by three and a half thousand Bavarian troops. They speak no Greek, they distrust the captains of the war, and they intend to build a modern administration whether Hellas wants one or not.;;;;;;;;;;;;;x
+EVTOPTA1000501;Long live King Othon of the Hellenes.;;;;;;;;;;;;;x
+EVTNAME1000501_NEWS_TITLE;A Bavarian King for Greece;;;;;;;;;;;;;x
+EVTDESC1000501_NEWS_LONG;Prince Otto of Bavaria, not yet eighteen years of age, has landed at Nafplion to assume the crown of the new Kingdom of Greece under the guarantee of Britain, France and Russia. A council of Bavarian regents will govern until his majority, attended by several thousand Bavarian soldiers. Observers in the Levant note that the men who won the war of independence have been given no place in the government of the country they liberated.;;;;;;;;;;;;;x
+EVTDESC1000501_NEWS_MEDIUM;Prince Otto of Bavaria has landed at Nafplion to take the Greek crown. A Bavarian regency will govern until he comes of age, backed by Bavarian troops and a loan from the guaranteeing powers.;;;;;;;;;;;;;x
+EVTDESC1000501_NEWS_SHORT;Otto of Bavaria crowned King of the Hellenes.;;;;;;;;;;;;;x
+EVTNAME1000502;The Third of September;;;;;;;;;;;;;x
+EVTOPTA1000502;Summon the National Assembly.;;;;;;;;;;;;;x
+EVTOPTB1000502;The crown does not treat with mutineers.;;;;;;;;;;;;;x
+bavarian_regency;Bavarian Regency;;;;;;;;;;;;;x
+EVTDESC1000502;Colonel Kallergis has drawn up the Athens garrison before the palace, and the crowd behind the bayonets is chanting for a constitution. Not a shot has been fired. The King is simply informed that the troops will not disperse until he consents to a national assembly and dismisses the last of his Bavarian advisers, and the guaranteeing powers have signalled that they will not intervene on his behalf.;;;;;;;;;;;;;x

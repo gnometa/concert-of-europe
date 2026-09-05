@@ -7,6 +7,7 @@
 #1000300:         TAKEN by PORFlavor.txt (new capital) - not part of a GVG range
 #1000301-1000399: BELRevolutionGVG (1830-1839 Belgian Revolution; 1000301-1000308 used)
 #1000400-1000499: RUSDecembristGVG
+#1000500-1000599: GREKingdomGVG (1830-1843 Greek Kingdom; 1000500-1000502 used)
 #
 #Reserved, currently unused (the files that defined them were 100% commented out
 #and were deleted 2026-09-06; recover them from git history if the system is revived):

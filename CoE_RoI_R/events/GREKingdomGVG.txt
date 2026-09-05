@@ -1,0 +1,214 @@
+#############################################################
+#															#
+#      The Kingdom of Greece - 1830-1843					#
+#                  (GREKingdomGVG)							#
+#															#
+#############################################################
+
+# The London Protocol - the powers offer Greece a crown
+country_event = {
+
+	id = 1000500
+
+	title = "EVTNAME1000500"
+	desc = "EVTDESC1000500"
+	picture = "greatpowers"
+
+	trigger = {
+		tag = GRE
+		exists = yes
+		year = 1830
+		has_global_flag = london_conference_1832_held
+		NOT = {
+			war_with = TUR
+			has_country_flag = greek_crown_offered
+			year = 1840
+		}
+	}
+
+	fire_only_once = yes
+
+	mean_time_to_happen = {
+		months = 2
+		modifier = {
+			factor = 0.5
+			prestige = 10
+		}
+	}
+
+	option = {
+		name = "EVTOPTA1000500" # Accept the candidate of the powers
+		set_country_flag = greek_crown_offered
+		prestige = 10
+		relation = { who = ENG value = 25 }
+		relation = { who = FRA value = 25 }
+		relation = { who = RUS value = 25 }
+		any_pop = {
+			militancy = -1
+			ideology = {
+				value = conservative
+				factor = 0.10
+			}
+		}
+		ai_chance = {
+			factor = 80
+		}
+	}
+
+	option = {
+		name = "EVTOPTB1000500" # Greece must be a republic
+		set_country_flag = greek_crown_offered
+		set_country_flag = greek_republic_demanded
+		prestige = 5
+		relation = { who = ENG value = -10 }
+		relation = { who = FRA value = -10 }
+		relation = { who = RUS value = -10 }
+		any_pop = {
+			consciousness = 2
+			ideology = {
+				value = liberal
+				factor = 0.10
+			}
+		}
+		ai_chance = {
+			factor = 20
+		}
+	}
+}
+
+# Otto of Wittelsbach lands at Nafplion
+country_event = {
+
+	id = 1000501
+
+	title = "EVTNAME1000501"
+	desc = "EVTDESC1000501"
+	picture = "bayern"
+
+	major = yes
+	news = yes
+	news_title = "EVTNAME1000501_NEWS_TITLE"
+	news_desc_long = "EVTDESC1000501_NEWS_LONG"
+	news_desc_medium = "EVTDESC1000501_NEWS_MEDIUM"
+	news_desc_short = "EVTDESC1000501_NEWS_SHORT"
+
+	trigger = {
+		tag = GRE
+		exists = yes
+		year = 1832
+		has_country_flag = greek_crown_offered
+		NOT = { has_country_flag = otto_arrived }
+	}
+
+	fire_only_once = yes
+
+	mean_time_to_happen = {
+		months = 3
+	}
+
+	option = {
+		name = "EVTOPTA1000501"
+		set_country_flag = otto_arrived
+		prestige = 10
+		relation = { who = ENG value = 10 }
+		relation = { who = FRA value = 10 }
+		relation = { who = RUS value = 10 }
+		random_country = {
+			limit = {
+				tag = BAV
+				exists = yes
+			}
+			relation = { who = THIS value = 100 }
+		}
+		add_country_modifier = {
+			name = bavarian_regency
+			duration = 3650
+		}
+		any_pop = {
+			consciousness = 1
+		}
+	}
+}
+
+# The Third of September - the constitution of 1844
+country_event = {
+
+	id = 1000502
+
+	title = "EVTNAME1000502"
+	desc = "EVTDESC1000502"
+	picture = "streetriot"
+
+	trigger = {
+		tag = GRE
+		exists = yes
+		year = 1843
+		has_country_flag = otto_arrived
+		OR = {
+			government = absolute_monarchy
+			government = absolute_monarchy2
+			government = absolute_monarchy3
+		}
+		NOT = {
+			has_country_flag = voule_ton_ellinon
+			year = 1848
+		}
+	}
+
+	fire_only_once = yes
+
+	mean_time_to_happen = {
+		months = 2
+		modifier = {
+			factor = 0.5
+			has_country_flag = greek_republic_demanded
+		}
+	}
+
+	option = {
+		name = "EVTOPTA1000502" # Grant the constitution
+		set_country_flag = voule_ton_ellinon
+		remove_country_modifier = bavarian_regency
+		political_reform = wealth_weighted_voting
+		random_owned = {
+			limit = {
+				owner = { political_parties = underground_parties }
+			}
+			owner = {
+				political_reform = harassment
+			}
+		}
+		government = prussian_constitutionalism
+		prestige = 10
+		any_pop = {
+			militancy = -2
+		}
+		ai_chance = {
+			factor = 80
+			modifier = {
+				factor = 1.5
+				has_country_flag = greek_republic_demanded
+			}
+		}
+	}
+
+	option = {
+		name = "EVTOPTB1000502" # Disperse the mutineers
+		prestige = -10
+		any_pop = {
+			militancy = 2
+			consciousness = 1
+			ideology = {
+				value = reactionary
+				factor = 0.10
+			}
+		}
+		add_country_modifier = {
+			name = liberal_agitation
+			duration = 1825
+		}
+		ai_chance = {
+			factor = 20
+		}
+	}
+}

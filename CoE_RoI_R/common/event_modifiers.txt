@@ -3527,3 +3527,11 @@ nicholas_reaction = {
 	prestige = 0.02
 	icon = 15
 }
+
+##### GREEK KINGDOM (GREKingdomGVG) #####
+bavarian_regency = {
+	global_pop_militancy_modifier = 0.02
+	global_pop_consciousness_modifier = 0.02
+	prestige = -0.01
+	icon = 6
+}
