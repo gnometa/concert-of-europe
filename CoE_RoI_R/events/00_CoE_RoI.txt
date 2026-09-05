@@ -515,6 +515,73 @@ country_event = {
 	}
 }
 
+########################################################################
+# ECONOMY PULSE HOST
+#
+# Several of this mod's book-keeping systems are written as ordinary
+# country events whose effects are global (any_country = { ... }).  They
+# must therefore be evaluated for exactly ONE country, or every effect
+# would be applied once per country in the world.  The original code did
+# that by gating them on tag = BHU, which silently killed the whole
+# economy rework the moment Bhutan was annexed (very likely by 1860).
+#
+# The pattern used instead: one arbitrary surviving AI country carries the
+# country flag "economy_pulse_host".  Consumers gate on
+#     trigger = { has_country_flag = economy_pulse_host }
+# which behaves exactly like the old tag gate (one country, evaluated
+# daily, so MTTH rates are unchanged) but survives annexation.
+#
+# 2000100 elects the host.  The global flag economy_pulse_lock is the
+# once-only lock: while it is set the (O(1)) trigger of 2000100 is false,
+# so the election costs nothing on a normal day.
+# 2000101 is the watchdog: it runs off on_yearly_pulse and clears the lock
+# if the host has died, which makes 2000100 elect a new one the next day.
+#
+# Users of the flag: 99997 (below), +education_RGO.txt 999958,
+# WorkPlaceEvents_triggers.txt 12000-12780.
+########################################################################
+
+country_event = {
+	id = 2000100
+	title = "Economy Pulse Host"
+	desc = "Economy Pulse Host"
+
+	trigger = {
+		NOT = { has_global_flag = economy_pulse_lock }
+		exists = yes
+		ai = yes
+		civilized = yes
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = "OK"
+		set_global_flag = economy_pulse_lock
+		set_country_flag = economy_pulse_host
+	}
+}
+
+country_event = {
+	id = 2000101
+	title = "Economy Pulse Host Watchdog"
+	desc = "Economy Pulse Host Watchdog"
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_global_flag = economy_pulse_lock
+		NOT = { any_country = { has_country_flag = economy_pulse_host } }
+	}
+
+	option = {
+		name = "OK"
+		clr_global_flag = economy_pulse_lock
+	}
+}
+
 country_event = {
 	id = 99997
 	title = "POPs Maintenance"
@@ -523,22 +590,34 @@ country_event = {
     is_triggered_only = yes
 
 	trigger = {
-		tag = BHU
+		has_country_flag = economy_pulse_host
 	}
-	
+
 	mean_time_to_happen = {
 		days = 1
 	}
 
 	option = {
-		name = "Why the hell are you playing as Bhutan?"
+		name = "Keep the books."
 		any_country = { limit = { any_owned_province = { has_province_modifier = settlement_colony } } set_country_flag = land_suitable_for_settlement }
 		any_country = { limit = { NOT = { any_owned_province = { has_province_modifier = settlement_colony } } } clr_country_flag = land_suitable_for_settlement }
 		any_country = { limit = { war_with = BHU } end_war = BHU }
 		#any_country = { add_tax_relative_income = 1.0 }
-		any_country = { limit = { money = 100000000 } treasury = -50000000 }
-		any_country = { limit = { money = 200000000 } treasury = -100000000 }
-		any_country = { limit = { money = 300000000 } treasury = -100000000 }
+		# Anti-hoarding drain.  Vic2 AI never spends down a large surplus, so by the
+		# late game several majors sit on nine-figure treasuries, which wrecks the
+		# world market (they outbid everyone for every good) and makes the great-power
+		# score meaningless.  This quarterly sink burns the excess back out of the game.
+		#
+		# The brackets are mutually EXCLUSIVE (each has a NOT on the next threshold up),
+		# so a country loses at most one bracket per quarter -- previously they stacked
+		# and a country holding 300M lost 250M in one go.  Each deduction is also <= the
+		# bracket's lower bound minus the 100M floor, so the drain can never push a
+		# treasury below 100M, and nothing is taken below 150M at all.
+		any_country = { limit = { money = 150000000  NOT = { money = 200000000 } } treasury = -50000000 }
+		any_country = { limit = { money = 200000000  NOT = { money = 300000000 } } treasury = -100000000 }
+		any_country = { limit = { money = 300000000  NOT = { money = 500000000 } } treasury = -200000000 }
+		any_country = { limit = { money = 500000000  NOT = { money = 1000000000 } } treasury = -400000000 }
+		any_country = { limit = { money = 1000000000 } treasury = -900000000 }
 		BHU = { any_pop = { money = -100000 } }
 		#any_pop = { limit = { country = { NOT = { education_spending = 0.01 } } literacy = -0.01 } }
 		#any_country = { limit = { NOT = { education_spending = 0.01 } } any_pop = { literacy = -0.01 } }
@@ -554,43 +633,21 @@ country_event = {
 			country_event = 6016821
 		}		
 		
-		any_pop = { 
-			limit = { 
-				type = aristocrats 
-			}
-			pop_type = farmers
-		}
-		any_pop = { 
-			limit = { 
-				type = 00_urban_poor 
-			}
-			pop_type = craftsmen
-		}
-		any_pop = { 
-			limit = { 
-				type = clergymen 
-			}
-			pop_type = clerks
-		}
-		any_pop = { 
-			limit = { 
-				type = bureaucrats 
-				location = { is_colonial = yes }
-				is_primary_culture = no
-				is_accepted_culture = no
-			}
-			pop_type = capitalists
-		}			
-		#any_pop = { 
-		#	limit = { 
-		#		type = clerks 
-		#		is_primary_culture = no
-		#		is_accepted_culture = no
-		#	}
-		#	pop_type = craftsmen
-		#}
+		# Pop-type retirement.  This mod does not use aristocrats, 00_urban_poor or
+		# clergymen: they are folded into farmers, craftsmen and clerks (and colonial
+		# non-accepted bureaucrats into capitalists).  The poptypes still exist as files
+		# because the promotion tables in poptypes/*.txt still list them as promotion
+		# TARGETS (artisans/craftsmen/labourers -> aristocrats, artisans/craftsmen ->
+		# clergymen, clerks/farmers -> 00_urban_poor are all live), so pops keep being
+		# created in them every month.  The rewrite therefore has to be CONTINUOUS -- a
+		# one-off migration at game start would be undone within a year.  Do not gate it
+		# on a flag unless those promotion entries are commented out first.
+		#
+		# The identical block used to appear twice, once here in the host country's own
+		# scope and once inside any_country below; the host copy was redundant (the
+		# host is one of the any_country members) and has been removed.
 		any_country = {
-			any_pop = { 
+			any_pop = {
 				limit = { 
 					type = aristocrats 
 				}
@@ -627,6 +684,129 @@ country_event = {
 			#}				
 		}
 		
+		# Trade-goods switcher (Goods.txt ids 1107-1138).  Those 32 province events had
+		# no is_triggered_only, so each trigger -- a 22-term province_id OR plus an
+		# any_greater_power scan and an owner = { any_neighbor_country = { ... } } scan --
+		# was evaluated for every province every day: ~106,000 nested country iterations
+		# per day.  They are is_triggered_only now and dispatched from here, i.e. four
+		# times a year instead of 365.  Their triggers are unchanged and are still checked
+		# when the event is fired, so exactly the same provinces are eligible as before.
+		#
+		# The per-province mean_time_to_happen (60 months for 1107 and 1109-1117, 36 for
+		# 1108, 8 for 1118-1138) is replaced by random_owned: every country rolls three
+		# random not-recently-switched provinces per quarter, so conversions still trickle
+		# in over years instead of all landing on the same day.  Vic2 has no `random = N`
+		# trigger, and a random_list that is not a top-level effect returns the same branch
+		# for every scope it runs in, so random_owned is the only per-province randomness
+		# available here.
+		any_country = {
+			random_owned = {
+				limit = { NOT = { has_province_modifier = switched_production } }
+				province_event = 1107
+				province_event = 1108
+				province_event = 1109
+				province_event = 1110
+				province_event = 1111
+				province_event = 1112
+				province_event = 1113
+				province_event = 1114
+				province_event = 1115
+				province_event = 1116
+				province_event = 1117
+				province_event = 1118
+				province_event = 1119
+				province_event = 1120
+				province_event = 1121
+				province_event = 1122
+				province_event = 1123
+				province_event = 1124
+				province_event = 1125
+				province_event = 1126
+				province_event = 1127
+				province_event = 1128
+				province_event = 1129
+				province_event = 1130
+				province_event = 1131
+				province_event = 1132
+				province_event = 1133
+				province_event = 1134
+				province_event = 1135
+				province_event = 1136
+				province_event = 1137
+				province_event = 1138
+			}
+			random_owned = {
+				limit = { NOT = { has_province_modifier = switched_production } }
+				province_event = 1107
+				province_event = 1108
+				province_event = 1109
+				province_event = 1110
+				province_event = 1111
+				province_event = 1112
+				province_event = 1113
+				province_event = 1114
+				province_event = 1115
+				province_event = 1116
+				province_event = 1117
+				province_event = 1118
+				province_event = 1119
+				province_event = 1120
+				province_event = 1121
+				province_event = 1122
+				province_event = 1123
+				province_event = 1124
+				province_event = 1125
+				province_event = 1126
+				province_event = 1127
+				province_event = 1128
+				province_event = 1129
+				province_event = 1130
+				province_event = 1131
+				province_event = 1132
+				province_event = 1133
+				province_event = 1134
+				province_event = 1135
+				province_event = 1136
+				province_event = 1137
+				province_event = 1138
+			}
+			random_owned = {
+				limit = { NOT = { has_province_modifier = switched_production } }
+				province_event = 1107
+				province_event = 1108
+				province_event = 1109
+				province_event = 1110
+				province_event = 1111
+				province_event = 1112
+				province_event = 1113
+				province_event = 1114
+				province_event = 1115
+				province_event = 1116
+				province_event = 1117
+				province_event = 1118
+				province_event = 1119
+				province_event = 1120
+				province_event = 1121
+				province_event = 1122
+				province_event = 1123
+				province_event = 1124
+				province_event = 1125
+				province_event = 1126
+				province_event = 1127
+				province_event = 1128
+				province_event = 1129
+				province_event = 1130
+				province_event = 1131
+				province_event = 1132
+				province_event = 1133
+				province_event = 1134
+				province_event = 1135
+				province_event = 1136
+				province_event = 1137
+				province_event = 1138
+			}
+		}
+
 		#State Population Display
         any_country = {
 			any_owned = { 

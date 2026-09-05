@@ -7,10 +7,13 @@ country_event = {
 
 	#is_triggered_only = yes
 	
+	# Runs once, in the scope of the economy pulse host (see 00_CoE_RoI.txt 2000100)
+	# rather than in BHU's; every effect below is global (any_country / TAG = { ... })
+	# so the host's identity does not matter, it only has to be exactly one country.
 	trigger = {
 		NOT = { has_global_flag = education_setup }
 		#ai = no
-		tag = BHU
+		has_country_flag = economy_pulse_host
 	}
 	mean_time_to_happen = {
 		days = 1
@@ -27,11 +30,16 @@ country_event = {
 				money = 100
 			}
 		}
-		add_country_modifier = {
-			name = bhu_paradise
-			duration = -1
+		# bhu_paradise is a Bhutan-only joke modifier (+10000% RGO output, -1000 prestige).
+		# It used to land on THIS because this event was gated on tag = BHU; now that the
+		# host is an arbitrary AI country it has to name BHU explicitly.
+		BHU = {
+			add_country_modifier = {
+				name = bhu_paradise
+				duration = -1
+			}
 		}
-		
+
 		USA = {
 			any_owned = { 
 				limit = {

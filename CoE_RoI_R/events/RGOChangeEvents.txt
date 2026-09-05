@@ -4,6 +4,19 @@
 #											#
 #############################################
 
+# These events change a province's trade_goods, and so does events/Goods.txt.  Goods.txt
+# stamps the province modifier "switched_production" (365 or 1825 days) whenever it
+# converts one, and every trade_goods-changing event in this file carries
+# NOT = { ... has_province_modifier = switched_production ... } so a fresh Goods.txt
+# conversion is not immediately overwritten.  Note Victoria 2's multi-statement NOT is a
+# NOR (see docs/wiki/list-of-conditions.md), so listing switched_production alongside
+# intense_farming/exhausted_land inside one NOT is a real guard, not an AND.
+# 199042 (Exhausted Farmland) is deliberately not guarded: it only swaps province
+# modifiers and never touches trade_goods.
+#
+# 199000/199001 below are kept but disabled with "always = no" in their triggers. They
+# are the original "mine runs dry -> grain" pair; they were superseded by the
+# 199005-199042 series and are left in place as the reference for that mechanic.
 province_event = {
 	id = 199000
 	title = "EVTNAME199000" #$PROVINCENAME$ Mine Runs Dry
@@ -1588,15 +1601,16 @@ province_event = {
 		NOT = {
 			has_province_modifier = intense_farming
 			has_province_modifier = exhausted_land
+			has_province_modifier = switched_production
 		}
-		OR = {	
+		OR = {
 			trade_goods = grain
 			trade_goods = fish
 			trade_goods = fruit
 			trade_goods = cattle
 		}
 	}
-	
+
 	mean_time_to_happen = {
 		months = 2000
 	}

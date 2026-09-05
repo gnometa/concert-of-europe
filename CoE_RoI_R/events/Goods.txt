@@ -358,6 +358,7 @@ province_event = {
 province_event = {
 	
 	id = 1107
+	is_triggered_only = yes
 
 	trigger = {
 		OR = {
@@ -414,18 +415,6 @@ province_event = {
 		}
 	}
 
-	mean_time_to_happen =  {
-		months = 60
-		modifier = {
-			factor = 1.5
-			owner = {
-				NOT = { combustion_engine = 1 }
-				NOT = { electricity = 1 }
-				NOT = { semi_automatization = 1 }
-			}
-		}
-	}
-
 	title = "EVTNAME1107"
 	desc = "EVTDESC1107"
 	picture = ""
@@ -444,6 +433,7 @@ province_event = {
 province_event = {
 	
 	id = 1108
+	is_triggered_only = yes
 
 	trigger = {
 		year = 1890
@@ -499,18 +489,6 @@ province_event = {
 		}
 	}
 
-	mean_time_to_happen =  {
-		months = 36
-		modifier = {
-			factor = 1.5
-			owner = {
-				NOT = { combustion_engine = 1 }
-				NOT = { electricity = 1 }
-				NOT = { semi_automatization = 1 }
-			}
-		}
-	}
-
 	title = "EVTNAME1107"
 	desc = "EVTDESC1107"
 	picture = ""
@@ -533,6 +511,7 @@ province_event = {
 province_event = {
 
 	id = 1109
+	is_triggered_only = yes
 
 	trigger = {
 		year = 1870
@@ -549,16 +528,6 @@ province_event = {
 				any_neighbor_country = { organic_chemistry = 1 }
 			}
 			owner = { has_global_flag = oil_found }
-		}
-	}
-
-	mean_time_to_happen = {
-		months = 60
-		modifier = {
-			factor = 1.5
-			owner = {
-				NOT = { organic_chemistry = 1 }
-			}
 		}
 	}
 
@@ -580,6 +549,7 @@ province_event = {
 province_event = {
 
 	id = 1110
+	is_triggered_only = yes
 
 	trigger = {
 		year = 1871
@@ -593,16 +563,6 @@ province_event = {
 				any_neighbor_country = { organic_chemistry = 1 }
 			}
 			owner = { has_global_flag = oil_found }
-		}
-	}
-
-	mean_time_to_happen = {
-		months = 60
-		modifier = {
-			factor = 1.5
-			owner = {
-				NOT = { organic_chemistry = 1 }
-			}
 		}
 	}
 
@@ -624,6 +584,7 @@ province_event = {
 province_event = {
 
 	id = 1111
+	is_triggered_only = yes
 
 	trigger = {
 		year = 1872
@@ -637,16 +598,6 @@ province_event = {
 				any_neighbor_country = { organic_chemistry = 1 }
 			}
 			owner = { has_global_flag = oil_found }
-		}
-	}
-
-	mean_time_to_happen = {
-		months = 60
-		modifier = {
-			factor = 1.5
-			owner = {
-				NOT = { organic_chemistry = 1 }
-			}
 		}
 	}
 
@@ -668,6 +619,7 @@ province_event = {
 province_event = {
 
 	id = 1112
+	is_triggered_only = yes
 
 	trigger = {
 		year = 1873
@@ -681,16 +633,6 @@ province_event = {
 				any_neighbor_country = { organic_chemistry = 1 }
 			}
 			owner = { has_global_flag = oil_found }
-		}
-	}
-
-	mean_time_to_happen = {
-		months = 60
-		modifier = {
-			factor = 1.5
-			owner = {
-				NOT = { organic_chemistry = 1 }
-			}
 		}
 	}
 
@@ -712,6 +654,7 @@ province_event = {
 province_event = {
 
 	id = 1113
+	is_triggered_only = yes
 
 	trigger = {
 		year = 1874
@@ -725,16 +668,6 @@ province_event = {
 				any_neighbor_country = { organic_chemistry = 1 }
 			}
 			owner = { has_global_flag = oil_found }
-		}
-	}
-
-	mean_time_to_happen = {
-		months = 60
-		modifier = {
-			factor = 1.5
-			owner = {
-				NOT = { organic_chemistry = 1 }
-			}
 		}
 	}
 
@@ -756,6 +689,7 @@ province_event = {
 province_event = {
 
 	id = 1114
+	is_triggered_only = yes
 
 	trigger = {
 		year = 1875
@@ -769,16 +703,6 @@ province_event = {
 				any_neighbor_country = { organic_chemistry = 1 }
 			}
 			owner = { has_global_flag = oil_found }
-		}
-	}
-
-	mean_time_to_happen = {
-		months = 60
-		modifier = {
-			factor = 1.5
-			owner = {
-				NOT = { organic_chemistry = 1 }
-			}
 		}
 	}
 
@@ -800,6 +724,7 @@ province_event = {
 province_event = {
 
 	id = 1115
+	is_triggered_only = yes
 
 	trigger = {
 		year = 1876
@@ -813,16 +738,6 @@ province_event = {
 				any_neighbor_country = { organic_chemistry = 1 }
 			}
 			owner = { has_global_flag = oil_found }
-		}
-	}
-
-	mean_time_to_happen = {
-		months = 60
-		modifier = {
-			factor = 1.5
-			owner = {
-				NOT = { organic_chemistry = 1 }
-			}
 		}
 	}
 
@@ -844,6 +759,7 @@ province_event = {
 province_event = {
 
 	id = 1116
+	is_triggered_only = yes
 
 	trigger = {
 		year = 1877
@@ -857,16 +773,6 @@ province_event = {
 				any_neighbor_country = { organic_chemistry = 1 }
 			}
 			owner = { has_global_flag = oil_found }
-		}
-	}
-
-	mean_time_to_happen = {
-		months = 60
-		modifier = {
-			factor = 1.5
-			owner = {
-				NOT = { organic_chemistry = 1 }
-			}
 		}
 	}
 
@@ -888,6 +794,7 @@ province_event = {
 province_event = {
 
 	id = 1117
+	is_triggered_only = yes
 
 	trigger = {
 		year = 1879
@@ -901,16 +808,6 @@ province_event = {
 				any_neighbor_country = { organic_chemistry = 1 }
 			}
 			owner = { has_global_flag = oil_found }
-		}
-	}
-
-	mean_time_to_happen = {
-		months = 60
-		modifier = {
-			factor = 1.5
-			owner = {
-				NOT = { organic_chemistry = 1 }
-			}
 		}
 	}
 
@@ -932,6 +829,7 @@ province_event = {
 province_event = {
 
 	id = 1118
+	is_triggered_only = yes
 
 	trigger = {
 		year = 1881
@@ -945,16 +843,6 @@ province_event = {
 				any_neighbor_country = { organic_chemistry = 1 }
 			}
 			owner = { has_global_flag = oil_found }
-		}
-	}
-
-	mean_time_to_happen = {
-		months = 8
-		modifier = {
-			factor = 3
-			owner = {
-				NOT = { organic_chemistry = 1 }
-			}
 		}
 	}
 
@@ -975,6 +863,7 @@ province_event = {
 province_event = {
 
 	id = 1119
+	is_triggered_only = yes
 
 	trigger = {
 		year = 1882
@@ -995,16 +884,6 @@ province_event = {
 		}
 	}
 
-	mean_time_to_happen = {
-		months = 8
-		modifier = {
-			factor = 3
-			owner = {
-				NOT = { organic_chemistry = 1 }
-			}
-		}
-	}
-
 	title = "EVTNAME1109"
 	desc = "EVTDESC1109"
 
@@ -1022,6 +901,7 @@ province_event = {
 province_event = {
 
 	id = 1120
+	is_triggered_only = yes
 
 	trigger = {
 		year = 1883
@@ -1038,16 +918,6 @@ province_event = {
 				any_neighbor_country = { organic_chemistry = 1 }
 			}
 			owner = { has_global_flag = oil_found }
-		}
-	}
-
-	mean_time_to_happen = {
-		months = 8
-		modifier = {
-			factor = 3
-			owner = {
-				NOT = { organic_chemistry = 1 }
-			}
 		}
 	}
 
@@ -1068,6 +938,7 @@ province_event = {
 province_event = {
 
 	id = 1121
+	is_triggered_only = yes
 
 	trigger = {
 		year = 1885
@@ -1089,16 +960,6 @@ province_event = {
 		}
 	}
 
-	mean_time_to_happen = {
-		months = 8
-		modifier = {
-			factor = 3
-			owner = {
-				NOT = { organic_chemistry = 1 }
-			}
-		}
-	}
-
 	title = "EVTNAME1109"
 	desc = "EVTDESC1109"
 
@@ -1117,6 +978,7 @@ province_event = {
 province_event = {
 
 	id = 1122
+	is_triggered_only = yes
 
 	trigger = {
 		year = 1886
@@ -1137,16 +999,6 @@ province_event = {
 		}
 	}
 
-	mean_time_to_happen = {
-		months = 8
-		modifier = {
-			factor = 3
-			owner = {
-				NOT = { organic_chemistry = 1 }
-			}
-		}
-	}
-
 	title = "EVTNAME1109"
 	desc = "EVTDESC1109"
 
@@ -1164,6 +1016,7 @@ province_event = {
 province_event = {
 
 	id = 1123
+	is_triggered_only = yes
 
 	trigger = {
 		year = 1889
@@ -1177,16 +1030,6 @@ province_event = {
 				any_neighbor_country = { organic_chemistry = 1 }
 			}
 			owner = { has_global_flag = oil_found }
-		}
-	}
-
-	mean_time_to_happen = {
-		months = 8
-		modifier = {
-			factor = 3
-			owner = {
-				NOT = { organic_chemistry = 1 }
-			}
 		}
 	}
 
@@ -1207,6 +1050,7 @@ province_event = {
 province_event = {
 
 	id = 1124
+	is_triggered_only = yes
 
 	trigger = {
 		year = 1892
@@ -1220,16 +1064,6 @@ province_event = {
 				any_neighbor_country = { organic_chemistry = 1 }
 			}
 			owner = { has_global_flag = oil_found }
-		}
-	}
-
-	mean_time_to_happen = {
-		months = 8
-		modifier = {
-			factor = 3
-			owner = {
-				NOT = { organic_chemistry = 1 }
-			}
 		}
 	}
 
@@ -1250,6 +1084,7 @@ province_event = {
 province_event = {
 
 	id = 1125
+	is_triggered_only = yes
 
 	trigger = {
 		year = 1893
@@ -1266,16 +1101,6 @@ province_event = {
 				any_neighbor_country = { organic_chemistry = 1 }
 			}
 			owner = { has_global_flag = oil_found }
-		}
-	}
-
-	mean_time_to_happen = {
-		months = 8
-		modifier = {
-			factor = 3
-			owner = {
-				NOT = { organic_chemistry = 1 }
-			}
 		}
 	}
 
@@ -1296,6 +1121,7 @@ province_event = {
 province_event = {
 
 	id = 1126
+	is_triggered_only = yes
 
 	trigger = {
 		year = 1894
@@ -1309,16 +1135,6 @@ province_event = {
 				any_neighbor_country = { organic_chemistry = 1 }
 			}
 			owner = { has_global_flag = oil_found }
-		}
-	}
-
-	mean_time_to_happen = {
-		months = 8
-		modifier = {
-			factor = 3
-			owner = {
-				NOT = { organic_chemistry = 1 }
-			}
 		}
 	}
 
@@ -1339,6 +1155,7 @@ province_event = {
 province_event = {
 
 	id = 1127
+	is_triggered_only = yes
 
 	trigger = {
 		year = 1896
@@ -1360,16 +1177,6 @@ province_event = {
 		}
 	}
 
-	mean_time_to_happen = {
-		months = 8
-		modifier = {
-			factor = 3
-			owner = {
-				NOT = { organic_chemistry = 1 }
-			}
-		}
-	}
-
 	title = "EVTNAME1109"
 	desc = "EVTDESC1109"
 
@@ -1387,6 +1194,7 @@ province_event = {
 province_event = {
 
 	id = 1128
+	is_triggered_only = yes
 
 	trigger = {
 		year = 1897
@@ -1400,16 +1208,6 @@ province_event = {
 				any_neighbor_country = { organic_chemistry = 1 }
 			}
 			owner = { has_global_flag = oil_found }
-		}
-	}
-
-	mean_time_to_happen = {
-		months = 8
-		modifier = {
-			factor = 3
-			owner = {
-				NOT = { organic_chemistry = 1 }
-			}
 		}
 	}
 
@@ -1430,6 +1228,7 @@ province_event = {
 province_event = {
 
 	id = 1129
+	is_triggered_only = yes
 
 	trigger = {
 		year = 1902
@@ -1443,16 +1242,6 @@ province_event = {
 				any_neighbor_country = { organic_chemistry = 1 }
 			}
 			owner = { has_global_flag = oil_found }
-		}
-	}
-
-	mean_time_to_happen = {
-		months = 8
-		modifier = {
-			factor = 3
-			owner = {
-				NOT = { organic_chemistry = 1 }
-			}
 		}
 	}
 
@@ -1473,6 +1262,7 @@ province_event = {
 province_event = {
 
 	id = 1130
+	is_triggered_only = yes
 
 	trigger = {
 		year = 1907
@@ -1486,16 +1276,6 @@ province_event = {
 				any_neighbor_country = { organic_chemistry = 1 }
 			}
 			owner = { has_global_flag = oil_found }
-		}
-	}
-
-	mean_time_to_happen = {
-		months = 8
-		modifier = {
-			factor = 3
-			owner = {
-				NOT = { organic_chemistry = 1 }
-			}
 		}
 	}
 
@@ -1516,6 +1296,7 @@ province_event = {
 province_event = {
 
 	id = 1131
+	is_triggered_only = yes
 
 	trigger = {
 		year = 1908
@@ -1529,16 +1310,6 @@ province_event = {
 				any_neighbor_country = { organic_chemistry = 1 }
 			}
 			owner = { has_global_flag = oil_found }
-		}
-	}
-
-	mean_time_to_happen = {
-		months = 8
-		modifier = {
-			factor = 3
-			owner = {
-				NOT = { organic_chemistry = 1 }
-			}
 		}
 	}
 
@@ -1559,6 +1330,7 @@ province_event = {
 province_event = {
 
 	id = 1132
+	is_triggered_only = yes
 
 	trigger = {
 		year = 1910
@@ -1582,16 +1354,6 @@ province_event = {
 		}
 	}
 
-	mean_time_to_happen = {
-		months = 8
-		modifier = {
-			factor = 3
-			owner = {
-				NOT = { organic_chemistry = 1 }
-			}
-		}
-	}
-
 	title = "EVTNAME1109"
 	desc = "EVTDESC1109"
 
@@ -1609,6 +1371,7 @@ province_event = {
 province_event = {
 
 	id = 1133
+	is_triggered_only = yes
 
 	trigger = {
 		year = 1912
@@ -1622,16 +1385,6 @@ province_event = {
 				any_neighbor_country = { organic_chemistry = 1 }
 			}
 			owner = { has_global_flag = oil_found }
-		}
-	}
-
-	mean_time_to_happen = {
-		months = 8
-		modifier = {
-			factor = 3
-			owner = {
-				NOT = { organic_chemistry = 1 }
-			}
 		}
 	}
 
@@ -1652,6 +1405,7 @@ province_event = {
 province_event = {
 
 	id = 1134
+	is_triggered_only = yes
 
 	trigger = {
 		year = 1913
@@ -1665,16 +1419,6 @@ province_event = {
 				any_neighbor_country = { organic_chemistry = 1 }
 			}
 			owner = { has_global_flag = oil_found }
-		}
-	}
-
-	mean_time_to_happen = {
-		months = 8
-		modifier = {
-			factor = 3
-			owner = {
-				NOT = { organic_chemistry = 1 }
-			}
 		}
 	}
 
@@ -1696,6 +1440,7 @@ province_event = {
 province_event = {
 
 	id = 1135
+	is_triggered_only = yes
 
 	trigger = {
 		year = 1915
@@ -1709,16 +1454,6 @@ province_event = {
 				any_neighbor_country = { organic_chemistry = 1 }
 			}
 			owner = { has_global_flag = oil_found }
-		}
-	}
-
-	mean_time_to_happen = {
-		months = 8
-		modifier = {
-			factor = 3
-			owner = {
-				NOT = { organic_chemistry = 1 }
-			}
 		}
 	}
 
@@ -1739,6 +1474,7 @@ province_event = {
 province_event = {
 
 	id = 1136
+	is_triggered_only = yes
 
 	trigger = {
 		year = 1917
@@ -1752,16 +1488,6 @@ province_event = {
 				any_neighbor_country = { organic_chemistry = 1 }
 			}
 			owner = { has_global_flag = oil_found }
-		}
-	}
-
-	mean_time_to_happen = {
-		months = 8
-		modifier = {
-			factor = 3
-			owner = {
-				NOT = { organic_chemistry = 1 }
-			}
 		}
 	}
 
@@ -1782,6 +1508,7 @@ province_event = {
 province_event = {
 
 	id = 1137
+	is_triggered_only = yes
 
 	trigger = {
 		year = 1923
@@ -1795,16 +1522,6 @@ province_event = {
 				any_neighbor_country = { organic_chemistry = 1 }
 			}
 			owner = { has_global_flag = oil_found }
-		}
-	}
-
-	mean_time_to_happen = {
-		months = 8
-		modifier = {
-			factor = 3
-			owner = {
-				NOT = { organic_chemistry = 1 }
-			}
 		}
 	}
 
@@ -1825,6 +1542,7 @@ province_event = {
 province_event = {
 
 	id = 1138
+	is_triggered_only = yes
 
 	trigger = {
 		year = 1927
@@ -1838,16 +1556,6 @@ province_event = {
 				any_neighbor_country = { organic_chemistry = 1 }
 			}
 			owner = { has_global_flag = oil_found }
-		}
-	}
-
-	mean_time_to_happen = {
-		months = 8
-		modifier = {
-			factor = 3
-			owner = {
-				NOT = { organic_chemistry = 1 }
-			}
 		}
 	}
 
