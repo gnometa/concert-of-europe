@@ -463,7 +463,7 @@ political_decisions = {
 
 		effect = {
 			set_country_flag = demanded_epirus
-			TUR = { country_event = 90036 }
+			TUR = { country_event = 900271 }
 		}
 		ai_will_do = {
 			factor = 1

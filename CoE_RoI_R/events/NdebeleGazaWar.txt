@@ -95,6 +95,7 @@ country_event = {
 			factor = 2
 		}
 	}
+}
 
 country_event = { 
 	id = 95518
@@ -167,4 +168,3 @@ country_event = {
 		}
 	}
 
-}

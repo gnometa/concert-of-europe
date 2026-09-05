@@ -1407,7 +1407,7 @@ country_event = {
 	option = {
 		name = "Just as well."
 		any_pop = {
-			limit = { has_pop_culture = texan }
+			limit = { has_pop_culture = mormon }
 			dominant_issue = {
 				value = moralism
 				factor = 0.1

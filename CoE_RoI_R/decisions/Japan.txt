@@ -976,7 +976,7 @@ political_decisions = {
 	}
 	
 	unite_the_daimyos = {
-		picture = abolish_the_han_system
+		picture = become_japan
 		potential = {
 			tag = TKG
 			OR = {

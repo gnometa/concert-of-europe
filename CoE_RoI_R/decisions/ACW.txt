@@ -471,7 +471,7 @@ political_decisions = {
 	}
 	
 	gadsden_purchase = {
-		picture = expansion
+		picture = land_purchase_initiative
 		potential = {
 			tag = USA
 			is_greater_power = yes

@@ -404,7 +404,7 @@ political_decisions = {
 	}
 	
 	hatt_i_humayun = {
-		picture = tanzimat_mixed
+		picture = tanzimat_reforms
 		potential = {
 			tag = TUR
 			OR = {
@@ -492,7 +492,7 @@ political_decisions = {
 	}
 	
 	hatt_i_humayun2 = {
-		picture = tanzimat_western_democracy
+		picture = kanun_i_esasi
 		potential = {
 			tag = TUR
 			OR = {
@@ -570,7 +570,7 @@ political_decisions = {
 	}
 	
 	hatt_i_humayun3 = {
-		picture = tanzimat_islamic_caliphate
+		picture = the_holy_city
 		potential = {
 			tag = TUR
 			OR = {

@@ -313,7 +313,7 @@ political_decisions = {
 	}
 	
 	buda_pest = {
-		picture = budapest
+		picture = haussmanns_renovations
 		potential = {
 			owns = 641 #Budapest
 			state_n_government = 1

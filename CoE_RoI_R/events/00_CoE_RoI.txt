@@ -938,7 +938,7 @@ country_event = {
 		name = "Forward to Victory!"
 		set_country_flag = { from_liberation_to_conquest }
 		sphere_owner  = {
-			country_event = 99985
+			country_event = 99984
 		}
 	}
 }

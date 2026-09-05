@@ -1,6 +1,6 @@
 political_decisions = {
 	become_uzbekistan_khiva = {
-		picture = become_uzbekistan
+		picture = become_uzebekistan
 		potential = {
 			tag = KHI
 			has_global_flag = uzbekistan_created
@@ -47,7 +47,7 @@ political_decisions = {
 	}
 
 	become_uzbekistan_bukkhara = {
-		picture = become_uzbekistan
+		picture = become_uzebekistan
 		potential = {
 			tag = BUK
 			has_global_flag = uzbekistan_created

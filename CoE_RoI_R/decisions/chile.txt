@@ -1,7 +1,7 @@
 political_decisions = {
 
 liberation_of_mendoza = {
-		picture = Elderly
+		picture = valparaiso_harbor
 		potential = {
 			tag = CHL
 			OR = {
@@ -92,7 +92,7 @@ liberation_of_mendoza = {
 	}
 
 conquest_of_atacama = {
-		picture = Elderly
+		picture = conquest_of_the_desert
 		potential = {
 			tag = CHL
 			OR = {
