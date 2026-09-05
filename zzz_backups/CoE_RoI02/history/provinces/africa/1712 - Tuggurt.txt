@@ -1,4 +1,0 @@
-trade_goods = lead
-life_rating = 10
-terrain = semi_desert_hills
-

@@ -9,9 +9,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 Layout:
 - `CoE_RoI.mod` — mod descriptor. Declares `path = "mod/CoE_RoI"` and `user_dir = "CoE_RoI"`, so the repo root is meant to be dropped into the game's `mod/` folder.
 - `CoE_RoI/` — the actual mod content, mirroring the vanilla game directory structure (`common`, `decisions`, `events`, `gfx`, `history`, `interface`, `inventions`, `localisation`, `map`, `news`, `poptypes`, `technologies`, `units`). Files here override vanilla files of the same name.
-- `CoE_RoI/poptypes1/` — a stale alternate copy of `poptypes/` (same ten files, different values). It is not a vanilla folder name, so the game ignores it. Edit `poptypes/`, not `poptypes1/`.
 - `CoE_RoI/ValidatorSettings.txt` — config for the Audax Validator (third-party Paradox script checker); currently only sets `AddFlag = NoCheckKey`. There is no checked-in validator output log.
-- `zzz_backups/` — old copies of the mod (`CoE_RoI02/`, `poptypes2/`, `units2/`, loose `.txt` files, etc.). **Not loaded by the game** (the descriptor only points at `mod/CoE_RoI`). Reference only — do not edit anything under it.
 
 ## Testing / validation
 

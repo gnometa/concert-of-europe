@@ -1,6 +1,0 @@
-owner = BDU
-controller = BDU
-add_core = BDU
-trade_goods = wool
-life_rating = 20
-terrain = dry_forest_hills
