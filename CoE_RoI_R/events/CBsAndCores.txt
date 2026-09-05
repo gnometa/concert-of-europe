@@ -1291,6 +1291,24 @@ province_event = {
 	
 	trigger = {
 		is_core = THIS
+		NOT = {
+			has_province_modifier = integration_refusal
+			has_province_modifier = national_assimilation
+			has_province_modifier = nationalist_agitation
+		}
+		controlled_by = THIS
+		owned_by = THIS
+		is_colonial = no
+		OR = {
+			is_primary_culture = yes
+			is_accepted_culture = yes
+		}
+		owner = {
+			war = no
+			civilized = yes
+			is_vassal = no
+			NOT = { citizenship_policy = full_citizenship }
+		}
 		any_core = {
 			exists = yes
 			NOT = { tag = THIS }
@@ -1306,24 +1324,6 @@ province_event = {
 					NOT = { is_cultural_union = THIS }
 				}
 			}
-		}
-		NOT = {
-			has_province_modifier = integration_refusal
-			has_province_modifier = national_assimilation
-			has_province_modifier = nationalist_agitation
-		}
-		OR = {
-			is_primary_culture = yes
-			is_accepted_culture = yes
-		}
-		controlled_by = THIS
-		owned_by = THIS
-		is_colonial = no
-		owner = {
-			war = no
-			civilized = yes
-			is_vassal = no
-			NOT = { citizenship_policy = full_citizenship }
 		}
 	}
 	
@@ -1605,11 +1605,6 @@ province_event = {
 	
 	trigger = {
 		is_core = THIS
-		any_core = {
-			exists = yes
-			NOT = { tag = THIS }
-			NOT = { is_cultural_union = THIS }
-		}
 		has_province_modifier = national_assimilation
 		NOT = { has_province_modifier = national_assimilation_rejection }
 		controlled_by = THIS
@@ -1619,6 +1614,11 @@ province_event = {
 			civilized = yes
 			war = no
 			NOT = { citizenship_policy = full_citizenship }
+		}
+		any_core = {
+			exists = yes
+			NOT = { tag = THIS }
+			NOT = { is_cultural_union = THIS }
 		}
 	}
 	
@@ -1914,11 +1914,6 @@ province_event = {
 	
 	trigger = {
 		is_core = THIS
-		any_core = {
-			exists = yes
-			NOT = { tag = THIS }
-			NOT = { is_cultural_union = THIS }
-		}
 		has_province_modifier = national_assimilation
 		NOT = {
 			has_province_modifier = national_assimilation_acceptance
@@ -1931,6 +1926,11 @@ province_event = {
 			civilized = yes
 			war = no
 			NOT = { citizenship_policy = full_citizenship }
+		}
+		any_core = {
+			exists = yes
+			NOT = { tag = THIS }
+			NOT = { is_cultural_union = THIS }
 		}
 	}
 	
@@ -2015,6 +2015,21 @@ province_event = {
 	
 	trigger = {
 		is_core = THIS
+		has_province_modifier = national_assimilation_acceptance
+		NOT = { has_province_modifier = nationalist_agitation }
+		controlled_by = THIS
+		owned_by = THIS
+		is_colonial = no
+		OR = {
+			is_primary_culture = yes
+			is_accepted_culture = yes
+		}
+		owner = {
+			civilized = yes
+			war = no
+			NOT = { citizenship_policy = full_citizenship }
+			NOT = { badboy = 0.92 }
+		}
 		any_core = {
 			exists = yes
 			NOT = { tag = THIS }
@@ -2022,21 +2037,6 @@ province_event = {
 			NOT = { alliance_with = THIS }
 			NOT = { is_cultural_union = THIS }
 			war = no
-		}
-		OR = {
-			is_primary_culture = yes
-			is_accepted_culture = yes
-		}
-		has_province_modifier = national_assimilation_acceptance
-		NOT = { has_province_modifier = nationalist_agitation }
-		controlled_by = THIS
-		owned_by = THIS
-		is_colonial = no
-		owner = {
-			civilized = yes
-			war = no
-			NOT = { citizenship_policy = full_citizenship }
-			NOT = { badboy = 0.92 }
 		}
 	}
 	

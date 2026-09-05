@@ -31,6 +31,17 @@ province_event = {
 	desc = "EVTDESC880010"
 	
 	trigger = {
+		is_colonial = no
+		is_core = THIS
+		NOT = {
+			has_province_modifier = reactionary_stronghold
+			has_province_modifier = conservative_stronghold
+			has_province_modifier = liberal_stronghold
+			has_province_modifier = anarcho_liberal_stronghold
+			has_province_modifier = socialist_stronghold
+			has_province_modifier = communist_stronghold
+			has_province_modifier = fascist_stronghold
+		}
 		owner = {
 			civilized = yes
 			num_of_cities = 50
@@ -40,6 +51,8 @@ province_event = {
 				reactionary = 5
 			}
 		}
+		total_pops = 25000
+		reactionary = 15
 		OR = {
 			owner = {
 				NOT = {
@@ -52,19 +65,6 @@ province_event = {
 					any_owned_province = { has_province_modifier = reactionary_stronghold }
 				}
 			}
-		}
-		is_colonial = no
-		is_core = THIS
-		total_pops = 25000
-		reactionary = 15
-		NOT = {
-			has_province_modifier = reactionary_stronghold
-			has_province_modifier = conservative_stronghold
-			has_province_modifier = liberal_stronghold
-			has_province_modifier = anarcho_liberal_stronghold
-			has_province_modifier = socialist_stronghold
-			has_province_modifier = communist_stronghold
-			has_province_modifier = fascist_stronghold
 		}
 	}
 	
@@ -172,6 +172,19 @@ province_event = {
 	desc = "EVTDESC880012"
 	
 	trigger = {
+		is_colonial = no 
+		is_core = THIS
+		NOT = {
+			has_province_modifier = reactionary_stronghold
+			has_province_modifier = conservative_stronghold
+			has_province_modifier = liberal_stronghold
+			has_province_modifier = anarcho_liberal_stronghold
+			has_province_modifier = socialist_stronghold
+			has_province_modifier = communist_stronghold
+			has_province_modifier = fascist_stronghold
+		}
+		total_pops = 10000
+		reactionary = 15
 		owner = {
 			civilized = yes
 			num_of_cities = 5
@@ -186,19 +199,6 @@ province_event = {
 					has_province_modifier = reactionary_stronghold
 				}
 			}
-		}
-		is_colonial = no 
-		is_core = THIS
-		total_pops = 10000
-		reactionary = 15
-		NOT = {
-			has_province_modifier = reactionary_stronghold
-			has_province_modifier = conservative_stronghold
-			has_province_modifier = liberal_stronghold
-			has_province_modifier = anarcho_liberal_stronghold
-			has_province_modifier = socialist_stronghold
-			has_province_modifier = communist_stronghold
-			has_province_modifier = fascist_stronghold
 		}
 	}
 	
@@ -270,6 +270,17 @@ province_event = {
 	desc = "EVTDESC880020"
 	
 	trigger = {
+		is_colonial = no 
+		is_core = THIS
+		NOT = {
+			has_province_modifier = reactionary_stronghold
+			has_province_modifier = conservative_stronghold
+			has_province_modifier = liberal_stronghold
+			has_province_modifier = anarcho_liberal_stronghold
+			has_province_modifier = socialist_stronghold
+			has_province_modifier = communist_stronghold
+			has_province_modifier = fascist_stronghold
+		}
 		owner = {
 			civilized = yes
 			num_of_cities = 50
@@ -279,6 +290,8 @@ province_event = {
 				conservative = 5
 			}
 		}
+		total_pops = 25000
+		conservative = 15
 		OR = {
 			owner = {
 				NOT = {
@@ -291,19 +304,6 @@ province_event = {
 					any_owned_province = { has_province_modifier = conservative_stronghold }
 				}
 			}
-		}
-		is_colonial = no 
-		is_core = THIS
-		total_pops = 25000
-		conservative = 15
-		NOT = {
-			has_province_modifier = reactionary_stronghold
-			has_province_modifier = conservative_stronghold
-			has_province_modifier = liberal_stronghold
-			has_province_modifier = anarcho_liberal_stronghold
-			has_province_modifier = socialist_stronghold
-			has_province_modifier = communist_stronghold
-			has_province_modifier = fascist_stronghold
 		}
 	}
 	
@@ -415,6 +415,19 @@ province_event = {
 	desc = "EVTDESC880022"
 	
 	trigger = {
+		is_colonial = no
+		is_core = THIS
+		NOT = {
+			has_province_modifier = reactionary_stronghold
+			has_province_modifier = conservative_stronghold
+			has_province_modifier = liberal_stronghold
+			has_province_modifier = anarcho_liberal_stronghold
+			has_province_modifier = socialist_stronghold
+			has_province_modifier = communist_stronghold
+			has_province_modifier = fascist_stronghold
+		}
+		total_pops = 10000
+		reactionary = 15
 		owner = {
 			civilized = yes
 			num_of_cities = 5
@@ -429,19 +442,6 @@ province_event = {
 					has_province_modifier = conservative_stronghold
 				}
 			}
-		}
-		is_colonial = no
-		is_core = THIS
-		total_pops = 10000
-		reactionary = 15
-		NOT = {
-			has_province_modifier = reactionary_stronghold
-			has_province_modifier = conservative_stronghold
-			has_province_modifier = liberal_stronghold
-			has_province_modifier = anarcho_liberal_stronghold
-			has_province_modifier = socialist_stronghold
-			has_province_modifier = communist_stronghold
-			has_province_modifier = fascist_stronghold
 		}
 	}
 	
@@ -517,6 +517,16 @@ province_event = {
 	desc = "EVTDESC880030"
 	
 	trigger = {
+		is_colonial = no 
+		NOT = {
+			has_province_modifier = reactionary_stronghold
+			has_province_modifier = conservative_stronghold
+			has_province_modifier = liberal_stronghold
+			has_province_modifier = anarcho_liberal_stronghold
+			has_province_modifier = socialist_stronghold
+			has_province_modifier = communist_stronghold
+			has_province_modifier = fascist_stronghold
+		}
 		owner = {
 			civilized = yes
 			num_of_cities = 50
@@ -526,6 +536,8 @@ province_event = {
 				liberal = 5
 			}
 		}
+		total_pops = 25000
+		liberal = 15
 		OR = {
 			owner = {
 				NOT = {
@@ -538,18 +550,6 @@ province_event = {
 					any_owned_province = { has_province_modifier = liberal_stronghold }
 				}
 			}
-		}
-		is_colonial = no 
-		total_pops = 25000
-		liberal = 15
-		NOT = {
-			has_province_modifier = reactionary_stronghold
-			has_province_modifier = conservative_stronghold
-			has_province_modifier = liberal_stronghold
-			has_province_modifier = anarcho_liberal_stronghold
-			has_province_modifier = socialist_stronghold
-			has_province_modifier = communist_stronghold
-			has_province_modifier = fascist_stronghold
 		}
 	}
 	
@@ -657,6 +657,18 @@ province_event = {
 	desc = "EVTDESC880032"
 	
 	trigger = {
+		is_colonial = no
+		NOT = {
+			has_province_modifier = reactionary_stronghold
+			has_province_modifier = conservative_stronghold
+			has_province_modifier = liberal_stronghold
+			has_province_modifier = anarcho_liberal_stronghold
+			has_province_modifier = socialist_stronghold
+			has_province_modifier = communist_stronghold
+			has_province_modifier = fascist_stronghold
+		}
+		total_pops = 10000
+		liberal = 15
 		owner = {
 			civilized = yes
 			num_of_cities = 5
@@ -671,18 +683,6 @@ province_event = {
 					has_province_modifier = liberal_stronghold
 				}
 			}
-		}
-		is_colonial = no
-		total_pops = 10000
-		liberal = 15
-		NOT = {
-			has_province_modifier = reactionary_stronghold
-			has_province_modifier = conservative_stronghold
-			has_province_modifier = liberal_stronghold
-			has_province_modifier = anarcho_liberal_stronghold
-			has_province_modifier = socialist_stronghold
-			has_province_modifier = communist_stronghold
-			has_province_modifier = fascist_stronghold
 		}
 	}
 	
@@ -754,6 +754,16 @@ province_event = {
 	desc = "EVTDESC880040"
 	
 	trigger = {
+		is_colonial = no 
+		NOT = {
+			has_province_modifier = reactionary_stronghold
+			has_province_modifier = conservative_stronghold
+			has_province_modifier = liberal_stronghold
+			has_province_modifier = anarcho_liberal_stronghold
+			has_province_modifier = socialist_stronghold
+			has_province_modifier = communist_stronghold
+			has_province_modifier = fascist_stronghold
+		}
 		owner = {
 			is_ideology_enabled = anarcho_liberal
 			civilized = yes
@@ -767,6 +777,8 @@ province_event = {
 				OR = { government = bourgeois_dictatorship government = bourgeois_dictatorship2 government = bourgeois_dictatorship3 }
 			}
 		}
+		total_pops = 25000
+		anarcho_liberal = 15
 		OR = {
 			owner = {
 				NOT = {
@@ -779,18 +791,6 @@ province_event = {
 					any_owned_province = { has_province_modifier = anarcho_liberal_stronghold }
 				}
 			}
-		}
-		is_colonial = no 
-		total_pops = 25000
-		anarcho_liberal = 15
-		NOT = {
-			has_province_modifier = reactionary_stronghold
-			has_province_modifier = conservative_stronghold
-			has_province_modifier = liberal_stronghold
-			has_province_modifier = anarcho_liberal_stronghold
-			has_province_modifier = socialist_stronghold
-			has_province_modifier = communist_stronghold
-			has_province_modifier = fascist_stronghold
 		}
 	}
 	
@@ -897,6 +897,18 @@ province_event = {
 	desc = "EVTDESC880042"
 	
 	trigger = {
+		is_colonial = no
+		NOT = {
+			has_province_modifier = reactionary_stronghold
+			has_province_modifier = conservative_stronghold
+			has_province_modifier = liberal_stronghold
+			has_province_modifier = anarcho_liberal_stronghold
+			has_province_modifier = socialist_stronghold
+			has_province_modifier = communist_stronghold
+			has_province_modifier = fascist_stronghold
+		}
+		total_pops = 10000
+		anarcho_liberal = 15
 		owner = {
 			is_ideology_enabled = anarcho_liberal
 			civilized = yes
@@ -913,18 +925,6 @@ province_event = {
 					has_province_modifier = anarcho_liberal_stronghold
 				}
 			}
-		}
-		is_colonial = no
-		total_pops = 10000
-		anarcho_liberal = 15
-		NOT = {
-			has_province_modifier = reactionary_stronghold
-			has_province_modifier = conservative_stronghold
-			has_province_modifier = liberal_stronghold
-			has_province_modifier = anarcho_liberal_stronghold
-			has_province_modifier = socialist_stronghold
-			has_province_modifier = communist_stronghold
-			has_province_modifier = fascist_stronghold
 		}
 	}
 	
@@ -995,6 +995,16 @@ province_event = {
 	desc = "EVTDESC880050"
 	
 	trigger = {
+		is_colonial = no 
+		NOT = {
+			has_province_modifier = reactionary_stronghold
+			has_province_modifier = conservative_stronghold
+			has_province_modifier = liberal_stronghold
+			has_province_modifier = anarcho_liberal_stronghold
+			has_province_modifier = socialist_stronghold
+			has_province_modifier = communist_stronghold
+			has_province_modifier = fascist_stronghold
+		}
 		owner = {
 			is_ideology_enabled = socialist
 			civilized = yes
@@ -1005,6 +1015,8 @@ province_event = {
 				socialist = 5
 			}
 		}
+		total_pops = 25000
+		socialist = 15
 		OR = {
 			owner = {
 				NOT = {
@@ -1017,18 +1029,6 @@ province_event = {
 					any_owned_province = { has_province_modifier = socialist_stronghold }
 				}
 			}
-		}
-		is_colonial = no 
-		total_pops = 25000
-		socialist = 15
-		NOT = {
-			has_province_modifier = reactionary_stronghold
-			has_province_modifier = conservative_stronghold
-			has_province_modifier = liberal_stronghold
-			has_province_modifier = anarcho_liberal_stronghold
-			has_province_modifier = socialist_stronghold
-			has_province_modifier = communist_stronghold
-			has_province_modifier = fascist_stronghold
 		}
 	}
 	
@@ -1131,6 +1131,19 @@ province_event = {
 	desc = "EVTDESC880052"
 	
 	trigger = {
+		is_colonial = no
+		is_core = THIS
+		NOT = {
+			has_province_modifier = reactionary_stronghold
+			has_province_modifier = conservative_stronghold
+			has_province_modifier = liberal_stronghold
+			has_province_modifier = anarcho_liberal_stronghold
+			has_province_modifier = socialist_stronghold
+			has_province_modifier = communist_stronghold
+			has_province_modifier = fascist_stronghold
+		}
+		total_pops = 10000
+		socialist = 15
 		owner = {
 			is_ideology_enabled = socialist
 			civilized = yes
@@ -1146,19 +1159,6 @@ province_event = {
 					has_province_modifier = socialist_stronghold
 				}
 			}
-		}
-		is_colonial = no
-		is_core = THIS
-		total_pops = 10000
-		socialist = 15
-		NOT = {
-			has_province_modifier = reactionary_stronghold
-			has_province_modifier = conservative_stronghold
-			has_province_modifier = liberal_stronghold
-			has_province_modifier = anarcho_liberal_stronghold
-			has_province_modifier = socialist_stronghold
-			has_province_modifier = communist_stronghold
-			has_province_modifier = fascist_stronghold
 		}
 	}
 	
@@ -1225,6 +1225,16 @@ province_event = {
 	desc = "EVTDESC880060"
 	
 	trigger = {
+		is_colonial = no 
+		NOT = {
+			has_province_modifier = reactionary_stronghold
+			has_province_modifier = conservative_stronghold
+			has_province_modifier = liberal_stronghold
+			has_province_modifier = anarcho_liberal_stronghold
+			has_province_modifier = socialist_stronghold
+			has_province_modifier = communist_stronghold
+			has_province_modifier = fascist_stronghold
+		}
 		owner = {
 			is_ideology_enabled = communist
 			civilized = yes
@@ -1238,6 +1248,8 @@ province_event = {
 				OR = { government = proletarian_dictatorship government = proletarian_dictatorship2 government = proletarian_dictatorship3 government = socialist_democracy government = socialist_democracy2 government = socialist_democracy3 }
 			}
 		}
+		total_pops = 25000
+		communist = 15
 		OR = {
 			owner = {
 				NOT = {
@@ -1250,18 +1262,6 @@ province_event = {
 					any_owned_province = { has_province_modifier = communist_stronghold }
 				}
 			}
-		}
-		is_colonial = no 
-		total_pops = 25000
-		communist = 15
-		NOT = {
-			has_province_modifier = reactionary_stronghold
-			has_province_modifier = conservative_stronghold
-			has_province_modifier = liberal_stronghold
-			has_province_modifier = anarcho_liberal_stronghold
-			has_province_modifier = socialist_stronghold
-			has_province_modifier = communist_stronghold
-			has_province_modifier = fascist_stronghold
 		}
 	}
 	
@@ -1364,6 +1364,18 @@ province_event = {
 	desc = "EVTDESC880062"
 	
 	trigger = {
+		is_colonial = no
+		NOT = {
+			has_province_modifier = reactionary_stronghold
+			has_province_modifier = conservative_stronghold
+			has_province_modifier = liberal_stronghold
+			has_province_modifier = anarcho_liberal_stronghold
+			has_province_modifier = socialist_stronghold
+			has_province_modifier = communist_stronghold
+			has_province_modifier = fascist_stronghold
+		}
+		total_pops = 10000
+		communist = 15
 		owner = {
 			is_ideology_enabled = communist
 			civilized = yes
@@ -1380,18 +1392,6 @@ province_event = {
 					has_province_modifier = communist_stronghold
 				}
 			}
-		}
-		is_colonial = no
-		total_pops = 10000
-		communist = 15
-		NOT = {
-			has_province_modifier = reactionary_stronghold
-			has_province_modifier = conservative_stronghold
-			has_province_modifier = liberal_stronghold
-			has_province_modifier = anarcho_liberal_stronghold
-			has_province_modifier = socialist_stronghold
-			has_province_modifier = communist_stronghold
-			has_province_modifier = fascist_stronghold
 		}
 	}
 	
@@ -1458,6 +1458,16 @@ province_event = {
 	desc = "EVTDESC880070"
 	
 	trigger = {
+		is_colonial = no 
+		NOT = {
+			has_province_modifier = reactionary_stronghold
+			has_province_modifier = conservative_stronghold
+			has_province_modifier = liberal_stronghold
+			has_province_modifier = anarcho_liberal_stronghold
+			has_province_modifier = socialist_stronghold
+			has_province_modifier = communist_stronghold
+			has_province_modifier = fascist_stronghold
+		}
 		owner = {
 			is_ideology_enabled = fascist
 			civilized = yes
@@ -1471,6 +1481,9 @@ province_event = {
 				OR = { government = fascist_dictatorship government = fascist_dictatorship2 government = fascist_dictatorship3 }
 			}
 		}
+		total_pops = 25000
+		is_primary_culture = yes
+		fascist = 15
 		OR = {
 			owner = {
 				NOT = {
@@ -1483,19 +1496,6 @@ province_event = {
 					any_owned_province = { has_province_modifier = fascist_stronghold }
 				}
 			}
-		}
-		is_colonial = no 
-		total_pops = 25000
-		is_primary_culture = yes
-		fascist = 15
-		NOT = {
-			has_province_modifier = reactionary_stronghold
-			has_province_modifier = conservative_stronghold
-			has_province_modifier = liberal_stronghold
-			has_province_modifier = anarcho_liberal_stronghold
-			has_province_modifier = socialist_stronghold
-			has_province_modifier = communist_stronghold
-			has_province_modifier = fascist_stronghold
 		}
 	}
 	
@@ -1596,6 +1596,19 @@ province_event = {
 	desc = "EVTDESC880072"
 	
 	trigger = {
+		is_colonial = no
+		NOT = {
+			has_province_modifier = reactionary_stronghold
+			has_province_modifier = conservative_stronghold
+			has_province_modifier = liberal_stronghold
+			has_province_modifier = anarcho_liberal_stronghold
+			has_province_modifier = socialist_stronghold
+			has_province_modifier = communist_stronghold
+			has_province_modifier = fascist_stronghold
+		}
+		total_pops = 10000
+		is_primary_culture = yes
+		fascist = 15
 		owner = {
 			is_ideology_enabled = fascist
 			civilized = yes
@@ -1612,19 +1625,6 @@ province_event = {
 					has_province_modifier = fascist_stronghold
 				}
 			}
-		}
-		is_colonial = no
-		total_pops = 10000
-		is_primary_culture = yes
-		fascist = 15
-		NOT = {
-			has_province_modifier = reactionary_stronghold
-			has_province_modifier = conservative_stronghold
-			has_province_modifier = liberal_stronghold
-			has_province_modifier = anarcho_liberal_stronghold
-			has_province_modifier = socialist_stronghold
-			has_province_modifier = communist_stronghold
-			has_province_modifier = fascist_stronghold
 		}
 	}
 	

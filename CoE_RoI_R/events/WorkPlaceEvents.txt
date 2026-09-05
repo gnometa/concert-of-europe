@@ -167,16 +167,16 @@ country_event = {
 	trigger = {
 		exists = yes
 		civilized = yes
-		any_owned_province = {
-			trade_goods = coal
-		}
-		plurality = 10
 		OR = {
 			OR = { government = hms_government government = hms_government2 government = hms_government3 }
 			OR = { government = prussian_constitutionalism government = prussian_constitutionalism2 government = prussian_constitutionalism3 }
 			OR = { government = democracy government = democracy2 government = democracy3 }
 		}
+		plurality = 10
 		safety_regulations = trinket_safety	
+		any_owned_province = {
+			trade_goods = coal
+		}
 	}
 	mean_time_to_happen = {
 		months = 600
@@ -231,17 +231,17 @@ country_event = {
 	trigger = {
 		exists = yes
 		civilized = yes
-		any_owned_province = {
-			trade_goods = coal
-		}
-		plurality = 20
 		OR = {
 			OR = { government = hms_government government = hms_government2 government = hms_government3 }
 			OR = { government = prussian_constitutionalism government = prussian_constitutionalism2 government = prussian_constitutionalism3 }
 			OR = { government = democracy government = democracy2 government = democracy3 }
 		}
+		plurality = 20
 		safety_regulations = low_safety
 		
+		any_owned_province = {
+			trade_goods = coal
+		}
 	}
 	mean_time_to_happen = {
 		months = 900

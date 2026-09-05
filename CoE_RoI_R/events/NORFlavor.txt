@@ -501,10 +501,10 @@ country_event = {
 
 	trigger = {
 		exists = yes
-		is_our_vassal = NOR
 		war = no
-		revolution_n_counterrevolution = 1
 		year = 1900
+		is_our_vassal = NOR
+		revolution_n_counterrevolution = 1
 	}
 
 	mean_time_to_happen = {

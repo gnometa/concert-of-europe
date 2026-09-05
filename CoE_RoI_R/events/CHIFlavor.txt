@@ -1215,10 +1215,10 @@ country_event = {
 	picture = "china_shifting_river"
 
 	trigger = {
-		owns = 1563
 		year = 1855
 		NOT = { year = 1857 }
 		has_global_flag = huang_flooding
+		owns = 1563
 	}
 	
 	mean_time_to_happen = {

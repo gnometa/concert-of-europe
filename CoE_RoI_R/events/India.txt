@@ -227,13 +227,13 @@ country_event = {
 	
 	trigger = {
 		exists = yes
+		is_vassal = no
+		NOT = { has_global_flag = indian_call_to_union }
+		revolution_n_counterrevolution = 1
 		OR = {
 			is_culture_group = south_asian
 			any_owned_province = { is_core = HND }
 		}
-		is_vassal = no
-		revolution_n_counterrevolution = 1
-		NOT = { has_global_flag = indian_call_to_union }
 	}
 	
 	mean_time_to_happen = {

@@ -371,6 +371,7 @@ province_event = {
 	news_desc_short = "EVTDESC97175_NEWS_SHORT"
 	
 	trigger = {
+		NOT = { has_province_modifier = colonial_chaos }
 		OR = {
 			is_colonial = yes
 			is_overseas = yes
@@ -385,7 +386,6 @@ province_event = {
 				}
 			}
 		}
-		NOT = { has_province_modifier = colonial_chaos }
 	}
 	
 	mean_time_to_happen = {
@@ -612,11 +612,12 @@ province_event = {
 	desc = "EVTDESC97181"
 	
 	trigger = {
+		controlled_by = REB
+		has_province_modifier = colonial_chaos
 		OR = {
 			is_colonial = yes
 			is_overseas = yes
 		}
-		controlled_by = REB
 		state_scope = {
 			NOT = {
 				any_owned_province = {
@@ -624,7 +625,6 @@ province_event = {
 				}
 			}
 		}
-		has_province_modifier = colonial_chaos
 		any_core = {
 			NOT = { is_primary_culture = THIS }
 			is_cultural_union = no

@@ -230,11 +230,8 @@ country_event = {
 	
 	trigger = {
 		exists = yes
-		any_owned_province = {
-			region = SPA_2209
-			average_consciousness = 3
-		}
 		year = 1890
+		NOT = { year = 1900 }	
 		OR = {
 			AND = {
 				NOT = { exists = CUB }
@@ -245,7 +242,10 @@ country_event = {
 				CUB = { vassal_of = THIS }
 			}
 		}
-		NOT = { year = 1900 }	
+		any_owned_province = {
+			region = SPA_2209
+			average_consciousness = 3
+		}
 	}
 
 	fire_only_once = yes
@@ -777,10 +777,6 @@ country_event = {
 
 	trigger = {
 		exists = yes
-		any_owned_province = {
-			is_core = PHL
-			average_consciousness = 5
-		}
 		year = 1880
 		NOT = {
 			exists = PHL
@@ -788,6 +784,10 @@ country_event = {
 		}
 		is_possible_vassal = PHL
 		revolution_n_counterrevolution = 1
+		any_owned_province = {
+			is_core = PHL
+			average_consciousness = 5
+		}
 	}
 
 	mean_time_to_happen = {

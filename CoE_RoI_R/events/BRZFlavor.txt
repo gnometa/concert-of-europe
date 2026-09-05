@@ -397,9 +397,6 @@ province_event = {
 	desc = "EVTDESC46306"
 	
 	trigger = {
-		state_scope = {
-			is_slave = yes
-		}
 		owner = {
 			capital_scope = {
 				OR = {
@@ -415,6 +412,9 @@ province_event = {
 		}
 		NOT = {
 			has_province_modifier = quilombo_presence
+		}
+		state_scope = {
+			is_slave = yes
 		}
 	}
 	

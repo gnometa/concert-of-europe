@@ -235,12 +235,12 @@ country_event = {
 		exists = yes
 		civilized = no
 		OR = {
-			any_owned_province = { port = yes }
-			any_neighbor_country = { civilized = yes }
-		}
-		OR = {
 			has_country_modifier = uncivilized_isolationism
 			diplomatic_reform = isolationism
+		}
+		OR = {
+			any_owned_province = { port = yes }
+			any_neighbor_country = { civilized = yes }
 		}
 		any_owned_province = {
 			OR = {
@@ -961,13 +961,13 @@ country_event = {
 	
 	trigger = {
 		exists = yes
+		civilized = no
+		has_country_modifier = western_influences
 		any_owned_province = {
 			port = yes
 			NOT = { has_province_modifier = foreign_trading_post }
 			NOT = { has_province_modifier = boxer_presence }
 		}
-		civilized = no
-		has_country_modifier = western_influences
 	}
 	
 	mean_time_to_happen = {
@@ -1727,8 +1727,8 @@ country_event = {
 	
 	trigger = {
 		exists = yes
-		any_owned_province = { has_province_modifier = foreign_trading_post }
 		NOT = { has_country_modifier = sayings_of_the_dutch }
+		any_owned_province = { has_province_modifier = foreign_trading_post }
 	}
 	
 	mean_time_to_happen = {
@@ -1774,12 +1774,12 @@ country_event = {
 	
 	trigger = {
 		exists = yes
+		OR = { government = absolute_monarchy government = absolute_monarchy2 government = absolute_monarchy3 }
+		civilized = no
 		any_owned_province = {
 			has_pop_type = capitalists
 			has_province_modifier = western_presence
 		}
-		OR = { government = absolute_monarchy government = absolute_monarchy2 government = absolute_monarchy3 }
-		civilized = no
 	}
 	
 	mean_time_to_happen = {
@@ -1928,12 +1928,12 @@ province_event = {
 	news_desc_short = "EVTDESC13100_NEWS_SHORT"
 
 	trigger = {
-		average_militancy = 3
 		OR = {
 			has_province_modifier = foreign_trading_post
 			has_province_modifier = western_presence
 			has_province_modifier = european_military_mission
 		}
+		average_militancy = 3
 	}
 	mean_time_to_happen = {
 		months = 400
@@ -2354,6 +2354,7 @@ country_event = {
 	
 	trigger = {
 		exists = yes
+		is_vassal = no
 		any_owned_province = {
 			OR = {
 				has_province_modifier = european_military_mission
@@ -2364,7 +2365,6 @@ country_event = {
 			NOT = { has_province_modifier = extraterritoriality_granted }
 			port = yes
 		}
-		is_vassal = no
 	}
 	
 	mean_time_to_happen = {
@@ -3179,13 +3179,13 @@ country_event = {
 	
 	trigger = {
 		exists = yes
+		has_country_modifier = western_influences
+		is_vassal = no
 		any_owned_province = {
 			is_capital = yes
 			NOT = { has_province_modifier = legation_quarter }
 			NOT = { has_province_modifier = boxer_presence }
 		}
-		has_country_modifier = western_influences
-		is_vassal = no
 	}
 	
 	mean_time_to_happen = {
@@ -3759,16 +3759,11 @@ country_event = {
 	
 	trigger = {
 		exists = yes
-		vassal_of = ENG
 		ai = yes
 		civilized = no
 		NOT = {
 			has_country_flag = no_british_doctrine
 			has_global_flag = government_of_india_act
-		}
-		ENG = {
-			ideological_thought = 1
-			NOT = { has_country_flag = empress_of_india }
 		}
 		OR = {
 			primary_culture = assamese
@@ -3791,6 +3786,11 @@ country_event = {
 			primary_culture = malayalam
 			primary_culture = tamil
 			primary_culture = telegu
+		}
+		vassal_of = ENG
+		ENG = {
+			ideological_thought = 1
+			NOT = { has_country_flag = empress_of_india }
 		}
 	}
 	

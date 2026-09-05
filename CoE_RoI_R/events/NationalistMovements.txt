@@ -6,14 +6,14 @@ province_event = {
 	picture = "geronimo"
 	
 	trigger = {
+		is_colonial = no
+		controlled_by = owner
 		is_primary_culture = no
 		is_accepted_culture = no
-		is_colonial = no
 		owner = {
 			civilized = yes
 			public_meetings = no_meeting
 		}
-		controlled_by = owner
 	}
 	
 	mean_time_to_happen = {
@@ -159,14 +159,14 @@ province_event = {
 	desc = "EVTDESC15010"
 	
 	trigger = {
+		is_colonial = no
+		controlled_by = owner
 		is_primary_culture = no
 		is_accepted_culture = no
 		average_militancy = 2
-		is_colonial = no
 		owner = {
 			OR = { citizenship_policy = residency  citizenship_policy = forced_assimilation }
 		}
-		controlled_by = owner
 	}
 	
 	mean_time_to_happen = {
@@ -298,11 +298,11 @@ province_event = {
 	desc = "EVTDESC15020"
 	
 	trigger = {
+		is_colonial = no
+		controlled_by = owner
 		is_primary_culture = no
 		is_accepted_culture = no
-		is_colonial = no
 		average_consciousness = 3
-		controlled_by = owner
 	}
 	
 	mean_time_to_happen = {
@@ -446,10 +446,10 @@ province_event = {
 	desc = "EVTDESC15030"
 	
 	trigger = {
-		is_primary_culture = no
-		is_accepted_culture = no
 		is_colonial = no
 		controlled_by = owner
+		is_primary_culture = no
+		is_accepted_culture = no
 		owner = {
 			NOT = {
 				citizenship_policy = full_citizenship
@@ -573,11 +573,11 @@ province_event = {
 	desc = "EVTDESC15040"
 	
 	trigger = {
-		is_primary_culture = no
-		is_accepted_culture = no
 		is_colonial = no
 		#has_pop_type = clergymen
 		controlled_by = owner
+		is_primary_culture = no
+		is_accepted_culture = no
 	}
 	
 	mean_time_to_happen = {
@@ -739,11 +739,11 @@ province_event = {
 	desc = "EVTDESC15050"
 	
 	trigger = {
+		is_colonial = no
+		controlled_by = owner
 		is_primary_culture = no
 		is_accepted_culture = no
-		is_colonial = no
 		literacy = 0.3
-		controlled_by = owner
 		owner = {
 			NOT = {
 				citizenship_policy = full_citizenship
@@ -876,11 +876,11 @@ province_event = {
 	desc = "EVTDESC15060"
 	
 	trigger = {
+		is_colonial = no
+		controlled_by = owner
 		is_primary_culture = no
 		is_accepted_culture = no
-		is_colonial = no
 		has_pop_type = farmers
-		controlled_by = owner
 		owner = {
 			NOT = {
 				citizenship_policy = full_citizenship
@@ -1030,10 +1030,10 @@ province_event = {
 	desc = "EVTDESC15070"
 	
 	trigger = {
-		is_primary_culture = no
-		is_accepted_culture = no
 		is_colonial = no
 		controlled_by = owner
+		is_primary_culture = no
+		is_accepted_culture = no
 		owner = {
 			OR = {
 				trade_unions = no_trade_unions
@@ -1174,11 +1174,11 @@ province_event = {
 	desc = "EVTDESC15080"
 	
 	trigger = {
+		is_colonial = no
+		controlled_by = owner
 		is_primary_culture = no
 		is_accepted_culture = no
-		is_colonial = no
 		average_militancy = 4
-		controlled_by = owner
 	}
 	
 	mean_time_to_happen = {
@@ -1294,10 +1294,10 @@ province_event = {
 	desc = "EVTDESC15090"
 	
 	trigger = {
-		is_primary_culture = no
-		is_accepted_culture = no
 		is_colonial = no
 		controlled_by = owner
+		is_primary_culture = no
+		is_accepted_culture = no
 		NOT = {
 			owner = {
 				citizenship_policy = full_citizenship
@@ -1414,11 +1414,11 @@ province_event = {
 	desc = "EVTDESC15100"
 	
 	trigger = {
+		is_colonial = no
+		controlled_by = owner
 		is_primary_culture = no
 		is_accepted_culture = no
-		is_colonial = no
 		average_militancy = 4
-		controlled_by = owner
 		owner = {
 			civilized = yes
 			NOT = {
@@ -1557,11 +1557,11 @@ province_event = {
 	desc = "EVTDESC15110"
 	
 	trigger = {
+		is_colonial = no
+		controlled_by = owner
 		is_accepted_culture = no
 		is_primary_culture = no
-		is_colonial = no
 		average_consciousness = 3
-		controlled_by = owner
 		owner = {
 			civilized = yes
 			NOT = {
@@ -1742,16 +1742,16 @@ province_event = {
 	desc = "EVTDESC15120"
 	
 	trigger = {
+		controlled_by = owner
+		owner = {
+			civilized = yes
+		}
 		is_primary_culture = no
 		is_accepted_culture = no
-		controlled_by = owner
 		NOT = {
 			culture = native_american_minor
 		}
 		average_militancy = 6
-		owner = {
-			civilized = yes
-		}
 	}
 	
 	mean_time_to_happen = {
@@ -1866,10 +1866,10 @@ province_event = {
 	desc = "EVTDESC15130"
 	
 	trigger = {
-		is_accepted_culture = no
-		is_primary_culture = no
 		controlled_by = owner
 		is_colonial = no
+		is_accepted_culture = no
+		is_primary_culture = no
 		average_consciousness = 4
 		state_scope = {
 			is_colonial = no
@@ -1996,10 +1996,10 @@ province_event = {
 	desc = "EVTDESC15140"
 	
 	trigger = {
-		is_primary_culture = no
-		is_accepted_culture = no
 		is_colonial = no
 		controlled_by = owner
+		is_primary_culture = no
+		is_accepted_culture = no
 		owner = {
 			NOT = {
 				citizenship_policy = full_citizenship
@@ -2161,10 +2161,10 @@ province_event = {
 	title = "EVTNAME15150"
 	desc = "EVTDESC15150"
 	trigger = {
-		is_primary_culture = no
-		is_accepted_culture = no
 		is_colonial = no
 		controlled_by = owner
+		is_primary_culture = no
+		is_accepted_culture = no
 		owner = {
 			NOT = {
 				citizenship_policy = full_citizenship
@@ -2284,10 +2284,10 @@ province_event = {
 	desc = "EVTDESC15160"
 	
 	trigger = {
-		is_primary_culture = no
-		is_accepted_culture = no
 		controlled_by = owner
 		is_colonial = no
+		is_primary_culture = no
+		is_accepted_culture = no
 		average_militancy = 5
 		owner = {
 			military_industry = 10
@@ -2426,10 +2426,10 @@ province_event = {
 	desc = "EVTDESC15170"
 	
 	trigger = {
-		is_primary_culture = no
-		is_accepted_culture = no
 		is_colonial = no
 		controlled_by = owner
+		is_primary_culture = no
+		is_accepted_culture = no
 		average_militancy = 6
 		state_scope = {
 			is_colonial = no
@@ -2573,10 +2573,10 @@ province_event = {
 	desc = "EVTDESC15180"
 	
 	trigger = {
-		is_primary_culture = no
-		is_accepted_culture = no
 		controlled_by = owner
 		is_colonial = no
+		is_primary_culture = no
+		is_accepted_culture = no
 		average_consciousness = 3
 		owner = {
 			NOT = {
@@ -2725,10 +2725,10 @@ province_event = {
 	desc = "EVTDESC15190"
 	
 	trigger = {
-		is_primary_culture = no
-		is_accepted_culture = no
 		is_colonial = no
 		controlled_by = owner
+		is_primary_culture = no
+		is_accepted_culture = no
 		owner = {
 			NOT = {
 				citizenship_policy = full_citizenship
@@ -2918,10 +2918,10 @@ province_event = {
 	desc = "EVTDESC15200"
 	
 	trigger = {
-		is_primary_culture = no
-		is_accepted_culture = no
 		is_colonial = no
 		controlled_by = owner
+		is_primary_culture = no
+		is_accepted_culture = no
 		owner = {
 			civilized = yes
 			not = {
@@ -3052,10 +3052,10 @@ province_event = {
 	desc = "EVTDESC15210"
 	
 	trigger = {
-		is_primary_culture = no
-		is_accepted_culture = no
 		controlled_by = owner
 		is_colonial = no
+		is_primary_culture = no
+		is_accepted_culture = no
 	}
 	
 	mean_time_to_happen = {
@@ -3179,10 +3179,10 @@ province_event = {
 	desc = "EVTDESC15220"
 	
 	trigger = {
-		is_primary_culture = no
-		is_accepted_culture = no
 		controlled_by = owner
 		is_colonial = no
+		is_primary_culture = no
+		is_accepted_culture = no
 		any_pop = {
 			type = soldiers
 			is_primary_culture = no
@@ -3321,10 +3321,10 @@ province_event = {
 	desc = "EVTDESC15230"
 	
 	trigger = {
-		is_primary_culture = no
-		is_accepted_culture = no
 		controlled_by = owner
 		is_colonial = no
+		is_primary_culture = no
+		is_accepted_culture = no
 		owner = {
 			NOT = {
 				citizenship_policy = full_citizenship
@@ -3461,10 +3461,10 @@ province_event = {
 	desc = "EVTDESC15240"
 	
 	trigger = {
-		is_primary_culture = no
-		is_accepted_culture = no
 		controlled_by = owner
 		is_colonial = no
+		is_primary_culture = no
+		is_accepted_culture = no
 		average_consciousness = 4
 	}
 	
@@ -3736,10 +3736,10 @@ province_event = {
 	desc = "EVTDESC15260"
 	
 	trigger = {
-		is_primary_culture = no
-		is_accepted_culture = no
 		is_colonial = no
 		controlled_by = owner
+		is_primary_culture = no
+		is_accepted_culture = no
 		owner = {
 			civilized = yes
 			nationalvalue = nv_order
@@ -3857,10 +3857,10 @@ province_event = {
 	desc = "EVTDESC15270"
 	
 	trigger = {
-		is_primary_culture = no
-		is_accepted_culture = no
 		controlled_by = owner
 		is_colonial = no
+		is_primary_culture = no
+		is_accepted_culture = no
 		owner = {
 			civilized = yes
 			has_country_modifier = minority_building_restrictions
@@ -3989,10 +3989,10 @@ province_event = {
 	desc = "EVTDESC15280"
 	
 	trigger = {
-		is_primary_culture = no
-		is_accepted_culture = no
 		controlled_by = owner
 		is_colonial = no
+		is_primary_culture = no
+		is_accepted_culture = no
 		owner = {
 			civilized = yes
 			NOT = {
@@ -4116,13 +4116,13 @@ province_event = {
 	desc = "EVTDESC15290"
 	
 	trigger = {
-		is_primary_culture = no
-		is_accepted_culture = no
 		controlled_by = owner
 		is_colonial = no
 		owner = {
 			has_country_modifier = discriminatory_school_system
 		}
+		is_primary_culture = no
+		is_accepted_culture = no
 	}
 	
 	mean_time_to_happen = {
@@ -4196,11 +4196,11 @@ province_event = {
 	desc = "EVTDESC15300"
 	
 	trigger ={
-		is_primary_culture = no
-		is_accepted_culture = no
 		controlled_by = owner
 		is_colonial = no
 		year = 1862
+		is_primary_culture = no
+		is_accepted_culture = no
 		OR = {
 			culture = czech
 			culture = polish
@@ -4292,14 +4292,14 @@ province_event = {
 		not = {
 			has_province_modifier = flying_university
 		}
-		is_primary_culture = no
-		is_accepted_culture = no
 		controlled_by = owner
 		is_colonial = no
-		average_consciousness = 5
 		owner = {
 			has_country_modifier = discriminatory_school_system
 		}
+		is_primary_culture = no
+		is_accepted_culture = no
+		average_consciousness = 5
 	}
 	
 	mean_time_to_happen = {
@@ -4416,9 +4416,9 @@ province_event = {
 	
 	trigger = {
 		NOT = { has_province_modifier = nationalist_agitation }
+		controlled_by = owner
 		is_primary_culture = no
 		is_accepted_culture = no
-		controlled_by = owner
 		any_core = {
 			is_cultural_union = no
 			exists = no

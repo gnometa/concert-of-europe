@@ -58,7 +58,6 @@ province_event = {
 	trigger = {
 		owner = { has_global_flag = colonial_setup_done }
 	    owner = { ai = yes }
-	    state_scope = { is_colonial = yes }
 		NOT = { has_province_modifier = settlement_colony }
 		NOT = { has_province_modifier = exploitation_colony }
         OR = {
@@ -87,6 +86,7 @@ province_event = {
 					}
 		    }
 		}		
+	    state_scope = { is_colonial = yes }
 	}
 	
 	allow_multiple_instances = yes	
@@ -384,8 +384,8 @@ province_event = {
 	desc = "With this province becoming more and more densely populated the cappacity to hold our setlers is rapidly deteriorating, immigration has to halt for now."
 	
 	trigger = {
-	    state_scope = { is_colonial = yes }
 		has_province_modifier = settlement_colony
+	    state_scope = { is_colonial = yes }
 		OR = {
 			unemployment_by_type = { type = farmers value = 0.05  }
 			unemployment_by_type = { type = labourers value = 0.05  }

@@ -4383,6 +4383,15 @@ province_event = {
 	desc = "EVTDESC98900"
 	
 	trigger = {
+		owned_by = THIS
+		controlled_by = THIS
+		owner = {
+			civilized = yes
+			NOT = { capital_scope = { continent = africa } }
+		}
+		NOT = {
+			is_core = SAF
+		}
 		OR = {
 			region = ENG_2087
 			region = ENG_2092
@@ -4392,15 +4401,6 @@ province_event = {
 			region = TRN_2108
 			region = ZUL_2113
 			#region = ENG_2083
-		}
-		owned_by = THIS
-		controlled_by = THIS
-		any_neighbor_province = {
-			is_core = SAF
-		}
-		owner = {
-			civilized = yes
-			NOT = { capital_scope = { continent = africa } }
 		}
 		OR = {
 			AND = {
@@ -4412,7 +4412,7 @@ province_event = {
 				is_culture_group = THIS
 			}
 		}
-		NOT = {
+		any_neighbor_province = {
 			is_core = SAF
 		}
 	}
@@ -4446,6 +4446,20 @@ province_event = {
 	desc = "EVTDESC98905"
 	
 	trigger = {
+		owned_by = THIS
+		controlled_by = THIS
+		owner = {
+			OR = {
+				tag = ENG
+				tag = ENL
+			}
+		}
+		NOT = {
+			is_core = RPL
+			is_core = CAN
+			is_core = COL
+			is_core = QUE
+		}
 		OR = {
 			region = ENG_6
 			region = ENG_9
@@ -4456,26 +4470,12 @@ province_event = {
 			region = CAN_50
 			region = CAN_60
 		}
-		owned_by = THIS
-		controlled_by = THIS
-		any_neighbor_province = {
-			is_core = RPL
-		}
-		owner = {
-			OR = {
-				tag = ENG
-				tag = ENL
-			}
-		}
 		OR = {
 			RPL = { exists = no }
 			RPL = { vassal_of = THIS }
 		}
-		NOT = {
+		any_neighbor_province = {
 			is_core = RPL
-			is_core = CAN
-			is_core = COL
-			is_core = QUE
 		}
 	}
 	

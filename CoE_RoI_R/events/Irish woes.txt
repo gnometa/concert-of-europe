@@ -442,11 +442,9 @@ country_event = {
 	
 	trigger = {
 		exists = yes
-		any_owned_province = {
-			is_core = IRE
-			culture = irish
-			NOT = { has_province_modifier = irish_republicans }
-			NOT = { has_province_modifier = irish_unionists }
+		NOT = {
+			has_country_flag = irish_republican_brotherhood
+			tag = IRE
 		}
 		OR = {
 			AND = {
@@ -455,9 +453,11 @@ country_event = {
 			}
 			invention = terrorism
 		}
-		NOT = {
-			has_country_flag = irish_republican_brotherhood
-			tag = IRE
+		any_owned_province = {
+			is_core = IRE
+			culture = irish
+			NOT = { has_province_modifier = irish_republicans }
+			NOT = { has_province_modifier = irish_unionists }
 		}
 	}
 	
@@ -857,26 +857,26 @@ country_event = {
 	major = yes
 	
 	trigger = {
-		owns = 263
 		war = no
-		election = no
 		has_country_flag = easter_rising
 		OR = {
 			OR = { government = democracy government = democracy2 government = democracy3 }
 			OR = { government = hms_government government = hms_government2 government = hms_government3 }
 			OR = { government = prussian_constitutionalism government = prussian_constitutionalism2 government = prussian_constitutionalism3 }
 		}
+		NOT = {
+			tag = IRE
+			exists = IRE
+			has_country_flag = sinn_fein_victory
+		}
+		owns = 263
+		election = no
 		OR = {
 			AND = {
 				accepted_culture = irish
 				minorities_reform = limited
 			}
 			minorities_reform = protected
-		}
-		NOT = {
-			tag = IRE
-			exists = IRE
-			has_country_flag = sinn_fein_victory
 		}
 	}
 	

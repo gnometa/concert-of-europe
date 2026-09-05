@@ -780,11 +780,11 @@ province_event = {
 
 	trigger = {
 	has_global_flag = education_setup
+	  NOT = { has_province_modifier = RGO_education_1 }
       state_scope = {
 	  literacy = 0.1
 	  NOT = { literacy = 0.2 }
 	  }
-	  NOT = { has_province_modifier = RGO_education_1 }
 	}
 
 	#allow_multiple_instances = yes
@@ -892,11 +892,11 @@ province_event = {
 
 	trigger = {
 	has_global_flag = education_setup
+	  NOT = { has_province_modifier = RGO_education_2 }
       state_scope = {
 	  literacy = 0.2
 	  NOT = { literacy = 0.3 }
 	  }
-	  NOT = { has_province_modifier = RGO_education_2 }
 	}
 
 	#allow_multiple_instances = yes
@@ -1004,11 +1004,11 @@ province_event = {
 
 	trigger = {
 	has_global_flag = education_setup
+	  NOT = { has_province_modifier = RGO_education_3 }
       state_scope = {
 	  literacy = 0.3
 	  NOT = { literacy = 0.4 }
 	  }
-	  NOT = { has_province_modifier = RGO_education_3 }
 	}
 
 	#allow_multiple_instances = yes
@@ -1116,11 +1116,11 @@ province_event = {
 
 	trigger = {
 	has_global_flag = education_setup
+	  NOT = { has_province_modifier = RGO_education_4 }
       state_scope = {
 	  literacy = 0.4
 	  NOT = { literacy = 0.5 }
 	  }
-	  NOT = { has_province_modifier = RGO_education_4 }
 	}
 
 	#allow_multiple_instances = yes
@@ -1228,11 +1228,11 @@ province_event = {
 
 	trigger = {
 	has_global_flag = education_setup
+	  NOT = { has_province_modifier = RGO_education_5 }
       state_scope = {
 	  literacy = 0.5
 	  NOT = { literacy = 0.6 }
 	  }
-	  NOT = { has_province_modifier = RGO_education_5 }
 	}
 
 	#allow_multiple_instances = yes
@@ -1340,11 +1340,11 @@ province_event = {
 
 	trigger = {
 	has_global_flag = education_setup
+	  NOT = { has_province_modifier = RGO_education_6 }
       state_scope = {
 	  literacy = 0.6
 	  NOT = { literacy = 0.7 }
 	  }
-	  NOT = { has_province_modifier = RGO_education_6 }
 	}
 
 	#allow_multiple_instances = yes
@@ -1452,11 +1452,11 @@ province_event = {
 
 	trigger = {
 	has_global_flag = education_setup
+	  NOT = { has_province_modifier = RGO_education_7 }
       state_scope = {
 	  literacy = 0.7
 	  NOT = { literacy = 0.8 }
 	  }
-	  NOT = { has_province_modifier = RGO_education_7 }
 	}
 
 	#allow_multiple_instances = yes
@@ -1564,11 +1564,11 @@ province_event = {
 
 	trigger = {
 	has_global_flag = education_setup
+	  NOT = { has_province_modifier = RGO_education_8 }
       state_scope = {
 	  literacy = 0.8
 	  NOT = { literacy = 0.9 }
 	  }
-	  NOT = { has_province_modifier = RGO_education_8 }
 	}
 
 	#allow_multiple_instances = yes
@@ -1676,11 +1676,11 @@ province_event = {
 
 	trigger = {
 	has_global_flag = education_setup
+	  NOT = { has_province_modifier = RGO_education_9 }
       state_scope = {
 	  literacy = 0.9
 	  NOT = { literacy = 0.99 }
 	  }
-	  NOT = { has_province_modifier = RGO_education_9 }
 	}
 
 	#allow_multiple_instances = yes
@@ -1899,11 +1899,11 @@ province_event = {
 
 	trigger = {
 	has_global_flag = education_setup
+	  NOT = { has_province_modifier = RGO_education_0 }
       state_scope = {
 	  literacy = 0
       NOT = { literacy = 0.1 }
 	  }
-	  NOT = { has_province_modifier = RGO_education_0 }
 	}
 
 	#allow_multiple_instances = yes

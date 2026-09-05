@@ -1618,9 +1618,9 @@ country_event = {
 	
 	trigger = {
 		exists = yes
-		colonial_nation = yes
 		civilized = yes
 		is_greater_power = yes
+		colonial_nation = yes
 		any_owned_province = {
 			is_colonial = yes
 			NOT = {
@@ -1745,9 +1745,9 @@ country_event = {
 	
 	trigger = {
 		exists = yes
-		colonial_nation = yes
 		civilized = yes
 		is_greater_power = yes
+		colonial_nation = yes
 		economic_responsibility = 1
 	}
 	
@@ -1975,15 +1975,15 @@ country_event = {
 	trigger = {
 		exists = yes
 		civilized = yes
-		any_owned_province = {
-			is_colonial = yes
-			is_overseas = yes
-		}
 		administration_spending = 0.6
 		education_spending = 0.6
 		military_spending = 0.6
 		NOT = {
 			num_of_revolts = 1
+		}
+		any_owned_province = {
+			is_colonial = yes
+			is_overseas = yes
 		}
 	}
 	
@@ -2050,13 +2050,13 @@ country_event = {
 	
 	trigger = {
 		exists = yes
-		colonial_nation = yes
 		civilized = yes
 		OR = {
 			OR = { government = hms_government government = hms_government2 government = hms_government3 }
 			OR = { government = democracy government = democracy2 government = democracy3 }
 			OR = { government = prussian_constitutionalism government = prussian_constitutionalism2 government = prussian_constitutionalism3 }
 		}
+		colonial_nation = yes
 		liberal = 0.2
 	}
 	

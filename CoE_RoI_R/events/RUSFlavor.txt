@@ -302,18 +302,14 @@ country_event = {
 	picture = "alaska"
 	
 	trigger = {
+		is_greater_power = yes
+		war = no
+		has_country_flag = alaska_purchase_interest
 		RUS = {
 			war = no
 			any_owned_province = {
 				region = USA_1
 			}
-		}
-		NOT = {
-			has_global_flag = alaska_purchase_process_global
-			has_global_flag = alaska_purchase_completed
-			has_country_flag = refused_alaska
-			any_owned_province = { is_core = RUS }
-			truce_with = RUS
 		}
 		OR = {
 			tag = USA
@@ -321,10 +317,14 @@ country_event = {
 			relation = { who = RUS value = 0 }
 			alliance_with = RUS
 		}
-		is_greater_power = yes
-		war = no
 		nationalism_n_imperialism = 1
-		has_country_flag = alaska_purchase_interest
+		NOT = {
+			has_global_flag = alaska_purchase_process_global
+			has_global_flag = alaska_purchase_completed
+			has_country_flag = refused_alaska
+			any_owned_province = { is_core = RUS }
+			truce_with = RUS
+		}
 	}
 	
 	mean_time_to_happen = {

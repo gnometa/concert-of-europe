@@ -1976,12 +1976,12 @@ country_event = {
 	fire_only_once = yes
 
 	trigger = {
+		NOT = { is_culture_group = oceanic }
+		civilized = yes
 		NZL = {
 			exists = no
 			all_core = { owned_by = THIS }
 		}
-		NOT = { is_culture_group = oceanic }
-		civilized = yes
 	}
 
 	mean_time_to_happen = {
@@ -2014,6 +2014,11 @@ country_event = {
 	picture = "flagstaffwar"
 
 	trigger = {
+		NOT = { tag = AOT }
+		OR = {
+			has_global_flag = treaty_of_waitangi
+			state_n_government = 1
+		}
 		any_owned_province = {
 			is_core = NZL
 			NOT = {
@@ -2021,11 +2026,6 @@ country_event = {
 				average_militancy = 2
 			}
 		}
-		OR = {
-			has_global_flag = treaty_of_waitangi
-			state_n_government = 1
-		}
-		NOT = { tag = AOT }
 	}
 
 	mean_time_to_happen = {

@@ -643,10 +643,10 @@ province_event = {
 	title = "The Second Great Trek"
 	desc = "EVTDESC98225"
 	trigger = {
+		NOT = { has_province_flag = great_trek2 }
 		ORA = { exists = yes }
 		TRN = { exists = yes }
 		state_scope = { has_pop_culture = boer  }
-		NOT = { has_province_flag = great_trek2 }
 	}
 	mean_time_to_happen = {
 		months = 24
@@ -678,10 +678,10 @@ province_event = {
 	title = "The Second Great Trek"
 	desc = "EVTDESC98225"
 	trigger = {
+		NOT = { has_province_flag = great_trek2 }
 		ORA = { exists = yes }
 		TRN = { exists = yes }
 		state_scope = { has_pop_culture = boer  }
-		NOT = { has_province_flag = great_trek2 }
 	}
 	mean_time_to_happen = {
 		months = 24
@@ -821,10 +821,10 @@ country_event = {
 	desc = "After a little over two years of British rule, it has came to our attention by two young Afrikaner men that there is a large deposit of diamond ore in Kimberley..."
 	picture = "pioneer_wagons"
 	trigger = {
-		owns = 2094
 		year = 1865
 		civilized = yes
 		is_greater_power = yes
+		owns = 2094
 		ORA = { exists = yes }
 		TRN = { exists = yes }
 		2094 = {

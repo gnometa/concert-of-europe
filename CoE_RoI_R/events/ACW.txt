@@ -2895,13 +2895,13 @@ country_event = {
 	picture = "Sioux"
 
 	trigger = {
-		owns = 122
 		has_country_flag = custers_expedition_sent
-		122 = {
-			trade_goods = precious_metal
-		}
 		NOT = {
 			has_country_flag = sioux_wars
+		}
+		owns = 122
+		122 = {
+			trade_goods = precious_metal
 		}
 	}
 
@@ -2991,7 +2991,6 @@ country_event = {
 	picture = "Sioux"
 
 	trigger = {
-		owns = 105
 		year = 1840
 		OR = {
 			tag = USA
@@ -3001,6 +3000,7 @@ country_event = {
 		NOT = {
 			has_country_flag = apache_wars
 		}
+		owns = 105
 	}
 
 	mean_time_to_happen = {

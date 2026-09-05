@@ -15,18 +15,6 @@ country_event = {
 		exists = yes
 		civilized = yes
 		OR = {
-			revolution_n_counterrevolution = 1
-			any_neighbor_country = { has_country_flag = arab_revolt }
-			AND = {
-				tag = TUR
-				NOT = {
-					OR = { government = hms_government government = hms_government2 government = hms_government3 }
-					OR = { government = prussian_constitutionalism government = prussian_constitutionalism2 government = prussian_constitutionalism3 }
-					OR = { government = absolute_monarchy government = absolute_monarchy2 government = absolute_monarchy3 }
-				}
-			}
-		}
-		OR = {
 			year = 1900
 			AND = {
 				tag = TUR
@@ -57,6 +45,18 @@ country_event = {
 			has_country_flag = friend_of_the_arabs
 			has_country_flag = ottoman_islamic_caliphate
 			tag = ISR
+		}
+		OR = {
+			revolution_n_counterrevolution = 1
+			any_neighbor_country = { has_country_flag = arab_revolt }
+			AND = {
+				tag = TUR
+				NOT = {
+					OR = { government = hms_government government = hms_government2 government = hms_government3 }
+					OR = { government = prussian_constitutionalism government = prussian_constitutionalism2 government = prussian_constitutionalism3 }
+					OR = { government = absolute_monarchy government = absolute_monarchy2 government = absolute_monarchy3 }
+				}
+			}
 		}
 		any_owned_province = {
 			any_core = {

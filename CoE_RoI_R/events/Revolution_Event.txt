@@ -2872,6 +2872,7 @@ country_event = {
 	trigger = {
 		exists = yes
 		ai = yes
+		has_country_flag = called_for_help
 		NOT = { revolt_percentage = 0.50 }
 		NOT = {
 			any_owned_province = {
@@ -2879,7 +2880,6 @@ country_event = {
 				controlled_by_rebels = yes
 			}
 		}
-		has_country_flag = called_for_help
 	}
 	
 	mean_time_to_happen = {
@@ -2911,6 +2911,12 @@ province_event = {
 				primary_culture = maori
 			}
 		}
+		controlled_by = THIS
+		NOT = {
+			average_militancy = 6
+			is_primary_culture = yes
+			has_province_modifier = peasant_revolt
+		}
 		any_pop = {
 			OR = {
 				is_culture_group = arabic
@@ -2921,12 +2927,6 @@ province_event = {
 				is_culture_group = southeast_asian
 				culture = maori
 			}
-		}
-		controlled_by = THIS
-		NOT = {
-			average_militancy = 6
-			is_primary_culture = yes
-			has_province_modifier = peasant_revolt
 		}
 	}
 	

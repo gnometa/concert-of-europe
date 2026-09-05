@@ -2992,8 +2992,8 @@ country_event = {
 	picture = "muhammad_ali"
 
 	trigger = {
-		war_with = EGY
 		has_country_flag = greek_question
+		war_with = EGY
 		TUR = { has_country_flag = promised_egyptian_levant }
 		NOT = {
 			war_with = TUR

@@ -14,16 +14,16 @@ province_event = {
 	picture = "Revolution"
 	
 	trigger = {
-		is_ideology_enabled = socialist
 		civilized = yes
 		is_colonial = no
+		NOT = { has_province_modifier = labor_union }
+		is_ideology_enabled = socialist
 		OR = {
 			has_pop_type = artisans
 			has_pop_type = clerks
 			has_pop_type = craftsmen
 			has_pop_type = labourers
 		}
-		NOT = { has_province_modifier = labor_union }
 		owner = {
 			OR = {
 				OR = { government = prussian_constitutionalism government = prussian_constitutionalism2 government = prussian_constitutionalism3 }
@@ -224,9 +224,7 @@ country_event = {
 	
 	trigger = {
 		exists = yes
-		is_ideology_enabled = socialist
 		civilized = yes
-		socialist = 5
 		OR = {
 			OR = { government = prussian_constitutionalism government = prussian_constitutionalism2 government = prussian_constitutionalism3 }
 			OR = { government = democracy government = democracy2 government = democracy3 }
@@ -234,6 +232,8 @@ country_event = {
 			OR = { government = absolute_monarchy government = absolute_monarchy2 government = absolute_monarchy3 }
 			OR = { government = theocracy government = theocracy2 government = theocracy3 }
 		}
+		is_ideology_enabled = socialist
+		socialist = 5
 		OR = {
 			trade_unions = non_socialist
 			trade_unions = all_trade_unions
@@ -618,9 +618,7 @@ country_event = {
 	
 	trigger = {
 		exists = yes
-		is_ideology_enabled = socialist
 		civilized = yes
-		socialist = 15
 		OR = {
 			OR = { government = prussian_constitutionalism government = prussian_constitutionalism2 government = prussian_constitutionalism3 }
 			OR = { government = democracy government = democracy2 government = democracy3 }
@@ -628,6 +626,8 @@ country_event = {
 			OR = { government = absolute_monarchy government = absolute_monarchy2 government = absolute_monarchy3 }
 			OR = { government = theocracy government = theocracy2 government = theocracy3 }
 		}
+		is_ideology_enabled = socialist
+		socialist = 15
 		OR = {
 			trade_unions = non_socialist
 			trade_unions = all_trade_unions
@@ -776,9 +776,10 @@ province_event = {
 	picture = "Strike"
 	
 	trigger = {
-		is_ideology_enabled = socialist
 		is_colonial = no
 		civilized = yes
+		NOT = { has_province_modifier = province_strike }
+		is_ideology_enabled = socialist
 		socialist = 10
 		owner = {
 			OR = {
@@ -802,7 +803,6 @@ province_event = {
 			has_pop_type = craftsmen
 			has_pop_type = labourers
 		}
-		NOT = { has_province_modifier = province_strike }
 	}
 	
 	mean_time_to_happen = {
@@ -1024,7 +1024,6 @@ country_event = {
 	
 	trigger = {
 		exists = yes
-		is_ideology_enabled = socialist
 		civilized = yes
 		OR = {
 			OR = { government = prussian_constitutionalism government = prussian_constitutionalism2 government = prussian_constitutionalism3 }
@@ -1033,6 +1032,7 @@ country_event = {
 			OR = { government = absolute_monarchy government = absolute_monarchy2 government = absolute_monarchy3 }
 			OR = { government = theocracy government = theocracy2 government = theocracy3 }
 		}
+		is_ideology_enabled = socialist
 		OR = {
 			trade_unions = non_socialist
 			trade_unions = all_trade_unions
@@ -1178,10 +1178,8 @@ country_event = {
 	
 	trigger = {
 		exists = yes
-		is_ideology_enabled = socialist
 		civilized = yes
 		year = 1886
-		socialist = 10
 		OR = {
 			OR = { government = prussian_constitutionalism government = prussian_constitutionalism2 government = prussian_constitutionalism3 }
 			OR = { government = democracy government = democracy2 government = democracy3 }
@@ -1189,6 +1187,8 @@ country_event = {
 			OR = { government = absolute_monarchy government = absolute_monarchy2 government = absolute_monarchy3 }
 			OR = { government = theocracy government = theocracy2 government = theocracy3 }
 		}
+		is_ideology_enabled = socialist
+		socialist = 10
 		public_meetings = yes_meeting
 		NOT = {
 			ruling_party_ideology = socialist
@@ -1335,7 +1335,6 @@ country_event = {
 	
 	trigger = {
 		exists = yes
-		is_ideology_enabled = socialist
 		civilized = yes
 		OR = {
 			OR = { government = prussian_constitutionalism government = prussian_constitutionalism2 government = prussian_constitutionalism3 }
@@ -1344,6 +1343,7 @@ country_event = {
 			OR = { government = absolute_monarchy government = absolute_monarchy2 government = absolute_monarchy3 }
 			OR = { government = theocracy government = theocracy2 government = theocracy3 }
 		}
+		is_ideology_enabled = socialist
 		press_rights = free_press
 	}
 	
@@ -1483,7 +1483,6 @@ country_event = {
 	
 	trigger = {
 		exists = yes
-		is_ideology_enabled = socialist
 		civilized = yes
 		OR = {
 			OR = { government = prussian_constitutionalism government = prussian_constitutionalism2 government = prussian_constitutionalism3 }
@@ -1492,6 +1491,7 @@ country_event = {
 			OR = { government = absolute_monarchy government = absolute_monarchy2 government = absolute_monarchy3 }
 			OR = { government = theocracy government = theocracy2 government = theocracy3 }
 		}
+		is_ideology_enabled = socialist
 		any_owned_province = {
 			OR = {
 				has_province_modifier = labor_union
@@ -1691,9 +1691,7 @@ country_event = {
 	
 	trigger = {
 		exists = yes
-		is_ideology_enabled = socialist
 		civilized = yes
-		socialist = 5
 		OR = {
 			OR = { government = prussian_constitutionalism government = prussian_constitutionalism2 government = prussian_constitutionalism3 }
 			OR = { government = democracy government = democracy2 government = democracy3 }
@@ -1701,6 +1699,8 @@ country_event = {
 			OR = { government = absolute_monarchy government = absolute_monarchy2 government = absolute_monarchy3 }
 			OR = { government = theocracy government = theocracy2 government = theocracy3 }
 		}
+		is_ideology_enabled = socialist
+		socialist = 5
 		any_state = {
 			has_building = factory
 		}
@@ -1879,9 +1879,6 @@ country_event = {
 	
 	trigger = {
 		exists = yes
-		is_ideology_enabled = fascist
-		socialist = 5
-		NOT = { fascist = 5 }
 		civilized = yes
 		OR = {
 			OR = { government = prussian_constitutionalism government = prussian_constitutionalism2 government = prussian_constitutionalism3 }
@@ -1890,6 +1887,9 @@ country_event = {
 			OR = { government = absolute_monarchy government = absolute_monarchy2 government = absolute_monarchy3 }
 			OR = { government = theocracy government = theocracy2 government = theocracy3 }
 		}
+		is_ideology_enabled = fascist
+		socialist = 5
+		NOT = { fascist = 5 }
 		OR = {
 			nationalvalue = nv_supremacy
 			nationalvalue = nv_might			
@@ -2084,9 +2084,7 @@ country_event = {
 	
 	trigger = {
 		exists = yes
-		is_ideology_enabled = fascist
 		civilized = yes
-		public_meetings = yes_meeting
 		NOT = { has_country_flag = paramilitaries_outlawed }
 		OR = {
 			OR = { government = prussian_constitutionalism government = prussian_constitutionalism2 government = prussian_constitutionalism3 }
@@ -2095,6 +2093,8 @@ country_event = {
 			OR = { government = absolute_monarchy government = absolute_monarchy2 government = absolute_monarchy3 }
 			OR = { government = theocracy government = theocracy2 government = theocracy3 }
 		}
+		is_ideology_enabled = fascist
+		public_meetings = yes_meeting
 		OR = {
 			nationalvalue = nv_supremacy
 			nationalvalue = nv_might			
@@ -2291,7 +2291,6 @@ country_event = {
 	
 	trigger = {
 		exists = yes
-		is_ideology_enabled = fascist
 		civilized = yes
 		OR = {
 			OR = { government = prussian_constitutionalism government = prussian_constitutionalism2 government = prussian_constitutionalism3 }
@@ -2300,6 +2299,7 @@ country_event = {
 			OR = { government = absolute_monarchy government = absolute_monarchy2 government = absolute_monarchy3 }
 			OR = { government = theocracy government = theocracy2 government = theocracy3 }
 		}
+		is_ideology_enabled = fascist
 		any_owned_province = {
 			is_colonial = no
 			fascist = 5
@@ -2492,9 +2492,7 @@ country_event = {
 	
 	trigger = {
 		exists = yes
-		is_ideology_enabled = fascist
 		civilized = yes
-		fascist = 30
 		OR = {
 			OR = { government = prussian_constitutionalism government = prussian_constitutionalism2 government = prussian_constitutionalism3 }
 			OR = { government = democracy government = democracy2 government = democracy3 }
@@ -2503,6 +2501,8 @@ country_event = {
 			OR = { government = theocracy government = theocracy2 government = theocracy3 }
 		}
 		NOT = { has_country_flag = march_on_capital }
+		is_ideology_enabled = fascist
+		fascist = 30
 	}
 	
 	mean_time_to_happen = {
@@ -2716,7 +2716,6 @@ country_event = {
 	
 	trigger = {
 		exists = yes
-		is_ideology_enabled = fascist
 		civilized = yes
 		war = no
 		OR = {
@@ -2726,6 +2725,7 @@ country_event = {
 			OR = { government = absolute_monarchy government = absolute_monarchy2 government = absolute_monarchy3 }
 			OR = { government = theocracy government = theocracy2 government = theocracy3 }
 		}
+		is_ideology_enabled = fascist
 		OR = {
 			nationalvalue = nv_supremacy
 			nationalvalue = nv_might			
@@ -2932,9 +2932,7 @@ country_event = {
 	
 	trigger = {
 		exists = yes
-		is_ideology_enabled = fascist
 		civilized = yes
-		press_rights = free_press
 		OR = {
 			OR = { government = prussian_constitutionalism government = prussian_constitutionalism2 government = prussian_constitutionalism3 }
 			OR = { government = democracy government = democracy2 government = democracy3 }
@@ -2942,6 +2940,8 @@ country_event = {
 			OR = { government = absolute_monarchy government = absolute_monarchy2 government = absolute_monarchy3 }
 			OR = { government = theocracy government = theocracy2 government = theocracy3 }
 		}
+		is_ideology_enabled = fascist
+		press_rights = free_press
 		OR = {
 			nationalvalue = nv_supremacy
 			nationalvalue = nv_might			
@@ -3114,7 +3114,6 @@ country_event = {
 	
 	trigger = {
 		exists = yes
-		is_ideology_enabled = fascist
 		civilized = yes
 		OR = {
 			OR = { government = prussian_constitutionalism government = prussian_constitutionalism2 government = prussian_constitutionalism3 }
@@ -3123,6 +3122,7 @@ country_event = {
 			OR = { government = absolute_monarchy government = absolute_monarchy2 government = absolute_monarchy3 }
 			OR = { government = theocracy government = theocracy2 government = theocracy3 }
 		}
+		is_ideology_enabled = fascist
 		any_owned_province = {
 			has_province_modifier = black_shirts
 			NOT = { has_province_modifier = the_massacre }
@@ -3299,9 +3299,7 @@ country_event = {
 	
 	trigger = {
 		exists = yes
-		is_ideology_enabled = fascist
 		civilized = yes
-		fascist = 10
 		OR = {
 			OR = { government = prussian_constitutionalism government = prussian_constitutionalism2 government = prussian_constitutionalism3 }
 			OR = { government = democracy government = democracy2 government = democracy3 }
@@ -3309,6 +3307,8 @@ country_event = {
 			OR = { government = absolute_monarchy government = absolute_monarchy2 government = absolute_monarchy3 }
 			OR = { government = theocracy government = theocracy2 government = theocracy3 }
 		}
+		is_ideology_enabled = fascist
+		fascist = 10
 		OR = {
 			nationalvalue = nv_supremacy
 			nationalvalue = nv_might			
@@ -3509,12 +3509,10 @@ country_event = {
 	
 	trigger = {
 		exists = yes
-		is_ideology_enabled = fascist
 		NOT = {
 			has_country_flag = paramilitaries_outlawed
 		}
 		civilized = yes
-		fascist = 10
 		OR = {
 			OR = { government = prussian_constitutionalism government = prussian_constitutionalism2 government = prussian_constitutionalism3 }
 			OR = { government = democracy government = democracy2 government = democracy3 }
@@ -3522,6 +3520,8 @@ country_event = {
 			OR = { government = absolute_monarchy government = absolute_monarchy2 government = absolute_monarchy3 }
 			OR = { government = theocracy government = theocracy2 government = theocracy3 }
 		}
+		is_ideology_enabled = fascist
+		fascist = 10
 		any_owned_province = {
 			has_province_modifier = black_shirts
 		}
@@ -3700,7 +3700,6 @@ country_event = {
 	
 	trigger = {
 		exists = yes
-		is_ideology_enabled = fascist
 		civilized = yes
 		OR = {
 			OR = { government = prussian_constitutionalism government = prussian_constitutionalism2 government = prussian_constitutionalism3 }
@@ -3709,6 +3708,7 @@ country_event = {
 			OR = { government = absolute_monarchy government = absolute_monarchy2 government = absolute_monarchy3 }
 			OR = { government = theocracy government = theocracy2 government = theocracy3 }
 		}
+		is_ideology_enabled = fascist
 		any_owned_province = {
 			is_colonial = no
 			is_primary_culture = yes
@@ -3902,10 +3902,7 @@ country_event = {
 	
 	trigger = {
 		exists = yes
-		is_ideology_enabled = fascist
-		is_ideology_enabled = socialist
 		civilized = yes
-		NOT = { trade_unions = no_trade_unions }
 		OR = {
 			OR = { government = prussian_constitutionalism government = prussian_constitutionalism2 government = prussian_constitutionalism3 }
 			OR = { government = democracy government = democracy2 government = democracy3 }
@@ -3913,6 +3910,9 @@ country_event = {
 			OR = { government = absolute_monarchy government = absolute_monarchy2 government = absolute_monarchy3 }
 			OR = { government = theocracy government = theocracy2 government = theocracy3 }
 		}
+		is_ideology_enabled = fascist
+		is_ideology_enabled = socialist
+		NOT = { trade_unions = no_trade_unions }
 		any_owned_province = {
 			is_colonial = no
 			is_primary_culture = yes
@@ -4349,18 +4349,18 @@ country_event = {
 	
 	trigger = {
 		exists = yes
-		is_ideology_enabled = communist
 		civilized = yes
-		any_owned_province = {
-			is_colonial = no
-			socialist = 20
-		}
 		OR = {
 			OR = { government = absolute_monarchy government = absolute_monarchy2 government = absolute_monarchy3 }
 			OR = { government = prussian_constitutionalism government = prussian_constitutionalism2 government = prussian_constitutionalism3 }
 			OR = { government = presidential_dictatorship government = presidential_dictatorship2 government = presidential_dictatorship3 }
 			OR = { government = bourgeois_dictatorship government = bourgeois_dictatorship2 government = bourgeois_dictatorship3 }
 			OR = { government = theocracy government = theocracy2 government = theocracy3 }
+		}
+		is_ideology_enabled = communist
+		any_owned_province = {
+			is_colonial = no
+			socialist = 20
 		}
 	}
 
@@ -4759,9 +4759,9 @@ province_event = {
 	desc = "EVTDESC17730"
 	
 	trigger = {
-		is_ideology_enabled = communist
 		is_colonial = no
 		NOT = { controlled_by = REB }
+		is_ideology_enabled = communist
 		OR = {
 			socialist = 20
 			communist = 10
