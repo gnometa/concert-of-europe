@@ -28,7 +28,7 @@ country_event = {
 			vote_franschise = universal_voting
 		}
 		NOT = {
-			has_global_flag = liberal_revolution_should_now_fire
+			has_global_flag = liberal_revolutions_should_now_fire
 		}
 		NOT = { OR = { government = theocracy government = theocracy2 government = theocracy3 } } 
 	}

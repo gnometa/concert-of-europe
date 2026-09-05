@@ -160,7 +160,7 @@ country_event = {
 		slavery = yes_slavery
 		year = 1835
 		NOT = {
-			has_global_flag = american_civil_was_has_happened
+			has_global_flag = american_civil_war_has_happened
 			has_country_flag = house_gag_rule_enacted
 		}
 	}
@@ -206,7 +206,7 @@ country_event = {
 			value = 0.1
 		}
 		NOT = {
-			has_global_flag = american_civil_was_has_happened
+			has_global_flag = american_civil_war_has_happened
 		}
 	}
 

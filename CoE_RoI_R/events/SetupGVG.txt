@@ -9,6 +9,7 @@ country_event = {
 	picture = "crisis"
 
 	trigger = {
+		ai = no
 		NOT = { 
 			has_country_flag = setup_done
 			#OR = {	

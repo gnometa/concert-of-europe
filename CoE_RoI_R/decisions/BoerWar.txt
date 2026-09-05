@@ -6,7 +6,7 @@ political_decisions = {
 				primary_culture = boer
 				}
 				year = 1860
-				has_global_flag = boer_covention_denied
+				has_global_flag = boer_convention_denied
 			NOT = { has_country_flag = republic_founded }
 		}
 

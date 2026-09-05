@@ -3321,7 +3321,7 @@ country_event = {
 		}
 		OR = {
 			has_country_flag = liberal_election_win
-			has_country_flag = anarcho_liberal_win
+			has_country_flag = anarcho_liberal_election_win
 		}
 		OR = {
 			OR = { government = hms_government government = hms_government2 government = hms_government3 }
@@ -3402,7 +3402,7 @@ country_event = {
 		}
 		OR = {
 			has_country_flag = liberal_election_win
-			has_country_flag = anarcho_liberal_win
+			has_country_flag = anarcho_liberal_election_win
 		}
 		OR = {
 			OR = { government = hms_government government = hms_government2 government = hms_government3 }
@@ -3489,7 +3489,7 @@ country_event = {
 		}
 		OR = {
 			has_country_flag = liberal_election_win
-			has_country_flag = anarcho_liberal_win
+			has_country_flag = anarcho_liberal_election_win
 		}
 		OR = {
 			OR = { government = hms_government government = hms_government2 government = hms_government3 }
@@ -3569,7 +3569,7 @@ country_event = {
 		}
 		OR = {
 			has_country_flag = liberal_election_win
-			has_country_flag = anarcho_liberal_win
+			has_country_flag = anarcho_liberal_election_win
 		}
 		OR = {
 			OR = { government = hms_government government = hms_government2 government = hms_government3 }
@@ -3650,7 +3650,7 @@ country_event = {
 		}
 		OR = {
 			has_country_flag = liberal_election_win
-			has_country_flag = anarcho_liberal_win
+			has_country_flag = anarcho_liberal_election_win
 		}
 		OR = {
 			OR = { government = hms_government government = hms_government2 government = hms_government3 }
@@ -3738,7 +3738,7 @@ country_event = {
 		}
 		OR = {
 			has_country_flag = liberal_election_win
-			has_country_flag = anarcho_liberal_win
+			has_country_flag = anarcho_liberal_election_win
 		}
 		num_of_ports = 1
 		OR = {
@@ -3826,7 +3826,7 @@ country_event = {
 		}
 		OR = {
 			has_country_flag = liberal_election_win
-			has_country_flag = anarcho_liberal_win
+			has_country_flag = anarcho_liberal_election_win
 		}
 		OR = {
 			OR = { government = hms_government government = hms_government2 government = hms_government3 }
@@ -3907,7 +3907,7 @@ country_event = {
 		}
 		OR = {
 			has_country_flag = liberal_election_win
-			has_country_flag = anarcho_liberal_win
+			has_country_flag = anarcho_liberal_election_win
 		}
 		OR = {
 			OR = { government = hms_government government = hms_government2 government = hms_government3 }
@@ -3987,7 +3987,7 @@ country_event = {
 		}
 		OR = {
 			has_country_flag = liberal_election_win
-			has_country_flag = anarcho_liberal_win
+			has_country_flag = anarcho_liberal_election_win
 		}
 		OR = {
 			OR = { government = hms_government government = hms_government2 government = hms_government3 }
@@ -4067,7 +4067,7 @@ country_event = {
 		}
 		OR = {
 			has_country_flag = liberal_election_win
-			has_country_flag = anarcho_liberal_win
+			has_country_flag = anarcho_liberal_election_win
 		}
 		OR = {
 			OR = { government = hms_government government = hms_government2 government = hms_government3 }
@@ -4156,7 +4156,7 @@ country_event = {
 		}
 		OR = {
 			has_country_flag = liberal_election_win
-			has_country_flag = anarcho_liberal_win
+			has_country_flag = anarcho_liberal_election_win
 		}
 		OR = {
 			OR = { government = hms_government government = hms_government2 government = hms_government3 }
@@ -4236,7 +4236,7 @@ country_event = {
 		}
 		OR = {
 			has_country_flag = liberal_election_win
-			has_country_flag = anarcho_liberal_win
+			has_country_flag = anarcho_liberal_election_win
 		}
 		OR = {
 			OR = { government = hms_government government = hms_government2 government = hms_government3 }
@@ -4323,7 +4323,7 @@ country_event = {
 		}
 		OR = {
 			has_country_flag = liberal_election_win
-			has_country_flag = anarcho_liberal_win
+			has_country_flag = anarcho_liberal_election_win
 		}
 		OR = {
 			OR = { government = hms_government government = hms_government2 government = hms_government3 }
@@ -4403,7 +4403,7 @@ country_event = {
 		}
 		OR = {
 			has_country_flag = liberal_election_win
-			has_country_flag = anarcho_liberal_win
+			has_country_flag = anarcho_liberal_election_win
 		}
 		OR = {
 			OR = { government = hms_government government = hms_government2 government = hms_government3 }

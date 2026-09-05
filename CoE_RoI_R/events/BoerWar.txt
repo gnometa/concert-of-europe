@@ -937,6 +937,58 @@ country_event = {
 	}
 }
 
+# A Boer republic appeals for British protection - fired from the appeal_to_the_british decision
+country_event = {
+	id = 98241
+	title = "EVTNAME98241" #Appeal From $FROMCOUNTRY$
+	desc = "EVTDESC98241"
+	picture = "greatpowers"
+
+	is_triggered_only = yes
+
+	option = {
+		name = "EVTOPTA98241"
+		prestige = 5
+		relation = {
+			who = FROM
+			value = 100
+		}
+		diplomatic_influence = {
+			who = FROM
+			value = 200
+		}
+		add_casus_belli = {
+			target = FROM
+			type = establish_protectorate_casus_belli
+			months = 60
+		}
+		FROM = {
+			any_pop = {
+				militancy = -2
+			}
+		}
+		ai_chance = {
+			factor = 75
+			modifier = {
+				factor = 0
+				FROM = { war_with = ENG }
+			}
+		}
+	}
+
+	option = {
+		name = "EVTOPTB98241"
+		prestige = -1
+		relation = {
+			who = FROM
+			value = -50
+		}
+		ai_chance = {
+			factor = 25
+		}
+	}
+}
+
 # England attempts to annex Transvaal
 country_event = {
 	id = 98245

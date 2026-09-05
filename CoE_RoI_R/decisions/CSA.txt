@@ -398,10 +398,9 @@ political_decisions = {
 			}
 			badboy = -3
 			any_country = {
-					relation = {
-						who = THIS
-						value = 50
-					}
+				relation = {
+					who = THIS
+					value = 50
 				}
 			}
 			any_pop = {
@@ -443,3 +442,4 @@ political_decisions = {
 			factor = 1
 		}
 	}
+}

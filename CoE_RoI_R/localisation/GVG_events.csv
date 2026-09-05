@@ -81,3 +81,38 @@ EVTNAME500003;Minor decline in Slave population;;;;;;;;;;;;;;x,,,,,,,,
 EVTDESC500003;The slave population in our country has experienced a minor decline over the year.;;;;;;;;;;;;;;x,,,,,,,,
 EVTNAME500004;Major decline in Slave population;;;;;;;;;;;;;;x,,,,,,,,
 EVTDESC500004;The slave population in our country has experienced a major decline over the year.;;;;;;;;;;;;;;x,,,,,,,,
+EVTOPTA98241;The Republic shall stand under our protection.;;;;;;;;;;;;;x
+EVTOPTB98241;Their quarrel is no business of ours.;;;;;;;;;;;;;x
+EVTNAME2670;Our Overlord Demands Their Cores;;;;;;;;;;;;;x
+EVTDESC2670;Our overlord has sent a note demanding that we hand over the provinces they consider rightfully theirs. Refusing would mean war with a power far stronger than our own.;;;;;;;;;;;;;x
+EVTNAME2671;They Accept Our Demands;;;;;;;;;;;;;x
+EVTDESC2671;Our vassal has bowed to our demand and handed over the provinces we claimed. The transfer will be completed within the month.;;;;;;;;;;;;;x
+EVTNAME2672;They Refuse Our Demands;;;;;;;;;;;;;x
+EVTDESC2672;Our vassal has refused to hand over the provinces we claimed, and has done so in terms that leave us no room to retreat.;;;;;;;;;;;;;x
+TIT198260511;The Shape of Our Society;;;;;;;;;;;;;x
+DSC198260511;A generation after independence the character of our republic is settling. Merchants press for open ports, landowners for order and protection, officers for a larger army, and the clergy for the old certainties. What emerges from this quarrel will shape our nation for decades.;;;;;;;;;;;;;x
+TIT198260512;Bad Blood in the Litoral;;;;;;;;;;;;;x
+DSC198260512;Our garrisons hold the nitrate provinces, but the Bolivian press calls daily for their return and our own officers speak far too loudly of what they would do to Bolivia if given leave. The affair has become a diplomatic embarrassment.;;;;;;;;;;;;;x
+DSC198260513;Washington proclaims that the Americas are closed to European ambition, and presents itself as the guardian of every republic on this continent. Whether that guardianship is a shield or a leash is the question before us.;;;;;;;;;;;;;x
+TIT198260513;The Monroe Doctrine;;;;;;;;;;;;;x
+EVTOPTA90904;We shall take our place among the modern nations!;;;;;;;;;;;;;x
+EVTOPTB36940;The chiefs shall keep their lands and their sovereignty.;;;;;;;;;;;;;x
+EVTDESC44844;Mexico has repudiated the treaties signed after our victory. Their columns are on the march again, and the government in Mexico City denies that any agreement was ever made.;;;;;;;;;;;;;x
+EVTNAME300983;The Second Treaty of Erzurum;;;;;;;;;;;;;x
+EVTDESC300983;The border with the Ottomans has never been drawn on any map both courts would sign, and the tribes of the frontier answer to whichever governor is nearest. British and Russian mediators have proposed a settlement at Erzurum.;;;;;;;;;;;;;x
+EVTNAME300989;The Erzurum Border Commission;;;;;;;;;;;;;x
+EVTDESC300989;The commissioners have completed their survey of the frontier, and their line awards the disputed districts to Persia. The Porte is expected to protest, but the mediating powers have already given their word.;;;;;;;;;;;;;x
+the_goldsmith_arbitration;The Goldsmid Arbitration;;;;;;;;;;;;;x
+roo_expedition_title;Expedition into the Great Karoo;;;;;;;;;;;;;x
+roo_expedition_desc;Beyond the settled districts of the Cape lies the Karoo, dry and thinly held. A properly funded expedition of surveyors, wagons and troopers could plant permanent settlements at Beaufort, Calvinia and De Aar.;;;;;;;;;;;;;x
+bushmen_expedition_title;Expedition into Namaqualand;;;;;;;;;;;;;x
+bushmen_expedition_desc;The copper country north of the Cape is known to prospectors but claimed by nobody. A small expedition would be enough to establish a station at Springbok and secure the district.;;;;;;;;;;;;;x
+we_are_free_rgs_title;The Riograndense Republic Stands Alone;;;;;;;;;;;;;x
+we_are_free_rgs_desc;The war is over and the flag of the Republic still flies over Piratini. Let us renounce the claims of Rio de Janeiro upon our soil and invite settlers to make their homes among us.;;;;;;;;;;;;;x
+restore_spanish_absolutism_title;Restore the Spanish Monarchy;;;;;;;;;;;;;x
+restore_spanish_absolutism_desc;The Hundred Thousand Sons of Saint Louis stand before Madrid. With the liberal government broken, we may restore His Most Catholic Majesty to his full authority and end the constitutional experiment in Spain.;;;;;;;;;;;;;x
+ENG_transfer_land_to_india_title;Transfer Territory to the Indian Empire;;;;;;;;;;;;;x
+ENG_transfer_land_to_india_desc;Provinces we hold directly are claimed by our Indian dominion, and administering them from London serves nobody. Let them be placed under the government in Calcutta.;;;;;;;;;;;;;x
+reverse_collectivization_title;Reverse the Collectivisation of Agriculture;;;;;;;;;;;;;x
+reverse_collectivization_desc;The collective farms have not fed the country as promised. Returning the land to those who work it will please the peasantry and the landowners alike, though the labourers who gained from collectivisation will not forgive it soon.;;;;;;;;;;;;;x
+unify_portugal_galicia_title;Galicia and Portugal United;;;;;;;;;;;;;x

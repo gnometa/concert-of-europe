@@ -411,7 +411,7 @@ country_event = {
 		}
 		average_consciousness = 2
 		NOT = { has_country_flag = monarchy_revolution_initialised }
-		has_global_flag = liberal_revolution_should_now_fire
+		has_global_flag = liberal_revolutions_should_now_fire
 	}
 	mean_time_to_happen = {
 		months = 120

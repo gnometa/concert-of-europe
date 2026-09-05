@@ -46,7 +46,7 @@ Localisation for the tag name goes in a `.csv` (`TAG;English;...`), typically `l
 - Not in either registry but in use: the Roar of Industry economy rework in `events/00_CoE_RoI_R.txt` (ids ~99984 and 6016xxx), `97xxx` pulse events (`Canals.txt`, fired from `on_actions.txt`), and `999xxxxx` education/RGO events (`+education_RGO*.txt`). Grep `events/` for an id before taking it.
 Pick a new ID from an appropriate free range and record it in the registry file. Events reference localisation keys `EVTNAME<id>`, `EVTDESC<id>`, `EVTOPTA<id>`/`EVTOPTB<id>`, and for news `EVTNAME<id>_NEWS_TITLE`, `EVTDESC<id>_NEWS_LONG/MEDIUM/SHORT`.
 
-**Decisions** (`decisions/*.txt`): `political_decisions = { name = { potential/allow/effect/ai_will_do } }`. Localisation keys are `<name>_title` and `<name>_desc`. Note `decisions/SetupGVG.txt` actually contains `country_event` blocks (ids 2000000–2000002) that run once at game start via `has_country_flag = setup_done` — this is the mod's start-of-game setup hook, not a decision file despite its location. `decisions/00_setup_decisions.txt` is a disabled (`always = no`) hook into the education/RGO event chain.
+**Decisions** (`decisions/*.txt`): `political_decisions = { name = { potential/allow/effect/ai_will_do } }`. Localisation keys are `<name>_title` and `<name>_desc`. Note the mod's start-of-game setup hook is not a decision at all: `events/SetupGVG.txt` holds event 2000000, which fires once per game for the player only (`ai = no`, `NOT = { has_country_flag = setup_done }`) (2000001/2000002 are commented out as obsolete). A stale duplicate of it under `decisions/` was deleted in 2026-09. `decisions/00_setup_decisions.txt` is a disabled (`always = no`) hook into the education/RGO event chain.
 
 **Scripting conventions seen in this codebase**: file-naming suffixes indicate origin — `*Flavor.txt` / `*FlavorGVG.txt` (GVG = this team's additions), `DIM_*` (Dutch East Indies submod content), `000_persia_*` / `000_crownsteler_*`, `VIP_*`, `GAGA*`, and `00_CoE_RoI_R` / `0000_economic_rework` / `+education_RGO*` (Roar of Industry economy rework). New Concert-of-Europe-specific content generally uses the GVG suffix and the 1000000+/2000000+ ID ranges.
 
@@ -66,7 +66,7 @@ Formats the mod actually ships, by folder (the engine also accepts the other ext
 
 | Folder | Size | Format | Referenced from |
 |---|---|---|---|
-| `gfx/pictures/events/` | 521x203 | TGA 32-bit, bottom-up | `picture = "name"` in `events/*.txt` (and the event blocks in `decisions/SetupGVG.txt`) |
+| `gfx/pictures/events/` | 521x203 | TGA 32-bit, bottom-up | `picture = "name"` in `events/*.txt` |
 | `gfx/pictures/decisions/` | 95x95 | DDS uncompressed (some DXT1) | `picture = "name"` in `decisions/*.txt` |
 | `gfx/pictures/news/` | 521x203 images, 714x104 mastheads | DDS uncompressed | `picture = "news/x.dds"` / `"events/x.tga"` in `news/news_layout.txt` (path relative to `gfx/pictures/`) |
 | `gfx/flags/` | 93x64 | TGA 24-bit | `TAG.tga` plus `TAG_communist/_fascist/_monarchy/_republic.tga` |
@@ -105,6 +105,8 @@ Caveats when applying the wiki here:
 - **PostToolUse** runs brace/CRLF/encoding checks on every edited `.txt` under `CoE_RoI_R/`, plus province-id and tag checks for events, decisions, and history files. Fix what it reports before moving on.
 
 Skills: `/loc-add` (localisation keys), `/new-event` (free id + scaffold + loc + registry), `/validate` (static checks, deploy, Audax, error.log diff; user-invoked only). Subagents: `script-reviewer` (read-only review of changed script) and `encoding-auditor`.
+
+`scripts/refcheck.py` is the cross-reference checker: it parses the whole tree and reports event ids that are fired but never defined (and orphaned `is_triggered_only` events), missing localisation for event titles/options and decisions, undefined modifiers, flags set but never checked (or vice versa), unknown cultures/religions/goods/reform options, and `on_actions` entries. Run `python scripts/refcheck.py` for all checks or name one (`events`, `loc`, `flags`, `names`, `modifiers`, `onactions`, `options`); it is about 2 s per check and prints one problem per line. Its accepted baseline is in `.claude/skills/validate/SKILL.md`.
 
 Useful one-offs: `modcheck next-id <lo> <hi>`, `modcheck ids` (duplicate event ids), `modcheck loc-find KEY`, `modcheck encoding` (whole-tree audit). Known pre-existing findings are listed in `.claude/skills/validate/SKILL.md`; do not "fix" them as a side effect of unrelated work.
 

@@ -731,7 +731,7 @@ country_event = {
 #German-Spanish Treaty of 1899
 country_event = {
 	id = 33025
-	title = "EVTNAME33205" #The Spanish Pacific
+	title = "EVTNAME33025" #The Spanish Pacific
 	desc = "EVTDESC33025"
 	picture = "deliberation"
 	
