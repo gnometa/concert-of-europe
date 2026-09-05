@@ -124,6 +124,12 @@ country_event = {
 		war_with = TUR
 		has_country_flag = russo_turkish_war_1828
 		war_score = 20
+		TUR = {
+			OR = {
+				national_provinces_occupied = 0.15
+				war_exhaustion = 5
+			}
+		}
 		NOT = {
 			has_country_flag = adrianople_offer_made
 			has_global_flag = adrianople_treaty
@@ -141,7 +147,6 @@ country_event = {
 	option = {
 		name = "EVTOPTA1001401" # A moderate peace at Adrianople
 		set_country_flag = adrianople_offer_made
-		set_country_flag = black_sea_claimed
 		set_global_flag = adrianople_treaty
 		prestige = 10
 		end_war = TUR
