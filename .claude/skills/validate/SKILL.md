@@ -23,11 +23,12 @@ python scripts/refcheck.py
 
 If nothing is modified in the working tree, use `git diff --name-only HEAD~1` instead so the last commit is checked. For a full sweep use `CoE_RoI_R/events/*.txt CoE_RoI_R/decisions/*.txt CoE_RoI_R/common/*.txt`.
 
-Known pre-existing findings (as of 2026-09-06) that are not regressions:
-- `ids`: duplicate 300999 inside `events/PERFlavour.txt`.
-- `encoding`: a dozen vanilla-inherited localisation csvs contain NEL (0x85) or 0x9d bytes.
-- `loc-check`: about 160 malformed rows across 21 csvs, mostly `0000_economic_rework.csv`, `newCE.csv`, `PDM_CE.csv` (UTF-8 and/or missing `x` terminator).
-- `refcheck` (baseline after the 2026-09-06 sweep): `events` 14 - the deliberately abandoned `is_triggered_only` events (1002, 90903, 95259, 95652, 95655, 97120, 98230, 99665, 99666, 99993, 290115, 375003) plus 99932 and 8016451 having a trigger with no MTTH (intentional: they fire the moment the trigger is true). `loc` 60 - 58 hidden/utility entries in `common/event_modifiers.txt` with no localisation, plus event 290115 (an abandoned event). `flags` 140 - orphan flags: 104 set but never checked and 36 checked but never set; none of the remaining ones is a spelling variant of a real flag. `options` 8 - events with 6-8 options. `onactions`, `modifiers` and `names` must stay at 0.
+Known pre-existing findings (re-measured 2026-09-06 after the post-`cab739e0` batch) that are not regressions:
+- `ids`: duplicate 300999 inside `events/PERFlavour.txt`. Exactly 1 duplicate; ~3100 ids defined.
+- `encoding`: 12 vanilla-inherited localisation csvs contain NEL (0x85) or 0x9d bytes (`modcheck encoding CoE_RoI_R/localisation`). `modcheck encoding CoE_RoI_R/events`, `.../decisions`, `.../common` and `.../history` must all be 0 - every script `.txt` in the mod is CRLF.
+- `loc-check`: 161 malformed rows across 21 csvs, mostly `0000_economic_rework.csv` (55), `PDM_CE.csv` (28), `newCE.csv` (27) (UTF-8 and/or missing `x` terminator). `GVG_events.csv` is clean and must stay clean.
+- `refcheck` (baseline 2026-09-06): `events` 14 - the deliberately abandoned `is_triggered_only` events (1002, 90903, 95259, 95652, 95655, 97120, 98230, 99665, 99666, 99993, 290115, 375003) plus 99932 and 8016451 having a trigger with no MTTH (intentional: they fire the moment the trigger is true). `loc` 60 - 58 hidden/utility entries in `common/event_modifiers.txt` with no localisation, plus event 290115 (an abandoned event). `flags` 132 - orphan flags: 98 set but never checked and 34 checked but never set; none of the remaining ones is a spelling variant of a real flag. `options` 8 - events with 6-8 options. `onactions`, `modifiers` and `names` must stay at 0.
+- `provinces` and `tags` over the whole tree (events, decisions, history/countries, history/diplomacy, history/wars) must stay at 0.
 
 Report any finding **not** in that list as a regression.
 
@@ -37,7 +38,7 @@ Report any finding **not** in that list as a regression.
 python scripts/cwtools_check.py
 ```
 
-Filtered output; see `.claude/skills/cwtools-lsp/SKILL.md` for what the filter drops. Known baseline (2026-09-05): "Too many attacker_goal" in `CBsAndCores.txt:2448` and `Indochina.txt:188` (multiple war goals in one `war` effect are valid; rule gap), and 12 "Too many clauses" warnings in `production_types.txt` (rule gap). Anything else is new.
+Filtered output; see `.claude/skills/cwtools-lsp/SKILL.md` for what the filter drops. Known baseline (re-measured 2026-09-06): **14 diagnostics, 0 errors, 14 warnings** over ~760 files - "Too many attacker_goal" in `CBsAndCores.txt:2448` and `Indochina.txt:188` (multiple war goals in one `war` effect are valid; rule gap), and 12 "Too many clauses" warnings in `production_types.txt` (rule gap). Anything else is new.
 
 ## Stage 2: deploy
 

@@ -1,5 +1,4 @@
 on_yearly_pulse = {
-	100 = 2000101 # economy pulse host watchdog - re-elects a host if the old one died
 	100 = 97200
 	100 = 97250
 	100 = 97350
