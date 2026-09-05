@@ -48,6 +48,7 @@ Run the set after a large or cross-cutting change; skip it for a one-file edit.
 ```
 for s in countries provinces diplomacy decisions common loc events perf; do python scripts/audit_$s.py; done
 python scripts/audit_fire_once.py
+python scripts/audit_pacing.py
 ```
 
 Expect **0 `[high]`** from every script except these known baselines (re-measured
@@ -66,6 +67,10 @@ Expect **0 `[high]`** from every script except these known baselines (re-measure
   entries are alternative tags for the same nation (`OR(ENG,ENL)`, `OR(AUS,KUK)`, ...) and class C
   is genuine world events. The verdicts are in `docs/audit/fire-only-once.md`; only check entries
   that are new since that file was written.
+- `audit_pacing.py`: advisory report, **exit 0**, no `[high]` class. It lists the 1821-1836
+  event load per playable tag plus same-day cascades and runaway repeaters; the current
+  snapshot (28 repeaters, 0 narrow-window) is `docs/audit/pacing-1821-1836.md`, which also
+  records the entries that were reviewed and deliberately left. `--write` rewrites it.
 
 `audit_provinces.py`, `audit_diplomacy.py`, `audit_decisions.py`, `audit_common.py`
 (`DEFECTS high=0`), `audit_loc.py` and `audit_perf.py` are all at 0 high. Their medium/low
