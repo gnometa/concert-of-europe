@@ -2606,7 +2606,6 @@ country_event = {
 	desc = "A sudden surge in immigration to $COUNTRY$ has occurred."
 	picture = "emigration"
 	
-	fire_only_once = yes
 	
 	trigger = {
 		exists = yes

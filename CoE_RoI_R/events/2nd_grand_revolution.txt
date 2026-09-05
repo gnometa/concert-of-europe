@@ -383,10 +383,10 @@ country_event = {
 	title = "Intervention in Germany" #Generic
 	desc = "Our government is of the opinion that the revolutionary pan-german unification has created a powerful and indeed very dangerous enemy. Therefor the German expansion must be contained before it is too late."													
 	major = yes
-	fire_only_once = yes
 	
     trigger = {
      capital_scope = { continent = europe }
+	 NOT = { has_country_flag = intervened_in_germany }
 	 NOT = { alliance_with = GER }
 	 NOT = { 
 	        tag = RUS
@@ -414,6 +414,7 @@ country_event = {
 	
 	option = {
 		name = "This war is... very necessary!"
+		set_country_flag = intervened_in_germany
 		war = {
 				target = GER
 				attacker_goal = {
@@ -432,6 +433,7 @@ country_event = {
 	
 	option = {
 		name = "War...against Germany? Uhm...no."
+		set_country_flag = intervened_in_germany
 		ai_chance = {
 			factor = 40
 		}
