@@ -148,6 +148,7 @@ country_event = {
 		clr_country_flag = qing_opium_prohibition
 		remove_country_modifier = opium_prohibition
 		treasury = 75000
+		remove_country_modifier = canton_squeeze
 		add_country_modifier = {
 			name = canton_squeeze
 			duration = 3650
