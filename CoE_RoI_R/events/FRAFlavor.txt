@@ -401,7 +401,7 @@ country_event = {
 	picture = "napoleon3"
 
 	option = {
-		name = "EVTOPTA37207" 
+		name = "EVTOPTA37208" 
 		prestige = 5
 		set_country_flag = louies_back
 		any_pop = {
@@ -554,11 +554,11 @@ country_event = {
 		months = 5
 		modifier = {
 			factor = 0.75 #increase likelihood to happen
-			year = 1853
+			year = 1837
 		}
 		modifier = {
 			factor = 0.95 #increase likelihood to happen
-			year = 1854
+			year = 1838
 		}
 	}
 
@@ -941,7 +941,7 @@ country_event = {
 		picture = "Jenatzky"
 
 	option = {
-		name = "EVTOPTA37222" 
+		name = "EVTOPTA37223" 
 		prestige = 5
 	}
 
@@ -981,7 +981,7 @@ country_event = {
 	picture = "ballet"
 
 	option = {
-		name = "EVTOPTA37221" 
+		name = "EVTOPTA37224" 
 		prestige = 5
 	}
 }
@@ -1064,7 +1064,7 @@ country_event = {
 		473 = {
 			change_controller = THIS
 			any_pop = {
-				limit = { has_pop_religion = north_italian }
+				limit = { has_pop_culture = north_italian }
 				militancy = -8
 			}
 			secede_province = CRS
@@ -1611,7 +1611,6 @@ country_event = {
 
     option = {
         name = "Kings do not bow to shopkeepers."
-        set_country_flag = july_revolution
         clr_country_flag = three_glorious_days
         middle_strata = {
             ideology = {
@@ -1680,7 +1679,7 @@ country_event = {
 		prestige = -2
 		badboy = -1
 		set_country_flag = no_luxembourg
-		relation = { who = LUX value = 400 }
+		relation = { who = LUX value = 200 }
 		ai_chance = {
 			factor = 0
 		}
