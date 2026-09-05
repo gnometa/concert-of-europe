@@ -1882,7 +1882,7 @@ country_event = {
 	picture = "carlists"
 	
 	trigger = {
-		tag = POR
+		OR = { tag = POR tag = UPB }
 		exists = yes
 		year = 1825
 		NOT = {

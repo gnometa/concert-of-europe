@@ -10,9 +10,11 @@ the convention of Evora Monte (26 May 1834) - is missing. 97031 already exists
 (a great power offers Pedro support once POR is an `absolute_monarchy`), but
 nothing ever puts POR into that state after 1826, so it is nearly dead script.
 
-Tag: after Brazilian independence 97024 does `change_tag = POR`, and 97030 is
-already gated `tag = POR`. This chain is therefore **POR-only**; UPB never sees
-it, which also satisfies the coverage note "only fire once UPB has lost Brazil".
+Tag: after Brazilian independence 97024 does `change_tag = POR`. That is the
+normal path, but a player who keeps Brazil stays UPB for the whole game, so
+97030 and every gate in the new file use `OR = { tag = POR tag = UPB }` rather
+than `tag = POR`. The chain is about the succession, not about Brazil, and it
+reads no BRZ state beyond one optional relation hit and one MTTH modifier.
 
 ## Hook into 97030
 
@@ -26,10 +28,10 @@ it, which also satisfies the coverage note "only fire once UPB has lost Brazil".
 
 | id | when | options |
 |---|---|---|
-| 1001000 The Constitutional Charter and Dom Miguel's Return | POR, 1826+, `por_charter_granted`, still an `hms_government*`, `fire_only_once`, MTTH 5 months, major + news | A accept the coup (ai 60): `miguelist_usurpation`, `government = absolute_monarchy`, reactionary ruling party (`POR_reactionary` is valid from 1820), none_voting / party_appointed / no_meeting / state_press / underground_parties, `conservative_reaction` 10 y + `national_instability` 5 y, liberal militancy in Oporto/Vila Real/Covilha/Azores, ENG and BRZ relations down / B the Cortes resists (ai 40): `por_cortes_resists`, keeps hms_government and the liberal party, reactionary militancy up, `national_instability` 3 y |
-| 1001001 The Liberals at Terceira | POR, 1829+, `miguelist_usurpation`, not yet `por_liberal_war`, `fire_only_once`, MTTH 4 months | A blockade the islands (ai 55): heavier liberal militancy + `liberal_agitation` on 518/519/2134, prestige -3 / B let the exiles rot (ai 45): lighter version, no province modifier. Both set `por_liberal_war` |
-| 1001002 Evora Monte | POR, 1833+ (not past 1838), `por_liberal_war`, `fire_only_once`, MTTH 4 months, major + news; `immediate` clears `por_liberal_war` | A Miguel abdicates (ai 70): clears `miguelist_usurpation`, sets `por_charter_upheld`, restores hms_government + liberal party + wealth_voting / state_equal_weight / yes_meeting / non_secret_ballots / censored_press, prestige +10, ENG relation +50 and influence, removes the reaction modifiers and `liberal_agitation` / B Miguel holds (ai 30): absolutism stays, prestige -10, ENG/FRA/SPA relations -50, `national_instability` refreshed 10 y, liberal militancy up |
-| 1001003 The Miguelite Revolt | POR, 1828+, `por_cortes_resists`, `fire_only_once`, MTTH 6 months; `immediate` clears `por_cortes_resists` | A the Charter holds (ai 60): `por_charter_upheld`, prestige +5, `liberal_reaction` 5 y / B the army goes over to Miguel (ai 40): the same absolutist package as 1001000-A, sets `miguelist_usurpation` and so feeds 1001001 |
+| 1001000 The Constitutional Charter and Dom Miguel's Return | POR/UPB, 1826-1840, `por_charter_granted`, `fire_only_once`, MTTH 5 months, major + news | A accept the coup (ai 60): `miguelist_usurpation`, `government = absolute_monarchy`, reactionary ruling party (`POR_reactionary` is valid from 1820), none_voting / party_appointed / no_meeting / state_press / underground_parties, `conservative_reaction` 10 y + `national_instability` 5 y, liberal militancy in Oporto/Vila Real/Covilha/Azores, ENG and BRZ relations down / B the Cortes resists (ai 40): `por_cortes_resists`, keeps hms_government and the liberal party, reactionary militancy up, `national_instability` 3 y |
+| 1001001 The Liberals at Terceira | POR/UPB, 1829-1845, `miguelist_usurpation`, not yet `por_liberal_war`, `fire_only_once`, MTTH 4 months | A blockade the islands (ai 55): heavier liberal militancy + `liberal_agitation` on 518/519/2134, prestige -3 / B let the exiles rot (ai 45): lighter version, no province modifier. Both set `por_liberal_war` |
+| 1001002 Evora Monte | POR/UPB, 1833-1848, `por_liberal_war`, `fire_only_once`, MTTH 4 months, major + news; `immediate` clears `por_liberal_war` | A Miguel abdicates (ai 70): clears `miguelist_usurpation`, sets `por_charter_upheld`, restores hms_government + liberal party + wealth_voting / state_equal_weight / yes_meeting / non_secret_ballots / censored_press, prestige +10, ENG relation +50 and influence, removes the reaction modifiers and `liberal_agitation` / B Miguel holds (ai 30): absolutism stays, prestige -10, ENG/FRA/SPA relations -50, `national_instability` refreshed 10 y, liberal militancy up |
+| 1001003 The Miguelite Revolt | POR/UPB, 1828-1840, `por_cortes_resists`, `fire_only_once`, MTTH 6 months; `immediate` clears `por_cortes_resists` | A the Charter holds (ai 60): `por_charter_upheld`, prestige +5, `liberal_reaction` 5 y / B the army goes over to Miguel (ai 40): the same absolutist package as 1001000-A, sets `miguelist_usurpation` and so feeds 1001001 |
 
 The civil war itself is **not** scripted as a `release` + `war`, following the
 Carlist model in `events/SPAFlavor.txt` (37711/37712): the events only move pop
@@ -55,5 +57,13 @@ none of that.
   1001002), `por_cortes_resists` (1001000-B -> 1001003), `por_liberal_war`
   (1001001 -> 1001002), `por_charter_upheld` (1001002-A / 1001003-A -> guards on
   1001000 and 1001002).
+- **No dangling flags and no stalled absolutism.** 1001000 does *not* require an
+  `hms_government*`, so `por_charter_granted` cannot be stranded if Portugal has
+  drifted absolutist by 1826. The windows are deliberately wider than the
+  historical dates - 1840 / 1845 / 1848 - because each step waits on the
+  previous one's MTTH; a usurpation that happens late still gets its Terceira
+  and its Evora Monte instead of leaving POR absolutist forever.
+- The national liberal drift in 1001000-A excludes 518/519/520/2134 by
+  `location`, so it does not stack on top of the heavier northern shift.
 - 97031 is left untouched: it keys on `government = absolute_monarchy*`, which
   1001000-A and 1001003-B now actually produce.
