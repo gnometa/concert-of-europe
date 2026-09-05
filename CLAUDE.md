@@ -126,6 +126,8 @@ Caveats when applying the wiki here:
 - **PreToolUse** blocks Edit/Write on `localisation/*.csv` because those tools save UTF-8. Add keys with `python scripts/modcheck.py loc-add <csv> KEY "text"` or a cp1252 Python snippet (see the `/loc-add` skill).
 - **PostToolUse** runs brace/CRLF/encoding checks on every edited `.txt` under `CoE_RoI_R/`, plus province-id and tag checks for events, decisions, and history files. Fix what it reports before moving on.
 
+`scripts/audit_religion.py` inventories every religion trigger and effect against what the pops actually carry (`docs/audit/religion-dead-content.md`).
+
 Useful `modcheck` one-offs: `next-id <lo> <hi>`, `ids` (duplicate event ids), `loc-find KEY`, `loc-check <csv>`, `encoding` (whole-tree audit).
 
 Skills: `/loc-add` (localisation keys), `/new-event` (free id + scaffold + loc + registry), `/validate` (static checks, deploy, Audax, error.log diff; user-invoked only). Subagents: `script-reviewer` (read-only review of changed script) and `encoding-auditor`.
