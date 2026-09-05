@@ -82,7 +82,7 @@ vassal = {
 	first = RUS
 	second = CPL
 	start_date = 1815.9.1
-	end_date = 1832.10.1
+	end_date = 1917.11.7
 }
 
 # Russia-Finland

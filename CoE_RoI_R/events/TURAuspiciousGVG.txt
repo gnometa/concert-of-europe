@@ -17,6 +17,7 @@ country_event = {
 	trigger = {
 		tag = TUR
 		year = 1826
+		month = 5
 		NOT = { year = 1832 }
 		NOT = { has_country_flag = janissaries_abolished }
 		NOT = { has_country_flag = janissary_ascendancy_flag }
