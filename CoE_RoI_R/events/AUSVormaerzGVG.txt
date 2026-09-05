@@ -1,0 +1,284 @@
+#############################################################
+#															#
+#         The Austrian Vormaerz - 1821 to 1835				#
+#                  (AUSVormaerzGVG)							#
+#															#
+#############################################################
+
+# The Metternich System - Verona 1822 and the Carlsbad Decrees
+country_event = {
+
+	id = 1001800
+
+	title = "EVTNAME1001800"
+	desc = "EVTDESC1001800"
+	picture = "greatpowers"
+
+	trigger = {
+		tag = AUS
+		year = 1822
+		month = 9
+		NOT = { year = 1825 }
+	}
+
+	fire_only_once = yes
+
+	mean_time_to_happen = {
+		months = 5
+	}
+
+	option = {
+		name = "EVTOPTA1001800" # Enforce the decrees
+		prestige = 2
+		add_country_modifier = {
+			name = metternich_system
+			duration = 5475
+		}
+		any_pop = {
+			consciousness = -1
+		}
+		any_pop = {
+			limit = {
+				strata = middle
+			}
+			militancy = 1
+		}
+		relation = {
+			who = RUS
+			value = 25
+		}
+		relation = {
+			who = PRU
+			value = 25
+		}
+		set_country_flag = aus_metternich_system
+		ai_chance = {
+			factor = 75
+		}
+	}
+
+	option = {
+		name = "EVTOPTB1001800" # Loosen the censor's hand
+		prestige = -2
+		any_pop = {
+			consciousness = 1
+		}
+		upper_house = {
+			ideology = liberal
+			value = 0.10
+		}
+		relation = {
+			who = ENG
+			value = 20
+		}
+		relation = {
+			who = FRA
+			value = 15
+		}
+		set_country_flag = aus_vormaerz_relaxed
+		ai_chance = {
+			factor = 25
+		}
+	}
+}
+
+# The Hungarian Diet Reconvened - Pressburg 1825
+country_event = {
+
+	id = 1001801
+
+	title = "EVTNAME1001801"
+	desc = "EVTDESC1001801"
+	picture = "Budapest"
+
+	trigger = {
+		tag = AUS
+		OR = {
+			owns = 633 #Pressburg
+			owns = 641 #Buda
+		}
+		year = 1825
+		NOT = { year = 1828 }
+	}
+
+	fire_only_once = yes
+
+	mean_time_to_happen = {
+		months = 6
+	}
+
+	option = {
+		name = "EVTOPTA1001801" # Summon the Diet at Pressburg
+		prestige = 2
+		any_owned = {
+			limit = {
+				is_core = HUN
+			}
+			any_pop = {
+				militancy = -2
+				consciousness = 1
+			}
+		}
+		set_country_flag = hungarian_diet_1825
+		ai_chance = {
+			factor = 60
+		}
+	}
+
+	option = {
+		name = "EVTOPTB1001801" # Govern by rescript
+		any_owned = {
+			limit = {
+				is_core = HUN
+			}
+			any_pop = {
+				militancy = 1
+			}
+		}
+		add_country_modifier = {
+			name = conservative_reaction
+			duration = 1825
+		}
+		set_country_flag = hungarian_diet_stalled
+		ai_chance = {
+			factor = 40
+		}
+	}
+}
+
+# Szechenyi and the Hungarian Academy
+country_event = {
+
+	id = 1001803
+
+	title = "EVTNAME1001803"
+	desc = "EVTDESC1001803"
+	picture = "Budapest"
+
+	trigger = {
+		tag = AUS
+		has_country_flag = hungarian_diet_1825
+		year = 1830
+		NOT = { year = 1834 }
+	}
+
+	fire_only_once = yes
+
+	mean_time_to_happen = {
+		months = 8
+	}
+
+	option = {
+		name = "EVTOPTA1001803" # Endow the Academy
+		prestige = 1
+		plurality = 1
+		any_owned = {
+			limit = {
+				is_core = HUN
+			}
+			any_pop = {
+				militancy = -1
+				consciousness = 1
+			}
+		}
+		set_country_flag = hungarian_reform_era
+		ai_chance = {
+			factor = 55
+		}
+	}
+
+	option = {
+		name = "EVTOPTB1001803" # The censor reads Hitel first
+		any_owned = {
+			limit = {
+				is_core = HUN
+			}
+			any_pop = {
+				militancy = 1
+			}
+		}
+		any_pop = {
+			consciousness = -1
+		}
+		ai_chance = {
+			factor = 45
+		}
+	}
+}
+
+# The Death of Francis I - the Staatskonferenz, March 1835
+country_event = {
+
+	id = 1001802
+
+	title = "EVTNAME1001802"
+	desc = "EVTDESC1001802"
+	picture = "ferdinand"
+
+	major = yes
+	news = yes
+	news_title = "EVTNAME1001802_NEWS_TITLE"
+	news_desc_long = "EVTDESC1001802_NEWS_LONG"
+	news_desc_medium = "EVTDESC1001802_NEWS_MEDIUM"
+	news_desc_short = "EVTDESC1001802_NEWS_SHORT"
+
+	trigger = {
+		tag = AUS
+		year = 1835
+		month = 2
+		NOT = { year = 1837 }
+	}
+
+	fire_only_once = yes
+
+	mean_time_to_happen = {
+		months = 2
+	}
+
+	option = {
+		name = "EVTOPTA1001802" # Metternich leads the Staatskonferenz
+		prestige = 2
+		add_country_modifier = {
+			name = metternich_system
+			duration = 3650
+		}
+		any_pop = {
+			consciousness = -1
+			militancy = -1
+		}
+		ai_chance = {
+			factor = 60
+			modifier = {
+				factor = 1.5
+				has_country_flag = aus_metternich_system
+			}
+			modifier = {
+				factor = 1.2
+				has_country_flag = hungarian_diet_stalled
+			}
+		}
+	}
+
+	option = {
+		name = "EVTOPTB1001802" # Kolowrat takes the finances
+		prestige = -1
+		add_country_modifier = {
+			name = kolowrat_administration
+			duration = 3650
+		}
+		any_pop = {
+			consciousness = 1
+		}
+		ai_chance = {
+			factor = 40
+			modifier = {
+				factor = 1.5
+				has_country_flag = aus_vormaerz_relaxed
+			}
+			modifier = {
+				factor = 1.3
+				has_country_flag = hungarian_reform_era
+			}
+		}
+	}
+}

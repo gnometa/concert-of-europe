@@ -422,3 +422,25 @@ EVTDESC1001601_NEWS_LONG;News has reached the coast of the destruction of Sir Ch
 EVTDESC1001601_NEWS_MEDIUM;Sir Charles MacCarthy's column has been destroyed at Nsamankow and the Governor is dead. The Gold Coast forts stand exposed.;;;;;;;;;;;;;x
 EVTDESC1001601_NEWS_SHORT;MacCarthy killed at Nsamankow.;;;;;;;;;;;;;x
 EVTDESC1001601;At Nsamankow on the Bonsa the Governor's small column was surrounded, its ammunition reserve found to hold the wrong stores, and destroyed. Sir Charles MacCarthy is dead, and his skull is carried to Kumasi as a war trophy. The coast is in a panic and the merchants of Cape Coast are writing to London for regular troops.;;;;;;;;;;;;;x
+EVTNAME1001800;The Metternich System;;;;;;;;;;;;;x
+EVTDESC1001800;The Congress of Verona has closed and the Chancellor's ascendancy over Europe is complete. At home the machinery he built at Carlsbad grinds on: the Central Investigation Commission at Mainz reads the mail of professors, the censors in the Staatskanzlei approve every pamphlet, and the Emperor tells a delegation of teachers that he does not need scholars but obedient subjects. The question is whether the same hand that governs the Concert should be laid quite so heavily on Vienna.;;;;;;;;;;;;;x
+EVTOPTA1001800;Enforce the decrees to the letter;;;;;;;;;;;;;x
+EVTOPTB1001800;Loosen the censor's hand a little;;;;;;;;;;;;;x
+EVTNAME1001801;The Hungarian Diet Reconvened;;;;;;;;;;;;;x
+EVTDESC1001801;For thirteen years Hungary has been taxed and conscripted by royal rescript, without a Diet. The county assemblies have refused to collect, the lord-lieutenants report open defiance, and the treasury needs the recruits. His Majesty may summon the estates to Pressburg and hear their grievances of the constitution, or he may continue to govern the kingdom as an administrative province of Vienna.;;;;;;;;;;;;;x
+EVTOPTA1001801;Summon the estates to Pressburg;;;;;;;;;;;;;x
+EVTOPTB1001801;Govern by rescript as before;;;;;;;;;;;;;x
+EVTNAME1001802;The Death of Francis I;;;;;;;;;;;;;x
+EVTDESC1001802;The Emperor Francis is dead, and the crown passes to his son Ferdinand, a gentle and epileptic man who cannot govern alone. The late Emperor's testament enjoins his heir to change nothing and to take counsel of Prince Metternich. A State Conference must now rule in the Emperor's name - and its two great men, the Chancellor and Count Kolowrat of the finances, agree on nothing whatever.;;;;;;;;;;;;;x
+EVTOPTA1001802;Let the Chancellor lead the Staatskonferenz;;;;;;;;;;;;;x
+EVTOPTB1001802;Give Kolowrat the finances;;;;;;;;;;;;;x
+EVTNAME1001802_NEWS_TITLE;Emperor Francis I of Austria Is Dead;;;;;;;;;;;;;x
+EVTDESC1001802_NEWS_LONG;The Emperor Francis, who reigned over the Habsburg lands through the wars of the Revolution and presided over the Congress that settled Europe, has died in Vienna. He is succeeded by his son Ferdinand, whose infirmity is an open secret in every chancellery. Government will fall to a State Conference in which Prince Metternich and Count Kolowrat must somehow work together.;;;;;;;;;;;;;x
+EVTDESC1001802_NEWS_MEDIUM;Emperor Francis I has died in Vienna. His son Ferdinand succeeds him, with a State Conference governing in his name.;;;;;;;;;;;;;x
+EVTDESC1001802_NEWS_SHORT;Francis I dead; Ferdinand succeeds.;;;;;;;;;;;;;x
+EVTNAME1001803;Szechenyi and the Academy;;;;;;;;;;;;;x
+EVTDESC1001803;Count Istvan Szechenyi, who offered a year's income of his estates to found a learned society for the Magyar tongue, has published Hitel - a book on credit that is read as a programme for the whole kingdom. Bridges, steam navigation on the Danube, a national academy: none of it is sedition, and all of it teaches Hungary to think of itself as a nation. The censors in Vienna would like a ruling.;;;;;;;;;;;;;x
+EVTOPTA1001803;Endow the Academy;;;;;;;;;;;;;x
+EVTOPTB1001803;Let the censor read Hitel first;;;;;;;;;;;;;x
+metternich_system;The Metternich System;;;;;;;;;;;;;x
+kolowrat_administration;Kolowrat's Administration;;;;;;;;;;;;;x

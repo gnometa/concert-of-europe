@@ -3617,3 +3617,20 @@ silver_drain = {
 	global_pop_militancy_modifier = 0.02
 	icon = 12
 }
+
+##### AUSTRIAN VORMAERZ (AUSVormaerzGVG) #####
+metternich_system = {
+	global_pop_consciousness_modifier = -0.05
+	global_pop_militancy_modifier = -0.01
+	issue_change_speed = -0.25
+	suppression_points_modifier = 0.25
+	prestige = 0.02
+	icon = 15
+}
+
+kolowrat_administration = {
+	administrative_efficiency_modifier = 0.05
+	tax_efficiency = 0.05
+	global_pop_consciousness_modifier = 0.01
+	icon = 7
+}
