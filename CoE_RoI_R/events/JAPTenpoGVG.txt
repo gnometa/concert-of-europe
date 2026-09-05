@@ -1,0 +1,345 @@
+#############################################################
+#															#
+#       Japan 1825-1841: the Tenpo crisis (TKG)				#
+#                  (JAPTenpoGVG)							#
+#															#
+#  TKG is the bakufu; JAP and the han are its substates.	#
+#  See docs/design/japan-tenpo.md.							#
+#############################################################
+
+# The Edict to Repel Foreign Vessels - 1825
+country_event = {
+
+	id = 1002000
+
+	title = "EVTNAME1002000"
+	desc = "EVTDESC1002000"
+	picture = "rangoku"
+
+	trigger = {
+		tag = TKG
+		exists = yes
+		year = 1825
+		NOT = { year = 1828 }
+	}
+
+	fire_only_once = yes
+
+	mean_time_to_happen = {
+		months = 3
+	}
+
+	option = {
+		name = "EVTOPTA1002000" # Drive them off without a second thought
+		prestige = 1
+		any_pop = {
+			consciousness = -1
+		}
+		relation = {
+			who = ENG
+			value = -25
+		}
+		relation = {
+			who = RUS
+			value = -20
+		}
+		relation = {
+			who = USA
+			value = -15
+		}
+		set_country_flag = tkg_uchiharai_edict
+		ai_chance = {
+			factor = 80
+		}
+	}
+
+	option = {
+		name = "EVTOPTB1002000" # Water and firewood for any ship that asks
+		prestige = -1
+		any_pop = {
+			consciousness = 1
+		}
+		relation = {
+			who = ENG
+			value = 15
+		}
+		relation = {
+			who = RUS
+			value = 15
+		}
+		relation = {
+			who = USA
+			value = 15
+		}
+		set_country_flag = tkg_uchiharai_relaxed
+		ai_chance = {
+			factor = 20
+		}
+	}
+}
+
+# The Siebold Incident - 1828
+country_event = {
+
+	id = 1002001
+
+	title = "EVTNAME1002001"
+	desc = "EVTDESC1002001"
+	picture = "rangoku"
+
+	trigger = {
+		tag = TKG
+		exists = yes
+		OR = {
+			has_country_flag = tkg_uchiharai_edict
+			has_country_flag = tkg_uchiharai_relaxed
+		}
+		year = 1828
+		NOT = { year = 1831 }
+	}
+
+	fire_only_once = yes
+
+	mean_time_to_happen = {
+		months = 4
+	}
+
+	option = {
+		name = "EVTOPTA1002001" # Try the astronomer, expel the doctor
+		prestige = 1
+		any_pop = {
+			consciousness = -1
+		}
+		add_country_modifier = {
+			name = secret_police
+			duration = 1825
+		}
+		set_country_flag = tkg_bansha_purge
+		ai_chance = {
+			factor = 70
+		}
+	}
+
+	option = {
+		name = "EVTOPTB1002001" # A few maps are a small matter
+		years_of_research = 0.5
+		any_pop = {
+			consciousness = 1
+		}
+		set_country_flag = rangaku_tolerated
+		ai_chance = {
+			factor = 30
+		}
+	}
+}
+
+# The Tenpo Famine - 1833-1837
+country_event = {
+
+	id = 1002002
+
+	title = "EVTNAME1002002"
+	desc = "EVTDESC1002002"
+	picture = "starving"
+
+	trigger = {
+		tag = TKG
+		exists = yes
+		year = 1833
+		NOT = { year = 1838 }
+	}
+
+	fire_only_once = yes
+
+	mean_time_to_happen = {
+		months = 6
+	}
+
+	option = {
+		name = "EVTOPTA1002002" # Open the granaries of Edo
+		money = -15000
+		any_pop = {
+			militancy = 1
+		}
+		random_owned = {
+			add_province_modifier = {
+				name = famine
+				duration = 730
+			}
+			any_pop = { reduce_pop = 0.97 }
+		}
+		random_owned = {
+			add_province_modifier = {
+				name = famine
+				duration = 730
+			}
+			any_pop = { reduce_pop = 0.97 }
+		}
+		set_country_flag = tkg_tenpo_relief
+		ai_chance = {
+			factor = 40
+			modifier = {
+				factor = 0
+				NOT = { money = 15000 }
+			}
+		}
+	}
+
+	option = {
+		name = "EVTOPTB1002002" # The domains must feed themselves
+		any_owned = {
+			add_province_modifier = {
+				name = famine
+				duration = 730
+			}
+			any_pop = {
+				militancy = 2
+				reduce_pop = 0.95
+			}
+		}
+		set_country_flag = tkg_tenpo_neglect
+		random = {
+			chance = 50
+			country_event = {
+				id = 1002003
+				days = 1250
+			}
+		}
+		ai_chance = {
+			factor = 60
+		}
+	}
+}
+
+# Oshio Heihachiro's Rising - Osaka, 1837
+country_event = {
+
+	id = 1002003
+
+	title = "EVTNAME1002003"
+	desc = "EVTDESC1002003"
+	picture = "streetriot"
+
+	is_triggered_only = yes
+
+	option = {
+		name = "EVTOPTA1002003" # Burn out the quarter and take his head
+		prestige = -2
+		any_pop = {
+			militancy = 1
+			consciousness = 1
+		}
+		add_country_modifier = {
+			name = purge
+			duration = 730
+		}
+		set_country_flag = tkg_oshio_crushed
+		ai_chance = {
+			factor = 70
+		}
+	}
+
+	option = {
+		name = "EVTOPTB1002003" # Open the rice stores and pardon his followers
+		money = -5000
+		prestige = -1
+		any_pop = {
+			militancy = -2
+		}
+		set_country_flag = tkg_oshio_relief
+		ai_chance = {
+			factor = 30
+			modifier = {
+				factor = 0
+				NOT = { money = 5000 }
+			}
+		}
+	}
+}
+
+# The Tenpo Reforms - Mizuno Tadakuni, 1841
+country_event = {
+
+	id = 1002004
+
+	title = "EVTNAME1002004"
+	desc = "EVTDESC1002004"
+	picture = "military_reform"
+
+	trigger = {
+		tag = TKG
+		exists = yes
+		year = 1841
+		NOT = { year = 1845 }
+	}
+
+	fire_only_once = yes
+
+	mean_time_to_happen = {
+		months = 5
+		modifier = {
+			factor = 0.8
+			has_country_flag = rangaku_tolerated
+		}
+	}
+
+	option = {
+		name = "EVTOPTA1002004" # Sumptuary law, forced loans, dissolve the guilds
+		prestige = 2
+		any_pop = {
+			consciousness = -1
+			militancy = 1
+		}
+		add_country_modifier = {
+			name = tax_reforms
+			duration = 3650
+		}
+		add_country_modifier = {
+			name = conservative_reaction
+			duration = 1825
+		}
+		ai_chance = {
+			factor = 60
+			modifier = {
+				factor = 1.5
+				has_country_flag = tkg_oshio_crushed
+			}
+			modifier = {
+				factor = 1.5
+				has_country_flag = tkg_bansha_purge
+			}
+			modifier = {
+				factor = 1.5
+				has_country_flag = tkg_tenpo_neglect
+			}
+		}
+	}
+
+	option = {
+		name = "EVTOPTB1002004" # The merchants of Osaka will not bear it
+		prestige = -1
+		any_pop = {
+			militancy = -1
+			consciousness = 1
+		}
+		ai_chance = {
+			factor = 40
+			modifier = {
+				factor = 2
+				has_country_flag = rangaku_tolerated
+			}
+			modifier = {
+				factor = 1.5
+				has_country_flag = tkg_uchiharai_relaxed
+			}
+			modifier = {
+				factor = 1.5
+				has_country_flag = tkg_tenpo_relief
+			}
+			modifier = {
+				factor = 1.5
+				has_country_flag = tkg_oshio_relief
+			}
+		}
+	}
+}
