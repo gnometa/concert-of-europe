@@ -481,7 +481,6 @@ province_event = {
 		}		
 		NOT = {
 			any_core = {
-				ai = yes
 				civilized = yes
 				NOT = { tag = THIS }
 				NOT = { has_country_flag = post_colonial_country }

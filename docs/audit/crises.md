@@ -16,7 +16,7 @@ pass, plus the two changes below) and adds a **crisis-suppression layer**, `2011
 | Event | Role |
 |---|---|
 | `20110` | Native-American flashpoints: massacre or conciliate, both drop tension (-75/-50). |
-| `20111` | No civilised AI claimant for the state -> tension -50, "nobody would intervene". |
+| `20111` | No civilised claimant for the state -> tension -50, "nobody would intervene". |
 | `20112` | A claimant carries the `recent_crisis` modifier -> tension -50, "this again?". |
 | `20115` | The only *source* of scripted tension: high-infamy owners of foreign-core land, +20. |
 
@@ -53,21 +53,41 @@ native-flashpoint suppressor, and no engine define delays crises, so crises are 
   crisis interest was unreachable for the AI, so every eligible GP joined every crisis and
   `recent_crisis` was stamped on all non-GP participants each time. Vanilla omits `ai_chance`
   there, i.e. weight 1 against 100. **FIXED**: restored to `factor = 1` (still ~1%).
-- **[medium] `CoE_RoI_R/events/crises.txt:484` - `ai = yes` in `20111`'s claimant test.** The event
-  suppresses tension when no *AI*, civilised, non-post-colonial claimant exists. A human-played
-  claimant therefore does not block the suppressor: the player's own flashpoints get quietly
-  drained. Proposed fix: drop the `ai = yes` line (makes suppression rarer, i.e. more crises).
-- **[medium] `CoE_RoI_R/events/CBsAndCores.txt:2101-2110` - assimilation no longer removes the
-  foreign core.** `2625` requires an existing foreign core-holder in its trigger and sets
-  `national_assimilation_complete` (10 days) for it, but the `country_event = 2626` that reacts is
-  commented out, so `2626` is unreachable and no script path ever calls `remove_core`. Foreign
-  cores are only ever added (`2560`, `2605`, `2625` all `add_core = THIS`), so flashpoint sources
-  accumulate monotonically over a 94-year game. Proposed fix: re-enable the `2626` dispatch, or
-  drop the now-pointless `any_core` clause from `2625`'s trigger and the 10-day marker.
-- **[medium] `CoE_RoI_R/events/CBsAndCores.txt:2130-2133` and `:2191-2194` - `2626`'s core removal
-  may target the wrong country.** `FROM = { random_owned = { limit = { is_core = THIS } remove_core
-  = THIS } }`: the intent is to strip the claimant's core from the assimilator's province, but the
-  clause sits inside `FROM`'s scope. Verify in-game before re-enabling `2626`.
+- **[medium] `CoE_RoI_R/events/crises.txt:484` - `ai = yes` in `20111`'s claimant test. FIXED.**
+  The `ai = yes` sat inside `any_core = { ... }`, so it tested the *claimant*, not the country the
+  event fires for - it was never a "hide bookkeeping from the player" gate (`20111` has no `major`
+  and a single option, and its sibling `20115` runs the mirror-image `any_core` test with no `ai`
+  clause). Its only effect was asymmetric: when the sole civilised claimant to a flashpoint state
+  was human-played, the `NOT = { any_core = ... }` came out true and the suppressor drained the
+  player's own flashpoint tension by 50, while an identical AI claimant blocked it. Removed; the
+  claimant filters that carry meaning (`civilized`, `NOT = { tag = THIS }`, `post_colonial_country`)
+  are unchanged. Suppression is now rarer, i.e. slightly more crises.
+- **[by design, not a defect] `CoE_RoI_R/events/CBsAndCores.txt:2101-2110` - assimilation does
+  not remove the foreign core, and `2626` is deliberately dead.** `2625` requires an existing
+  foreign core-holder in its trigger and sets `national_assimilation_complete` (10 days) for it,
+  but the `any_country = { ... country_event = 2626 }` dispatch is commented out, so `2626` (its
+  only possible caller - it is `is_triggered_only`, referenced by no decision, `on_actions.txt`
+  entry or other event) never fires and no script path calls `remove_core`. **This was an
+  intentional change, not rot**: commit `3d21520a` "no more disappearing cores + broken decision
+  disabled" (Mitusonator, 2022-04-02) commented the dispatch out *and* replaced it in the same
+  option with `add_core = THIS`, i.e. assimilation was re-designed to hand the assimilator a core
+  instead of stripping the claimant's. The same commit dropped the `badboy = 2` cost and cut the
+  MTTH from 300 to 120 months. Restoring the call would revert a deliberate design decision and
+  reintroduce exactly the "disappearing cores" the author removed, so `2626` is left disabled and
+  stays on the abandoned-events list in `.claude/skills/validate/SKILL.md`. Consequence to accept:
+  foreign cores are monotonic (`2560`, `2605`, `2625` only ever `add_core`), so flashpoint sources
+  accumulate over a 94-year game - which is part of why the suppression layer above exists.
+  Cosmetic leftovers, harmless and left alone: `2625`'s `any_core` trigger clause and the 10-day
+  `national_assimilation_complete` marker now have no reader.
+- **[moot while `2626` is dead] `CoE_RoI_R/events/CBsAndCores.txt:2130-2133` and `:2191-2194` -
+  `2626`'s core removal targets the wrong scope.** `FROM = { random_owned = { limit = { is_core =
+  THIS } remove_core = THIS } }`: inside `random_owned` the current scope is a province, so `THIS`
+  resolves to that province, not to the claimant country the event fires for; `remove_core = THIS`
+  needs a country (`docs/wiki/list-of-effects.md`). Anyone reviving `2626` must first make the claimant
+  reachable from inside `FROM`'s province loop (Victoria 2 rebinds `THIS` on every scope change,
+  so neither `THIS` nor `FROM` names the claimant there) and verify the result in-game. Not fixed
+  here, because correcting a scope inside an event that can never fire only makes dead code look
+  live.
 - **[medium] `post_colonial_country` is a dead flag.** Both setters are commented out
   (`decisions/New Colonies.txt:558,1780`), yet 30+ triggers test it, including `crises.txt:487` and
   `:597`. In the crisis events the effect is benign (the exclusion is inert, so suppression fires
