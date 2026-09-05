@@ -3,34 +3,26 @@
 *2026-09-06. Hand review of all 62 events (4341 lines) for defects the mechanical audits
 (`refcheck`, `audit_events*`, `audit_fire_once`, `audit_pacing`, `audit_owner_scope`) cannot see:
 wrong recipient/scope, options whose effects contradict their text, `ai_chance` steering the AI
-into absurd choices, dead flag/year gates, `NOT = { a b }` used where NAND was not meant,
-implausible magnitudes, duplicated episodes.*
+into absurd choices, dead flag/year gates, implausible magnitudes, duplicated episodes.*
 
-Counts: 20 defects - 4 [high], 10 [medium], 6 [low]. 16 fixed in place, 4 left as proposals.
+Counts: 19 defects - 3 [high], 10 [medium], 6 [low]. 15 fixed in place, 4 left as proposals.
+(Revised 2026-09-06: an earlier version of this page claimed multi-statement `NOT` blocks were
+NAND and that several events were therefore repeatable. That was wrong - see below.)
 
 ## Fixed
 
-### [high] `NOT = { a b }` is NAND, not "neither"
+### [none] multi-statement `NOT` blocks - split for readability only, no behaviour change
 
-The file's dominant defect: a `NOT` block holding two or more conditions is true when *any one*
-of them fails, so the second condition never constrains anything. Where the block is the only
-re-fire guard (no `fire_only_once`), the event repeats. Every case below was split into one
-`NOT` per condition.
+`docs/wiki/list-of-conditions.md` is explicit: a `NOT` holding several statements is true only
+when **all** of them are false (NOR), not when any one fails (NAND). So every condition in such
+a block does constrain the trigger, and splitting `NOT = { a b }` into `NOT = { a }` +
+`NOT = { b }` is exactly equivalent - a cosmetic edit, not a fix.
 
-| line (pre-fix) | id | block | effect of the bug |
-|---|---|---|---|
-| 165 | 36902 | `year = 1843` + `work_hours = no_work_hour_limit` | Thomas Cook tours fire long past 1843 |
-| 474 | 36909 | `year = 1852` + `has_country_flag = CrystalPalace` | **repeatable +50 prestige** to 1852 |
-| 571 | 36911 | `exists = IRE` + `year = 1896` | fires even after Ireland breaks away |
-| 666 | 36913 | `year = 1855` + `war_with = USA` | America's Cup fires while at war with the USA |
-| 1019 | 36922 | `exists = AST` + `year = 1886` | fires after Australia is independent |
-| 1366 | 36929 | `exists = SCO` + `year = 1882` | Tay Bridge fires for a Scotland-less Britain |
-| 1409 | 36930 | `war_with = QNG` + `year = 1868` | tea race fires during the China war |
-| 1665 | 36937 | `year = 1936` + `has_global_flag = ENGRoyalHouseAnglified` | **repeatable** (flag is the only guard) |
-| 1786 | 36939 | `year = 1857` + `exists = MUG` | Doctrine of Lapse fires with the Mughals alive |
-| 2827 | 36970 | 5 conditions incl. `has_global_flag = suez_canal_global`, `is_canal_enabled = 2` | **repeatable** Suez investment, canal or no canal |
-| 2899 | 36971 | 4 conditions incl. `has_global_flag = panama_canal_global` | same for Panama |
-| 2966 | 36975 | `war_policy = pacifism` + `neutrality` + `has_country_flag = suez_egypt_intervention` | **repeatable** badboy +3 / free CB on Egypt |
+Twelve blocks were split this way (ids 36902, 36909, 36911, 36913, 36922, 36929, 36930, 36937,
+36939, 36970, 36971, 36975). None of them changed the behaviour of its event, and none of the
+events was repeatable: in each case the year or flag guard inside the block was already doing
+its job. The splits are kept because one condition per `NOT` reads more clearly and is harder to
+misread, but they should not be counted as defects fixed.
 
 ### [high] 36909 - the Great Exhibition could never fire
 
@@ -43,7 +35,9 @@ Fixed: the trigger now reads `has_country_flag = PlanWorldFair`, i.e. Britain wo
 The option's `clr_global_flag = PlanWorldFair` was dropped rather than converted: the fair chain
 clears the country flag itself when the fair ends (`WorldFairs.txt:1416/1454/1514`), and clearing
 it early would break every follow-up event that tests `has_country_flag = PlanWorldFair`.
-`fire_only_once = yes` was added, matching every other one-shot in the file.
+`fire_only_once = yes` was added; the trigger is the single tag `tag = ENG`, so the one-shot is
+per-Britain and harmless, and it matches every other one-shot in the file. (The `CrystalPalace`
+country flag already guarded re-firing, so this is belt and braces.)
 
 ### [high] 36936 - event fires for the wrong country
 
@@ -81,11 +75,10 @@ Changed to 36994.
   never pays it: 36961 (they agreed) has no cost, and 36962 (they refused) *credits* ENG 10,000
   in each option. Either the acceptance branch should carry `treasury = -10000` on the ENG side
   and 36962 none, or the refusal branch is meant to be a refund of money that was never spent.
-- **[medium] 36943 `NOT = { life_rating = 35 average_militancy = 2 }`** (in both the trigger and
-  the option's `any_owned` limit). The same NAND shape as the fixed list, but here the intent is
-  genuinely unclear - "undeveloped **and** quiet" is the natural reading, yet splitting it
-  narrows an already narrow New Zealand development event, and trigger and limit must move
-  together. Left alone deliberately.
+- **[low] 36943 `NOT = { life_rating = 35 average_militancy = 2 }`** (in both the trigger and
+  the option's `any_owned` limit). Under NOR this already reads "life rating under 35 **and**
+  militancy under 2", which is the natural intent, so it needs no change. Listed here only
+  because an earlier revision of this page flagged it.
 - **[medium] 36937 `year = 1821`.** "The Name of the Royal House" is the 1917 Windsor renaming
   ("in this time of war with the Germans"); with the mod's 1821 start the year gate is no gate at
   all, and the event can fire in an 1820s Prussian war. Its MTTH modifiers (1860/1880/1900)
