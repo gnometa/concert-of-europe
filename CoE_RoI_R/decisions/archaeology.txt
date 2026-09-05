@@ -117,6 +117,7 @@ political_decisions = {
 			invention = vaccination
 			invention = prophylaxis_against_malaria
 			invention = early_archaeology
+			2189 = { owner = { exists = yes } }
 		}
 		
 		effect = {

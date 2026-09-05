@@ -434,7 +434,7 @@ country_event = {
 	option = {
 		name = "EVTOPTA22540"
 		set_country_flag = local_stock_exchange_built
-		random_province = {
+		random_owned = {
 			limit = {
 				is_colonial = no
 			}

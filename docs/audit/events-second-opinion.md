@@ -214,3 +214,11 @@ decision or news layout references an absent picture.
 - The workshop ladder still has a design wart: because `fire_only_once` is engine-wide, a country
   that crosses `industrial_score = 100` after some other country already took that rung never sees
   the event. Working as the original author wrote it, so left as is.
+
+- Reviewer follow-ups on 70f3afaa: `maya_excavations` now requires
+  `2189 = { owner = { exists = yes } }` in its `allow`, so the one-shot
+  `maya_excavations_requested` flag cannot be burned while Yucatan is unowned
+  (same province->owner trigger idiom as `forced_maya_excavations`). Event 22540
+  now uses `random_owned` instead of vanilla's `random_province`, which could put
+  the stock exchange in a foreign province - load-bearing now that the event is
+  flag-guarded to one firing per country.
