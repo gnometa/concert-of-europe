@@ -11,7 +11,7 @@ citizen_guard = {
 	life_rating = -0.02
 	local_rgo_output = -0.1
 	local_factory_throughput = -0.05
-	local_artisan_throughput = -0.1
+	local_artisan_output = -0.1
 	icon = 2	
 	
 	trigger = { owner = { has_crime = citizen_guard } }		
@@ -103,7 +103,7 @@ spoil_system = {
 terrorist_cells = {
 	
 	local_factory_throughput = -0.15
-	local_artisan_throughput = -0.1
+	local_artisan_output = -0.1
 	icon = 8	
 
 	trigger = {

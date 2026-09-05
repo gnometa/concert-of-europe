@@ -135,12 +135,6 @@ foreign_trading_post = {
 	icon = 99
 }
 
-silk_famine = {
-	farm_RGO_eff = -0.5
-	pop_militancy_modifier = 0.1
-	icon = 14
-}
-
 dissatisfied_workers = {
 	local_RGO_throughput = -0.2
 	pop_militancy_modifier = 0.05
@@ -2580,7 +2574,7 @@ dervish_dhaanto_modifier = {
 	land_organisation = 0.75
 	land_unit_start_experience = 10
 	mobilisation_size = 0.25
-	mobilisation_impact = 4
+	mobilisation_economy_impact = 4
 	icon = 108
 }
 
@@ -3278,7 +3272,7 @@ relentless_progress = {
 }
 
 papal_rule = {
-	global_pop_militancy = -0.05
+	global_pop_militancy_modifier = -0.05
 	political_reform_desire = -0.3
 	prestige = 0.05
 	icon = 19
