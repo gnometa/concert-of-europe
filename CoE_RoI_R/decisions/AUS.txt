@@ -1033,6 +1033,9 @@ political_decisions = {
 				relation = { who = THIS value = -50 }
 			}
 		}
+		ai_will_do = {
+			factor = 1
+		}
 	}
 	
 	propose_danube_federation = {

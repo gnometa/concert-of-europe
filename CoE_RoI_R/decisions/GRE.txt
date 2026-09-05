@@ -521,6 +521,9 @@ political_decisions = {
 			}
 			clr_global_flag = greek_epirus
 		}
+		ai_will_do = {
+			factor = 1
+		}
 	}
 	
 	greek_thrace = {
@@ -603,6 +606,9 @@ political_decisions = {
 				prestige = -5
 			}
 			clr_global_flag = greek_thrace
+		}
+		ai_will_do = {
+			factor = 1
 		}
 	}
 	
@@ -689,6 +695,9 @@ political_decisions = {
 			}
 			clr_global_flag = greek_rumelia
 		}
+		ai_will_do = {
+			factor = 1
+		}
 	}
 	
 	greek_n_macedonia = {
@@ -762,6 +771,9 @@ political_decisions = {
 				prestige = -3
 			}
 			clr_global_flag = greek_n_macedonia
+		}
+		ai_will_do = {
+			factor = 1
 		}
 	}
 	
@@ -839,6 +851,9 @@ political_decisions = {
 			}
 			clr_global_flag = greek_constantinople
 		}
+		ai_will_do = {
+			factor = 1
+		}
 	}
 	
 	greek_ionia = {
@@ -910,6 +925,9 @@ political_decisions = {
 				prestige = -3
 			}
 			clr_global_flag = greek_ionia
+		}
+		ai_will_do = {
+			factor = 1
 		}
 	}
 	
@@ -990,6 +1008,9 @@ political_decisions = {
 				prestige = -3
 			}
 			clr_global_flag = greek_nicaea
+		}
+		ai_will_do = {
+			factor = 1
 		}
 	}
 	

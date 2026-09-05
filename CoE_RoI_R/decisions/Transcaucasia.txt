@@ -96,6 +96,9 @@ political_decisions = {
 				country_event = 98650
 			}
 		}
+		ai_will_do = {
+			factor = 1
+		}
 	}
 	
 	create_transcaucasia = {

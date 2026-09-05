@@ -837,6 +837,9 @@ political_decisions = {
 			change_tag = GLM
 			capital = 702
 		}
+		ai_will_do = {
+			factor = 1
+		}
 	}
 
 	form_baltic_states = {
@@ -1361,6 +1364,9 @@ political_decisions = {
 			prestige = 1
 			POL = { prestige = -2 }
 			PLC = { prestige = -2 }
+		}
+		ai_will_do = {
+			factor = 1
 		}
 	}
 

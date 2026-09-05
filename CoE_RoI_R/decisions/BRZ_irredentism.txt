@@ -117,6 +117,9 @@ political_decisions = {
 			UPB = { prestige = -10 }
 			clr_global_flag = brazil_has_renamed_cisplatina
 		}
+		ai_will_do = {
+			factor = 1
+		}
 	}
 
 	rio_da_prata = {

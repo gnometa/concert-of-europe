@@ -40,6 +40,9 @@ political_decisions = {
 			}
 			set_country_flag = we_have_tried_this_once
 		}
+		ai_will_do = {
+			factor = 1
+		}
 	}
 
 	treaty_of_guadalupe_hidalgo = {

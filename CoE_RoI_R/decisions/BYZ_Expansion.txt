@@ -983,6 +983,9 @@ restore_anatolia = {
 			}
 			clr_global_flag = anatolia_renamed
 	}
+	ai_will_do = {
+		factor = 1
+	}
 }
 
 byzantine_armenia = {
@@ -1072,6 +1075,9 @@ restore_armenia_not_TUR = {
 			}
 			clr_global_flag = armenia_renamed
 	}
+	ai_will_do = {
+		factor = 1
+	}
 }
 
 restore_armenia_TUR = {
@@ -1129,6 +1135,9 @@ restore_armenia_TUR = {
 				prestige = -3
 			}
 			clr_global_flag = armenia_renamed_tur
+	}
+	ai_will_do = {
+		factor = 1
 	}
 }
 
@@ -1280,6 +1289,9 @@ restore_levant = {
 				prestige = -3
 			}
 			clr_global_flag = levant_renamed
+	}
+	ai_will_do = {
+		factor = 1
 	}
 }
 

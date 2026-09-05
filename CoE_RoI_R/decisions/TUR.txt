@@ -32,6 +32,9 @@ political_decisions = {
 				}
 			}
 		}
+		ai_will_do = {
+			factor = 1
+		}
 	}
 	
 	tanzimat_western_democracy = {
@@ -697,6 +700,9 @@ political_decisions = {
 				name = republican_reforms
 				duration = 3650
 			}
+		}
+		ai_will_do = {
+			factor = 1
 		}
 	}
 	

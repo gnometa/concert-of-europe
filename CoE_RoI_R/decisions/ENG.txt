@@ -676,6 +676,13 @@ political_decisions = {
 				naval_base = 1
 			}
 		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				war = yes
+			}
+		}
 	}
 	
 	UK_setup = {
@@ -759,6 +766,9 @@ political_decisions = {
 				}
 				militancy = -6
 			}
+		}
+		ai_will_do = {
+			factor = 1
 		}
 	}
 }

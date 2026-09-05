@@ -218,6 +218,7 @@ political_decisions = {
 				tag = SAF
 				SAF = { exists = no }
 			}
+			NOT = { has_country_flag = treaty_of_vereeniging_taken }
 		}
 
 		allow = {
@@ -246,6 +247,7 @@ political_decisions = {
 				}
 				country_event = 98247
 			}
+			set_country_flag = treaty_of_vereeniging_taken
 		}
 
 		ai_will_do = {

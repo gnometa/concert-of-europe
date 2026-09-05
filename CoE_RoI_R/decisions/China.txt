@@ -552,6 +552,7 @@ political_decisions = {
 			has_country_flag = kuomintang_faction
 			NOT = { tag = KMT }
 			ai = yes
+			NOT = { has_country_flag = join_the_KMT_taken }
 		}
 		
 		allow = {
@@ -564,6 +565,7 @@ political_decisions = {
 				prestige = 5
 				country_event = 131741
 			}
+			set_country_flag = join_the_KMT_taken
 		}
 		
 		ai_will_do = {

@@ -116,3 +116,7 @@ ENG_transfer_land_to_india_desc;Provinces we hold directly are claimed by our In
 reverse_collectivization_title;Reverse the Collectivisation of Agriculture;;;;;;;;;;;;;x
 reverse_collectivization_desc;The collective farms have not fed the country as promised. Returning the land to those who work it will please the peasantry and the landowners alike, though the labourers who gained from collectivisation will not forgive it soon.;;;;;;;;;;;;;x
 unify_portugal_galicia_title;Galicia and Portugal United;;;;;;;;;;;;;x
+hide_debug_decisions_title;Hide Debug Decisions;;;;;;;;;;;;;x
+hide_debug_decisions_desc;Tuck the utility and debug decisions (national value, event toggles, tech school switches) out of sight. They can be brought back at any time.;;;;;;;;;;;;;x
+show_debug_decisions_title;Show Debug Decisions;;;;;;;;;;;;;x
+show_debug_decisions_desc;Bring the hidden utility and debug decisions back into the decision list.;;;;;;;;;;;;;x

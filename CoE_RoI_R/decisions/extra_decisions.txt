@@ -1359,6 +1359,40 @@ political_decisions = {
 		}
 	}
 	
+	hide_debug_decisions = {
+		alert = no
+		potential = {
+			ai = no
+			NOT = { has_country_flag = hidden_decisions }
+		}
+		allow = {
+			always = yes
+		}
+		effect = {
+			set_country_flag = hidden_decisions
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	show_debug_decisions = {
+		alert = no
+		potential = {
+			ai = no
+			has_country_flag = hidden_decisions
+		}
+		allow = {
+			always = yes
+		}
+		effect = {
+			clr_country_flag = hidden_decisions
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
 	change_national_value_on = {
 		alert = no
 		picture = national_value

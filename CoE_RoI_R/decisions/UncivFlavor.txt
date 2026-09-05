@@ -55,6 +55,9 @@ political_decisions = {
 			country_event = 90900
 			set_country_flag = already_civilized
 		}
+		ai_will_do = {
+			factor = 1
+		}
 	}
 	an_elephant_for_america = {
 		potential = {
@@ -125,6 +128,9 @@ political_decisions = {
 					factor = 0.20
 				}
 			}
+		}
+		ai_will_do = {
+			factor = 1
 		}
 	}
 	

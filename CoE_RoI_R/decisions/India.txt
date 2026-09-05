@@ -830,51 +830,6 @@ political_decisions = {
 		}
 	}
 
-	claim_greater_bengal = {
-		potential = {
-			tag = BNG
-			is_vassal = no
-			NOT = { has_country_flag = claimed_greater_bengal }
-		}
-		
-		allow = {
-			war = no
-			prestige = 50
-			war_policy = jingoism
-			OR = {
-				is_greater_power = yes
-				is_secondary_power = yes
-			}
-		}
-		
-		effect = {
-			set_country_flag = claimed_greater_bengal
-			prestige = 10
-			ENG_1258 = { add_core = BNG } #Assam
-			ENG_1261 = { add_core = BNG } #Orissa
-			ENG_1247 = { add_core = BNG } #Bihar
-			add_accepted_culture = oriya
-			add_accepted_culture = bihari
-			any_country = {
-				limit = {
-					any_owned_province = {
-						OR = {
-							region = ENG_1258
-							region = ENG_1261
-							region = ENG_1247
-						}
-					}
-					NOT = { tag = THIS }
-				}
-				relation = { who = THIS value = -100 }
-			}
-		}
-		
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
 	rangit_singh = {
 		potential = {
 			tag = PNJ

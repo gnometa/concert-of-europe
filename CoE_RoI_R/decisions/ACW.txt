@@ -796,6 +796,9 @@ political_decisions = {
 			war_exhaustion = -1
 			set_country_flag = kellys_irish_brigade
 		}
+		ai_will_do = {
+			factor = 1
+		}
 	}
 
 	enact_radical_reconstruction = {
@@ -858,6 +861,13 @@ political_decisions = {
 				civilized = yes
 			}
 			inherit = HAW
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				war = yes
+			}
 		}
 	}
 	

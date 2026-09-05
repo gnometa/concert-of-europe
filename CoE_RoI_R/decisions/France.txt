@@ -339,6 +339,13 @@ political_decisions = {
 				change_province_name = "Mayotte"
 			}
 		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				war = yes
+			}
+		}
 	}
 	
 	claim_savoy = {
@@ -380,6 +387,13 @@ political_decisions = {
 				relation = { who = THIS value = -100 }
 			}
 		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				war = yes
+			}
+		}
 	}
 	
 	annex_new_caledonia = {
@@ -407,6 +421,13 @@ political_decisions = {
 			add_country_modifier = {
 				name = penal_colonies
 				duration = -1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				war = yes
 			}
 		}
 	}

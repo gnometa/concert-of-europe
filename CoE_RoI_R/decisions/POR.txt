@@ -162,6 +162,7 @@ political_decisions = {
 					any_neighbor_province = { owned_by = THIS }
 				}
 			}
+			NOT = { has_country_flag = ultimatum_to_portugal_taken }
 		}
 
 		allow = {
@@ -182,6 +183,7 @@ political_decisions = {
 		effect = {
 			badboy = 4
 			POR = { country_event = 97010 }
+			set_country_flag = ultimatum_to_portugal_taken
 		}
 
 		ai_will_do = {
