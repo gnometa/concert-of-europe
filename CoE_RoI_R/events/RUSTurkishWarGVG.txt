@@ -1,0 +1,270 @@
+#########################################################
+#                                                       #
+#   The Russo-Turkish War and Adrianople, 1828-1829     #
+#   ids 1001400-1001403 (GVG)                           #
+#                                                       #
+#   Supplies the 1828 casus belli and a negotiated      #
+#   peace for a Russia that let the Greek Question      #
+#   (Ottoman_Event.txt 31264-31269) pass by. The PDM    #
+#   decision decisions/RUS.txt treaty_of_adrianople     #
+#   remains the maximalist settlement; this chain       #
+#   stands down as soon as adrianople_treaty is set.    #
+#                                                       #
+#########################################################
+
+# The Tsar's Ultimatum
+country_event = {
+	id = 1001400
+	title = "EVTNAME1001400"
+	desc = "EVTDESC1001400"
+	picture = "caucasian_war"
+
+	trigger = {
+		tag = RUS
+		exists = yes
+		is_greater_power = yes
+		year = 1828
+		NOT = { year = 1833 }
+		TUR = { exists = yes }
+		OR = {
+			GRE = { exists = yes }
+			has_country_flag = greek_question
+		}
+		NOT = {
+			war_with = TUR
+			truce_with = TUR
+			alliance_with = TUR
+			vassal_of = TUR
+			has_country_flag = rus_turkish_ultimatum_1828
+			has_country_flag = rus_pressed_porte_1828
+			has_global_flag = adrianople_treaty
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 4
+		modifier = {
+			factor = 0.5
+			TUR = { war_with = GRE }
+		}
+		modifier = {
+			factor = 0.75
+			NOT = { relation = { who = TUR value = 0 } }
+		}
+	}
+
+	option = {
+		name = "EVTOPTA1001400" # The army marches on the Danube
+		set_country_flag = rus_turkish_ultimatum_1828
+		set_country_flag = russo_turkish_war_1828
+		set_country_flag = greek_question
+		prestige = 2
+		relation = { who = TUR value = -200 }
+		diplomatic_influence = { who = TUR value = -100 }
+		casus_belli = {
+			target = TUR
+			type = cut_down_to_size
+			months = 12
+		}
+		war = {
+			target = TUR
+			attacker_goal = {
+				casus_belli = cut_down_to_size
+			}
+			call_ally = yes
+		}
+		random_country = {
+			limit = {
+				tag = GRE
+				exists = yes
+			}
+			relation = { who = THIS value = 50 }
+		}
+		ai_chance = {
+			factor = 75
+			modifier = {
+				factor = 0.25
+				NOT = { GRE = { exists = yes } }
+			}
+		}
+	}
+
+	option = {
+		name = "EVTOPTB1001400" # Press the Porte at the conference table
+		set_country_flag = rus_pressed_porte_1828
+		prestige = 1
+		relation = { who = TUR value = -50 }
+		diplomatic_influence = { who = TUR value = -100 }
+		random_country = {
+			limit = {
+				tag = GRE
+				exists = yes
+			}
+			relation = { who = THIS value = 25 }
+		}
+		ai_chance = {
+			factor = 25
+		}
+	}
+}
+
+# The Treaty of Adrianople
+country_event = {
+	id = 1001401
+	title = "EVTNAME1001401"
+	desc = "EVTDESC1001401"
+	picture = "turkmenchay_treaty"
+	major = yes
+
+	trigger = {
+		tag = RUS
+		exists = yes
+		year = 1829
+		NOT = { year = 1834 }
+		war_with = TUR
+		has_country_flag = russo_turkish_war_1828
+		war_score = 20
+		NOT = {
+			has_country_flag = adrianople_offer_made
+			has_global_flag = adrianople_treaty
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 2
+		modifier = {
+			factor = 0.5
+			war_score = 40
+		}
+	}
+
+	option = {
+		name = "EVTOPTA1001401" # A moderate peace at Adrianople
+		set_country_flag = adrianople_offer_made
+		set_country_flag = black_sea_claimed
+		set_global_flag = adrianople_treaty
+		prestige = 10
+		end_war = TUR
+		war_exhaustion = -5
+		relation = { who = TUR value = 50 }
+		relation = { who = MOL value = 100 }
+		relation = { who = WAL value = 100 }
+		relation = { who = SER value = 50 }
+		diplomatic_influence = { who = MOL value = 100 }
+		diplomatic_influence = { who = WAL value = 100 }
+		diplomatic_influence = { who = SER value = 50 }
+		random_country = {
+			limit = {
+				tag = GRE
+				exists = yes
+			}
+			relation = { who = THIS value = 100 }
+			end_war = TUR
+		}
+		random_country = {
+			limit = {
+				tag = GRE
+				exists = yes
+				NOT = {
+					has_global_flag = london_conference_1832_held
+					has_global_flag = london_conference_1832_in_progress
+				}
+			}
+			set_global_flag = london_conference_1832_held
+		}
+		random_country = {
+			limit = {
+				tag = TUR
+				exists = yes
+				NOT = { has_country_flag = adrianople_signed }
+			}
+			country_event = 1001403
+		}
+		ai_chance = {
+			factor = 80
+		}
+	}
+
+	option = {
+		name = "EVTOPTB1001401" # March on Constantinople
+		set_country_flag = adrianople_offer_made
+		prestige = 2
+		badboy = 4
+		any_pop = {
+			limit = { has_pop_religion = orthodox }
+			militancy = -1
+		}
+		any_country = {
+			limit = {
+				is_greater_power = yes
+				capital_scope = { continent = europe }
+				NOT = {
+					tag = RUS
+					tag = TUR
+				}
+			}
+			relation = { who = THIS value = -25 }
+			country_event = 1001402
+		}
+		ai_chance = {
+			factor = 20
+		}
+	}
+}
+
+# The Powers and the Straits
+country_event = {
+	id = 1001402
+	title = "EVTNAME1001402"
+	desc = "EVTDESC1001402"
+	picture = "greatpowers"
+
+	is_triggered_only = yes
+
+	option = {
+		name = "EVTOPTA1001402" # A formal protest is enough
+		relation = { who = RUS value = -25 }
+		ai_chance = {
+			factor = 50
+		}
+	}
+
+	option = {
+		name = "EVTOPTB1001402" # Stand with the Porte
+		relation = { who = RUS value = -50 }
+		relation = { who = TUR value = 100 }
+		diplomatic_influence = { who = TUR value = 100 }
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 2
+				OR = {
+					tag = ENG
+					tag = AUS
+				}
+			}
+		}
+	}
+}
+
+# The Peace of Adrianople (Ottoman side)
+country_event = {
+	id = 1001403
+	title = "EVTNAME1001403"
+	desc = "EVTDESC1001403"
+	picture = "ottoman"
+
+	is_triggered_only = yes
+
+	option = {
+		name = "EVTOPTA1001403" # The Empire endures
+		set_country_flag = adrianople_signed
+		prestige = -10
+		war_exhaustion = -10
+		relation = { who = RUS value = 50 }
+		any_pop = {
+			limit = { is_primary_culture = yes }
+			militancy = 1
+		}
+	}
+}
