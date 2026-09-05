@@ -15,7 +15,8 @@ modifiers to AFG-owned Kabul and to HND-core provinces owned by the vassal).
 Ownership is read from history/provinces at the 1821.9.1 bookmark, so a hit is
 only certain for the start state; the report classifies each case.
 
-Usage: python scripts/audit_owner_scope.py [--md]
+Usage: python scripts/audit_owner_scope.py (exit 1 when a high case is found)
+Report: docs/audit/owner-scope.md
 """
 import re
 import sys
