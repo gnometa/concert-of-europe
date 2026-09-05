@@ -1,1 +1,4 @@
 Audax.Validator/
+
+# Local wiki-mirroring tool; docs/wiki/ is committed, the fetcher is not
+scripts/fetch_wiki_docs.py

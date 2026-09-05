@@ -63,3 +63,17 @@ Pick a new ID from an appropriate free range and record it in the registry file.
 ## Git workflow
 
 Since the 2022 Roar of Industry rework, commits land directly on `master` (short informal messages, no PRs). In September 2026 all remote branches were consolidated into `master`: `Development` -> `Remake` -> `economic-rework` were a linear chain (fast-forwarded), and the still-applicable parts of the 2018 `autonomous_india` branch (country colours, HPM-derived defines/crime/tech-school changes) were ported by hand onto the `CoE_RoI_R/` tree. Those remote branches are now historical only. There is no license file in `CoE_RoI_R/`.
+
+## Modding reference (local wiki mirror)
+
+`docs/wiki/` is a Markdown mirror of the Paradox wiki's Victoria 2 modding section (https://vic2.paradoxwikis.com/Modding and everything it links to, fetched September 2026). Start at `docs/wiki/README.md` for the index. Read these before guessing at script syntax; they document the vanilla engine, which this mod does not change. The most useful pages:
+
+- Script vocabulary: `list-of-conditions.md` (triggers), `list-of-effects.md`, `list-of-scopes.md`, `modifier-effects.md`, `defines-lua.md`.
+- Content guides: `event-modding.md`, `how-to-make-a-decision.md`, `creating-a-country.md`, `localisation.md`, `province-history-modding.md`, `population-modding.md`, `map-modding.md`, `default-map.md`.
+- `folder-file-overview.md` explains what each game directory holds; `console-commands.md` lists debug commands useful when testing in-game.
+
+Caveats when applying the wiki here:
+- The wiki's `countries.md` and `provinces.md` describe **vanilla**. This mod has its own map and ~520 tags, so `CoE_RoI_R/map/definition.csv`, `common/countries.txt`, and `history/provinces/` are the only authoritative sources for IDs and tags.
+- The wiki's rule of thumb for crashes: a crash **during startup** is almost always a syntax error (typically an unbalanced `}`); a crash on 'Start Game' or a specific in-game date points at a context error (a typo in a production type, an event/decision/history entry firing on that date; compare the province-ID crash noted under "Testing / validation").
+- The wiki documents syntax but not behaviour in edge cases; when in doubt, copy the pattern from a working file in `CoE_RoI_R/` or from the vanilla game folder rather than inventing it.
+- The mirror is a snapshot. Pages that were red links on the wiki (economy, reform, technology, ideology, pop-type, rebel, unit, interface modding, most `*.txt` file pages) do not exist locally either; for those, read the vanilla file in the game folder.
