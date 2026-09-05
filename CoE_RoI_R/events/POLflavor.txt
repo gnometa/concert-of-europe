@@ -550,7 +550,7 @@ country_event = {
 	}
 
 	title = "Integration of Krakow"
-	desc = "As an associate of Austria we are presented with opportunity to annex Free City of KrakÃ³w."
+	desc = "As an associate of Austria we are presented with opportunity to annex Free City of Kraków."
 	picture = "polski_sejm"
 
 	option = {

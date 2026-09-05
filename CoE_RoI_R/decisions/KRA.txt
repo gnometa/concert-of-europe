@@ -1354,7 +1354,7 @@ political_decisions = {
 			691 = {
 				change_province_name = "Tuchel"
 				state_scope = {
-					change_region_name = "Westpreu√üen"
+					change_region_name = "Westpreuﬂen"
 				}
 			}
 			694 = { change_province_name = "Thorn" }
@@ -1665,8 +1665,8 @@ political_decisions = {
 				}
 			}
 			363 = { change_province_name = "Panevezys" }
-			364 = { change_province_name = "≈†iauliai" }
-			365 = { change_province_name = "Tel≈°iai" }
+			364 = { change_province_name = "äiauliai" }
+			365 = { change_province_name = "Telöiai" }
 			prestige = 2
 			RUS = { prestige = -1 }
 		}
@@ -1753,7 +1753,7 @@ political_decisions = {
 			set_global_flag = estonian_estonia
 			349 = { change_province_name = "Tallinn" }
 			350 = { change_province_name = "Narva" }
-			351 = { change_province_name = "P√§rnu" }
+			351 = { change_province_name = "P‰rnu" }
 			352 = { change_province_name = "Tartu" }
 			353 = { change_province_name = "Saaremaa" }
 			prestige = 3

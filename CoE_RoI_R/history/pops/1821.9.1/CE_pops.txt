@@ -2052,7 +2052,7 @@
 	}
 
 }
-#PerÃº 2286-2304 ; 2578
+#Perú 2286-2304 ; 2578
 #Chile #2305,2307-2309, 2322-2335
 #Brasil
 2306 = {
@@ -7361,7 +7361,7 @@
 ###2575 ---> Malaysia.txt
 ###2576 ---> Indonesia (incl East Timor).txt
 ###2577 Macedonia
-###2578 PerÃº
+###2578 Perú
 ###2579 Pacific Islands
 
 2580 = {

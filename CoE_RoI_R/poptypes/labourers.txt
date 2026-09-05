@@ -2210,7 +2210,7 @@ ideologies = {
 		}
 		modifier = {
 			factor = 1.25
-			£not = { life_needs = 1.0 }
+			#not = { life_needs = 1.0 }
 			social_reform_want = 0.50
 		}
 		modifier = {

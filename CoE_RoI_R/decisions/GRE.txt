@@ -821,7 +821,7 @@ political_decisions = {
 				}
 			}
 			861 = {
-				change_province_name = "ÃœskÃ¼dar"
+				change_province_name = "Üsküdar"
 			}
 			862 = {
 				change_province_name = "Izmit"

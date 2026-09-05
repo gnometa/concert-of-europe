@@ -404,7 +404,7 @@ country_event = {
 					secede_province = THIS
 				}
 				relation = {
-					with = THIS
+					who = THIS
 					value = -45
 				}
 			}
@@ -432,7 +432,7 @@ country_event = {
 		set_country_flag = DIM_flores_offer
 		1446 = { owner = { country_event = 211313 } }
 		relation = {
-			with = POR
+			who = POR
 			value = 25
 		}
 		ai_chance = { 
@@ -483,7 +483,7 @@ country_event = {
 			prestige = -10
 			treasury = 15000
 			relation = {
-				with = NET
+				who = NET
 				value = 10
 			}
 		}
