@@ -539,12 +539,12 @@ country_event = {
 						type = place_in_the_sun
 						months = 12
 					}
+					relation = {
+						who = THIS
+						value = -20
+					}
 				}
 			}
-		}		
-		relation = {
-			who = THIS
-			value = -20
 		}		
 	}
 	option = {
@@ -1400,6 +1400,7 @@ province_event = {
 		}
 		any_country = {
 			limit = {
+				NOT = { tag = THIS }
 				any_core = {
 					owned_by = THIS
 					has_province_modifier = national_assimilation
@@ -1564,6 +1565,7 @@ province_event = {
 				any_core = {
 					exists = yes
 					NOT = { tag = THIS }
+					NOT = { is_cultural_union = THIS }
 				}
 			}
 		}
@@ -1890,6 +1892,7 @@ province_event = {
 		random_country = {
 			limit = {
 				exists = yes
+				NOT = { tag = THIS }
 				any_core = {
 					owned_by = THIS
 					has_province_modifier = national_assimilation_rejection
@@ -1898,7 +1901,7 @@ province_event = {
 			}
 			relation = { who = THIS value = -50 }
 			leave_alliance = THIS
-			add_casus_belli = {
+			casus_belli = {
 				target = THIS
 				type = humiliate
 				months = 12
@@ -2340,34 +2343,42 @@ country_event = {
 			}
 			modifier = {
 				factor = 0.9
+				NOT = { relation = { who = FROM value = 200 } }
 				relation = { who = FROM value = 150 }
 			}
 			modifier = {
 				factor = 0.8
+				NOT = { relation = { who = FROM value = 150 } }
 				relation = { who = FROM value = 100 }
 			}
 			modifier = {
 				factor = 0.7
+				NOT = { relation = { who = FROM value = 100 } }
 				relation = { who = FROM value = 50 }
 			}
 			modifier = {
 				factor = 0.5
+				NOT = { relation = { who = FROM value = 50 } }
 				relation = { who = FROM value = 0 }
 			}
 			modifier = {
 				factor = 0.3
+				NOT = { relation = { who = FROM value = 0 } }
 				relation = { who = FROM value = -50 }
 			}
 			modifier = {
 				factor = 0.2
+				NOT = { relation = { who = FROM value = -50 } }
 				relation = { who = FROM value = -100 }
 			}
 			modifier = {
 				factor = 0.1
+				NOT = { relation = { who = FROM value = -100 } }
 				relation = { who = FROM value = -150 }
 			}
 			modifier = {
 				factor = 0
+				NOT = { relation = { who = FROM value = -150 } }
 				relation = { who = FROM value = -200 }
 			}
 		}
@@ -2387,34 +2398,42 @@ country_event = {
 			}
 			modifier = {
 				factor = 10
+				NOT = { relation = { who = FROM value = 200 } }
 				relation = { who = FROM value = 150 }
 			}
 			modifier = {
 				factor = 20
+				NOT = { relation = { who = FROM value = 150 } }
 				relation = { who = FROM value = 100 }
 			}
 			modifier = {
 				factor = 30
+				NOT = { relation = { who = FROM value = 100 } }
 				relation = { who = FROM value = 50 }
 			}
 			modifier = {
 				factor = 50
+				NOT = { relation = { who = FROM value = 50 } }
 				relation = { who = FROM value = 0 }
 			}
 			modifier = {
 				factor = 70
+				NOT = { relation = { who = FROM value = 0 } }
 				relation = { who = FROM value = -50 }
 			}
 			modifier = {
 				factor = 80
+				NOT = { relation = { who = FROM value = -50 } }
 				relation = { who = FROM value = -100 }
 			}
 			modifier = {
 				factor = 90
+				NOT = { relation = { who = FROM value = -100 } }
 				relation = { who = FROM value = -150 }
 			}
 			modifier = {
 				factor = 100
+				NOT = { relation = { who = FROM value = -150 } }
 				relation = { who = FROM value = -200 }
 			}
 		}
