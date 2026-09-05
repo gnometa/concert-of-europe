@@ -25,7 +25,7 @@ country_event = {
 		name = "He will be shown no mercy."
 		set_country_flag = khoja_rebellion
 		release = UYG
-		relation = { who = UYG value = -400 }
+		relation = { who = UYG value = -200 }
 		UYG = {
 			any_pop = { militancy = -6 }
 			leadership = 40
@@ -1576,7 +1576,7 @@ country_event = {
 			end_war = THIS
 		}
 		treasury = 200000
-		relation = { who = FROM value = 300 }
+		relation = { who = FROM value = 200 }
 		diplomatic_influence = { who = FROM value = 50 }
 		random_owned = {
 			limit = {
@@ -1994,7 +1994,7 @@ country_event = {
 		name = "Make the deal with the $FROMCOUNTRY_ADJ$."
 		prestige_factor = 0.1
 		treasury = 200000
-		relation = { who = FROM value = 300 }
+		relation = { who = FROM value = 200 }
 		diplomatic_influence = { who = FROM value = 50 }
 		random_owned = {
 			limit = {
