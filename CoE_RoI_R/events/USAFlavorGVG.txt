@@ -52,10 +52,10 @@ country_event = {
 	
 	option = {
 		name = "We must help the Texans"
-		relation = { who = TEX value = 200 }
+		relation = { who = TEX value = 50 }
 		diplomatic_influence = {
 			who = TEX
-			value = 400
+			value = 100
 		}
 		ai_chance = {
 			factor = 95

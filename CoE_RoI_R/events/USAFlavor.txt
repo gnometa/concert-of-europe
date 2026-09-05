@@ -74,11 +74,11 @@ country_event = {
 		months = 5
 		modifier = {
 			factor = 0.75 #increase likelihood to happen
-			year = 1886
+			year = 1894
 		}
 		modifier = {
 			factor = 0.95 #increase likelihood to happen
-			year = 1887
+			year = 1895
 		}
 	}
 
@@ -782,7 +782,7 @@ country_event = {
 	picture = "baseball"
 
 	option = {
-		name = "EVTOPTA44114" 
+		name = "EVTOPTA44115" 
 		prestige = 2
 	}
 }
@@ -1327,12 +1327,14 @@ country_event = {
 			target = MEX
 			attacker_goal = {
 				casus_belli = acquire_all_cores
-				country = USA
+			}
+			defender_goal = {
+				casus_belli = status_quo
 			}
 		}
 		any_pop = {
 			limit = { has_pop_culture = mexican }
-			militancy = 6
+			militancy = 3
 		}
 		ai_chance = {
 			factor = 100
