@@ -153,7 +153,7 @@ vassal = {
 vassal = {
 	first = TUR
 	second = EGY
-	start_date = 1833.1.1	# end of First Turko-Egyptian War
+	start_date = 1805.7.9	# Muhammad Ali invested as wali of Egypt
 	end_date = 1840.7.1		# the Oriental Crisis
 }
 

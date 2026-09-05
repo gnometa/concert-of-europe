@@ -1,24 +1,14 @@
 # Bolivarian solidarity
-alliance = {
-	first = GCO
-	second = ECU
-	start_date = 1815.11.9
-	end_date = 1823.1.1
-}
 
+# Bolivia is created 1825.8.6; Sucre's republic was a Gran Colombian client
+# until Colombian troops withdrew after the 1828 Chuquisaca mutiny.
 alliance = {
 	first = GCO
 	second = BOL
-	start_date = 1815.11.9
-	end_date = 1823.1.1
+	start_date = 1825.8.6
+	end_date = 1828.7.6
 }
 
-alliance = {
-	first = PRG
-	second = BOL
-	start_date = 1815.11.9
-	end_date = 1823.1.1
-}
 
 alliance = {
 	first = PRG
@@ -27,19 +17,7 @@ alliance = {
 	end_date = 1831.1.3
 }
 
-alliance = {
-	first = BOL
-	second = CHL
-	start_date = 1815.11.9
-	end_date = 1823.1.1
-}
 
-alliance = {
-	first = BOL
-	second = ARG
-	start_date = 1815.11.9
-	end_date = 1831.1.3
-}
 
 alliance = {
 	first = CHL
@@ -83,3 +61,36 @@ alliance = {
 	end_date = 1823.1.1
 }
 
+# Quadruple Alliance of 20 November 1815 (Chaumont renewed): Britain joins the
+# three eastern courts. Lapsed with the congress system after Verona.
+# France acceded to the congresses at Aix-la-Chapelle (1818) but not to the
+# alliance's military article, which was directed against France; no FRA tie added.
+alliance = {
+	first = ENG
+	second = AUS
+	start_date = 1815.11.20
+	end_date = 1823.1.1
+}
+
+alliance = {
+	first = ENG
+	second = PRU
+	start_date = 1815.11.20
+	end_date = 1823.1.1
+}
+
+alliance = {
+	first = ENG
+	second = RUS
+	start_date = 1815.11.20
+	end_date = 1823.1.1
+}
+
+# Anglo-Portuguese alliance, renewed by the Treaty of Alliance and Friendship
+# of 19 February 1810. POR owns nothing in 1821 - the Braganza state is UPB.
+alliance = {
+	first = ENG
+	second = UPB
+	start_date = 1810.2.19
+	end_date = 1825.8.29
+}

@@ -1,43 +1,46 @@
 name = "Expedición Libertadora del Perú"
 
 1821.7.28 = {
-	add_attacker = SPA
-	add_defender = PEU
-	add_defender = ARG
-	add_defender = CHL	
-	
+	add_attacker = PEU
+	add_attacker = ARG
+	add_attacker = CHL
+	add_defender = SPA
+
+	# The Expedición Libertadora: San Martín's Argentine-Chilean army and the
+	# newly proclaimed Peruvian republic against royalist Spain.
+	# actor / receiver / casus_belli / country (3rd party) / state_province_id
 	war_goal = {
-		casus_belli = liberate_country
+		casus_belli = cut_down_to_size
+		actor = PEU
+		receiver = SPA
+	}
+	war_goal = {
+		casus_belli = cut_down_to_size
 		actor = ARG
 		receiver = SPA
-		country = BOL
-	}	
-	#war_goal = {
-	#	casus_belli = release_puppet
-	#	actor = CHL
-	#	receiver = SPA
-	#	country = BOL
-	#}	
-	war_goal = {
-		casus_belli = make_puppet
-		actor = SPA
-		receiver = CHL
-	}	
+	}
+
+	# Spain's aim: restore the viceroyalties as dependencies.
 	war_goal = {
 		casus_belli = make_puppet
 		actor = SPA
 		receiver = PEU
-	}	
+	}
+	war_goal = {
+		casus_belli = make_puppet
+		actor = SPA
+		receiver = CHL
+	}
 	war_goal = {
 		casus_belli = make_puppet
 		actor = SPA
 		receiver = ARG
-	}		
+	}
 }
 
 1822.5.24 = {
-	rem_defender = SPA
-	rem_defender = PEU
+	rem_attacker = PEU
+	rem_attacker = ARG
 	rem_attacker = CHL
-	rem_attacker = ARG		
+	rem_defender = SPA
 }

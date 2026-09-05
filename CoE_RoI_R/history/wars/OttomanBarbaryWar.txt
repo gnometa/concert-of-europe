@@ -1,6 +1,10 @@
 name = "Ottoman Restoration of Tripoli"
 
-1835.10.2 = {
+# Historical: the Porte deposed the last Karamanli pasha, Ali II, on 26 May 1835
+# and restored direct Ottoman rule over Tripolitania. Kept deliberately; it is
+# not a 1836-bookmark filler war.
+
+1835.5.26 = {
 	add_attacker = TUR
 	add_defender = TRI
 	

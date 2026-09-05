@@ -1,0 +1,26 @@
+name = "Ottoman-Persian War"
+
+# 1821-1823. Abbas Mirza invaded the Ottoman eastern provinces after border
+# raids and the sheltering of migrant tribes; ended in the status quo ante
+# Treaty of Erzurum (28 July 1823).
+
+1821.9.10 = {
+	add_attacker = PER
+	add_defender = TUR
+
+	# actor
+	# receiver
+	# casus_belli - cb type
+	# country - 3rd party
+	# state_province_id - target state capital
+	war_goal = {
+		casus_belli = status_quo
+		actor = PER
+		receiver = TUR
+	}
+}
+
+1823.7.28 = {
+	rem_attacker = PER
+	rem_defender = TUR
+}

@@ -1,6 +1,6 @@
 name = "War of the Farrapos"
 
-1835.10.2 = {
+1835.9.20 = {
 	add_attacker = BRZ
 	add_defender = RGS
 	
