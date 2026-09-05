@@ -12,8 +12,10 @@ tagged [high].*
 ### [high]
 
 ~~`CoE_RoI_R/history/countries/*.txt:8` (all 521 files) - every country starts at
-`literacy = 0.01`.~~ **Investigated 2026-09-06: intentional, left as is.** See
-"Literacy: why the flat 0.01 start stays" below.
+`literacy = 0.01`.~~ **Not a defect — design, 2026-09-06.** Investigated and deliberately
+left as is; see "Literacy: why the flat 0.01 start stays" below and the "Fixed in this pass"
+entry at the end of this file. The only open question is a design one (whether the great
+powers should start with a literacy edge), not a repair.
 
 `CoE_RoI_R/common/production_types.txt:258-305` — the five factory chains are mis-priced
 against `common/goods.txt`. `military_factory` returns **12.0x** its input cost and
@@ -31,6 +33,13 @@ and 800006's option does `clr_country_flag = military_access_granted`, so with t
 live 800004 fires at most once per sphering and 800006 at most once per release.
 
 ### [medium]
+
+> **2026-09-06: the four `cb_types.txt` / `rebel_types.txt` findings below are resolved by
+> design — no script change.** They were traced back to the 2014 PDM base import and to a
+> deliberate, inline-commented rework: `rebel_types.txt` is byte-identical to the base on every
+> audited field, and none of the zero-infamy CBs is grantable or constructible. The findings
+> are kept here as written; the evidence is in **`docs/audit/rebels-cb.md`**. Do not re-open
+> them without reading that first.
 
 `CoE_RoI_R/common/cb_types.txt` — the mod raised infamy on the *usable* CBs by roughly 7-14x
 versus vanilla (`conquest` 2.2 -> 30, `acquire_state` 2.2 -> 15, `make_puppet` 2.0 -> 15,
@@ -334,10 +343,11 @@ does not re-derive them.
 - `common/production_types.txt` / `common/goods.txt` factory pricing (Table 3) and
   `artisan_food_maker`'s negative margin (Table 4) - one economy balance pass, shared with
   the `core-systems.md` deferred items.
-- `common/cb_types.txt` - 24 event CBs at `badboy_factor = 0` against 7-14x infamy on the
+- ~~`common/cb_types.txt` - 24 event CBs at `badboy_factor = 0` against 7-14x infamy on the
   ordinary CBs; `always = yes` plus `is_triggered_only = yes` on the two
-  `east_indian_unification` entries.
-- `common/rebel_types.txt` - `defection = none` on five types, the 1-100 `spawn_chance`
-  rebase, and `separatist_rebels`' `occupation_mult = 5.0` / `defect_delay = 3`.
+  `east_indian_unification` entries.~~ **Resolved by design 2026-09-06, `docs/audit/rebels-cb.md`.**
+- ~~`common/rebel_types.txt` - `defection = none` on five types, the 1-100 `spawn_chance`
+  rebase, and `separatist_rebels`' `occupation_mult = 5.0` / `defect_delay = 3`.~~ **Resolved
+  by design 2026-09-06 (PDM-inherited, byte-identical to the base), `docs/audit/rebels-cb.md`.**
 - `events/China.txt` 90901 - 100:10 AI weight toward `release_vassal`.
 - `history/countries/PER - Persia.txt` - 5 army techs, drop to 3.

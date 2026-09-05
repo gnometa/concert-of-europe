@@ -40,6 +40,31 @@ python scripts/cwtools_check.py
 
 Filtered output; see `.claude/skills/cwtools-lsp/SKILL.md` for what the filter drops. Known baseline (re-measured 2026-09-06): **14 diagnostics, 0 errors, 14 warnings** over ~760 files - "Too many attacker_goal" in `CBsAndCores.txt:2448` and `Indochina.txt:188` (multiple war goals in one `war` effect are valid; rule gap), and 12 "Too many clauses" warnings in `production_types.txt` (rule gap). Anything else is new.
 
+## Stage 1c: subsystem audits (optional, no game needed)
+
+Slower than stage 1 (`audit_perf` and `audit_provinces` take the longest) and mostly advisory.
+Run the set after a large or cross-cutting change; skip it for a one-file edit.
+
+```
+for s in countries provinces diplomacy decisions common loc events perf; do python scripts/audit_$s.py; done
+```
+
+Expect **0 `[high]`** from every script except these two known baselines (re-measured
+2026-09-06):
+
+- `audit_countries.py`: **39 highs**, all "history file for tag X is not registered in
+  `common/countries.txt`" (BMK, DUR, ERT, KRL, KYR, ...). Deferred — register or delete.
+  Its other counters must stay at 0: `capital_not_owned`, `party_inactive`, `party_undefined`,
+  `ideology_not_allowed`, `missing_common_file`.
+- `audit_events.py`: **2 highs** - 14540 (`ColonialUprisings.txt:300`) and 22540
+  (`EconomicalEvents.txt:399`), both re-firing events that grant a permanent
+  `add_province_modifier`. `unknown keywords` must stay at **0**.
+
+`audit_provinces.py`, `audit_diplomacy.py`, `audit_decisions.py`, `audit_common.py`
+(`DEFECTS high=0`), `audit_loc.py` and `audit_perf.py` are all at 0 high. Their medium/low
+findings are carried in the reports under `docs/audit/`; `audit_provinces.py` and
+`audit_loc.py` rewrite their report file, so `git diff docs/audit/` after a run is expected.
+
 ## Stage 2: deploy
 
 ```

@@ -467,8 +467,19 @@ for key, title in TITLES:
 
 out = os.path.join(ROOT, 'docs', 'audit', 'history-provinces.md')
 os.makedirs(os.path.dirname(out), exist_ok=True)
+# Everything from MANUAL_MARKER onwards is hand-written (the Fixed / Deferred log)
+# and is carried over unchanged when this report is regenerated.
+MANUAL_MARKER = '<!-- MANUAL: hand-maintained below, preserved on regeneration -->'
+tail = ''
+if os.path.exists(out):
+    with open(out, encoding='utf-8') as f:
+        prev = f.read()
+    if MANUAL_MARKER in prev:
+        tail = prev[prev.index(MANUAL_MARKER):]
 with open(out, 'w', encoding='utf-8', newline='\n') as f:
     f.write('\n'.join(L) + '\n')
+    if tail:
+        f.write(tail)
 print('wrote %s (%d lines, %d defects)' % (out, len(L), tot))
 for key, title in TITLES:
     if D.get(key):

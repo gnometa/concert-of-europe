@@ -98,6 +98,7 @@ Format: `path:line` — problem — proposed fix. Each class capped at 30 exampl
 - [low] `CoE_RoI_R/history/pops/1821.9.1/CE_pops.txt:6241` — pops in province 2474 (Moree) which has no owner at start (normal for uncolonised land - review only if it should be owned) — no change needed unless the province is meant to start owned
 - [low] `CoE_RoI_R/history/pops/1821.9.1/CE_pops.txt:6259` — pops in province 2475 (Broken Hill) which has no owner at start (normal for uncolonised land - review only if it should be owned) — no change needed unless the province is meant to start owned
 - ... and 378 more of this class
+<!-- MANUAL: hand-maintained below, preserved on regeneration -->
 
 ## Fixed (2026-09-06)
 
