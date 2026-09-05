@@ -119,6 +119,10 @@ Format: `path:line` — problem — proposed fix. Each class capped at 30 exampl
 
 ## Regions spanning two continents (2026-09-06, was 12, now 8)
 
+Fixed in commit `54ea7325`; the four `map/continent.txt` corrections below are applied in the tree,
+so a re-run of `scripts/audit_provinces.py` reports 8, not 12. This whole block is below the
+`MANUAL` marker and is preserved when the script regenerates the counts above it.
+
 Checked all 12 by computing real province adjacency from `map/provinces.bmp` plus `map/positions.txt`.
 No province needed to move between regions: `map/region.txt` was right in every case, `map/continent.txt`
 was wrong in four. Rule used: a province whose *land* neighbours are all on the other continent is a

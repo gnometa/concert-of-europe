@@ -85,12 +85,18 @@ verified false positive.
 
 ## Verified, left alone (deferred)
 
-- **QNG is correct as-is.** `CHI - China.txt` *is* the Qing at the 1821 start;
-  QNG is the rump Qing that only exists after the Taiping win the civil war
-  (`events/Taiping.txt:1348`, option "The Qing Dynasty must rule once more",
-  `change_tag = QNG`), and `history/countries/QNG.txt` does exist. All 19
-  QNG-gated decisions belong to that post-Taiping branch; none was retargeted
-  to CHI.
+- **QNG is correct as-is** — but the reasoning first recorded here was backwards
+  and is corrected (2026-09-06): **QNG is the Qing and it exists at the 1821
+  start**, owning 153 provinces (`grep -c 'owner = QNG' history/provinces/`),
+  with `history/countries/QNG.txt`. **CHI** (`CHI - China.txt`) owns **zero**
+  provinces at start; it is the later republican tag. The original "QNG has no
+  history file" finding was a bug in `scripts/audit_decisions.py`, whose
+  `hist_tags()` only recognised the `TAG - Name.txt` form and so missed the bare
+  `QNG.txt` (and `BIM`); the heuristic now accepts `TAG.txt` and `TAG- Name.txt`
+  too. The 19 QNG-gated decisions are Qing decisions and are correctly targeted;
+  new Qing content must use QNG, not CHI (`events/CHIOpiumGVG.txt` does).
+  `events/Taiping.txt:1348` still offers `change_tag = QNG` as a restoration
+  path from the Taiping branch.
 - `0_economic_decisons.txt` `reset_colony_types` — already `ai = no` in
   `potential`; it is a paid (10 000) player utility that strips
   settlement/exploitation colony modifiers, and being re-runnable as the empire
