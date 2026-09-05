@@ -494,3 +494,10 @@ EVTOPTA1002101;Independence, and an end to the war.;;;;;;;;;;;;;x
 EVTNAME1002102;The Cost of Empire;;;;;;;;;;;;;x
 EVTDESC1002102;Years after Ayacucho the war is still on the books, and nothing has come of it but debt, ruined regiments and a navy that dare not sail. The Cortes will vote no further supply for America. There is nothing left to do but sign.;;;;;;;;;;;;;x
 EVTOPTA1002102;Sign away the viceroyalties.;;;;;;;;;;;;;x
+EVTNAME1002200;The Jihad Has Run Its Course;;;;;;;;;;;;;x
+EVTDESC1002200;Five and twenty years have passed since the horsemen of Massina rode out against the Bamana of Segu. The Diina is built, Hamdullahi stands, and the cattle of the delta are counted in the Almami's ledgers - but the war goes on, and every dry season carries away men the emirate cannot replace. The council of forty urge that the sword be sheathed while the victory is still ours to name.;;;;;;;;;;;;;x
+EVTOPTB1002200;Seku Amadu will not sheathe the sword;;;;;;;;;;;;;x
+EVTNAME1002201;The Emirate Is Spent;;;;;;;;;;;;;x
+EVTDESC1002201;The herds are thin, the granaries of Hamdullahi are opened to feed men who no longer march, and the levies of the delta answer the call in ever smaller numbers. Segu has not been broken and will not be broken. Whatever the pulpit proclaims, there is nothing left in the emirate to fight with.;;;;;;;;;;;;;x
+EVTOPTA1002201;There is nothing left to fight with;;;;;;;;;;;;;x
+EVTOPTA1002200;The Diina is secure - make peace with the Bamana;;;;;;;;;;;;;x

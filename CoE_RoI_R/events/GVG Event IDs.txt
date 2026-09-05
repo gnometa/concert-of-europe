@@ -22,6 +22,7 @@
 #1001900-1001999: BRZRegencyGVG (1831-1840 abdication of Pedro I, the Regency, the Cabanagem, the majority of Pedro II; 1001900-1001903 used)
 #1002000-1002099: JAPTenpoGVG (1825-1841 Edict to Repel Foreign Vessels, Siebold Incident, Tenpo famine and Oshio's rising, Tenpo Reforms; TKG tag; 1002000-1002004 used)
 #1002100-1002199: SPAAyacuchoGVG (1824-1834 Ayacucho and the end of the Spanish American wars of independence; 1002100-1002102 used)
+#1002200-1002299: WarResolutionsGVG (resolutions for wars stuck at the 1821 start; see docs/audit/start-wars.md; 1002200-1002201 used, Massina Jihad)
 #
 #Reserved, currently unused (the files that defined them were 100% commented out
 #and were deleted 2026-09-06; recover them from git history if the system is revived):

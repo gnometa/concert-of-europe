@@ -1,0 +1,129 @@
+#########################################################
+#                                                       #
+#   Resolutions for wars stuck at the 1821 start        #
+#   ids 1002200-1002299 (GVG)                           #
+#                                                       #
+#   docs/audit/start-wars.md audits every war live at   #
+#   1821.9.1. All but one can be ended by the AI; the   #
+#   Massina Jihad (history/wars/MassinaJihad.txt, from  #
+#   1818) cannot, because MAS carries a                 #
+#   cut_down_to_size goal whose peace_cost_factor is    #
+#   100 - the same trap that froze Spain in the         #
+#   Americas (see SPAAyacuchoGVG.txt). Massina is one   #
+#   province and can never buy that goal, so the war    #
+#   runs forever. This gives Seku Amadu the historical  #
+#   settlement, and a forced peace if he refuses.       #
+#                                                       #
+#########################################################
+
+# The Jihad Has Run Its Course
+country_event = {
+	id = 1002200
+	title = "EVTNAME1002200"
+	desc = "EVTDESC1002200"
+	picture = "war_ended"
+
+	trigger = {
+		tag = MAS
+		exists = yes
+		year = 1843
+		NOT = { year = 1848 }
+		war_with = SEG
+		NOT = {
+			has_country_flag = massina_peace_offered
+			has_country_flag = massina_settled
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 6
+		modifier = {
+			factor = 0.5
+			war_exhaustion = 10
+		}
+	}
+
+	option = {
+		name = "EVTOPTA1002200" # Make peace with the Bamana
+		set_country_flag = massina_peace_offered
+		set_country_flag = massina_settled
+		prestige = 5
+		war_exhaustion = -10
+		any_country = {
+			limit = {
+				tag = SEG
+				war_with = MAS
+			}
+			end_war = MAS
+			relation = { who = MAS value = 50 }
+		}
+		any_pop = {
+			limit = { is_primary_culture = yes }
+			militancy = -1
+		}
+		ai_chance = {
+			factor = 70
+		}
+	}
+
+	option = {
+		name = "EVTOPTB1002200" # Seku Amadu will not sheathe the sword
+		set_country_flag = massina_peace_offered
+		set_country_flag = massina_fight_on
+		prestige = 2
+		war_exhaustion = 5
+		any_pop = {
+			limit = { is_primary_culture = yes }
+			militancy = 1
+		}
+		ai_chance = {
+			factor = 30
+		}
+	}
+}
+
+# The Emirate Is Spent
+country_event = {
+	id = 1002201
+	title = "EVTNAME1002201"
+	desc = "EVTDESC1002201"
+	picture = "treaty"
+
+	trigger = {
+		tag = MAS
+		exists = yes
+		year = 1848
+		NOT = { year = 1853 }
+		war_with = SEG
+		has_country_flag = massina_fight_on
+		NOT = { has_country_flag = massina_settled }
+	}
+
+	mean_time_to_happen = {
+		months = 6
+		modifier = {
+			factor = 0.5
+			war_exhaustion = 20
+		}
+	}
+
+	option = {
+		name = "EVTOPTA1002201" # There is nothing left to fight with
+		set_country_flag = massina_settled
+		clr_country_flag = massina_fight_on
+		prestige = -5
+		war_exhaustion = -20
+		any_country = {
+			limit = {
+				tag = SEG
+				war_with = MAS
+			}
+			end_war = MAS
+			relation = { who = MAS value = 25 }
+		}
+		any_pop = {
+			limit = { is_primary_culture = yes }
+			militancy = 1
+		}
+	}
+}
