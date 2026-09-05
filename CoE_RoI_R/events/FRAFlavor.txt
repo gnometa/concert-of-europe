@@ -1538,6 +1538,7 @@ country_event = {
 
     trigger = {
         tag = FRA
+                year = 1829
                 OR = {
                     has_country_flag = three_glorious_days
                     average_militancy = 5

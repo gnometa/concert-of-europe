@@ -578,7 +578,7 @@ country_event = {
 				limit = {
 					has_province_modifier = futile
 				}
-				country_event = 301116
+				owner = { country_event = 301116 }
 			}
 		
 		}
@@ -632,7 +632,7 @@ country_event = {
 				limit = {
 					has_province_modifier = futile
 				}
-				country_event = 301117
+				owner = { country_event = 301117 }
 			}
 		
 		}
@@ -663,12 +663,10 @@ country_event = {
 	
 	option = {
 		name = "What could we possibly have done differently?"
-		owner = {
-			prestige = -10
-			change_variable = {
-				which = persian_ulama
-				value = -5
-			}
+		prestige = -10
+		change_variable = {
+			which = persian_ulama
+			value = -5
 		}
 	}
 }
@@ -690,14 +688,12 @@ country_event = {
 	
 	option = {
 		name = "Perhaps the $FROMCOUNTRY_ADJ$s aren't as fearsome as we thought?"
-		owner = {
-			any_pop = {
-				consciousness = -1
-			}
-			change_variable = {
-				which = persian_ulama
-				value = 1
-			}
+		any_pop = {
+			consciousness = -1
+		}
+		change_variable = {
+			which = persian_ulama
+			value = 1
 		}
 	}
 }

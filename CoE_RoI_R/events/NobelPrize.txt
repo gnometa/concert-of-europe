@@ -1697,7 +1697,7 @@ country_event = {
 		electricity = 1
 		not = {
 			year = 1938
-			has_global_flag = 34NobelPhysics
+			has_global_flag = 35NobelPhysics
 		}
 		OR = { 
 			is_greater_power = yes # nation is a great power
@@ -3376,7 +3376,7 @@ country_event = {
 		electricity = 1
 		not = {
 			year = 1938
-			has_global_flag = 34NobelChemistry
+			has_global_flag = 35NobelChemistry
 		}
 		OR = { 
 			is_greater_power = yes # nation is a great power
@@ -5056,7 +5056,7 @@ country_event = {
 		organic_chemistry = 1
 		not = {
 			year = 1938
-			has_global_flag = 34NobelMedicine
+			has_global_flag = 35NobelMedicine
 		}
 		OR = { 
 			is_greater_power = yes # nation is a great power
@@ -6736,7 +6736,7 @@ country_event = {
 		impressionism = 1
 		not = {
 			year = 1938
-			has_global_flag = 34NobelLiterature
+			has_global_flag = 35NobelLiterature
 		}
 		OR = { 
 			is_greater_power = yes # nation is a great power
@@ -8417,7 +8417,7 @@ country_event = {
 		idealism = 1
 		not = {
 			year = 1938
-			has_global_flag = 34NobelPeace
+			has_global_flag = 35NobelPeace
 		}
 		OR = { 
 			is_greater_power = yes # nation is a great power
