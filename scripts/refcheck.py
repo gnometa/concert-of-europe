@@ -25,7 +25,7 @@ Checks
               national values, casus belli, reform options, techs and
               inventions referenced by events/decisions exist
   onactions   common/on_actions.txt entries point at defined events
-  options     event options per event vs. localisation (EVTOPTA..)
+  options     events with more than 5 options (the UI clips the rest)
 
 Deliberate patterns are excluded: election events (the engine picks those out
 of the issue_group pool), events whose only caller is commented out, and
@@ -462,10 +462,6 @@ def check_names():
                     # note: `casus_belli = TAG` is the trigger "do we have a cb
                     # against TAG", not a cb type reference - only the effect
                     # form add_casus_belli = { type = ... } names a cb type.
-                    if k in techs | inventions:
-                        pass
-                    elif k == "tech_school" or k == "technology":
-                        pass
                 else:
                     if k in ("add_casus_belli", "war", "add_war_goal", "attacker_goal", "defender_goal"):
                         for c in n.children:
@@ -479,27 +475,17 @@ def check_names():
                         for c in n.children:
                             if c.key and c.key.lower() == "ideology" and c.value not in ideologies:
                                 problems.append(f"{rel(f)}:{c.line}: ideology '{c.value}' is not in common/ideologies.txt")
-    # techs referenced as triggers: bare `tech_name = 1`
-    for f in files:
-        for node in tree(f):
-            for n in node.walk():
-                if n.key and n.children is None and n.value == "1" and n.key.lower() not in techs | inventions:
-                    continue
     return problems
 
 
 def check_options():
-    """Option counts per event vs EVTOPT letters present in localisation (informational)."""
+    """Events with more options than the UI can show (vanilla never exceeds 5)."""
     problems = []
-    keys = loc_keys()
     for ev, f in all_events():
         eid = ev.first("id")
         opts = ev.get("option")
         if len(opts) > 5:
             problems.append(f"{rel(f)}:{ev.line}: event {eid} has {len(opts)} options (vanilla never goes above 5; the UI clips them)")
-        for opt in opts:
-            if not any(c.key for c in opt.children or [] if c.key and c.key.lower() not in ("name", "ai_chance")):
-                pass
     return problems
 
 
