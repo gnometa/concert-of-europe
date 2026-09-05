@@ -35,7 +35,7 @@ child_labor = child_labor_legal
 arts_endowment = no_endowment
 education = elite
 
-ruling_party = CHL_conservative
+ruling_party = CHL_ohigginistas
 set_country_flag = tory_election_win
 last_election = 1811.1.1
 upper_house = {

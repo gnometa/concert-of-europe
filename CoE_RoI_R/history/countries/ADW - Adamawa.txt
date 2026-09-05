@@ -1,4 +1,4 @@
-capital = 1948
+capital = 1950
 primary_culture = fulbe
 culture = hausa
 culture = african_minor

@@ -1,4 +1,4 @@
-capital = 570
+capital = 565
 primary_culture = german  set_country_flag = north_german_rel
 #culture = south_german
 religion = protestant

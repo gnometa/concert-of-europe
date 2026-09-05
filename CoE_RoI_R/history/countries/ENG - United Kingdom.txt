@@ -74,7 +74,7 @@ market_structure = 1
 consciousness = 3
 nonstate_consciousness = 1
 
-ruling_party = ENG_liberal
+ruling_party = ENG_conservative
 
 last_election = 1819.2.6
 upper_house = {

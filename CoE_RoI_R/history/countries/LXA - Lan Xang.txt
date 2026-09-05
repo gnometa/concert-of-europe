@@ -32,7 +32,7 @@ child_labor = child_labor_legal
 arts_endowment = no_endowment
 education = elite
 
-ruling_party = LXA_conservative
+ruling_party = LUA_conservative
 upper_house = {
 	fascist = 0
 	liberal = 12

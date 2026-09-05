@@ -33,7 +33,7 @@ child_labor = child_labor_legal
 arts_endowment = no_endowment
 education = elite
 
-ruling_party = ENT_conservative_2
+ruling_party = ENT_conservative
 upper_house = {
 	fascist = 0
 	liberal = 31

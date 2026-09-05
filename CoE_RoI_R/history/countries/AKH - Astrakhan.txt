@@ -1,4 +1,4 @@
-capital = 1036
+capital = 1182
 primary_culture = kazak
 religion = sunni
 government = absolute_monarchy

@@ -39,7 +39,7 @@ govt_flag = {
 	flag = theocracy
 }
 
-ruling_party = GER_conservative
+ruling_party = GER_conservative_2
 upper_house = {
 	fascist = 0
 	liberal = 55

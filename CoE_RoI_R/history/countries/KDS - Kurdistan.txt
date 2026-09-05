@@ -1,4 +1,4 @@
-capital = 893
+capital = 890
 primary_culture = kurdish
 culture = turkish
 religion = sunni

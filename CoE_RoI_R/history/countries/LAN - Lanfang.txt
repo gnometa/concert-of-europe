@@ -1,4 +1,4 @@
-capital = 1426
+capital = 2637
 primary_culture = hakka
 culture = yue
 culture = malay

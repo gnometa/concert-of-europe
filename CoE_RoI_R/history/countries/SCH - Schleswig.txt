@@ -35,7 +35,7 @@ child_labor = child_labor_restricted
 arts_endowment=no_endowment
 education = elite
 
-ruling_party = SCH_conservative
+ruling_party = SCH_conservative_2
 upper_house = {
 	fascist = 0
 	liberal = 20
