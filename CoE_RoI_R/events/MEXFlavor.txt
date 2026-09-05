@@ -1930,7 +1930,7 @@ country_event = {
 
 	option = {
 		name = "We refuse."
-		set_country_flag = cherokee_question_settled
+		set_country_flag = cherokee_question_answered
 		132 = {
 			any_pop = {
 				limit = { has_pop_culture = cherokee }
