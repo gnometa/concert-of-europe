@@ -1140,7 +1140,7 @@ country_event = {
 country_event = {
 	id = 97637
 	title = "EVTNAME97635" #Opposition to the Bakufu - Tozama
-	desc = "EVTDESC97635"
+	desc = "EVTDESC97637"
 	picture = "meiji_parliament"
 
 	is_triggered_only = yes
@@ -1358,7 +1358,7 @@ country_event = {
 			limit = {
 				FROM = { civilized = yes }
 				owner = {
-					foreign_training = no_foreign_training
+					unciv_military_training = military_levies
 					civilized = no
 				}
 			}
@@ -1399,7 +1399,7 @@ country_event = {
 country_event = {
 	id = 97642
 	title = "EVTNAME97640" #The Meiji Rebellion - Imperial Japan
-	desc = "EVTDESC97640"
+	desc = "EVTDESC97642"
 	picture = "boshin_war"
 
 	is_triggered_only = yes
@@ -1686,7 +1686,7 @@ country_event = {
 		}
 		leave_alliance = JAP
 		relation = { who = JAP value = -200 }
-		release_vassal = THIS
+		JAP = { release_vassal = THIS }
 		ai_chance = {
 			factor = 0
 		}
@@ -1919,7 +1919,7 @@ country_event = {
 			}
 			THIS = { civilized = yes }
 		}
-		release_vassal = THIS
+		TKG = { release_vassal = THIS }
 		leave_alliance = TKG
 		relation = { who = TKG value = -200 }
 		add_country_modifier = {
@@ -3032,7 +3032,7 @@ country_event = {
 	}
 	
 	mean_time_to_happen = {
-		months = 480
+		months = 48
 		modifier = {
 			factor = 2
 			war_policy = pro_military
@@ -3077,6 +3077,7 @@ country_event = {
 	
 	option = {
 		name = "This is not in our interests at this time."
+		set_country_flag = sakhalin_line_of_advantage
 		prestige = -10
 		any_pop = { consciousness = 1 }
 		move_issue_percentage = { 
