@@ -3516,3 +3516,14 @@ s_pop_2500k = {
 	mine_RGO_size = 0.25
 	icon = 19	
 }
+
+
+##### DECEMBRIST REVOLT (RUSDecembristGVG) #####
+nicholas_reaction = {
+	issue_change_speed = -0.5
+	global_pop_consciousness_modifier = -0.02
+	global_pop_militancy_modifier = -0.02
+	suppression_points_modifier = 0.25
+	prestige = 0.02
+	icon = 15
+}

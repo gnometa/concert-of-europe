@@ -1,0 +1,246 @@
+#############################################################
+#															#
+#            The Decembrist Revolt - December 1825			#
+#                  (RUSDecembristGVG)						#
+#															#
+#############################################################
+
+# Death of Alexander I - the interregnum
+country_event = {
+
+	id = 1000400
+
+	title = "EVTNAME1000400"
+	desc = "EVTDESC1000400"
+	picture = "emperor_funeral"
+
+	trigger = {
+		tag = RUS
+		year = 1825
+		month = 10
+		NOT = { year = 1826 }
+	}
+
+	fire_only_once = yes
+
+	mean_time_to_happen = {
+		months = 1
+	}
+
+	option = {
+		name = "EVTOPTA1000400"
+		prestige = -5
+		any_pop = {
+			consciousness = 1
+		}
+		country_event = {
+			id = 1000401
+			days = 20
+		}
+	}
+}
+
+# The Decembrists on Senate Square
+country_event = {
+
+	id = 1000401
+
+	title = "EVTNAME1000401"
+	desc = "EVTDESC1000401"
+	picture = "streetriot"
+
+	major = yes
+	news = yes
+	news_desc_long = "EVTDESC1000401_NEWS_LONG"
+	news_desc_medium = "EVTDESC1000401_NEWS_MEDIUM"
+	news_desc_short = "EVTDESC1000401_NEWS_SHORT"
+
+	is_triggered_only = yes
+
+	option = {
+		name = "EVTOPTA1000401" # Grapeshot
+		prestige = 10
+		capital_scope = {
+			any_pop = {
+				militancy = 2
+				consciousness = 1
+			}
+		}
+		any_pop = {
+			militancy = -2
+			ideology = {
+				value = reactionary
+				factor = 0.10
+			}
+		}
+		add_country_modifier = {
+			name = nicholas_reaction
+			duration = 3650
+		}
+		add_country_modifier = {
+			name = purge
+			duration = 730
+		}
+		set_country_flag = rus_nicholas_reaction
+		ai_chance = {
+			factor = 80
+		}
+	}
+
+	option = {
+		name = "EVTOPTB1000401" # Negotiate with the officers
+		prestige = -5
+		any_pop = {
+			consciousness = 2
+			ideology = {
+				value = liberal
+				factor = 0.10
+			}
+		}
+		upper_house = {
+			ideology = liberal
+			value = 0.15
+		}
+		add_country_modifier = {
+			name = liberal_agitation
+			duration = 1825
+		}
+		set_country_flag = rus_decembrist_compromise
+		ai_chance = {
+			factor = 10
+		}
+	}
+
+	option = {
+		name = "EVTOPTC1000401" # Let Constantine have the throne
+		prestige = -15
+		any_pop = {
+			militancy = -1
+			ideology = {
+				value = conservative
+				factor = 0.10
+			}
+		}
+		relation = {
+			who = CPL
+			value = 50
+		}
+		relation = {
+			who = POL
+			value = 50
+		}
+		set_country_flag = rus_constantine_tsar
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+
+# The Third Section of His Majesty's Own Chancellery
+country_event = {
+
+	id = 1000402
+
+	title = "EVTNAME1000402"
+	desc = "EVTDESC1000402"
+	picture = "Police"
+
+	trigger = {
+		tag = RUS
+		has_country_flag = rus_nicholas_reaction
+		NOT = { has_country_flag = rus_constantine_tsar }
+		year = 1826
+		NOT = { year = 1830 }
+	}
+
+	fire_only_once = yes
+
+	mean_time_to_happen = {
+		months = 4
+	}
+
+	option = {
+		name = "EVTOPTA1000402" # Found the gendarmerie
+		add_country_modifier = {
+			name = secret_police
+			duration = 3650
+		}
+		any_pop = {
+			militancy = -1
+		}
+		ai_chance = {
+			factor = 80
+		}
+	}
+
+	option = {
+		name = "EVTOPTB1000402" # Leave it to the ministries
+		prestige = 5
+		any_pop = {
+			consciousness = 1
+		}
+		ai_chance = {
+			factor = 20
+		}
+	}
+}
+
+# Pestel's Russkaya Pravda
+country_event = {
+
+	id = 1000403
+
+	title = "EVTNAME1000403"
+	desc = "EVTDESC1000403"
+	picture = "senate_debate"
+
+	trigger = {
+		tag = RUS
+		has_country_flag = rus_decembrist_compromise
+		NOT = { has_country_flag = rus_constantine_tsar }
+		year = 1826
+		NOT = { year = 1830 }
+	}
+
+	fire_only_once = yes
+
+	mean_time_to_happen = {
+		months = 4
+	}
+
+	option = {
+		name = "EVTOPTA1000403" # Let the pamphlet circulate
+		any_pop = {
+			consciousness = 1
+		}
+		upper_house = {
+			ideology = liberal
+			value = 0.10
+		}
+		add_country_modifier = {
+			name = liberal_agitation
+			duration = 1825
+		}
+		ai_chance = {
+			factor = 30
+		}
+	}
+
+	option = {
+		name = "EVTOPTB1000403" # Confiscate every copy
+		prestige = 5
+		any_pop = {
+			limit = {
+				strata = rich
+			}
+			militancy = 1
+		}
+		add_country_modifier = {
+			name = secret_police
+			duration = 1825
+		}
+		ai_chance = {
+			factor = 70
+		}
+	}
+}

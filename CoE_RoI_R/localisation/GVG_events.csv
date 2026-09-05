@@ -120,3 +120,24 @@ hide_debug_decisions_title;Hide Debug Decisions;;;;;;;;;;;;;x
 hide_debug_decisions_desc;Tuck the utility and debug decisions (national value, event toggles, tech school switches) out of sight. They can be brought back at any time.;;;;;;;;;;;;;x
 show_debug_decisions_title;Show Debug Decisions;;;;;;;;;;;;;x
 show_debug_decisions_desc;Bring the hidden utility and debug decisions back into the decision list.;;;;;;;;;;;;;x
+EVTNAME1000400;The Death of Alexander I;;;;;;;;;;;;;x
+EVTDESC1000400;The Emperor Alexander, victor over Bonaparte and architect of the Holy Alliance, has died of a fever at Taganrog on the Sea of Azov, far from his capital. St. Petersburg swears allegiance to his brother Constantine in Warsaw, while Warsaw swears allegiance to his brother Nicholas in St. Petersburg. Only a handful of men know that Constantine renounced his rights years ago, in a document sealed away in the Uspensky Cathedral. For three weeks the Empire has two Emperors and obeys neither.;;;;;;;;;;;;;x
+EVTOPTA1000400;Open the sealed letter and proclaim Nicholas.;;;;;;;;;;;;;x
+EVTNAME1000401;The Decembrists on Senate Square;;;;;;;;;;;;;x
+EVTDESC1000401;The officers' secret societies have chosen the confusion of the interregnum for their hour. Some three thousand guardsmen stand in square on Senate Square under a grey December sky, shouting for Constantine and for a constitution, most of them believing the two are the same thing. Their chosen dictator has not appeared. Loyal regiments and the guns of the artillery ring the square, and the Emperor waits, still uncrowned, for a decision that will define his reign.;;;;;;;;;;;;;x
+EVTOPTA1000401;Let the artillery speak. Grapeshot at the square!;;;;;;;;;;;;;x
+EVTOPTB1000401;Ride out and hear what the officers want.;;;;;;;;;;;;;x
+EVTOPTC1000401;Then let Constantine have the throne after all.;;;;;;;;;;;;;x
+EVTNAME1000401_NEWS_TITLE;Revolt in St. Petersburg;;;;;;;;;;;;;x
+EVTDESC1000401_NEWS_LONG;Rebellious regiments of the Russian Guard have drawn up in the heart of St. Petersburg, refusing the oath to the new Emperor and demanding a constitution for the Empire. Couriers from the Baltic report the square surrounded by loyal troops and field guns. Every chancellery in Europe is now asking whether the Northern Colossus, the sword of the Holy Alliance, is itself proof against revolution.;;;;;;;;;;;;;x
+EVTDESC1000401_NEWS_MEDIUM;Guard regiments have mutinied in St. Petersburg, refusing the oath to the new Emperor and demanding a constitution. Loyal troops and artillery have surrounded them.;;;;;;;;;;;;;x
+EVTDESC1000401_NEWS_SHORT;Guard regiments mutiny in the Russian capital.;;;;;;;;;;;;;x
+EVTNAME1000402;The Third Section;;;;;;;;;;;;;x
+EVTDESC1000402;Five conspirators have gone to the gallows and a hundred more to the Siberian mines, but the Emperor has read every word of their testimony and concluded that the rot ran through the best families in the Empire. General Benckendorff proposes a new Third Section of His Majesty's Own Chancellery, with a corps of gendarmes to serve as its hands and eyes in every province. Its business would be nothing less than the opinions of Our subjects.;;;;;;;;;;;;;x
+EVTOPTA1000402;The Empire shall have its gendarmes.;;;;;;;;;;;;;x
+EVTOPTB1000402;The ministries and the Church are watch enough.;;;;;;;;;;;;;x
+EVTNAME1000403;Pestel's Russian Justice;;;;;;;;;;;;;x
+EVTDESC1000403;Colonel Pestel's manuscript, the Russkaya Pravda, has been recovered from the earth where his southern society buried it. It calls for a republic, the abolition of serfdom, and the redistribution of half the land of Russia to the communes. Since the Emperor chose to hear the officers rather than shoot them, no one is quite certain whether the thing is evidence, a petition, or a programme. Printers in both capitals are already setting it in type.;;;;;;;;;;;;;x
+EVTOPTA1000403;Let it be read and argued over.;;;;;;;;;;;;;x
+EVTOPTB1000403;Confiscate every copy, quietly.;;;;;;;;;;;;;x
+nicholas_reaction;Nicholaevan Reaction;;;;;;;;;;;;;x

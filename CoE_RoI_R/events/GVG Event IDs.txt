@@ -4,6 +4,7 @@
 #1000000-1000099: JAPFlavorGVG
 #1000100-1000199: USAFlavorGVG
 #1000200-1000299: BYZFlavorGVG
+#1000400-1000499: RUSDecembristGVG
 #
 #Reserved, currently unused (the files that defined them were 100% commented out
 #and were deleted 2026-09-06; recover them from git history if the system is revived):
