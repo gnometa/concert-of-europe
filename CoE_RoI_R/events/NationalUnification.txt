@@ -469,20 +469,18 @@ country_event = {
 		set_country_flag = wants_to_unify
 		random_country = {
 			limit = {
-			
-			OR={
 				tag = FROM
 				tag = NGF
-			}}
+			}
 			THIS = {
 				all_core = { add_core = NGF }
 			}
 		}
 		random_country = {
-			limit = {OR={
+			limit = {
 				tag = FROM
 				tag = SGF
-			}}
+			}
 			THIS = {
 				all_core = { add_core = SGF }
 			}
@@ -619,7 +617,7 @@ country_event = {
 				tag = NGF
 				any_owned_province = {
 					is_core = GER
-					religion = south_german
+					culture = south_german
 				}
 			}
 			AND = {
@@ -1030,8 +1028,8 @@ country_event = {
 				NOT = {
 					tag = THIS
 					has_country_flag = post_colonial_country
-					is_cultural_union = no
 				}
+				is_cultural_union = no
 			}
 			all_core = { add_core = NGF }
 		}
@@ -1516,8 +1514,8 @@ country_event = {
 					is_sphere_leader_of = FROM
 					alliance_with = FROM
 					tag = RUS
-					NOT = { tag = THIS }
 				}
+				NOT = { tag = THIS }
 			}
 			relation = { who = THIS value = -100 }
 			leave_alliance = THIS
@@ -1596,6 +1594,7 @@ country_event = {
 		}
 		NOT = {
 			has_country_flag = does_not_want_to_unify
+			has_country_flag = not_join_yugoslavia
 			has_country_flag = post_colonial_country
 			tag = ALB
 			tag = BUL
