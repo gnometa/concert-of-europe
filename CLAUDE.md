@@ -52,7 +52,7 @@ Pick a new ID from an appropriate free range and record it in the registry file.
 
 **Triggers/effects hooks**: `common/on_actions.txt` fires events on engine actions (e.g. `on_yearly_pulse`, `on_quarterly_pulse`). `common/defines.lua` holds engine constants (there is no `countries.lua` in this mod).
 
-**Map** (`map/`): `definition.csv` maps province IDs to colors; `region.txt` groups provinces into states; `positions.txt`, `adjacencies.csv`, `terrain.txt`. Province history lives in `history/provinces/<region>/<id> - Name.txt`.
+**Map** (`map/`): `default.map` references the definition file by mod-relative path (`../mod/CoE_RoI_R/map/definition.csv`), so it must be updated if the mod folder is ever renamed; search with no extension filter, since `.map` is easy to miss. `definition.csv` maps province IDs to colors; `region.txt` groups provinces into states; `positions.txt`, `adjacencies.csv`, `terrain.txt`. Province history lives in `history/provinces/<region>/<id> - Name.txt`.
 
 ## File format requirements
 
