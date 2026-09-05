@@ -31,7 +31,7 @@ country_event = {
 		name = "EVTOPTB20000" # decline
 		prestige_factor = -0.2
 		ai_chance = {
-			factor = 0
+			factor = 1
 		}
 	}
 }
@@ -442,7 +442,7 @@ province_event = {
 				}
 			}
 			modifier = {
-				factor = 0
+				factor = 0.1
 				owner = {
 					OR = {
 						OR = { government = theocracy government = theocracy2 government = theocracy3 }
