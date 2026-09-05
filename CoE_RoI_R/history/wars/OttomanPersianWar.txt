@@ -4,7 +4,7 @@ name = "Ottoman-Persian War"
 # raids and the sheltering of migrant tribes; ended in the status quo ante
 # Treaty of Erzurum (28 July 1823).
 
-1821.9.10 = {
+1821.8.1 = {
 	add_attacker = PER
 	add_defender = TUR
 
