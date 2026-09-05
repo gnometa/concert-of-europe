@@ -1238,6 +1238,7 @@ country_event = {
 		NOT = {
 			year = 1836
 			truce_with = ALD
+			war_with = ALD
 		}
 		ALD = {
 			exists = yes
@@ -1335,6 +1336,7 @@ country_event = {
 	option = {
 		name = "This must be dealt with immediately."
 		badboy = 2
+		set_country_flag = algerian_rebellion
 		relation = { who = ALD value = -200 }
 		diplomatic_influence = { who = ALD value = -200 }
 		random_country = {
