@@ -199,25 +199,25 @@ party = {
 
 unit_names = {
 	dreadnought = {
-		Baden Zï¿½hringen Markgraf "Groï¿½herzog Leopold" "Groï¿½herzog Karl Friedrich" Tï¿½rkenlouis Reichsgraf Durlach Sausenberg Hachberg
+		Baden Zähringen Markgraf "Großherzog Leopold" "Großherzog Karl Friedrich" Türkenlouis Reichsgraf Durlach Sausenberg Hachberg
 	}
 	battleship = {
-		Baden Zï¿½hringen Markgraf "Groï¿½herzog Leopold" "Groï¿½herzog Karl Friedrich" Tï¿½rkenlouis Reichsgraf Durlach Sausenberg Hachberg
+		Baden Zähringen Markgraf "Großherzog Leopold" "Großherzog Karl Friedrich" Türkenlouis Reichsgraf Durlach Sausenberg Hachberg
 	}
 	ironclad = {
-		Baden Zï¿½hringen Markgraf "Groï¿½herzog Leopold" "Groï¿½herzog Karl Friedrich" Tï¿½rkenlouis Reichsgraf Durlach Sausenberg Hachberg
+		Baden Zähringen Markgraf "Großherzog Leopold" "Großherzog Karl Friedrich" Türkenlouis Reichsgraf Durlach Sausenberg Hachberg
 	}
 	manowar = {
-		Baden Zï¿½hringen Markgraf "Groï¿½herzog Leopold" "Groï¿½herzog Karl Friedrich" Tï¿½rkenlouis Reichsgraf Durlach Sausenberg Hachberg
+		Baden Zähringen Markgraf "Großherzog Leopold" "Großherzog Karl Friedrich" Türkenlouis Reichsgraf Durlach Sausenberg Hachberg
 	}
 	cruiser = {
-		Baden Zï¿½hringen Markgraf "Groï¿½herzog Leopold" "Groï¿½herzog Karl Friedrich" Tï¿½rkenlouis Reichsgraf Durlach Sausenberg Hachberg
+		Baden Zähringen Markgraf "Großherzog Leopold" "Großherzog Karl Friedrich" Türkenlouis Reichsgraf Durlach Sausenberg Hachberg
 	}
 	frigate = {
-		Baden Zï¿½hringen Markgraf "Groï¿½herzog Leopold" "Groï¿½herzog Karl Friedrich" Tï¿½rkenlouis Reichsgraf Durlach Sausenberg Hachberg
+		Baden Zähringen Markgraf "Großherzog Leopold" "Großherzog Karl Friedrich" Türkenlouis Reichsgraf Durlach Sausenberg Hachberg
 	}
 	monitor = {
-		Baden Zï¿½hringen Markgraf "Groï¿½herzog Leopold" "Groï¿½herzog Karl Friedrich" Tï¿½rkenlouis Reichsgraf Durlach Sausenberg Hachberg
+		Baden Zähringen Markgraf "Großherzog Leopold" "Großherzog Karl Friedrich" Türkenlouis Reichsgraf Durlach Sausenberg Hachberg
 	}
 	clipper_transport = {
 		Adler Albatross Amazone Bremse Brummer Donau Drache Feldberg Frauenlob Greif Karlsruhe Natter Neckar Salamander Seeadler Rhein 
@@ -226,6 +226,6 @@ unit_names = {
 		Adler Albatross Amazone Bremse Brummer Donau Drache Feldberg Frauenlob Greif Karlsruhe Natter Neckar Salamander Seeadler Rhein 
 	}
 	commerce_raider = {
-		Baden Zï¿½hringen Markgraf "Groï¿½herzog Leopold" "Groï¿½herzog Karl Friedrich" Tï¿½rkenlouis Reichsgraf Durlach Sausenberg Hachberg
+		Baden Zähringen Markgraf "Großherzog Leopold" "Großherzog Karl Friedrich" Türkenlouis Reichsgraf Durlach Sausenberg Hachberg
 	}
 }

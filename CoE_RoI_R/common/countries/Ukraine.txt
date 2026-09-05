@@ -133,7 +133,7 @@ unit_names = {
 		Dniester Dnipro Desna Prypiat Prut 
 	}
 	monitor = {
-		Sofyivsky "Pechersï¿½ka lavra" "Kamï¿½ianetsï¿½-Podilï¿½sï¿½kyi" Khotyn Khortyts'a
+		Sofyivsky "Pechers’ka lavra" "Kam’ianets’-Podil’s’kyi" Khotyn Khortyts'a
 	}
 	clipper_transport = { 
 		

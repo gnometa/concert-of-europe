@@ -199,32 +199,32 @@ party = {
 
 unit_names = {
 	dreadnought = {
-		Mecklenburg "Groï¿½herzog Friedrich" "Graf Moltke" Wallenstein Niklot "Adolf Friedrich" Alexandra Warnemï¿½nde Bï¿½tzow Strelitz Wismar Rostock
-		Schwerin Gï¿½strow Hagenow Parchim 	
+		Mecklenburg "Großherzog Friedrich" "Graf Moltke" Wallenstein Niklot "Adolf Friedrich" Alexandra Warnemünde Bützow Strelitz Wismar Rostock
+		Schwerin Güstrow Hagenow Parchim 	
 	}
 	battleship = {
-		Mecklenburg "Groï¿½herzog Friedrich" "Graf Moltke" Wallenstein Niklot "Adolf Friedrich" Alexandra Warnemï¿½nde Bï¿½tzow Strelitz Wismar Rostock
-		Schwerin Gï¿½strow Hagenow Parchim 	
+		Mecklenburg "Großherzog Friedrich" "Graf Moltke" Wallenstein Niklot "Adolf Friedrich" Alexandra Warnemünde Bützow Strelitz Wismar Rostock
+		Schwerin Güstrow Hagenow Parchim 	
 	}
 	ironclad = {
-		Mecklenburg "Groï¿½herzog Friedrich" "Graf Moltke" Wallenstein Niklot "Adolf Friedrich" Alexandra Warnemï¿½nde Bï¿½tzow Strelitz Wismar Rostock
-		Schwerin Gï¿½strow Hagenow Parchim
+		Mecklenburg "Großherzog Friedrich" "Graf Moltke" Wallenstein Niklot "Adolf Friedrich" Alexandra Warnemünde Bützow Strelitz Wismar Rostock
+		Schwerin Güstrow Hagenow Parchim
 	}
 	manowar = {
-		Mecklenburg "Groï¿½herzog Friedrich" "Graf Moltke" Wallenstein Niklot "Adolf Friedrich" Alexandra Warnemï¿½nde Bï¿½tzow Strelitz Wismar Rostock
-		Schwerin Gï¿½strow Hagenow Parchim 	
+		Mecklenburg "Großherzog Friedrich" "Graf Moltke" Wallenstein Niklot "Adolf Friedrich" Alexandra Warnemünde Bützow Strelitz Wismar Rostock
+		Schwerin Güstrow Hagenow Parchim 	
 	}
 	cruiser = {
-		Mecklenburg "Groï¿½herzog Friedrich" "Graf Moltke" Wallenstein Niklot "Adolf Friedrich" Alexandra Warnemï¿½nde Bï¿½tzow Strelitz Wismar Rostock
-		Schwerin Gï¿½strow Hagenow Parchim
+		Mecklenburg "Großherzog Friedrich" "Graf Moltke" Wallenstein Niklot "Adolf Friedrich" Alexandra Warnemünde Bützow Strelitz Wismar Rostock
+		Schwerin Güstrow Hagenow Parchim
 	}
 	frigate = {
-		Mecklenburg "Groï¿½herzog Friedrich" "Graf Moltke" Wallenstein Niklot "Adolf Friedrich" Alexandra Warnemï¿½nde Bï¿½tzow Strelitz Wismar Rostock
-		Schwerin Gï¿½strow Hagenow Parchim
+		Mecklenburg "Großherzog Friedrich" "Graf Moltke" Wallenstein Niklot "Adolf Friedrich" Alexandra Warnemünde Bützow Strelitz Wismar Rostock
+		Schwerin Güstrow Hagenow Parchim
 	}
 	monitor = {
-		Mecklenburg "Groï¿½herzog Friedrich" "Graf Moltke" Wallenstein Niklot "Adolf Friedrich" Alexandra Warnemï¿½nde Bï¿½tzow Strelitz Wismar Rostock
-		Schwerin Gï¿½strow Hagenow Parchim 	
+		Mecklenburg "Großherzog Friedrich" "Graf Moltke" Wallenstein Niklot "Adolf Friedrich" Alexandra Warnemünde Bützow Strelitz Wismar Rostock
+		Schwerin Güstrow Hagenow Parchim 	
 	}
 	clipper_transport = {
 		
@@ -233,7 +233,7 @@ unit_names = {
 		
 	}
 	commerce_raider = {
-		Mecklenburg "Groï¿½herzog Friedrich" "Graf Moltke" Wallenstein Niklot "Adolf Friedrich" Alexandra Warnemï¿½nde Bï¿½tzow Strelitz Wismar Rostock
-		Schwerin Gï¿½strow Hagenow Parchim
+		Mecklenburg "Großherzog Friedrich" "Graf Moltke" Wallenstein Niklot "Adolf Friedrich" Alexandra Warnemünde Bützow Strelitz Wismar Rostock
+		Schwerin Güstrow Hagenow Parchim
 	}
 }

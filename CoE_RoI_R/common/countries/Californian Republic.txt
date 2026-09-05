@@ -157,31 +157,31 @@ party = {
 
 unit_names = {
 	dreadnought = {
-		California "John Frï¿½mont" "The Bear and Star" "William Ide" "San Francisco" "Los Angeles" Monterey Olompali Sacramento Sonoma 
+		California "John Frémont" "The Bear and Star" "William Ide" "San Francisco" "Los Angeles" Monterey Olompali Sacramento Sonoma 
 		
 	}
 	battleship = {
-		California "John Frï¿½mont" "The Bear and Star" "William Ide" "San Francisco" "Los Angeles" Monterey Olompali Sacramento Sonoma 
+		California "John Frémont" "The Bear and Star" "William Ide" "San Francisco" "Los Angeles" Monterey Olompali Sacramento Sonoma 
 		
 	}
 	ironclad = {
-		California "John Frï¿½mont" "The Bear and Star" "William Ide" "San Francisco" "Los Angeles" Monterey Olompali Sacramento Sonoma 
+		California "John Frémont" "The Bear and Star" "William Ide" "San Francisco" "Los Angeles" Monterey Olompali Sacramento Sonoma 
 		
 	}
 	manowar = {
-		California "John Frï¿½mont" "The Bear and Star" "William Ide" "San Francisco" "Los Angeles" Monterey Olompali Sacramento Sonoma 
+		California "John Frémont" "The Bear and Star" "William Ide" "San Francisco" "Los Angeles" Monterey Olompali Sacramento Sonoma 
 		
 	}
 	cruiser = {
-		California "John Frï¿½mont" "The Bear and Star" "William Ide" "San Francisco" "Los Angeles" Monterey Olompali Sacramento Sonoma 	
+		California "John Frémont" "The Bear and Star" "William Ide" "San Francisco" "Los Angeles" Monterey Olompali Sacramento Sonoma 	
 		
 	}
 	frigate = {
-		California "John Frï¿½mont" "The Bear and Star" "William Ide" "San Francisco" "Los Angeles" Monterey Olompali Sacramento Sonoma 
+		California "John Frémont" "The Bear and Star" "William Ide" "San Francisco" "Los Angeles" Monterey Olompali Sacramento Sonoma 
 		
 	}
 	monitor = {
-		California "John Frï¿½mont" "The Bear and Star" "William Ide" "San Francisco" "Los Angeles" Monterey Olompali Sacramento Sonoma 
+		California "John Frémont" "The Bear and Star" "William Ide" "San Francisco" "Los Angeles" Monterey Olompali Sacramento Sonoma 
 		
 	}
 	clipper_transport = {
@@ -191,6 +191,6 @@ unit_names = {
 		
 	}
 	commerce_raider = {
-		California "John Frï¿½mont" "The Bear and Star" "William Ide" "San Francisco" "Los Angeles" Monterey Olompali Sacramento Sonoma 
+		California "John Frémont" "The Bear and Star" "William Ide" "San Francisco" "Los Angeles" Monterey Olompali Sacramento Sonoma 
 	}
 }

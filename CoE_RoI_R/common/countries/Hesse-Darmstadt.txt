@@ -199,29 +199,29 @@ party = {
 
 unit_names = {
 	dreadnought = {
-		Hessen "Groï¿½herzog Ludwig" Mainz Darmstadt Gieï¿½en Landgraf Worms "Von Gagern" "Philipp der Groï¿½mï¿½tige" Fridericus
+		Hessen "Großherzog Ludwig" Mainz Darmstadt Gießen Landgraf Worms "Von Gagern" "Philipp der Großmütige" Fridericus
 		
 	}
 	battleship = {
-		Hessen "Groï¿½herzog Ludwig" Mainz Darmstadt Gieï¿½en Landgraf Worms "Von Gagern" "Philipp der Groï¿½mï¿½tige" Fridericus
+		Hessen "Großherzog Ludwig" Mainz Darmstadt Gießen Landgraf Worms "Von Gagern" "Philipp der Großmütige" Fridericus
 		
 	}
 	ironclad = {
-		Hessen "Groï¿½herzog Ludwig" Mainz Darmstadt Gieï¿½en Landgraf Worms "Von Gagern" "Philipp der Groï¿½mï¿½tige" Fridericus
+		Hessen "Großherzog Ludwig" Mainz Darmstadt Gießen Landgraf Worms "Von Gagern" "Philipp der Großmütige" Fridericus
 		
 	}
 	manowar = {
-		Hessen "Groï¿½herzog Ludwig" Mainz Darmstadt Gieï¿½en Landgraf Worms "Von Gagern" "Philipp der Groï¿½mï¿½tige" Fridericus
+		Hessen "Großherzog Ludwig" Mainz Darmstadt Gießen Landgraf Worms "Von Gagern" "Philipp der Großmütige" Fridericus
 	}
 	cruiser = {
-		Hessen "Groï¿½herzog Ludwig" Mainz Darmstadt Gieï¿½en Landgraf Worms "Von Gagern" "Philipp der Groï¿½mï¿½tige" Fridericus
+		Hessen "Großherzog Ludwig" Mainz Darmstadt Gießen Landgraf Worms "Von Gagern" "Philipp der Großmütige" Fridericus
 		
 	}
 	frigate = {
-		Hessen "Groï¿½herzog Ludwig" Mainz Darmstadt Gieï¿½en Landgraf Worms "Von Gagern" "Philipp der Groï¿½mï¿½tige" Fridericus
+		Hessen "Großherzog Ludwig" Mainz Darmstadt Gießen Landgraf Worms "Von Gagern" "Philipp der Großmütige" Fridericus
 	}
 	monitor = {
-		Hessen "Groï¿½herzog Ludwig" Mainz Darmstadt Gieï¿½en Landgraf Worms "Von Gagern" "Philipp der Groï¿½mï¿½tige" Fridericus
+		Hessen "Großherzog Ludwig" Mainz Darmstadt Gießen Landgraf Worms "Von Gagern" "Philipp der Großmütige" Fridericus
 	}
 	clipper_transport = {
 		
@@ -230,7 +230,7 @@ unit_names = {
 		
 	}
 	commerce_raider = {
-		Hessen "Groï¿½herzog Ludwig" Mainz Darmstadt Gieï¿½en Landgraf Worms "Von Gagern" "Philipp der Groï¿½mï¿½tige" Fridericus	
+		Hessen "Großherzog Ludwig" Mainz Darmstadt Gießen Landgraf Worms "Von Gagern" "Philipp der Großmütige" Fridericus	
 		
 	}
 }

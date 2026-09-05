@@ -199,25 +199,25 @@ party = {
 
 unit_names = {
 	dreadnought = {
-		Braunschweig Wolfenbï¿½ttel Welf "Heinrich der Lï¿½we" Lï¿½neburg "Friedrich Wilhelm" Helmstedt Gandersheim Holzminden Blankenburg	
+		Braunschweig Wolfenbüttel Welf "Heinrich der Löwe" Lüneburg "Friedrich Wilhelm" Helmstedt Gandersheim Holzminden Blankenburg	
 	}
 	battleship = {
-		Braunschweig Wolfenbï¿½ttel Welf "Heinrich der Lï¿½we" Lï¿½neburg "Friedrich Wilhelm" Helmstedt Gandersheim Holzminden Blankenburg	
+		Braunschweig Wolfenbüttel Welf "Heinrich der Löwe" Lüneburg "Friedrich Wilhelm" Helmstedt Gandersheim Holzminden Blankenburg	
 	}
 	ironclad = {
-		Braunschweig Wolfenbï¿½ttel Welf "Heinrich der Lï¿½we" Lï¿½neburg "Friedrich Wilhelm" Helmstedt Gandersheim Holzminden Blankenburg	
+		Braunschweig Wolfenbüttel Welf "Heinrich der Löwe" Lüneburg "Friedrich Wilhelm" Helmstedt Gandersheim Holzminden Blankenburg	
 	}
 	manowar = {
-		Braunschweig Wolfenbï¿½ttel Welf "Heinrich der Lï¿½we" Lï¿½neburg "Friedrich Wilhelm" Helmstedt Gandersheim Holzminden Blankenburg	
+		Braunschweig Wolfenbüttel Welf "Heinrich der Löwe" Lüneburg "Friedrich Wilhelm" Helmstedt Gandersheim Holzminden Blankenburg	
 	}
 	cruiser = {
-		Braunschweig Wolfenbï¿½ttel Welf "Heinrich der Lï¿½we" Lï¿½neburg "Friedrich Wilhelm" Helmstedt Gandersheim Holzminden Blankenburg	
+		Braunschweig Wolfenbüttel Welf "Heinrich der Löwe" Lüneburg "Friedrich Wilhelm" Helmstedt Gandersheim Holzminden Blankenburg	
 	}
 	frigate = {
-		Braunschweig Wolfenbï¿½ttel Welf "Heinrich der Lï¿½we" Lï¿½neburg "Friedrich Wilhelm" Helmstedt Gandersheim Holzminden Blankenburg	
+		Braunschweig Wolfenbüttel Welf "Heinrich der Löwe" Lüneburg "Friedrich Wilhelm" Helmstedt Gandersheim Holzminden Blankenburg	
 	}
 	monitor = {
-		Braunschweig Wolfenbï¿½ttel Welf "Heinrich der Lï¿½we" Lï¿½neburg "Friedrich Wilhelm" Helmstedt Gandersheim Holzminden Blankenburg	
+		Braunschweig Wolfenbüttel Welf "Heinrich der Löwe" Lüneburg "Friedrich Wilhelm" Helmstedt Gandersheim Holzminden Blankenburg	
 	}
 	clipper_transport = {
 		
@@ -226,6 +226,6 @@ unit_names = {
 		
 	}
 	commerce_raider = {
-		Braunschweig Wolfenbï¿½ttel Welf "Heinrich der Lï¿½we" Lï¿½neburg "Friedrich Wilhelm" Helmstedt Gandersheim Holzminden Blankenburg	
+		Braunschweig Wolfenbüttel Welf "Heinrich der Löwe" Lüneburg "Friedrich Wilhelm" Helmstedt Gandersheim Holzminden Blankenburg	
 	}
 }

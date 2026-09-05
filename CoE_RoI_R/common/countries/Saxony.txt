@@ -199,25 +199,25 @@ party = {
 
 unit_names = {
 	dreadnought = {
-		Sachsen "August der Starke" "Heinrich der Lï¿½we" "Kï¿½nig von Polen" Wettin "Friedrich August" "Kï¿½nig Albert" Kurfï¿½rst Askanien Aurora 
+		Sachsen "August der Starke" "Heinrich der Löwe" "König von Polen" Wettin "Friedrich August" "König Albert" Kurfürst Askanien Aurora 
 	}
 	battleship = {
-		Sachsen "August der Starke" "Heinrich der Lï¿½we" "Kï¿½nig von Polen" Wettin "Friedrich August" "Kï¿½nig Albert" Kurfï¿½rst Askanien Aurora 
+		Sachsen "August der Starke" "Heinrich der Löwe" "König von Polen" Wettin "Friedrich August" "König Albert" Kurfürst Askanien Aurora 
 	}
 	ironclad = {
-		Sachsen "August der Starke" "Heinrich der Lï¿½we" "Kï¿½nig von Polen" Wettin "Friedrich August" "Kï¿½nig Albert" Kurfï¿½rst Askanien Aurora 
+		Sachsen "August der Starke" "Heinrich der Löwe" "König von Polen" Wettin "Friedrich August" "König Albert" Kurfürst Askanien Aurora 
 	}
 	manowar = {
-		Sachsen "August der Starke" "Heinrich der Lï¿½we" "Kï¿½nig von Polen" Wettin "Friedrich August" "Kï¿½nig Albert" Kurfï¿½rst Askanien Aurora 
+		Sachsen "August der Starke" "Heinrich der Löwe" "König von Polen" Wettin "Friedrich August" "König Albert" Kurfürst Askanien Aurora 
 	}
 	cruiser = {
-		Dresden Bautzen Chemnitz Freiberg Leipzig Lï¿½bau Meiï¿½en Plauen Schwarzenberg Zwickau 
+		Dresden Bautzen Chemnitz Freiberg Leipzig Löbau Meißen Plauen Schwarzenberg Zwickau 
 	}
 	frigate = {
-		Dresden Bautzen Chemnitz Freiberg Leipzig Lï¿½bau Meiï¿½en Plauen Schwarzenberg Zwickau 
+		Dresden Bautzen Chemnitz Freiberg Leipzig Löbau Meißen Plauen Schwarzenberg Zwickau 
 	}
 	monitor = {
-		Sachsen "August der Starke" "Heinrich der Lï¿½we" "Kï¿½nig von Polen" Wettin "Friedrich August" "Kï¿½nig Albert" Kurfï¿½rst Askanien Aurora 
+		Sachsen "August der Starke" "Heinrich der Löwe" "König von Polen" Wettin "Friedrich August" "König Albert" Kurfürst Askanien Aurora 
 	}
 	clipper_transport = {
 		
@@ -226,6 +226,6 @@ unit_names = {
 		
 	}
 	commerce_raider = {
-		Sachsen "August der Starke" "Heinrich der Lï¿½we" "Kï¿½nig von Polen" Wettin "Friedrich August" "Kï¿½nig Albert" Kurfï¿½rst Askanien Aurora 
+		Sachsen "August der Starke" "Heinrich der Löwe" "König von Polen" Wettin "Friedrich August" "König Albert" Kurfürst Askanien Aurora 
 	}
 }

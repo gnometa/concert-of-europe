@@ -143,33 +143,33 @@ party = {
 
 unit_names = {
 	dreadnought = {
-		"Oï¿½Faolain" "Caomhï¿½nach" "Mannion" "Corcaigh" "Gaillimh"
+		"O’Faolain" "Caomhánach" "Mannion" "Corcaigh" "Gaillimh"
 	}
 	battleship = {
-		"Oï¿½Faolain" "Caomhï¿½nach" "Mannion" "Corcaigh" "Gaillimh"
+		"O’Faolain" "Caomhánach" "Mannion" "Corcaigh" "Gaillimh"
 	}
 	ironclad = {
-		"Baile ï¿½tha Cliath" "Cï¿½ige Laighean" "Ulaidh" "An Mhumhain" "Connachta"
+		"Baile Átha Cliath" "Cúige Laighean" "Ulaidh" "An Mhumhain" "Connachta"
 	}
 	manowar = {
-		"Port Lï¿½irge" "Dï¿½n na nGall" "Loingsech" "Ó’Conghaile" "An Cï¿½bh"
+		"Port Láirge" "Dún na nGall" "Loingsech" "Ó’Conghaile" "An Cóbh"
 	}
 	cruiser = {
-		"Michelle" "Peigi" "Mï¿½ire" "Rï¿½isï¿½n" "Esther"
+		"Michelle" "Peigi" "Máire" "Róisín" "Esther"
 	}
 	frigate = {
-		"Fort Rannoch" "Cliona" "Maev" "Macha" "an Cï¿½bh"
+		"Fort Rannoch" "Cliona" "Maev" "Macha" "an Cóbh"
 	}
 	monitor = {
-		"Muirchï¿½" "Rï¿½abhlï¿½id" "Dï¿½nal ï¿½ Conaill" "Emmet"
+		"Muirchú" "Réabhlóid" "Dónal Ó Conaill" "Emmet"
 	}
 	clipper_transport = {
-		"Parnell" "Oileï¿½in ï¿½rann" "an Chlï¿½ir" "Mhaigh Eo" "Mairead"
+		"Parnell" "Oileáin Árann" "an Chláir" "Mhaigh Eo" "Mairead"
 	}
 	steam_transport = {
 		"Lady Wicklow" "Robin" "Adele" "Aontroim" "Fionn Radharc"
 	}
 	commerce_raider = {
-		"Dï¿½n Droma" "Marino" "Baile Bocht" "Bï¿½al Feirste" "Frongoch"
+		"Dún Droma" "Marino" "Baile Bocht" "Béal Feirste" "Frongoch"
 	}
 }

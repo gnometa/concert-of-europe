@@ -297,31 +297,31 @@ party = {
 
 unit_names = {
 	dreadnought = {
-		ï¿½ss Vanr ï¿½lfr Jï¿½tunn
+		Áss Vanr Álfr Jötunn
 	}
 	battleship = {
-		ï¿½ss Vanr ï¿½lfr Jï¿½tunn
+		Áss Vanr Álfr Jötunn
 	}
 	ironclad = {
 		Ellida Sleipner Viking Frithjof Rjukan Sarpen Lougen Glommen 
 	}
 	manowar = {
-		Freia Desideira "St Olaf" "Kong Sverre" Ellida Nordssthernen Nornen Nidaros ï¿½rnen Rjukan Sarpen Lougen Glommen
+		Freia Desideira "St Olaf" "Kong Sverre" Ellida Nordssthernen Nornen Nidaros Ørnen Rjukan Sarpen Lougen Glommen
 	}
 	cruiser = {
 		Thor Odin Njord Freyr Tyr Bragl Heimdall Hoder Vidar Ale Ullr Forseti
 	}
 	frigate = {
-		Freia Desideira "St Olaf" "Kong Sverre" Ellida Nordssthernen Nornen Nidaros ï¿½rnen
+		Freia Desideira "St Olaf" "Kong Sverre" Ellida Nordssthernen Nornen Nidaros Ørnen
 	}
 	monitor = {
-		Skorpionen Mjï¿½lner Thrudvang
+		Skorpionen Mjølner Thrudvang
 	}
 	clipper_transport = {
 		Hebe Lina
 	}
 	steam_transport = { 
-		"Kong Ring" Skibladner "Engebret Soot" Ara Hans Turisten Bï¿½rï¿½ysund Kysten Oster Suldal Stavenes Stord
+		"Kong Ring" Skibladner "Engebret Soot" Ara Hans Turisten Børøysund Kysten Oster Suldal Stavenes Stord
 	}
 	commerce_raider = {
 		Heimdal "Fridtjof Nansen" Nordkapp

@@ -199,37 +199,37 @@ party = {
 
 unit_names = {
 	dreadnought = {
-		Oldenburg Birkenfeld "Groï¿½herzog Paul" Reichsfï¿½rst Erbprinz "Gerd der Mutige" "Christian Thomesen" "Arnd Stuke" "Nikolaus Milies" "Magister Wigbold"
-		"Gï¿½deke Michels" 
+		Oldenburg Birkenfeld "Großherzog Paul" Reichsfürst Erbprinz "Gerd der Mutige" "Christian Thomesen" "Arnd Stuke" "Nikolaus Milies" "Magister Wigbold"
+		"Gödeke Michels" 
 		
 	}
 	battleship = {
-		Oldenburg Birkenfeld "Groï¿½herzog Paul" Reichsfï¿½rst Erbprinz "Gerd der Mutige" "Christian Thomesen" "Arnd Stuke" "Nikolaus Milies" "Magister Wigbold"
-		"Gï¿½deke Michels" 
+		Oldenburg Birkenfeld "Großherzog Paul" Reichsfürst Erbprinz "Gerd der Mutige" "Christian Thomesen" "Arnd Stuke" "Nikolaus Milies" "Magister Wigbold"
+		"Gödeke Michels" 
 		
 	}
 	ironclad = {
-		Oldenburg Birkenfeld "Groï¿½herzog Paul" Reichsfï¿½rst Erbprinz "Gerd der Mutige" "Christian Thomesen" "Arnd Stuke" "Nikolaus Milies" "Magister Wigbold"
-		"Gï¿½deke Michels"
+		Oldenburg Birkenfeld "Großherzog Paul" Reichsfürst Erbprinz "Gerd der Mutige" "Christian Thomesen" "Arnd Stuke" "Nikolaus Milies" "Magister Wigbold"
+		"Gödeke Michels"
 	}
 	manowar = {
-		Oldenburg Birkenfeld "Groï¿½herzog Paul" Reichsfï¿½rst Erbprinz "Gerd der Mutige" "Christian Thomesen" "Arnd Stuke" "Nikolaus Milies" "Magister Wigbold"
-		"Gï¿½deke Michels" 
+		Oldenburg Birkenfeld "Großherzog Paul" Reichsfürst Erbprinz "Gerd der Mutige" "Christian Thomesen" "Arnd Stuke" "Nikolaus Milies" "Magister Wigbold"
+		"Gödeke Michels" 
 		
 	}
 	cruiser = {
-		Oldenburg Birkenfeld "Groï¿½herzog Paul" Reichsfï¿½rst Erbprinz "Gerd der Mutige" "Christian Thomesen" "Arnd Stuke" "Nikolaus Milies" "Magister Wigbold"
-		"Gï¿½deke Michels" 
+		Oldenburg Birkenfeld "Großherzog Paul" Reichsfürst Erbprinz "Gerd der Mutige" "Christian Thomesen" "Arnd Stuke" "Nikolaus Milies" "Magister Wigbold"
+		"Gödeke Michels" 
 		
 	}
 	frigate = {
-		Oldenburg Birkenfeld "Groï¿½herzog Paul" Reichsfï¿½rst Erbprinz "Gerd der Mutige" "Christian Thomesen" "Arnd Stuke" "Nikolaus Milies" "Magister Wigbold"
-		"Gï¿½deke Michels" 
+		Oldenburg Birkenfeld "Großherzog Paul" Reichsfürst Erbprinz "Gerd der Mutige" "Christian Thomesen" "Arnd Stuke" "Nikolaus Milies" "Magister Wigbold"
+		"Gödeke Michels" 
 		
 	}
 	monitor = {
-		Oldenburg Birkenfeld "Groï¿½herzog Paul" Reichsfï¿½rst Erbprinz "Gerd der Mutige" "Christian Thomesen" "Arnd Stuke" "Nikolaus Milies" "Magister Wigbold"
-		"Gï¿½deke Michels" 
+		Oldenburg Birkenfeld "Großherzog Paul" Reichsfürst Erbprinz "Gerd der Mutige" "Christian Thomesen" "Arnd Stuke" "Nikolaus Milies" "Magister Wigbold"
+		"Gödeke Michels" 
 		
 	}
 	clipper_transport = {
@@ -239,7 +239,7 @@ unit_names = {
 		
 	}
 	commerce_raider = {
-		Oldenburg Birkenfeld "Groï¿½herzog Paul" Reichsfï¿½rst Erbprinz "Gerd der Mutige" "Christian Thomesen" "Arnd Stuke" "Nikolaus Milies" "Magister Wigbold"
-		"Gï¿½deke Michels" 		
+		Oldenburg Birkenfeld "Großherzog Paul" Reichsfürst Erbprinz "Gerd der Mutige" "Christian Thomesen" "Arnd Stuke" "Nikolaus Milies" "Magister Wigbold"
+		"Gödeke Michels" 		
 	}
 }

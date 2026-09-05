@@ -23,7 +23,7 @@ If nothing is modified in the working tree, use `git diff --name-only HEAD~1` in
 
 Known pre-existing findings (as of 2026-09-05) that are not regressions:
 - `ids`: duplicate 300999 inside `events/PERFlavour.txt`; duplicate 2000000 between `events/SetupGVG.txt` and `decisions/SetupGVG.txt`.
-- `encoding`: 69 `common/countries/*.txt` are UTF-8 with irrecoverable U+FFFD mojibake in `unit_names` (pre-existing since PDM); plus vanilla-inherited csvs with NEL (0x85) or 0x9d bytes.
+- `encoding`: a dozen vanilla-inherited localisation csvs contain NEL (0x85) or 0x9d bytes.
 - `loc-check`: about 160 malformed rows across 21 csvs, mostly `0000_economic_rework.csv`, `newCE.csv`, `PDM_CE.csv` (UTF-8 and/or missing `x` terminator).
 
 Report any finding **not** in that list as a regression.

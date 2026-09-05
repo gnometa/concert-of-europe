@@ -129,10 +129,10 @@ party = {
 
 unit_names = {
 	dreadnought = {
-		"Ulrik Christian Gyldenlï¿½ve" Kï¿½benhavn ï¿½rhus ï¿½lborg Odense Fredriksberg Esbjerg "Nï¿½rrejyske ï¿½" Fyn Jï¿½tlandshaf 
+		"Ulrik Christian Gyldenløve" København Århus Ålborg Odense Fredriksberg Esbjerg "Nørrejyske Ø" Fyn Jótlandshaf 
 	}
 	battleship = {
-		"Ulrik Christian Gyldenlï¿½ve" Kï¿½benhavn ï¿½rhus ï¿½lborg Odense Fredriksberg Esbjerg "Nï¿½rrejyske ï¿½" Fyn Jï¿½tlandshaf 
+		"Ulrik Christian Gyldenløve" København Århus Ålborg Odense Fredriksberg Esbjerg "Nørrejyske Ø" Fyn Jótlandshaf 
 	}
 	ironclad = {
 		Helgoland Danmark Gorm Lindormen Odin "Rolf Krake" Tordenskjold "Peder Skram" Dannebrog Gorm "Olfert Fischer" Absalon 
@@ -141,13 +141,13 @@ unit_names = {
 		"Prins Christian Frederik" Skjold Absalon Ingolf Dannebrog Dagmar Gesjer "Dronning Marie" Waldemar Fredrik 
 	}
 	cruiser = {
-		Fyen Geiser Heimdal Hekla "St. Thomas" Valkyrien "Herluf Trolle" Sï¿½eormen Susï¿½en Gudenï¿½en
+		Fyen Geiser Heimdal Hekla "St. Thomas" Valkyrien "Herluf Trolle" Søeormen Susåen Gudenåen
 	}
 	frigate = {
-		Najaden Hummer Stralsund Sï¿½ridder Leopard Raae "Esbern Snare" ï¿½rnen Sjï¿½lland Gefion Thetis "Niels Juel" Rota
+		Najaden Hummer Stralsund Søridder Leopard Raae "Esbern Snare" Ørnen Sjælland Gefion Thetis "Niels Juel" Rota
 	}
 	monitor = {
-		Freia Diana Lindormen Stï¿½ren Stubberkï¿½bing Gejser Kiel Falster Narhvalen Tumleren
+		Freia Diana Lindormen Støren Stubberkøbing Gejser Kiel Falster Narhvalen Tumleren
 	}
 	clipper_transport = { 
 		 
@@ -158,6 +158,6 @@ unit_names = {
 
 	}
 	commerce_raider = {
-		"Esbern Snare" Fylla Fï¿½rï¿½erne Grï¿½nland Vï¿½kingr "Harald Klak" "Svend Tveskï¿½g" Kattegat ï¿½resund Silkeborg
+		"Esbern Snare" Fylla Færøerne Grønland Víkingr "Harald Klak" "Svend Tveskæg" Kattegat Øresund Silkeborg
 	}
 }

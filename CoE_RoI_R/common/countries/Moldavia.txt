@@ -171,25 +171,25 @@ party = {
 
 unit_names = {
 	dreadnought = {
-		Moldova "Stefan cel Mare" "Mihail Sturdza" "Athleta Christi" Baia "Bogdan I" Iuga "Rï¿½ul Prut" Suceava "Tï¿½rgul Moldovei" Vaslui
+		Moldova "Stefan cel Mare" "Mihail Sturdza" "Athleta Christi" Baia "Bogdan I" Iuga "Râul Prut" Suceava "Târgul Moldovei" Vaslui
 	}
 	battleship = {
-		Moldova "Stefan cel Mare" "Mihail Sturdza" "Athleta Christi" Baia "Bogdan I" Iuga "Rï¿½ul Prut" Suceava "Tï¿½rgul Moldovei" Vaslui
+		Moldova "Stefan cel Mare" "Mihail Sturdza" "Athleta Christi" Baia "Bogdan I" Iuga "Râul Prut" Suceava "Târgul Moldovei" Vaslui
 	}
 	ironclad = {
-		Moldova "Stefan cel Mare" "Mihail Sturdza" "Athleta Christi" Baia "Bogdan I" Iuga "Rï¿½ul Prut" Suceava "Tï¿½rgul Moldovei" Vaslui
+		Moldova "Stefan cel Mare" "Mihail Sturdza" "Athleta Christi" Baia "Bogdan I" Iuga "Râul Prut" Suceava "Târgul Moldovei" Vaslui
 	}
 	manowar = {
-		Moldova "Stefan cel Mare" "Mihail Sturdza" "Athleta Christi" Baia "Bogdan I" Iuga "Rï¿½ul Prut" Suceava "Tï¿½rgul Moldovei" Vaslui
+		Moldova "Stefan cel Mare" "Mihail Sturdza" "Athleta Christi" Baia "Bogdan I" Iuga "Râul Prut" Suceava "Târgul Moldovei" Vaslui
 	}
 	cruiser = {
-		Moldova "Stefan cel Mare" "Mihail Sturdza" "Athleta Christi" Baia "Bogdan I" Iuga "Rï¿½ul Prut" Suceava "Tï¿½rgul Moldovei" Vaslui
+		Moldova "Stefan cel Mare" "Mihail Sturdza" "Athleta Christi" Baia "Bogdan I" Iuga "Râul Prut" Suceava "Târgul Moldovei" Vaslui
 	}
 	frigate = {
-		Moldova "Stefan cel Mare" "Mihail Sturdza" "Athleta Christi" Baia "Bogdan I" Iuga "Rï¿½ul Prut" Suceava "Tï¿½rgul Moldovei" Vaslui
+		Moldova "Stefan cel Mare" "Mihail Sturdza" "Athleta Christi" Baia "Bogdan I" Iuga "Râul Prut" Suceava "Târgul Moldovei" Vaslui
 	}
 	monitor = {
-		Moldova "Stefan cel Mare" "Mihail Sturdza" "Athleta Christi" Baia "Bogdan I" Iuga "Rï¿½ul Prut" Suceava "Tï¿½rgul Moldovei" Vaslui
+		Moldova "Stefan cel Mare" "Mihail Sturdza" "Athleta Christi" Baia "Bogdan I" Iuga "Râul Prut" Suceava "Târgul Moldovei" Vaslui
 	}
 	clipper_transport = {
 		
@@ -198,7 +198,7 @@ unit_names = {
 		
 	}
 	commerce_raider = {
-		Moldova "Stefan cel Mare" "Mihail Sturdza" "Athleta Christi" Baia "Bogdan I" Iuga "Rï¿½ul Prut" Suceava "Tï¿½rgul Moldovei" Vaslui
+		Moldova "Stefan cel Mare" "Mihail Sturdza" "Athleta Christi" Baia "Bogdan I" Iuga "Râul Prut" Suceava "Târgul Moldovei" Vaslui
 		
 	}
 }
