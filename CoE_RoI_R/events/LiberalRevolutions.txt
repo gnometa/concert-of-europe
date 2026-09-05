@@ -865,9 +865,11 @@ country_event = {
 				is_colonial = no
 				liberal = 10
 			}
-			scaled_militancy = {
-				factor = 4
-				ideology = liberal
+			any_pop = {
+				scaled_militancy = {
+					factor = 4
+					ideology = liberal
+				}
 			}
 		}
 		ai_chance = {
@@ -1599,10 +1601,20 @@ country_event = {
 			is_colonial = no
 			OR = {
 				has_building = military_factory_building
+				has_building = military_factory_building2
+				has_building = military_factory_building3
 				has_building = heavy_factory_building
+				has_building = heavy_factory_building2
+				has_building = heavy_factory_building3
 				has_building = food_factory_building
+				has_building = food_factory_building2
+				has_building = food_factory_building3
 				has_building = light_factory_building
+				has_building = light_factory_building2
+				has_building = light_factory_building3
 				has_building = luxury_factory_building
+				has_building = luxury_factory_building2
+				has_building = luxury_factory_building3
 			}
 			NOT = { poor_strata_everyday_needs = 0.9 }
 			any_owned_province = {
@@ -1632,10 +1644,20 @@ country_event = {
 				is_colonial = no
 				OR = {
 					has_building = military_factory_building
+					has_building = military_factory_building2
+					has_building = military_factory_building3
 					has_building = heavy_factory_building
+					has_building = heavy_factory_building2
+					has_building = heavy_factory_building3
 					has_building = food_factory_building
+					has_building = food_factory_building2
+					has_building = food_factory_building3
 					has_building = light_factory_building
+					has_building = light_factory_building2
+					has_building = light_factory_building3
 					has_building = luxury_factory_building
+					has_building = luxury_factory_building2
+					has_building = luxury_factory_building3
 				}
 				NOT = { poor_strata_life_needs = 1.0 }			
 				any_owned_province = {
@@ -1650,10 +1672,20 @@ country_event = {
 				is_colonial = no
 				OR = {
 					has_building = military_factory_building
+					has_building = military_factory_building2
+					has_building = military_factory_building3
 					has_building = heavy_factory_building
+					has_building = heavy_factory_building2
+					has_building = heavy_factory_building3
 					has_building = food_factory_building
+					has_building = food_factory_building2
+					has_building = food_factory_building3
 					has_building = light_factory_building
+					has_building = light_factory_building2
+					has_building = light_factory_building3
 					has_building = luxury_factory_building
+					has_building = luxury_factory_building2
+					has_building = luxury_factory_building3
 				}
 				NOT = { poor_strata_everyday_needs = 0.7 }			
 				any_owned_province = {
@@ -1668,10 +1700,20 @@ country_event = {
 				is_colonial = no
 				OR = {
 					has_building = military_factory_building
+					has_building = military_factory_building2
+					has_building = military_factory_building3
 					has_building = heavy_factory_building
+					has_building = heavy_factory_building2
+					has_building = heavy_factory_building3
 					has_building = food_factory_building
+					has_building = food_factory_building2
+					has_building = food_factory_building3
 					has_building = light_factory_building
+					has_building = light_factory_building2
+					has_building = light_factory_building3
 					has_building = luxury_factory_building
+					has_building = luxury_factory_building2
+					has_building = luxury_factory_building3
 				}
 				NOT = { poor_strata_everyday_needs = 0.5 }			
 				any_owned_province = {
@@ -1686,10 +1728,20 @@ country_event = {
 				is_colonial = no
 				OR = {
 					has_building = military_factory_building
+					has_building = military_factory_building2
+					has_building = military_factory_building3
 					has_building = heavy_factory_building
+					has_building = heavy_factory_building2
+					has_building = heavy_factory_building3
 					has_building = food_factory_building
+					has_building = food_factory_building2
+					has_building = food_factory_building3
 					has_building = light_factory_building
+					has_building = light_factory_building2
+					has_building = light_factory_building3
 					has_building = luxury_factory_building
+					has_building = luxury_factory_building2
+					has_building = luxury_factory_building3
 				}
 				average_militancy = 2			
 				any_owned_province = {
@@ -1724,10 +1776,20 @@ country_event = {
 				is_colonial = no
 				OR = {
 					has_building = military_factory_building
+					has_building = military_factory_building2
+					has_building = military_factory_building3
 					has_building = heavy_factory_building
+					has_building = heavy_factory_building2
+					has_building = heavy_factory_building3
 					has_building = food_factory_building
+					has_building = food_factory_building2
+					has_building = food_factory_building3
 					has_building = light_factory_building
+					has_building = light_factory_building2
+					has_building = light_factory_building3
 					has_building = luxury_factory_building
+					has_building = luxury_factory_building2
+					has_building = luxury_factory_building3
 				}
 				NOT = { poor_strata_everyday_needs = 0.9 }
 				any_owned_province = {
@@ -1799,10 +1861,20 @@ country_event = {
 				is_colonial = no
 				OR = {
 					has_building = military_factory_building
+					has_building = military_factory_building2
+					has_building = military_factory_building3
 					has_building = heavy_factory_building
+					has_building = heavy_factory_building2
+					has_building = heavy_factory_building3
 					has_building = food_factory_building
+					has_building = food_factory_building2
+					has_building = food_factory_building3
 					has_building = light_factory_building
+					has_building = light_factory_building2
+					has_building = light_factory_building3
 					has_building = luxury_factory_building
+					has_building = luxury_factory_building2
+					has_building = luxury_factory_building3
 				}
 				NOT = { poor_strata_everyday_needs = 0.9 }
 				any_owned_province = {
@@ -3642,7 +3714,7 @@ country_event = {
 				province_id = 300
 				controlled_by = REB
 			}
-			change_controller = ENG
+			change_controller = THIS
 		}
 		any_owned = {
 			limit = { is_colonial = no }
@@ -3689,7 +3761,7 @@ country_event = {
 				province_id = 300
 				controlled_by = REB
 			}
-			change_controller = ENG
+			change_controller = THIS
 		}		
 		any_owned = {
 			limit = { is_colonial = no }
@@ -3789,7 +3861,7 @@ country_event = {
 			militancy = -6
 		}
 		any_owned = {
-			limit = { culture = north_italian }
+			limit = { has_pop_religion = north_italian }
 			add_province_modifier = {
 				name = liberal_agitation
 				duration = 1095
@@ -3932,7 +4004,7 @@ country_event = {
 			militancy = -6
 		}
 		any_owned = {
-			limit = { culture = north_italian }
+			limit = { has_pop_religion = north_italian }
 			add_province_modifier = {
 				name = liberal_agitation
 				duration = 1095
