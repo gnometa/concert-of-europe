@@ -1,0 +1,6 @@
+{
+  "name": "cwtools-lsp",
+  "description": "CWTools Paradox language server (Victoria 2 rules) for the CoE_RoI_R mod, via a filtering proxy",
+  "version": "1.0.0",
+  "author": { "name": "Gnometa" }
+}

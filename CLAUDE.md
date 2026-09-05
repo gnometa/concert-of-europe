@@ -77,3 +77,26 @@ Caveats when applying the wiki here:
 - The wiki's rule of thumb for crashes: a crash **during startup** is almost always a syntax error (typically an unbalanced `}`); a crash on 'Start Game' or a specific in-game date points at a context error (a typo in a production type, an event/decision/history entry firing on that date; compare the province-ID crash noted under "Testing / validation").
 - The wiki documents syntax but not behaviour in edge cases; when in doubt, copy the pattern from a working file in `CoE_RoI_R/` or from the vanilla game folder rather than inventing it.
 - The mirror is a snapshot. Pages that were red links on the wiki (economy, reform, technology, ideology, pop-type, rebel, unit, interface modding, most `*.txt` file pages) do not exist locally either; for those, read the vanilla file in the game folder.
+
+## Claude Code tooling (scripts/modcheck.py, .claude/)
+
+`scripts/modcheck.py` is the mod's stand-in for a linter and test runner (run with no arguments for the subcommand list). `.claude/settings.json` wires two hooks around it:
+- **PreToolUse** blocks Edit/Write on `localisation/*.csv` because those tools save UTF-8. Add keys with `python scripts/modcheck.py loc-add <csv> KEY "text"` or a cp1252 Python snippet (see the `/loc-add` skill).
+- **PostToolUse** runs brace/CRLF/encoding checks on every edited `.txt` under `CoE_RoI_R/`, plus province-id and tag checks for events, decisions, and history files. Fix what it reports before moving on.
+
+Skills: `/loc-add` (localisation keys), `/new-event` (free id + scaffold + loc + registry), `/validate` (static checks, deploy, Audax, error.log diff; user-invoked only). Subagents: `script-reviewer` (read-only review of changed script) and `encoding-auditor`.
+
+Useful one-offs: `modcheck next-id <lo> <hi>`, `modcheck ids` (duplicate event ids), `modcheck loc-find KEY`, `modcheck encoding` (whole-tree audit). Known pre-existing findings are listed in `.claude/skills/validate/SKILL.md`; do not "fix" them as a side effect of unrelated work.
+
+## CWTools (VS Code)
+
+Open `concert-of-europe.code-workspace`, not the bare folder: it lists `CoE_RoI_R` first (CWTools treats the first workspace folder as the mod root) and points `cwtools.rules_folder` at `.cwtools/`, a git-ignored copy of https://github.com/cwtools/cwtools-vic2-config (MIT). Re-fetch it after a fresh clone:
+
+```powershell
+Invoke-WebRequest https://github.com/cwtools/cwtools-vic2-config/archive/refs/heads/master.zip -OutFile cw.zip; Expand-Archive cw.zip -DestinationPath _cw; Move-Item _cw/cwtools-vic2-config-master .cwtools; Remove-Item cw.zip, _cw -Recurse
+```
+
+The Vic2 rule set is a 2020 stub: run unfiltered it reports ~85,000 "errors" on this mod, nearly all rule gaps (it does not know `NOT`, `OR`, `months`, unit names, tags...). Two things make it usable anyway:
+- `.claude/skills/cwtools-lsp/` is a project-scope Claude Code LSP plugin. It runs the server behind `bin/cwtools_lsp.py proxy`, which locates `CWTools Server.exe` inside the editor extension, injects the Vic2 init options and settings the server needs, and drops the noise classes so only parse errors, "Too many X" duplicates and warnings reach Claude after an edit. It loads once the workspace is trusted; check `/plugin` > Errors if diagnostics never appear.
+- `python scripts/cwtools_check.py` runs the same thing headless over the whole mod (about 20 s); `--all` shows the unfiltered output, `--summary` groups it, `--via-proxy` exercises the plugin wiring. Baseline on 2026-09-05 after filtering: `religion.txt` parse error, duplicate `casus_belli`/`attacker_goal`/`fire_only_once` keys in three event files, a missing `who` in `DIM_flores.txt`, and 12 "Too many clauses" warnings in `production_types.txt` that are themselves a rule gap.
+`scripts/modcheck.py` and the game's `error.log` remain the source of truth.

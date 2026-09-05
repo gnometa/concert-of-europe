@@ -1,0 +1,17 @@
+{
+  "cwtools": {
+    "command": "python",
+    "args": ["${CLAUDE_PLUGIN_ROOT}/bin/cwtools_lsp.py", "proxy"],
+    "extensionToLanguage": {
+      ".txt": "vic2",
+      ".gui": "vic2",
+      ".gfx": "vic2",
+      ".map": "vic2"
+    },
+    "startupTimeout": 120000,
+    "shutdownTimeout": 10000,
+    "restartOnCrash": true,
+    "maxRestarts": 2,
+    "diagnostics": true
+  }
+}

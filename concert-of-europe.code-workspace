@@ -1,0 +1,28 @@
+{
+  "folders": [
+    { "name": "CoE_RoI_R (mod)", "path": "CoE_RoI_R" },
+    { "name": "repo", "path": "." }
+  ],
+  "settings": {
+    // CWTools picks the game from the file language id. Its built-in patterns only
+    // match paths containing "victoria*2", so force the vic2 language here.
+    "files.associations": {
+      "**/concert-of-europe/**/*.txt": "vic2",
+      "**/concert-of-europe/**/*.map": "vic2",
+      "**/concert-of-europe/**/*.gui": "vic2",
+      "**/concert-of-europe/**/*.gfx": "vic2",
+      "**/docs/wiki/*.md": "markdown",
+      "*.lua": "lua"
+    },
+    "cwtools.rules_folder": "D:\\Project\\concert-of-europe\\.cwtools",
+    "cwtools.cache.vic2": "D:\\Steam\\steamapps\\common\\Victoria 2",
+    "cwtools.localisation.languages": ["English"],
+    "cwtools.errors.vanilla": false,
+    "cwtools.maxFileSize": 5,
+    "cwtools.ignore_patterns": ["**/99_README**.txt", "**/docs/wiki/**", "**/Audax.Validator/**"],
+    "files.eol": "\r\n",
+    "[csv]": { "files.encoding": "windows1252" },
+    "[vic2]": { "files.encoding": "windows1252", "files.eol": "\r\n" },
+    "[paradox]": { "files.encoding": "windows1252", "files.eol": "\r\n" }
+  }
+}

@@ -2,3 +2,8 @@ Audax.Validator/
 
 # Local wiki-mirroring tool; docs/wiki/ is committed, the fetcher is not
 scripts/fetch_wiki_docs.py
+__pycache__/
+
+# CWTools Victoria 2 rules (https://github.com/cwtools/cwtools-vic2-config), fetched by hand
+.cwtools/
+cwtools-run.*
