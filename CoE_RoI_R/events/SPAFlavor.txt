@@ -176,13 +176,13 @@ country_event = {
 
 		modifier = {
 			factor = 0.75 #increase likelihood to happen
-			year = 1886
+			year = 1852
 		}
 
 
 		modifier = {
 			factor = 0.95 #increase likelihood to happen
-			year = 1887
+			year = 1853
 		}
 	}
 
@@ -372,7 +372,7 @@ country_event = {
 	}
 }
 
-#Madoz's Deamortisation
+#La Guardia Civil
 country_event = {
 
 	id = 37708
@@ -397,17 +397,17 @@ country_event = {
 
 		modifier = {
 			factor = 0.75 #increase likelihood to happen
-			year = 1855
+			year = 1843
 		}
 
 		modifier = {
 			factor = 0.95 #increase likelihood to happen
-			year = 1856
+			year = 1844
 		}
 	}
 
-	title = "EVTNAME37707"
-	desc = "EVTDESC37707"
+	title = "EVTNAME37708"
+	desc = "EVTDESC37708"
 	picture = "Administration"
 
 	option = {
@@ -785,10 +785,6 @@ country_event = {
 				}
 			}
 		}
-		set_variable = {
-			which = christino_provinces
-			value = 5
-		}
 		any_owned = {
 			limit = {
 				OR = {
@@ -822,6 +818,10 @@ country_event = {
 			background = brilliant_strategist
 		}
 		country_event = 37710
+		set_variable = {
+			which = christino_provinces
+			value = 5
+		}
 		ai_chance = {
 			factor = 0
 		}
@@ -1106,18 +1106,6 @@ province_event = {
 		modifier = {
 			factor = 1.5
 			NOT = { average_militancy = 2 }
-		}
-		modifier = {
-			factor = 0.8
-			reactionary = 30
-		}
-		modifier = {
-			factor = 0.8
-			reactionary = 40
-		}
-		modifier = {
-			factor = 0.8
-			reactionary = 50
 		}
 		modifier = {
 			factor = 1.2
@@ -3161,7 +3149,7 @@ country_event = {
 country_event = {
 	id = 37740
 	title = "EVTNAME37740" #The American Demand
-	desc = "EVTDESC37750"
+	desc = "EVTDESC37740"
 	picture = "treaty"
 	
 	is_triggered_only = yes
@@ -3899,6 +3887,7 @@ country_event = {
 		name = "$FROMCOUNTRY$ must be brought into line."
 		set_country_flag = restore_the_spanish_empire
 		prestige = -10
+		badboy = 2
 		diplomatic_influence = { who = FROM value = -200 }
 		FROM = { set_country_flag = resisting_spanish_rule }
 		any_country = {
@@ -4466,7 +4455,7 @@ country_event = {
         any_country = {
             limit = {
                 civilized = yes
-                OR = {
+                AND = {
                     NOT = { OR = { government = absolute_monarchy government = absolute_monarchy2 government = absolute_monarchy3 } }
                     NOT = { OR = { government = prussian_constitutionalism government = prussian_constitutionalism2 government = prussian_constitutionalism3 } }
                 }
