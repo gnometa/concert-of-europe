@@ -297,7 +297,7 @@ country_event = {
 	picture = "Sisi"
 
 	option = {
-		name = "EVTOPTA31502" 
+		name = "EVTOPTA31505" 
 		any_pop = {
 			limit = { is_primary_culture = yes }
 			scaled_consciousness = {
@@ -349,7 +349,7 @@ country_event = {
 	picture = "theatre"
 
 	option = {
-		name = "EVTOPTA31502" 
+		name = "EVTOPTA31506" 
 		prestige = 25
 	}
 }
@@ -559,15 +559,8 @@ country_event = {
 		}
 		any_pop = {
 			limit = { has_pop_culture = hungarian }
-			militancy = 4
+			militancy = -4
 			consciousness = 2
-		}
-		any_owned = {
-			limit = { culture = hungarian }
-			add_province_modifier = {
-				name = nationalist_agitation
-				duration = 365
-			}
 		}
 		ai_chance = {
 			factor = 60
@@ -2234,7 +2227,7 @@ country_event = {
 	
 	option = {
 		name = "Wonderful!"
-		prestige = -100
+		prestige = 10
 		military_industry = 50
 		light_industry = 50
 		horses = 20
