@@ -6967,7 +6967,7 @@
 	capitalists = {
 		size = 4625
 		culture =  tamil
-		religion = sunni
+		religion = tamil
 	}
 	artisans = {
 		size = 1681

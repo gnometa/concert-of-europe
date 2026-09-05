@@ -526,7 +526,7 @@ capitalists = {
 	}
 	artisans = {
 		culture =tabari
-		religion = shiite
+		religion = tabari
 		size = 300
 	}
 	soldiers = {
