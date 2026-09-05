@@ -1,6 +1,6 @@
 # Wars live at the 1821.9.1 start
 
-`python scripts/audit_diplomacy.py` lists eight wars whose latest history entry at or before
+`python scripts/audit_diplomacy.py` lists nine wars whose latest history entry at or before
 1821.9.1 has added participants and no `rem_*`. The later `rem_*` dates in `history/wars/*.txt`
 are **never applied** — history is only read up to the bookmark date — so every war below runs
 until the AI (or a script) ends it.
@@ -21,6 +21,7 @@ score it can never buy, which is exactly why the Spanish American wars had to be
 | PeruvianWarofIndependence (1821.7.28) | PEU ARG CHL vs SPA | `cut_down_to_size` x2 vs SPA, `make_puppet` SPA>PEU/CHL/ARG | yes, 17 borders | no — `cut_down_to_size` cost 100 | Ayacucho 1824 | **scripted resolution exists (1002100/1002102)** |
 | DominicanWarofIndependence (1821.9.1) | SPA vs DOM | `establish_protectorate` SPA>DOM | island | no | Espana Boba ends Dec 1821 | **scripted resolution exists (1002100/1002102)** |
 | MassinaJihad (1818.10.2) | MAS vs SEG | `acquire_all_cores` + **`cut_down_to_size`** MAS>SEG | yes, 3 borders (1804-1799/1802/1803) | **no** | Seku Amadu dies 1845; file's own `rem` is 1845.6.6 | **stuck** |
+| OttomanPersianWar (1821.8.1) | PER vs TUR | `status_quo` PER>TUR | yes | yes - `status_quo` `peace_cost_factor` 1, `po_status_quo` | Treaty of Erzurum, 28 July 1823 | **AI can end it** |
 | Russian-CircassianWar (1804.7.1) | RUS FIN CPL vs CIR | `conquest` RUS>CIR | yes, 8 borders | yes — cost 1.0, `po_annex`; all 4 CIR provinces are RUS cores | 1864 (file's `rem` 1829) | **AI can end it** (early, but not stuck) |
 
 ## Notes
@@ -41,9 +42,13 @@ score it can never buy, which is exactly why the Spanish American wars had to be
   `OR = { THIS = { civilized = no } civilized = yes }`, which a civilised RUS attacking an
   uncivilised CIR fails. History bypasses that check, so the goal is enforceable in practice; if
   a future engine/patch revalidates goals this war becomes stuck too. Left alone.
-* **Not live at start.** `OttomanPersianWar.txt` begins 1821.9.10, nine days *after* the
-  bookmark, so the engine never creates it — the 1821-23 war and the Treaty of Erzurum simply do
-  not happen. XhosaWar (1834), FarroupilhaWar (1835), TexanWarofIndependence (1835),
+* **Persia.** `OttomanPersianWar.txt` used to begin 1821.9.10, nine days *after* the
+  bookmark, so the engine never created it and the 1821-23 war simply did not happen. It now
+  starts 1821.8.1 and is live at the bookmark. It needs no scripted resolution: its single
+  `status_quo` goal has `peace_cost_factor = 1` in `common/cb_types.txt`, PER and TUR are land
+  adjacent, and the AI can buy `po_status_quo` cheaply. As with every war here the file's own
+  `rem_*` date (1823.7.28) is never applied, so the AI, not history, ends it.
+* **Not live at start.** XhosaWar (1834), FarroupilhaWar (1835), TexanWarofIndependence (1835),
   OttomanBarbaryWar (1835), Taiping (1850), ACW and Cochinchina (1861) are all post-start and
   likewise never fire from history; they are covered by events/decisions instead. There is no
   Cisplatine or Sudan war file in the tree.
