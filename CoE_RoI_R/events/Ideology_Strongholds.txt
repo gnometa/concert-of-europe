@@ -996,6 +996,7 @@ province_event = {
 	
 	trigger = {
 		is_colonial = no 
+		is_core = THIS
 		NOT = {
 			has_province_modifier = reactionary_stronghold
 			has_province_modifier = conservative_stronghold
