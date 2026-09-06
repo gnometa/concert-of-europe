@@ -1105,6 +1105,8 @@ country_event = {
 	
 	option = {
 		name = "A bad way to start an election."
+		remove_country_modifier = ruling_party_scandal
+		remove_country_modifier = party_scandal_evidence
 		random_owned = {
 			limit = {
 				owner = {

@@ -73,8 +73,8 @@ country_event = {
 		name = "EVTOPTB22000"
 		random_state = {
 			any_pop = {
-				consciousness = 2
-				militancy = 2
+				consciousness = 1
+				militancy = 1
 			}
 		}
 	}
@@ -440,14 +440,18 @@ country_event = {
 	
 	option = {
 		name = "EVTOPTA22050"
-		rich_strata = {
-			militancy = 2
+		random_state = {
+			rich_strata = {
+				militancy = 1
+			}
 		}
 	}
 	option = {
 		name = "EVTOPTB22050"
-		poor_strata = {
-			militancy = 1
+		random_state = {
+			poor_strata = {
+				militancy = 1
+			}
 		}
 	}
 }
@@ -534,20 +538,20 @@ country_event = {
 	option = {
 		name = "EVTOPTA22070"
 		capitalists = {
-			militancy = -0.5
-		}
-		capitalists = {
 			militancy = 0.5
+		}
+		poor_strata = {
+			militancy = -0.5
 		}
 	}
 	
 	option = {
 		name = "EVTOPTB22070"
 		capitalists = {
-			militancy = 0.5
-		}
-		capitalists = {
 			militancy = -0.5
+		}
+		poor_strata = {
+			militancy = 0.5
 		}
 	}
 }
