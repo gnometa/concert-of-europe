@@ -384,7 +384,7 @@ country_event = {
 	}
 	
 	option = {
-		name = "Shut down the ring immediately."
+		name = "Break up the ring - the habit has already taken root."
 		random_owned = {
 			limit = {
 				has_province_modifier = foreign_smugglers
@@ -628,6 +628,14 @@ country_event = {
 				factor = 0.5
 				FROM = { part_of_sphere = yes }
 			}
+			modifier = {
+				factor = 0
+				war = yes
+			}
+			modifier = {
+				factor = 0
+				war_policy = pacifism
+			}
 		}
 	}
 	
@@ -655,14 +663,6 @@ country_event = {
 		}
 		ai_chance = {
 			factor = 50
-			modifier = {
-				factor = 0
-				war = yes
-			}
-			modifier = {
-				factor = 0
-				war_policy = pacifism
-			}
 		}
 	}
 }
@@ -1691,7 +1691,7 @@ country_event = {
 			}
 			relation = {
 				who = THIS
-				value = -40
+				value = -20
 			}
 		}
 		ai_chance = {

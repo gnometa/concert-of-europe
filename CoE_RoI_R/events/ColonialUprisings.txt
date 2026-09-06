@@ -1486,7 +1486,7 @@ country_event = {
 	
 	option = {
 		name = "EVTOPTA14670"
-		badboy = 15
+		badboy = 8
 		prestige = -10
 		random_state = {
 			limit = {
