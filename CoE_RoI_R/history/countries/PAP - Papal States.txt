@@ -1,6 +1,6 @@
 capital = 749
-primary_culture = italian  set_country_flag = south_italian_rel
-culture = italian
+primary_culture = south_italian  set_country_flag = south_italian_rel
+culture = north_italian
 religion = catholic
 government = theocracy3
 plurality = 0.0
