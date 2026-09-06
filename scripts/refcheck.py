@@ -15,8 +15,8 @@ Checks
               is_triggered_only events that nothing fires; events with neither
               trigger nor is_triggered_only; MTTH missing where a trigger exists
   loc         localisation keys for events (title/desc/options), decisions
-              (_title/_desc) and event modifiers resolve, in the mod's csvs or
-              in the vanilla ones the engine falls back to
+              (_title/_desc) resolve, in the mod's csvs or in the vanilla
+              ones the engine falls back to (see `defs` for definitions)
   modifiers   add_/remove_country_modifier and add_/remove_province_modifier
               names exist in common/event_modifiers.txt
   flags       country/province/global flags that are set but never checked,
@@ -26,6 +26,9 @@ Checks
               inventions referenced by events/decisions exist
   onactions   common/on_actions.txt entries point at defined events
   options     events with more than 5 options (the UI clips the rest)
+  defs        player-visible definition names (modifiers, issues, buildings,
+              rebel types, casus belli, cultures, techs, tags, ...) that have
+              no localisation key, so the game shows the raw script identifier
 
 Deliberate patterns are excluded: election events (the engine picks those out
 of the issue_group pool), events whose only caller is commented out, and
@@ -334,9 +337,146 @@ def check_loc():
         for suffix in ("_title", "_desc"):
             if d.key + suffix not in keys:
                 problems.append(f"{rel(f)}:{d.line}: decision {d.key} lacks localisation key {d.key}{suffix}")
-    for mod in tree(MOD / "common" / "event_modifiers.txt"):
-        if mod.key and mod.key not in keys:
-            problems.append(f"CoE_RoI_R/common/event_modifiers.txt:{mod.line}: modifier {mod.key} has no localisation")
+    return problems
+
+
+# ---------------------------------------------------------------- defs
+def _level(path, depth):
+    """Yield (key, line) for every named block at `depth` (0 = top level)."""
+    def rec(nodes, d):
+        for n in nodes:
+            if n.key and n.children is not None:
+                if d == depth:
+                    yield n.key, n.line
+                else:
+                    yield from rec(n.children, d + 1)
+    if not Path(path).is_file():
+        return
+    yield from rec(tree(path), 0)
+
+
+def _block_first(path, depth, field):
+    """{key: value of `field`} for named blocks at `depth`."""
+    out = {}
+
+    def rec(nodes, d):
+        for n in nodes:
+            if n.key and n.children is not None:
+                if d == depth:
+                    out[n.key] = n.first(field)
+                else:
+                    rec(n.children, d + 1)
+    if Path(path).is_file():
+        rec(tree(path), 0)
+    return out
+
+
+def check_defs():
+    """Player-visible definition names with no localisation key.
+
+    Every convention below was read off the vanilla files (a vanilla entry of
+    each kind was grepped in the vanilla localisation to see which suffixes the
+    engine actually needs):
+      modifiers (event/triggered/static)  bare name, no _desc
+      national_focus                      group name and focus name
+      issues                              issue name; option name + _desc
+      ideologies                          group name and ideology name
+      governments, goods, crime, religion bare name (religion GROUPS are not
+                                          localised in vanilla, so skipped)
+      cultures                            culture name and culture group name
+      buildings / factory production      bare name; _desc for factories only
+                                          (vanilla fort/naval_base/railroad
+                                          carry no _desc)
+      rebel_types                         _name, _title, _desc, _army - never
+                                          the bare key
+      cb_types                            bare name + _desc
+      pop types                           poptypes/<name>.txt stem
+      countries.txt                       TAG and TAG_ADJ
+      technologies / inventions           bare name + _desc
+    Decision and event keys are covered by the `loc` check.
+    """
+    problems = []
+    keys = loc_keys()
+    seen = set()
+    C = MOD / "common"
+
+    def want(cat, path, name, line, *suffixes):
+        for suf in suffixes:
+            k = name + suf
+            if k in keys or k in seen:
+                continue
+            seen.add(k)
+            problems.append(f"{rel(path)}:{line}: [{cat}] {k} has no localisation")
+
+    for f in ("event_modifiers.txt", "triggered_modifiers.txt"):
+        for k, line in _level(C / f, 0):
+            want("modifier", C / f, k, line, "")
+    # static modifiers are engine-named; only ones this mod adds can be missing
+    vanilla_static = {k for k, _ in _level(VANILLA / "common" / "static_modifiers.txt", 0)}
+    for k, line in _level(C / "static_modifiers.txt", 0):
+        if k not in vanilla_static:
+            want("modifier", C / "static_modifiers.txt", k, line, "")
+
+    for depth in (0, 1):
+        for k, line in _level(C / "national_focus.txt", depth):
+            want("national_focus", C / "national_focus.txt", k, line, "")
+
+    for k, line in _level(C / "issues.txt", 1):
+        want("issue", C / "issues.txt", k, line, "")
+    for k, line in _level(C / "issues.txt", 2):
+        want("issue_option", C / "issues.txt", k, line, "", "_desc")
+
+    for depth in (0, 1):
+        for k, line in _level(C / "ideologies.txt", depth):
+            want("ideology", C / "ideologies.txt", k, line, "")
+    for k, line in _level(C / "governments.txt", 0):
+        want("government", C / "governments.txt", k, line, "")
+    for k, line in _level(C / "goods.txt", 1):
+        want("good", C / "goods.txt", k, line, "")
+    for k, line in _level(C / "crime.txt", 0):
+        want("crime", C / "crime.txt", k, line, "")
+    for k, line in _level(C / "religion.txt", 1):
+        want("religion", C / "religion.txt", k, line, "")
+    for depth in (0, 1):
+        for k, line in _level(C / "cultures.txt", depth):
+            if k in ("union", "leader", "unit", "is_overseas"):
+                continue
+            want("culture", C / "cultures.txt", k, line, "")
+
+    factories = set()
+    btypes = _block_first(C / "buildings.txt", 0, "type")
+    for k, line in _level(C / "buildings.txt", 0):
+        if btypes.get(k) == "factory":
+            factories.add(k)
+            want("building", C / "buildings.txt", k, line, "", "_desc")
+        else:
+            want("building", C / "buildings.txt", k, line, "")
+    ptypes = _block_first(C / "production_types.txt", 0, "type")
+    for k, line in _level(C / "production_types.txt", 0):
+        # *_template production types are never built and never shown
+        if ptypes.get(k) == "factory" and k not in factories and "template" not in k:
+            want("factory", C / "production_types.txt", k, line, "", "_desc")
+
+    for k, line in _level(C / "rebel_types.txt", 0):
+        want("rebel_type", C / "rebel_types.txt", k, line, "_name", "_title", "_desc", "_army")
+    for k, line in _level(C / "cb_types.txt", 0):
+        # peace_order is the peace-treaty ordering list, not a casus belli
+        if k == "peace_order":
+            continue
+        want("casus_belli", C / "cb_types.txt", k, line, "", "_desc")
+
+    for p in sorted((MOD / "poptypes").glob("*.txt")):
+        want("pop_type", p, p.stem, 1, "")
+
+    cfile = C / "countries.txt"
+    for m in re.finditer(r"^[ \t]*([A-Z]{3})[ \t]*=", read(cfile), re.M):
+        line = read(cfile)[: m.start()].count("\n") + 1
+        want("country", cfile, m.group(1), line, "", "_ADJ")
+
+    for folder, cat in (("technologies", "technology"), ("inventions", "invention")):
+        for f in sorted((MOD / folder).glob("*.txt")):
+            for k, line in _level(f, 0):
+                want(cat, f, k, line, "", "_desc")
     return problems
 
 
@@ -497,6 +637,7 @@ CHECKS = {
     "flags": check_flags,
     "names": check_names,
     "options": check_options,
+    "defs": check_defs,
 }
 
 

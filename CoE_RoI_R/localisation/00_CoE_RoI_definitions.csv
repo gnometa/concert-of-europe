@@ -1,0 +1,115 @@
+dissatisfied_workers;Dissatisfied Workers;;;;;;;;;;;;;x
+worker_revolt;Worker Revolt;;;;;;;;;;;;;x
+turkish_assimilation;Turkish Assimilation;;;;;;;;;;;;;x
+the_dawn_of_an_era_decision;Dawn of a New Era;;;;;;;;;;;;;x
+demanded_cores;Demanded Core Territory;;;;;;;;;;;;;x
+loosee;Humiliating Defeat;;;;;;;;;;;;;x
+feudal;Feudal Stagnation;;;;;;;;;;;;;x
+pachacuti_reforms;Pachacuti Reforms;;;;;;;;;;;;;x
+transcribing_quipus;Transcribing the Quipus;;;;;;;;;;;;;x
+empire_del_inca;Empire of the Inca;;;;;;;;;;;;;x
+atlantic_slave_trade;Atlantic Slave Trade;;;;;;;;;;;;;x
+israel_aliyah_modifier;Aliyah;;;;;;;;;;;;;x
+modern_democracy_modifier;Modern Democracy;;;;;;;;;;;;;x
+emergency_draft;Emergency Draft;;;;;;;;;;;;;x
+circassian_expulsion;Circassian Expulsion;;;;;;;;;;;;;x
+lanfang_republic_modifier;Lanfang Republic;;;;;;;;;;;;;x
+malaria_modifier;Malarial Country;;;;;;;;;;;;;x
+economic_revitalization;Economic Revitalisation;;;;;;;;;;;;;x
+native_oppression_modifier;Oppression of the Natives;;;;;;;;;;;;;x
+native_encouragement_modifier;Encouragement of the Natives;;;;;;;;;;;;;x
+tribal_unrest_modifier;Tribal Unrest;;;;;;;;;;;;;x
+dervish_dhaanto_modifier;Dervish Dhaanto;;;;;;;;;;;;;x
+british_merchants_modifier;British Merchants;;;;;;;;;;;;;x
+russian_merchants_modifier;Russian Merchants;;;;;;;;;;;;;x
+no_terrace_farming;No Terrace Farming;;;;;;;;;;;;;x
+terrace_farming_modifier;Terrace Farming;;;;;;;;;;;;;x
+marsh_land_reclaimed;Reclaimed Marshland;;;;;;;;;;;;;x
+bad_flooding_modifier;Ruinous Flooding;;;;;;;;;;;;;x
+good_flooding_modifier;Fertile Flooding;;;;;;;;;;;;;x
+deforestation_modifier;Deforestation;;;;;;;;;;;;;x
+sprawling_forest;Sprawling Forest;;;;;;;;;;;;;x
+dense_forest;Dense Forest;;;;;;;;;;;;;x
+large_forest;Large Forest;;;;;;;;;;;;;x
+normal_forest;Forested Land;;;;;;;;;;;;;x
+small_forest;Small Forest;;;;;;;;;;;;;x
+marginal_forest;Marginal Forest;;;;;;;;;;;;;x
+scarce_forest;Scarce Forest;;;;;;;;;;;;;x
+no_forest;Treeless Land;;;;;;;;;;;;;x
+serfdom_modifier;Serfdom;;;;;;;;;;;;;x
+military_collapse;Military Collapse;;;;;;;;;;;;;x
+emancipation_modifier;Emancipation;;;;;;;;;;;;;x
+rgo_boycott_modifier;Boycotted Goods;;;;;;;;;;;;;x
+officer_training_1_mod;Officer Training I;;;;;;;;;;;;;x
+officer_training_2_mod;Officer Training II;;;;;;;;;;;;;x
+officer_training_3_mod;Officer Training III;;;;;;;;;;;;;x
+officer_training_4_mod;Officer Training IV;;;;;;;;;;;;;x
+officer_training_5_mod;Officer Training V;;;;;;;;;;;;;x
+officer_training_6_mod;Officer Training VI;;;;;;;;;;;;;x
+officer_training_7_mod;Officer Training VII;;;;;;;;;;;;;x
+colonial_exploitation_tech_effect;Colonial Exploitation;;;;;;;;;;;;;x
+slavepopupdated;Slave Registry Updated;;;;;;;;;;;;;x
+rev_birth_place;Birthplace of the Revolution;;;;;;;;;;;;;x
+rev_birth_place2;Cradle of the Revolution;;;;;;;;;;;;;x
+ghost_country_haunting;Ghost Nation;;;;;;;;;;;;;x
+gm_timer;Administrative Delay;;;;;;;;;;;;;x
+ai_economic_flavour_cooldown;Recent Economic Reform;;;;;;;;;;;;;x
+random_migration_cooldown;Recent Wave of Migration;;;;;;;;;;;;;x
+bhu_paradise;Hidden Paradise;;;;;;;;;;;;;x
+small_navy;Small Navy;;;;;;;;;;;;;x
+money_hoarder_1;Hoarded Treasury;;;;;;;;;;;;;x
+money_hoarder_2;Growing Hoard;;;;;;;;;;;;;x
+money_hoarder_3;Idle Fortune;;;;;;;;;;;;;x
+money_hoarder_4;Miserly Crown;;;;;;;;;;;;;x
+occupied_capital;Occupied Capital;;;;;;;;;;;;;x
+forced_assimilation_desc;Non-accepted pops are pressed to adopt our culture, which raises their consciousness and their militancy.;;;;;;;;;;;;;x
+traditional_weapons_desc;Our soldiers still go to war with spears and bows. Land defence is very poor, but the people are content.;;;;;;;;;;;;;x
+gunpowder_weapons_desc;Muskets are issued to the army, teaching us flintlock rifles and advancing our civilisation.;;;;;;;;;;;;;x
+improved_weapons_desc;Domestic workshops turn out serviceable modern rifles, advancing our civilisation further.;;;;;;;;;;;;;x
+imported_weapons_desc;Modern rifles are bought abroad to arm the regular army.;;;;;;;;;;;;;x
+modern_imported_weapons_desc;The latest foreign rifles are purchased for the whole of the army.;;;;;;;;;;;;;x
+no_artillery_for_you_desc;We field no guns at all, and our land defence suffers badly for it.;;;;;;;;;;;;;x
+early_light_artillery_desc;Bronze muzzle-loaded guns are cast for the army.;;;;;;;;;;;;;x
+improved_artillery_desc;Better founded guns strengthen the army and advance our civilisation.;;;;;;;;;;;;;x
+imported_artillery_desc;Field guns are bought abroad to equip our batteries.;;;;;;;;;;;;;x
+modern_imported_artillery_desc;The newest foreign artillery is purchased for our batteries.;;;;;;;;;;;;;x
+military_levies_desc;Troops are raised as levies when war comes. The peasantry is content, but the army is untrained.;;;;;;;;;;;;;x
+field_drills_desc;Regular field drills improve the organisation and the mobilisation of our army.;;;;;;;;;;;;;x
+tactical_drills_desc;Tactical drill on the European model raises the quality of our regiments.;;;;;;;;;;;;;x
+army_schools_desc;Army schools train our soldiers systematically and advance our civilisation.;;;;;;;;;;;;;x
+professional_armies_desc;A standing professional army replaces the old levies.;;;;;;;;;;;;;x
+aristocratic_officers_desc;Commissions go to the nobility. The pops are quiescent, but our leadership is poor.;;;;;;;;;;;;;x
+foreign_officers_commanding_desc;Foreign officers command our regiments, improving leadership and advancing our civilisation.;;;;;;;;;;;;;x
+foreign_trained_officers_desc;Our own officers are trained abroad and return to command our regiments.;;;;;;;;;;;;;x
+unciv_officer_schools_desc;Officer schools of our own train the next generation of commanders.;;;;;;;;;;;;;x
+unciv_professional_officers_desc;A professional officer corps of our own leads the army.;;;;;;;;;;;;;x
+minor_group;Minor Ideologies;;;;;;;;;;;;;x
+Executive;Executive;;;;;;;;;;;;;x
+pro_slavery;Pro-Slavery;;;;;;;;;;;;;x
+abolitionist;Abolitionist;;;;;;;;;;;;;x
+cherokee_religion;Cherokee;;;;;;;;;;;;;x
+faroese;Faroese;;;;;;;;;;;;;x
+ossetian;Ossetian;;;;;;;;;;;;;x
+indonesian;Indonesian;;;;;;;;;;;;;x
+demand_concession_casus_belli6;Demand Concession;;;;;;;;;;;;;x
+status_quo;Status Quo;;;;;;;;;;;;;x
+great_war_install_revolution;Install Revolutionary Government;;;;;;;;;;;;;x
+great_war_install_revolution_desc;Overthrow the enemy government and install a revolutionary regime of our own ideology.;;;;;;;;;;;;;x
+install_revolution;Install Revolutionary Government;;;;;;;;;;;;;x
+install_revolution_desc;Overthrow the enemy government and install a regime of our own ideology.;;;;;;;;;;;;;x
+call_allies_cb;Call Allies;;;;;;;;;;;;;x
+call_allies_cb_desc;Bring our allies into this war on our side.;;;;;;;;;;;;;x
+modern_army_doctrine_1930_desc;The doctrine of mechanised warfare, worked out in the decades after the Great War.;;;;;;;;;;;;;x
+modern_artillery_desc;Quick-firing guns with hydraulic recoil, laid on targets the gunners cannot see.;;;;;;;;;;;;;x
+modern_financial_institutions_1930_desc;Central banking and modern credit markets on the twentieth-century model.;;;;;;;;;;;;;x
+modern_aesthetics_1930_desc;The modernist movement in art, architecture and letters.;;;;;;;;;;;;;x
+modern_power_generation_1930_desc;Generation and distribution of electric power on a national scale.;;;;;;;;;;;;;x
+modern_naval_doctrine_1930_desc;The carrier and the submarine displace the line of battle.;;;;;;;;;;;;;x
+School_of_firepower_desc;Doctrine now holds that concentrated firepower, not the bayonet, decides a battle.;;;;;;;;;;;;;x
+portland_steel;Portland Steel;;;;;;;;;;;;;x
+portland_steel_desc;High-pressure steam and Portland cement let our heavy industry produce more and waste less.;;;;;;;;;;;;;x
+luxury_industry_desc;Advances in medicine and comfort create a wide market for luxury manufactures.;;;;;;;;;;;;;x
+rosendale_steel;Rosendale Steel;;;;;;;;;;;;;x
+rosendale_steel_desc;Inorganic chemistry improves the smelting of steel, raising heavy industry output and throughput.;;;;;;;;;;;;;x
+synthetic_steel;Synthetic Steel;;;;;;;;;;;;;x
+synthetic_steel_desc;Electric furnaces produce steel of consistent quality, raising heavy industry output and throughput.;;;;;;;;;;;;;x

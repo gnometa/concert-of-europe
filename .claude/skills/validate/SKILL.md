@@ -45,7 +45,8 @@ One line per check. Anything not on this list is a regression.
 | `gfxtool missing` | 0 lines | must print nothing |
 | `provinces` / `tags`, whole tree | 0 | events, decisions, history/countries, history/diplomacy, history/wars |
 | `refcheck events` | 14 | 12 deliberately abandoned `is_triggered_only` events (1002, 90903, 95259, 95652, 95655, 97120, 98230, 99665, 99666, 99993, 290115, 375003) plus 99932 and 8016451, which have a trigger and no MTTH on purpose |
-| `refcheck loc` | 60 | 58 hidden/utility modifiers in `common/event_modifiers.txt` with no localisation, plus 2 rows for abandoned event 290115 |
+| `refcheck loc` | 2 | 2 rows for abandoned event 290115. The 58 unlocalised `common/event_modifiers.txt` names moved to `refcheck defs` and were filled in 2026-09-06 |
+| `refcheck defs` | 0 | player-visible definition names (modifiers, issue options, ideologies, cultures, casus belli, techs, inventions, tags, ...) with no localisation key. Must stay 0 |
 | `refcheck flags` | 119 | orphans: 97 set but never checked, 30 checked but never set. Drifts as chains land; none is a spelling variant of a real flag |
 | `refcheck options` | 8 | events with 6-8 options |
 | `refcheck onactions` / `modifiers` / `names` | 0 | |
