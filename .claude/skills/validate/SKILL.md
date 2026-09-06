@@ -46,7 +46,7 @@ One line per check. Anything not on this list is a regression.
 | `provinces` / `tags`, whole tree | 0 | events, decisions, history/countries, history/diplomacy, history/wars |
 | `refcheck events` | 14 | 12 deliberately abandoned `is_triggered_only` events (1002, 90903, 95259, 95652, 95655, 97120, 98230, 99665, 99666, 99993, 290115, 375003) plus 99932 and 8016451, which have a trigger and no MTTH on purpose |
 | `refcheck loc` | 60 | 58 hidden/utility modifiers in `common/event_modifiers.txt` with no localisation, plus 2 rows for abandoned event 290115 |
-| `refcheck flags` | 128 | orphans: 98 set but never checked, 30 checked but never set. Drifts as chains land; none is a spelling variant of a real flag |
+| `refcheck flags` | 127 | orphans: 97 set but never checked, 30 checked but never set. Drifts as chains land; none is a spelling variant of a real flag |
 | `refcheck options` | 8 | events with 6-8 options |
 | `refcheck onactions` / `modifiers` / `names` | 0 | |
 | `loc-check` malformed rows | 161 across 21 csvs | UTF-8 and/or missing `x` terminator; mostly `0000_economic_rework.csv`, `PDM_CE.csv`, `newCE.csv`. `GVG_events.csv` is clean and must stay clean |
@@ -61,7 +61,7 @@ New GVG content must add none of the localisation findings.
 python scripts/cwtools_check.py
 ```
 
-Filtered output; see `.claude/skills/cwtools-lsp/SKILL.md` for what the filter drops. Baseline (re-measured 2026-09-06): **14 diagnostics, 0 errors, 14 warnings** over ~780 files — 2 "Too many attacker_goal" (`CBsAndCores.txt:2448`, `Indochina.txt:188`; multiple war goals in one `war` effect are valid) and 12 "Too many clauses" in `common/production_types.txt`. Both are rule gaps. Anything else is new.
+Filtered output; see `.claude/skills/cwtools-lsp/SKILL.md` for what the filter drops. Baseline (re-measured 2026-09-06): **14 diagnostics, 0 errors, 14 warnings** over ~780 files — 2 "Too many attacker_goal" (`CBsAndCores.txt:2467`, `Indochina.txt:188`; multiple war goals in one `war` effect are valid) and 12 "Too many clauses" in `common/production_types.txt`. Both are rule gaps. Anything else is new.
 
 ## Stage 1c: subsystem audits (optional, no game needed)
 
@@ -83,7 +83,7 @@ Every script is expected at **0 `[high]`**. Baseline exceptions (re-measured 202
 | `audit_countries.py` | 39 highs | all "history file for tag X is not registered in `common/countries.txt`" (BMK, DUR, ERT, KRL, KYR, ...). Deferred — register or delete. Its other counters (`capital_not_owned`, `party_inactive`, `party_undefined`, `ideology_not_allowed`, `missing_common_file`) must stay 0 |
 | `audit_events.py` | 0 highs, 0 unknown keywords | any new high is a regression |
 | `audit_fire_once.py` | 124 findings (A 77, B 10, C 37) | a *list*, not a defect count: every self-firing `country_event` with engine-wide `fire_only_once` and no bare `tag =` / `owns =` test. Most class-A entries are alternative tags for one nation (`OR(ENG,ENL)`, ...); class C is genuine world events. Verdicts in `docs/audit/fire-only-once.md` — only review entries newer than that file |
-| `audit_owner_scope.py` | 0 highs, 147 lows (see `docs/audit/owner-scope.md`) | advisory. Every low is a conditional release/secede or cede branch where the scope may legitimately own the province later in the game; a **high** means the block is dead in every reachable state and must be rescoped (`TAG = { any_owned = ... }`) |
+| `audit_owner_scope.py` | 0 highs, 148 lows (see `docs/audit/owner-scope.md`) | advisory. Every low is a conditional release/secede or cede branch where the scope may legitimately own the province later in the game; a **high** means the block is dead in every reachable state and must be rescoped (`TAG = { any_owned = ... }`) |
 | `audit_pacing.py` | exit 0, no `[high]` class | advisory. Current snapshot (28 runaway repeaters, 0 narrow-window) is `docs/audit/pacing-1821-1836.md`; `--write` rewrites it |
 | `audit_religion.py` | exit 0 | read-only inventory of religion triggers/effects vs what the pops carry; snapshot in `docs/audit/religion-dead-content.md`. The dead-trigger count only drops if the design question is resolved |
 | `audit_parties.py`, `audit_provinces.py`, `audit_diplomacy.py`, `audit_decisions.py`, `audit_common.py`, `audit_loc.py`, `audit_perf.py` | 0 highs | medium/low findings are carried in the reports under `docs/audit/` |

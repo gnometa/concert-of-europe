@@ -55,12 +55,14 @@ Fixed in this pass: F1-F7. Everything else is reported only.
   trigger (and the identical 800094/800096/800097) use `-150`. Neighbours
   between -150 and -50 satisfied the trigger but matched no recipient, so the
   incident fired with no effect at all. **Fixed** — aligned to `-150`.
-- `Revolution_Event.txt:162, 414, 610, 1154` (800051/800052/800053/810056) —
-  `owner = { ruling_party_ideology = <x> }` is used as an *effect*.
-  `ruling_party_ideology` is a trigger only; there is no engine effect that sets
-  a ruling party. These three "fall back to the moderate party" branches are
-  silent no-ops (four of them). Not fixed here: the idiom appears 29x mod-wide and replacing it
-  needs a shared decision on what to substitute.
+- ~~`Revolution_Event.txt:162, 414, 610, 1154` (800051/800052/800053/810056) —
+  `owner = { ruling_party_ideology = <x> }` is a silent no-op.~~ **Retracted by
+  integration review 6.** `ruling_party_ideology` is *both* a trigger and a
+  country-scope effect - `docs/wiki/list-of-effects.md:206`: "Changes the current
+  ideology of the country's ruling party. If there is more than one party for
+  that ideology, the first party listed in the country file is chosen." The four
+  "fall back to the moderate party" branches work as written, as do the other 25
+  uses mod-wide. Nothing to fix.
 - `Revolution_Event.txt:1875` **97700** and `:1977` **800151** are the same
   episode ("$COUNTRY_ADJ$ Patriots") with the same effects, one triggered-only
   and one self-firing. 97700 is the known dead copy; if it is ever revived they
