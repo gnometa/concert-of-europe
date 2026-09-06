@@ -69,7 +69,7 @@ country_event = {
 		name = "We will give up nothing to form Germany."
 		set_country_flag = austrian_destiny
 		set_country_flag = austrian_greater_germany
-		badboy = 40
+		badboy = 20
 		all_core = {
 			limit = {
 				NOT = { is_core = HUN }
@@ -137,7 +137,7 @@ country_event = {
 		name = "Give limited autonomy to our non-German states."
 		set_country_flag = austrian_destiny
 		set_country_flag = austrian_greater_germany
-		badboy = 20
+		badboy = 10
 		all_core = {
 			limit = {
 				NOT = { is_core = HUN }
@@ -770,7 +770,7 @@ country_event = {
 	
 	option = {
 		name = "Greater Germany, all of it, is our destiny."
-		badboy = 40
+		badboy = 20
 		random_country = {
 			limit = {
 			OR={
@@ -843,7 +843,7 @@ country_event = {
 	
 	option = {
 		name = "$FROMCOUNTRY$'s non-German states will first have independence."
-		badboy = 20
+		badboy = 10
 		FROM = {
 			all_core = {
 				limit = {
@@ -1010,7 +1010,7 @@ country_event = {
 	
 	option = {
 		name = "Greater Germany is our destiny."
-		badboy = 20
+		badboy = 10
 		diplomatic_influence = { who = FROM value = -400 }
 		relation = { who = FROM value = -400 }
 		FROM = {
@@ -1133,7 +1133,7 @@ country_event = {
 	option = {
 		name = "We agree to $FROMCOUNTRY_ADJ$'s conditions for joining Germany."
 		prestige = 10
-		badboy = 20
+		badboy = 10
 		FROM = {
 			all_core = {
 				limit = {

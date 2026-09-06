@@ -567,7 +567,7 @@ political_decisions = {
 			#	}
 			#	#literacy = 0.45
 			#}
-		    badboy = 40.0
+		    badboy = 20
 			add_country_modifier = {
 				name = demographic_collapse
 				duration = -1

@@ -1894,7 +1894,7 @@ country_event = {
 			}
 			modifier = {
 				factor = 2
-				badboy = 20
+				badboy = 0.8
 			}
 		}
 	}
@@ -3178,7 +3178,7 @@ country_event = {
 			}
 			modifier = {
 				factor = 0
-				badboy = 15
+				badboy = 0.6
 			}			
 		}
 	}

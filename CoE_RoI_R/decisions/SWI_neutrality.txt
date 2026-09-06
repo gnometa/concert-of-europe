@@ -95,7 +95,7 @@ political_decisions = {
 			608 = { add_core = FRA }
 			609 = { add_core = FRA }
 			609 = { add_core = ITA }
-			badboy = 25
+			badboy = 13
 			SWI = {
 				set_country_flag = neutrality_violated
 				remove_country_modifier = neutrality

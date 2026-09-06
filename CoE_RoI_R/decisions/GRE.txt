@@ -213,7 +213,7 @@ political_decisions = {
 			}
 			change_tag = BYZ
 			prestige = 40
-			badboy = 25
+			badboy = 13
 			TUR_806 = { add_core = BYZ } #N. Macedonia
 			TUR_809 = { add_core = BYZ } #E. Rumelia
 			867 = { add_core = BYZ } #Kutahya

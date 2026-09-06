@@ -83,7 +83,7 @@ political_decisions = {
 			AUS_657 = { add_core = EPI } 
 			AUS_654 = { add_core = EPI } 
 			add_accepted_culture = bosniak
-			badboy = 40
+			badboy = 20
 			prestige = 30
 			any_greater_power = {
 				relation = { who = THIS value = -100 }

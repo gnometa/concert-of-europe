@@ -23,7 +23,7 @@ push_into_anatolia = {
 	}
 	effect = {
 		prestige = 30
-		badboy = 15
+		badboy = 8
 		879 = { add_core = BYZ }
 		888 = { add_core = BYZ }
 		TUR_873 = { add_core = BYZ }
@@ -74,7 +74,7 @@ push_into_anatolia = {
 		factor = 1
 		modifier = {
 			factor = 0
-			badboy = 5
+			badboy = 0.2
 		}
 	}
 }
@@ -140,7 +140,7 @@ reclaim_armenia = {
 		factor = 1
 		modifier = {
 			factor = 0
-			badboy = 10
+			badboy = 0.4
 		}
 	}
 }
@@ -170,7 +170,7 @@ reclaim_levant = {
 	}
 	effect = {
 		prestige = 15.75
-		badboy = 12
+		badboy = 6
 		EGY_897 = { 
 			add_province_modifier = {
 				name = aim_of_byzantine_conquest
@@ -213,7 +213,7 @@ reclaim_levant = {
 		factor = 1
 		modifier = {
 			factor = 0
-			badboy = 5
+			badboy = 0.2
 		}
 	}
 }
@@ -248,7 +248,7 @@ reclaim_egypt = {
 	}
 	effect = {
 		prestige = 21
-		badboy = 18
+		badboy = 9
 		EGY_1755 = { 
 			add_province_modifier = {
 				name = aim_of_byzantine_conquest
@@ -300,7 +300,7 @@ reclaim_egypt = {
 		factor = 1
 		modifier = {
 			factor = 0
-			badboy = 5
+			badboy = 0.2
 		}
 	}
 }
@@ -353,7 +353,7 @@ reclaim_cyrenaica = {
 		factor = 1
 		modifier = {
 			factor = 0
-			badboy = 15
+			badboy = 0.6
 		}
 	}
 }
@@ -406,7 +406,7 @@ reclaim_tripolitania = {
 		factor = 1
 		modifier = {
 			factor = 0
-			badboy = 10
+			badboy = 0.4
 		}
 	}
 }
@@ -474,7 +474,7 @@ expand_into_mesopotamia = {
 		factor = 1
 		modifier = {
 			factor = 0
-			badboy = 10
+			badboy = 0.4
 		}
 	}
 }
@@ -522,7 +522,7 @@ reclaim_tunisia = {
 		factor = 1
 		modifier = {
 			factor = 0
-			badboy = 15
+			badboy = 0.6
 		}
 	}
 }
@@ -567,7 +567,7 @@ reclaim_moesia = {
 		factor = 1
 		modifier = {
 			factor = 0
-			badboy = 10
+			badboy = 0.4
 		}
 	}
 }
@@ -641,7 +641,7 @@ reclaim_south_illyria = {
 		factor = 1
 		modifier = {
 			factor = 0
-			badboy = 10
+			badboy = 0.4
 		}
 	}
 }
@@ -674,7 +674,7 @@ reclaim_north_illyria = {
 	}
 	effect = {
 		prestige = 15.75
-		badboy = 20
+		badboy = 10
 		TUR_788 = { 
 			add_province_modifier = {
 				name = aim_of_byzantine_conquest

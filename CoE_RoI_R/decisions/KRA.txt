@@ -216,7 +216,7 @@ political_decisions = {
 
 		effect = {
 			prestige = 5
-			badboy = 20
+			badboy = 10
 			all_core = {
 				add_core = POL
 				remove_core = THIS

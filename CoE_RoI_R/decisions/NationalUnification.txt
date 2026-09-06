@@ -150,13 +150,13 @@ political_decisions = {
 				limit = {
 					owner = { is_our_vassal = HUN }
 				}
-				owner = { badboy = 20 }
+				owner = { badboy = 10 }
 			}
 			random_owned = {
 				limit = {
 					owner = { NOT = { is_our_vassal = HUN } }
 				}
-				owner = { badboy = 10 }
+				owner = { badboy = 5 }
 			}
 			FRA_412 = { add_core = GER }
 			all_core = {

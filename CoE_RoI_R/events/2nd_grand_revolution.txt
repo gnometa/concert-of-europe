@@ -96,7 +96,7 @@ country_event = {
 		398	= { add_core = GER }
 		396	= { add_core = GER }
 		381	= { add_core = GER }
-		badboy = 30
+		badboy = 15
 		set_global_flag = 2nd_grand_rev
 		set_global_flag = 2nd_grand_rev_happened
 		ai_chance = {

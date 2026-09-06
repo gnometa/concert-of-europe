@@ -2052,7 +2052,7 @@ country_event = {
 		FROM = {
 			country_event = 300985
 		}
-		badboy = 15
+		badboy = 8
 		relation = {
 			who = ENG
 			value = -100

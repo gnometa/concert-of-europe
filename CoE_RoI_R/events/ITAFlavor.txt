@@ -794,7 +794,7 @@ country_event = {
 			}
 			owner = {
 				badboy = -25
-				badboy = 18
+				badboy = 9
 			}
 		}
 		random_owned = {

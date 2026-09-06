@@ -1412,7 +1412,7 @@ country_event = {
 		clr_country_flag = attending_london_conference_1830
 		clr_country_flag = supporting_netherlands
 		prestige = 2
-		badboy = 15
+		badboy = 8
 		war_exhaustion = -50
 		remove_country_modifier = no_more_war
 		relation = { who = BEL value = -200 }
@@ -1549,7 +1549,7 @@ country_event = {
 		clr_country_flag = attending_london_conference_1830
 		clr_country_flag = supporting_netherlands
 		prestige = 2
-		badboy = 15
+		badboy = 8
 		war_exhaustion = -50
 		remove_country_modifier = no_more_war
 		# We keep Belgium: the partition is refused, so none of the shares are

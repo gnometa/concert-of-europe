@@ -586,108 +586,166 @@ FOLLOWUPS_2026_09 = """
 
 Owner decision, applied to `common/defines.lua`: `INFAMY_STATUS_QUO` 1 -> **0**,
 `BADBOY_LIMIT` 50 -> **25**, `MAX_BUREAUCRACY_PERCENTAGE` 0.001 -> **0.01**,
-`BUREAUCRACY_PERCENTAGE_INCREMENT` 0.000 -> **0.001**. All four are now the vanilla /
-real-world values and all four therefore dropped out of the defines diff table above
-(151 -> 147 changed values). Each changed line carries a
+`BUREAUCRACY_PERCENTAGE_INCREMENT` 0.000 -> **0.001**, and in the follow-up pass
+`BASE_COUNTRY_ADMIN_EFFICIENCY` 1.0 -> **0.2**. All five are now the vanilla /
+real-world values and all five therefore dropped out of the defines diff table above.
+Each changed line carries a
 `-- CoE 2026-09: real-world value, see docs/audit/common.md` trailing comment.
 
-Nothing below has been retuned. This is the script that was written against the old
-values and should be revisited in a balance pass, in priority order.
+The script that was written against the old values has now been retuned. What was done,
+and what was deliberately left, is below.
 
-### The infamy limit halved: what that does to script
+### Which `badboy` reading was verified
 
-Two different things use the word `badboy`, and they react differently:
+Two different things use the word `badboy`:
 
 - As an **effect** (`badboy = 4` inside an `option` / `effect`) it is straight infamy
   points. Halving the limit doubles the sting of every one of these without touching a
   single number.
-- As a **trigger** (`badboy = 0.8` inside a `trigger` / `limit` / `ai_will_do` /
-  `ai_chance` modifier) it is a *fraction of `BADBOY_LIMIT`*, per
-  `docs/wiki/list-of-conditions.md`. These rescale by themselves: `badboy = 0.8` used to
-  mean 40 infamy and now means 20. That is the intended behaviour, so the roughly 200
-  fractional triggers across `events/` and `decisions/` need no edit - but every one of
-  them now bites at half the infamy it used to, which is the largest behavioural
-  consequence of the change.
+- As a **trigger** (`badboy = 0.8` inside a `trigger` / `limit` / `allow` /
+  `ai_will_do` / `ai_chance` / `mean_time_to_happen` modifier) it is a *fraction of the
+  infamy limit*.
 
-**[high] Absolute infamy grants that were sized against a 50 limit.** Each now costs a
-far larger slice of the halved limit; the ones above 25 push a country over the
-containment threshold on their own, out of one event option:
+The fraction reading is the correct one, verified two ways.
+`docs/wiki/list-of-conditions.md:317` states it outright: "X in this case is not a
+straight integer. It's a percentage of 25 (the 'infamy limit'). So 20 infamy is 0.8, and
+50 infamy is 2.0." Vanilla usage agrees without a single exception: across
+`events/` and `decisions/` in the base game every effect-scope `badboy` is an integer
+1-10 and every trigger-scope `badboy` is a fraction 0.2-0.8 (e.g.
+`decisions/France.txt:243` grants `badboy = 4` while the `ai_will_do` eight lines below
+tests `badboy = 0.5`; `events/GreatPowers.txt:84` grants `badboy = 1` while the
+`mean_time_to_happen` at :127-:131 tests 0.4 and 0.8). A third, mod-internal
+confirmation: the twelve `badboy = -1000` / `badboy = 24.99` pairs in
+`events/GreatWar_Events.txt` and `events/InfamyWar_Events.txt:511` are commented
+"reduce infamy to 24.99" - they were written for a limit of **25** all along and are
+correct again now.
 
-| file:line | grant | share of the new limit |
-|---|---|---|
-| `events/1german_revolution_1848.txt:1518` | `badboy = 150` | 6.0x |
-| `events/1german_revolution_1848.txt:1438` | `badboy = 125` | 5.0x |
-| `events/1german_revolution_1848.txt:179, :395` | `badboy = 100` | 4.0x |
-| `events/1german_revolution_1848.txt:501` | `badboy = 80` | 3.2x |
-| `events/1german_revolution_1848.txt:617, :843` | `badboy = 75` | 3.0x |
-| `events/1german_revolution_1848.txt:942` | `badboy = 50` | 2.0x |
-| `events/1german_revolution_1848.txt:1051` | `badboy = 40` | 1.6x |
-| `events/Greater Germany.txt:72, :773` | `badboy = 40` | 1.6x |
-| `events/2nd_grand_revolution.txt:99` | `badboy = 30` | 1.2x |
-| `decisions/France.txt:570` (`fra_setup`) | `badboy = 40.0` | 1.6x |
-| `decisions/Ottoman_Dec.txt:86` (`ioanninia_dynasty`) | `badboy = 40` | 1.6x |
+So a trigger written `badboy = 15` never meant "15 infamy"; it meant 15x the limit
+(375 infamy), which is unreachable. Those were bugs under the old limit too.
 
-The mirror image, the large negative grants, are now over-generous rather than
-dangerous: `events/GreatWar_Events.txt` wipes `badboy = -1000` in twelve places (lines
-525, 2309, 3141, 3685, 4353, 4789, 5152, 5569, 5922, 6345, 6914, 7416),
-`events/InfamyWar_Events.txt:510` does the same, and
-`events/2nd_grand_revolution.txt:860, :947` give -50 / -25. These were already "clear
-all infamy" in intent, so they are cosmetic, but a -1000 against a limit of 25 is worth
-normalising while the file is open.
+### Absolute infamy grants, halved (applied)
 
-**[medium] Trigger thresholds written as absolute infamy, which the engine reads as a
-fraction of the limit.** These were already wrong under the 50 limit and are now wrong
-by twice as much (`badboy = 5` reads as 125 infamy, i.e. unreachable):
+Every effect-scope grant above 10 was halved so it keeps the same share of the limit it
+had at 50. 38 lines in 17 files:
 
-- `decisions/BYZ_Expansion.txt:77, :143, :216, :303, :356, :409, :477, :525, :570, :644`
-  - ten `ai_will_do` modifiers using `badboy = 5 / 10 / 15`.
-- `events/RUSFlavor.txt:1897` (`badboy = 20`) and `:3181` (`badboy = 15`), both
-  `ai_chance` modifiers sitting in a ladder whose other rungs are correctly fractional
-  (0.2 / 0.4 / 0.6), which makes these two look like typos.
+| file | before -> after |
+|---|---|
+| `events/1german_revolution_1848.txt` (10 options) | 150 -> 75, 125 -> 63, 100 -> 50 (x2), 80 -> 40, 75 -> 38 (x2), 50 -> 25, 40 -> 20, 20 -> 10 |
+| `events/Greater Germany.txt` (6 options) | 40 -> 20 (x2), 20 -> 10 (x4) |
+| `events/ACW.txt` | 25 -> 13 (x2), 15 -> 8 |
+| `events/2nd_grand_revolution.txt` | 30 -> 15 |
+| `events/BELFlavor.txt` | 15 -> 8 (x2) |
+| `events/CLMFlavor.txt`, `events/PERFlavour.txt` | 15 -> 8 |
+| `events/ITAFlavor.txt:797` | 18 -> 9 |
+| `events/PORFlavor.txt:1699` | 25 -> 13 |
+| `decisions/BYZ_Expansion.txt` (4 effects) | 20 -> 10, 18 -> 9, 15 -> 8, 12 -> 6 |
+| `decisions/AUS.txt`, `decisions/GRE.txt`, `decisions/SWI_neutrality.txt` | 25 -> 13 |
+| `decisions/France.txt:570` (`fra_setup`), `decisions/Ottoman_Dec.txt:86` | 40 -> 20 |
+| `decisions/KRA.txt:219` | 20 -> 10 |
+| `decisions/NationalUnification.txt:153/:159` | 20 -> 10 and 10 -> 5 |
 
-**[medium] The infamy-containment chain itself.** `events/InfamyWar_Events.txt` is the
-"cut down to size" content and keys entirely on fractional thresholds (`badboy = 1`,
-`1.5`, `2` at lines 24, 73, 106, 145, 241, 255-339, 375, 431). Those now trip at
-25 / 37.5 / 50 infamy instead of 50 / 75 / 100. Together with the mod's flat
-`INFAMY_* = 1` peace-deal costs, containment coalitions should finally form - which is
-the point of the change, but it is the first thing to watch in a play test.
-`events/crises.txt:617-629` and `events/GreatPowers.txt:303-307` have the same shape.
+Halves were rounded to the nearest integer, ties up. `NationalUnification.txt:159` is
+the one grant of 10 that was halved anyway: it is the other branch of the same
+`random_owned` pair as :153, and leaving it would have flattened the vassal /
+non-vassal distinction the effect exists to draw.
+
+**Left alone on purpose:**
+
+- **Grants of 10 and below** - 32 grants of exactly 10 and roughly 250 of 1-9. At a
+  limit of 25 a grant of 10 is 40% of the limit, which is a heavy but defensible price
+  for annexing a neighbour, and these were never "sized for 50" the way the 40-150 tier
+  was. The 10s sit in `decisions/AUS.txt:146`, `GRE.txt:119`, `Irredentism.txt:464`,
+  `Italy.txt:628`, `KRA.txt:563`, `TUR.txt:732`, `events/ACW.txt:2727`,
+  `BELFlavor.txt:601, :1304`, `CLMFlavor.txt:683`, `ChileanEvents.txt:308`,
+  `CrimeanWar.txt:561`, `Greater Germany.txt:239, :1606`,
+  `NationalUnification.txt:84, :777, :1020, :1187, :1496`, `Oriental Crisis.txt:74`,
+  `PERFlavour.txt:2296`, `POLflavor.txt:98, :153, :183, :236, :266, :319, :406`,
+  `PanNationalists.txt:1262`, `SPAFlavor.txt:3521, :4515`. Revisit as a block if a
+  play-test says expansion is now impossible.
+- **The `badboy = -1000` wipes** (13 in `GreatWar_Events.txt` / `InfamyWar_Events.txt`)
+  and the `badboy = 24.99` that follows each of them. That pair means "clamp infamy to
+  just under the limit", and the limit it was written for is exactly the 25 now in
+  force, so the pattern is correct for the first time in years.
+- The negative grants `-50` / `-25` / `-15` / `-10` and below. They are relief, not
+  cost; halving them would only make relief stingier.
+
+### Trigger thresholds written as absolute infamy, converted (applied)
+
+Twelve `ai_will_do` / `ai_chance` modifiers used integers where the engine wanted a
+fraction, so they demanded 125-500 infamy and never fired. Converted to fractions of the
+25 limit that preserve the infamy each author meant:
+
+- `decisions/BYZ_Expansion.txt:77, :216, :303` - `badboy = 5` -> **0.2**
+- `decisions/BYZ_Expansion.txt:143, :409, :477, :570, :644` - `badboy = 10` -> **0.4**
+- `decisions/BYZ_Expansion.txt:356, :525` - `badboy = 15` -> **0.6**
+- `events/RUSFlavor.txt:1897` - `badboy = 20` -> **0.8** (completes an
+  `ai_chance` ladder whose other rungs are 0.2 / 0.4 / 0.6)
+- `events/RUSFlavor.txt:3181` - `badboy = 15` -> **0.6**
+
+Each of these was previously a dead `factor = 0` guard, so the AI took decisions it was
+supposed to refuse at high infamy; they now bite.
+
+**Not converted:** the containment thresholds in `events/InfamyWar_Events.txt`
+(`badboy = 1.5` at :24, `badboy = 2` at :106, :145, :241, :255-:339, :375, :431) and
+`events/crises.txt:625, :629` (1.5 / 2). These are already fractions and read as "at the
+limit", "1.5x the limit", "2x the limit" - a coherent ladder. What changed is that they
+now trip at 25 / 37.5 / 50 infamy instead of 50 / 75 / 100, which is the intended
+consequence of the smaller limit and the first thing to watch in a play-test.
+The roughly 200 other fractional triggers across `events/` and `decisions/` rescale by
+themselves for the same reason and were not touched.
 
 **[low] `INFAMY_STATUS_QUO` 1 -> 0.** No script reads the define and nothing tests for
 "infamy from a white peace"; the 56 `casus_belli = status_quo` grants across 23 event
-and decision files are unaffected. The only consequence is that the status-quo wargoal
-is free again, as in vanilla, so AI wars ending in a white peace stop accumulating
-infamy. Nothing to retune.
+and decision files are unaffected. The status-quo wargoal is free again, as in vanilla.
+Nothing to retune.
 
-### Bureaucracy: the cap moves from 0.1% to 1% (+0.1% per admin reform level)
+### Bureaucracy and administrative efficiency (applied)
 
-**[medium] `common/triggered_modifiers.txt:872-1052`** - the ten `admin_found_*` tiers
-step through `bureaucrats = 0.005 / 0.010 / 0.015 / ... / 0.050`, each with a
-`NOT = { bureaucrats = <next> }` ceiling. Under the old cap of 0.001 with a zero
-increment every one of those tiers sat *above* the point where extra bureaucrats stopped
-doing anything, so the ladder rewarded hiring the engine ignored. The useful band is now
-1.0% rising to roughly 1.8% at full social administrative reform, so the first two rungs
-are at or below the cap and the top six (0.025 upward) remain unreachable. The tier
-spacing wants re-cutting against the new cap.
+**`BASE_COUNTRY_ADMIN_EFFICIENCY` 1.0 -> 0.2** (`defines.lua:11`, the vanilla value).
+The 1.0 was set by the same 2021 commit that zeroed `BUREAUCRACY_PERCENTAGE_INCREMENT`
+("disabled admin efficiency for now"); the pair was one switch-off, and leaving 1.0 in
+place would have kept the restored cap and increment inert - every country would sit at
+100% administrative efficiency no matter how few bureaucrats it employed. Lowering it is
+what makes administrative efficiency something a country earns.
 
-**[medium] `BASE_COUNTRY_ADMIN_EFFICIENCY = 1.0`** (`defines.lua:11`, vanilla 0.2) was
-raised in the same 2021 commit that zeroed `BUREAUCRACY_PERCENTAGE_INCREMENT` ("disabled
-admin efficiency for now") - the pair was one switch-off. With the increment back on,
-1.0 still means every country sits at full administrative efficiency regardless of
-bureaucrats, so restoring the increment buys nothing until this is lowered too. This is
-the one follow-up whose omission makes the other bureaucracy change inert.
+What this changes in game:
+
+- **Administrative efficiency** now starts at 20% and climbs with the bureaucrat share
+  of each state's population, capped at `MAX_BUREAUCRACY_PERCENTAGE` (1.0%) plus
+  `BUREAUCRACY_PERCENTAGE_INCREMENT` (0.1%) per social administrative reform level. The
+  administrative social reforms in `common/issues.txt` (wage_reform, work_hours,
+  safety_regulations, health_care, child_labor, education, arts_endowment) carry
+  `administrative_multiplier` totalling roughly 19, so a fully reformed state's useful
+  band tops out around 2.9% bureaucrats. A 1821 state with no reforms and no bureaucrats
+  is at 20% efficiency; hiring to the 1% cap takes it to 100%.
+- **Tax efficiency** is the visible consequence. `BASE_COUNTRY_TAX_EFFICIENCY` is 0.50
+  in this mod and administrative efficiency multiplies on top of it, so an
+  unadministered country collects far less than it did yesterday. Early-game budgets get
+  tighter and the gap between a well-run and a badly-run state widens; this is the
+  intended realism, but it is the single largest economic consequence of the whole
+  defines pass and needs a play-test on a poor tag as well as on a great power.
+- **Bureaucrat demand** rises by an order of magnitude relative to the 0.1% cap regime
+  (there was no reason to hire past 0.1% before, and no reward for it either since
+  efficiency was pinned at 100%). `common/national_focus.txt:42` (`promote_bureaucrats`)
+  and the `bureaucrats` promotion effects in the education / RGO chain
+  (`events/+education_RGO.txt:146, :183`, `events/00_CoE_RoI.txt:717`) now do something
+  rather than nothing. Bureaucrats are `state_capital_only` middle-strata pops paid out
+  of the administration budget, so the cost shows up as administrative spending.
+
+**`common/triggered_modifiers.txt:872-1052` - the `admin_found_*` ladder re-cut.** The
+ten tiers stepped `bureaucrats = 0.005 / 0.010 / ... / 0.050`, i.e. up to five times the
+useful ceiling; the top four rungs rewarded hiring the engine ignores, and under the old
+0.1% cap every single rung did. They now step **0.003** at a time, 0.003 -> 0.030, so
+tier 4 sits at the unreformed cap (1.2% ~ 1.0%) and tier 10 at 3.0%, just past a fully
+reformed state's ~2.9%. The whole ladder is inside the band a player can actually reach,
+and the top tier is a full-social-reform reward rather than dead script. Only the
+`trigger` blocks moved; every modifier payload is unchanged.
 
 **[low] `common/issues.txt:1106, :1140, :1607, :1638`** - the four
 `administrative_efficiency(_modifier)` reform effects (-0.05, +0.05, +0.025, +0.05) and
-`common/event_modifiers.txt:3632` (+0.05) are relative and need no edit, but they were
-sized while admin efficiency was effectively pinned; recheck their weight once
-`BASE_COUNTRY_ADMIN_EFFICIENCY` is decided.
-
-**[low] `common/national_focus.txt:42` (`promote_bureaucrats`)** and the `bureaucrats`
-promotion effects in the education / RGO chain (`events/+education_RGO.txt:146, :183`,
-`events/00_CoE_RoI.txt:717`) push pops into a pop type whose useful ceiling just moved by
-a factor of ten. They will now do something rather than nothing; no edit needed, but the
-education ladder was balanced against the old cap.
+`common/event_modifiers.txt:3632` (+0.05) are relative and still need no edit, but they
+were sized while admin efficiency was pinned at 1.0 and now apply to a number that
+actually moves. Worth a second look after a play-test.
 """
 
 A('## Deferred to balance pass')
