@@ -11,11 +11,11 @@ KRT		= "countries/Kaarta.txt"	#needs flags
 
 ANC		= "countries/Antilles Confederation.txt"
 EFR		= "countries/East Frisia.txt"
+DUR		= "countries/Durrani Empire.txt"
 EPI		= "countries/Epirus.txt"
 NPU		= "countries/North Peru.txt"
 PON		= "countries/Pontus.txt"
 UPB		= "countries/Portugal-Brazil.txt"
-DUR		= "countries/Durrani Empire.txt"
 GLN		= "countries/Gilan.txt"
 HRT		= "countries/Herat.txt"
 HZJ		= "countries/Hazarajat.txt"
