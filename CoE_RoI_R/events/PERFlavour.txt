@@ -1380,6 +1380,7 @@ country_event = {
 
 	option = {
 		name = "We Russians are know for our magnanimity..."
+		clr_country_flag = the_war_drums
 		prestige = 10
 		PER = {
 			country_event = 301028
@@ -1393,11 +1394,11 @@ country_event = {
 				}
 				secede_province = AZB
 			}
-			create_vassal = AZB
 		}
+		create_vassal = AZB
 		diplomatic_influence = {
 			who = AZB
-			value = 400
+			value = 100
 		}
 		any_pop = {
 			limit = {
@@ -1423,6 +1424,7 @@ country_event = {
 	}
 	option = {
 		name = "Keeping the Caucasus in line is difficult enough as it is..."
+		clr_country_flag = the_war_drums
 		PER = {
 			country_event = 301028
 		}
@@ -1595,6 +1597,7 @@ country_event = {
 
 	option = {
 		name = "We Russians are know for our magnanimity..."
+		clr_country_flag = the_war_drums
 		prestige = 10
 		PER = {
 			country_event = 301028 
@@ -1642,6 +1645,7 @@ country_event = {
 	}
 	option = {
 		name = "Keeping the Caucasus in line is difficult enough as it is..."
+		clr_country_flag = the_war_drums
 		PER = {
 			country_event = 301028 
 		}
@@ -1725,7 +1729,7 @@ country_event = {
 		casus_belli = {
 			target = TUR
 			type = cut_down_to_size
-			duration = 24
+			months = 24
 		}
 		war = {
 			target = TUR
@@ -1874,7 +1878,7 @@ country_event = {
 		}
 		relation = {
 			who = PER
-			value = -400
+			value = 200
 		}
 		PER = {
 			country_event = 301044
@@ -1914,7 +1918,7 @@ country_event = {
 		prestige = 5
 		relation = {
 			who = TUR
-			value = 325
+			value = 200
 		}
 	}
 }
@@ -3411,8 +3415,8 @@ country_event = {
 				limit = {
 					is_core = AZB
 				}
+				secede_province = PER
 			}
-			secede_province = PER
 		}
 		ENG = { diplomatic_influence = { who = THIS value = 50 } }
 		war_exhaustion = -20
