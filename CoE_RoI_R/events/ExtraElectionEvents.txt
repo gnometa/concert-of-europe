@@ -3013,7 +3013,7 @@ country_event = {
 			}
 			scaled_militancy = {
 				issue = pluralism
-				factor = -4
+				factor = 4
 			}
 			scaled_militancy = {
 				issue = moralism
@@ -3063,7 +3063,7 @@ country_event = {
 				factor = 2
 			}
 			scaled_militancy = {
-				issue = anit_industrial
+				issue = anti_industrial
 				factor = 2
 			}
 		}
@@ -3095,7 +3095,7 @@ country_event = {
 			}
 			dominant_issue = {
 				factor = 0.20
-				value = anit_industrial
+				value = anti_industrial
 			}			
 			ideology = {
 				value = socialist
@@ -3387,9 +3387,9 @@ country_event = {
 			limit = {
 				is_state_religion = no
 			}
-			reduce_pop = 0.95
-			militancy = 8
-			consciousness = 8
+			reduce_pop = 0.99
+			militancy = 4
+			consciousness = 4
 		}
 	}
 }
@@ -4110,6 +4110,7 @@ country_event = {
 	title = "EVTNAME142501"
 	desc = "EVTDESC142501"
 	election = yes
+	issue_group = citizenship_policy
 	is_triggered_only = yes
 
 	trigger = {
@@ -4180,6 +4181,7 @@ country_event = {
 	desc = "EVTDESC142601"
 	
 	election = yes
+	issue_group = citizenship_policy
 	is_triggered_only = yes
 	trigger = {
 		is_colonial = no
