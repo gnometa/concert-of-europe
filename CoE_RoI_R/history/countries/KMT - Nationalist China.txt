@@ -5,7 +5,7 @@ religion = mahayana
 government = presidential_dictatorship
 plurality = 0.0
 nationalvalue = nv_enlightenment
-literacy = 0.01  non_state_culture_literacy = 0.01   #literacy = 0.05
+literacy = 0.1  non_state_culture_literacy = 0.01   #literacy = 0.05
  # #literacy = 0
 is_releasable_vassal = no
 

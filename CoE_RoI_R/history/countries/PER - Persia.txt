@@ -10,7 +10,7 @@ religion = shiite
 government = absolute_monarchy3
 plurality = 0.0
 nationalvalue = nv_might #nationalvalue = nv_enlightenment
-literacy = 0.01  non_state_culture_literacy = 0.01   #literacy = 0.022
+literacy = 0.05  non_state_culture_literacy = 0.01   #literacy = 0.022
 civilized = yes
 
 # Political reforms
