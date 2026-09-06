@@ -1,5 +1,5 @@
 #####################
-# Enable Socialists #Now more in line with 'Communism'
+# Enable Socialists (Social-Democracy)
 #####################
 country_event = {
 	id = 1000
@@ -14,7 +14,7 @@ country_event = {
 	trigger = {
 		exists = yes
 		NOT = {
-			is_ideology_enabled = communist 
+			is_ideology_enabled = socialist 
 		}
 		has_country_flag = had_liberal_revolution
 		invention = karl_marx #invention = pierre_joseph_proudhon
@@ -36,7 +36,7 @@ country_event = {
 
 	option = {
 		name = "EVTOPTA1000"
-		enable_ideology = communist
+		enable_ideology = socialist
 		prestige = 20
 		any_pop = {
 			limit = {
@@ -46,7 +46,7 @@ country_event = {
 				}
 			}
 			ideology = {
-				value = communist
+				value = socialist
 				factor = 0.1
 			}
 		}
@@ -66,24 +66,18 @@ country_event = {
 							}
 						}
 						ideology = {
-							value = communist
+							value = socialist
 							factor = 0.05
 						}
 					}
 				}
 			}
 		}
-		any_country = {
-			set_variable = {
-				which = successful_communist_rebellions
-				value = 0
-			}
-		}
 	}
 }
 
 #####################
-# Enable Communists #Now Social-Democracy
+# Enable Communists
 #####################
 country_event = {
 	id = 1001
@@ -98,9 +92,9 @@ country_event = {
 	trigger = {
 		exists = yes
 		NOT = {
-			is_ideology_enabled = socialist 
+			is_ideology_enabled = communist 
 		}
-		is_ideology_enabled = communist 
+		is_ideology_enabled = socialist 
 		invention = vangaurd_party #invention = karl_marx
 	}
 	
@@ -122,7 +116,7 @@ country_event = {
 
 	option = {
 		name = "EVTOPTA1001"
-		enable_ideology = socialist
+		enable_ideology = communist
 		prestige = 20
 		any_pop = {
 			limit = {
@@ -133,7 +127,7 @@ country_event = {
 				}
 			}
 			ideology = {
-				value = socialist
+				value = communist
 				factor = 0.1
 			}
 		}
@@ -154,19 +148,19 @@ country_event = {
 							}
 						}
 						ideology = {
-							value = socialist
+							value = communist
 							factor = 0.05
 						}
 					}
 				}
 			}
 		}
-		#any_country = {
-		#	set_variable = {
-		#		which = successful_communist_rebellions
-		#		value = 0
-		#	}
-		#}
+		any_country = {
+			set_variable = {
+				which = successful_communist_rebellions
+				value = 0
+			}
+		}
 	}
 }
 
