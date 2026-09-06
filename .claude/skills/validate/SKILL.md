@@ -75,6 +75,7 @@ python scripts/audit_fire_once.py
 python scripts/audit_owner_scope.py
 python scripts/audit_pacing.py
 python scripts/audit_religion.py
+python scripts/audit_religion.py check
 ```
 
 Every script is expected at **0 `[high]`**. Baseline exceptions (re-measured 2026-09-06):
@@ -86,7 +87,8 @@ Every script is expected at **0 `[high]`**. Baseline exceptions (re-measured 202
 | `audit_fire_once.py` | 124 findings (A 77, B 10, C 37) | a *list*, not a defect count: every self-firing `country_event` with engine-wide `fire_only_once` and no bare `tag =` / `owns =` test. Most class-A entries are alternative tags for one nation (`OR(ENG,ENL)`, ...); class C is genuine world events. Verdicts in `docs/audit/fire-only-once.md` — only review entries newer than that file |
 | `audit_owner_scope.py` | 0 highs, 148 lows (see `docs/audit/owner-scope.md`) | advisory. Every low is a conditional release/secede or cede branch where the scope may legitimately own the province later in the game; a **high** means the block is dead in every reachable state and must be rescoped (`TAG = { any_owned = ... }`) |
 | `audit_pacing.py` | exit 0, no `[high]` class | advisory. Current snapshot (28 runaway repeaters, 0 narrow-window) is `docs/audit/pacing-1821-1836.md`; `--write` rewrites it |
-| `audit_religion.py` | exit 0 | read-only inventory of religion triggers/effects vs what the pops carry; snapshot in `docs/audit/religion-dead-content.md`. The dead-trigger count only drops if the design question is resolved |
+| `audit_religion.py` | exit 0 | read-only inventory of religion triggers/effects vs what the pops carry; snapshot in `docs/audit/religion-dead-content.md`. Since the 2026-09-06 restoration pops carry real religions, so the inventory reports no dead pop-religion sites |
+| `audit_religion.py check` | **exit 0, 0 problems - hard invariant** | the religion-restoration regression gate: no pop may hold a culture name in the religion field, no `has_pop_religion`/`religion` trigger may name a culture, no `culture = german\|italian` site may exist (both cultures have 0 pops), and `common/religion.txt` must define no culture as a religion. Any finding here is a regression, not a baseline |
 | `audit_parties.py`, `audit_provinces.py`, `audit_diplomacy.py`, `audit_decisions.py`, `audit_common.py`, `audit_loc.py`, `audit_perf.py` | 0 highs | medium/low findings are carried in the reports under `docs/audit/` |
 
 `audit_provinces.py` and `audit_loc.py` rewrite their report file, so `git diff docs/audit/`
