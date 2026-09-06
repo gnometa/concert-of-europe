@@ -127,7 +127,7 @@ country_event = {
 	}
 	
 	option = {
-		name = "The republic must live on!"
+		name = "There is nothing we can do to hold them."
 		set_country_flag = costa_rica_independence
 		prestige = -5
 		any_owned = {
@@ -192,7 +192,7 @@ country_event = {
 	}
 	
 	option = {
-		name = "The republic must live on!"
+		name = "There is nothing we can do to hold them."
 		set_country_flag = nicaragua_independence
 		prestige = -5
 		any_owned = {
@@ -257,7 +257,7 @@ country_event = {
 	}
 	
 	option = {
-		name = "The republic must live on!"
+		name = "There is nothing we can do to hold them."
 		set_country_flag = el_salvador_independence
 		prestige = -5
 		any_owned = {
@@ -323,7 +323,7 @@ country_event = {
 	}
 	
 	option = {
-		name = "The republic must live on!"
+		name = "There is nothing we can do to hold them."
 		set_country_flag = honduras_independence
 		prestige = -5
 		any_owned = {
@@ -388,7 +388,7 @@ country_event = {
 	}
 	
 	option = {
-		name = "The republic must live on!"
+		name = "There is nothing we can do to hold them."
 		set_country_flag = panama_independence
 		prestige = -5
 		any_owned = {
@@ -892,9 +892,9 @@ country_event = {
 			militancy = 9
 		}
 		prestige = 2
-		relation = { who = NIC value = -100 }
+		relation = { who = PNM value = -100 }
 		war = {
-			target = NIC
+			target = PNM
 			attacker_goal = {
 				casus_belli = civil_war
 			}
@@ -902,7 +902,7 @@ country_event = {
 				casus_belli = status_quo
 			}
 		}
-		NIC = {
+		PNM = {
 			casus_belli = {
 				target = UCA
 				type = free_peoples
@@ -1404,7 +1404,7 @@ country_event = {
 
 	option = {
 		name = "We refuse."
-		UCA = { country_event = 32552 }
+		FROM = { country_event = 32552 }
 		ai_chance = {
 			factor = 25
 		}
@@ -1466,6 +1466,7 @@ country_event = {
 		}
 		NOT = {
 			has_country_flag = join_mexico
+			has_country_flag = usca_own_way
 		}
 	}
 
@@ -1485,7 +1486,7 @@ country_event = {
 	
 	option = {
 		name = "We will make our own way."
-		set_country_flag = join_mexico
+		set_country_flag = usca_own_way
 		clr_country_flag = liberal_constitution
 		2182 = { add_core = MEX }
 		any_pop = {

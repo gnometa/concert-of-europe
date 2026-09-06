@@ -181,9 +181,9 @@ country_event = {
 	
 	trigger = {
 		year = 1850
-		NOT = { 
-			tag = ARG
-			exists = yes
+		exists = yes
+		NOT = { tag = ARG }
+		NOT = {
 			exists = ENT
 			has_country_flag = will_support_entre_rios
 			has_country_flag = will_not_support_entre_rios

@@ -537,7 +537,7 @@ province_event = {
 				}
 				owner = { political_reform = appointed }
 			}
-			vote_franschise = none_voting
+			political_reform = none_voting
 			#random_owned = {
 			#	limit = {
 			#		owner = { vote_franschise = wealth_weighted_voting }
