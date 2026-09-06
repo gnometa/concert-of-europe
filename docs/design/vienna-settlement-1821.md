@@ -218,3 +218,8 @@ Flagged explicitly, because none of this has been in front of the game:
   diplomacy screen (spheres) and `error.log` (the guarantee clause), and playing far enough
   for the Austrian and British markets to settle. Re-running
   `python scripts/balance_factories.py` does not capture this - it has no model of spheres.
+
+
+## Review outcome (2026-09-06)
+
+Victoria 2 has no guarantee diplomacy concept: the vanilla `Guarantees.txt` is a 0-byte template and no file or wiki page uses a `guarantee` block, so the 11 entries were reverted and the file is empty again. The treaty research above stands as documentation only; the OOB sphere corrections ship as-is. `ION` at level 5 for ENG is redundant (already a vassal) but harmless.
