@@ -48,7 +48,12 @@ country_event = {
 			which = wallingant_provinces
 			value = 1
 		}
-		387 = {
+		random_owned = {
+			limit = {
+				is_core = WLL
+				culture = wallonian
+				NOT = { has_province_modifier = wallingants }
+			}
 			add_core = WLL
 			any_pop = {
 				limit = { has_pop_culture = wallonian }

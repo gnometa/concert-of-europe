@@ -440,7 +440,7 @@ country_event = {
 	
 	option = {
 		name = "Then it is done."
-		set_country_flag = signed_treay_of_london
+		set_country_flag = signed_treaty_of_london
 		prestige = 5
 		BEL_394 = { remove_core = NET }
 		BEL_387 = { remove_core = NET }
@@ -488,7 +488,7 @@ country_event = {
 			province_control_days = 90
 		}
 		NOT = {
-			has_country_flag = signed_treay_of_london
+			has_country_flag = signed_treaty_of_london
 			has_country_flag = fall_of_amsterdam
 			any_owned_province = {
 				is_core = BEL
@@ -566,7 +566,7 @@ country_event = {
 		BEL_394 = { remove_core = NET }
 		BEL_387 = { remove_core = NET }
 		NET = {
-			set_country_flag = signed_treay_of_london
+			set_country_flag = signed_treaty_of_london
 			prestige = -20
 			any_owned = {
 				limit = { is_core = BEL }
@@ -619,7 +619,7 @@ country_event = {
 		BEL_394 = { remove_core = NET }
 		BEL_387 = { remove_core = NET }
 		NET = {
-			set_country_flag = signed_treay_of_london
+			set_country_flag = signed_treaty_of_london
 			prestige = -30
 			any_owned = {
 				limit = { is_core = BEL }
@@ -765,6 +765,7 @@ country_event = {
 	option = {
 		name = "The kingdom must not be divided!"
 		set_country_flag = belgium_seceded
+		clr_country_flag = united_netherlands
 		prestige = -10
 		war_exhaustion = 50
 		add_country_modifier = {
@@ -793,6 +794,7 @@ country_event = {
 	option = {
 		name = "Hurrah for Belgium!"
 		set_country_flag = belgium_seceded
+		clr_country_flag = united_netherlands
 		prestige = -10
 		war_exhaustion = 50
 		add_country_modifier = {
@@ -829,10 +831,15 @@ country_event = {
 	trigger = {
 		is_greater_power = yes
 		capital_scope = { continent = europe }
+		year = 1830
+		NET = { exists = yes }
 		NOT = {
 			tag = NET
 			tag = BEL
 			tag = FRA
+			# The BELRevolutionGVG.txt chain (1000301+) runs its own scripted
+			# conference; do not stage a second one on top of it.
+			NET = { has_country_flag = BEL_revolt_in_progress }
 			has_global_flag = london_conference_1830_held
 			has_global_flag = london_conference_1830_in_progress
 			has_country_flag = will_not_hold_conference_1830
@@ -1253,6 +1260,12 @@ country_event = {
 		clr_country_flag = attending_london_conference_1830
 		clr_country_flag = supporting_belgium
 		remove_country_modifier = no_more_war
+		# Send acknowledgement to attending countries
+		any_country = {
+			limit = { has_country_flag = attending_london_conference_1830 }
+			country_event = 36741
+		}
+		
 		NET = {
 			prestige = 10
 			inherit = BEL
@@ -1277,11 +1290,6 @@ country_event = {
 		#	owner = { release_vassal = LUX }
 		#}
 		
-		# Send acknowledgement to attending countries
-		any_country = {
-			limit = { has_country_flag = attending_london_conference_1830 }
-			country_event = 36741
-		}
 
 		ai_chance = {
 			factor = 90
@@ -1293,7 +1301,7 @@ country_event = {
 		clr_country_flag = attending_london_conference_1830
 		clr_country_flag = supporting_belgium
 		prestige_factor = -1
-		badboy = 25
+		badboy = 10
 		war_exhaustion = -50
 		remove_country_modifier = no_more_war
 		NET = {
@@ -1395,7 +1403,7 @@ country_event = {
 			militancy = 5
 		}
 		ai_chance = {
-			factor = 40
+			factor = 75
 		}
 	}
 
@@ -1430,7 +1438,7 @@ country_event = {
 			consciousness = -3
 		}
 		ai_chance = {
-			factor = 60
+			factor = 25
 		}
 	}
 }
@@ -1544,59 +1552,29 @@ country_event = {
 		badboy = 15
 		war_exhaustion = -50
 		remove_country_modifier = no_more_war
+		# We keep Belgium: the partition is refused, so none of the shares are
+		# handed out. The powers that wanted them take offence instead.
 		inherit = BEL
-		any_owned = {
+		any_country = {
 			limit = {
+				exists = yes
 				OR = {
-					province_id = 381
-					province_id = 396
-					province_id = 397
-					province_id = 398
+					tag = PRU
+					tag = FRA
 				}
 			}
-			add_core = PRU
-			add_core = RHI
-			add_core = GER
-			secede_province = PRU
-		}
-		any_owned = {
-			limit = {
-				OR = {
-					province_id = 387
-					province_id = 392
-					province_id = 393
-					province_id = 394
-					province_id = 395
-				}
+			relation = { who = THIS value = -100 }
+			casus_belli = {
+				target = THIS
+				type = free_peoples
+				months = 120
 			}
-			add_core = FRA
-			secede_province = FRA
-		}
-		any_owned = {
-			limit = {
-				OR = {
-					province_id = 388
-					province_id = 389
-					province_id = 390
-					province_id = 391
-				}
+			casus_belli = {
+				target = THIS
+				type = cut_down_to_size
+				months = 120
 			}
-			secede_province = FLA
 		}
-		FLA = {
-			capital = 390
-		}
-		FRA = { add_accepted_culture = wallonian }
-		random_country = {
-			limit = {
-				has_country_flag = hosting_london_conference_1830
-			}
-			create_vassal = FLA
-			diplomatic_influence = { who = FLA value = 200 }
-		}
-		relation = { who = FRA value = -100 }
-		relation = { who = PRU value = -100 }
-		relation = { who = FLA value = -100 }
 		# Send refusal to attending countries
 		any_greater_power = {
 			limit = { has_country_flag = attending_london_conference_1830 }
