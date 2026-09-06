@@ -57,9 +57,18 @@ YEM = {
 }
 
 #Europe
+# The Anglo-Portuguese alliance, renewed in 1810: Beresford commanded the
+# Portuguese army to 1820 and the Royal Navy shielded Brazil's trade.
 UPB = {
-	value = 100		#relation
-	level = 4		#3=cordial, 4 = friendly, 5 sphere
+	value = 150		#relation
+	level = 5		#3=cordial, 4 = friendly, 5 sphere
+	influence_value = 0
+}
+# United States of the Ionian Islands: a British protectorate under the
+# Treaty of Paris, 5 November 1815, with a British Lord High Commissioner.
+ION = {
+	value = 200		#relation
+	level = 5		#3=cordial, 4 = friendly, 5 sphere
 	influence_value = 0
 }
 NET = {

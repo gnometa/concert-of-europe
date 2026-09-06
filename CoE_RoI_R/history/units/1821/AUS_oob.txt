@@ -97,14 +97,26 @@ SER = {
 	level = 2
 	influence_value = 0
 }
+# Piedmont: the 1821 revolt was crushed by Austrian arms at Novara and an
+# Austrian corps garrisoned Alessandria until 1823. Friendly, not sphered -
+# Sardinia was deliberately built up as a barrier state with British backing.
 SAR = {
-	value = 50
-	level = 2
+	value = 100
+	level = 4
 	influence_value = 0
 }
+# Papal States: restored by the Congress and garrisoned in the Legations by
+# Austria from 1815. The French protectorate over Rome only begins in 1849.
 PAP = {
 	value = 125
-	level = 3
+	level = 5
+	influence_value = 0
+}
+# Two Sicilies: the Neapolitan revolution was put down by the Austrian army in
+# March 1821 on the Laibach mandate; the occupation lasted to 1827.
+SIC = {
+	value = 125
+	level = 5
 	influence_value = 0
 }
 SWI = {

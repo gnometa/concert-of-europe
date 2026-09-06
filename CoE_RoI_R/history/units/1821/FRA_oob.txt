@@ -1,9 +1,12 @@
 #Sphere of Influence
 
 #Europe
+# France has no client in Italy in 1821: the army of occupation left France
+# itself only in 1818 and Rome is in the Austrian orbit until the 1849
+# expedition. Cordial (Bourbon dynastic sympathy), not sphered.
 PAP = {
 	value = 125		#relation
-	level = 5		#3=cordial, 4 = friendly, 5 sphere
+	level = 3		#3=cordial, 4 = friendly, 5 sphere
 	influence_value = 0
 }
 SIC = {
@@ -16,9 +19,10 @@ SWI = {
 	level = 3		#3=cordial, 4 = friendly, 5 sphere
 	influence_value = 0
 }
+# Turin was occupied by Austria in 1821, not courted by Paris.
 SAR = {
 	value = 125		#relation
-	level = 4		#3=cordial, 4 = friendly, 5 sphere
+	level = 3		#3=cordial, 4 = friendly, 5 sphere
 	influence_value = 0
 }
 GRE = {

@@ -1,0 +1,105 @@
+# Guarantees of the Vienna settlement, as they stood on 1821.9.1.
+#
+# Syntax mirrors the other files in this folder (first = guarantor, second =
+# guaranteed party). Victoria 2 ships this file empty in vanilla, so the
+# 'guarantee' clause is not exercised by any shipped content: if the parser
+# does not know it, these entries are inert and will show in error.log at
+# load. UNVERIFIED IN-GAME - check the log on the next launch and delete the
+# file if it complains. See docs/design/vienna-settlement-1821.md.
+#
+# Deliberately excluded: the German Confederation's mutual defence (already
+# modelled as the two full alliance webs in 'German Confederation.txt'), and
+# Russia's treaty protection of Serbia and the Principalities (SER/WAL/MOL
+# are Ottoman vassals in PuppetStates.txt; guaranteeing another power's
+# vassal has no clear engine meaning).
+
+# Perpetual neutrality and inviolability of Switzerland, guaranteed by all
+# five powers in the Act of Paris, 20 November 1815. No power spheres SWI;
+# this is the whole point of the guarantee.
+guarantee = {
+	first = AUS
+	second = SWI
+	start_date = 1815.11.20
+	end_date = 1936.1.1
+}
+
+guarantee = {
+	first = ENG
+	second = SWI
+	start_date = 1815.11.20
+	end_date = 1936.1.1
+}
+
+guarantee = {
+	first = FRA
+	second = SWI
+	start_date = 1815.11.20
+	end_date = 1936.1.1
+}
+
+guarantee = {
+	first = PRU
+	second = SWI
+	start_date = 1815.11.20
+	end_date = 1936.1.1
+}
+
+guarantee = {
+	first = RUS
+	second = SWI
+	start_date = 1815.11.20
+	end_date = 1936.1.1
+}
+
+# The Free City of Cracow, created and jointly guaranteed by the three
+# partitioning powers in the Vienna Final Act, 9 June 1815. Ends with the
+# Austrian annexation of 16 November 1846.
+guarantee = {
+	first = AUS
+	second = KRA
+	start_date = 1815.6.9
+	end_date = 1846.11.16
+}
+
+guarantee = {
+	first = PRU
+	second = KRA
+	start_date = 1815.6.9
+	end_date = 1846.11.16
+}
+
+guarantee = {
+	first = RUS
+	second = KRA
+	start_date = 1815.6.9
+	end_date = 1846.11.16
+}
+
+# Britain's guarantee of the House of Braganza under the Treaty of Alliance
+# and Friendship of 19 February 1810. POR owns nothing in 1821; the Braganza
+# state is UPB. Dated to match the ENG/UPB alliance in Alliances.txt.
+guarantee = {
+	first = ENG
+	second = UPB
+	start_date = 1810.2.19
+	end_date = 1825.8.29
+}
+
+# Austria's guarantee of the restored Papal government, garrisoned in the
+# Legations from the 1815 restoration until 1848.
+guarantee = {
+	first = AUS
+	second = PAP
+	start_date = 1815.6.9
+	end_date = 1848.3.13
+}
+
+# Austria's guarantee of Ferdinand I's restored Neapolitan monarchy. The
+# Laibach mandate of 12 May 1821 sent the Austrian army south on 23 March;
+# the occupation was paid for by Naples and lasted to 1827.
+guarantee = {
+	first = AUS
+	second = SIC
+	start_date = 1821.3.23
+	end_date = 1827.5.1
+}
