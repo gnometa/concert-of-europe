@@ -222,10 +222,117 @@ Repeated `rgo_goods_*` / `factory_goods_*` blocks inside one tech are vanilla id
 
 ## Deferred to balance pass
 
-Real balance decisions, not script errors - each was a deliberate edit during the Roar of Industry rework and needs a play-test, not a patch:
+Real balance decisions, not script errors - each was a deliberate edit during the Roar of Industry rework and needs a play-test, not a patch. Four of the five were decided on 2026-09-06; see "Follow-ups after the defines change" below.
 
-- **MAX_BUREAUCRACY_PERCENTAGE** 0.01 -> 0.001 (c4a60eb3, 2020-12-16, "more bureaucrats needed") - lowering the cap on how much of a state's admin need one bureaucrat pop covers was meant to force players to keep far larger bureaucracies.
-- **BUREAUCRACY_PERCENTAGE_INCREMENT** 0.001 -> 0 (669e751c, 2021-10-16, "disabled admin efficiency for now") - explicitly a temporary switch-off while BASE_COUNTRY_ADMIN_EFFICIENCY was raised to 1.0; it was never switched back on.
-- **INFAMY_STATUS_QUO** 0 -> 1 (bf2f82c2, 2020-12-12, "better cb fabrication") - part of the CB rework; charging infamy for a white peace stops the AI from spamming wars it then walks away from.
-- **SHADOWY_FINANCIERS_MAX_LOAN_AMOUNT** 1500 -> 10000000 (a236e0a8, 2021-05-16, "loans") - raised alongside MAX_LOAN_CAP_FROM_BANKS 3 -> 10 and LOAN_BASE_INTEREST 0.02 -> 0.005 so the reworked economy could actually finance industrialisation on credit; effectively uncapped.
-- **BADBOY_LIMIT** 25 -> 50 (4182c8e5, 2018-11-26, "higher badboy (will see)") - doubled so a Concert-of-Europe game can tolerate sustained expansion before a containment coalition forms; the commit message says it was already provisional.
+- ~~**MAX_BUREAUCRACY_PERCENTAGE** 0.01 -> 0.001~~ **restored to 0.01 on 2026-09-06.** (c4a60eb3, 2020-12-16, "more bureaucrats needed") - lowering the cap on how much of a state's admin need one bureaucrat pop covers was meant to force players to keep far larger bureaucracies.
+- ~~**BUREAUCRACY_PERCENTAGE_INCREMENT** 0.001 -> 0~~ **restored to 0.001 on 2026-09-06.** (669e751c, 2021-10-16, "disabled admin efficiency for now") - explicitly a temporary switch-off while BASE_COUNTRY_ADMIN_EFFICIENCY was raised to 1.0; it was never switched back on.
+- ~~**INFAMY_STATUS_QUO** 0 -> 1~~ **restored to 0 on 2026-09-06.** (bf2f82c2, 2020-12-12, "better cb fabrication") - part of the CB rework; charging infamy for a white peace stops the AI from spamming wars it then walks away from.
+- **SHADOWY_FINANCIERS_MAX_LOAN_AMOUNT** 1500 -> 10000000 (a236e0a8, 2021-05-16, "loans") - raised alongside MAX_LOAN_CAP_FROM_BANKS 3 -> 10 and LOAN_BASE_INTEREST 0.02 -> 0.005 so the reworked economy could actually finance industrialisation on credit; effectively uncapped. **Still open.**
+- ~~**BADBOY_LIMIT** 25 -> 50~~ **restored to 25 on 2026-09-06.** (4182c8e5, 2018-11-26, "higher badboy (will see)") - doubled so a Concert-of-Europe game can tolerate sustained expansion before a containment coalition forms; the commit message says it was already provisional.
+
+## Follow-ups after the defines change (2026-09-06)
+
+Owner decision, applied to `common/defines.lua`: `INFAMY_STATUS_QUO` 1 -> **0**,
+`BADBOY_LIMIT` 50 -> **25**, `MAX_BUREAUCRACY_PERCENTAGE` 0.001 -> **0.01**,
+`BUREAUCRACY_PERCENTAGE_INCREMENT` 0.000 -> **0.001**. All four are now the vanilla /
+real-world values and all four therefore dropped out of the defines diff table above
+(151 -> 147 changed values). Each changed line carries a
+`-- CoE 2026-09: real-world value, see docs/audit/common.md` trailing comment.
+
+Nothing below has been retuned. This is the script that was written against the old
+values and should be revisited in a balance pass, in priority order.
+
+### The infamy limit halved: what that does to script
+
+Two different things use the word `badboy`, and they react differently:
+
+- As an **effect** (`badboy = 4` inside an `option` / `effect`) it is straight infamy
+  points. Halving the limit doubles the sting of every one of these without touching a
+  single number.
+- As a **trigger** (`badboy = 0.8` inside a `trigger` / `limit` / `ai_will_do` /
+  `ai_chance` modifier) it is a *fraction of `BADBOY_LIMIT`*, per
+  `docs/wiki/list-of-conditions.md`. These rescale by themselves: `badboy = 0.8` used to
+  mean 40 infamy and now means 20. That is the intended behaviour, so the roughly 200
+  fractional triggers across `events/` and `decisions/` need no edit - but every one of
+  them now bites at half the infamy it used to, which is the largest behavioural
+  consequence of the change.
+
+**[high] Absolute infamy grants that were sized against a 50 limit.** Each now costs a
+far larger slice of the halved limit; the ones above 25 push a country over the
+containment threshold on their own, out of one event option:
+
+| file:line | grant | share of the new limit |
+|---|---|---|
+| `events/1german_revolution_1848.txt:1518` | `badboy = 150` | 6.0x |
+| `events/1german_revolution_1848.txt:1438` | `badboy = 125` | 5.0x |
+| `events/1german_revolution_1848.txt:179, :395` | `badboy = 100` | 4.0x |
+| `events/1german_revolution_1848.txt:501` | `badboy = 80` | 3.2x |
+| `events/1german_revolution_1848.txt:617, :843` | `badboy = 75` | 3.0x |
+| `events/1german_revolution_1848.txt:942` | `badboy = 50` | 2.0x |
+| `events/1german_revolution_1848.txt:1051` | `badboy = 40` | 1.6x |
+| `events/Greater Germany.txt:72, :773` | `badboy = 40` | 1.6x |
+| `events/2nd_grand_revolution.txt:99` | `badboy = 30` | 1.2x |
+| `decisions/France.txt:570` (`fra_setup`) | `badboy = 40.0` | 1.6x |
+| `decisions/Ottoman_Dec.txt:86` (`ioanninia_dynasty`) | `badboy = 40` | 1.6x |
+
+The mirror image, the large negative grants, are now over-generous rather than
+dangerous: `events/GreatWar_Events.txt` wipes `badboy = -1000` in twelve places (lines
+525, 2309, 3141, 3685, 4353, 4789, 5152, 5569, 5922, 6345, 6914, 7416),
+`events/InfamyWar_Events.txt:510` does the same, and
+`events/2nd_grand_revolution.txt:860, :947` give -50 / -25. These were already "clear
+all infamy" in intent, so they are cosmetic, but a -1000 against a limit of 25 is worth
+normalising while the file is open.
+
+**[medium] Trigger thresholds written as absolute infamy, which the engine reads as a
+fraction of the limit.** These were already wrong under the 50 limit and are now wrong
+by twice as much (`badboy = 5` reads as 125 infamy, i.e. unreachable):
+
+- `decisions/BYZ_Expansion.txt:77, :143, :216, :303, :356, :409, :477, :525, :570, :644`
+  - ten `ai_will_do` modifiers using `badboy = 5 / 10 / 15`.
+- `events/RUSFlavor.txt:1897` (`badboy = 20`) and `:3181` (`badboy = 15`), both
+  `ai_chance` modifiers sitting in a ladder whose other rungs are correctly fractional
+  (0.2 / 0.4 / 0.6), which makes these two look like typos.
+
+**[medium] The infamy-containment chain itself.** `events/InfamyWar_Events.txt` is the
+"cut down to size" content and keys entirely on fractional thresholds (`badboy = 1`,
+`1.5`, `2` at lines 24, 73, 106, 145, 241, 255-339, 375, 431). Those now trip at
+25 / 37.5 / 50 infamy instead of 50 / 75 / 100. Together with the mod's flat
+`INFAMY_* = 1` peace-deal costs, containment coalitions should finally form - which is
+the point of the change, but it is the first thing to watch in a play test.
+`events/crises.txt:617-629` and `events/GreatPowers.txt:303-307` have the same shape.
+
+**[low] `INFAMY_STATUS_QUO` 1 -> 0.** No script reads the define and nothing tests for
+"infamy from a white peace"; the 56 `casus_belli = status_quo` grants across 23 event
+and decision files are unaffected. The only consequence is that the status-quo wargoal
+is free again, as in vanilla, so AI wars ending in a white peace stop accumulating
+infamy. Nothing to retune.
+
+### Bureaucracy: the cap moves from 0.1% to 1% (+0.1% per admin reform level)
+
+**[medium] `common/triggered_modifiers.txt:872-1052`** - the ten `admin_found_*` tiers
+step through `bureaucrats = 0.005 / 0.010 / 0.015 / ... / 0.050`, each with a
+`NOT = { bureaucrats = <next> }` ceiling. Under the old cap of 0.001 with a zero
+increment every one of those tiers sat *above* the point where extra bureaucrats stopped
+doing anything, so the ladder rewarded hiring the engine ignored. The useful band is now
+1.0% rising to roughly 1.8% at full social administrative reform, so the first two rungs
+are at or below the cap and the top six (0.025 upward) remain unreachable. The tier
+spacing wants re-cutting against the new cap.
+
+**[medium] `BASE_COUNTRY_ADMIN_EFFICIENCY = 1.0`** (`defines.lua:11`, vanilla 0.2) was
+raised in the same 2021 commit that zeroed `BUREAUCRACY_PERCENTAGE_INCREMENT` ("disabled
+admin efficiency for now") - the pair was one switch-off. With the increment back on,
+1.0 still means every country sits at full administrative efficiency regardless of
+bureaucrats, so restoring the increment buys nothing until this is lowered too. This is
+the one follow-up whose omission makes the other bureaucracy change inert.
+
+**[low] `common/issues.txt:1106, :1140, :1607, :1638`** - the four
+`administrative_efficiency(_modifier)` reform effects (-0.05, +0.05, +0.025, +0.05) and
+`common/event_modifiers.txt:3632` (+0.05) are relative and need no edit, but they were
+sized while admin efficiency was effectively pinned; recheck their weight once
+`BASE_COUNTRY_ADMIN_EFFICIENCY` is decided.
+
+**[low] `common/national_focus.txt:42` (`promote_bureaucrats`)** and the `bureaucrats`
+promotion effects in the education / RGO chain (`events/+education_RGO.txt:146, :183`,
+`events/00_CoE_RoI.txt:717`) push pops into a pop type whose useful ceiling just moved by
+a factor of ten. They will now do something rather than nothing; no edit needed, but the
+education ladder was balanced against the old cap.
