@@ -17,9 +17,11 @@ Subcommands
   decisions                every decisions file is political_decisions = { name = { potential allow effect } }
   desync [file]...         effect-only scopes used as triggers / bare province_event: they eat a brace
   engine-counts            diff the engine's per-file decision and event counts in setup.log against a parse
+  shadow                   vanilla files the mod fails to shadow: renamed/omitted twins that load alongside
 
 All output is one problem per line; exit code 1 when problems were found, 2 for hook blocks.
 """
+import collections
 import contextlib
 import io
 import json
@@ -592,6 +594,131 @@ def cmd_engine_counts():
     return 1 if problems else 0
 
 
+# Directories the engine merges rather than replaces: every file in the vanilla
+# folder loads unless the mod ships one at the same relative path. A rename or an
+# omission therefore resurrects vanilla content next to the mod's, with no
+# error.log entry (setup.log lists both files). Findings accepted on purpose are
+# in .claude/skills/validate/SKILL.md.
+SHADOW_DIRS = ("events", "decisions", "localisation", "history/units", "history/pops")
+
+
+def _rel_files(root, sub):
+    """Map lowercased relative path -> real path for every file under root/sub."""
+    base = root.joinpath(*sub.split("/"))
+    if not base.is_dir():
+        return {}
+    return {
+        p.relative_to(base).as_posix().lower(): p
+        for p in base.rglob("*")
+        if p.is_file()
+    }
+
+
+def _event_ids_in(path):
+    ids, depth, in_event = set(), 0, False
+    for ln in read_cp1252(path).split("\n"):
+        code = strip_comment(ln)
+        if depth == 0 and EVENT_HEAD.match(code):
+            in_event = True
+        if in_event and depth == 1:
+            m = re.match(r"\s*id\s*=\s*(\d+)", code)
+            if m:
+                ids.add(int(m.group(1)))
+                in_event = False
+        depth += code.count("{") - code.count("}")
+        if depth <= 0:
+            depth, in_event = 0, False
+    return ids
+
+
+def _decision_names_in(path):
+    return {k for k, _, stack in _blocks(read_cp1252(path)) if len(stack) == 1}
+
+
+def _loc_keys_in(path):
+    keys = set()
+    for line in path.read_bytes().split(b"\n"):
+        text = line.decode("cp1252", "replace")
+        if ";" in text and not text.lstrip().startswith("#"):
+            keys.add(text.split(";")[0].strip())
+    return keys
+
+
+def _bookmark_dates():
+    """Start dates the player can actually pick, from common/bookmarks.txt."""
+    txt = read_cp1252(MOD / "common" / "bookmarks.txt")
+    return {m.group(1) for m in re.finditer(r"date\s*=\s*(\d+\.\d+\.\d+)", txt)}
+
+
+def _reachable(sub, relpath):
+    """False for a history/pops|units date folder no bookmark can reach."""
+    head = relpath.split("/")[0]
+    if "/" not in relpath or not re.fullmatch(r"\d{4}(\.\d+\.\d+)?", head):
+        return True
+    dates = _bookmark_dates()
+    if "." in head:
+        return head in dates
+    return any(d.split(".")[0] == head for d in dates)
+
+
+def cmd_shadow():
+    problems = 0
+    for sub in SHADOW_DIRS:
+        mine = _rel_files(MOD, sub)
+        theirs = _rel_files(GAME, sub)
+        # An empty vanilla file contributes nothing whether it is shadowed or not.
+        orphans = [k for k, p in theirs.items()
+                   if k not in mine and p.stat().st_size > 0]
+        live = sorted(k for k in orphans if _reachable(sub, k))
+        for head, n in sorted(collections.Counter(
+                k.split("/")[0] for k in orphans if not _reachable(sub, k)).items()):
+            print(f"{sub}/{head}/: {n} vanilla-only file(s), unreachable - "
+                  f"no bookmark starts there (add one and they load)")
+        for k in live:
+            print(f"{sub}/{k}: vanilla-only, loads alongside the mod")
+            problems += 1
+
+        if sub == "events":
+            ours = {}
+            for p in mine.values():
+                for i in _event_ids_in(p):
+                    ours.setdefault(i, p.name)
+            for k in live:
+                for i in sorted(_event_ids_in(theirs[k]) & set(ours)):
+                    print(f"{sub}/{k}: event id {i} is also defined in "
+                          f"{sub}/{ours[i]} - both load, one silently wins")
+                    problems += 1
+        elif sub == "decisions":
+            ours = {}
+            for p in mine.values():
+                for n in _decision_names_in(p):
+                    ours.setdefault(n, p.name)
+            for k in live:
+                for n in sorted(_decision_names_in(theirs[k]) & set(ours)):
+                    print(f"{sub}/{k}: decision '{n}' is also defined in "
+                          f"{sub}/{ours[n]} - both load, one silently wins")
+                    problems += 1
+        elif sub == "localisation":
+            kept = set()
+            for k, p in theirs.items():
+                if k not in mine:
+                    kept |= _loc_keys_in(p)
+            have = set()
+            for p in mine.values():
+                have |= _loc_keys_in(p)
+            for k, p in sorted(mine.items()):
+                if k not in theirs:
+                    continue
+                for key in sorted(_loc_keys_in(theirs[k]) - have - kept):
+                    if key.startswith("REMOVE_"):
+                        continue  # vanilla's own retired-string placeholders
+                    print(f"{sub}/{k}: shadows vanilla's copy but drops key "
+                          f"{key}, defined nowhere else")
+                    problems += 1
+    print(f"shadow: {problems} problem(s)")
+    return 1 if problems else 0
+
+
 def main(argv):
     if not argv:
         print(__doc__)
@@ -630,6 +757,8 @@ def main(argv):
             return cmd_desync(args)
         if cmd == "engine-counts":
             return cmd_engine_counts()
+        if cmd == "shadow":
+            return cmd_shadow()
     except IndexError:
         print(f"missing argument for {cmd}\n{__doc__}", file=sys.stderr)
         return 1

@@ -196,12 +196,18 @@ def second_level_keys(path):
 
 def loc_keys():
     """Every localisation key the game can resolve: the mod's csvs plus the
-    vanilla ones (the engine falls back to those for keys the mod inherits)."""
+    vanilla ones it does not shadow. A mod csv REPLACES the vanilla file of the
+    same name rather than merging with it, so keys only that vanilla file
+    defined are gone (see `modcheck.py shadow`)."""
     keys = set()
-    for folder in (MOD / "localisation", VANILLA / "localisation"):
+    mod_loc = MOD / "localisation"
+    shadowed = {f.name.lower() for f in mod_loc.glob("*.csv")}
+    for folder in (mod_loc, VANILLA / "localisation"):
         if not folder.is_dir():
             continue
         for f in sorted(folder.glob("*.csv")):
+            if folder != mod_loc and f.name.lower() in shadowed:
+                continue
             for ln in f.read_bytes().split(b"\n"):
                 if ln.startswith(b"#") or b";" not in ln:
                     continue
@@ -337,6 +343,28 @@ def check_loc():
         for suffix in ("_title", "_desc"):
             if d.key + suffix not in keys:
                 problems.append(f"{rel(f)}:{d.line}: decision {d.key} lacks localisation key {d.key}{suffix}")
+    # party names in common/countries/*.txt and state names in map/region.txt are
+    # localisation keys too, and nothing else checks them. Country files no tag in
+    # common/countries.txt points at are never loaded, so their parties don't count.
+    registered = {
+        m.group(1).lower()
+        for m in re.finditer(r'=\s*"countries/([^"]+)"',
+                             read(MOD / "common" / "countries.txt"))
+    }
+    for f in sorted((MOD / "common" / "countries").glob("*.txt")):
+        if f.name.lower() not in registered:
+            continue
+        for node in tree(f):
+            if node.key != "party" or node.children is None:
+                continue
+            name = node.first("name")
+            if name and looks_like_key(name) and name not in keys:
+                problems.append(f"{rel(f)}:{node.line}: party name '{name}' has no localisation")
+    region = MOD / "map" / "region.txt"
+    if region.is_file():
+        for state, line in _level(region, 0):
+            if state not in keys:
+                problems.append(f"{rel(region)}:{line}: state '{state}' has no localisation")
     return problems
 
 

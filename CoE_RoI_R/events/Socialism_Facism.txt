@@ -1,3 +1,9 @@
+# NOTE: the file name misspelling "Facism" is deliberate.
+# Vanilla ships BOTH events/Socialism_Facism.txt (the real 21 events) and an
+# empty events/Socialism_Fascism.txt. A mod file only replaces a vanilla file
+# of the exact same name, so while this file was called "Fascism" it shadowed
+# only the empty stub: vanilla's 21 events loaded alongside ours and ids
+# 17500-17700 were defined twice. Do not "fix" the spelling.
 ###########################################################################
 #
 #Socialism

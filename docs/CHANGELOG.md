@@ -3,6 +3,38 @@
 Notable changes to the mod, newest first. One line per change; file names where they help.
 Audit reports live in `docs/audit/`, design notes in `docs/design/`.
 
+## 2026-09-06 (later) - file shadowing sweep: vanilla twins that loaded alongside the mod
+
+Reported bug: Haiti's parties showed as `HAI_conservative`, `HAI_liberal`, ... Root cause is not Haiti
+but the shadowing rule - a mod file replaces the vanilla file at the *exact same relative path*, and
+the mod's `localisation/text.csv` replaces vanilla's wholesale while omitting the `HAI_*` rows. Swept
+the whole tree for both halves of that assumption (keys/entries lost by shadowing, and vanilla files
+the mod fails to shadow).
+
+- `localisation/GVG_flavor_repairs.csv`: restored the 7 Haitian party names from vanilla, plus 6 state
+  names with no localisation anywhere - `SPA_517` Gibraltar, `SIC_854` Malta, `RUS_989` Vologda,
+  `SOM_1875` Djibouti, `HAI_2213` Hispaniola (Haiti's home state read `HAI_2213` on screen),
+  `AST_0001` Australian Interior - and `SPD` / `PPS` / `PSL`.
+- `localisation/000_persia_map_countries.csv`: the 8 Afghan party names the file skipped
+  (`HRT`/`HZJ`/`KDH`/`KNZ` `_liberal_2` = The Reform Faction, `_social_liberal` = The Progressive
+  Faction; both invented, the 7 siblings set the "The X Faction" pattern).
+- `events/Socialism_Fascism.txt` -> `events/Socialism_Facism.txt`. Vanilla ships *both* names, the
+  misspelled one holding the real 21 events and the corrected one empty, so the mod's copy shadowed
+  only the empty stub and ids 17500-17700 were defined twice (`setup.log`: `Socialism_Facism.txt' #21`
+  and `Socialism_Fascism.txt' #25`). A header comment now says the misspelling is deliberate.
+- `decisions/GreatPowers.txt`: new, shadows vanilla's. Without it vanilla's `egyptological_excavations`
+  and `forced_egyptological_excavations` loaded next to the mod's rewritten pair in `archaeology.txt`.
+  The two Congo decisions are carried over; vanilla scoped `add_core` to BEL_1977/1984/1987/1990/1992
+  and on this map the whole Congo is the single state `BEL_1977`, so the other four never resolved.
+- Deleted `map/definition_coe.csv` (unreferenced byte-identical twin of `definition.csv`) and
+  `interface/country_politics.gui.bak`.
+- `scripts/modcheck.py shadow`: new check. Lists vanilla files with no mod counterpart in the additive
+  directories, event-id and decision-name collisions against them, and keys a shadowing mod csv drops.
+  Rolls up unreachable start-date folders (`history/pops/1836.1.1`, ...) to one line each.
+- `scripts/refcheck.py`: `loc_keys()` counted keys from vanilla csvs the mod shadows as available -
+  the blind spot that hid this bug. `refcheck loc` now also checks party names in `common/countries/`
+  (registered tags only) and state names in `map/region.txt`.
+
 ## 2026-09-06 (post-playtest) - parser desync sweep: phantom `effect_title` decisions and silently dropped events
 
 A playtest showed decision cards reading `effect_title` on every nation on every date. Root cause: a

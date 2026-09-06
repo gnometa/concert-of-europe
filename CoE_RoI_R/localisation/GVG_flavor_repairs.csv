@@ -18,3 +18,19 @@ EVTNAME48300_NEWS_TITLE;The Duchy of Anhalt Is Reunited;;;;;;;;;;;;;x
 EVTDESC48300_NEWS_LONG;Duke Leopold IV Friedrich has united the historic branches of Anhalt-Dessau, Anhalt-Kothen, and Anhalt-Bernburg into a single unified Duchy of Anhalt under one crown.;;;;;;;;;;;;;x
 EVTDESC48300_NEWS_MEDIUM;The duchies of Anhalt have been reunited under Duke Leopold IV.;;;;;;;;;;;;;x
 EVTDESC48300_NEWS_SHORT;Anhalt reunited under single crown.;;;;;;;;;;;;;x
+HAI_conservative;Parti Liberal;;;;;;;;;;;;;x
+HAI_liberal;Parti National;;;;;;;;;;;;;x
+HAI_reactionary;Parti Nationalist;;;;;;;;;;;;;x
+HAI_anarcho_liberal;Parti Radical;;;;;;;;;;;;;x
+HAI_socialist;Parti Socialist;;;;;;;;;;;;;x
+HAI_communist;Parti Communist;;;;;;;;;;;;;x
+HAI_fascist;Parti Fascist;;;;;;;;;;;;;x
+SPA_517;Gibraltar;;;;;;;;;;;;;x
+SIC_854;Malta;;;;;;;;;;;;;x
+RUS_989;Vologda;;;;;;;;;;;;;x
+SOM_1875;Djibouti;;;;;;;;;;;;;x
+HAI_2213;Hispaniola;;;;;;;;;;;;;x
+AST_0001;Australian Interior;;;;;;;;;;;;;x
+SPD;Sozialdemokratische Partei;;;;;;;;;;;;;x
+PPS;Polska Partia Socjalistyczna;;;;;;;;;;;;;x
+PSL;Polskie Stronnictwo Ludowe;;;;;;;;;;;;;x

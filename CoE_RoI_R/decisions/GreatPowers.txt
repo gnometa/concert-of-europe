@@ -1,0 +1,73 @@
+# Shadows vanilla decisions/GreatPowers.txt.
+# The mod has its own egyptological_excavations / forced_egyptological_excavations
+# in decisions/archaeology.txt; without this file vanilla's copies loaded too and
+# both pairs were live at once. Only the two Congo decisions are carried over.
+# Vanilla scoped add_core to BEL_1977/1984/1987/1990/1992; on this map the whole
+# Congo is the single state BEL_1977 (map/region.txt), so the other four never
+# resolved and are dropped.
+# NOTE: annex_the_congo is dormant - nothing in this mod sets
+# congo_reform_association_active. Kept for parity with vanilla.
+
+political_decisions = {
+
+	the_congo_conference = {
+		potential = {
+			is_greater_power = yes
+			tag = ENG
+			year = 1880
+			NOT = {
+				has_global_flag = congo_conference_held
+			}
+		}
+
+		allow = {
+			1982 = { empty = yes }
+			1986 = { empty = yes }
+			1987 = { empty = yes }
+			1993 = { empty = yes }
+			1996 = { empty = yes }
+		}
+
+		effect = {
+			prestige = 25
+			BEL_1977 = {
+				add_core = CNG
+			}
+			set_country_flag = hosting_the_congo_conference
+			set_global_flag = congo_conference_held
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	annex_the_congo = {
+		potential = {
+			CNG = {
+				vassal_of = THIS
+			}
+			has_global_flag = congo_reform_association_active
+			CNG = { ai = yes }
+		}
+
+		allow = {
+			CNG = {
+				badboy = 0.24
+			}
+		}
+
+		effect = {
+			CNG = {
+				government = hms_government
+			}
+			inherit = CNG
+			prestige = -40
+			remove_country_modifier = the_congo_reform_association
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}
