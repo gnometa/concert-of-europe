@@ -34,8 +34,9 @@ country_event = {
 			war_with = ARG
 			war_with = DOM
 		}
-		any_country = {
-			war_with = SPA
+		# war_countries is the trigger-side scope for "a country I am at war with";
+		# any_country is effect-only and desyncs the parser here.
+		war_countries = {
 			OR = {
 				tag = PEU
 				tag = GCO
@@ -171,8 +172,8 @@ country_event = {
 			war_with = ARG
 			war_with = DOM
 		}
-		any_country = {
-			war_with = SPA
+		# see 1002100: war_countries, not any_country.
+		war_countries = {
 			OR = {
 				tag = PEU
 				tag = GCO

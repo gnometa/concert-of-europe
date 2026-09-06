@@ -536,7 +536,7 @@ country_event = {
 # Its trigger is
 #     is_greater_power = yes
 #     ai = yes
-#     NOT = { any_country = { has_country_flag = economy_pulse_host } }
+#     NOT = { any_greater_power = { has_country_flag = economy_pulse_host } }
 # The greater-power gate keeps the daily cost to at most 8 evaluations of
 # the any_country scan (~200 countries), and the scan is false - so it
 # short-circuits after the first hit - on every day a host exists, which
@@ -565,7 +565,10 @@ country_event = {
 	trigger = {
 		is_greater_power = yes
 		ai = yes
-		NOT = { any_country = { has_country_flag = economy_pulse_host } }
+		# any_country is an EFFECT scope; as a trigger it eats a brace and drops the
+		# next event from the file. any_greater_power is the trigger-side equivalent
+		# and the host is a greater power by the line above.
+		NOT = { any_greater_power = { has_country_flag = economy_pulse_host } }
 	}
 
 	mean_time_to_happen = {
@@ -1158,7 +1161,7 @@ country_event = {
 
 	option = {
 		name = "Forward to Victory!"
-		set_country_flag = { from_liberation_to_conquest }
+		set_country_flag = from_liberation_to_conquest
 		sphere_owner  = {
 			country_event = 99984
 		}

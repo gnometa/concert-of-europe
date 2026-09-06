@@ -26,6 +26,10 @@ country_event = {
 	option = {
 		name = "EVTOPTA1000900"
 		set_country_flag = zollverein_member
+		# read by 1000904 and by decisions/ZollvereinGVG.txt: any_country cannot be
+		# used as a trigger, so the "somebody joined / somebody refused" tests are
+		# global flags set here instead.
+		set_global_flag = zollverein_has_member
 		add_country_modifier = {
 			name = zollverein_member
 			duration = -1
@@ -69,6 +73,13 @@ country_event = {
 	option = {
 		name = "EVTOPTB1000900"
 		set_country_flag = zollverein_refused
+		# read by form_the_southern_customs_union: only a SOUTH German refusal gives
+		# Vienna something to build on. Vic2 has no if/else, so the conditional set is
+		# the random_owned + limit idiom.
+		random_owned = {
+			limit = { owner = { has_country_flag = south_german_rel } }
+			owner = { set_global_flag = zollverein_refusal }
+		}
 		prestige = 5
 		relation = { who = FROM value = -25 }
 		relation = { who = AUS value = 25 }
@@ -181,25 +192,17 @@ country_event = {
 		has_global_flag = zollverein_founded
 		has_country_flag = zollverein_founder
 		NOT = { has_global_flag = zollverein_complete }
-		any_country = {
-			has_country_flag = zollverein_offered
-			has_country_flag = zollverein_member
-		}
-		NOT = {
-			any_country = {
-				exists = yes
-				has_country_flag = zollverein_offered
-				NOT = {
-					has_country_flag = zollverein_member
-					has_country_flag = zollverein_refused
-					has_country_flag = southern_union_member
-				}
-			}
-		}
+		# "at least one state joined". any_country is an EFFECT scope: used as a
+		# trigger the engine eats a brace and this file loses the events after it,
+		# so the accession is recorded as a global flag in 1000900 option A instead.
+		has_global_flag = zollverein_has_member
 	}
 
+	# The old trigger also required that no invitee was still undecided, which
+	# needs a country iterator no trigger scope provides. The offers are answered
+	# within 30-60 days (1000900 -> 1000901/1000902), so the wait is a timer now.
 	mean_time_to_happen = {
-		months = 2
+		months = 6
 	}
 
 	option = {

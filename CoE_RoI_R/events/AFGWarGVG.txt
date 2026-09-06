@@ -38,9 +38,9 @@ country_event = {
 		}
 		OR = {
 			neighbour = AFG
-			any_country = {
-				vassal_of = ENG
-				neighbour = AFG
+			# any_country is effect-only; scope to AFG and walk its neighbours instead.
+			AFG = {
+				any_neighbor_country = { vassal_of = ENG }
 			}
 			AFG = {
 				any_neighbor_country = { in_sphere = ENG }

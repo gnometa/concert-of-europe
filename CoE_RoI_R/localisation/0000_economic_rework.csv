@@ -200,3 +200,9 @@ milit_found_2;Military Founding II;;;;;;;;;;;;x,,
 milit_found_3;Military Founding III;;;;;;;;;;;;x,,
 milit_found_4;Military Founding IV;;;;;;;;;;;;x,,
 milit_found_5;Military Founding V;;;;;;;;;;;;x,,
+increase_state_investments_ai_title;State Investments Scheme;;;;;;;;;;;;;x
+increase_state_investments_ai_desc;We can try using our money to invest in the key economic sectors of our country, it will surely bring us prosperity!;;;;;;;;;;;;;x
+cooperate_with_rich_ai_title;Upper Class Economic Cooperation;;;;;;;;;;;;;x
+cooperate_with_rich_ai_desc;Our capitalists are willing to put their own money to work alongside the state, for a price.;;;;;;;;;;;;;x
+ennact_economic_austerity_ai_title;Ennact Austerity in State budget;;;;;;;;;;;;;x
+ennact_economic_austerity_ai_desc;The treasury cannot go on like this. Spending must be cut and the burden shifted onto the taxpayer.;;;;;;;;;;;;;x

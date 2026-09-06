@@ -3367,7 +3367,7 @@ country_event = {
 		tag = RUS
 		exists = yes
 		has_country_flag = kenesary_kasymov
-		any_owned = {
+		any_owned_province = {
 			is_core = KAZ
 		}
 	}

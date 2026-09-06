@@ -40,7 +40,14 @@ political_decisions = {
 			war = no
 			prestige = 50
 			state_n_government = 1
-			any_country = {
+			# any_country is an EFFECT scope only. Used as a trigger the engine consumes
+			# the opening brace as a scalar value, so this block's closing brace closes
+			# `allow`, `allow`'s closes the decision, and `effect` / `ai_will_do` become
+			# top-level decisions with no potential - visible to every country on every
+			# date as cards reading `effect_title` (2026-09-06 playtest).
+			# any_neighbor_country is the trigger-side equivalent; the founder always
+			# borders several German states.
+			any_neighbor_country = {
 				exists = yes
 				civilized = yes
 				is_greater_power = no
@@ -50,7 +57,6 @@ political_decisions = {
 					has_country_flag = south_german_rel
 				}
 				NOT = {
-					tag = THIS
 					tag = AUS
 					tag = KUK
 					tag = DNB
@@ -125,11 +131,10 @@ political_decisions = {
 			war = no
 			prestige = 50
 			state_n_government = 1
-			any_country = {
-				has_country_flag = zollverein_refused
-				has_country_flag = south_german_rel
-				NOT = { has_country_flag = southern_union_member }
-			}
+			# any_country cannot be used as a trigger (see found_the_zollverein above).
+			# zollverein_refusal is set by 1000900 option B, i.e. it means "at least one
+			# German state has turned the Zollverein down".
+			has_global_flag = zollverein_refusal
 		}
 
 		effect = {

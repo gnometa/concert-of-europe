@@ -3,6 +3,40 @@
 Notable changes to the mod, newest first. One line per change; file names where they help.
 Audit reports live in `docs/audit/`, design notes in `docs/design/`.
 
+## 2026-09-06 (post-playtest) - parser desync sweep: phantom `effect_title` decisions and silently dropped events
+
+A playtest showed decision cards reading `effect_title` on every nation on every date. Root cause: a
+key the engine's parser does not accept in that position consumes a brace, so the block's `}` closes
+its parent and every sibling after it is promoted one level. Braces balance, `error.log` stays empty.
+Verified by probing the engine directly (`gametest.ps1` + the `Decisions/Events loaded ... #N` counts
+in `setup.log`); the whole tree is now at 0 mismatches over 91 decision and 197 event files.
+
+| File | Was | Effect on the game |
+|---|---|---|
+| `decisions/ZollvereinGVG.txt:43,128` | `any_country` inside `allow` | both decisions lost their `effect`/`ai_will_do`, which became top-level decisions shown to every country as `effect_title` / `ai_will_do_title` cards. Now `any_neighbor_country` (founder) and the new `zollverein_refusal` global flag (southern union) |
+| `events/SPAAyacuchoGVG.txt:37,174` | `any_country` inside `trigger` | 2 of the 3 Ayacucho events never loaded. Now `war_countries`, which is the trigger-side scope for "at war with me" |
+| `events/00_CoE_RoI.txt:568` | `any_country` inside `trigger` | economy pulse host election (2000100). Now `any_greater_power` |
+| `events/00_CoE_RoI.txt:1164` | `set_country_flag = { x }` | event 99985 swallowed 99984, "New Managment Established" never loaded |
+| `events/AFGWarGVG.txt:41` | `any_country` inside `trigger` | now `AFG = { any_neighbor_country = { vassal_of = ENG } }` |
+| `events/ZollvereinGVG.txt:184` | two `any_country` blocks in `trigger` | 1000904 now gates on the `zollverein_has_member` global flag set in 1000900 option A; the "nobody still undecided" test needed an iterator no trigger scope provides, so the wait is a 6-month MTTH |
+| `events/PER_crises.txt:282,304` | `random_owned` inside `limit` | now `any_owned_province` |
+| `events/RUSFlavor.txt:3370` | `any_owned` inside `trigger` | now `any_owned_province` |
+| `decisions/DIM_East_Indies.txt:31` | bare `province_event = 211300` | swallowed `reunite_lan_xang`; the Lan Xang formation did not exist in game. Now the block form |
+
+Also: `increase_state_investments_ai`, `cooperate_with_rich_ai` and `ennact_economic_austerity_ai`
+(`decisions/0_economic_decisons.txt`) had no localisation, so the message feed showed raw keys -
+`_title`/`_desc` added to `localisation/0000_economic_rework.csv`.
+
+New checks in `scripts/modcheck.py`, both wired into the validate baseline (`desync` also runs from the
+PostToolUse hook):
+- `desync` - effect-only iterator scopes in trigger blocks, bare `province_event`, scalar effects given
+  a block. The effect-only list was established by probing each scope against the engine one at a time.
+- `engine-counts` - diffs the engine's own per-file counts in `setup.log` against a local parse, so a
+  desync from any *other* cause shows up too. Needs a launch first.
+
+`refcheck flags` baseline moves 113 -> 114: fixing `set_country_flag = { from_liberation_to_conquest }`
+made refcheck see the set, and nothing reads that flag.
+
 ## 2026-09-06 (final) - complete and enrich content: five new chains and legacy flavour audit
 
 Fourth content wave, resolving every remaining "partial" row in `docs/design/1821-1836-coverage.md`

@@ -15,6 +15,8 @@ Subcommands
   loc-check <csv>          validate a localisation csv (encoding, CRLF, terminator column)
   province-paths           every mod history/provinces file must sit at the vanilla path for its id
   decisions                every decisions file is political_decisions = { name = { potential allow effect } }
+  desync [file]...         effect-only scopes used as triggers / bare province_event: they eat a brace
+  engine-counts            diff the engine's per-file decision and event counts in setup.log against a parse
 
 All output is one problem per line; exit code 1 when problems were found, 2 for hook blocks.
 """
@@ -387,6 +389,7 @@ def cmd_hook_post():
         problems += brace_check(fp)
         if "/decisions/" in p:
             problems += [l for l in capture(cmd_decisions) if l.startswith(rel(fp))]
+        problems += [l for l in capture(cmd_desync, [fp]) if l.startswith(rel(fp))]
         if "/history/provinces/" in p:
             problems += [l for l in capture(cmd_province_paths) if l.startswith(f"province {fp.name.split(' ')[0]}:")]
         if any(s in p for s in ("/history/provinces/", "/history/countries/", "/events/", "/decisions/")):
@@ -467,6 +470,128 @@ def cmd_decisions():
 
 
 # ---------------------------------------------------------------- main
+# Keys whose value is a block and whose contents the engine reads as triggers.
+TRIGGER_BLOCKS = {"potential", "allow", "trigger", "limit", "mean_time_to_happen",
+                  "ai_will_do", "ai_chance", "modifier", "factor",
+                  # common/cb_types.txt, common/issues.txt, common/rebel_types.txt
+                  "can_use", "is_valid", "can_build", "allowed_states",
+                  "allowed_countries", "allowed_substate_regions",
+                  "allowed_states_in_crisis", "spawn_chance", "will_get_access"}
+EFFECT_BLOCKS = {"effect", "option", "immediate", "on_po_accepted",
+                 "demands_enforced_effect", "demands_enforced_trigger"}
+# Iterator scopes the engine only knows in effect context. Used as a trigger it
+# consumes the opening brace as a scalar value, so the block's closing brace
+# closes the PARENT: every sibling after it is promoted one level up. In a
+# decision that turns `effect` / `ai_will_do` into top-level decisions with no
+# potential, shown to every country as cards reading `effect_title`; in an event
+# file it silently drops events.
+#
+# Each entry below was probed against the engine on 2026-09-06 (one decision per
+# scope in a decisions file, reading the `Decisions loaded ... #N` count): these
+# six load 3 decisions instead of 1, i.e. they desync. `any_pop`, `any_state`,
+# `any_substate`, `any_sphere_member`, `any_greater_power`, `any_core`,
+# `all_core`, `any_neighbor_country`, `any_neighbor_province`,
+# `any_owned_province`, `war_countries`, `owner`, `controller`, `overlord`,
+# `sphere_owner`, `capital_scope`, `upper_house`, `relation` and bare tag scopes
+# all load 1 and are fine as triggers - do not add them here.
+EFFECT_ONLY_SCOPES = {"any_country", "any_owned", "random_country",
+                      "random_owned", "random_pop", "random_state",
+                      "random_greater_power", "random_neighbor_country"}
+_TOK = re.compile(r'#[^\n]*|"[^"\n]*"|[{}]|[^\s{}#=]+|=')
+
+
+def _blocks(txt):
+    """Yield (key, line, ancestors) for every `key = {` in a script file."""
+    stack, prev = [], []
+    for m in _TOK.finditer(txt):
+        t = m.group(0)
+        if t.startswith("#"):
+            continue
+        if t == "{":
+            key = prev[-2] if len(prev) >= 2 and prev[-1] == "=" else None
+            if key:
+                yield key, txt.count("\n", 0, m.start()) + 1, list(stack)
+            stack.append(key)
+        elif t == "}":
+            if stack:
+                stack.pop()
+        else:
+            prev.append(t)
+        if t in "{}":
+            prev.append(t)
+
+
+def cmd_desync(files=None):
+    """Two constructs the brace counter cannot see, because the file is balanced
+    and only the ENGINE's parser desyncs on it (2026-09-06 playtest: phantom
+    `effect_title` decision cards, three chains silently missing):
+      - an effect-only iterator scope inside a trigger block  -> eats one `}`
+      - `province_event = <id>` without the block form        -> eats one `{`
+    Cross-check the result with `modcheck.py engine-counts` after a launch."""
+    paths = [Path(f) for f in files] if files else sorted(MOD.rglob("*.txt"))
+    problems = 0
+    for f in paths:
+        try:
+            txt = f.read_bytes().decode("cp1252")
+        except (OSError, UnicodeDecodeError):
+            continue
+        for key, line, stack in _blocks(txt):
+            if key not in EFFECT_ONLY_SCOPES:
+                continue
+            ctx = next((k for k in reversed(stack)
+                        if k in TRIGGER_BLOCKS or k in EFFECT_BLOCKS), None)
+            if ctx in TRIGGER_BLOCKS:
+                problems += 1
+                print(f"{rel(f)}:{line}: `{key}` is an effect-only scope but sits in "
+                      f"`{ctx}`; the engine eats a brace here")
+        for m in re.finditer(r"province_event\s*=\s*(\d+)", txt):
+            problems += 1
+            print(f"{rel(f)}:{txt.count(chr(10), 0, m.start()) + 1}: bare "
+                  f"`province_event = {m.group(1)}`; needs the block form "
+                  f"`province_event = {{ id = {m.group(1)} days = 0 }}`")
+        # The mirror image: a scalar effect handed a block. The engine reads `{`
+        # as the value, so the matching `}` closes the parent (00_CoE_RoI.txt
+        # event 99985 swallowed 99984 this way).
+        for m in re.finditer(r"\b((?:set|clr)_(?:country|global)_flag|change_tag|"
+                             r"prestige|badboy|treasury|money)\s*=\s*\{\s*([^{}\s]+)\s*\}", txt):
+            problems += 1
+            print(f"{rel(f)}:{txt.count(chr(10), 0, m.start()) + 1}: "
+                  f"`{m.group(1)} = {{ {m.group(2)} }}` takes a scalar, not a block; "
+                  f"the engine eats a brace here")
+    print(f"parser desync: {problems} problem(s)")
+    return 1 if problems else 0
+
+
+def cmd_engine_counts():
+    """The engine logs how many decisions/events it got out of each file. Any
+    file where that disagrees with a local parse desynced its parser, whatever
+    the cause. Needs a launch first (scripts/gametest.ps1 is enough)."""
+    log = (Path(r"E:\OneDrive\Documents\Paradox Interactive\Victoria II")
+           / "CoE_RoI_R" / "logs" / "setup.log")
+    if not log.exists():
+        print(f"{log} not found; run scripts/gametest.ps1 first")
+        return 0
+    text = log.read_text(errors="replace")
+    problems = 0
+    for kind, pat, depth in (("decisions", r"Decisions loaded decisions/(.+?)' #(\d+)", 1),
+                             ("events", r"Events loaded events/(.+?)' #(\d+)", 0)):
+        for m in re.finditer(pat, text):
+            name, engine = m.group(1), int(m.group(2))
+            f = MOD / kind / name
+            if not f.exists():
+                f = GAME / kind / name
+            if not f.exists():
+                continue
+            body = f.read_bytes().decode("cp1252", "replace")
+            mine = sum(1 for _, _, stack in _blocks(body) if len(stack) == depth)
+            if mine != engine:
+                problems += 1
+                print(f"{kind}/{name}: engine loaded {engine}, file defines {mine} "
+                      f"({engine - mine:+d}) - the engine's parser desynced")
+    print(f"engine counts: {problems} mismatched file(s)")
+    return 1 if problems else 0
+
+
 def main(argv):
     if not argv:
         print(__doc__)
@@ -501,6 +626,10 @@ def main(argv):
             return cmd_province_paths()
         if cmd == "decisions":
             return cmd_decisions()
+        if cmd == "desync":
+            return cmd_desync(args)
+        if cmd == "engine-counts":
+            return cmd_engine_counts()
     except IndexError:
         print(f"missing argument for {cmd}\n{__doc__}", file=sys.stderr)
         return 1
