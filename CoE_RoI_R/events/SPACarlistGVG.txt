@@ -1,0 +1,722 @@
+#########################################################
+#                                                       #
+#      The First Carlist War, 1830-1840 (GVG)           #
+#      ids 1002700-1002705                              #
+#                                                       #
+#  Dates the Carlist succession crisis that             #
+#  events/SPAFlavor.txt already scripts in full         #
+#  (37760/37710/37711/37712/37713-37717 plus the        #
+#  carlist_rebels and christino_rebels types). No       #
+#  legacy file is edited: 1002700 pre-empts 37760 by    #
+#  setting carlism_questioned itself and holding        #
+#  national_instability as a lock, and 1002701 lifts    #
+#  that lock on the day Ferdinand VII dies, which       #
+#  releases legacy 37711 (MTTH 1 day) on 1833.9.30      #
+#  with its SPA/SPC fork and Espartero intact.          #
+#                                                       #
+#  War state is tracked by this chain's OWN flag        #
+#  gvg_carlist_war, set in every option of 1002701.     #
+#  The legacy flag carlist_war cannot be relied on:     #
+#  37711 is fire_only_once and only its option A sets   #
+#  it, while 37712 clears it on a 1-month MTTH in any   #
+#  revolt-free lull and nothing can set it again.       #
+#  1002704 clears carlist_war in BOTH options so the    #
+#  legacy 37712 ending, and its hidden                  #
+#  remove_accepted_culture = basque, cannot fire on     #
+#  top of ours.                                         #
+#                                                       #
+#  The legacy tally carlist_provinces is SET to 6 by    #
+#  37711 one day after 1002701, so 1002701 does not     #
+#  touch it; the three branches differ through the      #
+#  carlist_sympathies province modifiers they place     #
+#  on 494/496/504, which 37711 does not overwrite.      #
+#                                                       #
+#  month is 0-indexed. The month gates are written as   #
+#  OR = { year = N+1 AND = { year = N month = M } }     #
+#  because month = M means M or later in the year.      #
+#                                                       #
+#########################################################
+
+# The Pragmatic Sanction
+country_event = {
+	id = 1002700
+	title = "EVTNAME1002700"
+	desc = "EVTDESC1002700"
+	picture = "Monarchy"
+	major = yes
+
+	trigger = {
+		tag = SPA
+		exists = yes
+		OR = {
+			year = 1830
+			AND = {
+				year = 1829
+				month = 11 #December
+			}
+		}
+		NOT = { year = 1831 }
+		OR = {
+			OR = { government = hms_government government = hms_government2 government = hms_government3 }
+			OR = { government = prussian_constitutionalism government = prussian_constitutionalism2 government = prussian_constitutionalism3 }
+			OR = { government = absolute_monarchy government = absolute_monarchy2 government = absolute_monarchy3 }
+		}
+		NOT = { has_country_flag = carlism_questioned }
+	}
+
+	mean_time_to_happen = {
+		days = 20
+	}
+
+	option = {
+		name = "EVTOPTA1002700"
+		set_country_flag = carlism_questioned
+		set_country_flag = pragmatic_sanction_1830
+		prestige = 2
+		add_country_modifier = {
+			name = national_instability
+			duration = 1825
+		}
+		any_pop = {
+			limit = {
+				OR = {
+					type = clergymen
+					type = aristocrats
+				}
+			}
+			militancy = 2
+			consciousness = 1
+			ideology = {
+				value = reactionary
+				factor = 0.05
+			}
+		}
+		any_owned = {
+			limit = {
+				OR = {
+					province_id = 492 #Bilbao
+					province_id = 493 #Pamplona
+				}
+			}
+			any_pop = {
+				militancy = 1
+				consciousness = 1
+			}
+		}
+		ai_chance = {
+			factor = 70
+		}
+	}
+
+	option = {
+		name = "EVTOPTB1002700"
+		set_country_flag = carlism_questioned
+		set_country_flag = carlos_recognised_1830
+		prestige = -2
+		add_country_modifier = {
+			name = national_instability
+			duration = 1825
+		}
+		add_country_modifier = {
+			name = conservative_reaction
+			duration = 1095
+		}
+		any_pop = {
+			ideology = {
+				value = reactionary
+				factor = 0.05
+			}
+			scaled_militancy = {
+				ideology = liberal
+				factor = 4
+			}
+		}
+		ai_chance = {
+			factor = 20
+		}
+	}
+
+	option = {
+		name = "EVTOPTC1002700"
+		set_country_flag = carlism_questioned
+		set_country_flag = succession_deferred
+		treasury = -3000
+		add_country_modifier = {
+			name = national_instability
+			duration = 1825
+		}
+		any_pop = {
+			consciousness = -1
+		}
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+
+# The Death of Ferdinand VII
+country_event = {
+	id = 1002701
+	title = "EVTNAME1002701"
+	desc = "EVTDESC1002701"
+	picture = "emperor_funeral"
+	major = yes
+	news = yes
+	news_title = "EVTNAME1002701_NEWS_TITLE"
+	news_desc_long = "EVTDESC1002701_NEWS_LONG"
+	news_desc_medium = "EVTDESC1002701_NEWS_MEDIUM"
+	news_desc_short = "EVTDESC1002701_NEWS_SHORT"
+
+	trigger = {
+		tag = SPA
+		exists = yes
+		OR = {
+			year = 1834
+			AND = {
+				year = 1833
+				month = 8 #September
+			}
+		}
+		NOT = { year = 1836 }
+		OR = {
+			OR = { government = hms_government government = hms_government2 government = hms_government3 }
+			OR = { government = prussian_constitutionalism government = prussian_constitutionalism2 government = prussian_constitutionalism3 }
+			OR = { government = absolute_monarchy government = absolute_monarchy2 government = absolute_monarchy3 }
+		}
+		has_country_flag = carlism_questioned
+		NOT = { has_country_flag = ferdinand_vii_dead }
+	}
+
+	mean_time_to_happen = {
+		days = 20
+	}
+
+	option = {
+		name = "EVTOPTA1002701"
+		set_country_flag = ferdinand_vii_dead
+		set_country_flag = isabella_ii_regency
+		set_country_flag = gvg_carlist_war
+		remove_country_modifier = national_instability
+		add_country_modifier = {
+			name = liberal_reaction
+			duration = 1825
+		}
+		relation = { who = ENG value = 25 }
+		relation = { who = FRA value = 25 }
+		capital_scope = {
+			any_pop = {
+				ideology = {
+					value = liberal
+					factor = 0.05
+				}
+			}
+		}
+		any_owned = {
+			limit = {
+				OR = {
+					province_id = 494 #Logrono
+					province_id = 496 #Huesca
+				}
+				NOT = { has_province_modifier = carlist_sympathies }
+			}
+			add_province_modifier = {
+				name = carlist_sympathies
+				duration = -1
+			}
+		}
+		ai_chance = {
+			factor = 70
+			modifier = {
+				factor = 1.5
+				has_country_flag = pragmatic_sanction_1830
+			}
+			modifier = {
+				factor = 0.5
+				has_country_flag = carlos_recognised_1830
+			}
+		}
+	}
+
+	option = {
+		name = "EVTOPTB1002701"
+		set_country_flag = ferdinand_vii_dead
+		set_country_flag = cea_bermudez_ministry
+		set_country_flag = gvg_carlist_war
+		remove_country_modifier = national_instability
+		add_country_modifier = {
+			name = conservative_reaction
+			duration = 1825
+		}
+		any_pop = {
+			scaled_militancy = {
+				ideology = liberal
+				factor = 6
+			}
+		}
+		any_owned = {
+			limit = {
+				OR = {
+					province_id = 494 #Logrono
+					province_id = 496 #Huesca
+					province_id = 504 #Castellon
+				}
+				NOT = { has_province_modifier = carlist_sympathies }
+			}
+			add_province_modifier = {
+				name = carlist_sympathies
+				duration = -1
+			}
+		}
+		ai_chance = {
+			factor = 20
+			modifier = {
+				factor = 2
+				has_country_flag = carlos_recognised_1830
+			}
+		}
+	}
+
+	option = {
+		name = "EVTOPTC1002701"
+		set_country_flag = ferdinand_vii_dead
+		set_country_flag = spain_preemptive_march
+		set_country_flag = gvg_carlist_war
+		remove_country_modifier = national_instability
+		treasury = -8000
+		war_exhaustion = 2
+		prestige = -2
+		any_owned = {
+			limit = {
+				OR = {
+					province_id = 492 #Bilbao
+					province_id = 493 #Pamplona
+				}
+			}
+			any_pop = {
+				militancy = 3
+				ideology = {
+					value = reactionary
+					factor = 0.05
+				}
+			}
+		}
+		any_owned = {
+			limit = {
+				province_id = 494 #Logrono
+				NOT = { has_province_modifier = carlist_sympathies }
+			}
+			add_province_modifier = {
+				name = carlist_sympathies
+				duration = -1
+			}
+		}
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 1.5
+				has_country_flag = succession_deferred
+			}
+		}
+	}
+}
+
+# The Quadruple Alliance
+country_event = {
+	id = 1002702
+	title = "EVTNAME1002702"
+	desc = "EVTDESC1002702"
+	picture = "treaty"
+	news = yes
+	news_title = "EVTNAME1002702_NEWS_TITLE"
+	news_desc_long = "EVTDESC1002702_NEWS_LONG"
+	news_desc_medium = "EVTDESC1002702_NEWS_MEDIUM"
+	news_desc_short = "EVTDESC1002702_NEWS_SHORT"
+
+	trigger = {
+		tag = SPA
+		exists = yes
+		OR = {
+			year = 1835
+			AND = {
+				year = 1834
+				month = 3 #April
+			}
+		}
+		NOT = { year = 1838 }
+		has_country_flag = gvg_carlist_war
+		NOT = { has_country_flag = quadruple_alliance_signed }
+		NOT = { has_country_flag = spain_stands_alone }
+	}
+
+	mean_time_to_happen = {
+		months = 2
+	}
+
+	option = {
+		name = "EVTOPTA1002702"
+		set_country_flag = quadruple_alliance_signed
+		prestige = 3
+		relation = { who = ENG value = 50 }
+		relation = { who = FRA value = 50 }
+		relation = { who = POR value = 50 }
+		ENG = {
+			diplomatic_influence = { who = THIS value = 50 }
+			country_event = { id = 1002703 days = 15 }
+		}
+		any_pop = {
+			scaled_militancy = {
+				ideology = reactionary
+				factor = 4
+			}
+		}
+		ai_chance = {
+			factor = 75
+			modifier = {
+				factor = 2
+				POR = { has_country_flag = por_charter_upheld }
+			}
+			modifier = {
+				factor = 1.5
+				POR = { has_country_flag = por_liberal_war }
+			}
+			modifier = {
+				factor = 1.5
+				relation = { who = ENG value = 100 }
+			}
+			modifier = {
+				factor = 1.5
+				has_country_flag = isabella_ii_regency
+			}
+			modifier = {
+				factor = 0.75
+				has_country_flag = spain_preemptive_march
+			}
+			modifier = {
+				factor = 0.5
+				has_country_flag = cea_bermudez_ministry
+			}
+		}
+	}
+
+	option = {
+		name = "EVTOPTB1002702"
+		set_country_flag = spain_stands_alone
+		prestige = 5
+		war_exhaustion = 2
+		any_owned = {
+			limit = {
+				OR = {
+					province_id = 494 #Logrono
+					province_id = 496 #Huesca
+				}
+				NOT = { has_province_modifier = carlist_sympathies }
+			}
+			add_province_modifier = {
+				name = carlist_sympathies
+				duration = -1
+			}
+		}
+		change_variable = {
+			which = carlist_provinces
+			value = 2
+		}
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 1.5
+				has_country_flag = spain_preemptive_march
+			}
+			modifier = {
+				factor = 1.5
+				has_country_flag = succession_deferred
+			}
+		}
+	}
+}
+
+# The British Auxiliary Legion - FROM is SPA
+country_event = {
+	id = 1002703
+	title = "EVTNAME1002703"
+	desc = "EVTDESC1002703"
+	picture = "Recruits"
+
+	is_triggered_only = yes
+
+	option = {
+		name = "EVTOPTA1002703"
+		treasury = -5000
+		prestige = 2
+		relation = { who = FROM value = 25 }
+		FROM = {
+			add_country_modifier = {
+				name = british_legion
+				duration = 1825
+			}
+			war_exhaustion = -2
+			define_general = {
+				name = "George de Lacy Evans"
+				personality = bold
+				background = war_college
+			}
+		}
+		ai_chance = {
+			factor = 55
+			modifier = {
+				factor = 1.5
+				relation = { who = FROM value = 100 }
+			}
+			modifier = {
+				factor = 0.5
+				war = yes
+			}
+		}
+	}
+
+	option = {
+		name = "EVTOPTB1002703"
+		treasury = -3000
+		relation = { who = FROM value = 15 }
+		FROM = {
+			treasury = 3000
+		}
+		ai_chance = {
+			factor = 30
+		}
+	}
+
+	option = {
+		name = "EVTOPTC1002703"
+		relation = { who = FROM value = -25 }
+		FROM = {
+			war_exhaustion = 1
+		}
+		ai_chance = {
+			factor = 15
+			modifier = {
+				factor = 3
+				war = yes
+			}
+		}
+	}
+}
+
+# The Convention of Vergara
+country_event = {
+	id = 1002704
+	title = "EVTNAME1002704"
+	desc = "EVTDESC1002704"
+	picture = "war_ended"
+	major = yes
+	news = yes
+	news_title = "EVTNAME1002704_NEWS_TITLE"
+	news_desc_long = "EVTDESC1002704_NEWS_LONG"
+	news_desc_medium = "EVTDESC1002704_NEWS_MEDIUM"
+	news_desc_short = "EVTDESC1002704_NEWS_SHORT"
+
+	trigger = {
+		tag = SPA
+		exists = yes
+		year = 1837
+		NOT = { year = 1845 }
+		has_country_flag = gvg_carlist_war
+		OR = {
+			num_of_revolts = 1
+			NOT = { has_country_flag = carlist_war } #37712 has already ended it for us
+		}
+		NOT = { has_country_flag = vergara_settled }
+	}
+
+	mean_time_to_happen = {
+		months = 18
+		modifier = {
+			factor = 0.5
+			has_country_flag = quadruple_alliance_signed
+		}
+		modifier = {
+			factor = 0.5
+			NOT = { num_of_revolts = 2 }
+		}
+		modifier = {
+			factor = 0.5
+			year = 1839
+		}
+		modifier = {
+			factor = 2
+			has_country_flag = cea_bermudez_ministry
+		}
+	}
+
+	option = {
+		name = "EVTOPTA1002704"
+		set_country_flag = vergara_settled
+		clr_country_flag = carlist_war
+		clr_country_flag = gvg_carlist_war
+		prestige = 3
+		war_exhaustion = -2
+		add_country_modifier = {
+			name = basque_fueros
+			duration = -1
+		}
+		any_owned = {
+			limit = { has_province_modifier = carlist_sympathies }
+			remove_province_modifier = carlist_sympathies
+		}
+		set_variable = {
+			which = carlist_provinces
+			value = 0
+		}
+		any_pop = {
+			limit = {
+				OR = {
+					has_pop_culture = basque
+					has_pop_culture = catalan
+				}
+			}
+			militancy = -6
+			consciousness = -1
+		}
+		any_pop = {
+			scaled_militancy = {
+				ideology = reactionary
+				factor = -4
+			}
+		}
+		define_general = {
+			name = "Rafael Maroto"
+			personality = cautious
+			background = turncoat
+		}
+		ai_chance = {
+			factor = 70
+			modifier = {
+				factor = 1.5
+				has_country_flag = quadruple_alliance_signed
+			}
+		}
+	}
+
+	option = {
+		name = "EVTOPTB1002704"
+		set_country_flag = vergara_settled
+		set_country_flag = carlist_no_quarter
+		clr_country_flag = carlist_war
+		prestige = 2
+		war_exhaustion = 3
+		treasury = -3000
+		any_owned = {
+			limit = {
+				OR = {
+					province_id = 492 #Bilbao
+					province_id = 493 #Pamplona
+				}
+			}
+			any_pop = {
+				militancy = 3
+			}
+		}
+		any_pop = {
+			ideology = {
+				value = liberal
+				factor = 0.05
+			}
+		}
+		ai_chance = {
+			factor = 30
+			modifier = {
+				factor = 2
+				has_country_flag = spain_stands_alone
+			}
+		}
+	}
+}
+
+# The Fall of Morella - the war carried through to the end
+country_event = {
+	id = 1002705
+	title = "EVTNAME1002705"
+	desc = "EVTDESC1002705"
+	picture = "carlists"
+	news = yes
+	news_title = "EVTNAME1002705_NEWS_TITLE"
+	news_desc_long = "EVTDESC1002705_NEWS_LONG"
+	news_desc_medium = "EVTDESC1002705_NEWS_MEDIUM"
+	news_desc_short = "EVTDESC1002705_NEWS_SHORT"
+
+	trigger = {
+		tag = SPA
+		exists = yes
+		OR = {
+			year = 1841
+			AND = {
+				year = 1840
+				month = 2 #March
+			}
+		}
+		NOT = { year = 1846 }
+		has_country_flag = gvg_carlist_war
+		has_country_flag = carlist_no_quarter
+		NOT = { has_country_flag = carlist_crushed }
+	}
+
+	mean_time_to_happen = {
+		months = 8
+		modifier = {
+			factor = 0.5
+			NOT = { num_of_revolts = 1 }
+		}
+		modifier = {
+			factor = 0.75
+			has_country_flag = quadruple_alliance_signed
+		}
+		modifier = {
+			factor = 1.5
+			war_exhaustion = 10
+		}
+	}
+
+	option = {
+		name = "EVTOPTA1002705"
+		set_country_flag = carlist_crushed
+		clr_country_flag = gvg_carlist_war
+		clr_country_flag = carlist_war
+		prestige = 8
+		war_exhaustion = -3
+		any_owned = {
+			limit = { has_province_modifier = carlist_sympathies }
+			remove_province_modifier = carlist_sympathies
+		}
+		set_variable = {
+			which = carlist_provinces
+			value = 0
+		}
+		any_pop = {
+			limit = {
+				OR = {
+					has_pop_culture = basque
+					has_pop_culture = catalan
+				}
+			}
+			militancy = 2
+			consciousness = 1
+		}
+		any_pop = {
+			scaled_militancy = {
+				ideology = reactionary
+				factor = -6
+			}
+			ideology = {
+				value = conservative
+				factor = 0.05
+			}
+		}
+		define_general = {
+			name = "Leopoldo O'Donnell"
+			personality = bold
+			background = war_college
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+}

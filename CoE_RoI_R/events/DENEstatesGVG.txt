@@ -1,0 +1,564 @@
+#########################################################
+#                                                       #
+#   Bankruptcy and the Provincial Estates (GVG)         #
+#   Denmark, 1821-1836 - ids 1003200-1003204            #
+#                                                       #
+#   The long fiscal aftermath of the 1813 statsbankerot #
+#   Uwe Jens Lornsen's 1830 pamphlet, and Frederick     #
+#   VI's rescript of 28 May 1831 creating the four      #
+#   consultative provincial estates. DEN owns none of   #
+#   Schleswig or Holstein at 1821 - SWH is the vassal   #
+#   that holds 369, 370 and 371 - so every effect in    #
+#   the duchies is scripted through SWH, never through  #
+#   a DEN-scope any_owned.                              #
+#                                                       #
+#   fire_only_once is engine-wide, not per country, so  #
+#   every event here is guarded by a country flag that  #
+#   each of its own options sets.                       #
+#                                                       #
+#########################################################
+
+# The Shadow of the Statsbankerot
+country_event = {
+	id = 1003200
+	title = "EVTNAME1003200"
+	desc = "EVTDESC1003200"
+	picture = "Bankruptcy"
+
+	trigger = {
+		tag = DEN
+		exists = yes
+		war = no
+		year = 1822
+		NOT = { year = 1830 }
+		NOT = { has_country_flag = dan_bankerot_settled }
+	}
+
+	mean_time_to_happen = {
+		months = 20
+		modifier = {
+			factor = 0.75
+			militancy = 2
+		}
+		modifier = {
+			factor = 0.8
+			year = 1825
+		}
+	}
+
+	# Hold the rigsbankdaler to silver
+	option = {
+		name = "EVTOPTA1003200"
+		set_country_flag = dan_bankerot_settled
+		set_country_flag = dan_hard_money
+		prestige = 2
+		add_country_modifier = {
+			name = central_bank_established
+			duration = 3650
+		}
+		any_owned = {
+			limit = {
+				OR = {
+					province_id = 366 #Aarhus
+					province_id = 368 #Vejle
+				}
+			}
+			add_province_modifier = {
+				name = local_economic_downturn
+				duration = 1095
+			}
+		}
+		rich_strata = {
+			militancy = 1
+			consciousness = 1
+		}
+		ai_chance = {
+			factor = 45
+			modifier = {
+				factor = 1.5
+				ruling_party_ideology = conservative
+			}
+		}
+	}
+
+	# Relieve the mortgages of the landowners
+	option = {
+		name = "EVTOPTB1003200"
+		set_country_flag = dan_bankerot_settled
+		set_country_flag = dan_landowner_relief
+		treasury = -5000
+		prestige = 1
+		rich_strata = {
+			militancy = -2
+			consciousness = -1
+		}
+		poor_strata = {
+			militancy = -1
+		}
+		any_owned = {
+			limit = {
+				province_id = 366 #Aarhus
+			}
+			add_province_modifier = {
+				name = local_economic_downturn
+				duration = 730
+			}
+		}
+		ai_chance = {
+			factor = 30
+			modifier = {
+				factor = 0.25
+				NOT = { money = 8000 }
+			}
+		}
+	}
+
+	# A new assessment of the land
+	option = {
+		name = "EVTOPTC1003200"
+		set_country_flag = dan_bankerot_settled
+		set_country_flag = dan_land_tax
+		treasury = 8000
+		add_country_modifier = {
+			name = tax_reforms
+			duration = 3650
+		}
+		any_owned = {
+			limit = {
+				OR = {
+					province_id = 366 #Aarhus
+					province_id = 368 #Vejle
+				}
+			}
+			add_province_modifier = {
+				name = local_economic_downturn
+				duration = 1095
+			}
+		}
+		poor_strata = {
+			militancy = 1
+		}
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 2
+				NOT = { money = 20000 }
+			}
+		}
+	}
+}
+
+# Uwe Jens Lornsen and the Pamphlet
+country_event = {
+	id = 1003201
+	title = "EVTNAME1003201"
+	desc = "EVTDESC1003201"
+	picture = "publishers"
+	news = yes
+	news_title = "EVTNAME1003201_NEWS_TITLE"
+	news_desc_long = "EVTDESC1003201_NEWS_LONG"
+	news_desc_medium = "EVTDESC1003201_NEWS_MEDIUM"
+	news_desc_short = "EVTDESC1003201_NEWS_SHORT"
+
+	trigger = {
+		tag = DEN
+		exists = yes
+		year = 1830
+		NOT = { year = 1836 }
+		has_country_flag = dan_bankerot_settled
+		NOT = { has_country_flag = dan_lornsen_answered }
+		exists = SWH
+		SWH = { vassal_of = THIS }
+	}
+
+	mean_time_to_happen = {
+		months = 4
+		modifier = {
+			factor = 0.75
+			FRA = { has_country_flag = july_revolution }
+		}
+	}
+
+	# The Landvogt belongs in the fortress
+	option = {
+		name = "EVTOPTA1003201"
+		set_country_flag = dan_lornsen_answered
+		set_country_flag = dan_lornsen_gaoled
+		prestige = -1
+		SWH = {
+			any_owned = {
+				limit = {
+					OR = {
+						province_id = 369 #Kiel
+						province_id = 370 #Flensburg
+						province_id = 371 #Abenra
+					}
+				}
+				add_province_modifier = {
+					name = nationalist_agitation
+					duration = 1825
+				}
+			}
+			any_pop = {
+				limit = { has_pop_culture = north_german }
+				consciousness = 1
+				militancy = 1
+			}
+		}
+		ai_chance = {
+			factor = 65
+			modifier = {
+				factor = 1.5
+				ruling_party_ideology = reactionary
+			}
+		}
+	}
+
+	# Receive the knighthood of Holstein
+	option = {
+		name = "EVTOPTB1003201"
+		set_country_flag = dan_lornsen_answered
+		set_country_flag = dan_holstein_heard
+		SWH = {
+			any_pop = {
+				consciousness = 1
+			}
+			any_owned = {
+				limit = { province_id = 369 }
+				add_province_modifier = {
+					name = underground_newspaper
+					duration = 1095
+				}
+			}
+		}
+		ai_chance = {
+			factor = 35
+			modifier = {
+				factor = 1.5
+				ruling_party_ideology = liberal
+			}
+		}
+	}
+}
+
+# The Rescript of 28 May 1831
+country_event = {
+	id = 1003202
+	title = "EVTNAME1003202"
+	desc = "EVTDESC1003202"
+	picture = "Christiansborgs"
+	major = yes
+	news = yes
+	news_title = "EVTNAME1003202_NEWS_TITLE"
+	news_desc_long = "EVTDESC1003202_NEWS_LONG"
+	news_desc_medium = "EVTDESC1003202_NEWS_MEDIUM"
+	news_desc_short = "EVTDESC1003202_NEWS_SHORT"
+
+	trigger = {
+		tag = DEN
+		exists = yes
+		year = 1831
+		NOT = { year = 1839 }
+		OR = { government = absolute_monarchy government = absolute_monarchy2 government = absolute_monarchy3 }
+		has_country_flag = dan_bankerot_settled
+		OR = {
+			has_country_flag = dan_lornsen_answered
+			NOT = { exists = SWH }
+		}
+		NOT = { has_country_flag = dan_estates_decided }
+	}
+
+	mean_time_to_happen = {
+		months = 6
+		modifier = {
+			factor = 0.7
+			has_country_flag = dan_land_tax
+		}
+		modifier = {
+			factor = 0.8
+			militancy = 3
+		}
+	}
+
+	# Four estates shall be summoned
+	option = {
+		name = "EVTOPTA1003202"
+		set_country_flag = dan_estates_decided
+		set_country_flag = dan_estates_granted
+		political_reform = landed_voting
+		political_reform = state_equal_weight
+		add_country_modifier = {
+			name = danish_provincial_estates
+			duration = -1
+		}
+		prestige = 5
+		plurality = 5
+		any_pop = {
+			militancy = -1
+			consciousness = 1
+		}
+		random_country = {
+			limit = {
+				tag = SWH
+				exists = yes
+				vassal_of = THIS
+			}
+			political_reform = landed_voting
+			political_reform = state_equal_weight
+			any_pop = {
+				militancy = -2
+				consciousness = 1
+			}
+		}
+		ai_chance = {
+			factor = 55
+			modifier = {
+				factor = 1.5
+				has_country_flag = dan_holstein_heard
+			}
+			modifier = {
+				factor = 1.5
+				has_country_flag = dan_hard_money
+			}
+			modifier = {
+				factor = 1.5
+				has_country_flag = dan_land_tax
+			}
+			modifier = {
+				factor = 1.5
+				militancy = 4
+			}
+		}
+	}
+
+	# The King consults whom he pleases
+	option = {
+		name = "EVTOPTB1003202"
+		set_country_flag = dan_estates_decided
+		set_country_flag = dan_estates_refused
+		political_reform = state_press
+		add_country_modifier = {
+			name = conservative_reaction
+			duration = 3650
+		}
+		prestige = -2
+		any_owned = {
+			limit = {
+				OR = {
+					province_id = 372 #Copenhagen
+					province_id = 2557 #Roskilde
+				}
+			}
+			add_province_modifier = {
+				name = liberal_agitation
+				duration = 1825
+			}
+		}
+		random_country = {
+			limit = {
+				tag = SWH
+				exists = yes
+				vassal_of = THIS
+			}
+			any_owned = {
+				limit = {
+					OR = {
+						province_id = 369 #Kiel
+						province_id = 370 #Flensburg
+						province_id = 371 #Abenra
+					}
+				}
+				add_province_modifier = {
+					name = nationalist_agitation
+					duration = 1825
+				}
+			}
+		}
+		middle_strata = {
+			militancy = 1
+			consciousness = 1
+		}
+		ai_chance = {
+			factor = 45
+			modifier = {
+				factor = 1.5
+				ruling_party_ideology = reactionary
+			}
+			modifier = {
+				factor = 1.5
+				has_country_flag = dan_lornsen_gaoled
+			}
+		}
+	}
+}
+
+# The Estates Assemble at Roskilde and Viborg
+country_event = {
+	id = 1003203
+	title = "EVTNAME1003203"
+	desc = "EVTDESC1003203"
+	picture = "Upperhouse"
+	news = yes
+	news_title = "EVTNAME1003203_NEWS_TITLE"
+	news_desc_long = "EVTDESC1003203_NEWS_LONG"
+	news_desc_medium = "EVTDESC1003203_NEWS_MEDIUM"
+	news_desc_short = "EVTDESC1003203_NEWS_SHORT"
+
+	trigger = {
+		tag = DEN
+		exists = yes
+		year = 1835
+		NOT = { year = 1845 }
+		has_country_flag = dan_estates_granted
+		NOT = { has_country_flag = dan_estates_met }
+	}
+
+	mean_time_to_happen = {
+		months = 5
+	}
+
+	# Let them petition
+	option = {
+		name = "EVTOPTA1003203"
+		set_country_flag = dan_estates_met
+		prestige = 3
+		plurality = 5
+		add_country_modifier = {
+			name = educational_reform
+			duration = 3650
+		}
+		any_pop = {
+			consciousness = 1
+			militancy = -1
+		}
+		ai_chance = {
+			factor = 60
+			modifier = {
+				factor = 1.5
+				ruling_party_ideology = liberal
+			}
+		}
+	}
+
+	# Advice, and no more
+	option = {
+		name = "EVTOPTB1003203"
+		set_country_flag = dan_estates_met
+		prestige = 1
+		add_country_modifier = {
+			name = conservative_reaction
+			duration = 1825
+		}
+		middle_strata = {
+			militancy = 1
+			consciousness = 1
+		}
+		ai_chance = {
+			factor = 40
+			modifier = {
+				factor = 1.5
+				has_country_flag = dan_lornsen_gaoled
+			}
+		}
+	}
+}
+
+# The Petition of the Landowners
+country_event = {
+	id = 1003204
+	title = "EVTNAME1003204"
+	desc = "EVTDESC1003204"
+	picture = "deliberation"
+
+	trigger = {
+		tag = DEN
+		exists = yes
+		year = 1834
+		NOT = { year = 1842 }
+		has_country_flag = dan_estates_refused
+		NOT = { has_country_flag = dan_estates_petition_answered }
+	}
+
+	mean_time_to_happen = {
+		months = 12
+		modifier = {
+			factor = 0.75
+			militancy = 4
+		}
+	}
+
+	# Relent - the estates shall meet
+	option = {
+		name = "EVTOPTA1003204"
+		set_country_flag = dan_estates_petition_answered
+		clr_country_flag = dan_estates_refused
+		set_country_flag = dan_estates_granted
+		remove_country_modifier = conservative_reaction
+		political_reform = landed_voting
+		political_reform = state_equal_weight
+		add_country_modifier = {
+			name = danish_provincial_estates
+			duration = -1
+		}
+		prestige = 2
+		plurality = 3
+		any_pop = {
+			militancy = -1
+			consciousness = 1
+		}
+		random_country = {
+			limit = {
+				tag = SWH
+				exists = yes
+				vassal_of = THIS
+			}
+			political_reform = landed_voting
+			political_reform = state_equal_weight
+			any_pop = {
+				militancy = -2
+				consciousness = 1
+			}
+		}
+		ai_chance = {
+			factor = 40
+			modifier = {
+				factor = 1.5
+				has_country_flag = dan_landowner_relief
+			}
+			modifier = {
+				factor = 1.5
+				militancy = 5
+			}
+		}
+	}
+
+	# Order is kept
+	option = {
+		name = "EVTOPTB1003204"
+		set_country_flag = dan_estates_petition_answered
+		prestige = -1
+		add_country_modifier = {
+			name = growing_unrest
+			duration = 3650
+		}
+		any_owned = {
+			limit = {
+				OR = {
+					province_id = 372 #Copenhagen
+					province_id = 2557 #Roskilde
+				}
+			}
+			add_province_modifier = {
+				name = liberal_agitation
+				duration = 1825
+			}
+		}
+		ai_chance = {
+			factor = 60
+			modifier = {
+				factor = 1.5
+				ruling_party_ideology = reactionary
+			}
+		}
+	}
+}

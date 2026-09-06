@@ -1,0 +1,32 @@
+EVTNAME1002500;The Blockade of Algiers;;;;;;;;;;;;;x
+EVTDESC1002500;The quarrel over the Republic's unpaid wheat debt has festered for years, and the Regency will neither settle it nor answer for its treatment of our consul. A squadron rides at anchor off Cape Matifou, turning back every grain ship that tries to enter the harbour. The blockade is ruinously expensive, the merchant houses of Marseille are furious, and the Regency shows no sign of apologising. The Council of Ministers must decide how much longer the flag can be left flapping off a coast we do not intend to invade.;;;;;;;;;;;;;x
+EVTOPTA1002500;Keep the squadron off Cape Matifou.;;;;;;;;;;;;;x
+EVTOPTB1002500;Then let us demand satisfaction at gunpoint.;;;;;;;;;;;;;x
+EVTOPTC1002500;Lift the blockade and let the merchants trade.;;;;;;;;;;;;;x
+EVTNAME1002501;The Landing at Sidi Ferruch;;;;;;;;;;;;;x
+EVTDESC1002501;The fleet has assembled at Toulon and the transports lie low in the water with siege guns, horses and the pontoon train. General de Bourmont proposes to put the whole army ashore in the bay of Sidi Ferruch, west of the city, and to march on Algiers from the landward side where its sea batteries cannot reach him. It would be the largest amphibious operation France has attempted since Egypt. The alternative is a bombardment from the water that would satisfy honour and settle nothing.;;;;;;;;;;;;;x
+EVTOPTA1002501;Thirty-seven thousand men will go ashore at Sidi Ferruch.;;;;;;;;;;;;;x
+EVTOPTB1002501;A demonstration off the coast will do.;;;;;;;;;;;;;x
+EVTNAME1002501_NEWS_TITLE;French Army Lands in Africa;;;;;;;;;;;;;x
+EVTDESC1002501_NEWS_LONG;The French expeditionary corps has come ashore in the bay of Sidi Ferruch and entrenched itself within sight of Algiers. Observers report siege artillery being dragged up the heights of Staoueli in the face of the militia of the Dey. The Regency has appealed to Constantinople for a help that nobody expects to arrive.;;;;;;;;;;;;;x
+EVTDESC1002501_NEWS_MEDIUM;The French have landed at Sidi Ferruch and are dragging siege guns onto the heights above Algiers.;;;;;;;;;;;;;x
+EVTDESC1002501_NEWS_SHORT;French troops land at Sidi Ferruch.;;;;;;;;;;;;;x
+EVTNAME1002502;The Fall of the Dey;;;;;;;;;;;;;x
+EVTDESC1002502;The Fort of the Emperor above the city has been blown up and the Casbah has opened its gates. The Dey Hussein has signed a capitulation guaranteeing the persons, the property and the religion of the inhabitants, and asks only for a ship to carry him to Naples. In the vaults beneath the citadel our officers have found the accumulated treasure of three centuries of corsair tribute. The capitulation says nothing whatever about it.;;;;;;;;;;;;;x
+EVTOPTA1002502;Empty the treasury of the Casbah.;;;;;;;;;;;;;x
+EVTOPTB1002502;The terms of the capitulation will be honoured.;;;;;;;;;;;;;x
+EVTNAME1002502_NEWS_TITLE;Algiers Has Fallen;;;;;;;;;;;;;x
+EVTDESC1002502_NEWS_LONG;After three weeks of siege the Casbah of Algiers has surrendered to the French army and the Dey Hussein has gone into exile. Three centuries of corsair rule in the western Mediterranean have ended in a single campaigning season. The Powers now watch to see whether Paris intends to garrison the city or to burn it and sail home.;;;;;;;;;;;;;x
+EVTDESC1002502_NEWS_MEDIUM;The Casbah has surrendered and the Dey Hussein has gone into exile at Naples.;;;;;;;;;;;;;x
+EVTDESC1002502_NEWS_SHORT;Algiers surrenders to the French.;;;;;;;;;;;;;x
+EVTNAME1002503;The Ordonnance of 1834;;;;;;;;;;;;;x
+EVTDESC1002503;Four years after the landing nobody in Paris can say what Algiers actually is. The deputies call it an occupation, the settlers already arriving from Provence call it a colony, and the army calls it a war it has not been permitted to finish. A royal ordonnance must now fix the status of the French possessions in North Africa. London watches closely, and reminds us that the expedition was announced to Europe as a punitive raid against pirates.;;;;;;;;;;;;;x
+EVTOPTA1002503;A Governor-General, and a colony of settlement.;;;;;;;;;;;;;x
+EVTOPTB1002503;Occupation restreinte: the ports and nothing more.;;;;;;;;;;;;;x
+EVTOPTC1002503;Hand Oran back and keep Algiers alone.;;;;;;;;;;;;;x
+EVTNAME1002504;The Emirate of Mascara;;;;;;;;;;;;;x
+EVTDESC1002504;With the Dey gone and the Turkish garrisons scattered, the tribes of the west have gathered at Mascara and given their oath to a young marabout of the Qadiriyya. He is proclaimed Commander of the Faithful, he mints his own coin, and he has begun to raise a regular army drilled on the French model. General Desmichels at Oran offers a convention that would recognise him as master of the interior in exchange for quiet on the coast.;;;;;;;;;;;;;x
+EVTOPTA1002504;Proclaim the jihad against the invader.;;;;;;;;;;;;;x
+EVTOPTB1002504;Sign the convention with General Desmichels.;;;;;;;;;;;;;x
+algiers_blockade;Blockaded by the French Squadron;;;;;;;;;;;;;x
+armee_dafrique;The Armee d'Afrique;;;;;;;;;;;;;x

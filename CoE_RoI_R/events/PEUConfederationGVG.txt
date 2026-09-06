@@ -1,0 +1,782 @@
+#########################################################
+#                                                       #
+#   The Peru-Bolivian Confederation, 1835-1839 (GVG)    #
+#   ids 1002900-1002907                                 #
+#                                                       #
+#   Layers the missing 1835-1839 history onto the PDM   #
+#   apparatus that already exists rather than inventing #
+#   a tag or a parallel formation path: the PBC/SPU/NPU #
+#   tags, decisions/PBC.txt (form_PBC_BOL,              #
+#   form_PBC_PEU, pbc_in_chaos, end_of_confederation_*) #
+#   and events/PBCFlavor.txt 97040-97055.               #
+#   This file supplies the march of Santa Cruz on Peru, #
+#   the Chilean War of the Restoration (the war         #
+#   declaration ChileanEvents.txt 97050 gave up on),    #
+#   Rosas, Paucarpata and Yungay. It neither forms nor  #
+#   dissolves the Confederation - the existing          #
+#   decisions and 97055 do both.                        #
+#                                                       #
+#   Bolivia does not exist at the 1821 start and no     #
+#   other file in the mod ever creates her: every Upper #
+#   Peruvian province is held by the royalists (or by   #
+#   Lima), and every release_vassal = BOL /             #
+#   change_tag = BOL site sits inside the dissolution   #
+#   of a Confederation that cannot form without her.    #
+#   1002906 and 1002907 therefore give Bolivia her      #
+#   scripted birth (Chuquisaca, 1825), fired for        #
+#   whoever holds Chuquisaca rather than for a fixed    #
+#   tag, so the chain works under either owner of Upper #
+#   Peru.                                               #
+#                                                       #
+#   No fire_only_once anywhere: it is engine-wide, not  #
+#   per country. Every self-firing event is guarded by  #
+#   a country flag set in EVERY option.                 #
+#                                                       #
+#########################################################
+
+# The Congress of Chuquisaca - the birth of Bolivia, 1825
+# Fired for whoever holds Chuquisaca (the royalists at the 1821 start), never
+# for a hard-coded tag: nothing else in the mod creates BOL, and everything
+# below this line needs her.
+country_event = {
+	id = 1002906
+	title = "EVTNAME1002906"
+	desc = "EVTDESC1002906"
+	picture = "national_congress"
+
+	trigger = {
+		owns = 2313 #Chuquisaca
+		year = 1825
+		NOT = { year = 1836 }
+		# NOR: none of these four may hold
+		NOT = {
+			tag = BOL
+			exists = BOL
+			has_global_flag = bolivia_independent
+			has_country_flag = chuquisaca_answered
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 3
+		modifier = {
+			factor = 0.5
+			NOT = { owns = 2295 } #Lima
+		}
+		modifier = {
+			factor = 0.75
+			war = yes
+		}
+	}
+
+	# Recognise the Republic of Bolivar
+	option = {
+		name = "EVTOPTA1002906"
+		set_country_flag = chuquisaca_answered
+		set_global_flag = bolivia_independent
+		prestige = -2
+		# secede_province creates the tag, as vanilla Taiping.txt 160001 does
+		any_owned = {
+			limit = { is_core = BOL }
+			secede_province = BOL
+		}
+		random_country = {
+			limit = {
+				tag = BOL
+				exists = yes
+			}
+			relation = { who = THIS value = 100 }
+		}
+		ai_chance = {
+			factor = 60
+		}
+	}
+
+	# The sierra will be held
+	option = {
+		name = "EVTOPTB1002906"
+		set_country_flag = chuquisaca_answered
+		set_country_flag = upper_peru_held
+		prestige = 2
+		any_owned = {
+			limit = { is_core = BOL }
+			any_pop = {
+				militancy = 3
+				consciousness = 1
+			}
+			add_province_modifier = {
+				name = nationalist_agitation
+				duration = 1095
+			}
+		}
+		ai_chance = {
+			factor = 40
+		}
+	}
+}
+
+# The Republic Will Not Wait
+# Fallback for 1002906 option B: both options here release Bolivia, so the
+# Confederation chain is never left waiting on a tag that cannot appear.
+country_event = {
+	id = 1002907
+	title = "EVTNAME1002907"
+	desc = "EVTDESC1002907"
+	picture = "derrota"
+
+	trigger = {
+		owns = 2313 #Chuquisaca
+		has_country_flag = upper_peru_held
+		year = 1828
+		NOT = { year = 1836 }
+		# NOR: none of these three may hold
+		NOT = {
+			tag = BOL
+			exists = BOL
+			has_global_flag = bolivia_independent
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 6
+		modifier = {
+			factor = 0.5
+			any_owned_province = { average_militancy = 5 }
+		}
+		modifier = {
+			factor = 0.75
+			war = yes
+		}
+	}
+
+	# Withdraw the garrisons
+	option = {
+		name = "EVTOPTA1002907"
+		clr_country_flag = upper_peru_held
+		set_global_flag = bolivia_independent
+		prestige = -5
+		any_owned = {
+			limit = { is_core = BOL }
+			secede_province = BOL
+		}
+		random_country = {
+			limit = {
+				tag = BOL
+				exists = yes
+			}
+			relation = { who = THIS value = 50 }
+		}
+		ai_chance = {
+			factor = 70
+		}
+	}
+
+	# Beaten out of the sierra
+	option = {
+		name = "EVTOPTB1002907"
+		clr_country_flag = upper_peru_held
+		set_global_flag = bolivia_independent
+		prestige = -8
+		war_exhaustion = 5
+		any_pop = { militancy = 2 }
+		any_owned = {
+			limit = { is_core = BOL }
+			secede_province = BOL
+		}
+		random_country = {
+			limit = {
+				tag = BOL
+				exists = yes
+			}
+			relation = { who = THIS value = -50 }
+		}
+		ai_chance = {
+			factor = 30
+		}
+	}
+}
+
+# Santa Cruz Answers Orbegoso
+country_event = {
+	id = 1002900
+	title = "EVTNAME1002900"
+	desc = "EVTDESC1002900"
+	picture = "peru-bolivia"
+	news = yes
+	# Option-neutral: the article is published whichever option is taken,
+	# so it reports the appeal and the debate, not a march option C refuses
+	news_title = "EVTNEWS1002900_TITLE"
+	news_desc_long = "EVTNEWS1002900_LONG"
+	news_desc_medium = "EVTNEWS1002900_MEDIUM"
+	news_desc_short = "EVTNEWS1002900_SHORT"
+
+	trigger = {
+		tag = BOL
+		exists = yes
+		is_vassal = no
+		# Degrade gracefully: whichever half of the altiplano Bolivia was
+		# born with in 1002906/1002907 is enough to answer Orbegoso
+		OR = {
+			owns = 2310 #La Paz
+			owns = 2313 #Chuquisaca
+		}
+		war = no
+		year = 1835
+		NOT = { year = 1841 }
+		PEU = {
+			exists = yes
+			owns = 2295 #Lima
+			is_vassal = no
+			war = no
+		}
+		# NOR: none of these five may hold
+		NOT = {
+			truce_with = PEU
+			has_global_flag = peru_bolivia_confederated
+			has_country_flag = wants_to_unify
+			has_country_flag = santa_cruz_decided
+			exists = PBC
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 4
+		modifier = {
+			factor = 0.5
+			PEU = { num_of_revolts = 1 }
+		}
+		modifier = {
+			factor = 0.75
+			PEU = {
+				any_owned_province = { average_militancy = 4 }
+			}
+		}
+	}
+
+	# March on Peru: sets the flag form_PBC_BOL and PBCFlavor 97045 key off
+	option = {
+		name = "EVTOPTA1002900"
+		set_country_flag = santa_cruz_decided
+		set_country_flag = wants_to_unify
+		prestige = 2
+		add_country_modifier = {
+			name = small_country_draft
+			duration = 730
+		}
+		any_pop = {
+			dominant_issue = {
+				factor = 0.03
+				value = jingoism
+			}
+		}
+		war = {
+			target = PEU
+			attacker_goal = {
+				casus_belli = cut_down_to_size
+			}
+			defender_goal = {
+				casus_belli = humiliate
+			}
+		}
+		PEU = { country_event = { id = 1002901 days = 10 } }
+		ai_chance = {
+			factor = 70
+			modifier = {
+				factor = 0
+				war = yes
+			}
+			modifier = {
+				factor = 0
+				truce_with = PEU
+			}
+		}
+	}
+
+	# Armed mediation
+	option = {
+		name = "EVTOPTB1002900"
+		set_country_flag = santa_cruz_decided
+		prestige = 1
+		relation = { who = PEU value = 50 }
+		diplomatic_influence = { who = PEU value = 25 }
+		add_country_modifier = {
+			name = usa_draft
+			duration = 365
+		}
+		ai_chance = {
+			factor = 20
+		}
+	}
+
+	# Bolivia stays out of Peru
+	option = {
+		name = "EVTOPTC1002900"
+		set_country_flag = santa_cruz_decided
+		prestige = -2
+		any_pop = { militancy = -1 }
+		random_country = {
+			limit = {
+				tag = CHL
+				exists = yes
+			}
+			relation = { who = THIS value = 50 }
+		}
+		random_country = {
+			limit = {
+				tag = ARG
+				exists = yes
+			}
+			relation = { who = THIS value = 50 }
+		}
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+
+# Salaverry, the Regenerator
+country_event = {
+	id = 1002901
+	title = "EVTNAME1002901"
+	desc = "EVTDESC1002901"
+	picture = "mexico_soldiers"
+	is_triggered_only = yes
+
+	# Peru rallies to the Regenerator
+	option = {
+		name = "EVTOPTA1002901"
+		set_country_flag = salaverry_regime
+		prestige = 2
+		add_country_modifier = {
+			name = small_country_draft
+			duration = 730
+		}
+		any_pop = {
+			dominant_issue = {
+				factor = 0.04
+				value = jingoism
+			}
+			militancy = 1
+		}
+		relation = { who = BOL value = -100 }
+		ai_chance = {
+			factor = 55
+		}
+	}
+
+	# Buy Chilean and Argentine backing
+	option = {
+		name = "EVTOPTB1002901"
+		prestige = -2
+		random_country = {
+			limit = {
+				tag = CHL
+				exists = yes
+			}
+			set_country_flag = peru_asked_for_help
+			relation = { who = THIS value = 100 }
+			casus_belli = {
+				target = BOL
+				type = cut_down_to_size
+				months = 60
+			}
+		}
+		random_country = {
+			limit = {
+				tag = ARG
+				exists = yes
+			}
+			set_country_flag = peru_asked_for_help
+			relation = { who = THIS value = 100 }
+			casus_belli = {
+				target = BOL
+				type = cut_down_to_size
+				months = 60
+			}
+		}
+		ai_chance = {
+			factor = 30
+		}
+	}
+
+	# The Orbegoso faction opens the gates
+	option = {
+		name = "EVTOPTC1002901"
+		set_country_flag = orbegoso_faction
+		prestige = -5
+		war_exhaustion = 10
+		any_pop = {
+			militancy = 2
+			consciousness = 1
+		}
+		relation = { who = BOL value = 100 }
+		add_country_modifier = {
+			name = coup_risk
+			duration = 1095
+		}
+		ai_chance = {
+			factor = 15
+		}
+	}
+}
+
+# Portales and the Restoration Army
+country_event = {
+	id = 1002902
+	title = "EVTNAME1002902"
+	desc = "EVTDESC1002902"
+	picture = "deliberation"
+	news = yes
+	# Option-neutral: option B declines the war, so the article reports the
+	# Portales memorandum and the vote in Congress, not a declaration of war
+	news_title = "EVTNEWS1002902_TITLE"
+	news_desc_long = "EVTNEWS1002902_LONG"
+	news_desc_medium = "EVTNEWS1002902_MEDIUM"
+	news_desc_short = "EVTNEWS1002902_SHORT"
+
+	trigger = {
+		tag = CHL
+		exists = yes
+		is_vassal = no
+		war = no
+		exists = PBC
+		year = 1836
+		NOT = { year = 1846 }
+		# NOR, as in ChileanEvents.txt 97050
+		NOT = {
+			truce_with = PBC
+			num_of_revolts = 1
+			has_country_flag = portales_decided
+			has_country_flag = peace_with_the_PBC
+			PBC = { has_country_flag = the_confederation_is_legitime }
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 6
+		modifier = {
+			factor = 0.5
+			has_country_flag = DiegoPortales
+		}
+		modifier = {
+			factor = 0.5
+			has_country_flag = fight_the_PBC
+		}
+		modifier = {
+			factor = 0.5
+			has_country_flag = peru_asked_for_help
+		}
+		modifier = {
+			factor = 0.75
+			PEU = { has_country_flag = salaverry_regime }
+		}
+	}
+
+	# The Restoration Army sails: the war 97050 never managed to declare
+	option = {
+		name = "EVTOPTA1002902"
+		# portales_decided is the re-fire guard for both options;
+		# restoration_war_declared means the war was actually declared and is
+		# what 1002904 and 1002905 key off
+		set_country_flag = portales_decided
+		set_country_flag = restoration_war_declared
+		set_country_flag = fight_the_PBC
+		prestige = 2
+		badboy = 2
+		treasury = -2000
+		add_country_modifier = {
+			name = usa_draft
+			duration = 1095
+		}
+		any_pop = {
+			dominant_issue = {
+				factor = 0.05
+				value = jingoism
+			}
+		}
+		leave_alliance = PBC
+		war = {
+			target = PBC
+			attacker_goal = {
+				casus_belli = cut_down_to_size
+			}
+			defender_goal = {
+				casus_belli = humiliate
+			}
+			call_ally = yes
+		}
+		ai_chance = {
+			factor = 75
+		}
+	}
+
+	# Chile cannot afford it
+	option = {
+		name = "EVTOPTB1002902"
+		set_country_flag = portales_decided
+		set_country_flag = peace_with_the_PBC
+		prestige = -3
+		relation = { who = PBC value = 100 }
+		any_pop = {
+			scaled_militancy = {
+				issue = jingoism
+				factor = 3
+			}
+		}
+		ai_chance = {
+			factor = 25
+		}
+	}
+}
+
+# Rosas Declares War
+country_event = {
+	id = 1002903
+	title = "EVTNAME1002903"
+	desc = "EVTDESC1002903"
+	picture = "nationalists"
+
+	trigger = {
+		OR = {
+			tag = ARG
+			tag = LPL
+		}
+		exists = yes
+		is_vassal = no
+		war = no
+		exists = PBC
+		CHL = { war_with = PBC }
+		year = 1837
+		NOT = { year = 1846 }
+		NOT = {
+			truce_with = PBC
+			has_country_flag = rosas_declared
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 6
+		modifier = {
+			factor = 0.75
+			PEU = { has_country_flag = orbegoso_faction }
+		}
+	}
+
+	# The Confederation of the Andes must not stand
+	option = {
+		name = "EVTOPTA1002903"
+		set_country_flag = rosas_declared
+		prestige = 1
+		badboy = 1
+		add_country_modifier = {
+			name = small_country_draft
+			duration = 730
+		}
+		war = {
+			target = PBC
+			attacker_goal = {
+				casus_belli = humiliate
+			}
+		}
+		ai_chance = {
+			factor = 60
+		}
+	}
+
+	# The Restorer has enemies enough at home
+	option = {
+		name = "EVTOPTB1002903"
+		set_country_flag = rosas_declared
+		prestige = -1
+		relation = { who = PBC value = 50 }
+		relation = { who = CHL value = -50 }
+		ai_chance = {
+			factor = 40
+		}
+	}
+}
+
+# The Treaty of Paucarpata
+country_event = {
+	id = 1002904
+	title = "EVTNAME1002904"
+	desc = "EVTDESC1002904"
+	picture = "derrota"
+
+	trigger = {
+		tag = CHL
+		exists = yes
+		war_with = PBC
+		has_country_flag = restoration_war_declared
+		war_exhaustion = 5
+		NOT = {
+			has_country_flag = paucarpata_answered
+			war_score = 10
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 10
+		modifier = {
+			factor = 0.75
+			war_exhaustion = 15
+		}
+	}
+
+	# Repudiate the treaty and send Bulnes
+	option = {
+		name = "EVTOPTA1002904"
+		set_country_flag = paucarpata_answered
+		prestige = -2
+		badboy = 1
+		war_exhaustion = -5
+		add_country_modifier = {
+			name = small_country_draft
+			duration = 1095
+		}
+		any_pop = {
+			dominant_issue = {
+				factor = 0.03
+				value = jingoism
+			}
+		}
+		ai_chance = {
+			factor = 70
+		}
+	}
+
+	# Accept the treaty and withdraw
+	option = {
+		name = "EVTOPTB1002904"
+		set_country_flag = paucarpata_answered
+		set_country_flag = peace_with_the_PBC
+		prestige = -5
+		end_war = PBC
+		relation = { who = PBC value = 100 }
+		PBC = { prestige = 10 }
+		any_pop = { militancy = 1 }
+		ai_chance = {
+			factor = 30
+		}
+	}
+}
+
+# The Battle of Yungay
+country_event = {
+	id = 1002905
+	title = "EVTNAME1002905"
+	desc = "EVTDESC1002905"
+	picture = "war_ended"
+	major = yes
+	news = yes
+	news_title = "EVTNAME1002905_NEWS_TITLE"
+	news_desc_long = "EVTDESC1002905_NEWS_LONG"
+	news_desc_medium = "EVTDESC1002905_NEWS_MEDIUM"
+	news_desc_short = "EVTDESC1002905_NEWS_SHORT"
+
+	trigger = {
+		tag = CHL
+		exists = yes
+		war_with = PBC
+		has_country_flag = restoration_war_declared
+		# war_score keeps this reachable once the Peruvian vassals of
+		# PBC have broken away with Lima and Huaraz (pbc_in_chaos)
+		OR = {
+			2298 = { controlled_by = THIS } #Huaraz
+			2295 = { controlled_by = THIS } #Lima
+			war_score = 25
+		}
+		NOT = { has_country_flag = yungay_won }
+	}
+
+	mean_time_to_happen = {
+		months = 3
+	}
+
+	# Restore the three republics
+	option = {
+		name = "EVTOPTA1002905"
+		set_country_flag = yungay_won
+		prestige = 10
+		badboy = 1
+		# Deliberately does not dissolve PBC: PBCFlavor.txt 97055,
+		# pbc_in_chaos and end_of_confederation_* already do that
+		PBC = {
+			prestige = -10
+			war_exhaustion = 15
+			add_country_modifier = {
+				name = national_instability
+				duration = 1095
+			}
+		}
+		# On the form_PBC_BOL path the Confederation owns no Peruvian core at
+		# all - PEU and SPU were released as vassals - so the agitation has to
+		# run over the Confederation and its vassals together
+		any_country = {
+			limit = {
+				OR = {
+					tag = PBC
+					vassal_of = PBC
+				}
+			}
+			any_owned = {
+				limit = { is_core = PEU }
+				any_pop = {
+					militancy = 4
+					consciousness = 2
+				}
+				add_province_modifier = {
+					name = nationalist_agitation
+					duration = 1095
+				}
+			}
+		}
+		random_country = {
+			limit = {
+				tag = PEU
+				exists = yes
+			}
+			relation = { who = THIS value = 100 }
+		}
+		random_country = {
+			limit = {
+				tag = NPU
+				exists = yes
+			}
+			relation = { who = THIS value = 100 }
+		}
+		random_country = {
+			limit = {
+				tag = SPU
+				exists = yes
+			}
+			relation = { who = THIS value = 100 }
+		}
+		random_country = {
+			limit = {
+				tag = BOL
+				exists = yes
+			}
+			relation = { who = THIS value = 100 }
+		}
+		ai_chance = {
+			factor = 70
+		}
+	}
+
+	# Take the settlement and go home
+	option = {
+		name = "EVTOPTB1002905"
+		set_country_flag = yungay_won
+		prestige = 5
+		end_war = PBC
+		PBC = {
+			prestige = -5
+			war_exhaustion = 5
+		}
+		relation = { who = PBC value = 50 }
+		ai_chance = {
+			factor = 30
+		}
+	}
+}

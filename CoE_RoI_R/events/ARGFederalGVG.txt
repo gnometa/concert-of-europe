@@ -1,0 +1,596 @@
+#########################################################
+#                                                       #
+#   The Unitarian-Federal Wars and the rise of Rosas    #
+#   1828-1835 (GVG)                                     #
+#   ids 1002800-1002804                                 #
+#                                                       #
+#   Fills the nine-year hole between the Cisplatine     #
+#   War (URUFlavor.txt 46410-46421) and the first ARG   #
+#   flavour event (ARGFlavor.txt 46601, 1844). The      #
+#   civil war is fought by the engine's rebels, the     #
+#   Carlist way (SPAFlavor.txt 37711, PORMiguelistGVG), #
+#   not by a scripted release + war: no tag is          #
+#   released and no province is taken from an owner.    #
+#                                                       #
+#   Handoff: ARGFlavor.txt 46601 (Facundo, 1844),       #
+#   46605 and 46610 (the Urquiza / Caseros chain of     #
+#   1850) all require a presidential_dictatorship, so   #
+#   1002804 option A wires this chain into them and     #
+#   option B deliberately closes them off.              #
+#                                                       #
+#   1002804-A clears liberal_constitution AND sets      #
+#   conservative_constitution in the same block, or     #
+#   SouthAmericaFlavor.txt 97095 would fire within a    #
+#   month and overwrite the government and reforms.     #
+#                                                       #
+#########################################################
+
+# Lavalle and the Fall of Dorrego
+country_event = {
+	id = 1002800
+	title = "EVTNAME1002800"
+	desc = "EVTDESC1002800"
+	picture = "Execution"
+	major = yes
+	news = yes
+	news_title = "EVTNAME1002800_NEWS_TITLE"
+	news_desc_long = "EVTDESC1002800_NEWS_LONG"
+	news_desc_medium = "EVTDESC1002800_NEWS_MEDIUM"
+	news_desc_short = "EVTDESC1002800_NEWS_SHORT"
+
+	trigger = {
+		tag = ARG
+		exists = yes
+		year = 1828
+		NOT = { year = 1833 }
+		NOT = { has_country_flag = arg_unitarian_coup }
+		NOT = { has_country_flag = arg_dorrego_spared }
+	}
+
+	mean_time_to_happen = {
+		months = 4
+		modifier = {
+			factor = 3
+			war = yes
+		}
+		modifier = {
+			factor = 0.5
+			has_country_flag = cisplatine_war
+		}
+		modifier = {
+			factor = 0.75
+			militancy = 3
+		}
+	}
+
+	option = {
+		name = "EVTOPTA1002800"
+		set_country_flag = arg_unitarian_coup
+		prestige = -4
+		ruling_party_ideology = liberal
+		political_reform = no_meeting
+		political_reform = underground_parties
+		clr_country_flag = reactionary_election_win
+		set_country_flag = liberal_election_win
+		add_country_modifier = {
+			name = national_instability
+			duration = 1095
+		}
+		add_country_modifier = {
+			name = coup_risk
+			duration = 730
+		}
+		any_owned = {
+			limit = {
+				OR = {
+					province_id = 2349 #Junin
+					province_id = 2351 #La Plata
+					province_id = 2356 #Corrientes
+					province_id = 2360 #Parana
+					province_id = 2363 #Rosario
+					province_id = 2379 #Cordoba de Argentina
+				}
+			}
+			any_pop = {
+				ideology = {
+					value = reactionary
+					factor = 0.25
+				}
+				scaled_militancy = {
+					ideology = reactionary
+					factor = 12
+				}
+				consciousness = 2
+			}
+		}
+		ai_chance = {
+			factor = 45
+		}
+	}
+
+	option = {
+		name = "EVTOPTB1002800"
+		set_country_flag = arg_dorrego_spared
+		prestige = 2
+		add_country_modifier = {
+			name = military_strife
+			duration = 730
+		}
+		any_pop = {
+			limit = {
+				OR = {
+					type = officers
+					type = soldiers
+				}
+			}
+			ideology = {
+				value = liberal
+				factor = 0.20
+			}
+			militancy = 2
+			consciousness = 1
+		}
+		ai_chance = {
+			factor = 55
+		}
+	}
+}
+
+# The Restorer of the Laws
+country_event = {
+	id = 1002801
+	title = "EVTNAME1002801"
+	desc = "EVTDESC1002801"
+	picture = "military_reform"
+	news = yes
+	news_title = "EVTNAME1002801_NEWS_TITLE"
+	news_desc_long = "EVTDESC1002801_NEWS_LONG"
+	news_desc_medium = "EVTDESC1002801_NEWS_MEDIUM"
+	news_desc_short = "EVTDESC1002801_NEWS_SHORT"
+
+	trigger = {
+		tag = ARG
+		exists = yes
+		year = 1829
+		NOT = { year = 1835 }
+		OR = {
+			has_country_flag = arg_unitarian_coup
+			has_country_flag = arg_dorrego_spared
+		}
+		NOT = { has_country_flag = arg_rosas_first_term }
+		NOT = { has_country_flag = arg_unitarian_govt }
+	}
+
+	mean_time_to_happen = {
+		months = 5
+		modifier = {
+			factor = 0.75
+			has_country_flag = arg_unitarian_coup
+		}
+		modifier = {
+			factor = 0.75
+			militancy = 3
+		}
+	}
+
+	option = {
+		name = "EVTOPTA1002801"
+		government = presidential_dictatorship
+		ruling_party_ideology = reactionary
+		set_country_flag = arg_rosas_first_term
+		prestige = 3
+		remove_country_modifier = national_instability
+		add_country_modifier = {
+			name = conservative_reaction
+			duration = 1825
+		}
+		clr_country_flag = liberal_election_win
+		set_country_flag = reactionary_election_win
+		any_owned = {
+			limit = {
+				OR = {
+					province_id = 2349 #Junin
+					province_id = 2351 #La Plata
+					province_id = 2356 #Corrientes
+					province_id = 2360 #Parana
+					province_id = 2363 #Rosario
+					province_id = 2379 #Cordoba de Argentina
+				}
+			}
+			any_pop = {
+				militancy = -2
+			}
+		}
+		any_owned = {
+			limit = {
+				province_id = 2348 #Buenos Aires
+			}
+			any_pop = {
+				limit = {
+					OR = {
+						type = capitalists
+						type = bureaucrats
+						type = clergymen
+					}
+				}
+				ideology = {
+					value = liberal
+					factor = 0.20
+				}
+				consciousness = 2
+			}
+		}
+		ai_chance = {
+			factor = 60
+			modifier = {
+				factor = 2
+				has_country_flag = arg_dorrego_spared
+			}
+		}
+	}
+
+	option = {
+		name = "EVTOPTB1002801"
+		set_country_flag = arg_unitarian_govt
+		government = democracy
+		ruling_party_ideology = liberal
+		prestige = 1
+		plurality = 2
+		add_country_modifier = {
+			name = liberal_reaction
+			duration = 1825
+		}
+		add_country_modifier = {
+			name = national_instability
+			duration = 1095
+		}
+		any_owned = {
+			limit = {
+				OR = {
+					province_id = 2368 #Salta
+					province_id = 2373 #Tucuman
+					province_id = 2379 #Cordoba de Argentina
+					province_id = 2385 #La Rioja
+					province_id = 2389 #Mendoza
+				}
+			}
+			any_pop = {
+				ideology = {
+					value = reactionary
+					factor = 0.20
+				}
+				militancy = 2
+				consciousness = 1
+			}
+		}
+		ai_chance = {
+			factor = 40
+			modifier = {
+				factor = 2
+				has_country_flag = arg_unitarian_coup
+			}
+		}
+	}
+}
+
+# The Federal Pact and the League of the Interior
+country_event = {
+	id = 1002802
+	title = "EVTNAME1002802"
+	desc = "EVTDESC1002802"
+	picture = "confederation"
+	major = yes
+	news = yes
+	news_title = "EVTNAME1002802_NEWS_TITLE"
+	news_desc_long = "EVTDESC1002802_NEWS_LONG"
+	news_desc_medium = "EVTDESC1002802_NEWS_MEDIUM"
+	news_desc_short = "EVTDESC1002802_NEWS_SHORT"
+
+	trigger = {
+		tag = ARG
+		exists = yes
+		year = 1831
+		NOT = { year = 1838 }
+		OR = {
+			has_country_flag = arg_rosas_first_term
+			has_country_flag = arg_unitarian_govt
+		}
+		NOT = { has_country_flag = arg_federal_pact }
+		NOT = { has_country_flag = arg_unitarian_league }
+	}
+
+	mean_time_to_happen = {
+		months = 4
+		modifier = {
+			factor = 0.75
+			num_of_revolts = 1
+		}
+	}
+
+	option = {
+		name = "EVTOPTA1002802"
+		set_country_flag = arg_federal_pact
+		prestige = 3
+		add_country_modifier = {
+			name = federal_pact
+			duration = 7300
+		}
+		any_owned = {
+			limit = {
+				OR = {
+					province_id = 2348 #Buenos Aires
+					province_id = 2356 #Corrientes
+					province_id = 2360 #Parana
+					province_id = 2363 #Rosario
+				}
+			}
+			any_pop = {
+				militancy = -2
+			}
+		}
+		random_country = {
+			limit = {
+				tag = URU
+				exists = yes
+			}
+			relation = { who = THIS value = 25 }
+		}
+		random_country = {
+			limit = {
+				tag = PRG
+				exists = yes
+			}
+			relation = { who = THIS value = 25 }
+		}
+		ai_chance = {
+			factor = 65
+			modifier = {
+				factor = 2
+				has_country_flag = arg_rosas_first_term
+			}
+		}
+	}
+
+	option = {
+		name = "EVTOPTB1002802"
+		set_country_flag = arg_unitarian_league
+		prestige = 2
+		add_country_modifier = {
+			name = unitarian_league
+			duration = 7300
+		}
+		add_country_modifier = {
+			name = national_instability
+			duration = 1825
+		}
+		any_owned = {
+			limit = {
+				OR = {
+					province_id = 2368 #Salta
+					province_id = 2369 #Jujuy
+					province_id = 2373 #Tucuman
+					province_id = 2374 #Catamarca
+					province_id = 2376 #Santiago del Estero
+					province_id = 2379 #Cordoba de Argentina
+					province_id = 2383 #San Luis
+					province_id = 2385 #La Rioja
+					province_id = 2387 #San Juan
+					province_id = 2389 #Mendoza
+				}
+			}
+			add_province_modifier = {
+				name = liberal_agitation
+				duration = 1825
+			}
+			any_pop = {
+				militancy = 2
+				consciousness = 1
+			}
+		}
+		ai_chance = {
+			factor = 35
+			modifier = {
+				factor = 3
+				has_country_flag = arg_unitarian_govt
+			}
+		}
+	}
+}
+
+# The Campaign of the Desert
+country_event = {
+	id = 1002803
+	title = "EVTNAME1002803"
+	desc = "EVTDESC1002803"
+	picture = "Expansion"
+	news = yes
+	news_title = "EVTNAME1002803_NEWS_TITLE"
+	news_desc_long = "EVTDESC1002803_NEWS_LONG"
+	news_desc_medium = "EVTDESC1002803_NEWS_MEDIUM"
+	news_desc_short = "EVTDESC1002803_NEWS_SHORT"
+
+	trigger = {
+		tag = ARG
+		exists = yes
+		year = 1833
+		NOT = { year = 1840 }
+		OR = {
+			has_country_flag = arg_federal_pact
+			has_country_flag = arg_unitarian_league
+		}
+		NOT = { has_country_flag = arg_desert_campaign }
+	}
+
+	mean_time_to_happen = {
+		months = 6
+		modifier = {
+			factor = 0.75
+			has_country_flag = arg_rosas_first_term
+		}
+	}
+
+	option = {
+		name = "EVTOPTA1002803"
+		set_country_flag = arg_desert_campaign
+		set_country_flag = arg_rosas_triumph
+		treasury = -6000
+		war_exhaustion = 2
+		prestige = 6
+		2350 = { secede_province = THIS } #Azul
+		2352 = { secede_province = THIS } #Mar del Plata
+		2353 = { secede_province = THIS } #Trenque Lanquen
+		2354 = { secede_province = THIS } #Bahia Blanca
+		2355 = { secede_province = THIS } #Carmen
+		2393 = { secede_province = THIS } #Telen
+		2395 = { secede_province = THIS } #Curaco
+		2354 = { add_province_modifier = { name = pampa_frontier duration = 3650 } } #Bahia Blanca
+		2355 = { add_province_modifier = { name = pampa_frontier duration = 3650 } } #Carmen
+		2393 = { add_province_modifier = { name = pampa_frontier duration = 3650 } } #Telen
+		2395 = { add_province_modifier = { name = pampa_frontier duration = 3650 } } #Curaco
+		any_pop = {
+			limit = {
+				OR = {
+					type = soldiers
+					type = aristocrats
+				}
+			}
+			militancy = -2
+		}
+		ai_chance = {
+			factor = 70
+		}
+	}
+
+	option = {
+		name = "EVTOPTB1002803"
+		set_country_flag = arg_desert_campaign
+		treasury = -1500
+		prestige = 1
+		2350 = { secede_province = THIS } #Azul
+		2352 = { secede_province = THIS } #Mar del Plata
+		any_pop = {
+			limit = {
+				OR = {
+					type = farmers
+					type = labourers
+				}
+			}
+			consciousness = 1
+		}
+		ai_chance = {
+			factor = 30
+		}
+	}
+}
+
+# Barranca Yaco
+country_event = {
+	id = 1002804
+	title = "EVTNAME1002804"
+	desc = "EVTDESC1002804"
+	picture = "Facundo"
+	major = yes
+	news = yes
+	news_title = "EVTNAME1002804_NEWS_TITLE"
+	news_desc_long = "EVTDESC1002804_NEWS_LONG"
+	news_desc_medium = "EVTDESC1002804_NEWS_MEDIUM"
+	news_desc_short = "EVTDESC1002804_NEWS_SHORT"
+
+	trigger = {
+		tag = ARG
+		exists = yes
+		year = 1835
+		NOT = { year = 1842 }
+		has_country_flag = arg_desert_campaign
+		NOT = { has_country_flag = arg_suma_del_poder }
+		NOT = { has_country_flag = arg_constituent_congress }
+	}
+
+	mean_time_to_happen = {
+		months = 3
+		modifier = {
+			factor = 0.75
+			has_country_flag = arg_rosas_triumph
+		}
+	}
+
+	option = {
+		name = "EVTOPTA1002804"
+		set_country_flag = arg_suma_del_poder
+		government = presidential_dictatorship
+		ruling_party_ideology = reactionary
+		political_reform = none_voting
+		political_reform = party_appointed
+		political_reform = no_meeting
+		political_reform = underground_parties
+		clr_country_flag = liberal_constitution
+		set_country_flag = conservative_constitution
+		clr_country_flag = liberal_election_win
+		set_country_flag = reactionary_election_win
+		remove_country_modifier = national_instability
+		add_country_modifier = {
+			name = suma_del_poder_publico
+			duration = 6200
+		}
+		prestige = 5
+		any_pop = {
+			militancy = -3
+			consciousness = -2
+			ideology = {
+				value = reactionary
+				factor = 0.20
+			}
+		}
+		ai_chance = {
+			factor = 70
+			modifier = {
+				factor = 2
+				has_country_flag = arg_rosas_triumph
+			}
+			modifier = {
+				factor = 1.5
+				has_country_flag = arg_rosas_first_term
+			}
+		}
+	}
+
+	option = {
+		name = "EVTOPTB1002804"
+		set_country_flag = arg_constituent_congress
+		government = democracy
+		ruling_party_ideology = liberal
+		clr_country_flag = reactionary_election_win
+		set_country_flag = liberal_election_win
+		prestige = -2
+		plurality = 2
+		add_country_modifier = {
+			name = national_instability
+			duration = 1825
+		}
+		add_country_modifier = {
+			name = liberal_reaction
+			duration = 1825
+		}
+		any_pop = {
+			ideology = {
+				value = liberal
+				factor = 0.20
+			}
+			scaled_militancy = {
+				ideology = reactionary
+				factor = 12
+			}
+		}
+		ai_chance = {
+			factor = 30
+			modifier = {
+				factor = 2
+				has_country_flag = arg_unitarian_govt
+			}
+			modifier = {
+				factor = 2
+				has_country_flag = arg_unitarian_league
+			}
+		}
+	}
+}

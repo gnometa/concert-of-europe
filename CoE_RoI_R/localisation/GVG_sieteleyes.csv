@@ -1,0 +1,26 @@
+siete_leyes;The Seven Laws;;;;;;;;;;;;;x
+EVTNAME1003100;The Reforms of Gomez Farias;;;;;;;;;;;;;x
+EVTDESC1003100;Vice-President Valentin Gomez Farias governs while Santa Anna rests at Manga de Clavo, and he has laid the whole liberal programme before Congress at once: secular schools under a new Direccion General de Instruccion Publica, an end to the state collecting the tithe for the Church, and the abolition of the military fuero that puts every officer beyond the reach of a civil court. The canons call it persecution and the garrisons call it an insult. Every peso the treasury gains from the mission estates is a colonel or a priest turned against us.;;;;;;;;;;;;;x
+EVTOPTA1003100;Let the reforms proceed.;;;;;;;;;;;;;x
+EVTOPTB1003100;Restrain the vice-president.;;;;;;;;;;;;;x
+EVTOPTC1003100;Dismiss Farias and govern with the church and the army.;;;;;;;;;;;;;x
+EVTNAME1003101;The Plan of Cuernavaca;;;;;;;;;;;;;x
+EVTDESC1003101;From Cuernavaca the garrisons and the parish priests proclaim religion y fueros and call on Santa Anna to save the nation from its own Congress. He has ridden back to the capital to accept, and the deputies who voted the reform laws are already scattering to their states. It remains only to decide whether the state legislatures are dissolved along with them, or whether a new and quieter Congress is allowed to sit in their place.;;;;;;;;;;;;;x
+EVTOPTA1003101;Close the congress and the state legislatures.;;;;;;;;;;;;;x
+EVTOPTB1003101;Let the new congress sit.;;;;;;;;;;;;;x
+EVTNAME1003102;The Militia Law and Zacatecas;;;;;;;;;;;;;x
+EVTDESC1003102;The new Congress has cut the civic militias to one man for every five hundred inhabitants, which disarms the federalist states at a stroke. Zacatecas, richest of them and master of a silver mint, refuses to disband a single company, and Governor Francisco Garcia has some four thousand men under arms at Guadalupe. The army is concentrating at Lagos and waits only for the order to move.;;;;;;;;;;;;;x
+EVTOPTA1003102;March on Zacatecas.;;;;;;;;;;;;;x
+EVTOPTB1003102;Accept the terms of Governor Garcia.;;;;;;;;;;;;;x
+EVTNAME1003103;Las Siete Leyes;;;;;;;;;;;;;x
+EVTDESC1003103;The Bases of October have already set the federal republic aside, and the constituent Congress is drafting the seven constitutional laws that will complete the work. The states become departments under governors named from the capital, the vote is tied to income, and above the three ordinary powers sits a Supremo Poder Conservador of five men empowered to annul the acts of any of them. Every governor who signed the federal pact of 1824 is watching to see how much of it survives.;;;;;;;;;;;;;x
+EVTOPTA1003103;The seven laws entire, and a Supremo Poder Conservador.;;;;;;;;;;;;;x
+EVTOPTB1003103;Departments, but let them elect their assemblies.;;;;;;;;;;;;;x
+EVTNAME1003103_NEWS_TITLE;Mexico Adopts the Seven Laws;;;;;;;;;;;;;x
+EVTDESC1003103_NEWS_LONG;The constituent Congress in Mexico City has promulgated the seven constitutional laws that abolish the federal republic of 1824. The states are reduced to departments administered by governors appointed from the capital, the franchise is restricted by income, and a Supremo Poder Conservador of five men is placed above the executive, the legislature and the courts alike. The centralists call it the end of twelve years of anarchy. In Zacatecas, in Merida and on the far Texan frontier it is read instead as the tearing up of the pact of union.;;;;;;;;;;;;;x
+EVTDESC1003103_NEWS_MEDIUM;Mexico has replaced the federal constitution of 1824 with seven centralist laws. The states become departments under appointed governors, the franchise is tied to income, and a Supremo Poder Conservador is set above every other power in the republic.;;;;;;;;;;;;;x
+EVTDESC1003103_NEWS_SHORT;Mexico abolishes the federal republic and proclaims the Seven Laws.;;;;;;;;;;;;;x
+EVTNAME1003104;Yucatan and the Departments;;;;;;;;;;;;;x
+EVTDESC1003104;Merida has never thought of itself as a province of Mexico so much as a partner of it, and the new departmental order arrives in the peninsula together with a customs tariff, a conscription quota and a governor nobody there elected. The creole gentlemen of Yucatan speak of their ancient fueros, while the Maya villages of the interior hear only that another burden has been added to the last one. A battalion may be sent to Merida, or a decree of exemption.;;;;;;;;;;;;;x
+EVTOPTA1003104;The departments are the law: garrison Merida.;;;;;;;;;;;;;x
+EVTOPTB1003104;Confirm the fueros of Yucatan.;;;;;;;;;;;;;x

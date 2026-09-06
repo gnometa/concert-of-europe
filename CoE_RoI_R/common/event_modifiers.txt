@@ -3643,3 +3643,90 @@ brazilian_regency = {
 	prestige = -0.01
 	icon = 16
 }
+
+##### CONQUEST OF ALGIERS (FRAAlgiersGVG) #####
+algiers_blockade = {
+	local_RGO_throughput = -0.25
+	pop_militancy_modifier = 0.05
+	icon = 4
+}
+
+armee_dafrique = {
+	mobilisation_size = 0.02
+	land_organisation = 0.05
+	supply_consumption = 0.10
+	prestige = 0.02
+	icon = 15
+}
+
+##### FIRST CARLIST WAR (SPACarlistGVG) #####
+british_legion = {
+	land_organisation = 0.05
+	org_regain = 0.05
+	war_exhaustion = -0.01
+	icon = 26
+}
+
+basque_fueros = {
+	core_pop_militancy_modifier = -0.03
+	tax_efficiency = -0.03
+	icon = 3
+}
+
+##### UNITARIAN-FEDERAL WARS (ARGFederalGVG) #####
+federal_pact = {
+	administrative_efficiency_modifier = -0.05
+	tax_efficiency = -0.05
+	core_pop_militancy_modifier = -0.05
+	global_pop_consciousness_modifier = -0.02
+	RGO_throughput = 0.05
+	icon = 7
+}
+
+unitarian_league = {
+	administrative_efficiency_modifier = 0.05
+	tax_efficiency = 0.05
+	research_points_modifier = 0.05
+	core_pop_militancy_modifier = 0.05
+	global_pop_consciousness_modifier = 0.02
+	icon = 4
+}
+
+suma_del_poder_publico = {
+	suppression_points_modifier = 0.50
+	issue_change_speed = -0.50
+	global_pop_consciousness_modifier = -0.05
+	global_pop_militancy_modifier = -0.02
+	global_immigrant_attract = -0.20
+	mobilisation_size = 0.02
+	prestige = 0.02
+	icon = 15
+}
+
+pampa_frontier = {
+	immigrant_attract = 0.5
+	local_RGO_output = 0.10
+	life_rating = 0.10
+	icon = 3
+}
+
+##### MEXICAN CENTRALIST TURN (MEXCentralistGVG) #####
+siete_leyes = {
+	administrative_efficiency_modifier = 0.10
+	suppression_points_modifier = 0.25
+	issue_change_speed = -0.25
+	global_pop_consciousness_modifier = -0.05
+	core_pop_militancy_modifier = 0.05
+	icon = 15
+}
+
+##### DANISH PROVINCIAL ESTATES (DENEstatesGVG) #####
+danish_provincial_estates = {
+	administrative_efficiency_modifier = 0.05
+	tax_efficiency = 0.05
+	issue_change_speed = 0.10
+	global_pop_consciousness_modifier = 0.02
+	global_pop_militancy_modifier = -0.02
+	prestige = 0.02
+	icon = 7
+}

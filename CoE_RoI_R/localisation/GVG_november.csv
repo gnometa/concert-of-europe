@@ -1,0 +1,33 @@
+EVTNAME1002600;The Dictatorship of Chlopicki;;;;;;;;;;;;;x
+EVTDESC1002600;The cadets of the Warsaw officer school stormed the Belweder on the night of the twenty-ninth of November and the Russian garrison has withdrawn beyond the Vistula. The Administrative Council has handed the country to General Jozef Chlopicki, a veteran of Napoleon who despises the conspirators he now leads. He may yet bargain with Petersburg for the charter of 1815, or the Patriotic Society may take the street from him and call the whole nation to arms.;;;;;;;;;;;;;x
+EVTOPTA1002600;Chlopicki assumes dictatorial powers and opens negotiations;;;;;;;;;;;;;x
+EVTOPTB1002600;Let the Patriotic Society arm the nation;;;;;;;;;;;;;x
+EVTNAME1002601;The Act of Dethronement;;;;;;;;;;;;;x
+EVTDESC1002601;On the twenty-fifth of January 1831 the Sejm assembled in Warsaw to declare the House of Romanov forever deposed from the throne of Poland. There is no road back from such a vote: it turns a quarrel over a charter into a war of independence and invites every Russian corps between Brest and Smolensk. Prince Adam Czartoryski would rather leave the crown vacant and let the chancelleries of Europe fill it, for a throne on offer is a throne worth defending.;;;;;;;;;;;;;x
+EVTOPTA1002601;Nicholas has ceased to reign in Poland;;;;;;;;;;;;;x
+EVTOPTB1002601;Declare the throne vacant and offer it abroad;;;;;;;;;;;;;x
+EVTNAME1002601_NEWS_TITLE;Warsaw Sejm Deposes the Tsar;;;;;;;;;;;;;x
+EVTDESC1002601_NEWS_LONG;The Diet of the Kingdom of Poland has voted the dethronement of Nicholas I and declared the throne of the Jagiellons vacant. Crowds filled the Krakowskie Przedmiescie to hear the act read aloud, and the tricolour cockade is now worn openly from Kalisz to Lublin. Russian couriers have left the city and the frontier corps are reported moving west. Whatever follows will be settled by armies rather than by charters.;;;;;;;;;;;;;x
+EVTDESC1002601_NEWS_MEDIUM;The Polish Sejm has declared Nicholas I deposed and the throne of Poland vacant. A quarrel over the charter of 1815 has become a war of independence.;;;;;;;;;;;;;x
+EVTDESC1002601_NEWS_SHORT;The Sejm deposes the Tsar in Warsaw.;;;;;;;;;;;;;x
+EVTNAME1002602;The Posen Cordon;;;;;;;;;;;;;x
+EVTDESC1002602;The Grand Duchy of Posen is Prussian ground with Polish cores, and the insurrection is one march away. Berlin must decide whether the IV and V Corps stand as a cordon for the Tsar, closing the frontier and opening the magazines at Thorn, or merely watch from the parade ground. The smugglers of Kalisz will move powder and volunteers across whatever we decide, and the Posen gentry will remember which way we looked.;;;;;;;;;;;;;x
+EVTOPTA1002602;Seal the frontier and supply the Tsar;;;;;;;;;;;;;x
+EVTOPTB1002602;Strict neutrality and nothing more;;;;;;;;;;;;;x
+EVTOPTC1002602;Look the other way at Kalisz;;;;;;;;;;;;;x
+EVTNAME1002603;The Field of Ostroleka;;;;;;;;;;;;;x
+EVTDESC1002603;On the twenty-sixth of May 1831 Skrzynecki let Diebitsch cross the Narew piecemeal and then fed his own divisions into the bridgehead one at a time. Bem saved what could be saved with four guns run forward into the open. The army is not destroyed, but it will never attack again. The question is whether to break off now and preserve the cadre, or spend the last reserves making the Russians pay for the field.;;;;;;;;;;;;;x
+EVTOPTA1002603;Break off and save what is left of the army;;;;;;;;;;;;;x
+EVTOPTB1002603;Throw in the last reserves;;;;;;;;;;;;;x
+EVTNAME1002604;The Fall of Warsaw;;;;;;;;;;;;;x
+EVTDESC1002604;Paskevich crossed the Vistula below the city and stormed the redoubt at Wola on the sixth of September. Sowinski died at his guns on a wooden leg and the western suburbs are burning. The Russian batteries are within range of the Old Town, and General Krukowiecki has asked for terms. The Sejm answers that it will sit at Plock and that the war continues.;;;;;;;;;;;;;x
+EVTOPTA1002604;Krukowiecki must treat with Paskevich;;;;;;;;;;;;;x
+EVTOPTB1002604;The Sejm withdraws to Plock and fights on;;;;;;;;;;;;;x
+EVTNAME1002604_NEWS_TITLE;Warsaw Has Fallen;;;;;;;;;;;;;x
+EVTDESC1002604_NEWS_LONG;After two days of assault the army of Field Marshal Paskevich holds Wola and the western suburbs of Warsaw. The defenders of the redoubt were killed almost to a man and the batteries now bear on the Old Town itself. Deputations have passed between the citadel and the Russian headquarters under flag of truce. Order reigns in Warsaw, and Europe reads the phrase with a shudder.;;;;;;;;;;;;;x
+EVTDESC1002604_NEWS_MEDIUM;Paskevich has stormed Wola and entered the suburbs of Warsaw. The Polish command has opened negotiations while the Sejm speaks of continuing the war from Plock.;;;;;;;;;;;;;x
+EVTDESC1002604_NEWS_SHORT;Russian troops storm Wola and enter Warsaw.;;;;;;;;;;;;;x
+EVTNAME1002605;The Great Emigration;;;;;;;;;;;;;x
+EVTDESC1002605;The war is over and the roads west are full. Some nine thousand officers, deputies, poets and gentry have crossed into Prussia and Galicia rather than take an amnesty, and Paris will shortly hold a Polish government that governs nothing. At home the courts-martial are sitting, the estates of the emigres are being sequestrated and the universities of Warsaw and Wilno have been closed.;;;;;;;;;;;;;x
+EVTOPTA1002605;Confiscate the estates and let the courts-martial sit;;;;;;;;;;;;;x
+EVTOPTB1002605;Let them go, and amnesty those who stayed;;;;;;;;;;;;;x

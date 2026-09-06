@@ -1,0 +1,44 @@
+british_legion;British Auxiliary Legion;;;;;;;;;;;;;x
+basque_fueros;Basque Fueros Confirmed;;;;;;;;;;;;;x
+EVTNAME1002700;The Pragmatic Sanction;;;;;;;;;;;;;x
+EVTDESC1002700;On 29 March 1830 Ferdinand VII published the Pragmatic Sanction that the Cortes had approved in 1789, abolishing the Salic law his Bourbon grandfather had imported from France. His young queen Maria Cristina is with child, and if the child is a girl she will one day reign. The apostolic party gathered around the King's brother Don Carlos calls the decree a fraud upon the true heir, and the clergy of Navarre and the Basque provinces are already preaching against it.;;;;;;;;;;;;;x
+EVTOPTA1002700;Promulgate the Sanction - a daughter may reign in Spain;;;;;;;;;;;;;x
+EVTOPTB1002700;The Salic law stands - Carlos is our heir;;;;;;;;;;;;;x
+EVTOPTC1002700;Silence the court and decide nothing;;;;;;;;;;;;;x
+EVTNAME1002701;The Death of Ferdinand VII;;;;;;;;;;;;;x
+EVTDESC1002701;Ferdinand VII died at the Royal Palace of Madrid on 29 September 1833, leaving a daughter of three years and a kingdom divided against itself. Maria Cristina takes the regency for Isabella II, but within a week the Carlist juntas of Vitoria, Bilbao and Pamplona proclaim Carlos V. Zumalacarregui is riding for the Amescoas, and the northern garrisons are going over to him regiment by regiment.;;;;;;;;;;;;;x
+EVTOPTA1002701;Isabella II is queen - Maria Cristina shall be regent;;;;;;;;;;;;;x
+EVTOPTB1002701;Rule as my husband ruled - Cea Bermudez remains;;;;;;;;;;;;;x
+EVTOPTC1002701;March the army north before Carlos is proclaimed;;;;;;;;;;;;;x
+EVTNAME1002701_NEWS_TITLE;The King of Spain is Dead;;;;;;;;;;;;;x
+EVTDESC1002701_NEWS_LONG;Ferdinand VII has died at Madrid after twenty years of reaction, leaving the crown to an infant daughter and the regency to his widow. In the northern provinces the partisans of his brother Don Carlos are already under arms, and the ancient fueros of Navarre and Biscay are the price both sides now offer for a musket. Europe watches to see whether the Pragmatic Sanction outlives the King who signed it.;;;;;;;;;;;;;x
+EVTDESC1002701_NEWS_MEDIUM;Ferdinand VII is dead at Madrid. Maria Cristina takes the regency for the infant Isabella II while the Carlist juntas of the north proclaim Carlos V.;;;;;;;;;;;;;x
+EVTDESC1002701_NEWS_SHORT;Ferdinand VII dies - Spain has two claimants;;;;;;;;;;;;;x
+EVTNAME1002702;The Quadruple Alliance;;;;;;;;;;;;;x
+EVTDESC1002702;Lord Palmerston has proposed a treaty at London binding Britain, France, Spain and Portugal to expel the pretenders Carlos and Miguel from the peninsula. For Madrid it means English money, French tolerance along the Pyrenean frontier, and the open recognition of Isabella II by the two western powers. It also means that the Court must accept liberal tutelage from abroad, and the apostolic party will call it a surrender of Spanish independence.;;;;;;;;;;;;;x
+EVTOPTA1002702;Sign at London - the two pretenders must go;;;;;;;;;;;;;x
+EVTOPTB1002702;Spain will settle her own quarrels;;;;;;;;;;;;;x
+EVTNAME1002702_NEWS_TITLE;The Quadruple Alliance Signed at London;;;;;;;;;;;;;x
+EVTDESC1002702_NEWS_LONG;Britain, France, Spain and Portugal have bound themselves by treaty to drive the pretenders Don Carlos and Dom Miguel out of the peninsula. The convention gives Madrid and Lisbon the diplomatic weight of the western powers against the absolutist courts of the east, and it gives Palmerston an ally in the Mediterranean. In Vienna and Saint Petersburg the alliance is read as a liberal league aimed squarely at the Holy Alliance.;;;;;;;;;;;;;x
+EVTDESC1002702_NEWS_MEDIUM;A quadruple treaty at London binds Britain, France, Spain and Portugal against the pretenders Carlos and Miguel.;;;;;;;;;;;;;x
+EVTDESC1002702_NEWS_SHORT;The Quadruple Alliance is signed at London;;;;;;;;;;;;;x
+EVTNAME1002703;The British Auxiliary Legion;;;;;;;;;;;;;x
+EVTDESC1002703;Under the Quadruple Alliance Madrid has asked London for men. The Foreign Enlistment Act forbids British subjects to take service under a foreign crown, but an Order in Council can suspend it, and Colonel de Lacy Evans is confident of raising ten thousand volunteers in the manufacturing towns within three months. The Tories will call it an unconstitutional war waged without a vote of the Commons.;;;;;;;;;;;;;x
+EVTOPTA1002703;Suspend the Enlistment Act and raise the Legion;;;;;;;;;;;;;x
+EVTOPTB1002703;Arms and a subsidy, but not one British soldier;;;;;;;;;;;;;x
+EVTOPTC1002703;Britain will not meddle in a Spanish quarrel;;;;;;;;;;;;;x
+EVTNAME1002704;The Convention of Vergara;;;;;;;;;;;;;x
+EVTDESC1002704;Six years of war have burnt out the northern provinces, and General Maroto has been sounding Espartero through intermediaries since the spring. The Carlist officers will lay down their arms and be taken into the royal army at their existing rank if Madrid confirms the ancient fueros of Navarre and the Basque provinces. Don Carlos will refuse the terms and go into exile, but his army will not follow him.;;;;;;;;;;;;;x
+EVTOPTA1002704;The Embrace of Vergara - confirm the fueros;;;;;;;;;;;;;x
+EVTOPTB1002704;No terms with rebels - the war goes on;;;;;;;;;;;;;x
+EVTNAME1002704_NEWS_TITLE;The Embrace of Vergara Ends the Carlist War;;;;;;;;;;;;;x
+EVTDESC1002704_NEWS_LONG;At Vergara on 31 August 1839 General Maroto embraced General Espartero in front of both armies, and the Carlist regiments of the north laid down their arms. The convention confirms the fueros of Navarre and the Basque provinces and takes the rebel officers into the royal service at their existing rank. Don Carlos has crossed into France with the remnant that would not accept the terms.;;;;;;;;;;;;;x
+EVTDESC1002704_NEWS_MEDIUM;Maroto and Espartero have embraced at Vergara. The Carlist army of the north submits and the Basque fueros are confirmed.;;;;;;;;;;;;;x
+EVTDESC1002704_NEWS_SHORT;The Carlist War ends at Vergara;;;;;;;;;;;;;x
+EVTNAME1002705;The Fall of Morella;;;;;;;;;;;;;x
+EVTDESC1002705;The terms offered at Vergara were refused, and the war has been carried into the Maestrazgo. Ramon Cabrera held the rock of Morella through the winter with the last Carlist army in the field, but the batteries have opened on the citadel and the mountain towns behind him are already garrisoned by the royal columns. When Morella falls the pretender's cause falls with it, and the northern fueros will have been neither confirmed nor bargained for - they will simply have been taken.;;;;;;;;;;;;;x
+EVTOPTA1002705;The pretender is beaten and Spain concedes nothing;;;;;;;;;;;;;x
+EVTNAME1002705_NEWS_TITLE;Morella Falls and the Carlist War is Over;;;;;;;;;;;;;x
+EVTDESC1002705_NEWS_LONG;The citadel of Morella has surrendered and Ramon Cabrera has crossed the French frontier with the remnant of the Maestrazgo army. Madrid refused every offer of a negotiated peace and has ended the war by the sword instead, with no confirmation of the ancient fueros of Navarre and the Basque provinces. The royal army returns from the north victorious, undefeated and, to the alarm of the ministry, entirely conscious of it.;;;;;;;;;;;;;x
+EVTDESC1002705_NEWS_MEDIUM;Morella has fallen and Cabrera has fled into France. The Carlist war ends by conquest with no concession to the northern provinces.;;;;;;;;;;;;;x
+EVTDESC1002705_NEWS_SHORT;Morella falls - the Carlist war ends;;;;;;;;;;;;;x

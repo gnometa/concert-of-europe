@@ -48,7 +48,7 @@ Two tag choices trip people up at the 1821 start:
 
 **Events** (`events/*.txt`): `country_event`/`province_event` blocks keyed by numeric `id`. IDs are globally unique across every file, so always grep `events/` for an id before taking it. Two registries reserve ranges:
 - `events/EventIDs.txt` — PDM's registry (Political, Flavor, Clean Up, On Action, ...).
-- `events/GVG Event IDs.txt` — this team's ranges: `2000000+` for setup, `2000100+` for the economy pulse host election, and one hundred-wide block per flavour or history chain from `1000000` up (`*GVG.txt` files). It also lists ranges reserved by deleted files. It is the authoritative list — read and update it rather than duplicating it here.
+- `events/GVG Event IDs.txt` — Grand Victorian Games, i.e. this team's own ranges: `2000000+` for setup, `2000100+` for the economy pulse host election, and one hundred-wide block per flavour or history chain from `1000000` up (`*GVG.txt` files). It also lists ranges reserved by deleted files. It is the authoritative list — read and update it rather than duplicating it here.
 
 Some in-use ids are in neither registry: the Roar of Industry economy rework (`events/00_CoE_RoI.txt`), the `Canals.txt` pulse events fired from `on_actions.txt`, and the education/RGO events (`+education_RGO*.txt`).
 
@@ -56,7 +56,7 @@ Pick a new id from a free range and record it in the registry. Events reference 
 
 **Decisions** (`decisions/*.txt`): `political_decisions = { name = { potential/allow/effect/ai_will_do } }`. Localisation keys are `<name>_title` and `<name>_desc`. The mod's start-of-game setup hook is not a decision: it is event 2000000 in `events/SetupGVG.txt`, which fires once per game for the player only (`ai = no`, guarded by the `setup_done` country flag). `decisions/00_setup_decisions.txt` is a disabled (`always = no`) hook into the education/RGO event chain.
 
-**Scripting conventions seen in this codebase**: file-naming suffixes indicate origin — `*Flavor.txt` / `*FlavorGVG.txt` (GVG = this team's additions), `DIM_*` (Dutch East Indies submod content), `000_persia_*` / `000_crownsteler_*`, `VIP_*`, `GAGA*`, and `00_CoE_RoI` / `0000_economic_rework` / `+education_RGO*` (Roar of Industry economy rework). New Concert-of-Europe-specific content generally uses the GVG suffix and the 1000000+/2000000+ ID ranges.
+**Scripting conventions seen in this codebase**: file-naming suffixes indicate origin — `*Flavor.txt` / `*FlavorGVG.txt` (GVG = Grand Victorian Games, this team's own additions), `DIM_*` (Dutch East Indies submod content), `000_persia_*` / `000_crownsteler_*`, `VIP_*`, `GAGA*`, and `00_CoE_RoI` / `0000_economic_rework` / `+education_RGO*` (Roar of Industry economy rework). New Concert-of-Europe-specific content generally uses the GVG suffix and the 1000000+/2000000+ ID ranges.
 
 **Triggers/effects hooks**: `common/on_actions.txt` fires events on engine actions (e.g. `on_yearly_pulse`, `on_quarterly_pulse`). `common/defines.lua` holds engine constants (there is no `countries.lua` in this mod).
 

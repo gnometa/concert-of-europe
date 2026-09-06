@@ -1,0 +1,589 @@
+#########################################################
+#                                                       #
+#   The Centralist Turn, 1833-1836 (GVG)                #
+#   ids 1003100-1003104                                 #
+#                                                       #
+#   From the Gomez Farias reform program to Las Siete   #
+#   Leyes. The hinge event 1003101 supersedes the       #
+#   existing Plan of Cuernavaca (events/MEXFlavor.txt   #
+#   44853), whose militancy gate often never opens:     #
+#   BOTH of its options set cuernavaca_plan, which      #
+#   locks 44853 out by its own NOT guard. Option A also #
+#   re-applies exactly 44853 option A reform package,   #
+#   so the centralist path converges on the same        #
+#   constitutional state; option B keeps the federal    #
+#   republic and only needs the flag so that 44853      #
+#   cannot fire afterwards and erase that choice.       #
+#                                                       #
+#   Texas is deliberately not scripted here: 44856      #
+#   already multiplies its rate by ten under a          #
+#   presidential dictatorship. Yucatan secession stays  #
+#   with 44821 in 1841. No tag, province or war is      #
+#   handed out anywhere in this file.                   #
+#                                                       #
+#   fire_only_once is engine-wide, so every self-firing #
+#   event here is guarded by country flags that every   #
+#   one of its options sets.                            #
+#                                                       #
+#########################################################
+
+# The Reforms of Gomez Farias
+country_event = {
+	id = 1003100
+	title = "EVTNAME1003100"
+	desc = "EVTDESC1003100"
+	picture = "churchmexico"
+
+	trigger = {
+		tag = MEX
+		exists = yes
+		OR = {
+			government = democracy
+			government = democracy2
+			government = democracy3
+		}
+		year = 1833
+		NOT = { year = 1840 }
+		NOT = { has_country_flag = cuernavaca_plan }
+		NOT = { has_country_flag = farias_program }
+		NOT = { has_country_flag = farias_restrained }
+		NOT = { has_country_flag = farias_dismissed }
+	}
+
+	mean_time_to_happen = {
+		months = 3
+		modifier = {
+			factor = 0.75
+			ruling_party_ideology = liberal
+		}
+		modifier = {
+			factor = 1.5
+			war = yes
+		}
+	}
+
+	# Let the reforms proceed
+	option = {
+		name = "EVTOPTA1003100"
+		set_country_flag = farias_program
+		political_reform = censored_press
+		add_country_modifier = {
+			name = educational_reform
+			duration = 3650
+		}
+		add_country_modifier = {
+			name = liberal_reaction
+			duration = 1825
+		}
+		treasury = 15000 # tithe and mission revenues diverted to the state
+		any_pop = {
+			limit = { type = clergymen }
+			militancy = 4
+			consciousness = 2
+			ideology = {
+				value = reactionary
+				factor = 0.15
+			}
+		}
+		any_pop = {
+			limit = {
+				is_primary_culture = yes
+				OR = {
+					type = officers
+					type = soldiers
+				}
+			}
+			scaled_militancy = {
+				ideology = reactionary
+				factor = 8
+			}
+			ideology = {
+				value = conservative
+				factor = 0.15
+			}
+		}
+		any_pop = {
+			limit = { is_primary_culture = yes }
+			scaled_militancy = {
+				ideology = liberal
+				factor = -3
+			}
+		}
+		ai_chance = {
+			factor = 45
+			modifier = {
+				factor = 0.5
+				war = yes
+			}
+		}
+	}
+
+	# Restrain the vice-president
+	option = {
+		name = "EVTOPTB1003100"
+		set_country_flag = farias_restrained
+		add_country_modifier = {
+			name = conservative_reaction
+			duration = 1825
+		}
+		plurality = -1
+		any_pop = {
+			limit = { type = clergymen }
+			militancy = -1
+		}
+		any_pop = {
+			limit = { is_primary_culture = yes }
+			scaled_militancy = {
+				ideology = liberal
+				factor = 4
+			}
+		}
+		ai_chance = {
+			factor = 35
+			modifier = {
+				factor = 2
+				war = yes
+			}
+		}
+	}
+
+	# Dismiss Farias and govern with the church and the army
+	option = {
+		name = "EVTOPTC1003100"
+		set_country_flag = farias_dismissed
+		add_country_modifier = {
+			name = conservative_reaction
+			duration = 3650
+		}
+		add_country_modifier = {
+			name = coup_risk
+			duration = 730
+		}
+		any_pop = {
+			limit = {
+				OR = {
+					type = clergymen
+					type = officers
+				}
+			}
+			militancy = -2
+			ideology = {
+				value = conservative
+				factor = 0.2
+			}
+		}
+		any_pop = {
+			limit = { is_primary_culture = yes }
+			scaled_militancy = {
+				ideology = liberal
+				factor = 6
+			}
+		}
+		ai_chance = {
+			factor = 20
+			modifier = {
+				factor = 2
+				ruling_party_ideology = conservative
+			}
+		}
+	}
+}
+
+# The Plan of Cuernavaca and the Closing of the Congress
+country_event = {
+	id = 1003101
+	title = "EVTNAME1003101"
+	desc = "EVTDESC1003101"
+	picture = "national_congress"
+
+	trigger = {
+		tag = MEX
+		exists = yes
+		year = 1834
+		NOT = { year = 1842 }
+		OR = {
+			has_country_flag = farias_program
+			has_country_flag = farias_restrained
+			has_country_flag = farias_dismissed
+		}
+		NOT = { has_country_flag = congress_dissolved }
+		NOT = { has_country_flag = federal_compromise }
+	}
+
+	mean_time_to_happen = {
+		months = 4
+		modifier = {
+			factor = 0.5
+			has_country_flag = cuernavaca_plan
+		}
+		modifier = {
+			factor = 0.75
+			has_country_flag = farias_dismissed
+		}
+		modifier = {
+			factor = 1.25
+			has_country_flag = farias_restrained
+		}
+	}
+
+	# Close the congress and the state legislatures
+	option = {
+		name = "EVTOPTA1003101"
+		set_country_flag = congress_dissolved
+		set_country_flag = cuernavaca_plan # supersedes 44853, which NOT-guards this flag
+		political_reform = state_equal_weight
+		political_reform = none_voting
+		political_reform = state_press
+		political_reform = underground_parties
+		government = presidential_dictatorship
+		add_country_modifier = {
+			name = rights_suspended
+			duration = 730
+		}
+		add_country_modifier = {
+			name = national_instability
+			duration = 1095
+		}
+		remove_country_modifier = liberal_reaction
+		any_pop = {
+			limit = { is_primary_culture = yes }
+			scaled_militancy = {
+				ideology = liberal
+				factor = 8
+			}
+			scaled_militancy = {
+				ideology = reactionary
+				factor = -4
+			}
+		}
+		country_event = { id = 1003102 days = 240 }
+		ai_chance = {
+			factor = 80
+			modifier = {
+				factor = 1.5
+				has_country_flag = cuernavaca_plan
+			}
+			modifier = {
+				factor = 1.25
+				has_country_flag = farias_dismissed
+			}
+		}
+	}
+
+	# Let the new congress sit
+	option = {
+		name = "EVTOPTB1003101"
+		set_country_flag = federal_compromise
+		set_country_flag = cuernavaca_plan # locks out legacy 44853 so it cannot overwrite this branch
+		add_country_modifier = {
+			name = republican_reforms
+			duration = 3650
+		}
+		plurality = 2
+		any_pop = {
+			limit = { is_primary_culture = yes }
+			scaled_militancy = {
+				ideology = reactionary
+				factor = 10
+			}
+			scaled_militancy = {
+				ideology = conservative
+				factor = 6
+			}
+		}
+		any_pop = {
+			limit = {
+				OR = {
+					type = clergymen
+					type = officers
+				}
+			}
+			militancy = 2
+		}
+		ai_chance = {
+			factor = 20
+			modifier = {
+				factor = 0.25
+				OR = {
+					government = presidential_dictatorship
+					government = presidential_dictatorship2
+					government = presidential_dictatorship3
+				}
+			}
+		}
+	}
+}
+
+# The Militia Law and Zacatecas
+country_event = {
+	id = 1003102
+	title = "EVTNAME1003102"
+	desc = "EVTDESC1003102"
+	picture = "mexico_soldiers"
+
+	is_triggered_only = yes
+
+	# March on Zacatecas
+	option = {
+		name = "EVTOPTA1003102"
+		set_country_flag = zacatecas_crushed
+		prestige = 3
+		treasury = 10000 # the forced loan and the Zacatecas mint
+		any_owned = {
+			limit = { province_id = 2158 } # Zacatecas
+			add_province_modifier = {
+				name = nationalist_agitation
+				duration = 1825
+			}
+		}
+		any_owned = {
+			limit = { province_id = 2160 } # Aguascalientes, detached as its own department
+			add_province_modifier = {
+				name = nationalist_agitation
+				duration = 1095
+			}
+		}
+		any_owned = {
+			limit = {
+				OR = {
+					province_id = 2158 # Zacatecas
+					province_id = 2159 # San Luis Potosi
+					province_id = 2160 # Aguascalientes
+				}
+			}
+			any_pop = {
+				militancy = 3
+				consciousness = 2
+			}
+		}
+		any_pop = {
+			limit = {
+				is_primary_culture = yes
+				OR = {
+					type = officers
+					type = soldiers
+				}
+			}
+			militancy = -2
+			ideology = {
+				value = conservative
+				factor = 0.15
+			}
+		}
+		country_event = { id = 1003103 days = 180 }
+		ai_chance = {
+			factor = 85
+			modifier = {
+				factor = 0.5
+				war = yes
+			}
+		}
+	}
+
+	# Accept the terms of Governor Garcia
+	option = {
+		name = "EVTOPTB1003102"
+		set_country_flag = state_militias_intact
+		prestige = -3
+		add_country_modifier = {
+			name = growing_unrest
+			duration = 1825
+		}
+		any_owned = {
+			limit = {
+				OR = {
+					province_id = 2158 # Zacatecas
+					province_id = 2159 # San Luis Potosi
+					province_id = 2160 # Aguascalientes
+				}
+			}
+			any_pop = {
+				militancy = -2
+			}
+		}
+		country_event = { id = 1003103 days = 180 }
+		ai_chance = {
+			factor = 15
+			modifier = {
+				factor = 3
+				war = yes
+			}
+		}
+	}
+}
+
+# Las Siete Leyes
+country_event = {
+	id = 1003103
+	title = "EVTNAME1003103"
+	desc = "EVTDESC1003103"
+	picture = "Administration"
+	major = yes
+	news = yes
+	news_title = "EVTNAME1003103_NEWS_TITLE"
+	news_desc_long = "EVTDESC1003103_NEWS_LONG"
+	news_desc_medium = "EVTDESC1003103_NEWS_MEDIUM"
+	news_desc_short = "EVTDESC1003103_NEWS_SHORT"
+
+	is_triggered_only = yes
+
+	# The seven laws entire, and a Supremo Poder Conservador
+	option = {
+		name = "EVTOPTA1003103"
+		set_country_flag = siete_leyes_proclaimed
+		political_reform = appointed
+		political_reform = none_voting
+		political_reform = no_meeting
+		political_reform = underground_parties
+		add_country_modifier = {
+			name = siete_leyes
+			duration = 7300
+		}
+		add_country_modifier = {
+			name = national_confusion
+			duration = 365
+		}
+		prestige = 5
+		any_pop = {
+			limit = { is_primary_culture = yes }
+			scaled_militancy = {
+				ideology = liberal
+				factor = 8
+			}
+		}
+		any_pop = {
+			limit = {
+				OR = {
+					type = clergymen
+					type = aristocrats
+					type = officers
+				}
+			}
+			militancy = -2
+			ideology = {
+				value = conservative
+				factor = 0.2
+			}
+		}
+		ai_chance = {
+			factor = 75
+			modifier = {
+				factor = 1.5
+				has_country_flag = zacatecas_crushed
+			}
+		}
+	}
+
+	# Departments, but let them elect their assemblies
+	option = {
+		name = "EVTOPTB1003103"
+		set_country_flag = siete_leyes_proclaimed
+		set_country_flag = moderate_centralism
+		political_reform = landed_voting
+		political_reform = harassment
+		add_country_modifier = {
+			name = national_instability
+			duration = 1825
+		}
+		prestige = 2
+		any_pop = {
+			limit = { is_primary_culture = yes }
+			scaled_militancy = {
+				ideology = liberal
+				factor = 3
+			}
+			scaled_militancy = {
+				ideology = reactionary
+				factor = 4
+			}
+		}
+		any_pop = {
+			limit = { type = clergymen }
+			militancy = 4
+		}
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 2
+				has_country_flag = state_militias_intact
+			}
+		}
+	}
+}
+
+# Yucatan and the Departments
+country_event = {
+	id = 1003104
+	title = "EVTNAME1003104"
+	desc = "EVTDESC1003104"
+	picture = "streetriot"
+
+	trigger = {
+		tag = MEX
+		exists = yes
+		has_country_flag = siete_leyes_proclaimed
+		owns = 2183 # Merida
+		NOT = { has_country_flag = yucatan_subordinated }
+		NOT = { has_country_flag = yucatan_conciliated }
+	}
+
+	mean_time_to_happen = {
+		months = 4
+		modifier = {
+			factor = 0.75
+			has_country_flag = zacatecas_crushed
+		}
+	}
+
+	# The departments are the law: garrison Merida
+	option = {
+		name = "EVTOPTA1003104"
+		set_country_flag = yucatan_subordinated
+		prestige = 2
+		any_owned = {
+			limit = { region = MEX_2183 } # Yucatan: 2183 2185 2184 2165
+			add_province_modifier = {
+				name = secessionist_agitation
+				duration = 1825
+			}
+			any_pop = {
+				limit = { has_pop_culture = mayan }
+				militancy = 2
+				consciousness = 1
+			}
+		}
+		ai_chance = {
+			factor = 60
+			modifier = {
+				factor = 1.5
+				has_country_flag = zacatecas_crushed
+			}
+		}
+	}
+
+	# Confirm the fueros of Yucatan
+	option = {
+		name = "EVTOPTB1003104"
+		set_country_flag = yucatan_conciliated
+		prestige = -2
+		treasury = -5000 # the customs exemption Merida extracted
+		any_owned = {
+			limit = { region = MEX_2183 } # Yucatan: 2183 2185 2184 2165
+			any_pop = {
+				militancy = -3
+				consciousness = 1
+			}
+		}
+		ai_chance = {
+			factor = 40
+			modifier = {
+				factor = 2
+				has_country_flag = state_militias_intact
+			}
+			modifier = {
+				factor = 2
+				has_country_flag = moderate_centralism
+			}
+		}
+	}
+}

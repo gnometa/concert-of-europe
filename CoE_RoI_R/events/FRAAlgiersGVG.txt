@@ -1,0 +1,598 @@
+#########################################################
+#                                                       #
+#   The Conquest of Algiers, 1827-1834 (GVG)            #
+#   ids 1002500-1002504                                 #
+#                                                       #
+#   Sits AROUND events/FRAFlavor.txt 37234 (The Fan     #
+#   Affair) rather than replacing it. 37234 keeps the   #
+#   insult and the declaration of war; this file adds   #
+#   the blockade that precedes it, the landing at Sidi  #
+#   Ferruch, the fall of the Dey, the Ordonnance of     #
+#   1834 and the Emirate of Mascara.                    #
+#                                                       #
+#   37234 now carries a year = 1827 floor (the Fan      #
+#   Affair was 30 April 1827); without it that war      #
+#   could fire from 1824 on and hand France the         #
+#   Algiers state before 1002500 and 1002501 ever       #
+#   opened. 1002502 is gated on this file's own flags   #
+#   rather than on a bare date, so the fall of the      #
+#   Casbah is never announced years after the fact.     #
+#                                                       #
+#   Nothing here declares war. 1002500 option B only    #
+#   GRANTS the same CB that 37234 would have used, so   #
+#   the two can never duplicate a war. No entry is      #
+#   added to common/on_actions.txt and no province      #
+#   history file is touched. Every self-firing event    #
+#   is guarded by a country flag set in EVERY option,   #
+#   because fire_only_once is engine-wide.              #
+#                                                       #
+#########################################################
+
+# The Blockade of Algiers
+country_event = {
+	id = 1002500
+	title = "EVTNAME1002500"
+	desc = "EVTDESC1002500"
+	picture = "ship_attacked"
+
+	trigger = {
+		tag = FRA
+		exists = yes
+		year = 1827
+		NOT = { year = 1832 }
+		OR = {
+			has_country_flag = charles_x
+			has_country_flag = july_revolution
+		}
+		ALD = {
+			exists = yes
+			civilized = no
+			owns = 1700
+		}
+		NOT = { war_with = ALD }
+		NOT = { truce_with = ALD }
+		NOT = { owns = 1700 }
+		NOT = { has_country_flag = algiers_blockade_decided }
+	}
+
+	mean_time_to_happen = {
+		months = 6
+		modifier = {
+			factor = 0.75
+			has_country_flag = charles_x
+		}
+		modifier = {
+			factor = 1.5
+			war = yes
+		}
+	}
+
+	# Keep the squadron off Cape Matifou
+	option = {
+		name = "EVTOPTA1002500"
+		set_country_flag = algiers_blockade_decided
+		treasury = -5000
+		prestige = 2
+		relation = { who = ALD value = -100 }
+		ALD = {
+			any_owned = {
+				limit = {
+					OR = {
+						province_id = 1700
+						province_id = 1701
+						province_id = 1704
+						province_id = 1706
+						province_id = 1709
+					}
+				}
+				add_province_modifier = {
+					name = algiers_blockade
+					duration = 1095
+				}
+			}
+		}
+		ai_chance = {
+			factor = 60
+			modifier = {
+				factor = 1.5
+				has_country_flag = charles_x
+			}
+		}
+	}
+
+	# Demand satisfaction at gunpoint
+	option = {
+		name = "EVTOPTB1002500"
+		set_country_flag = algiers_blockade_decided
+		treasury = -5000
+		badboy = 1
+		relation = { who = ALD value = -150 }
+		relation = { who = ENG value = -10 }
+		# State FRA_1704 = { 1700 1704 } is the Dey's capital state at the
+		# start and a capital state cannot be ceded, so move the seat to
+		# Constantine first - 37234 does exactly this before its own war.
+		ALD = { capital = 1708 }
+		casus_belli = {
+			target = ALD
+			type = demand_concession_casus_belli
+			state_province_id = 1700
+			months = 24
+		}
+		ALD = {
+			any_owned = {
+				limit = {
+					OR = {
+						province_id = 1700
+						province_id = 1701
+						province_id = 1704
+						province_id = 1706
+						province_id = 1709
+					}
+				}
+				add_province_modifier = {
+					name = algiers_blockade
+					duration = 730
+				}
+			}
+		}
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 0.25
+				badboy = 0.6
+			}
+		}
+	}
+
+	# Lift the blockade
+	option = {
+		name = "EVTOPTC1002500"
+		set_country_flag = algiers_blockade_decided
+		prestige = -3
+		relation = { who = ALD value = 50 }
+		any_pop = {
+			limit = { type = capitalists }
+			militancy = 1
+		}
+		ai_chance = {
+			factor = 15
+			modifier = {
+				factor = 2
+				badboy = 0.6
+			}
+			modifier = {
+				factor = 2
+				war_exhaustion = 5
+			}
+		}
+	}
+}
+
+# The Landing at Sidi Ferruch
+country_event = {
+	id = 1002501
+	title = "EVTNAME1002501"
+	desc = "EVTDESC1002501"
+	picture = "Artillery"
+	news = yes
+	news_title = "EVTNAME1002501_NEWS_TITLE"
+	news_desc_long = "EVTDESC1002501_NEWS_LONG"
+	news_desc_medium = "EVTDESC1002501_NEWS_MEDIUM"
+	news_desc_short = "EVTDESC1002501_NEWS_SHORT"
+
+	trigger = {
+		tag = FRA
+		exists = yes
+		year = 1827
+		NOT = { year = 1840 }
+		war_with = ALD
+		ALD = { exists = yes }
+		NOT = { owns = 1700 }
+		NOT = { has_country_flag = algiers_landing }
+	}
+
+	# Short: the war with ALD can be over in a season, and the landing
+	# has to get in before the peace or the rest of the chain never opens.
+	mean_time_to_happen = {
+		months = 2
+		modifier = {
+			factor = 0.5
+			has_country_flag = algiers_blockade_decided
+		}
+		modifier = {
+			factor = 0.5
+			ALD = { capital = 1708 }
+		}
+		modifier = {
+			factor = 0.5
+			year = 1830
+		}
+	}
+
+	# Bourmont sails with thirty-seven thousand men
+	option = {
+		name = "EVTOPTA1002501"
+		set_country_flag = algiers_landing
+		treasury = -20000
+		war_exhaustion = 2
+		prestige = 5
+		add_country_modifier = {
+			name = armee_dafrique
+			duration = 1825
+		}
+		ALD = {
+			war_exhaustion = 8
+			any_pop = { militancy = 2 }
+			any_owned = {
+				limit = {
+					OR = {
+						province_id = 1700
+						province_id = 1703
+					}
+				}
+				add_province_modifier = {
+					name = war_torn
+					duration = 730
+				}
+			}
+		}
+		ai_chance = {
+			factor = 75
+			modifier = {
+				factor = 0.5
+				war_exhaustion = 10
+			}
+		}
+	}
+
+	# A demonstration off the coast and nothing more
+	option = {
+		name = "EVTOPTB1002501"
+		set_country_flag = algiers_landing
+		treasury = -6000
+		war_exhaustion = 1
+		prestige = -2
+		ALD = {
+			war_exhaustion = 3
+			any_owned = {
+				limit = { province_id = 1700 }
+				add_province_modifier = {
+					name = war_torn
+					duration = 365
+				}
+			}
+		}
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 2
+				badboy = 0.6
+			}
+			modifier = {
+				factor = 2
+				war_exhaustion = 5
+			}
+		}
+	}
+}
+
+# The Fall of the Dey
+country_event = {
+	id = 1002502
+	title = "EVTNAME1002502"
+	desc = "EVTDESC1002502"
+	picture = "sultan"
+	major = yes
+	news = yes
+	news_title = "EVTNAME1002502_NEWS_TITLE"
+	news_desc_long = "EVTDESC1002502_NEWS_LONG"
+	news_desc_medium = "EVTDESC1002502_NEWS_MEDIUM"
+	news_desc_short = "EVTDESC1002502_NEWS_SHORT"
+
+	trigger = {
+		tag = FRA
+		exists = yes
+		year = 1828
+		NOT = { year = 1845 }
+		owns = 1700
+		# Only announce the fall of the Casbah if this chain actually ran.
+		# Both flags are set in every option of their event, so either one
+		# means France got here through the blockade and the landing.
+		OR = {
+			has_country_flag = algiers_landing
+			has_country_flag = algiers_blockade_decided
+		}
+		NOT = { has_country_flag = algiers_taken }
+	}
+
+	mean_time_to_happen = {
+		months = 2
+	}
+
+	# Empty the treasury of the Casbah
+	option = {
+		name = "EVTOPTA1002502"
+		set_country_flag = algiers_taken
+		treasury = 25000
+		prestige = 5
+		badboy = 2
+		any_pop = { militancy = -1 }
+		random_country = {
+			limit = {
+				tag = ALD
+				exists = yes
+			}
+			treasury = -10000
+			any_pop = { militancy = 2 }
+		}
+		ai_chance = {
+			factor = 70
+			modifier = {
+				factor = 0.25
+				badboy = 0.6
+			}
+		}
+	}
+
+	# Honour the terms of the capitulation
+	option = {
+		name = "EVTOPTB1002502"
+		set_country_flag = algiers_taken
+		treasury = 5000
+		prestige = 8
+		relation = { who = ALD value = 25 }
+		any_pop = { militancy = -1 }
+		random_country = {
+			limit = {
+				tag = ALD
+				exists = yes
+			}
+			any_pop = { militancy = -1 }
+		}
+		ai_chance = {
+			factor = 30
+			modifier = {
+				factor = 2
+				badboy = 0.6
+			}
+		}
+	}
+}
+
+# The Ordonnance of 1834
+country_event = {
+	id = 1002503
+	title = "EVTNAME1002503"
+	desc = "EVTDESC1002503"
+	picture = "scramble_for_africa"
+
+	trigger = {
+		tag = FRA
+		exists = yes
+		year = 1833
+		NOT = { year = 1848 }
+		owns = 1700
+		has_country_flag = algiers_taken
+		NOT = { has_country_flag = algiers_settled }
+	}
+
+	mean_time_to_happen = {
+		months = 6
+	}
+
+	# Colonisation and a Governor-General
+	option = {
+		name = "EVTOPTA1002503"
+		set_country_flag = algiers_settled
+		badboy = 3
+		treasury = -10000
+		prestige = 10
+		relation = { who = ENG value = -25 }
+		ALD = {
+			any_owned = {
+				limit = {
+					OR = {
+						province_id = 1701
+						province_id = 1706
+						province_id = 1709
+					}
+				}
+				secede_province = FRA
+			}
+			any_pop = { militancy = 3 }
+			any_owned = {
+				add_province_modifier = {
+					name = nationalist_agitation
+					duration = 1825
+				}
+			}
+		}
+		any_owned = {
+			limit = {
+				OR = {
+					province_id = 1700
+					province_id = 1704
+				}
+			}
+			add_province_modifier = {
+				name = colonial_exploitation
+				duration = 3650
+			}
+			add_province_modifier = {
+				name = colonial_recruitment
+				duration = 3650
+			}
+		}
+		random_country = {
+			limit = {
+				tag = ENG
+				exists = yes
+				is_greater_power = yes
+				NOT = { war_with = FRA }
+			}
+			# Not place_in_the_sun: both its can_use and its allowed_states
+			# require any_owned_province = { is_colonial = yes }, and the
+			# Algerian provinces are ordinary owned provinces in play.
+			# humiliate has no allowed_states block at all.
+			casus_belli = {
+				target = FRA
+				type = humiliate
+				months = 12
+			}
+		}
+		ai_chance = {
+			factor = 45
+			modifier = {
+				factor = 0.25
+				badboy = 0.6
+			}
+		}
+	}
+
+	# Occupation restreinte
+	option = {
+		name = "EVTOPTB1002503"
+		set_country_flag = algiers_settled
+		prestige = 3
+		relation = { who = ENG value = 10 }
+		any_owned = {
+			limit = {
+				OR = {
+					province_id = 1700
+					province_id = 1704
+				}
+			}
+			add_province_modifier = {
+				name = colonial_exploitation
+				duration = 1825
+			}
+		}
+		ALD = {
+			any_pop = { militancy = 1 }
+		}
+		ai_chance = {
+			factor = 40
+			modifier = {
+				factor = 2
+				badboy = 0.6
+			}
+		}
+	}
+
+	# Hand Oran back
+	option = {
+		name = "EVTOPTC1002503"
+		set_country_flag = algiers_settled
+		prestige = -8
+		badboy = -1
+		war_exhaustion = -3
+		relation = { who = ALD value = 100 }
+		random_country = {
+			limit = {
+				tag = ALD
+				exists = yes
+			}
+			FRA = {
+				any_owned = {
+					limit = { province_id = 1704 }
+					secede_province = ALD
+				}
+			}
+		}
+		ai_chance = {
+			factor = 15
+			modifier = {
+				factor = 3
+				badboy = 0.8
+			}
+		}
+	}
+}
+
+# The Emirate of Mascara
+country_event = {
+	id = 1002504
+	title = "EVTNAME1002504"
+	desc = "EVTDESC1002504"
+	picture = "arab_revolt"
+
+	trigger = {
+		tag = ALD
+		exists = yes
+		civilized = no
+		year = 1830
+		NOT = { year = 1845 }
+		FRA = {
+			exists = yes
+			owns = 1700
+		}
+		NOT = { owns = 1700 }
+		NOT = { has_country_flag = ald_emirate }
+	}
+
+	mean_time_to_happen = {
+		months = 4
+	}
+
+	# Proclaim the jihad
+	option = {
+		name = "EVTOPTA1002504"
+		set_country_flag = ald_emirate
+		prestige = 5
+		relation = { who = FRA value = -100 }
+		add_country_modifier = {
+			name = small_country_draft
+			duration = 730
+		}
+		any_owned = {
+			limit = {
+				OR = {
+					province_id = 1705
+					province_id = 1707
+				}
+			}
+			add_province_modifier = {
+				name = patriot_uprising
+				duration = 730
+			}
+		}
+		FRA = {
+			any_owned = {
+				limit = {
+					OR = {
+						province_id = 1700
+						province_id = 1704
+					}
+				}
+				any_pop = {
+					limit = { has_pop_culture = maghrebi }
+					militancy = 3
+					consciousness = 1
+				}
+			}
+		}
+		ai_chance = {
+			factor = 60
+		}
+	}
+
+	# The convention with General Desmichels
+	option = {
+		name = "EVTOPTB1002504"
+		set_country_flag = ald_emirate
+		prestige = -3
+		treasury = 5000
+		relation = { who = FRA value = 50 }
+		any_pop = {
+			militancy = -2
+			consciousness = -1
+		}
+		ai_chance = {
+			factor = 40
+			modifier = {
+				factor = 2
+				war_exhaustion = 10
+			}
+		}
+	}
+}

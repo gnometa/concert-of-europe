@@ -1,0 +1,700 @@
+#########################################################
+#                                                       #
+#   Vila-Francada and the Abrilada, 1823-1826 (GVG)     #
+#   ids 1003000-1003004                                 #
+#                                                       #
+#   The collapse of the Vintista regime. Hands off to   #
+#   events/PORFlavor.txt 97030 (Death of John VI,       #
+#   1825) and from there to PORMiguelistGVG.txt         #
+#   1001000. This chain never sets por_charter_granted, #
+#   miguelist_usurpation, por_cortes_resists or         #
+#   por_charter_upheld - those belong to 97030 and to   #
+#   the Miguelist file.                                 #
+#                                                       #
+#   1003004 is the 1826 Carta: it puts Portugal back    #
+#   under hms_government on the branches that ended     #
+#   absolutist or prussian, so the later PORFlavor      #
+#   chains (97000/97001/97003/97020) stay reachable.    #
+#                                                       #
+#   UPB is the start-date tag; 97024 turns it into POR, #
+#   so every trigger reads OR = { tag = POR tag = UPB }.#
+#                                                       #
+#########################################################
+
+# The Revolt in Tras-os-Montes
+country_event = {
+	id = 1003000
+	title = "EVTNAME1003000"
+	desc = "EVTDESC1003000"
+	picture = "Rebellion"
+
+	fire_only_once = yes
+
+	trigger = {
+		OR = { tag = POR tag = UPB }
+		exists = yes
+		year = 1823
+		NOT = { year = 1824 }
+		NOT = { has_country_flag = por_vintismo_challenged }
+	}
+
+	mean_time_to_happen = {
+		months = 3
+		modifier = {
+			factor = 0.5
+			FRA = { has_country_flag = one_hunderd_thousand_sons }
+		}
+		modifier = {
+			factor = 0.75
+			SPA = { government = absolute_monarchy }
+		}
+		modifier = {
+			factor = 0.75
+			ruling_party_ideology = reactionary
+		}
+		modifier = {
+			factor = 0.75
+			average_militancy = 3
+		}
+	}
+
+	# March on Vila Real
+	option = {
+		name = "EVTOPTA1003000"
+		set_country_flag = por_vintismo_challenged
+		treasury = -5000
+		prestige = 1
+		add_country_modifier = {
+			name = military_strife
+			duration = 365
+		}
+		any_owned = {
+			limit = {
+				OR = {
+					province_id = 519 #Vila Real
+					province_id = 520 #Covilha
+				}
+			}
+			any_pop = {
+				militancy = 2
+				consciousness = 1
+				ideology = {
+					value = reactionary
+					factor = 0.10
+				}
+			}
+		}
+		country_event = { id = 1003001 days = 90 }
+		ai_chance = {
+			factor = 55
+		}
+	}
+
+	# Amnesty for the Count of Amarante
+	option = {
+		name = "EVTOPTB1003000"
+		set_country_flag = por_vintismo_challenged
+		set_country_flag = por_amarante_pardoned
+		prestige = -2
+		add_country_modifier = {
+			name = coup_risk
+			duration = 730
+		}
+		any_pop = {
+			limit = {
+				OR = {
+					type = aristocrats
+					type = clergymen
+				}
+			}
+			militancy = -1
+			ideology = {
+				value = reactionary
+				factor = 0.10
+			}
+		}
+		any_owned = {
+			limit = {
+				OR = {
+					province_id = 518 #Oporto
+					province_id = 2134 #Azores
+				}
+			}
+			any_pop = {
+				consciousness = 1
+				ideology = {
+					value = liberal
+					factor = 0.05
+				}
+			}
+		}
+		country_event = { id = 1003001 days = 110 }
+		ai_chance = {
+			factor = 30
+		}
+	}
+
+	# Purge the officer corps
+	option = {
+		name = "EVTOPTC1003000"
+		set_country_flag = por_vintismo_challenged
+		set_country_flag = por_army_purged
+		prestige = -1
+		add_country_modifier = {
+			name = military_strife
+			duration = 730
+		}
+		any_pop = {
+			limit = {
+				OR = {
+					type = officers
+					type = aristocrats
+				}
+			}
+			militancy = 3
+			consciousness = 2
+			ideology = {
+				value = reactionary
+				factor = 0.15
+			}
+		}
+		country_event = { id = 1003001 days = 70 }
+		ai_chance = {
+			factor = 15
+		}
+	}
+}
+
+# The Vila-Francada
+country_event = {
+	id = 1003001
+	title = "EVTNAME1003001"
+	desc = "EVTDESC1003001"
+	picture = "carlists"
+	is_triggered_only = yes
+	major = yes
+	news = yes
+	news_title = "EVTNAME1003001_NEWS_TITLE"
+	news_desc_long = "EVTDESC1003001_NEWS_LONG"
+	news_desc_medium = "EVTDESC1003001_NEWS_MEDIUM"
+	news_desc_short = "EVTDESC1003001_NEWS_SHORT"
+
+	# The Constitution of 1822 is dissolved
+	option = {
+		name = "EVTOPTA1003001"
+		set_country_flag = por_absolutism_restored
+		government = absolute_monarchy
+		ruling_party_ideology = reactionary
+		political_reform = appointed
+		political_reform = underground_parties
+		political_reform = state_press
+		political_reform = no_meeting
+		political_reform = none_voting
+		clr_country_flag = liberal_election_win
+		set_country_flag = reactionary_election_win
+		add_country_modifier = {
+			name = conservative_reaction
+			duration = 3650
+		}
+		any_owned = {
+			limit = {
+				OR = {
+					province_id = 518 #Oporto
+					province_id = 2134 #Azores
+				}
+			}
+			add_province_modifier = {
+				name = liberal_agitation
+				duration = 1825
+			}
+			any_pop = {
+				ideology = {
+					value = liberal
+					factor = 0.20
+				}
+				scaled_militancy = {
+					ideology = liberal
+					factor = 12
+				}
+			}
+		}
+		relation = { who = AUS value = 15 }
+		relation = { who = RUS value = 10 }
+		relation = { who = FRA value = 10 }
+		relation = { who = ENG value = -10 }
+		country_event = { id = 1003002 days = 300 }
+		ai_chance = {
+			factor = 55
+			modifier = {
+				factor = 1.5
+				has_country_flag = por_amarante_pardoned
+			}
+			modifier = {
+				factor = 1.25
+				ruling_party_ideology = reactionary
+			}
+		}
+	}
+
+	# A charter granted from the throne
+	option = {
+		name = "EVTOPTB1003001"
+		set_country_flag = por_carta_promised
+		government = prussian_constitutionalism
+		ruling_party_ideology = conservative
+		political_reform = appointed
+		political_reform = harassment
+		political_reform = state_press
+		political_reform = landed_voting
+		add_country_modifier = {
+			name = national_instability
+			duration = 1095
+		}
+		any_pop = {
+			ideology = {
+				value = liberal
+				factor = 0.05
+			}
+			scaled_militancy = {
+				ideology = liberal
+				factor = 6
+			}
+		}
+		any_pop = {
+			ideology = {
+				value = reactionary
+				factor = 0.05
+			}
+			scaled_militancy = {
+				ideology = reactionary
+				factor = 6
+			}
+		}
+		country_event = { id = 1003002 days = 315 }
+		ai_chance = {
+			factor = 30
+		}
+	}
+
+	# The King stands with the Cortes
+	option = {
+		name = "EVTOPTC1003001"
+		set_country_flag = por_vintismo_upheld
+		prestige = -3
+		add_country_modifier = {
+			name = military_strife
+			duration = 1095
+		}
+		add_country_modifier = {
+			name = coup_risk
+			duration = 730
+		}
+		any_pop = {
+			scaled_militancy = {
+				ideology = reactionary
+				factor = 16
+			}
+		}
+		any_pop = {
+			limit = {
+				OR = {
+					type = aristocrats
+					type = clergymen
+					type = officers
+				}
+			}
+			consciousness = 2
+		}
+		relation = { who = AUS value = -15 }
+		relation = { who = RUS value = -15 }
+		relation = { who = FRA value = -15 }
+		relation = { who = ENG value = 10 }
+		country_event = { id = 1003002 days = 330 }
+		ai_chance = {
+			factor = 15
+			modifier = {
+				factor = 2
+				has_country_flag = por_army_purged
+			}
+		}
+	}
+}
+
+# The Abrilada
+country_event = {
+	id = 1003002
+	title = "EVTNAME1003002"
+	desc = "EVTDESC1003002"
+	picture = "DIM_army_disintegration"
+	is_triggered_only = yes
+	major = yes
+	news = yes
+	news_title = "EVTNAME1003002_NEWS_TITLE"
+	news_desc_long = "EVTDESC1003002_NEWS_LONG"
+	news_desc_medium = "EVTDESC1003002_NEWS_MEDIUM"
+	news_desc_short = "EVTDESC1003002_NEWS_SHORT"
+
+	# Refuge aboard the British squadron
+	option = {
+		name = "EVTOPTA1003002"
+		set_country_flag = por_abrilada_done
+		set_country_flag = por_miguel_exiled
+		prestige = -3
+		relation = { who = ENG value = 25 }
+		ENG = { diplomatic_influence = { who = THIS value = 25 } }
+		remove_country_modifier = coup_risk
+		remove_country_modifier = military_strife
+		any_pop = {
+			limit = {
+				OR = {
+					type = aristocrats
+					type = clergymen
+					type = officers
+				}
+			}
+			militancy = 2
+			ideology = {
+				value = reactionary
+				factor = 0.05
+			}
+		}
+		random_country = {
+			limit = {
+				tag = ENG
+				exists = yes
+			}
+			country_event = { id = 1003003 days = 5 }
+		}
+		ai_chance = {
+			factor = 55
+			modifier = {
+				factor = 1.5
+				has_country_flag = por_vintismo_upheld
+			}
+			modifier = {
+				factor = 1.5
+				has_country_flag = por_carta_promised
+			}
+		}
+	}
+
+	# Yield to the Infante
+	option = {
+		name = "EVTOPTB1003002"
+		set_country_flag = por_abrilada_done
+		set_country_flag = por_miguel_ascendant
+		prestige = -5
+		government = absolute_monarchy
+		ruling_party_ideology = reactionary
+		political_reform = appointed
+		political_reform = underground_parties
+		political_reform = state_press
+		political_reform = no_meeting
+		political_reform = none_voting
+		clr_country_flag = liberal_election_win
+		set_country_flag = reactionary_election_win
+		add_country_modifier = {
+			name = conservative_reaction
+			duration = 3650
+		}
+		add_country_modifier = {
+			name = national_instability
+			duration = 1825
+		}
+		relation = { who = ENG value = -25 }
+		relation = { who = FRA value = -15 }
+		any_owned = {
+			limit = {
+				OR = {
+					province_id = 518 #Oporto
+					province_id = 519 #Vila Real
+					province_id = 2134 #Azores
+				}
+			}
+			add_province_modifier = {
+				name = liberal_agitation
+				duration = 1825
+			}
+			any_pop = {
+				ideology = {
+					value = liberal
+					factor = 0.25
+				}
+				scaled_militancy = {
+					ideology = liberal
+					factor = 12
+				}
+			}
+		}
+		ai_chance = {
+			factor = 30
+			modifier = {
+				factor = 1.5
+				has_country_flag = por_absolutism_restored
+			}
+		}
+	}
+
+	# Try the Infante for treason
+	option = {
+		name = "EVTOPTC1003002"
+		set_country_flag = por_abrilada_done
+		set_country_flag = por_miguel_exiled
+		prestige = 3
+		add_country_modifier = {
+			name = national_instability
+			duration = 1095
+		}
+		any_pop = {
+			limit = {
+				OR = {
+					type = aristocrats
+					type = clergymen
+					type = officers
+				}
+			}
+			militancy = 4
+			consciousness = 2
+			ideology = {
+				value = reactionary
+				factor = 0.10
+			}
+		}
+		any_pop = {
+			limit = {
+				NOT = {
+					OR = {
+						type = aristocrats
+						type = clergymen
+						type = officers
+					}
+				}
+			}
+			militancy = -1
+			ideology = {
+				value = liberal
+				factor = 0.05
+			}
+		}
+		relation = { who = AUS value = -25 }
+		ai_chance = {
+			factor = 15
+			modifier = {
+				factor = 2
+				has_country_flag = por_vintismo_upheld
+			}
+			modifier = {
+				factor = 0.25
+				has_country_flag = por_absolutism_restored
+			}
+		}
+	}
+}
+
+# The Squadron in the Tagus
+# FROM is Portugal - fired from 1003002 option A.
+country_event = {
+	id = 1003003
+	title = "EVTNAME1003003"
+	desc = "EVTDESC1003003"
+	picture = "HMS_Resolute"
+	is_triggered_only = yes
+
+	# Guarantee the House of Braganza
+	option = {
+		name = "EVTOPTA1003003"
+		prestige = 2
+		treasury = -5000
+		relation = { who = FROM value = 50 }
+		diplomatic_influence = { who = FROM value = 40 }
+		relation = { who = AUS value = -10 }
+		FROM = {
+			prestige = 2
+			set_country_flag = por_british_guarantee
+		}
+		ai_chance = {
+			factor = 70
+			modifier = {
+				factor = 0.5
+				war = yes
+			}
+		}
+	}
+
+	# Lisbon must settle its own affairs
+	option = {
+		name = "EVTOPTB1003003"
+		prestige = -1
+		relation = { who = FROM value = -10 }
+		FROM = {
+			add_country_modifier = {
+				name = coup_risk
+				duration = 730
+			}
+		}
+		ai_chance = {
+			factor = 30
+		}
+	}
+}
+
+# The Carta Constitucional
+# Only fires where the Vila-Francada left Portugal ruling without the Cortes
+# (1003001 option A or B, 1003002 option B). The branch that kept the
+# constitution (1003001 option C) is already hms_government and never sees it.
+# Both options end in hms_government: without that, every later PORFlavor
+# event gated on hms_government (97000, 97001, 97003, 97020) is dead content.
+country_event = {
+	id = 1003004
+	title = "EVTNAME1003004"
+	desc = "EVTDESC1003004"
+	picture = "Monarchy"
+
+	trigger = {
+		OR = { tag = POR tag = UPB }
+		exists = yes
+		year = 1825
+		NOT = { year = 1836 }
+		has_country_flag = por_charter_granted
+		NOT = { has_country_flag = por_carta_restored }
+		NOT = { has_country_flag = miguelist_usurpation }
+		OR = {
+			government = absolute_monarchy
+			government = absolute_monarchy2
+			government = absolute_monarchy3
+			government = prussian_constitutionalism
+			government = prussian_constitutionalism2
+			government = prussian_constitutionalism3
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 2
+		modifier = {
+			factor = 0.75
+			has_country_flag = por_british_guarantee
+		}
+		modifier = {
+			factor = 0.75
+			has_country_flag = por_miguel_exiled
+		}
+	}
+
+	# Swear the Carta as Dom Pedro wrote it
+	option = {
+		name = "EVTOPTA1003004"
+		set_country_flag = por_carta_restored
+		clr_country_flag = por_absolutism_restored
+		clr_country_flag = reactionary_election_win
+		government = hms_government
+		ruling_party_ideology = conservative
+		political_reform = landed_voting
+		political_reform = appointed
+		political_reform = harassment
+		political_reform = censored_press
+		political_reform = yes_meeting
+		prestige = 2
+		any_owned = {
+			limit = { has_province_modifier = liberal_agitation }
+			remove_province_modifier = liberal_agitation
+		}
+		any_pop = {
+			ideology = {
+				value = conservative
+				factor = 0.10
+			}
+			scaled_militancy = {
+				ideology = liberal
+				factor = -6
+			}
+		}
+		any_pop = {
+			limit = {
+				OR = {
+					type = aristocrats
+					type = clergymen
+					type = officers
+				}
+			}
+			consciousness = 1
+			ideology = {
+				value = reactionary
+				factor = 0.05
+			}
+		}
+		ai_chance = {
+			factor = 65
+			modifier = {
+				factor = 1.5
+				has_country_flag = por_absolutism_restored
+			}
+		}
+	}
+
+	# The Cortes must be summoned again
+	option = {
+		name = "EVTOPTB1003004"
+		set_country_flag = por_carta_restored
+		clr_country_flag = por_absolutism_restored
+		clr_country_flag = reactionary_election_win
+		set_country_flag = liberal_election_win
+		government = hms_government
+		ruling_party_ideology = liberal
+		political_reform = wealth_voting
+		political_reform = state_equal_weight
+		political_reform = non_secret_ballots
+		political_reform = censored_press
+		political_reform = yes_meeting
+		prestige = 3
+		remove_country_modifier = conservative_reaction
+		add_country_modifier = {
+			name = liberal_reaction
+			duration = 1825
+		}
+		any_owned = {
+			limit = { has_province_modifier = liberal_agitation }
+			remove_province_modifier = liberal_agitation
+		}
+		relation = { who = ENG value = 10 }
+		any_pop = {
+			ideology = {
+				value = liberal
+				factor = 0.10
+			}
+			scaled_militancy = {
+				ideology = liberal
+				factor = -8
+			}
+		}
+		any_pop = {
+			limit = {
+				OR = {
+					type = aristocrats
+					type = clergymen
+					type = officers
+				}
+			}
+			militancy = 2
+			consciousness = 2
+			ideology = {
+				value = reactionary
+				factor = 0.10
+			}
+		}
+		ai_chance = {
+			factor = 35
+			modifier = {
+				factor = 2
+				has_country_flag = por_vintismo_upheld
+			}
+			modifier = {
+				factor = 1.5
+				has_country_flag = por_miguel_exiled
+			}
+			modifier = {
+				factor = 0.5
+				ruling_party_ideology = reactionary
+			}
+		}
+	}
+}

@@ -1231,6 +1231,9 @@ country_event = {
 	trigger = {
 		tag = FRA
 		exists = yes
+		# The Fan Affair was 30 April 1827. Floor added so this war cannot
+		# pre-empt the blockade/landing chain in events/FRAAlgiersGVG.txt.
+		year = 1827
 		OR = {
 			has_country_flag = charles_x
 			has_country_flag = july_revolution

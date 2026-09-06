@@ -1,0 +1,31 @@
+EVTNAME1003000;The Revolt in Tras-os-Montes;;;;;;;;;;;;;x
+EVTDESC1003000;The Count of Amarante has raised the royal standard at Vila Real and proclaimed that the Constitution of 1822 was extorted from the King by a faction of Oporto lawyers. Tras-os-Montes is a country of hard hills and harder priests, and the parish clergy have gone over to him almost to a man. The Cortes in Lisbon demand that the rising be crushed before the Spanish frontier is opened to it. The King's household counsels that a rebel pardoned is a rebel disarmed.;;;;;;;;;;;;;x
+EVTOPTA1003000;March on Vila Real and disperse them.;;;;;;;;;;;;;x
+EVTOPTB1003000;Offer the Count a full amnesty.;;;;;;;;;;;;;x
+EVTOPTC1003000;Purge the officer corps of every doubtful name.;;;;;;;;;;;;;x
+EVTNAME1003001;The Vila-Francada;;;;;;;;;;;;;x
+EVTDESC1003001;The Infante Dom Miguel has ridden out of Lisbon to the camp at Vila Franca de Xira, and the regiments of the garrison have followed him. From the camp he proclaims that he has taken up arms not against his father but against the men who hold his father prisoner to a written constitution. The Queen Mother writes to Madrid and to Vienna, while the deputies of the Cortes sit through the night in an empty chamber. Whatever the King says when he rides out to the camp will be the settlement of Portugal.;;;;;;;;;;;;;x
+EVTNAME1003001_NEWS_TITLE;The Army Declares at Vila Franca;;;;;;;;;;;;;x
+EVTDESC1003001_NEWS_LONG;The garrison regiments of Lisbon have marched out to the camp of Vila Franca de Xira behind the Infante Dom Miguel, who declares that the King is held captive by the Cortes and that the Constitution of 1822 must answer for it. The deputies have been left with an empty capital and no soldiers. Observers in every European capital now wait to hear what terms His Most Faithful Majesty accepts when he reaches the camp, for on that hour turns the whole settlement of the Portuguese monarchy.;;;;;;;;;;;;;x
+EVTDESC1003001_NEWS_MEDIUM;The Lisbon garrison has marched out to Vila Franca behind the Infante Dom Miguel, who declares the King a prisoner of the Cortes. The capital is left without soldiers and the deputies without a guard.;;;;;;;;;;;;;x
+EVTDESC1003001_NEWS_SHORT;The Lisbon garrison declares for the Infante at Vila Franca.;;;;;;;;;;;;;x
+EVTOPTA1003001;The Constitution of 1822 is dissolved.;;;;;;;;;;;;;x
+EVTOPTB1003001;A charter shall be granted from the throne.;;;;;;;;;;;;;x
+EVTOPTC1003001;The King stands with the Cortes.;;;;;;;;;;;;;x
+EVTNAME1003002;The Abrilada;;;;;;;;;;;;;x
+EVTDESC1003002;In April the Infante takes the capital a second time. Troops seize the gates, the ministers are arrested in their houses, and the King is confined in the Bemposta palace on the pretext of a plot against his life. It is now plain to the whole diplomatic corps that the son intends to govern in the father's name. The British minister has a boat waiting on the Tagus and a ship of the line lies at anchor with her guns run out, while Vienna, for its part, would receive an exiled Infante with sympathy.;;;;;;;;;;;;;x
+EVTNAME1003002_NEWS_TITLE;The King Confined at the Bemposta;;;;;;;;;;;;;x
+EVTDESC1003002_NEWS_LONG;Troops loyal to the Infante Dom Miguel have seized the gates of Lisbon, arrested the ministers in their beds and shut His Most Faithful Majesty within the palace of the Bemposta, alleging a conspiracy against the royal person that no one outside the palace guard believes exists. The foreign ministers have gathered at the British legation and boats have been seen putting out towards the squadron in the Tagus. Europe is asked to decide whether a son who imprisons his father is the guardian of the throne or a usurper of it.;;;;;;;;;;;;;x
+EVTDESC1003002_NEWS_MEDIUM;Troops of the Infante Dom Miguel hold the gates of Lisbon and the King is shut up in the Bemposta palace. The foreign ministers have gathered at the British legation and boats are putting out to the squadron in the Tagus.;;;;;;;;;;;;;x
+EVTDESC1003002_NEWS_SHORT;The Infante's troops hold Lisbon and the King is confined.;;;;;;;;;;;;;x
+EVTOPTA1003002;Take refuge aboard the British squadron.;;;;;;;;;;;;;x
+EVTOPTB1003002;Yield the government to the Infante.;;;;;;;;;;;;;x
+EVTOPTC1003002;Arraign the Infante for treason.;;;;;;;;;;;;;x
+EVTNAME1003003;The Squadron in the Tagus;;;;;;;;;;;;;x
+EVTDESC1003003;His Most Faithful Majesty is aboard one of our ships of the line in the Tagus, having been carried out to her from the Bemposta stairs by his own ministers and ours. The Treaty of Windsor is four and a half centuries old and Portugal is the oldest ally this country possesses, while the port trade of Oporto is very nearly an English industry. Yet to guarantee the House of Braganza is to place a British squadron between a king and his son, and to answer to Vienna and to Madrid for having done so.;;;;;;;;;;;;;x
+EVTOPTA1003003;Guarantee the House of Braganza.;;;;;;;;;;;;;x
+EVTOPTB1003003;Lisbon must settle its own affairs.;;;;;;;;;;;;;x
+EVTNAME1003004;The Carta Constitucional;;;;;;;;;;;;;x
+EVTDESC1003004;Since the Vila-Francada the crown has governed by decree, with no Cortes sitting and the press answering to the palace. Now the charter drawn up in Rio de Janeiro has arrived in Lisbon: a chamber of deputies, a chamber of peers named by the King, and a throne bound by written law. The court party would have it sworn exactly as it stands, hedged about with a narrow franchise that leaves the countryside to the landlords. The men of 1820, back from prison or from exile, answer that a charter granted from above is worth nothing unless the electors are those who elected the Constituent Cortes. Both know that Dom Miguel and his mother are watching from abroad, and that whatever is sworn now must be defended later.;;;;;;;;;;;;;x
+EVTOPTA1003004;Swear the Carta as Dom Pedro wrote it.;;;;;;;;;;;;;x
+EVTOPTB1003004;The Cortes must be summoned on the old franchise.;;;;;;;;;;;;;x

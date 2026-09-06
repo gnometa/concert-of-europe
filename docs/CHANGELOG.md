@@ -3,6 +3,75 @@
 Notable changes to the mod, newest first. One line per change; file names where they help.
 Audit reports live in `docs/audit/`, design notes in `docs/design/`.
 
+## 2026-09-06 (later) - eight new 1821-1836 chains
+
+Third content wave, filling every remaining "missing" row in `docs/design/1821-1836-coverage.md`.
+Built by eight parallel agents, one chain each, then adversarially reviewed and fixed: 46 review
+findings (4 high, 21 medium, 21 low). Only the 25 high/medium went to a fix stage; the lows are
+recorded in the reviews, not applied. Static checks and `gametest.ps1` pass; **none of it has been
+played in a running game.**
+
+### New chains
+
+| File | ids | Chain |
+|---|---|---|
+| `events/FRAAlgiersGVG.txt` | 1002500-1002504 | Conquest of Algiers 1827-1834 - blockade, Sidi Ferruch, the occupation debate |
+| `events/POLNovemberGVG.txt` | 1002600-1002605 | November Uprising 1830-1832 - dethronement, Ostroleka, the Organic Statute, Prussian mobilisation |
+| `events/SPACarlistGVG.txt` | 1002700-1002705 | First Carlist War 1830-1840 - dates the undated legacy `SPAFlavor.txt` 37710-37717 chain |
+| `events/ARGFederalGVG.txt` | 1002800-1002804 | Unitarian-federal wars 1828-1835 - the Federal Pact, Rosas, the Desert Campaign |
+| `events/PEUConfederationGVG.txt` | 1002900-1002907 | Peru-Bolivian Confederation 1835-1839 - Santa Cruz to Yungay |
+| `events/PORVilaFrancadaGVG.txt` | 1003000-1003004 | Vila-Francada and the Abrilada 1823-1826 - hands off to `PORMiguelistGVG` |
+| `events/MEXCentralistGVG.txt` | 1003100-1003104 | Centralist turn 1833-1836 - Gomez Farias, Plan de Cuernavaca, the Siete Leyes |
+| `events/DENEstatesGVG.txt` | 1003200-1003204 | 1813 bankruptcy aftermath, Lornsen, the 1831 provincial estates |
+
+Each chain has its own localisation csv (`localisation/GVG_<chain>.csv`), so no two agents wrote to
+the same file. Ranges registered in `events/GVG Event IDs.txt`.
+
+### Shared files (merged once, after the run)
+
+- `common/event_modifiers.txt`: 10 new modifiers - `algiers_blockade`, `armee_dafrique`,
+  `british_legion`, `basque_fueros`, `federal_pact`, `unitarian_league`, `suma_del_poder_publico`,
+  `pampa_frontier`, `siete_leyes`, `danish_provincial_estates`. All localised (`refcheck defs` = 0).
+- `docs/design/1821-1836-coverage.md`: status column re-verified. It had been stale since 03:34 -
+  it still listed the whole second wave as "missing". 32 rows corrected; 0 "missing" rows remain.
+  Still partial: Rhenish industrial take-off, Sweden-Norway union, Morea/Navarino Egyptian branch,
+  and the 1820-21 Piedmontese and Neapolitan risings (covered only by the shared Carbonari event
+  `ITARisingsGVG.txt:1001100`).
+
+### Legacy files touched (minimal, for handoff only)
+
+- `events/FRAFlavor.txt`: event 37234 (The Fan Affair) given a `year = 1827` floor. It was live from
+  1824 with a 48-month MTTH, so it could fire years before the Algiers chain that now follows it.
+- `events/PORFlavor.txt`: four handoff edits - 97030 (Death of John VI) now waits for the
+  Vila-Francada chain to resolve; `ai_chance` modifiers on its two options keyed to the new flags;
+  and the Miguelist war event now requires `miguelist_usurpation` rather than merely an absolutist
+  government, because the new chain can leave POR absolutist without a civil war.
+- `localisation/GVG_algiers.csv`: `EVTDESC1002500` reworded post-review. It opened by narrating the
+  fly-whisk incident, which is event 37234's own scene, and 1002500 fires first (MTTH 6 months vs
+  48), so the player met the insult twice and out of order.
+
+### Design notes
+
+Eight new notes under `docs/design/`, in the `java-war.md` format: `algiers-1830.md`,
+`november-uprising-1830.md`, `carlist-war-1833.md`, `platine-civil-wars-1828.md`,
+`peru-bolivian-confederation-1836.md`, `vila-francada-1823.md`,
+`mexican-centralist-turn-1834.md`, `denmark-1831-estates.md`.
+
+### Baselines after the wave
+
+`modcheck ids` 1 duplicate (pre-existing 300999), `refcheck` events 14 / loc 2 / defs 0 / flags 113 /
+options 8, `gfxtool missing` silent, `audit_pacing` 0 narrow-window and 28 runaway repeaters,
+`audit_religion check` 0, CWTools 14 warnings - all unchanged from the accepted baseline.
+`audit_decisions` reports 1 high (`greater_rio_grande` in `decisions/Mexican Minors.txt`), which is
+pre-existing and unrelated to this wave - `add_core = RGR` at country scope does nothing; it needs a
+province scope. It is not in the accepted baseline, so it is a real open regression.
+
+`audit_fire_once` moves 124 -> 125: the new entry is `PORVilaFrancadaGVG.txt` 1003000, class A
+(`OR(POR,UPB)`, one nation under two tags) and reported GUARDED. Benign drift, not a defect.
+
+`docs/audit/common.md` and `docs/audit/localisation.md` show diffs because their audit scripts
+regenerate their reports on every run.
+
 ## 2026-09-06 — dead-flag sweep, trigger cost and localisation terminators
 
 Follow-up pass on the `/analyze` findings. Nothing here has been tested in a running game.

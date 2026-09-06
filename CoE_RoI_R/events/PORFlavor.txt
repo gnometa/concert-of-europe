@@ -1897,6 +1897,11 @@ country_event = {
 			year = 1836
 			war_with = BRZ
 		}
+		# Vila-Francada chain (PORVilaFrancadaGVG.txt 1003000-1003002) must resolve first
+		OR = {
+			NOT = { has_country_flag = por_vintismo_challenged }
+			has_country_flag = por_abrilada_done
+		}
 	}
 	
 	mean_time_to_happen = {
@@ -1950,6 +1955,9 @@ country_event = {
 		}
 		ai_chance = {
 			factor = 80
+			modifier = { factor = 1.5 has_country_flag = por_miguel_exiled }
+			modifier = { factor = 1.5 has_country_flag = por_british_guarantee }
+			modifier = { factor = 0.25 has_country_flag = por_miguel_ascendant }
 		}
 	}
 	
@@ -2003,6 +2011,8 @@ country_event = {
 		}
 		ai_chance = {
 			factor = 20
+			modifier = { factor = 8 has_country_flag = por_miguel_ascendant }
+			modifier = { factor = 0.25 has_country_flag = por_miguel_exiled }
 		}
 	}
 }
@@ -2024,6 +2034,7 @@ country_event = {
 		POR = {
 			exists = yes
 			OR = { government = absolute_monarchy government = absolute_monarchy2 government = absolute_monarchy3 }
+			has_country_flag = miguelist_usurpation #not merely absolutist: PORVilaFrancadaGVG.txt can leave POR absolutist without a civil war
 		}
 		NOT = {
 			year = 1836

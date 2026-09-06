@@ -1,0 +1,564 @@
+#########################################################
+#                                                       #
+#   The November Uprising, 1830-1832 (GVG)              #
+#   ids 1002600-1002605                                 #
+#                                                       #
+#   Fills the gaps in the PDM chain in RUSFlavor.txt    #
+#   (95070 outbreak + release_vassal + war, 95071 the   #
+#   CPL notice, 95072 the Great Power reaction, 95073   #
+#   the Organic Statute). The outbreak, the Great       #
+#   Power reaction and the Organic Statute are NOT      #
+#   re-scripted here. Everything below hangs off        #
+#   RUS = { has_country_flag = cpl_uprising }, so it    #
+#   can never fire without 95070 and cannot duplicate   #
+#   it.                                                 #
+#                                                       #
+#########################################################
+
+# The Dictatorship of Chlopicki
+country_event = {
+	id = 1002600
+	title = "EVTNAME1002600"
+	desc = "EVTDESC1002600"
+	picture = "streetriot"
+
+	trigger = {
+		tag = CPL
+		exists = yes
+		RUS = { has_country_flag = cpl_uprising }
+		year = 1830
+		NOT = { year = 1833 }
+		NOT = { has_country_flag = november_dictatorship }
+	}
+
+	mean_time_to_happen = {
+		months = 1
+		modifier = {
+			factor = 0.75
+			war_with = RUS
+		}
+	}
+
+	# Chlopicki takes dictatorial powers and sends envoys to Petersburg
+	option = {
+		name = "EVTOPTA1002600"
+		set_country_flag = november_dictatorship
+		set_country_flag = november_chlopicki
+		prestige = -1
+		relation = { who = RUS value = 50 }
+		add_country_modifier = {
+			name = military_strife
+			duration = 180
+		}
+		any_pop = {
+			limit = {
+				OR = {
+					type = aristocrats
+					type = officers
+				}
+			}
+			militancy = -2
+		}
+		any_pop = {
+			limit = {
+				OR = {
+					type = artisans
+					type = clergymen
+				}
+			}
+			consciousness = 1
+		}
+		country_event = { id = 1002601 days = 57 }
+		ai_chance = {
+			factor = 35
+			modifier = {
+				factor = 2
+				ruling_party_ideology = conservative
+			}
+		}
+	}
+
+	# The Patriotic Society arms the nation
+	option = {
+		name = "EVTOPTB1002600"
+		set_country_flag = november_dictatorship
+		set_country_flag = november_levy
+		prestige = 2
+		treasury = -1000
+		add_country_modifier = {
+			name = small_country_draft
+			duration = 730
+		}
+		any_pop = {
+			militancy = 2
+			consciousness = 1
+		}
+		country_event = { id = 1002601 days = 30 }
+		ai_chance = {
+			factor = 65
+			modifier = {
+				factor = 2
+				average_militancy = 4
+			}
+		}
+	}
+}
+
+# The Act of Dethronement, 25 January 1831
+country_event = {
+	id = 1002601
+	title = "EVTNAME1002601"
+	desc = "EVTDESC1002601"
+	picture = "polski_sejm"
+	is_triggered_only = yes
+	major = yes
+	news = yes
+	news_title = "EVTNAME1002601_NEWS_TITLE"
+	news_desc_long = "EVTDESC1002601_NEWS_LONG"
+	news_desc_medium = "EVTDESC1002601_NEWS_MEDIUM"
+	news_desc_short = "EVTDESC1002601_NEWS_SHORT"
+
+	# The Sejm declares the House of Romanov deposed
+	option = {
+		name = "EVTOPTA1002601"
+		set_country_flag = november_dethronement
+		prestige = 5
+		any_pop = {
+			militancy = -3
+			consciousness = 2
+		}
+		RUS = {
+			any_owned = {
+				limit = {
+					is_core = LIT
+				}
+				add_province_modifier = {
+					name = patriot_uprising
+					duration = 365
+				}
+			}
+		}
+		random_country = {
+			limit = {
+				tag = PRU
+				exists = yes
+			}
+			country_event = { id = 1002602 days = 20 }
+		}
+		ai_chance = {
+			factor = 85
+		}
+	}
+
+	# Czartoryski: declare the throne vacant and offer it to Europe
+	option = {
+		name = "EVTOPTB1002601"
+		set_country_flag = november_dethronement
+		set_country_flag = november_crown_offered
+		prestige = 1
+		any_greater_power = {
+			limit = {
+				NOT = { tag = RUS }
+				NOT = { tag = TUR }
+			}
+			relation = { who = CPL value = 20 }
+		}
+		any_pop = {
+			limit = {
+				OR = {
+					type = aristocrats
+					type = bureaucrats
+				}
+			}
+			militancy = -1
+		}
+		any_pop = {
+			limit = {
+				OR = {
+					type = soldiers
+					type = artisans
+				}
+			}
+			militancy = 1
+			consciousness = 1
+		}
+		add_country_modifier = {
+			name = fight_the_power
+			duration = 365
+		}
+		random_country = {
+			limit = {
+				tag = PRU
+				exists = yes
+			}
+			country_event = { id = 1002602 days = 40 }
+		}
+		ai_chance = {
+			factor = 15
+		}
+	}
+}
+
+# The Posen Cordon
+country_event = {
+	id = 1002602
+	title = "EVTNAME1002602"
+	desc = "EVTDESC1002602"
+	picture = "patrol"
+	is_triggered_only = yes
+
+	# Seal the frontier and open the magazines to the Tsar
+	option = {
+		name = "EVTOPTA1002602"
+		treasury = -2000
+		relation = { who = RUS value = 50 }
+		relation = { who = CPL value = -50 }
+		any_owned = {
+			limit = {
+				is_core = PZN
+			}
+			add_province_modifier = {
+				name = nationalist_agitation
+				duration = 730
+			}
+		}
+		ai_chance = {
+			factor = 60
+			modifier = {
+				factor = 2
+				government = absolute_monarchy
+			}
+			modifier = {
+				factor = 2
+				alliance_with = RUS
+			}
+		}
+	}
+
+	# Strict neutrality
+	option = {
+		name = "EVTOPTB1002602"
+		prestige = 1
+		relation = { who = RUS value = -10 }
+		relation = { who = CPL value = 10 }
+		any_owned = {
+			limit = {
+				is_core = PZN
+			}
+			add_province_modifier = {
+				name = nationalist_agitation
+				duration = 365
+			}
+		}
+		ai_chance = {
+			factor = 30
+		}
+	}
+
+	# Look away while the powder crosses at Kalisz
+	option = {
+		name = "EVTOPTC1002602"
+		set_country_flag = posen_smuggling
+		prestige = -2
+		badboy = 1
+		relation = { who = RUS value = -50 }
+		random_country = {
+			limit = {
+				tag = CPL
+				exists = yes
+			}
+			war_exhaustion = -2
+			relation = { who = PRU value = 50 }
+		}
+		any_owned = {
+			limit = {
+				is_core = PZN
+			}
+			add_province_modifier = {
+				name = nationalist_agitation
+				duration = 1095
+			}
+		}
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 0
+				alliance_with = RUS
+			}
+			modifier = {
+				factor = 2
+				CPL = { has_country_flag = november_crown_offered }
+			}
+		}
+	}
+}
+
+# Ostroleka, 26 May 1831
+country_event = {
+	id = 1002603
+	title = "EVTNAME1002603"
+	desc = "EVTDESC1002603"
+	picture = "Artillery"
+
+	trigger = {
+		tag = CPL
+		exists = yes
+		war_with = RUS
+		has_country_flag = november_dethronement
+		NOT = { has_country_flag = november_ostroleka }
+		NOT = { has_country_flag = november_warsaw_fallen }
+		year = 1831
+		NOT = { year = 1833 }
+	}
+
+	mean_time_to_happen = {
+		months = 2
+		modifier = {
+			factor = 0.75
+			has_country_flag = november_levy
+		}
+		modifier = {
+			factor = 1.25
+			has_country_flag = november_chlopicki
+		}
+	}
+
+	# Break off in good order and save the cadre
+	option = {
+		name = "EVTOPTA1002603"
+		set_country_flag = november_ostroleka
+		prestige = -3
+		war_exhaustion = 3
+		any_pop = {
+			limit = {
+				type = soldiers
+			}
+			militancy = 1
+		}
+		any_owned = {
+			add_province_modifier = {
+				name = war_torn
+				duration = 730
+			}
+		}
+		ai_chance = {
+			factor = 60
+		}
+	}
+
+	# Throw in the last reserves and bleed Diebitsch white
+	option = {
+		name = "EVTOPTB1002603"
+		set_country_flag = november_ostroleka
+		prestige = 1
+		war_exhaustion = 6
+		any_pop = {
+			militancy = 2
+		}
+		add_country_modifier = {
+			name = military_collapse
+			duration = 730
+		}
+		random_country = {
+			limit = {
+				tag = RUS
+				exists = yes
+			}
+			war_exhaustion = 2
+			prestige = -1
+		}
+		ai_chance = {
+			factor = 40
+		}
+	}
+}
+
+# The Storming of Wola and the Fall of Warsaw
+country_event = {
+	id = 1002604
+	title = "EVTNAME1002604"
+	desc = "EVTDESC1002604"
+	picture = "slaughter"
+	major = yes
+	news = yes
+	news_title = "EVTNAME1002604_NEWS_TITLE"
+	news_desc_long = "EVTDESC1002604_NEWS_LONG"
+	news_desc_medium = "EVTDESC1002604_NEWS_MEDIUM"
+	news_desc_short = "EVTDESC1002604_NEWS_SHORT"
+
+	trigger = {
+		tag = CPL
+		exists = yes
+		war_with = RUS
+		has_country_flag = november_dethronement
+		NOT = { has_country_flag = november_warsaw_fallen }
+		year = 1831
+		NOT = { year = 1834 }
+		RUS = { controls = 706 } #Warsaw
+	}
+
+	mean_time_to_happen = {
+		months = 1
+	}
+
+	# Krukowiecki treats with Paskevich
+	option = {
+		name = "EVTOPTA1002604"
+		set_country_flag = november_warsaw_fallen
+		prestige = -5
+		any_pop = {
+			militancy = -2
+		}
+		random_country = {
+			limit = {
+				tag = RUS
+				exists = yes
+			}
+			set_country_flag = november_capitulation
+			end_war = CPL
+			create_vassal = CPL
+			war_exhaustion = -3
+		}
+		ai_chance = {
+			factor = 70
+			modifier = {
+				factor = 2
+				war_exhaustion = 25
+			}
+		}
+	}
+
+	# The Sejm withdraws to Plock and the war goes on
+	option = {
+		name = "EVTOPTB1002604"
+		set_country_flag = november_warsaw_fallen
+		prestige = 2
+		war_exhaustion = 5
+		any_pop = {
+			militancy = 3
+			consciousness = 2
+		}
+		any_owned = {
+			add_province_modifier = {
+				name = patriot_uprising
+				duration = 730
+			}
+		}
+		random_owned = {
+			limit = {
+				owner = {
+					NOT = { has_country_modifier = military_collapse }
+				}
+			}
+			owner = {
+				add_country_modifier = {
+					name = military_collapse
+					duration = 365
+				}
+			}
+		}
+		random_country = {
+			limit = {
+				tag = RUS
+				exists = yes
+			}
+			war_exhaustion = 2
+		}
+		ai_chance = {
+			factor = 30
+			modifier = {
+				factor = 2
+				PRU = { has_country_flag = posen_smuggling }
+			}
+		}
+	}
+}
+
+# The Great Emigration
+country_event = {
+	id = 1002605
+	title = "EVTNAME1002605"
+	desc = "EVTDESC1002605"
+	picture = "emigration"
+
+	trigger = {
+		tag = RUS
+		has_country_flag = cpl_uprising
+		NOT = { war_with = CPL }
+		# The rising must actually have been put down - same gate as PDM 95073.
+		OR = {
+			NOT = { exists = CPL }
+			CPL = { vassal_of = THIS }
+			AND = {
+				exists = CPL
+				truce_with = CPL
+			}
+		}
+		NOT = { has_country_flag = great_emigration }
+		year = 1831
+		NOT = { year = 1836 }
+	}
+
+	mean_time_to_happen = {
+		months = 3
+		modifier = {
+			factor = 0.75
+			has_country_flag = november_capitulation
+		}
+	}
+
+	# Confiscation, courts-martial and the road to Siberia
+	option = {
+		name = "EVTOPTA1002605"
+		set_country_flag = great_emigration
+		prestige = 2
+		treasury = 5000
+		any_pop = {
+			limit = {
+				culture = polish
+			}
+			consciousness = 2
+			militancy = 1
+		}
+		any_country = {
+			limit = {
+				OR = {
+					tag = FRA
+					tag = ENG
+				}
+				exists = yes
+			}
+			relation = { who = RUS value = -25 }
+		}
+		# nicholas_reaction is owned by PDM 95073 (The Organic Statute), which
+		# fires in the same window for 3650 days. Applying it here as well only
+		# races 95073 and shortens the reaction, so it is deliberately absent.
+		ai_chance = {
+			factor = 75
+			modifier = {
+				factor = 2
+				has_country_flag = november_capitulation
+			}
+		}
+	}
+
+	# Let them go, and amnesty those who stayed
+	option = {
+		name = "EVTOPTB1002605"
+		set_country_flag = great_emigration
+		prestige = -2
+		treasury = -2000
+		any_pop = {
+			limit = {
+				culture = polish
+			}
+			militancy = -4
+			consciousness = -1
+		}
+		relation = { who = FRA value = 10 }
+		relation = { who = ENG value = 10 }
+		ai_chance = {
+			factor = 25
+		}
+	}
+}

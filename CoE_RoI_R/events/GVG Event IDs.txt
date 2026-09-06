@@ -25,6 +25,14 @@
 #1002200-1002299: WarResolutionsGVG (resolutions for wars stuck at the 1821 start; see docs/audit/start-wars.md; 1002200-1002201 used, Massina Jihad)
 #1002300-1002399: AFGWarGVG (1838-1842 First Anglo-Afghan War, the Simla Manifesto, the retreat from Kabul and the Army of Retribution; 1002300-1002303 used)
 #1002400-1002499: RUSKazakhGVG (1847-1858 Eset Kotibaruli's revolt in the Younger Zhuz, completing the Kazakh chain in RUSFlavor.txt; 1002400 used)
+#1002500-1002599: FRAAlgiersGVG (1827-1834 Fan Affair aftermath, the blockade, the 1830 landing at Sidi Ferruch and the occupation debate; 1002500-1002504 used)
+#1002600-1002699: POLNovemberGVG (1830-1832 November Uprising, the dethronement of Nicholas, Ostroleka, the Organic Statute and the Great Emigration; CPL/RUS/PRU; 1002600-1002605 used)
+#1002700-1002799: SPACarlistGVG (1830-1840 Pragmatic Sanction, death of Ferdinand VII, the First Carlist War and Vergara; dates the legacy SPAFlavor.txt 37710-37717 chain; 1002700-1002705 used)
+#1002800-1002899: ARGFederalGVG (1828-1835 unitarian-federal wars, the Federal Pact, Rosas and the Desert Campaign; 1002800-1002804 used)
+#1002900-1002999: PEUConfederationGVG (1835-1839 Peru-Bolivian Confederation, Santa Cruz, the War of the Confederation and Yungay; 1002900-1002907 used)
+#1003000-1003099: PORVilaFrancadaGVG (1823-1826 Vila-Francada, the Abrilada and the Carta Constitucional; hands off to PORMiguelistGVG 1001000+; 1003000-1003004 used)
+#1003100-1003199: MEXCentralistGVG (1833-1836 Gomez Farias reforms, the Plan de Cuernavaca and the Siete Leyes; 1003100-1003104 used)
+#1003200-1003299: DENEstatesGVG (1821-1836 aftermath of the 1813 bankruptcy, Lornsen, and the 1831 provincial estates; 1003200-1003204 used)
 #
 #Reserved, currently unused (the files that defined them were 100% commented out
 #and were deleted 2026-09-06; recover them from git history if the system is revived):

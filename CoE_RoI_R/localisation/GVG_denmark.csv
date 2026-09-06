@@ -1,0 +1,34 @@
+EVTNAME1003200;The Shadow of the Statsbankerot;;;;;;;;;;;;;x
+EVTDESC1003200;The state bankruptcy of 1813 is eight years behind us and the Nationalbank has been note-issuing since 1818, yet the rigsbankdaler still stands far below its silver value and the grain that pays for everything fetches less each harvest. The Rentekammer sets out the choice plainly. We may deflate until the daler is worth its face in silver, we may take the mortgages of the ruined estate owners onto the Crown, or we may send assessors into the parishes and tax the land as it now stands.;;;;;;;;;;;;;x
+EVTOPTA1003200;The daler shall be worth its silver;;;;;;;;;;;;;x
+EVTOPTB1003200;Relieve the mortgages of the landowners;;;;;;;;;;;;;x
+EVTOPTC1003200;Send the assessors into the parishes;;;;;;;;;;;;;x
+EVTNAME1003201;Uwe Jens Lornsen and the Pamphlet;;;;;;;;;;;;;x
+EVTDESC1003201;In November the Landvogt of Sylt, Uwe Jens Lornsen, has published a pamphlet on the constitutional question in Schleswig and Holstein. He asks for one constitution and one assembly for the two duchies together, under our crown but not under our chancery. Copenhagen calls it sedition. The knighthood of Holstein, which has petitioned for its old estates since the Congress of Vienna, calls it common sense.;;;;;;;;;;;;;x
+EVTOPTA1003201;The Landvogt belongs in the fortress;;;;;;;;;;;;;x
+EVTOPTB1003201;Receive the knighthood of Holstein;;;;;;;;;;;;;x
+EVTNAME1003201_NEWS_TITLE;Pamphlet Seized in the Duchies;;;;;;;;;;;;;x
+EVTDESC1003201_NEWS_LONG;A pamphlet by Uwe Jens Lornsen, Landvogt of Sylt, demanding a single constitution and a single assembly for Schleswig and Holstein together, has been circulating in Kiel and Flensburg since November. The Danish chancery has moved against the printers. Whether the author answers in a fortress cell or at court is now the question of the duchies.;;;;;;;;;;;;;x
+EVTDESC1003201_NEWS_MEDIUM;Uwe Jens Lornsen has asked in print for one constitution and one assembly for Schleswig and Holstein. Copenhagen has moved against the printers.;;;;;;;;;;;;;x
+EVTDESC1003201_NEWS_SHORT;Lornsen pamphlet stirs the duchies.;;;;;;;;;;;;;x
+EVTNAME1003202;The Rescript of 28 May 1831;;;;;;;;;;;;;x
+EVTDESC1003202;The July days in Paris and the risings in Brunswick and Saxony have made the German Confederation ask what Holstein, one of its members, has by way of estates. The answer is nothing, and the Diet at Frankfurt is entitled to notice. The chancery has drafted a rescript establishing four consultative assemblies of landowners, at Roskilde for the islands, at Viborg for Norrejylland, at Slesvig and at Itzehoe. They would advise and petition. They would not legislate, and the King would still appoint every minister.;;;;;;;;;;;;;x
+EVTOPTA1003202;Let the four estates be summoned;;;;;;;;;;;;;x
+EVTOPTB1003202;The King consults whom he pleases;;;;;;;;;;;;;x
+EVTNAME1003203;The Estates Assemble;;;;;;;;;;;;;x
+EVTDESC1003203;The assembly for the islands has opened at Roskilde and that for Norrejylland at Viborg, with Slesvig and Itzehoe to follow. The members are landowners elected on a property qualification and they have arrived with petitions rather than demands: parish schools, the poor law, the tolls on the Sound, the state of the roads. What the Crown does with the first session will decide whether these are advisory bodies or ornaments.;;;;;;;;;;;;;x
+EVTOPTA1003203;Let them petition, and answer them;;;;;;;;;;;;;x
+EVTOPTB1003203;They may advise, and no more;;;;;;;;;;;;;x
+EVTNAME1003203_NEWS_TITLE;The Estates Sit at Roskilde;;;;;;;;;;;;;x
+EVTDESC1003203_NEWS_LONG;The provincial estates of the islands have opened their first session at Roskilde and those of Norrejylland at Viborg. The elected landowners have brought petitions on schools, the poor law and the roads. Observers in Copenhagen note that a Danish assembly has met in public for the first time in five generations, and that the debates are being printed.;;;;;;;;;;;;;x
+EVTDESC1003203_NEWS_MEDIUM;The provincial estates have opened at Roskilde and Viborg with petitions on schools, the poor law and the roads.;;;;;;;;;;;;;x
+EVTDESC1003203_NEWS_SHORT;First sitting of the Danish estates.;;;;;;;;;;;;;x
+EVTNAME1003204;The Petition of the Landowners;;;;;;;;;;;;;x
+EVTDESC1003204;The refusal of 1831 has not settled the question. A petition signed by landowners of Jutland and the islands, and echoed from Kiel, asks again for consultative estates and points out that every other German prince has now conceded them. The censors can seize the printed sheets but they cannot seize the signatures, and the Rentekammer observes that these are the same men whose credit carried the Crown through the bankruptcy years.;;;;;;;;;;;;;x
+EVTOPTA1003204;Relent, the estates shall meet;;;;;;;;;;;;;x
+EVTOPTB1003204;Order is kept, and the petition refused;;;;;;;;;;;;;x
+danish_provincial_estates;Provincial Estates;;;;;;;;;;;;;x
+EVTNAME1003202_NEWS_TITLE;The Question of the Estates in Copenhagen;;;;;;;;;;;;;x
+EVTDESC1003202_NEWS_LONG;The German Diet at Frankfurt has asked what estates Holstein, one of its members, possesses. The chancery has laid before Frederick VI a rescript that would establish four consultative assemblies of landowners, at Roskilde for the islands, at Viborg for Norrejylland, at Slesvig and at Itzehoe. Such assemblies would advise the Crown and receive petitions, but they would not legislate, and the King would still appoint every minister. Copenhagen waits on the royal decision.;;;;;;;;;;;;;x
+EVTDESC1003202_NEWS_MEDIUM;A rescript establishing consultative estates at Roskilde, Viborg, Slesvig and Itzehoe lies before Frederick VI. Whether the King will sign it is not yet known.;;;;;;;;;;;;;x
+EVTDESC1003202_NEWS_SHORT;Copenhagen weighs provincial estates.;;;;;;;;;;;;;x
