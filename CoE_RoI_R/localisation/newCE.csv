@@ -66,35 +66,35 @@ expel_the_cherokee_title;Expel the Cherokee;;;;;;;;;;;;;x
 expel_the_cherokee_desc;During our war of independence, the Cherokee decided to stay neutral. However, there exists the concern they may conspire behind our backs with the local Tejanos to help Mexico place us under their control again. In addition, they occupy land which we could use to invite more settlers from the United States. They've already dealt with their own native populations by confining them in reservations, which happened to be across our northern border. We should do the same with our own, and send them there as well. They will oppose this, naturally, and even fight us. However, we are confident we will have no problem forcing them to move.;;;;;;;;;;;;;x
 the_port_of_novorossiysk_title;The Port of Novorossiysk;;;;;;;;;;;;;x
 the_port_of_novorossiysk_desc;After our conquest of Sudjuk-Kale, an Ottoman port, we've been thinking of rebuilding it to suit our needs an change the name to something more Russian. We'll have to redirect all our naval building efforts in the region towards it.;;;;;;;;;;;;x;
-aim_of_byzantine_conquest;Aim of Byzantine conquest;;;;;;;;;;;;;
-aim_of_byzantine_conquest_desc;This province is the current target of the Byzantine expansion;;;;;;;;;;;;;
-RGO_education_0;Local Development 0%;;;;;;;;;;;;;
-RGO_education_1;Local Development 10%;;;;;;;;;;;;;
-RGO_education_2;Local Development 20%;;;;;;;;;;;;;
-RGO_education_3;Local Development 30%;;;;;;;;;;;;;
-RGO_education_4;Local Development 40%;;;;;;;;;;;;;
-RGO_education_5;Local Development 50%;;;;;;;;;;;;;
-RGO_education_6;Local Development 60%;;;;;;;;;;;;;
-RGO_education_7;Local Development 70%;;;;;;;;;;;;;
-RGO_education_8;Local Development 80%;;;;;;;;;;;;;
-RGO_education_9;Local Development 90%;;;;;;;;;;;;;
-RGO_education_10;Local Development 100%;;;;;;;;;;;;;
-settlement_colony;Settlement Colony;;;;;;;;;;;;;
-exploitation_colony;Exploitation Colony;;;;;;;;;;;;;
-southern_plantations;Southern Plantations;;;;;;;;;;;;;
+aim_of_byzantine_conquest;Aim of Byzantine conquest;;;;;;;;;;;;;x
+aim_of_byzantine_conquest_desc;This province is the current target of the Byzantine expansion;;;;;;;;;;;;;x
+RGO_education_0;Local Development 0%;;;;;;;;;;;;;x
+RGO_education_1;Local Development 10%;;;;;;;;;;;;;x
+RGO_education_2;Local Development 20%;;;;;;;;;;;;;x
+RGO_education_3;Local Development 30%;;;;;;;;;;;;;x
+RGO_education_4;Local Development 40%;;;;;;;;;;;;;x
+RGO_education_5;Local Development 50%;;;;;;;;;;;;;x
+RGO_education_6;Local Development 60%;;;;;;;;;;;;;x
+RGO_education_7;Local Development 70%;;;;;;;;;;;;;x
+RGO_education_8;Local Development 80%;;;;;;;;;;;;;x
+RGO_education_9;Local Development 90%;;;;;;;;;;;;;x
+RGO_education_10;Local Development 100%;;;;;;;;;;;;;x
+settlement_colony;Settlement Colony;;;;;;;;;;;;;x
+exploitation_colony;Exploitation Colony;;;;;;;;;;;;;x
+southern_plantations;Southern Plantations;;;;;;;;;;;;;x
 ziemia_obiecana_title;Ziemia Obiecana;;;;;;;;;;;;x
 ziemia_obiecana_desc;"Ziemia Obiecana" ("Promised Land") was popular term for the city of Lodz - center of polish industrial revolution which population grew from 1000 in 1827 to 500 000 in 1914.;;;;;;;;;;;;;x
-ziemia_obiecana;Ziemia Obiecana;;;;;;;;;;;;;
-constitution_suspended_title;The Ordinances of Saint-Cloud;;;;;;;;;;;;;
-constitution_suspended_desc;The Ordinances of Saint-Cloud suspended the liberty of the press, dissolved the newly elected Chamber of Deputies and excluded the commercial middle-class from future elections. It is a great step to restore the power of the Bourbons !;;;;;;;;;;;;;
-abolishment_of_serfdom_title;Abolishment of Serfdom;;;;;;;;;;;;;
-abolishment_of_serfdom_desc;Today is the day to abolish backward institution of serfdom and take the first step towards modern agriculture.;;;;;;;;;;;;;
-land_purchase_initiative_title;Land Purchase Initiative;;;;;;;;;;;;;
-land_purchase_initiative_desc;Although our agriculture is no longer bound by the serfdom, feudal relations are still common in the countryside, ironically to embrace true capitalism we need state inspired stimulation to brake centuries old privileges.;;;;;;;;;;;;;
-partition_of_land_title;Partition of Land;;;;;;;;;;;;;
-partition_of_land_desc;Capitalism isn't just, numerous land reforms caused great suffering to the smallfolk, and now we have to ease this suffering by just partition of land.;;;;;;;;;;;;;
-collectivization_of_agriculture_title;Collectivization of Agriculture;;;;;;;;;;;;;
-collectivization_of_agriculture_desc;Only the state-led agriculture may pave our way to utopia, to truly industrial and equal society.;;;;;;;;;;;;;
+ziemia_obiecana;Ziemia Obiecana;;;;;;;;;;;;;x
+constitution_suspended_title;The Ordinances of Saint-Cloud;;;;;;;;;;;;;x
+constitution_suspended_desc;The Ordinances of Saint-Cloud suspended the liberty of the press, dissolved the newly elected Chamber of Deputies and excluded the commercial middle-class from future elections. It is a great step to restore the power of the Bourbons !;;;;;;;;;;;;;x
+abolishment_of_serfdom_title;Abolishment of Serfdom;;;;;;;;;;;;;x
+abolishment_of_serfdom_desc;Today is the day to abolish backward institution of serfdom and take the first step towards modern agriculture.;;;;;;;;;;;;;x
+land_purchase_initiative_title;Land Purchase Initiative;;;;;;;;;;;;;x
+land_purchase_initiative_desc;Although our agriculture is no longer bound by the serfdom, feudal relations are still common in the countryside, ironically to embrace true capitalism we need state inspired stimulation to brake centuries old privileges.;;;;;;;;;;;;;x
+partition_of_land_title;Partition of Land;;;;;;;;;;;;;x
+partition_of_land_desc;Capitalism isn't just, numerous land reforms caused great suffering to the smallfolk, and now we have to ease this suffering by just partition of land.;;;;;;;;;;;;;x
+collectivization_of_agriculture_title;Collectivization of Agriculture;;;;;;;;;;;;;x
+collectivization_of_agriculture_desc;Only the state-led agriculture may pave our way to utopia, to truly industrial and equal society.;;;;;;;;;;;;;x
 HND;India;India;India;;;;;;;;;;;x;
 HND_fascist_dictatorship;Hindustan;Hindustan;Hindustan;;;;;;;;;;;x;
 HND_absolute_monarchy;Hindustani Empire;Hindustani Empire;Hindustani Empire;;;;;;;;;;;x;

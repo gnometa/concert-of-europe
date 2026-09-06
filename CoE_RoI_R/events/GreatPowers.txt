@@ -848,7 +848,7 @@ country_event = {
 	
 	trigger = {
 		exists = yes
-		has_country_flag = botanical_expedition_in_progress
+		has_country_flag = participates_in_botanical_expedition
 	}
 	
 	mean_time_to_happen = {
@@ -861,7 +861,7 @@ country_event = {
 	
 	option = {
 		name = "EVTNAME19029"
-		clr_country_flag = botanical_expedition_in_progress
+		clr_country_flag = participates_in_botanical_expedition
 		clr_country_flag = botanical_expedition_threatened
 		prestige = 10
 		years_of_research = 0.5

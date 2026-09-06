@@ -1422,16 +1422,14 @@ province_event = {
 	desc = "EVTDESC13060"
 	
 	trigger = {
+		owner = { civilized = no }
 		NOT = { port = yes }
-		owner = {
-			civilized = no
-			NOT = { number_of_states = 5 }
-		}
+		NOT = { has_province_modifier = local_opium_habit }
+		NOT = { has_province_modifier = boxer_presence }
+		owner = { NOT = { number_of_states = 5 } }
 		any_neighbor_province = {
 			has_province_modifier = local_opium_habit
 		}
-		NOT = { has_province_modifier = local_opium_habit }
-		NOT = { has_province_modifier = boxer_presence }
 	}
 	
 	mean_time_to_happen = {
@@ -1523,16 +1521,14 @@ province_event = {
 	desc = "EVTDESC13061"
 	
 	trigger = {
+		owner = { civilized = no }
 		NOT = { port = yes }
-		owner = {
-			civilized = no
-			number_of_states = 5
-		}
+		NOT = { has_province_modifier = local_opium_habit }
+		NOT = { has_province_modifier = boxer_presence }
+		owner = { number_of_states = 5 }
 		any_neighbor_province = {
 			has_province_modifier = local_opium_habit
 		}
-		NOT = { has_province_modifier = local_opium_habit }
-		NOT = { has_province_modifier = boxer_presence }
 	}
 	
 	mean_time_to_happen = {

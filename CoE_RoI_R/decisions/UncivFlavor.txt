@@ -529,6 +529,7 @@ political_decisions = {
 
 		effect = {
 			set_country_flag = somalia_united
+			set_global_flag = somalia_organized
 			prestige = 5
 			all_core = { add_core = SOM }
 			GEL = { all_core = { remove_core = GEL } }

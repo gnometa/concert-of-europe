@@ -79,7 +79,7 @@ Pick a new id from a free range and record it in the registry. Events reference 
 
 ## File format requirements
 
-- **Encoding**: game script `.txt` files are ASCII/ANSI with **CRLF** line endings. Localisation `.csv` files must be **Windows-1252 (ANSI)**, semicolon-delimited, ending each line with `x` in the terminator column, CRLF. Do **not** save them as UTF-8 — the game renders mojibake for accented characters. `text.csv` is the vanilla-override base and is huge (~3.7 MB); prefer adding new keys to a smaller mod-specific `.csv` rather than editing it. (`0000_economic_rework.csv` and `newCE.csv` are currently UTF-8 without BOM; don't propagate that to other files.)
+- **Encoding**: game script `.txt` files are ASCII/ANSI with **CRLF** line endings. Localisation `.csv` files must be **Windows-1252 (ANSI)**, semicolon-delimited, ending each line with `x` in the terminator column, CRLF. Do **not** save them as UTF-8 — the game renders mojibake for accented characters. `text.csv` is the vanilla-override base and is huge (~3.7 MB); prefer adding new keys to a smaller mod-specific `.csv` rather than editing it.
 - CSV column order: `KEY;English;French;German;Polish;Spanish;Italian;Swedish;Czech;Hungarian;Dutch;Portuguese;Russian;Finnish;x`. Only English is filled in for most mod strings.
 - Comments in script files use `#`. Files must have balanced braces; a single mismatched brace can silently break every file parsed after it.
 

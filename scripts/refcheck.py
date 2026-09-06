@@ -507,6 +507,9 @@ def check_flags():
     setters, checkers = defaultdict(dict), defaultdict(dict)
     files = list(script_files("events", "decisions", recursive=True)) + list(script_files("inventions", "technologies"))
     files += sorted((MOD / "history").rglob("*.txt"))
+    # common/ sets flags too - cb_types.txt does it from on_po_accepted, and
+    # omitting it reported every such flag as "checked but never set".
+    files += list(script_files("common"))
     for f in files:
         for node in tree(f):
             for n in node.walk():

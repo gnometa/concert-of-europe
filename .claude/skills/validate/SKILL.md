@@ -49,10 +49,10 @@ One line per check. Anything not on this list is a regression.
 | `refcheck events` | 14 | 12 deliberately abandoned `is_triggered_only` events (1002, 90903, 95259, 95652, 95655, 97120, 98230, 99665, 99666, 99993, 290115, 375003) plus 99932 and 8016451, which have a trigger and no MTTH on purpose |
 | `refcheck loc` | 2 | 2 rows for abandoned event 290115. The 58 unlocalised `common/event_modifiers.txt` names moved to `refcheck defs` and were filled in 2026-09-06 |
 | `refcheck defs` | 0 | player-visible definition names (modifiers, issue options, ideologies, cultures, casus belli, techs, inventions, tags, ...) with no localisation key. Must stay 0 |
-| `refcheck flags` | 119 | orphans: 97 set but never checked, 30 checked but never set. Drifts as chains land; none is a spelling variant of a real flag |
+| `refcheck flags` | 113 | orphans: 109 set but never checked, 4 checked but never set. Drifts as chains land; none is a spelling variant of a real flag. `check_flags()` scans `common/` as of 2026-09-06 - before that it missed every flag set from `cb_types.txt` `on_po_accepted` and reported 6 live flags as dead. The 3 remaining are design calls, not bugs: `the_watchers_on_the_wall` is the commented-out "Crises Disabled" toggle (`crises.txt:686`), `slave_trader`/`slave_trade_leader`/`slave_trade_reinstated` need the half-built CSA slave-trade chain finished - do NOT just set `slave_trader`, it makes 16602 (MTTH 1 month) reachable and its `clr_country_flag = the_slavery_debate` unlocks the `no_slavery` reform before 1875 (`issues.txt:277`) and `emancipation_proclamation` before the ACW (`ACW.txt:286`) |
 | `refcheck options` | 8 | events with 6-8 options |
 | `refcheck onactions` / `modifiers` / `names` | 0 | |
-| `loc-check` malformed rows | 161 across 21 csvs | UTF-8 and/or missing `x` terminator; mostly `0000_economic_rework.csv`, `PDM_CE.csv`, `newCE.csv`. `GVG_events.csv` is clean and must stay clean |
+| `loc-check` malformed rows | 51 across 19 csvs | missing `x` terminator. The 110 rows in `0000_economic_rework.csv`, `newCE.csv` and `PDM_CE.csv` were normalised on 2026-09-06 (terminator column only; no text touched) - those three files must stay at 0 missing-terminator rows (`PDM_CE.csv` keeps its 3 inherited split rows, counted in the row below). `GVG_events.csv` is clean and must stay clean |
 | `loc-check` split rows (`;` inside English text) | 13 | all vanilla/PDM-inherited: `00_PDM_events.csv` 2, `00_PDM_GAGA.csv` 2, `00_PDM_goods.csv` 1, `000_persia_events.csv` 1, `000_persia_map.csv` 1, `PDM_CE.csv` 3, `Taiping(move_later).csv` 1, `text.csv` 2 |
 | `loc-check` odd-width rows (not 15 columns) | 27904 across 48 files | harmless trailing/missing empty language columns, dominated by `text.csv` |
 
@@ -84,10 +84,10 @@ Every script is expected at **0 `[high]`**. Baseline exceptions (re-measured 202
 
 | Script | Expected now | Note |
 |---|---|---|
-| `audit_countries.py` | 0 highs | the 39 unregistered tags (BMK, DUR, ERT, KRL, KYR, ...) were registered on 2026-09-06; `registered` is now 521. All its counters (`unregistered`, `capital_not_owned`, `party_inactive`, `party_undefined`, `ideology_not_allowed`, `missing_common_file`) must stay 0. The three remaining mediums are `REB` (the engine rebel tag has no capital/culture/government by design) plus the `D01`-`D50` dominion tags with no capital |
+| `audit_countries.py` | 0 highs | the 39 unregistered tags (BMK, DUR, ERT, KRL, KYR, ...) were registered on 2026-09-06; `registered` is now 521. All its counters (`unregistered`, `capital_not_owned`, `party_inactive`, `party_undefined`, `ideology_not_allowed`, `missing_common_file`) must stay 0. The 84 mediums are `REB` (the engine rebel tag has no capital/culture/government by design) plus the `D01`-`D50` dominion tags with no capital |
 | `audit_events.py` | 0 highs, 0 unknown keywords | any new high is a regression |
 | `audit_fire_once.py` | 124 findings (A 77, B 10, C 37) | a *list*, not a defect count: every self-firing `country_event` with engine-wide `fire_only_once` and no bare `tag =` / `owns =` test. Most class-A entries are alternative tags for one nation (`OR(ENG,ENL)`, ...); class C is genuine world events. Verdicts in `docs/audit/fire-only-once.md` — only review entries newer than that file |
-| `audit_owner_scope.py` | 0 highs, 148 lows (see `docs/audit/owner-scope.md`) | advisory. Every low is a conditional release/secede or cede branch where the scope may legitimately own the province later in the game; a **high** means the block is dead in every reachable state and must be rescoped (`TAG = { any_owned = ... }`) |
+| `audit_owner_scope.py` | 0 highs, 154 lows (see `docs/audit/owner-scope.md`) | advisory. Every low is a conditional release/secede or cede branch where the scope may legitimately own the province later in the game; a **high** means the block is dead in every reachable state and must be rescoped (`TAG = { any_owned = ... }`) |
 | `audit_pacing.py` | exit 0, no `[high]` class | advisory. Current snapshot (28 runaway repeaters, 0 narrow-window) is `docs/audit/pacing-1821-1836.md`; `--write` rewrites it |
 | `audit_religion.py` | exit 0 | read-only inventory of religion triggers/effects vs what the pops carry; snapshot in `docs/audit/religion-dead-content.md`. Since the 2026-09-06 restoration pops carry real religions, so the inventory reports no dead pop-religion sites |
 | `audit_religion.py check` | **exit 0, 0 problems - hard invariant** | the religion-restoration regression gate: no pop may hold a culture name in the religion field, no `has_pop_religion`/`religion` trigger may name a culture, no `culture = german\|italian` site may exist (both cultures have 0 pops), and `common/religion.txt` must define no culture as a religion. Any finding here is a regression, not a baseline |
@@ -122,5 +122,11 @@ Log path: `E:\OneDrive\Documents\Paradox Interactive\Victoria II\CoE_RoI_R\logs\
 1. Record the current size and line count (or note the file is absent).
 2. Ask the user to launch `victoria2.exe`, tick the mod, start the 1821 bookmark, and let it run to the first month end.
 3. Read only the lines appended since step 1 and summarise them by file/type. Any line mentioning a province id, missing localisation key, or unknown trigger/effect gets called out with the likely source file.
+
+### Open in-game checks
+
+Things static analysis cannot settle. Confirm these while the game is up and tick them off here.
+
+- [ ] **`rich_luxury_needs`** - 17 commerce technologies in `technologies/commerce_tech.txt` grant this modifier. Vanilla never uses that exact key (it uses `middle_luxury_needs`, `poor_luxury_needs`, `rich_life_needs`, `rich_everyday_needs`), and the engine logs nothing for an unknown modifier key. Open the tech tree, hover a commerce tech such as `freedom_of_trade`, and confirm the rich-luxury line appears in the tooltip. If it does not, the bonus is dead on all 17 and the key needs replacing. Raised 2026-09-06 by `audit_diplomacy.py`.
 
 A crash at launch is almost always a brace error (stage 1 should have caught it). A crash on Start Game or on a specific date is a content error: bad province id, unknown production type, or an event/history entry firing that day.

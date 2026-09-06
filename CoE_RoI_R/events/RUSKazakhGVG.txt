@@ -1,0 +1,54 @@
+# Eset Kotibaruli's revolt in the Younger Zhuz, 1847-1858.
+# Completes the Kazakh chain in RUSFlavor.txt: event 375006 (Kenesary Kasymov)
+# already guards on NOT = { has_country_flag = eset_kotibaruli }, but nothing set it.
+
+country_event = {
+	id = 1002400
+	title = "EVTNAME1002400"
+	desc = "EVTDESC1002400"
+	picture = "kazak_rebellion"
+	
+	trigger = {
+		tag = RUS
+		owns = 1181
+		owns = 2702
+		year = 1847
+		NOT = { year = 1860 }
+		NOT = { has_country_flag = eset_kotibaruli }
+	}
+	
+	mean_time_to_happen = {
+		months = 60
+		modifier = {
+			factor = 0.5
+			war = yes
+		}
+		modifier = {
+			factor = 0.5
+			has_country_flag = kenesary_kasymov
+		}
+	}
+	
+	option = {
+		name = "EVTOPTA1002400"
+		set_country_flag = eset_kotibaruli
+		any_pop = {
+			limit = { has_pop_culture = kazak }
+			militancy = 4
+			consciousness = 3
+		}
+		ai_chance = { factor = 70 }
+	}
+	
+	option = {
+		name = "EVTOPTB1002400"
+		set_country_flag = eset_kotibaruli
+		prestige = -5
+		any_pop = {
+			limit = { has_pop_culture = kazak }
+			militancy = -2
+			consciousness = 1
+		}
+		ai_chance = { factor = 30 }
+	}
+}

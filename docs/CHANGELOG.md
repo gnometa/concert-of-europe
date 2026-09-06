@@ -3,6 +3,68 @@
 Notable changes to the mod, newest first. One line per change; file names where they help.
 Audit reports live in `docs/audit/`, design notes in `docs/design/`.
 
+## 2026-09-06 — dead-flag sweep, trigger cost and localisation terminators
+
+Follow-up pass on the `/analyze` findings. Nothing here has been tested in a running game.
+
+### Tooling
+
+- `scripts/refcheck.py` `check_flags()` now scans `common/` as well as events/decisions/history.
+  It previously missed every flag set from `cb_types.txt` `on_po_accepted`, which made six live
+  flags (`dismantle_declared`, `dismantling_treaty`, `friendly_democracy`/`_fascist`/`_communist`/
+  `_revolutionary`) look dead, and hid four real ones in `rebel_types.txt`.
+
+### Fixes (logic)
+
+- Flag-scope mismatches, each of which made its reader unreachable: `berlin_conference`
+  (`decisions/RUS.txt`, country -> global), event 19029's `botanical_expedition_in_progress`
+  (now keys off `participates_in_botanical_expedition`, the flag the rest of the chain sets),
+  `byzantine_levant` (global counterpart added for the TUR/EGY `restore_levant` decision),
+  and four in `common/rebel_types.txt` — `dungan_rebellion`/`panthay_rebellion` (set as globals
+  by `Dungan.txt`) and `help_for_the_irish`/`no_help_for_the_irish` (set as country flags by
+  `Irish woes.txt`).
+- Unguarded repeaters now set their own guard flag in every option: Chilean event 198260501
+  (`diegoportales`, MTTH **1 month** — it re-fired every month until 1838), 90140
+  (`intentona_de_yauco`), 90125 (`katipunan_formed`), 95645 (`asked_for_french_protection`).
+- Missing once-only guards: `china_formed` on `form_china`, `somalia_organized` on
+  `unite_somalia`, `great_war_temp_alliance` on accepting the 96030 alliance.
+- `persian_constitution_flag` set where Persia actually adopts `hms_government`, unlocking the
+  `bombard_the_majles` decision.
+
+### Content
+
+- `decisions/DIM_East_Indies.txt`: new `reunite_lan_xang` decision for LUA/CHK/WIA. LXA owned no
+  province at start and nothing formed it, so its breakup event 97121 was unreachable.
+- `events/RUSKazakhGVG.txt`: new event 1002400, Eset Kotibaruli's revolt (1847-1858), completing
+  the Kazakh chain that event 375006 already guarded against. Range 1002400-1002499 registered.
+
+### Performance
+
+- Reordered trigger clauses in events 31268, 13060 and 13061 (pure AND permutations, no
+  behaviour change): 980,241 -> 946,353 estimated clause-evals/day. Event 31268 alone went
+  69,151 -> 37,626. Two further candidates (20110, 10240) were reverted — `audit_perf` scored
+  the reordering as worse.
+
+### Localisation
+
+- Normalised 110 rows in `0000_economic_rework.csv`, `newCE.csv` and `PDM_CE.csv` that carried a
+  trailing `;` or stray `,,,,` after the `x` terminator. Terminator column only; no text or
+  language column changed. `loc-check` 161 -> 51 rows.
+
+### Known / deferred
+
+- The whole CSA slave-trade chain (`slave_trader`, `slave_trade_leader`, `slave_trade_reinstated`)
+  stays unset. Setting `slave_trader` in 16600 was tried and reverted: it makes 16602 (MTTH 1
+  month) reachable, whose option does `clr_country_flag = the_slavery_debate` - and that flag is
+  a *negative* gate in two places. Clearing it unlocks the `no_slavery` reform before 1875
+  (`common/issues.txt:277`) and opens `emancipation_proclamation` before the Civil War
+  (`decisions/ACW.txt:286`). Nothing adds the `atlantic_slave_trade` modifier either, so
+  16603/16604 are dead regardless. Finishing this chain is a design job, not a one-line fix.
+- `the_watchers_on_the_wall` stays unset by design — it is the commented-out "Crises Disabled"
+  player toggle at `crises.txt:686`, not unfinished content.
+- `rich_luxury_needs` on 17 commerce techs is unverifiable statically; added to the validate
+  stage-4 in-game checklist.
+
 ## 2026-09-06 — audit and repair pass
 
 A read-only audit of the whole tree (countries, provinces, diplomacy, decisions, `common/`,

@@ -71,6 +71,7 @@ political_decisions = {
 		}
 		
 		effect = {
+			set_global_flag = china_formed
 			prestige = 20
 			all_core = { remove_core = QNG }
 			change_tag = CHI

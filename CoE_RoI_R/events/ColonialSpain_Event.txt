@@ -833,6 +833,7 @@ country_event = {
 
 	option = {
 		name = "Find the rebels and crush them"
+		set_country_flag = katipunan_formed
 		any_pop = {
 			limit = {
 				has_pop_culture = filipino
@@ -890,6 +891,7 @@ country_event = {
 
 	option = {
 		name = "Give the Phillipines home rule"
+		set_country_flag = katipunan_formed
 		badboy = -3
 		prestige = -10
 		release_vassal = PHL
@@ -985,6 +987,7 @@ country_event = {
 
 	option = {
 		name = "Give them what they want"
+		set_country_flag = katipunan_formed
 		badboy = -5
 		prestige = -25
 		release = PHL
@@ -1356,6 +1359,7 @@ country_event = {
 
 	option = {
 		name = "Find these rebels and crush them"
+		set_country_flag = intentona_de_yauco
 		2222 = {
 			any_pop = {
 				limit = { has_pop_culture = caribeno}
@@ -1409,6 +1413,7 @@ country_event = {
 
 	option = {
 		name = "Grant the island autonomy"
+		set_country_flag = intentona_de_yauco
 		badboy = -2
 		prestige = -5
 		release_vassal = PRI

@@ -2357,6 +2357,7 @@ country_event = {
 	
 	option = {
 		name = "For the peace and tranquility of all the people of Persia."
+		set_country_flag = persian_constitution_flag
 		civilized = yes
 		prestige_factor = -0.25
 		set_global_flag = persian_constitution_flag

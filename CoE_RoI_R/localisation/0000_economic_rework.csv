@@ -46,52 +46,52 @@ heavy_industry_focus;Heavy Focus;;;;;;;;;;;;;;x;;;;;;;;;;;;;;,,
 food_industry_focus;Food Focus;;;;;;;;;;;;;;x;;;;;;;;;;;;;;,,
 light_industry_focus;Light Focus;;;;;;;;;;;;;;x;;;;;;;;;;;;;;,,
 luxury_industry_focus;Luxuries Focus;;;;;;;;;;;;;;x;;;;;;;;;;;;;;,,
-the_beginnings_trig;The Beginnings;Efficacité de l'éducation;Bildungseffizienz;;;;;;;;;;;
-rich_development_1;Tax Relief - Upper Class I;Efficacité de l'éducation;Bildungseffizienz;;;;;;;;;;;
-rich_development_2;Tax Relief - Upper Class II;Efficacité de l'éducation;Bildungseffizienz;;;;;;;;;;;
-rich_development_3;Tax Relief - Upper Class III;Efficacité de l'éducation;Bildungseffizienz;;;;;;;;;;;
-rich_development_4;Tax Relief - Upper Class IV;Efficacité de l'éducation;Bildungseffizienz;;;;;;;;;;;
-rich_development_5;Tax Relief - Upper Class V;Efficacité de l'éducation;Bildungseffizienz;;;;;;;;;;;
-rich_development_6;Tax Relief - Upper Class VI;Efficacité de l'éducation;Bildungseffizienz;;;;;;;;;;;
-rich_development_7;Tax Relief - Upper Class VII;Efficacité de l'éducation;Bildungseffizienz;;;;;;;;;;;
-rich_development_8;Tax Relief - Upper Class VIII;Efficacité de l'éducation;Bildungseffizienz;;;;;;;;;;;
-rich_development_9;Tax Relief - Upper Class IX;Efficacité de l'éducation;Bildungseffizienz;;;;;;;;;;;
-rich_development_10;Tax Relief - Upper Class X;Efficacité de l'éducation;Bildungseffizienz;;;;;;;;;;;
-middle_development_1;Tax Relief - Middle Class I;Efficacité de l'éducation;Bildungseffizienz;;;;;;;;;;;
-middle_development_2;Tax Relief - Middle Class II;Efficacité de l'éducation;Bildungseffizienz;;;;;;;;;;;
-middle_development_3;Tax Relief - Middle Class III;Efficacité de l'éducation;Bildungseffizienz;;;;;;;;;;;
-middle_development_4;Tax Relief - Middle Class IV;Efficacité de l'éducation;Bildungseffizienz;;;;;;;;;;;
-middle_development_5;Tax Relief - Middle Class V;Efficacité de l'éducation;Bildungseffizienz;;;;;;;;;;;
-middle_development_6;Tax Relief - Middle Class VI;Efficacité de l'éducation;Bildungseffizienz;;;;;;;;;;;
-middle_development_7;Tax Relief - Middle Class VII;Efficacité de l'éducation;Bildungseffizienz;;;;;;;;;;;
-middle_development_8;Tax Relief - Middle Class VIII;Efficacité de l'éducation;Bildungseffizienz;;;;;;;;;;;
-middle_development_9;Tax Relief - Middle Class IX;Efficacité de l'éducation;Bildungseffizienz;;;;;;;;;;;
-middle_development_10;Tax Relief - Middle Class X;Efficacité de l'éducation;Bildungseffizienz;;;;;;;;;;;
-poor_development_1;Tax Relief - Lower Class I;Efficacité de l'éducation;Bildungseffizienz;;;;;;;;;;;
-poor_development_2;Tax Relief - Lower Class II;Efficacité de l'éducation;Bildungseffizienz;;;;;;;;;;;
-poor_development_3;Tax Relief - Lower Class III;Efficacité de l'éducation;Bildungseffizienz;;;;;;;;;;;
-poor_development_4;Tax Relief - Lower Class IV;Efficacité de l'éducation;Bildungseffizienz;;;;;;;;;;;
-poor_development_5;Tax Relief - Lower Class V;Efficacité de l'éducation;Bildungseffizienz;;;;;;;;;;;
-poor_development_6;Tax Relief - Lower Class VI;Efficacité de l'éducation;Bildungseffizienz;;;;;;;;;;;
-poor_development_7;Tax Relief - Lower Class VII;Efficacité de l'éducation;Bildungseffizienz;;;;;;;;;;;
-poor_development_8;Tax Relief - Lower Class VIII;Efficacité de l'éducation;Bildungseffizienz;;;;;;;;;;;
-poor_development_9;Tax Relief - Lower Class IX;Efficacité de l'éducation;Bildungseffizienz;;;;;;;;;;;
-poor_development_10;Tax Relief - Lower Class X;Efficacité de l'éducation;Bildungseffizienz;;;;;;;;;;;
-overbuying_stuff_rich;Upper Class Overconsumption;Efficacité de l'éducation;Bildungseffizienz;;;;;;;;;;;
-overbuying_stuff_middle;Middle Class Overconsumption;Efficacité de l'éducation;Bildungseffizienz;;;;;;;;;;;
-overbuying_stuff_poor;Lower Class Overconsumption;Efficacité de l'éducation;Bildungseffizienz;;;;;;;;;;;
-sustainable_education_1;Susatainable Education - I;Education funding - 1;Education funding - 1;;Education funding - 1;;;;;;;;;
-sustainable_education_2;Susatainable Education - II;Education funding - 2;Education funding - 2;;Education funding - 2;;;;;;;;;
-sustainable_education_3;Susatainable Education - III;Education funding - 3;Education funding - 3;;Education funding - 3;;;;;;;;;
-sustainable_education_4;Susatainable Education - IV;Education funding - 4;Education funding - 4;;Education funding - 4;;;;;;;;;
-sustainable_education_5;Susatainable Education - V;Education funding - 5;Education funding - 5;;Education funding - 5;;;;;;;;;
-sustainable_education_6;Susatainable Education - VI;Education funding - 6;Education funding - 6;;Education funding - 6;;;;;;;;;
-sustainable_education_7;Susatainable Education - VII;Education funding - 7;Education funding - 7;;Education funding - 7;;;;;;;;;
-sustainable_education_8;Susatainable Education - VIII;Education funding - 8;Education funding - 8;;Education funding - 8;;;;;;;;;
-sustainable_education_9;Susatainable Education - IX;Education funding - 9;Education funding - 9;;Education funding - 9;;;;;;;;;
-sustainable_education_10;Susatainable Education - X;Education funding - 10;Education funding - 10;;Education funding - 10;;;;;;;;;
-rights_suspended;Extraordinary Measures;Education funding - 10;Education funding - 10;;Education funding - 10;;;;;;;;;
-slavery_reinstituted;Slavery Reinstituted;Education funding - 10;Education funding - 10;;Education funding - 10;;;;;;;;;
+the_beginnings_trig;The Beginnings;Efficacité de l'éducation;Bildungseffizienz;;;;;;;;;;;x
+rich_development_1;Tax Relief - Upper Class I;Efficacité de l'éducation;Bildungseffizienz;;;;;;;;;;;x
+rich_development_2;Tax Relief - Upper Class II;Efficacité de l'éducation;Bildungseffizienz;;;;;;;;;;;x
+rich_development_3;Tax Relief - Upper Class III;Efficacité de l'éducation;Bildungseffizienz;;;;;;;;;;;x
+rich_development_4;Tax Relief - Upper Class IV;Efficacité de l'éducation;Bildungseffizienz;;;;;;;;;;;x
+rich_development_5;Tax Relief - Upper Class V;Efficacité de l'éducation;Bildungseffizienz;;;;;;;;;;;x
+rich_development_6;Tax Relief - Upper Class VI;Efficacité de l'éducation;Bildungseffizienz;;;;;;;;;;;x
+rich_development_7;Tax Relief - Upper Class VII;Efficacité de l'éducation;Bildungseffizienz;;;;;;;;;;;x
+rich_development_8;Tax Relief - Upper Class VIII;Efficacité de l'éducation;Bildungseffizienz;;;;;;;;;;;x
+rich_development_9;Tax Relief - Upper Class IX;Efficacité de l'éducation;Bildungseffizienz;;;;;;;;;;;x
+rich_development_10;Tax Relief - Upper Class X;Efficacité de l'éducation;Bildungseffizienz;;;;;;;;;;;x
+middle_development_1;Tax Relief - Middle Class I;Efficacité de l'éducation;Bildungseffizienz;;;;;;;;;;;x
+middle_development_2;Tax Relief - Middle Class II;Efficacité de l'éducation;Bildungseffizienz;;;;;;;;;;;x
+middle_development_3;Tax Relief - Middle Class III;Efficacité de l'éducation;Bildungseffizienz;;;;;;;;;;;x
+middle_development_4;Tax Relief - Middle Class IV;Efficacité de l'éducation;Bildungseffizienz;;;;;;;;;;;x
+middle_development_5;Tax Relief - Middle Class V;Efficacité de l'éducation;Bildungseffizienz;;;;;;;;;;;x
+middle_development_6;Tax Relief - Middle Class VI;Efficacité de l'éducation;Bildungseffizienz;;;;;;;;;;;x
+middle_development_7;Tax Relief - Middle Class VII;Efficacité de l'éducation;Bildungseffizienz;;;;;;;;;;;x
+middle_development_8;Tax Relief - Middle Class VIII;Efficacité de l'éducation;Bildungseffizienz;;;;;;;;;;;x
+middle_development_9;Tax Relief - Middle Class IX;Efficacité de l'éducation;Bildungseffizienz;;;;;;;;;;;x
+middle_development_10;Tax Relief - Middle Class X;Efficacité de l'éducation;Bildungseffizienz;;;;;;;;;;;x
+poor_development_1;Tax Relief - Lower Class I;Efficacité de l'éducation;Bildungseffizienz;;;;;;;;;;;x
+poor_development_2;Tax Relief - Lower Class II;Efficacité de l'éducation;Bildungseffizienz;;;;;;;;;;;x
+poor_development_3;Tax Relief - Lower Class III;Efficacité de l'éducation;Bildungseffizienz;;;;;;;;;;;x
+poor_development_4;Tax Relief - Lower Class IV;Efficacité de l'éducation;Bildungseffizienz;;;;;;;;;;;x
+poor_development_5;Tax Relief - Lower Class V;Efficacité de l'éducation;Bildungseffizienz;;;;;;;;;;;x
+poor_development_6;Tax Relief - Lower Class VI;Efficacité de l'éducation;Bildungseffizienz;;;;;;;;;;;x
+poor_development_7;Tax Relief - Lower Class VII;Efficacité de l'éducation;Bildungseffizienz;;;;;;;;;;;x
+poor_development_8;Tax Relief - Lower Class VIII;Efficacité de l'éducation;Bildungseffizienz;;;;;;;;;;;x
+poor_development_9;Tax Relief - Lower Class IX;Efficacité de l'éducation;Bildungseffizienz;;;;;;;;;;;x
+poor_development_10;Tax Relief - Lower Class X;Efficacité de l'éducation;Bildungseffizienz;;;;;;;;;;;x
+overbuying_stuff_rich;Upper Class Overconsumption;Efficacité de l'éducation;Bildungseffizienz;;;;;;;;;;;x
+overbuying_stuff_middle;Middle Class Overconsumption;Efficacité de l'éducation;Bildungseffizienz;;;;;;;;;;;x
+overbuying_stuff_poor;Lower Class Overconsumption;Efficacité de l'éducation;Bildungseffizienz;;;;;;;;;;;x
+sustainable_education_1;Susatainable Education - I;Education funding - 1;Education funding - 1;;Education funding - 1;;;;;;;;;x
+sustainable_education_2;Susatainable Education - II;Education funding - 2;Education funding - 2;;Education funding - 2;;;;;;;;;x
+sustainable_education_3;Susatainable Education - III;Education funding - 3;Education funding - 3;;Education funding - 3;;;;;;;;;x
+sustainable_education_4;Susatainable Education - IV;Education funding - 4;Education funding - 4;;Education funding - 4;;;;;;;;;x
+sustainable_education_5;Susatainable Education - V;Education funding - 5;Education funding - 5;;Education funding - 5;;;;;;;;;x
+sustainable_education_6;Susatainable Education - VI;Education funding - 6;Education funding - 6;;Education funding - 6;;;;;;;;;x
+sustainable_education_7;Susatainable Education - VII;Education funding - 7;Education funding - 7;;Education funding - 7;;;;;;;;;x
+sustainable_education_8;Susatainable Education - VIII;Education funding - 8;Education funding - 8;;Education funding - 8;;;;;;;;;x
+sustainable_education_9;Susatainable Education - IX;Education funding - 9;Education funding - 9;;Education funding - 9;;;;;;;;;x
+sustainable_education_10;Susatainable Education - X;Education funding - 10;Education funding - 10;;Education funding - 10;;;;;;;;;x
+rights_suspended;Extraordinary Measures;Education funding - 10;Education funding - 10;;Education funding - 10;;;;;;;;;x
+slavery_reinstituted;Slavery Reinstituted;Education funding - 10;Education funding - 10;;Education funding - 10;;;;;;;;;x
 petersburg_to_petrograd_title;Petrograd! Not Petersburg!;;;;;;;;;;;;;x;
 petersburg_to_petrograd_desc;With recent events we happened to be at war with a German nation, and it is unfortunate that many people remind us of German connections of our dynasty... perhaps we could cement our Russian identity among the people by renaming 'Petersburg' to 'Petrograd'!;;;;;;;;;;;;;x;
 increase_state_investments_title;State Investments Scheme;;;;;;;;;;;;;x;
@@ -100,15 +100,15 @@ cooperate_with_rich_title;Upper Class Economic Cooperation;;;;;;;;;;;;;x;
 cooperate_with_rich_desc;Upper class is a backbone of our country but this backbone also has responsibilities, we should try cooperating with them for the mutual profit of the state the bourgeoisie and citizens!;;;;;;;;;;;;;x;
 ennact_economic_austerity_title;Ennact Austerity in State budget;;;;;;;;;;;;;x;
 ennact_economic_austerity_desc;The freer the market the freer the people! Or so they say... regardles of our opinions of it is undeniable that there are more than one paths to prosperity, and so we can try forging it on free capital and minimal government intervention.;;;;;;;;;;;;;x;
-state_investments;State Economic Stimuly;Efficacité de l'éducation;Bildungseffizienz;;;;;;;;;;;
-cooperation_with_rich;Upper Class Investments;Efficacité de l'éducation;Bildungseffizienz;;;;;;;;;;;
-austerity_measures;Austerity Budget;Efficacité de l'éducation;Bildungseffizienz;;;;;;;;;;;
-land_reform_in_process;Land Reform in Process;Efficacité de l'éducation;Bildungseffizienz;;;;;;;;;;;
-collectivization_in_process;Collectivization in Process;Efficacité de l'éducation;Bildungseffizienz;;;;;;;;;;;
-demographic_collapse;Economic and Demographic Stagnation;Efficacité de l'éducation;Bildungseffizienz;;;;;;;;;;;
-demographic_collapse_prov;Demographic Collapse;Efficacité de l'éducation;Bildungseffizienz;;;;;;;;;;;
-catching_up_economically;Catching up Economically;Efficacité de l'éducation;Bildungseffizienz;;;;;;;;;;;
-catching_up_economically_prov;Demographic Recovery;Efficacité de l'éducation;Bildungseffizienz;;;;;;;;;;;
+state_investments;State Economic Stimuly;Efficacité de l'éducation;Bildungseffizienz;;;;;;;;;;;x
+cooperation_with_rich;Upper Class Investments;Efficacité de l'éducation;Bildungseffizienz;;;;;;;;;;;x
+austerity_measures;Austerity Budget;Efficacité de l'éducation;Bildungseffizienz;;;;;;;;;;;x
+land_reform_in_process;Land Reform in Process;Efficacité de l'éducation;Bildungseffizienz;;;;;;;;;;;x
+collectivization_in_process;Collectivization in Process;Efficacité de l'éducation;Bildungseffizienz;;;;;;;;;;;x
+demographic_collapse;Economic and Demographic Stagnation;Efficacité de l'éducation;Bildungseffizienz;;;;;;;;;;;x
+demographic_collapse_prov;Demographic Collapse;Efficacité de l'éducation;Bildungseffizienz;;;;;;;;;;;x
+catching_up_economically;Catching up Economically;Efficacité de l'éducation;Bildungseffizienz;;;;;;;;;;;x
+catching_up_economically_prov;Demographic Recovery;Efficacité de l'éducation;Bildungseffizienz;;;;;;;;;;;x
 nep_econ;New Economic Policy;;;;;;;;;;;;;x;
 nep_econ_desc;We don't like capitalism. It's coarse and rough and iritating and it get's everywhere...;;;;;;;;;;;;;x;
 5y_econ;Five-year Plans;;;;;;;;;;;;;x;

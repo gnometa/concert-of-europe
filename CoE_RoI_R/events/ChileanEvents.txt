@@ -22,6 +22,7 @@ country_event = {
 	
 	option = {
 		name = "Ask him to start a war."
+		set_country_flag = diegoportales
 		remove_country_modifier = expert_diplomat
 		remove_country_modifier = successful_industrialist
 		remove_country_modifier = ivory_tower_intellectual
@@ -81,6 +82,7 @@ country_event = {
 		}
 	option = {
 		name = "Keep him close, but ignore his advice."
+		set_country_flag = diegoportales
 		remove_country_modifier = expert_diplomat
 		remove_country_modifier = successful_industrialist
 		remove_country_modifier = ivory_tower_intellectual
@@ -115,6 +117,7 @@ set_country_flag = DiegoPortales
 		}
 	option = {
 		name = "Censor his ideas."
+		set_country_flag = diegoportales
 		any_pop = {
 			limit = {
 				location = { is_colonial = no }

@@ -202,6 +202,7 @@ reclaim_levant = {
 			}
 		}
 		set_country_flag = byzantine_levant
+		set_global_flag = byzantine_levant
 		TUR = {
 				relation = { who = THIS value = -200 }
 			}

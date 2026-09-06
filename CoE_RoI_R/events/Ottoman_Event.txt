@@ -2950,11 +2950,11 @@ province_event = {
 			}
 		}
 		state_scope = {
+			has_flashpoint = yes
+			flashpoint_tension = 50
 			any_owned_province = {
 				is_core = GRE
 			}
-			has_flashpoint = yes
-			flashpoint_tension = 50
 		}
 	}
 	

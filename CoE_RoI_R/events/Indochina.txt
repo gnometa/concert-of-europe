@@ -644,6 +644,7 @@ country_event = {
 	
 	option = {
 		name = "Ask for French protection."
+		set_country_flag = asked_for_french_protection
 		FRA = { country_event = 95646 }
 		ai_chance = {
 			factor = 80
@@ -652,6 +653,7 @@ country_event = {
 	
 	option = {
 		name = "Throw out the Vietnamese! We will risk war."
+		set_country_flag = asked_for_french_protection
 		DAI = {
 			release_vassal = CAM
 			leave_alliance = CAM

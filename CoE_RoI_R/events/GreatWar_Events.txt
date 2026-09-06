@@ -1934,6 +1934,7 @@ country_event = {
 	option = {
 		name = "EVTOPTA96030" #We will ally with $FROMCOUNTRY$
 		create_alliance = FROM
+		set_country_flag = great_war_temp_alliance
 		random_country = {
 			limit = {
 				tag = FROM

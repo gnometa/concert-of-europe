@@ -36,4 +36,52 @@ political_decisions = {
 		}
 	}
 	
+	reunite_lan_xang = {
+		picture = DIM_timor
+		potential = {
+			OR = {
+				tag = LUA
+				tag = CHK
+				tag = WIA
+			}
+			NOT = { exists = LXA }
+		}
+		
+		allow = {
+			war = no
+			owns = 1356
+			owns = 1357
+			owns = 1361
+			owns = 1362
+			owns = 1363
+		}
+		
+		effect = {
+			prestige = 10
+			set_country_flag = laos_formed
+			random_owned = {
+				limit = { owner = { tag = LUA } }
+				owner = { set_country_flag = Luangprabang }
+			}
+			random_owned = {
+				limit = { owner = { tag = CHK } }
+				owner = { set_country_flag = Champasak }
+			}
+			random_owned = {
+				limit = { owner = { tag = WIA } }
+				owner = { set_country_flag = Wiangchhan }
+			}
+			change_tag = LXA
+			1356 = { add_core = LXA }
+			1357 = { add_core = LXA }
+			1361 = { add_core = LXA }
+			1362 = { add_core = LXA }
+			1363 = { add_core = LXA }
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
 }
