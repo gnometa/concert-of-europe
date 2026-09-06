@@ -28,7 +28,8 @@ pwsh -File scripts/deploy.ps1
 
 Beyond the static checks, nothing can be verified without the game. Verification means:
 1. Deploy (push, or run `scripts/deploy.ps1`), launch `victoria2.exe`, tick "The Concert of Europe: Roar of Industry - Reignited" in the launcher's mod list, start a game at the 1821 bookmark, then read `E:\OneDrive\Documents\Paradox Interactive\Victoria II\CoE_RoI_R\logs\error.log`. Clear or note the log's size before launching so new errors stand out.
-2. Optionally run the Audax Validator: `Audax.Validator\Validator.exe` (GUI; .NET 4.0). Set Game Path to the game folder above (not a Documents path), pick Vic2, set Mod Name to `CoE_RoI_R`, and Validate. It reads the deployed copy, so deploy first. It picks up `CoE_RoI_R/ValidatorSettings.txt`. `Audax.Validator/` is git-ignored; install it there yourself if missing.
+2. `pwsh -File scripts/gametest.ps1` launches the deployed mod headlessly and reports PASS when the main menu is reached or FAIL with the exit code and the last log lines (about 90 s). Use it after every deploy and as the probe for `git bisect` when a crash has no error.log entry.
+3. Optionally run the Audax Validator: `Audax.Validator\Validator.exe` (GUI; .NET 4.0). Set Game Path to the game folder above (not a Documents path), pick Vic2, set Mod Name to `CoE_RoI_R`, and Validate. It reads the deployed copy, so deploy first. It picks up `CoE_RoI_R/ValidatorSettings.txt`. `Audax.Validator/` is git-ignored; install it there yourself if missing.
 
 Historical crashes in this repo have come from a **moved province history file** (see the path pitfall below; a crash at "Executing History" with an empty error.log is this or a capital the tag does not own) and from **wrong province IDs** in history/event files (e.g. commit `31764737` fixed an 1830 crash from province 3309 vs 1408). When editing anything that references a province, confirm the ID exists in `CoE_RoI_R/map/definition.csv`.
 

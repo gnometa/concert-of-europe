@@ -14,6 +14,7 @@ Subcommands
   loc-add <csv> <key> <text> [--force]   append a key (Windows-1252, CRLF); refuses text.csv unless --force
   loc-check <csv>          validate a localisation csv (encoding, CRLF, terminator column)
   province-paths           every mod history/provinces file must sit at the vanilla path for its id
+  decisions                every decisions file is political_decisions = { name = { potential allow effect } }
 
 All output is one problem per line; exit code 1 when problems were found, 2 for hook blocks.
 """
@@ -384,6 +385,8 @@ def cmd_hook_post():
     problems = []
     if low.endswith(".txt"):
         problems += brace_check(fp)
+        if "/decisions/" in p:
+            problems += [l for l in capture(cmd_decisions) if l.startswith(rel(fp))]
         if "/history/provinces/" in p:
             problems += [l for l in capture(cmd_province_paths) if l.startswith(f"province {fp.name.split(' ')[0]}:")]
         if any(s in p for s in ("/history/provinces/", "/history/countries/", "/events/", "/decisions/")):
@@ -432,6 +435,37 @@ def cmd_province_paths():
     return 1 if problems else 0
 
 
+def cmd_decisions():
+    """Structural check the brace counter cannot do: each decisions file must be
+    a single political_decisions block whose children each carry potential,
+    allow and effect. A file that lost its wrapper (Mexican Minors.txt, found
+    in the 2026-09-06 playtest) makes the engine register `effect`, `NOT`, ...
+    as decisions and shows raw effect_title strings to every country."""
+    sys.path.insert(0, str(ROOT / "scripts"))
+    import refcheck  # noqa: E402
+    problems = 0
+    ctrl = {"potential", "allow", "effect", "ai_will_do", "not", "or", "and", "limit", "tag", "picture", "news"}
+    for f in sorted((MOD / "decisions").glob("*.txt")):
+        nodes = [n for n in refcheck.tree(f) if n.key]
+        for n in nodes:
+            if n.key.lower() != "political_decisions":
+                problems += 1
+                print(f"{rel(f)}:{n.line}: top-level `{n.key}` is not political_decisions (missing wrapper?)")
+                continue
+            for d in n.children or []:
+                if not d.key:
+                    continue
+                kids = {c.key.lower() for c in (d.children or []) if c.key}
+                if d.key.lower() in ctrl or d.key.lower().startswith(("any_", "random_")):
+                    problems += 1
+                    print(f"{rel(f)}:{d.line}: `{d.key}` parsed as a decision name (brace nesting broken above)")
+                elif not {"potential", "allow", "effect"} <= kids:
+                    problems += 1
+                    print(f"{rel(f)}:{d.line}: decision {d.key} lacks {sorted({'potential','allow','effect'} - kids)}")
+    print(f"decisions structure: {problems} problem(s)")
+    return 1 if problems else 0
+
+
 # ---------------------------------------------------------------- main
 def main(argv):
     if not argv:
@@ -465,6 +499,8 @@ def main(argv):
             return cmd_loc_check(args[0])
         if cmd == "province-paths":
             return cmd_province_paths()
+        if cmd == "decisions":
+            return cmd_decisions()
     except IndexError:
         print(f"missing argument for {cmd}\n{__doc__}", file=sys.stderr)
         return 1
