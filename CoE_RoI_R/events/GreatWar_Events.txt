@@ -43,7 +43,13 @@ country_event = {
 		NOT = { has_country_flag = in_great_war }
 		any_greater_power = {
 			war_with = THIS
-			has_country_flag = in_great_war
+			OR = {
+				has_country_flag = in_great_war
+				AND = {
+					mass_politics = 1
+					NOT = { has_country_modifier = no_more_war }
+				}
+			}
 		}
 	}
 
@@ -1688,11 +1694,15 @@ country_event = {
 			tag = RUS
 			tag = USA
 			tag = ENG
+			tag = CAN
 			tag = FRA
 			tag = AUS
 			tag = KUK
+			tag = DNB
+			tag = HUN
 			tag = TUR
 			tag = JAP
+			tag = TKG
 		}
 		is_greater_power = no
 		is_secondary_power = no
@@ -8253,6 +8263,7 @@ country_event = {
 				is_disarmed = no
 				NOT = { relation = { who = THIS value = -100 } }
 				NOT = { has_country_modifier = neutrality }
+				NOT = { tag = THIS }
 			}
 			add_casus_belli = {
 				target = THIS
@@ -8384,6 +8395,7 @@ country_event = {
 				is_disarmed = no
 				NOT = { relation = { who = THIS value = -100 } }
 				NOT = { has_country_modifier = neutrality }
+				NOT = { tag = THIS }
 			}
 			add_casus_belli = {
 				target = THIS
