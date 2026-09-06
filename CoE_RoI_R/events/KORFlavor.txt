@@ -25,10 +25,14 @@ country_event = {
 		KOR = {
 			exists = yes
 			civilized = no
-			vassal_of = CHI
+			OR = {
+				vassal_of = QNG
+				vassal_of = CHI
+			}
 		}
 		NOT = {
 			truce_with = KOR
+			truce_with = QNG
 			truce_with = CHI
 		}
 	}
@@ -43,7 +47,10 @@ country_event = {
 	
 	option = {
 		name = "This cannot go unpunished."
-		CHI = { country_event = 85001 }
+		random_country = {
+			limit = { is_our_vassal = KOR }
+			country_event = 85001
+		}
 		ai_chance = {
 			factor = 95
 		}
@@ -1169,12 +1176,12 @@ country_event = {
 				months = 12
 			}
 			casus_belli = {
-				target = FROM
+				target = THIS
 				type = take_from_sphere
 				months = 12
 			}
 			casus_belli = {
-				target = FROM
+				target = THIS
 				type = humiliate
 				months = 12
 			}

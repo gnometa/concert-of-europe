@@ -438,9 +438,9 @@ country_event = {
 			remove_core = TUR
 		}
 		clr_country_flag = attending_london_conference_1832
-		clr_country_flag = weak_greece
-		clr_country_flag = medium_greece
-		clr_country_flag = strong_greece
+		clr_country_flag = conference_weak_greece
+		clr_country_flag = conference_medium_greece
+		clr_country_flag = conference_strong_greece
 
 		# Send acknowledgement to attending countries
 		any_country = {
@@ -469,9 +469,9 @@ country_event = {
 		GRE_826 = { remove_core = TUR }
 		845 = { remove_core = TUR }
 		clr_country_flag = attending_london_conference_1832
-		clr_country_flag = weak_greece
-		clr_country_flag = medium_greece
-		clr_country_flag = strong_greece
+		clr_country_flag = conference_weak_greece
+		clr_country_flag = conference_medium_greece
+		clr_country_flag = conference_strong_greece
 
 		# Send refusal to attending countries
 		any_country = {
@@ -501,9 +501,11 @@ country_event = {
 
 			any_owned = {
 				limit = {
-					region = GRE_837
-					region = GRE_826
-					province_id = 845
+					OR = {
+						region = GRE_837
+						region = GRE_826
+						province_id = 845
+					}
 				}
 				secede_province = GRE
 			}
@@ -529,9 +531,9 @@ country_event = {
 		capital = 834
 		GRE = { civilized = yes } #			
 		clr_country_flag = attending_london_conference_1832
-		clr_country_flag = weak_greece
-		clr_country_flag = medium_greece
-		clr_country_flag = strong_greece
+		clr_country_flag = conference_weak_greece
+		clr_country_flag = conference_medium_greece
+		clr_country_flag = conference_strong_greece
 
 		# Send acknowledgement to attending countries
 		any_country = {
@@ -567,9 +569,9 @@ country_event = {
 		}
 		capital = 834
 		clr_country_flag = attending_london_conference_1832
-		clr_country_flag = weak_greece
-		clr_country_flag = medium_greece
-		clr_country_flag = strong_greece
+		clr_country_flag = conference_weak_greece
+		clr_country_flag = conference_medium_greece
+		clr_country_flag = conference_strong_greece
 
 		# Send refusal to attending countries
 		any_country = {
@@ -633,9 +635,9 @@ country_event = {
 		}
 		GRE = { civilized = yes } #			
 		clr_country_flag = attending_london_conference_1832
-		clr_country_flag = weak_greece
-		clr_country_flag = medium_greece
-		clr_country_flag = strong_greece
+		clr_country_flag = conference_weak_greece
+		clr_country_flag = conference_medium_greece
+		clr_country_flag = conference_strong_greece
 
 		# Send acknowledgement to attending countries
 		any_country = {
@@ -685,9 +687,9 @@ country_event = {
 			capital = 834
 		}
 		clr_country_flag = attending_london_conference_1832
-		clr_country_flag = weak_greece
-		clr_country_flag = medium_greece
-		clr_country_flag = strong_greece
+		clr_country_flag = conference_weak_greece
+		clr_country_flag = conference_medium_greece
+		clr_country_flag = conference_strong_greece
 
 		# Send acknowledgement to attending countries
 		any_country = {
@@ -723,7 +725,7 @@ country_event = {
 		#Everyone who supported weak Greece gains prestige, gains relations with Ottoman, gains influence & loses relations with Greece
 		random_owned = {
 			limit = {
-				owner = { has_country_flag = weak_greece }
+				owner = { has_country_flag = conference_weak_greece }
 			}
 			owner = {
 				prestige = 5
@@ -735,9 +737,9 @@ country_event = {
 		clr_country_flag = greek_question
 		clr_country_flag = hosting_london_conference_1832
 		clr_country_flag = attending_london_conference_1832
-		clr_country_flag = weak_greece
-		clr_country_flag = medium_greece
-		clr_country_flag = strong_greece
+		clr_country_flag = conference_weak_greece
+		clr_country_flag = conference_medium_greece
+		clr_country_flag = conference_strong_greece
 	}
 }
 
@@ -762,7 +764,7 @@ country_event = {
 		#Everyone who supported medium Greece gains prestige, relations & influence with Greece & loses relations with Ottoman
 		random_owned = {
 			limit = {
-				owner = { has_country_flag = medium_greece }
+				owner = { has_country_flag = conference_medium_greece }
 			}
 			owner = {
 				prestige = 5
@@ -774,9 +776,9 @@ country_event = {
 		clr_country_flag = greek_question
 		clr_country_flag = hosting_london_conference_1832
 		clr_country_flag = attending_london_conference_1832
-		clr_country_flag = weak_greece
-		clr_country_flag = medium_greece
-		clr_country_flag = strong_greece
+		clr_country_flag = conference_weak_greece
+		clr_country_flag = conference_medium_greece
+		clr_country_flag = conference_strong_greece
 	}
 }
 
@@ -800,7 +802,7 @@ country_event = {
 		#Everyone who supported strong Greece gains prestige, relations & influence with Greece & loses relations with Ottoman
 		random_owned = {
 			limit = {
-				owner = { has_country_flag = strong_greece }
+				owner = { has_country_flag = conference_strong_greece }
 			}
 			owner = {
 				prestige = 5
@@ -812,9 +814,9 @@ country_event = {
 		clr_country_flag = greek_question
 		clr_country_flag = hosting_london_conference_1832
 		clr_country_flag = attending_london_conference_1832
-		clr_country_flag = weak_greece
-		clr_country_flag = medium_greece
-		clr_country_flag = strong_greece
+		clr_country_flag = conference_weak_greece
+		clr_country_flag = conference_medium_greece
+		clr_country_flag = conference_strong_greece
 	}
 }
 
@@ -831,9 +833,9 @@ country_event = {
 		clr_country_flag = greek_question
 		clr_country_flag = hosting_london_conference_1832
 		clr_country_flag = attending_london_conference_1832
-		clr_country_flag = weak_greece
-		clr_country_flag = medium_greece
-		clr_country_flag = strong_greece
+		clr_country_flag = conference_weak_greece
+		clr_country_flag = conference_medium_greece
+		clr_country_flag = conference_strong_greece
 		prestige = -2
 		relation = { who = TUR value = 50 }
 		relation = { who = GRE value = -50 }
@@ -848,7 +850,7 @@ country_event = {
 			factor = 99
 			modifier = {
 				factor = 0
-				has_country_flag = strong_greece
+				has_country_flag = conference_strong_greece
 			}
 		}
 	}
@@ -858,9 +860,9 @@ country_event = {
 		clr_country_flag = greek_question
 		clr_country_flag = hosting_london_conference_1832
 		clr_country_flag = attending_london_conference_1832
-		clr_country_flag = weak_greece
-		clr_country_flag = medium_greece
-		clr_country_flag = strong_greece
+		clr_country_flag = conference_weak_greece
+		clr_country_flag = conference_medium_greece
+		clr_country_flag = conference_strong_greece
 		prestige = -2
 		ai_chance = { factor = 1 }
 	}
@@ -879,9 +881,9 @@ country_event = {
 		clr_country_flag = greek_question
 		clr_country_flag = hosting_london_conference_1832
 		clr_country_flag = attending_london_conference_1832
-		clr_country_flag = weak_greece
-		clr_country_flag = medium_greece
-		clr_country_flag = strong_greece
+		clr_country_flag = conference_weak_greece
+		clr_country_flag = conference_medium_greece
+		clr_country_flag = conference_strong_greece
 		prestige = -2
 		relation = { who = TUR value = 50 }
 		relation = { who = GRE value = -150 }
@@ -896,18 +898,19 @@ country_event = {
 			factor = 99
 			modifier = {
 				factor = 0
-				has_country_flag = strong_greece
+				has_country_flag = conference_strong_greece
 			}
 		}
 	}
 
 	option = {
 		name = "We are secretly pleased."
-		clr_country_flag = hosting_london_conference_1830
-		clr_country_flag = attending_london_conference_1830
-		clr_country_flag = supporting_netherlands
-		clr_country_flag = supporting_belgium
-		clr_country_flag = supporting_partition
+		clr_country_flag = greek_question
+		clr_country_flag = hosting_london_conference_1832
+		clr_country_flag = attending_london_conference_1832
+		clr_country_flag = conference_weak_greece
+		clr_country_flag = conference_medium_greece
+		clr_country_flag = conference_strong_greece
 		prestige = -2
 		ai_chance = { factor = 1 }
 	}
@@ -926,9 +929,9 @@ country_event = {
 		clr_country_flag = greek_question
 		clr_country_flag = hosting_london_conference_1832
 		clr_country_flag = attending_london_conference_1832
-		clr_country_flag = weak_greece
-		clr_country_flag = medium_greece
-		clr_country_flag = strong_greece
+		clr_country_flag = conference_weak_greece
+		clr_country_flag = conference_medium_greece
+		clr_country_flag = conference_strong_greece
 		prestige = -2
 		relation = { who = GRE value = 50 }
 		relation = { who = TUR value = -100 }
@@ -938,18 +941,19 @@ country_event = {
 			factor = 99
 			modifier = {
 				factor = 0
-				has_country_flag = weak_greece
+				has_country_flag = conference_weak_greece
 			}
 		}
 	}
 
 	option = {
 		name = "We are secretly pleased."
-		clr_country_flag = hosting_london_conference_1830
-		clr_country_flag = attending_london_conference_1830
-		clr_country_flag = supporting_netherlands
-		clr_country_flag = supporting_belgium
-		clr_country_flag = supporting_partition
+		clr_country_flag = greek_question
+		clr_country_flag = hosting_london_conference_1832
+		clr_country_flag = attending_london_conference_1832
+		clr_country_flag = conference_weak_greece
+		clr_country_flag = conference_medium_greece
+		clr_country_flag = conference_strong_greece
 		prestige = -2
 		ai_chance = { factor = 1 }
 	}
