@@ -1,0 +1,371 @@
+#########################################################
+#                                                       #
+#   The Egyptian Morea Expedition & Navarino (GVG)      #
+#   ids 1003300-1003306                                 #
+#                                                       #
+#   Ibrahim Pasha's landing in the Peloponnese 1825,    #
+#   the Siege of Missolonghi, the Treaty of London,     #
+#   the Battle of Navarino 1827, the Maison expedition,  #
+#   and the breach between Cairo and Istanbul.          #
+#                                                       #
+#   Design: docs/design/egyptian-morea-navarino-1825.md #
+#                                                       #
+#########################################################
+
+# 1003300: The Sultan's Call for Aid
+country_event = {
+	id = 1003300
+	title = "EVTNAME1003300"
+	desc = "EVTDESC1003300"
+	picture = "sultan"
+
+	trigger = {
+		tag = EGY
+		exists = yes
+		year = 1824
+		NOT = { year = 1828 }
+		TUR = {
+			exists = yes
+			war_with = GRE
+		}
+		GRE = { exists = yes }
+		NOT = {
+			has_country_flag = egypt_morea_decided
+			has_country_flag = egypt_morea_expedition
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 3
+	}
+
+	option = {
+		name = "EVTOPTA1003300"
+		set_country_flag = egypt_morea_decided
+		set_country_flag = egypt_morea_expedition
+		prestige = 5
+		relation = { who = TUR value = 50 }
+		relation = { who = GRE value = -100 }
+		war = {
+			target = GRE
+			attacker_goal = {
+				casus_belli = cut_down_to_size
+			}
+		}
+		TUR = {
+			set_country_flag = promised_egyptian_levant
+		}
+		ai_chance = {
+			factor = 85
+		}
+	}
+
+	option = {
+		name = "EVTOPTB1003300"
+		set_country_flag = egypt_morea_decided
+		prestige = 2
+		relation = { who = TUR value = -40 }
+		ai_chance = {
+			factor = 10
+		}
+	}
+
+	option = {
+		name = "EVTOPTC1003300"
+		set_country_flag = egypt_morea_decided
+		prestige = -5
+		relation = { who = TUR value = -100 }
+		ai_chance = {
+			factor = 5
+		}
+	}
+}
+
+# 1003301: Ibrahim Pasha Lands at Methoni
+country_event = {
+	id = 1003301
+	title = "EVTNAME1003301"
+	desc = "EVTDESC1003301"
+	picture = "oldsoldiers"
+
+	trigger = {
+		tag = EGY
+		exists = yes
+		has_country_flag = egypt_morea_expedition
+		year = 1825
+		NOT = { year = 1829 }
+		NOT = { has_country_flag = ibrahim_in_morea }
+	}
+
+	mean_time_to_happen = {
+		months = 2
+	}
+
+	option = {
+		name = "EVTOPTA1003301"
+		set_country_flag = ibrahim_in_morea
+		leadership = 15
+		GRE = {
+			any_pop = {
+				limit = {
+					culture = greek
+				}
+				militancy = 2
+			}
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+# 1003302: The Fall of Missolonghi
+country_event = {
+	id = 1003302
+	title = "EVTNAME1003302"
+	desc = "EVTDESC1003302"
+	picture = "rebellion"
+
+	trigger = {
+		tag = GRE
+		exists = yes
+		year = 1826
+		NOT = { year = 1829 }
+		NOT = { has_global_flag = fall_of_missolonghi }
+		OR = {
+			war_with = TUR
+			war_with = EGY
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 4
+	}
+
+	option = {
+		name = "EVTOPTA1003302"
+		set_global_flag = fall_of_missolonghi
+		prestige = 10
+		any_pop = {
+			limit = {
+				culture = greek
+			}
+			consciousness = 2
+			militancy = -1
+		}
+		ENG = {
+			relation = { who = GRE value = 30 }
+			relation = { who = TUR value = -20 }
+			relation = { who = EGY value = -20 }
+		}
+		FRA = {
+			relation = { who = GRE value = 30 }
+			relation = { who = TUR value = -20 }
+			relation = { who = EGY value = -20 }
+		}
+		RUS = {
+			relation = { who = GRE value = 30 }
+			relation = { who = TUR value = -20 }
+			relation = { who = EGY value = -20 }
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+# 1003303: The Treaty of London (Allied Great Powers)
+country_event = {
+	id = 1003303
+	title = "EVTNAME1003303"
+	desc = "EVTDESC1003303"
+	picture = "treaty"
+
+	trigger = {
+		OR = {
+			tag = ENG
+			tag = FRA
+			tag = RUS
+		}
+		exists = yes
+		year = 1827
+		NOT = { year = 1830 }
+		has_global_flag = fall_of_missolonghi
+		NOT = { has_global_flag = treaty_of_london_signed }
+		NOT = { has_country_flag = declined_treaty_of_london }
+	}
+
+	mean_time_to_happen = {
+		months = 3
+	}
+
+	option = {
+		name = "EVTOPTA1003303"
+		set_global_flag = treaty_of_london_signed
+		prestige = 5
+		relation = { who = GRE value = 25 }
+		relation = { who = TUR value = -30 }
+		relation = { who = EGY value = -30 }
+		ai_chance = {
+			factor = 95
+		}
+	}
+
+	option = {
+		name = "EVTOPTB1003303"
+		set_country_flag = declined_treaty_of_london
+		prestige = -5
+		ai_chance = {
+			factor = 5
+		}
+	}
+}
+
+# 1003304: The Battle of Navarino
+country_event = {
+	id = 1003304
+	title = "EVTNAME1003304"
+	desc = "EVTDESC1003304"
+	picture = "ship_attacked"
+	news = yes
+	news_title = "EVTNAME1003304_NEWS_TITLE"
+	news_desc_long = "EVTDESC1003304_NEWS_LONG"
+	news_desc_medium = "EVTDESC1003304_NEWS_MEDIUM"
+	news_desc_short = "EVTDESC1003304_NEWS_SHORT"
+
+	trigger = {
+		tag = EGY
+		exists = yes
+		has_country_flag = ibrahim_in_morea
+		year = 1827
+		month = 9
+		NOT = { year = 1830 }
+		has_global_flag = treaty_of_london_signed
+		NOT = { has_global_flag = navarino_fought }
+	}
+
+	mean_time_to_happen = {
+		days = 20
+	}
+
+	option = {
+		name = "EVTOPTA1003304"
+		set_global_flag = navarino_fought
+		prestige = -10
+		war_exhaustion = 5
+		TUR = {
+			prestige = -10
+			war_exhaustion = 5
+		}
+		GRE = {
+			prestige = 15
+			any_pop = {
+				limit = {
+					culture = greek
+				}
+				militancy = -3
+			}
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+# 1003305: The Maison Expedition & Evacuation
+country_event = {
+	id = 1003305
+	title = "EVTNAME1003305"
+	desc = "EVTDESC1003305"
+	picture = "oldsoldiers"
+
+	trigger = {
+		tag = EGY
+		exists = yes
+		year = 1828
+		NOT = { year = 1831 }
+		has_global_flag = navarino_fought
+		NOT = { has_country_flag = egypt_evacuated_morea }
+	}
+
+	mean_time_to_happen = {
+		months = 3
+	}
+
+	option = {
+		name = "EVTOPTA1003305"
+		set_country_flag = egypt_evacuated_morea
+		clr_country_flag = ibrahim_in_morea
+		prestige = -2
+		end_war = GRE
+		any_country = {
+			limit = {
+				OR = {
+					tag = GRE
+					tag = TUR
+				}
+			}
+			any_owned = {
+				limit = {
+					OR = {
+						region = GRE_826
+						region = GRE_837
+					}
+				}
+				remove_province_modifier = patriot_uprising
+			}
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+# 1003306: The Bitter Reckoning in Cairo
+country_event = {
+	id = 1003306
+	title = "EVTNAME1003306"
+	desc = "EVTDESC1003306"
+	picture = "ottoman"
+
+	trigger = {
+		tag = EGY
+		exists = yes
+		has_country_flag = egypt_evacuated_morea
+		NOT = { has_country_flag = cairo_reckoning_done }
+	}
+
+	mean_time_to_happen = {
+		months = 2
+	}
+
+	option = {
+		name = "EVTOPTA1003306"
+		set_country_flag = cairo_reckoning_done
+		TUR = { set_country_flag = promised_egyptian_levant }
+		add_country_modifier = {
+			name = egyptian_syrian_ambition
+			duration = 3650
+		}
+		relation = { who = TUR value = -100 }
+		TUR = {
+			847 = { secede_province = EGY }
+		}
+		ai_chance = {
+			factor = 95
+		}
+	}
+
+	option = {
+		name = "EVTOPTB1003306"
+		set_country_flag = cairo_reckoning_done
+		prestige = 2
+		treasury = 10000
+		TUR = {
+			847 = { secede_province = EGY }
+		}
+		ai_chance = {
+			factor = 5
+		}
+	}
+}

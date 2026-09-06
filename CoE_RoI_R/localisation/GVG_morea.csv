@@ -1,0 +1,31 @@
+egyptian_syrian_ambition;Ambitions in the Levant;;;;;;;;;;;;;x
+egyptian_syrian_ambition_desc;Following the bitter sacrifices of the Greek campaign and the destruction of the fleet at Navarino, Egypt demands the Syrian provinces promised by the Porte.;;;;;;;;;;;;;x
+EVTNAME1003300;The Sultan's Call for Aid;;;;;;;;;;;;;x
+EVTDESC1003300;The Greek insurrection has defied three campaigning seasons, and the Ottoman armies in Rumelia are exhausted. Sultan Mahmud II has sent an envoy to Cairo, appealing to Muhammad Ali Pasha for aid. In exchange for the dispatch of our modernised army and navy under Ibrahim Pasha, the Sublime Porte promises to grant Egypt the governorships of Morea and Crete, and hints at broader rewards in the Levant.;;;;;;;;;;;;;x
+EVTOPTA1003300;We shall send Ibrahim and our new army to the Morea.;;;;;;;;;;;;;x
+EVTOPTB1003300;Demand immediate formal cession of Syria before moving a battalion.;;;;;;;;;;;;;x
+EVTOPTC1003300;Let the Sultan quell his own rebels - we have no blood to spill in Greece.;;;;;;;;;;;;;x
+EVTNAME1003301;Ibrahim Pasha Lands at Methoni;;;;;;;;;;;;;x
+EVTDESC1003301;The Egyptian armada has dropped anchor in the bay of Methoni in the southwestern Peloponnese. Seventeen thousand infantry trained by French officers in the modern European drill, supported by field batteries and cavalry, have come ashore. The Greek irregulars, accustomed to skirmishing against sluggish Ottoman garrisons, find themselves confronted by a disciplined machine of war.;;;;;;;;;;;;;x
+EVTOPTA1003301;Advance into the interior and restore order.;;;;;;;;;;;;;x
+EVTNAME1003302;The Fall of Missolonghi;;;;;;;;;;;;;x
+EVTDESC1003302;After a harrowing year-long siege by joint Ottoman and Egyptian forces, the fortress town of Missolonghi has fallen. Reduced to starvation, the garrison and civilians attempted a desperate night breakout with swords drawn, but were overwhelmed in fierce hand-to-hand fighting. The tragic sacrifice of Missolonghi has sent shockwaves through the capitals of Europe, inflaming public opinion in favour of Greek liberation.;;;;;;;;;;;;;x
+EVTOPTA1003302;Their immortal sacrifice has awakened the conscience of the world.;;;;;;;;;;;;;x
+EVTNAME1003303;The Treaty of London;;;;;;;;;;;;;x
+EVTDESC1003303;The slaughter in Greece and the threat of complete devastation have compelled the Great Powers to act. Great Britain, France, and Russia have concluded the Treaty of London, calling for an immediate cessation of hostilities and demanding that the Sultan grant Greece internal self-government under Ottoman suzerainty. Combined naval squadrons have been dispatched to the eastern Mediterranean to enforce mediation upon the warring parties.;;;;;;;;;;;;;x
+EVTOPTA1003303;Enforce mediation and demand an armistice at once.;;;;;;;;;;;;;x
+EVTOPTB1003303;We cannot interfere in the Sultan's domestic affairs.;;;;;;;;;;;;;x
+EVTNAME1003304;The Battle of Navarino;;;;;;;;;;;;;x
+EVTDESC1003304;On 20 October 1827, the allied British, French, and Russian battle fleet under Vice-Admiral Codrington sailed into Navarino Bay where the combined Ottoman-Egyptian armada lay at anchor. When an Ottoman vessel fired upon an allied boat of truce, general action erupted. In four hours of furious broadsides at point-blank range, the allied ships annihilated the Muslim fleet, sinking over sixty warships without the loss of a single allied vessel.;;;;;;;;;;;;;x
+EVTOPTA1003304;A catastrophic disaster! Our newly built fleet is at the bottom of the sea.;;;;;;;;;;;;;x
+EVTNAME1003304_NEWS_TITLE;Allied Fleet Annihilates Ottoman-Egyptian Armada at Navarino;;;;;;;;;;;;;x
+EVTDESC1003304_NEWS_LONG;The combined naval squadrons of Great Britain, France, and Russia have fought a decisive engagement against the joint Ottoman and Egyptian fleets anchored in Navarino Bay. Over sixty enemy warships were blown up or sunk during a fierce cannonade. Greek independence is now virtually assured by European naval supremacy.;;;;;;;;;;;;;x
+EVTDESC1003304_NEWS_MEDIUM;The allied fleet of Britain, France, and Russia has destroyed the Ottoman-Egyptian fleet in Navarino Bay.;;;;;;;;;;;;;x
+EVTDESC1003304_NEWS_SHORT;Naval catastrophe at Navarino.;;;;;;;;;;;;;x
+EVTNAME1003305;The Maison Expedition and Evacuation;;;;;;;;;;;;;x
+EVTDESC1003305;A French expeditionary force of fourteen thousand troops commanded by General Maison has landed in the Morea to supervise the cessation of hostilities. Cut off from naval supplies following Navarino, Ibrahim Pasha has agreed to the terms of the Alexandria Convention negotiated with Admiral Codrington, embarking his remaining veterans for Egypt and ceding all strongholds to the French and Greeks.;;;;;;;;;;;;;x
+EVTOPTA1003305;Evacuate our brave regiments back to Alexandria.;;;;;;;;;;;;;x
+EVTNAME1003306;The Bitter Reckoning in Cairo;;;;;;;;;;;;;x
+EVTDESC1003306;Ibrahim Pasha's expedition has returned to Egypt, leaving behind thousands of soldiers and the ashes of a destroyed battle fleet. In Constantinople, Sultan Mahmud II has confirmed the grant of Crete to Muhammad Ali, but flatly refuses to surrender the pashaliks of Damascus, Acre, and Aleppo. Muhammad Ali is incandescent with rage: Egypt bore the brunt of the war only to be cheated of its reward.;;;;;;;;;;;;;x
+EVTOPTA1003306;The Sultan will learn what it costs to betray the Pasha of Egypt!;;;;;;;;;;;;;x
+EVTOPTB1003306;Swallow our pride, accept Crete, and rebuild our finances.;;;;;;;;;;;;;x

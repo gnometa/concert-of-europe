@@ -33,6 +33,11 @@
 #1003000-1003099: PORVilaFrancadaGVG (1823-1826 Vila-Francada, the Abrilada and the Carta Constitucional; hands off to PORMiguelistGVG 1001000+; 1003000-1003004 used)
 #1003100-1003199: MEXCentralistGVG (1833-1836 Gomez Farias reforms, the Plan de Cuernavaca and the Siete Leyes; 1003100-1003104 used)
 #1003200-1003299: DENEstatesGVG (1821-1836 aftermath of the 1813 bankruptcy, Lornsen, and the 1831 provincial estates; 1003200-1003204 used)
+#1003300-1003399: EGYMoreaGVG (1824-1828 Egyptian Morea expedition and the Battle of Navarino; 1003300-1003306 used)
+#1003400-1003499: SWENorwayGVG (1821-1836 Swedish-Norwegian union crises: Adelsloven, 17 May, Torvslaget, viceroyalty, and Storting dissolution; 1003400-1003405 used)
+#1003500-1003599: ITAMazziniGVG (1821-1835 Italian risings aftermath, Silvio Pellico's Spielberg memoirs, La Giovine Italia, 1833 army plot, and 1834 Savoy expedition; 1003500-1003505 used)
+#1003600-1003699: USCACivilWarGVG (1826-1838 First Central American Civil War, rise of Morazan, liberal reforms, Carrera's revolt, and dissolution; 1003600-1003605 used)
+#1003700-1003799: PRUIndustryGVG (1826-1838 Krupp cast steel in Essen, Bavarian Ludwigsbahn 1835, Prussian Railway Law of 1838, Ruhr deep-shaft mining, and Cologne merchant banking; 1003700-1003704 used)
 #
 #Reserved, currently unused (the files that defined them were 100% commented out
 #and were deleted 2026-09-06; recover them from git history if the system is revived):

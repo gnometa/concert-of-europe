@@ -1,0 +1,289 @@
+#########################################################
+#                                                       #
+#   Italian Risings, Carbonari & Young Italy (GVG)      #
+#   ids 1003500-1003505                                 #
+#                                                       #
+#   The aftermath of the 1821 Austrian intervention,    #
+#   Silvio Pellico's Spielberg memoirs, the founding    #
+#   of La Giovine Italia by Giuseppe Mazzini in 1831,   #
+#   the 1833 Piedmontese army conspiracy, the 1834      #
+#   Savoy expedition, and Garibaldi's exile.            #
+#                                                       #
+#   Design: docs/design/italian-carbonari-mazzini-1821.md#
+#                                                       #
+#########################################################
+
+# 1003500: The Austrian Garrison in the Peninsula
+country_event = {
+	id = 1003500
+	title = "EVTNAME1003500"
+	desc = "EVTDESC1003500"
+	picture = "oldsoldiers"
+
+	trigger = {
+		OR = {
+			tag = SAR
+			tag = SIC
+		}
+		exists = yes
+		year = 1821
+		NOT = { year = 1825 }
+		NOT = { has_country_flag = austrian_occupation_aftermath }
+	}
+
+	mean_time_to_happen = {
+		months = 2
+	}
+
+	option = {
+		name = "EVTOPTA1003500"
+		set_country_flag = austrian_occupation_aftermath
+		prestige = 2
+		relation = { who = AUS value = 40 }
+		any_pop = {
+			limit = {
+				OR = {
+					type = officers
+					type = bureaucrats
+					type = aristocrats
+				}
+			}
+			militancy = 2
+			consciousness = 2
+		}
+		ai_chance = {
+			factor = 85
+		}
+	}
+
+	option = {
+		name = "EVTOPTB1003500"
+		set_country_flag = austrian_occupation_aftermath
+		prestige = -2
+		relation = { who = AUS value = -20 }
+		any_pop = {
+			consciousness = 1
+		}
+		ai_chance = {
+			factor = 15
+		}
+	}
+}
+
+# 1003501: The Spielberg Trials and Silvio Pellico
+country_event = {
+	id = 1003501
+	title = "EVTNAME1003501"
+	desc = "EVTDESC1003501"
+	picture = "deliberation"
+
+	trigger = {
+		tag = AUS
+		exists = yes
+		owns = 726 # Milan
+		year = 1832
+		NOT = { year = 1835 }
+		NOT = { has_country_flag = pellico_memoirs_published }
+	}
+
+	mean_time_to_happen = {
+		months = 6
+	}
+
+	option = {
+		name = "EVTOPTA1003501"
+		set_country_flag = pellico_memoirs_published
+		prestige = -5
+		SAR = {
+			relation = { who = AUS value = -25 }
+			any_pop = {
+				consciousness = 1
+			}
+		}
+		SIC = {
+			relation = { who = AUS value = -25 }
+			any_pop = {
+				consciousness = 1
+			}
+		}
+		TUS = { relation = { who = AUS value = -20 } }
+		PAP = { relation = { who = AUS value = -20 } }
+		any_pop = {
+			limit = {
+				has_pop_culture = north_italian
+			}
+			consciousness = 2
+			militancy = 1
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+# 1003502: Giuseppe Mazzini Founds La Giovine Italia
+country_event = {
+	id = 1003502
+	title = "EVTNAME1003502"
+	desc = "EVTDESC1003502"
+	picture = "national_congress"
+
+	trigger = {
+		is_culture_group = italian
+		exists = yes
+		year = 1831
+		month = 6 # July
+		NOT = { year = 1834 }
+		NOT = { has_global_flag = giovine_italia_founded }
+	}
+
+	mean_time_to_happen = {
+		months = 3
+	}
+
+	option = {
+		name = "EVTOPTA1003502"
+		set_global_flag = giovine_italia_founded
+		prestige = 2
+		any_pop = {
+			consciousness = 2
+			militancy = 1
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+# 1003503: The Conspiracy in the Sardinian Army
+country_event = {
+	id = 1003503
+	title = "EVTNAME1003503"
+	desc = "EVTDESC1003503"
+	picture = "execution"
+
+	trigger = {
+		tag = SAR
+		exists = yes
+		has_global_flag = giovine_italia_founded
+		year = 1833
+		NOT = { year = 1836 }
+		NOT = { has_country_flag = sardinian_army_plot_1833 }
+	}
+
+	mean_time_to_happen = {
+		months = 4
+	}
+
+	option = {
+		name = "EVTOPTA1003503"
+		set_country_flag = sardinian_army_plot_1833
+		prestige = -2
+		any_pop = {
+			limit = {
+				type = soldiers
+			}
+			militancy = -1
+		}
+		any_pop = {
+			limit = {
+				type = officers
+			}
+			militancy = 2
+			consciousness = 2
+		}
+		ai_chance = {
+			factor = 90
+		}
+	}
+
+	option = {
+		name = "EVTOPTB1003503"
+		set_country_flag = sardinian_army_plot_1833
+		prestige = -5
+		any_pop = {
+			consciousness = 1
+		}
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+
+# 1003504: The Invasion of Savoy & Garibaldi's Flight
+country_event = {
+	id = 1003504
+	title = "EVTNAME1003504"
+	desc = "EVTDESC1003504"
+	picture = "streetriot"
+
+	trigger = {
+		tag = SAR
+		exists = yes
+		has_country_flag = sardinian_army_plot_1833
+		year = 1834
+		month = 1 # February
+		NOT = { year = 1837 }
+		NOT = { has_country_flag = savoy_invasion_1834 }
+	}
+
+	mean_time_to_happen = {
+		days = 15
+	}
+
+	option = {
+		name = "EVTOPTA1003504"
+		set_country_flag = savoy_invasion_1834
+		prestige = 5
+		relation = { who = SWI value = -30 }
+		any_pop = {
+			limit = {
+				location = {
+					province_id = 724 # Genoa
+				}
+			}
+			militancy = 1
+			consciousness = 2
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+# 1003505: The Awakening of the Risorgimento
+country_event = {
+	id = 1003505
+	title = "EVTNAME1003505"
+	desc = "EVTDESC1003505"
+	picture = "national_congress"
+
+	trigger = {
+		is_culture_group = italian
+		exists = yes
+		has_global_flag = giovine_italia_founded
+		year = 1835
+		NOT = { year = 1840 }
+		NOT = { has_country_flag = risorgimento_intellectual_awakening }
+	}
+
+	mean_time_to_happen = {
+		months = 6
+	}
+
+	option = {
+		name = "EVTOPTA1003505"
+		set_country_flag = risorgimento_intellectual_awakening
+		prestige = 5
+		add_country_modifier = {
+			name = giovine_italia
+			duration = 3650
+		}
+		any_pop = {
+			consciousness = 1
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}

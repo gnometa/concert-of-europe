@@ -3,6 +3,71 @@
 Notable changes to the mod, newest first. One line per change; file names where they help.
 Audit reports live in `docs/audit/`, design notes in `docs/design/`.
 
+## 2026-09-06 (final) - complete and enrich content: five new chains and legacy flavour audit
+
+Fourth content wave, resolving every remaining "partial" row in `docs/design/1821-1836-coverage.md`
+and auditing all unreviewed small `*Flavor` files. 30 events across IDs 1003300-1003704, 5 new event
+files, 6 new localisation CSVs, 5 new design notes, and 8 new event modifiers.
+
+### New chains
+
+| File | ids | Chain |
+|---|---|---|
+| `events/EGYMoreaGVG.txt` | 1003300-1003306 | Egyptian Morea Expedition & Battle of Navarino 1824-1828 - Ibrahim Pasha, Missolonghi, Treaty of London, Navarino, Maison expedition, Cairo breach |
+| `events/SWENorwayGVG.txt` | 1003400-1003405 | Swedish-Norwegian Union Crises 1821-1836 - Adelsloven, 17 May, Torvslaget in Christiania, viceroyalty question, 1836 Storting dissolution |
+| `events/ITAMazziniGVG.txt` | 1003500-1003505 | Italian Risings & Young Italy 1821-1835 - Austrian garrison, Silvio Pellico's Spielberg memoirs, La Giovine Italia, 1833 army plot, 1834 Savoy expedition, Garibaldi's flight |
+| `events/USCACivilWarGVG.txt` | 1003600-1003605 | First Central American Civil War & Reforms 1826-1838 - Arce's coup, rise of Morazan, fall of Guatemala City, liberal reforms, Carrera's peasant revolt, dissolution |
+| `events/PRUIndustryGVG.txt` | 1003700-1003704 | Rhenish Industrial Take-off & Early Railways 1826-1838 - Alfred Krupp in Essen, Bavarian Ludwigsbahn 1835, Prussian Railway Law of 1838, deep-shaft Ruhr coal, Cologne banking |
+
+Each chain has its own localisation csv (`localisation/GVG_<chain>.csv`), encoded as Windows-1252 (cp1252)
+CRLF with `;x` terminators. Ranges registered in `events/GVG Event IDs.txt`.
+
+### Shared files & Modifiers
+
+- `common/event_modifiers.txt`: 8 new modifiers — `egyptian_syrian_ambition`, `norwegian_constitutional_spirit`,
+  `giovine_italia`, `morazan_reforms`, `rhenish_heavy_industry`, `local_iron_works`, `local_railway_fever`, `ruhr_coal_boom`.
+  All localised (`refcheck defs` = 0).
+- `docs/design/1821-1836-coverage.md`: PRU, SWE, SAR, SIC, EGY rows updated from partial to yes, and UCA added.
+  0 partial and 0 missing rows remain across the entire 1821-1836 period.
+
+### Legacy flavour audit and bug fixes
+
+- `docs/audit/legacy-small-flavors.md`: systematic audit of all remaining unreviewed small `*Flavor` files.
+- `events/URUFlavor.txt`: clamped out-of-bounds relations (±400) to the engine bounds (-200..200).
+- `events/PBCFlavor.txt`: clamped out-of-bounds relations (+400, +300) to engine bounds (200).
+- `localisation/GVG_flavor_repairs.csv`: resolved all 16 missing localisation keys across `DANFlavor.txt` (Kierkegaard,
+  Tivoli Gardens 1843, Rødding Folk High School 1844, Georg Brandes Modern Breakthrough 1871), `DOMFlavor.txt`
+  (1898 Dominican financial collapse), and `ANHFlavor.txt` (1863 Anhalt reunification under Leopold IV).
+
+### Review fixes on the above
+
+- `common/event_modifiers.txt`: `rhenish_heavy_industry` used `capitalist_build_factory_cost`, which is not an
+  engine modifier key -> `factory_cost`. Dropped `prestige` from `local_railway_fever` (country key, no-op in a
+  province modifier).
+- `events/EGYMoreaGVG.txt`: 1003303 option B now sets `declined_treaty_of_london` and the trigger checks it
+  (it re-fired every ~3 months otherwise); 1003304 Navarino now requires `ibrahim_in_morea` so an Egypt that
+  refused the expedition is not sunk for it; removed `experience = 10` (not an engine pop effect); 1003305's
+  `remove_province_modifier = patriot_uprising` widened to TUR/GRE over GRE_826+GRE_837, since
+  `Ottoman_Event.txt:31257` only ever applies that modifier to Ottoman-held Attica and beyond; 1003306 now sets
+  `promised_egyptian_levant` on TUR (it is a TUR flag read by the Oriental Crisis chain), not on EGY.
+- `events/Ottoman_Event.txt`: 31259 no longer fires 31261 at an Egypt that already joined via 1003300, which
+  would have declared a second war on a country EGY was already fighting.
+- `events/PRUIndustryGVG.txt`: 1003702 no longer gates the 1838 Prussian Railway Law on Bavaria's
+  `ludwigsbahn_opened`; the law is independent of Bavaria surviving and holding Nuremberg.
+- `events/USCACivilWarGVG.txt`: 1003605 now secedes province 2181 (Tuxtla) to MEX. Its cores are MEX/CHP/UCA
+  only, so the five core-based branches left it behind and a one-province rump UCA survived forever without
+  its capital. Soconusco (2182) has a GUA core and still goes to GUA, matching the 1824/1842 split.
+- Dead-flag sweep over the wave (`refcheck flags` back to its pre-wave baseline): removed 13 set-but-never-
+  checked markers across the four files. The exception is `complied_17_may`, kept and made load-bearing --
+  1003402 Torvslaget now requires `NOT = { has_country_flag = complied_17_may }`, since the riot happened
+  because Christiania celebrated in defiance of the ban. Note this shortens the compliant branch by two
+  events, not one: 1003403 (the viceroyalty dilemma) gates on `torvslaget_scandal`, which only 1003402 sets.
+
+### Design notes
+
+Five new notes under `docs/design/`: `egyptian-morea-navarino-1825.md`, `swedish-norwegian-union-1821.md`,
+`italian-carbonari-mazzini-1821.md`, `central-american-civil-war-1826.md`, `rhenish-industry-railways-1826.md`.
+
 ## 2026-09-06 (later) - eight new 1821-1836 chains
 
 Third content wave, filling every remaining "missing" row in `docs/design/1821-1836-coverage.md`.

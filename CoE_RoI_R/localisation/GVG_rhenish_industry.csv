@@ -1,0 +1,26 @@
+rhenish_heavy_industry;Rhenish Heavy Industry;;;;;;;;;;;;;x
+rhenish_heavy_industry_desc;The modern regulatory clarity of the Prussian Railway Law and expanding transport links have stimulated capital investment, heavy engineering, and metallurgical manufacturing.;;;;;;;;;;;;;x
+local_iron_works;Krupp Crucible Steel Foundry;;;;;;;;;;;;;x
+local_iron_works_desc;Precision crucible metallurgy and roller technologies pioneered by Alfred Krupp in Essen provide superior tools and industrial machinery.;;;;;;;;;;;;;x
+local_railway_fever;Bavarian Railway Fever;;;;;;;;;;;;;x
+local_railway_fever_desc;The triumphant opening of the Ludwigsbahn between Nuremberg and Fuerth has ignited boundless commercial enthusiasm for modern steam transportation.;;;;;;;;;;;;;x
+ruhr_coal_boom;Ruhr Deep-Shaft Coal Extraction;;;;;;;;;;;;;x
+ruhr_coal_boom_desc;Modern steam pumps draining deep shafts beneath the marl cover have unlocked inexhaustible seams of rich coking coal across the Ruhr basin.;;;;;;;;;;;;;x
+EVTNAME1003700;Krupp's Cast Steel Works in Essen;;;;;;;;;;;;;x
+EVTDESC1003700;In Essen, fourteen-year-old Alfred Krupp and his mother Therese have inherited a small, heavily indebted crucible steel workshop following the death of Friedrich Krupp. Through years of tireless experimentation, young Alfred has perfected the secrets of cast steel, producing flawless rollers, minting dies, and machine parts of unprecedented durability. The crucible foundry in the Ruhr valley is poised to become the technological center of German metallurgy.;;;;;;;;;;;;;x
+EVTOPTA1003700;Support crucible steel experimentation and private manufacturing.;;;;;;;;;;;;;x
+EVTOPTB1003700;The royal state has no special concern for private iron workshops.;;;;;;;;;;;;;x
+EVTNAME1003701;The Iron Way: The Bavarian Ludwigsbahn;;;;;;;;;;;;;x
+EVTDESC1003701;On 7 December 1835, the first steam railway in Germany, the Bavarian Ludwigsbahn, opened for public traffic between the trading city of Nuremberg and the manufacturing town of Fuerth. Propelled by the locomotive 'Der Adler', built in Newcastle by George and Robert Stephenson, the train completed the six-kilometre journey in nine minutes before cheering crowds. 'Railway fever' has seized the German states, demonstrating that steam transport will revolutionize European commerce.;;;;;;;;;;;;;x
+EVTOPTA1003701;A glorious triumph for Bavarian enterprise and German science!;;;;;;;;;;;;;x
+EVTNAME1003702;The Prussian Railway Law of 1838;;;;;;;;;;;;;x
+EVTDESC1003702;With the opening of the Berlin-Potsdam line and the founding of the Rhenish Railway Company linking Cologne to Aachen and the Belgian border, the Prussian crown has enacted the Preussisches Eisenbahngesetz. Drafted under Karl von Altenstein and Friedrich von Staegemann, this landmark statute provides joint-stock corporations with secure land concessions and clear rate regulations while guaranteeing state inspection and postal transit. A magnificent construction boom is unleashed.;;;;;;;;;;;;;x
+EVTOPTA1003702;Enact the statute to foster private joint-stock railway construction.;;;;;;;;;;;;;x
+EVTOPTB1003702;Reserve all railway transport exclusively for the royal state.;;;;;;;;;;;;;x
+EVTNAME1003703;Deep-Shaft Mining in the Ruhr Basin;;;;;;;;;;;;;x
+EVTDESC1003703;For generations, miners in the Ruhr valley had merely scraped coal from surface outcrops south of the river. Now, industrial pioneer Franz Haniel and engineers at the Gutehoffnungshuette in Oberhausen have successfully sunk deep vertical shafts through the thick marl layer into the northern Emscher basin. High-pressure steam engines pump out millions of gallons of water, opening vast subterranean seams of premium coking coal to fuel the blast furnaces of the Rhineland.;;;;;;;;;;;;;x
+EVTOPTA1003703;The boundless coal of the Ruhr will power the factories of the Zollverein!;;;;;;;;;;;;;x
+EVTNAME1003704;Rhenish Joint-Stock Finance in Cologne;;;;;;;;;;;;;x
+EVTDESC1003704;The enormous capital required to bore deep coal shafts, erect blast furnaces, and lay hundreds of kilometres of iron track has outgrown the private wealth of individual merchants. In Cologne, financial leaders Ludolf Camphausen, David Hansemann, and Abraham Schaaffhausen have pioneered corporate merchant banking, pooling regional and international capital into joint-stock ventures. A confident Rhenish industrial bourgeoisie has stepped forward to guide modern German capitalism.;;;;;;;;;;;;;x
+EVTOPTA1003704;Charter corporate banking houses to supply credit to modern industry.;;;;;;;;;;;;;x
+EVTOPTB1003704;Restrict speculative joint-stock finance in favour of traditional estates.;;;;;;;;;;;;;x

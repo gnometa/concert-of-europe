@@ -2477,7 +2477,15 @@ country_event = {
 	option = {
 		name = "Make vague promises of territory in the Levant in return for Egypt's loyalty."
 		prestige = -4
-		EGY = { country_event = 31261 }
+		# EGYMoreaGVG 1003300 may already have brought Egypt into the Greek war;
+		# firing 31261 then would declare a second war on a country EGY already fights.
+		random_country = {
+			limit = {
+				tag = EGY
+				NOT = { has_country_flag = egypt_morea_expedition }
+			}
+			country_event = 31261
+		}
 		ai_chance = {
 			factor = 95
 		}

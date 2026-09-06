@@ -1,0 +1,267 @@
+#########################################################
+#                                                       #
+#   Rhenish Industrial Take-off & Early Railways (GVG)  #
+#   ids 1003700-1003704                                 #
+#                                                       #
+#   Alfred Krupp's cast steel foundry in Essen 1826,    #
+#   the Bavarian Ludwigsbahn 1835, the Prussian         #
+#   Railway Law of 1838, deep-shaft mining in the Ruhr, #
+#   and Rhenish corporate merchant banking in Cologne.  #
+#                                                       #
+#   Design: docs/design/rhenish-industry-railways-1826.md#
+#                                                       #
+#########################################################
+
+# 1003700: Krupp's Cast Steel Works in Essen
+country_event = {
+	id = 1003700
+	title = "EVTNAME1003700"
+	desc = "EVTDESC1003700"
+	picture = "factory"
+
+	trigger = {
+		tag = PRU
+		exists = yes
+		owns = 578 # Dusseldorf / Ruhr
+		year = 1826
+		NOT = { year = 1830 }
+		NOT = { has_country_flag = krupp_gussstahlfabrik }
+	}
+
+	mean_time_to_happen = {
+		months = 6
+	}
+
+	option = {
+		name = "EVTOPTA1003700"
+		set_country_flag = krupp_gussstahlfabrik
+		prestige = 2
+		578 = {
+			add_province_modifier = {
+				name = local_iron_works
+				duration = 3650
+			}
+		}
+		any_pop = {
+			limit = {
+				location = { province_id = 578 }
+				OR = {
+					type = craftsmen
+					type = capitalists
+				}
+			}
+			consciousness = 1
+		}
+		ai_chance = {
+			factor = 95
+		}
+	}
+
+	option = {
+		name = "EVTOPTB1003700"
+		set_country_flag = krupp_gussstahlfabrik
+		prestige = -1
+		ai_chance = {
+			factor = 5
+		}
+	}
+}
+
+# 1003701: The Iron Way: The Bavarian Ludwigsbahn
+country_event = {
+	id = 1003701
+	title = "EVTNAME1003701"
+	desc = "EVTDESC1003701"
+	picture = "train"
+
+	trigger = {
+		tag = BAV
+		exists = yes
+		owns = 595 # Nuremburg
+		year = 1835
+		month = 11 # December
+		NOT = { year = 1838 }
+		NOT = { has_global_flag = ludwigsbahn_opened }
+	}
+
+	mean_time_to_happen = {
+		days = 7
+	}
+
+	option = {
+		name = "EVTOPTA1003701"
+		set_global_flag = ludwigsbahn_opened
+		prestige = 5
+		595 = {
+			add_province_modifier = {
+				name = local_railway_fever
+				duration = 3650
+			}
+		}
+		any_pop = {
+			limit = {
+				type = capitalists
+			}
+			consciousness = 2
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+# 1003702: The Prussian Railway Law of 1838
+country_event = {
+	id = 1003702
+	title = "EVTNAME1003702"
+	desc = "EVTDESC1003702"
+	picture = "railroad"
+
+	trigger = {
+		tag = PRU
+		exists = yes
+		year = 1838
+		NOT = { year = 1841 }
+		NOT = { has_country_flag = prussian_railway_law_1838 }
+	}
+
+	mean_time_to_happen = {
+		months = 3
+	}
+
+	option = {
+		name = "EVTOPTA1003702"
+		set_country_flag = prussian_railway_law_1838
+		prestige = 5
+		add_country_modifier = {
+			name = rhenish_heavy_industry
+			duration = 3650
+		}
+		any_pop = {
+			limit = {
+				type = capitalists
+			}
+			consciousness = 2
+		}
+		ai_chance = {
+			factor = 90
+		}
+	}
+
+	option = {
+		name = "EVTOPTB1003702"
+		set_country_flag = prussian_railway_law_1838
+		prestige = 2
+		any_pop = {
+			limit = {
+				type = aristocrats
+			}
+			consciousness = -1
+		}
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+
+# 1003703: Deep-Shaft Mining in the Ruhr Basin
+country_event = {
+	id = 1003703
+	title = "EVTNAME1003703"
+	desc = "EVTDESC1003703"
+	picture = "factory"
+
+	trigger = {
+		tag = PRU
+		exists = yes
+		owns = 578
+		year = 1834
+		NOT = { year = 1839 }
+		NOT = { has_country_flag = ruhr_deep_mining }
+	}
+
+	mean_time_to_happen = {
+		months = 6
+	}
+
+	option = {
+		name = "EVTOPTA1003703"
+		set_country_flag = ruhr_deep_mining
+		prestige = 3
+		578 = {
+			add_province_modifier = {
+				name = ruhr_coal_boom
+				duration = 3650
+			}
+		}
+		575 = {
+			add_province_modifier = {
+				name = ruhr_coal_boom
+				duration = 3650
+			}
+		}
+		any_pop = {
+			limit = {
+				location = { province_id = 578 }
+				type = labourers
+			}
+			militancy = -1
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+# 1003704: Rhenish Joint-Stock Finance in Cologne
+country_event = {
+	id = 1003704
+	title = "EVTNAME1003704"
+	desc = "EVTDESC1003704"
+	picture = "deliberation"
+
+	trigger = {
+		tag = PRU
+		exists = yes
+		owns = 575 # Cologne
+		year = 1836
+		NOT = { year = 1840 }
+		NOT = { has_country_flag = rhenish_merchant_finance }
+	}
+
+	mean_time_to_happen = {
+		months = 6
+	}
+
+	option = {
+		name = "EVTOPTA1003704"
+		set_country_flag = rhenish_merchant_finance
+		prestige = 2
+		treasury = 15000
+		any_pop = {
+			limit = {
+				location = { province_id = 575 }
+				type = capitalists
+			}
+			consciousness = 2
+		}
+		ai_chance = {
+			factor = 95
+		}
+	}
+
+	option = {
+		name = "EVTOPTB1003704"
+		set_country_flag = rhenish_merchant_finance
+		prestige = -1
+		any_pop = {
+			limit = {
+				type = aristocrats
+			}
+			consciousness = -1
+		}
+		ai_chance = {
+			factor = 5
+		}
+	}
+}

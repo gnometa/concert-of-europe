@@ -1,0 +1,312 @@
+#########################################################
+#                                                       #
+#   The Swedish-Norwegian Union Crises (GVG)            #
+#   ids 1003400-1003405                                 #
+#                                                       #
+#   Karl XIV Johan vs the Norwegian Storting 1821-1836: #
+#   the Adelsloven, the 17th of May celebrations,       #
+#   Torvslaget in Christiania, the viceroyalty question,#
+#   and the Storting dissolution crisis of 1836.        #
+#                                                       #
+#   Design: docs/design/swedish-norwegian-union-1821.md #
+#                                                       #
+#########################################################
+
+# 1003400: The Abolition of the Norwegian Nobility (Adelsloven)
+country_event = {
+	id = 1003400
+	title = "EVTNAME1003400"
+	desc = "EVTDESC1003400"
+	picture = "monarchy"
+
+	trigger = {
+		tag = SWE
+		exists = yes
+		year = 1821
+		NOT = { year = 1824 }
+		NOR = {
+			exists = yes
+			vassal_of = THIS
+		}
+		NOT = {
+			has_country_flag = norway_nobility_decided
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 2
+	}
+
+	option = {
+		name = "EVTOPTA1003400"
+		set_country_flag = norway_nobility_decided
+		prestige = -2
+		relation = { who = NOR value = 30 }
+		NOR = {
+			any_pop = {
+				consciousness = 1
+				militancy = -1
+			}
+		}
+		ai_chance = {
+			factor = 90
+		}
+	}
+
+	option = {
+		name = "EVTOPTB1003400"
+		set_country_flag = norway_nobility_decided
+		prestige = 5
+		relation = { who = NOR value = -60 }
+		NOR = {
+			any_pop = {
+				militancy = 2
+			}
+		}
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+
+# 1003401: Constitution Day and the 17th of May
+country_event = {
+	id = 1003401
+	title = "EVTNAME1003401"
+	desc = "EVTDESC1003401"
+	picture = "national_congress"
+
+	trigger = {
+		tag = NOR
+		exists = yes
+		vassal_of = SWE
+		year = 1824
+		NOT = { year = 1829 }
+		NOT = { has_country_flag = constitution_day_commemorated }
+	}
+
+	mean_time_to_happen = {
+		months = 5
+	}
+
+	option = {
+		name = "EVTOPTA1003401"
+		set_country_flag = constitution_day_commemorated
+		prestige = 3
+		any_pop = {
+			consciousness = 2
+			militancy = 1
+		}
+		ai_chance = {
+			factor = 85
+		}
+	}
+
+	option = {
+		name = "EVTOPTB1003401"
+		set_country_flag = constitution_day_commemorated
+		set_country_flag = complied_17_may
+		prestige = -2
+		any_pop = {
+			consciousness = -1
+		}
+		ai_chance = {
+			factor = 15
+		}
+	}
+}
+
+# 1003402: The Battle of the Square (Torvslaget, 17 May 1829)
+country_event = {
+	id = 1003402
+	title = "EVTNAME1003402"
+	desc = "EVTDESC1003402"
+	picture = "streetriot"
+
+	trigger = {
+		tag = NOR
+		exists = yes
+		vassal_of = SWE
+		year = 1829
+		month = 4
+		NOT = { year = 1832 }
+		NOT = { has_country_flag = torvslaget_happened }
+		# The riot happened because Christiania celebrated in defiance of the ban;
+		# a Storting that complied in 1003401 option B gets no Torvslaget.
+		NOT = { has_country_flag = complied_17_may }
+	}
+
+	mean_time_to_happen = {
+		days = 17
+	}
+
+	option = {
+		name = "EVTOPTA1003402"
+		set_country_flag = torvslaget_happened
+		set_global_flag = torvslaget_scandal
+		any_pop = {
+			militancy = 2
+			consciousness = 3
+		}
+		313 = {
+			add_province_modifier = {
+				name = liberal_agitation
+				duration = 1095
+			}
+		}
+		SWE = {
+			prestige = -5
+			relation = { who = NOR value = -40 }
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+# 1003403: The Viceroyalty Dilemma (Statholderstriden)
+country_event = {
+	id = 1003403
+	title = "EVTNAME1003403"
+	desc = "EVTDESC1003403"
+	picture = "deliberation"
+
+	trigger = {
+		tag = SWE
+		exists = yes
+		has_global_flag = torvslaget_scandal
+		NOT = { has_country_flag = viceroyalty_decided }
+		NOR = {
+			exists = yes
+			vassal_of = THIS
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 3
+	}
+
+	option = {
+		name = "EVTOPTA1003403"
+		set_country_flag = viceroyalty_decided
+		prestige = -2
+		relation = { who = NOR value = 40 }
+		NOR = {
+			any_pop = {
+				militancy = -1
+			}
+		}
+		ai_chance = {
+			factor = 70
+		}
+	}
+
+	option = {
+		name = "EVTOPTB1003403"
+		set_country_flag = viceroyalty_decided
+		prestige = 2
+		relation = { who = NOR value = 30 }
+		NOR = {
+			any_pop = {
+				consciousness = 1
+			}
+		}
+		ai_chance = {
+			factor = 25
+		}
+	}
+
+	option = {
+		name = "EVTOPTC1003403"
+		set_country_flag = viceroyalty_decided
+		prestige = 3
+		relation = { who = NOR value = -50 }
+		NOR = {
+			any_pop = {
+				militancy = 2
+			}
+		}
+		ai_chance = {
+			factor = 5
+		}
+	}
+}
+
+# 1003404: The Storting Dissolution Crisis of 1836 (Statskupp-forsoket)
+country_event = {
+	id = 1003404
+	title = "EVTNAME1003404"
+	desc = "EVTDESC1003404"
+	picture = "senate_debate"
+
+	trigger = {
+		tag = SWE
+		exists = yes
+		year = 1836
+		month = 6
+		NOT = { year = 1838 }
+		NOR = {
+			exists = yes
+			vassal_of = THIS
+		}
+		NOT = { has_country_flag = storting_crisis_started }
+	}
+
+	mean_time_to_happen = {
+		days = 15
+	}
+
+	option = {
+		name = "EVTOPTA1003404"
+		set_country_flag = storting_crisis_started
+		prestige = -3
+		relation = { who = NOR value = 50 }
+		NOR = {
+			country_event = 1003405
+		}
+		ai_chance = {
+			factor = 90
+		}
+	}
+
+	option = {
+		name = "EVTOPTB1003404"
+		set_country_flag = storting_crisis_started
+		prestige = 5
+		relation = { who = NOR value = -80 }
+		NOR = {
+			any_pop = {
+				militancy = 4
+			}
+		}
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+
+# 1003405: The Constitutional Settlement of 1836
+country_event = {
+	id = 1003405
+	title = "EVTNAME1003405"
+	desc = "EVTDESC1003405"
+	picture = "national_congress"
+
+	is_triggered_only = yes
+
+	option = {
+		name = "EVTOPTA1003405"
+		prestige = 10
+		add_country_modifier = {
+			name = norwegian_constitutional_spirit
+			duration = 3650
+		}
+		any_pop = {
+			consciousness = 2
+			militancy = -2
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}

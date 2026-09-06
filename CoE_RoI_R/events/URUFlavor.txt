@@ -179,12 +179,12 @@ country_event = {
 				secede_province = URU
 			}
 		}
-		relation = { who = URU value = -400 }
-		relation = { who = ARG value = -400 }
+		relation = { who = URU value = -200 }
+		relation = { who = ARG value = -200 }
 		URU = {
 			set_country_flag = cisplatine_war
 			create_alliance = ARG
-			relation = { who = ARG value = 400 }
+			relation = { who = ARG value = 200 }
 			any_pop = { militancy = -6 }
 			leadership = 40
 			add_country_modifier = {
@@ -223,7 +223,7 @@ country_event = {
 				secede_province = URU
 			}
 		}
-		relation = { who = URU value = -400 }
+		relation = { who = URU value = -200 }
 		URU = {
 			set_country_flag = cisplatine_war
 			any_pop = { militancy = -6 }
