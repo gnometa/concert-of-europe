@@ -238,6 +238,10 @@ Nothing below has been run in a game. In the first in-game years, watch:
 - The Decembrist chain firing in November-December 1825, the Brussels riots after the July Revolution in 1830, and `found_the_zollverein` showing up for Prussia from 1833.
 - The Spanish American wars should end by ~1826-1830 via the Ayacucho events; check SPA is at peace by 1831.
 
+### Post-playtest fixes
+
+- **Loading-screen crash fixed** (`ab4cc979` regression): moving `history/provinces/soviet/2637 - Novo Mariinsk.txt` to the `indonesia/` folder un-shadowed the vanilla file, which gave Lanfang's only province to Russia and crashed the engine at "Executing History" with an empty error.log. Found by bisecting with real game launches (12 runs). File moved back; `1067 - Novosibirsk.txt` renamed to vanilla's `Barnaul` for the same reason; new `modcheck.py province-paths` check in `/validate` stage 1.
+
 ### Deferred / design questions
 
 - **Flat literacy.** Every one of the 521 history files starts at `literacy = 0.01`, and the dated 1836/1861 blocks were flattened too (commit `8f5e1248`). No script effect in Victoria 2 can set pop literacy, so this is a deliberate design, not a bug — recorded in `docs/audit/ai-balance.md` rather than reverted. Open question: whether the great powers should still start with a literacy edge.

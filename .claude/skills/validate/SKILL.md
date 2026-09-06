@@ -13,6 +13,7 @@ There is no compiler or test runner for this mod. This skill is the closest thin
 
 ```
 python scripts/modcheck.py ids
+python scripts/modcheck.py province-paths   # must be 0 path problems: a moved province file un-shadows vanilla and crashes at Executing History
 python scripts/modcheck.py encoding
 python scripts/modcheck.py braces $(git diff --name-only HEAD -- 'CoE_RoI_R/**/*.txt')
 python scripts/modcheck.py provinces $(git diff --name-only HEAD -- CoE_RoI_R/events CoE_RoI_R/decisions CoE_RoI_R/history)

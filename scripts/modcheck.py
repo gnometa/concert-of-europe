@@ -13,6 +13,7 @@ Subcommands
   loc-find <key>           find a localisation key across all .csv files
   loc-add <csv> <key> <text> [--force]   append a key (Windows-1252, CRLF); refuses text.csv unless --force
   loc-check <csv>          validate a localisation csv (encoding, CRLF, terminator column)
+  province-paths           every mod history/provinces file must sit at the vanilla path for its id
 
 All output is one problem per line; exit code 1 when problems were found, 2 for hook blocks.
 """
@@ -28,6 +29,7 @@ MOD = ROOT / "CoE_RoI_R"
 LOC = MOD / "localisation"
 DEFINITION = MOD / "map" / "definition.csv"
 COUNTRIES = MOD / "common" / "countries.txt"
+GAME = Path(r"D:\Steam\steamapps\common\Victoria 2")
 
 
 def rel(p):
@@ -382,6 +384,8 @@ def cmd_hook_post():
     problems = []
     if low.endswith(".txt"):
         problems += brace_check(fp)
+        if "/history/provinces/" in p:
+            problems += [l for l in capture(cmd_province_paths) if l.startswith(f"province {fp.name.split(' ')[0]}:")]
         if any(s in p for s in ("/history/provinces/", "/history/countries/", "/events/", "/decisions/")):
             problems += [l for l in capture(cmd_provinces, [fp]) if "definition.csv" in l]
             problems += [l for l in capture(cmd_tags, [fp]) if "countries.txt" in l]
@@ -393,6 +397,39 @@ def cmd_hook_post():
             print("  " + pr, file=sys.stderr)
         return 2
     return 0
+
+
+def cmd_province_paths():
+    """Vic2 overrides province history per FILE PATH, not per province id. A mod
+    file for id N that is not at the same relative path as vanilla's file for N
+    leaves the vanilla file live as well; both apply and the alphabetically later
+    one wins (the 2637 Lanfang move crashed the game at Executing History)."""
+    van = GAME / "history" / "provinces"
+    if not van.is_dir():
+        print(f"vanilla history/provinces not found at {van}; skipping")
+        return 0
+
+    def index(root):
+        d = {}
+        for f in root.rglob("*.txt"):
+            m = re.match(r"(\d+)", f.name)
+            if m:
+                d.setdefault(int(m.group(1)), set()).add(f.relative_to(root).as_posix())
+        return d
+
+    v = index(van)
+    m = index(MOD / "history" / "provinces")
+    problems = 0
+    for pid in sorted(m):
+        if pid in v and not (m[pid] & v[pid]):
+            problems += 1
+            print(f"province {pid}: mod file {sorted(m[pid])} does not shadow vanilla {sorted(v[pid])}; "
+                  f"move it to the vanilla path (name and folder)")
+        if len(m[pid]) > 1:
+            problems += 1
+            print(f"province {pid}: {len(m[pid])} mod files {sorted(m[pid])}")
+    print(f"{len(m)} mod province files, {problems} path problem(s)")
+    return 1 if problems else 0
 
 
 # ---------------------------------------------------------------- main
@@ -426,6 +463,8 @@ def main(argv):
             return cmd_loc_add(args[0], args[1], args[2], force)
         if cmd == "loc-check":
             return cmd_loc_check(args[0])
+        if cmd == "province-paths":
+            return cmd_province_paths()
     except IndexError:
         print(f"missing argument for {cmd}\n{__doc__}", file=sys.stderr)
         return 1
