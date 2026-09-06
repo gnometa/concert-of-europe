@@ -30,6 +30,7 @@ country_event = {
 			}
 			AND = {
 				slavery = no_slavery
+				year = 1855
 				NOT = { has_global_flag = american_civil_war_has_happened }
 			}
 		}
@@ -1387,10 +1388,6 @@ country_event = {
 	mean_time_to_happen = {
 		months = 30
 		modifier = {
-			factor = 0.5
-			has_country_flag = fugitive_slave_act_enacted
-		}
-		modifier = {
 			factor = 0.9
 			average_consciousness = 5
 		}
@@ -2046,7 +2043,7 @@ province_event = {
 	}
 
 	option = {
-		name = "EVTOPTA14210"
+		name = "EVTOPTA16210"
 		any_pop = {
 			limit = { consciousness = 4 }
 			reduce_pop = 0.95
@@ -2403,7 +2400,7 @@ country_event = {
 		set_global_flag = trent_affair_resolved
 		prestige = -15
 		ai_chance = {
-			factor = 0
+			factor = 50
 		}
 	}
 }
@@ -2449,7 +2446,7 @@ country_event = {
 		prestige = 5
 		FROM = { country_event = 16353 }
 		ai_chance = {
-			factor = 40
+			factor = 20
 			modifier = {
 				factor = 2.5
 				OR = {
@@ -3031,7 +3028,7 @@ country_event = {
 							is_culture_group = native_american
 						}
 					}
-					reduce_pop = 0.5
+					reduce_pop = 0.95
 				}
 			}
 		}
