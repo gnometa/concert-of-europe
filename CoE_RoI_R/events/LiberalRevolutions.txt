@@ -3861,7 +3861,7 @@ country_event = {
 			militancy = -6
 		}
 		any_owned = {
-			limit = { has_pop_culture = north_italian }
+			limit = { culture = north_italian }
 			add_province_modifier = {
 				name = liberal_agitation
 				duration = 1095
@@ -4004,7 +4004,7 @@ country_event = {
 			militancy = -6
 		}
 		any_owned = {
-			limit = { has_pop_culture = north_italian }
+			limit = { culture = north_italian }
 			add_province_modifier = {
 				name = liberal_agitation
 				duration = 1095
