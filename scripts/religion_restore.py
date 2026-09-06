@@ -154,6 +154,24 @@ def resolve(entry, fname, by_file_modal, global_modal):
     return new_cul, None, "unresolved"
 
 
+REAL_RELIGIONS = frozenset("""catholic protestant mormon orthodox coptic sunni ibadi shiite
+druze jewish zoroastrian mahayana gelugpa theravada hindu shinto sikh animist
+fetishist""".split())
+
+
+def _has_transposed_pops():
+    """True while the transposition this tool undoes is still in place, i.e. while
+    no *live* pop religion line holds a real religion. (Do not test for `#religion`
+    comments: the fully-commented dead pop blocks in Russia.txt carry them for
+    ever.)"""
+    for fname in sorted(f for f in os.listdir(POPDIR) if f.endswith(".txt")):
+        for line in read_text(os.path.join(POPDIR, fname)).splitlines():
+            m = re.match(r"\s*religion\s*=\s*(\w+)", line.split("#")[0])
+            if m and m.group(1) in REAL_RELIGIONS:
+                return False
+    return True
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -164,6 +182,16 @@ def main():
     ap.add_argument("--file", metavar="NAME",
                     help="limit to one pop file (basename)")
     args = ap.parse_args()
+
+    # The restoration was applied on 2026-09-06 (see docs/CHANGELOG.md). Once the
+    # pops carry real religions there is nothing left to recover from a `#religion`
+    # comment, and re-running the resolver would fall back on the coarse EXPLICIT /
+    # modal tables and mangle good data. Refuse rather than pretend.
+    if not _has_transposed_pops():
+        raise SystemExit(
+            "nothing to do: the pop files already carry real religions.\n"
+            "This tool is a one-shot migration; it was applied on 2026-09-06.\n"
+            "Use 'python scripts/audit_religion.py check' to verify the state instead.")
 
     names = sorted(f for f in os.listdir(POPDIR) if f.endswith(".txt"))
     if args.file:
