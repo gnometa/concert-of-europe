@@ -1322,7 +1322,7 @@ country_event = {
 			liberal = 10
 			socialist = 10
 		}
-		consciousness = 3
+		average_consciousness = 3
 		ideological_thought = 1
 		NOT = {
 			OR = {
@@ -1443,7 +1443,7 @@ country_event = {
 			OR = { government = hms_government government = hms_government2 government = hms_government3 }
 		}
 		liberal = 20
-		consciousness = 4
+		average_consciousness = 4
 		ideological_thought = 1
 		NOT = {
 			OR = {

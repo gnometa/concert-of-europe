@@ -198,9 +198,10 @@ province_event = {
 			}
 		}
 		owner = {
+			remove_country_modifier = freedom_talks
 			add_country_modifier = {
 				name = freedom_talks
-				duration = -1
+				duration = 730
 			}
 		}
 		ai_chance = {
@@ -224,9 +225,10 @@ province_event = {
 					militancy = 1
 				}
 			}
+			remove_country_modifier = freedom_talks
 			add_country_modifier = {
 				name = freedom_talks
-				duration = -1
+				duration = 730
 			}
 		}
 		ai_chance = {
@@ -591,7 +593,7 @@ country_event = {
 		}
 		modifier = {
 			factor = 0.8
-			has_country_flag = failed_ruler_assassination
+			has_country_flag = failed_assassination_attempt
 		}
 	}
 
@@ -776,7 +778,7 @@ country_event = {
 		}
 		modifier = {
 			factor = 0.7
-			has_country_flag = revolutionary_society
+			has_country_modifier = revolutionary_society
 		}
 		modifier = {
 			factor = 0.9

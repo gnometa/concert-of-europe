@@ -289,7 +289,7 @@ country_event = {
 	}
 	
 	option = {
-		name = "EVTOPTA18050"
+		name = "EVTOPTA18060"
 		upper_house = {
 			ideology = reactionary
 			value = 0.05
@@ -297,7 +297,7 @@ country_event = {
 	}
 	
 	option = {
-		name = "EVTOPTB18050"
+		name = "EVTOPTB18060"
 		upper_house = {
 			ideology = reactionary
 			value = 0.1
@@ -739,14 +739,14 @@ country_event = {
 	}
 	
 	option = {
-		name = "EVTOPTA18150"
+		name = "EVTOPTA18160"
 		any_pop = {
 			consciousness = 1
 		}
 	}
 	
 	option = {
-		name = "EVTOPTB18150"
+		name = "EVTOPTB18160"
 		any_pop = {
 			militancy = 1
 		}
@@ -767,7 +767,7 @@ country_event = {
 			ideology = socialist
 			value = 0.2
 		}
-		not = {
+		NOT = {
 			ruling_party_ideology = socialist
 		}
 	}
