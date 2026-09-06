@@ -1751,8 +1751,10 @@ country_event = {
 	trigger = {
 		exists = yes
 		stock_exchange = 1
+		civilized = yes
 		NOT = {
 			has_country_flag = consumer_confidence
+			has_country_modifier = economic_trend
 			OR = { government = proletarian_dictatorship government = proletarian_dictatorship2 government = proletarian_dictatorship3 government = socialist_democracy government = socialist_democracy2 government = socialist_democracy3 }
 		}
 	}
@@ -1819,7 +1821,10 @@ country_event = {
 		exists = yes
 		has_country_flag = pig_dogs
 		NOT = { OR = { government = proletarian_dictatorship government = proletarian_dictatorship2 government = proletarian_dictatorship3 government = socialist_democracy government = socialist_democracy2 government = socialist_democracy3 } }
-		NOT = { has_country_modifier = great_depression }
+		NOT = {
+			has_country_modifier = great_depression
+			has_country_modifier = economic_trend
+		}
 	}
 	mean_time_to_happen = {
 		days = 5
