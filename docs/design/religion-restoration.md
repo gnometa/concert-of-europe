@@ -1,8 +1,16 @@
 # Design: restoring real pop religions
 
-Status: **design only, nothing applied.** Companion tool: `scripts/religion_restore.py`
-(dry-run by default). Prior analysis: `docs/audit/religion-dead-content.md`,
-`scripts/audit_religion.py`.
+Status: **APPLIED, 2026-09-06 — steps 1-6 of §7 are done and committed; step 7 (deploy and
+in-game smoke test) has not been run.** The owner chose the full restoration. Where this
+document and `docs/design/religion-restoration-review.md` disagree the review was followed —
+in particular §4.3's "restores a gate that has been off" framing is wrong (the sub-culture
+triggers were live all along, so the conversion is 1:1), the site count is **121** not 115, and
+there are **7** negated sites not 3. The accepted-culture table actually applied is the review's
+§7, and the review's answers in its §10 are the answers to §8 below. Post-state and the
+re-runnable gate (`python scripts/audit_religion.py check`, must stay at 0):
+`docs/audit/religion-dead-content.md`. Changelog: `docs/CHANGELOG.md`, "Religion restoration".
+Companion tool: `scripts/religion_restore.py` (dry-run by default; re-running it now reports
+0 sub-culture moves). Prior analysis: `scripts/audit_religion.py`.
 
 ## 0. Executive summary
 
