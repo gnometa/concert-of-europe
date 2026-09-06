@@ -379,7 +379,8 @@ def check_defs():
     engine actually needs):
       modifiers (event/triggered/static)  bare name, no _desc
       national_focus                      group name and focus name
-      issues                              issue name; option name + _desc
+      issues                              reform group and issue name; option
+                                          name + _desc
       ideologies                          group name and ideology name
       governments, goods, crime, religion bare name (religion GROUPS are not
                                           localised in vanilla, so skipped)
@@ -389,7 +390,7 @@ def check_defs():
                                           carry no _desc)
       rebel_types                         _name, _title, _desc, _army - never
                                           the bare key
-      cb_types                            bare name + _desc
+      cb_types                            bare name + _desc + _setup + _short
       pop types                           poptypes/<name>.txt stem
       countries.txt                       TAG and TAG_ADJ
       technologies / inventions           bare name + _desc
@@ -421,8 +422,9 @@ def check_defs():
         for k, line in _level(C / "national_focus.txt", depth):
             want("national_focus", C / "national_focus.txt", k, line, "")
 
-    for k, line in _level(C / "issues.txt", 1):
-        want("issue", C / "issues.txt", k, line, "")
+    for depth in (0, 1):
+        for k, line in _level(C / "issues.txt", depth):
+            want("issue", C / "issues.txt", k, line, "")
     for k, line in _level(C / "issues.txt", 2):
         want("issue_option", C / "issues.txt", k, line, "", "_desc")
 
@@ -463,7 +465,7 @@ def check_defs():
         # peace_order is the peace-treaty ordering list, not a casus belli
         if k == "peace_order":
             continue
-        want("casus_belli", C / "cb_types.txt", k, line, "", "_desc")
+        want("casus_belli", C / "cb_types.txt", k, line, "", "_desc", "_setup", "_short")
 
     for p in sorted((MOD / "poptypes").glob("*.txt")):
         want("pop_type", p, p.stem, 1, "")

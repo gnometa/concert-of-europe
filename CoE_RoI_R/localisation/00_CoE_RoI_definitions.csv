@@ -57,44 +57,44 @@ ai_economic_flavour_cooldown;Recent Economic Reform;;;;;;;;;;;;;x
 random_migration_cooldown;Recent Wave of Migration;;;;;;;;;;;;;x
 bhu_paradise;Hidden Paradise;;;;;;;;;;;;;x
 small_navy;Small Navy;;;;;;;;;;;;;x
-money_hoarder_1;Hoarded Treasury;;;;;;;;;;;;;x
-money_hoarder_2;Growing Hoard;;;;;;;;;;;;;x
-money_hoarder_3;Idle Fortune;;;;;;;;;;;;;x
-money_hoarder_4;Miserly Crown;;;;;;;;;;;;;x
+money_hoarder_1;Hoarded Treasury I;;;;;;;;;;;;;x
+money_hoarder_2;Hoarded Treasury II;;;;;;;;;;;;;x
+money_hoarder_3;Hoarded Treasury III;;;;;;;;;;;;;x
+money_hoarder_4;Hoarded Treasury IV;;;;;;;;;;;;;x
 occupied_capital;Occupied Capital;;;;;;;;;;;;;x
 forced_assimilation_desc;Non-accepted pops are pressed to adopt our culture, which raises their consciousness and their militancy.;;;;;;;;;;;;;x
-traditional_weapons_desc;Our soldiers still go to war with spears and bows. Land defence is very poor, but the people are content.;;;;;;;;;;;;;x
-gunpowder_weapons_desc;Muskets are issued to the army, teaching us flintlock rifles and advancing our civilisation.;;;;;;;;;;;;;x
-improved_weapons_desc;Domestic workshops turn out serviceable modern rifles, advancing our civilisation further.;;;;;;;;;;;;;x
-imported_weapons_desc;Modern rifles are bought abroad to arm the regular army.;;;;;;;;;;;;;x
-modern_imported_weapons_desc;The latest foreign rifles are purchased for the whole of the army.;;;;;;;;;;;;;x
-no_artillery_for_you_desc;We field no guns at all, and our land defence suffers badly for it.;;;;;;;;;;;;;x
-early_light_artillery_desc;Bronze muzzle-loaded guns are cast for the army.;;;;;;;;;;;;;x
-improved_artillery_desc;Better founded guns strengthen the army and advance our civilisation.;;;;;;;;;;;;;x
-imported_artillery_desc;Field guns are bought abroad to equip our batteries.;;;;;;;;;;;;;x
-modern_imported_artillery_desc;The newest foreign artillery is purchased for our batteries.;;;;;;;;;;;;;x
-military_levies_desc;Troops are raised as levies when war comes. The peasantry is content, but the army is untrained.;;;;;;;;;;;;;x
-field_drills_desc;Regular field drills improve the organisation and the mobilisation of our army.;;;;;;;;;;;;;x
-tactical_drills_desc;Tactical drill on the European model raises the quality of our regiments.;;;;;;;;;;;;;x
-army_schools_desc;Army schools train our soldiers systematically and advance our civilisation.;;;;;;;;;;;;;x
-professional_armies_desc;A standing professional army replaces the old levies.;;;;;;;;;;;;;x
-aristocratic_officers_desc;Commissions go to the nobility. The pops are quiescent, but our leadership is poor.;;;;;;;;;;;;;x
-foreign_officers_commanding_desc;Foreign officers command our regiments, improving leadership and advancing our civilisation.;;;;;;;;;;;;;x
-foreign_trained_officers_desc;Our own officers are trained abroad and return to command our regiments.;;;;;;;;;;;;;x
-unciv_officer_schools_desc;Officer schools of our own train the next generation of commanders.;;;;;;;;;;;;;x
-unciv_professional_officers_desc;A professional officer corps of our own leads the army.;;;;;;;;;;;;;x
+traditional_weapons_desc;Our soldiers still go to war with spears and bows. Land defence is 10% weaker, though the people are calmer for it.;;;;;;;;;;;;;x
+gunpowder_weapons_desc;Muskets are issued to the army, granting flintlock rifles and advancing civilisation by 1% a year, at the price of dearer research.;;;;;;;;;;;;;x
+improved_weapons_desc;Our own workshops turn out muzzle-loaded rifles, advancing civilisation by 1% a year at the price of dearer research. Available from 1840.;;;;;;;;;;;;;x
+imported_weapons_desc;Breech-loaded rifles are bought abroad, advancing civilisation by 2% a year at the price of dearer research. Available from 1850.;;;;;;;;;;;;;x
+modern_imported_weapons_desc;The latest bolt-action rifles are purchased abroad, advancing civilisation by 3% a year at a steep price in research. Available from 1870.;;;;;;;;;;;;;x
+no_artillery_for_you_desc;We field no guns at all. Land defence is 20% weaker, though the people are calmer for it.;;;;;;;;;;;;;x
+early_light_artillery_desc;Bronze muzzle-loaded guns are cast for the army, advancing civilisation by 2% a year at the price of dearer research.;;;;;;;;;;;;;x
+improved_artillery_desc;Iron muzzle-loaded guns and fire control advance civilisation by 2% a year at the price of dearer research. Available from 1840.;;;;;;;;;;;;;x
+imported_artillery_desc;Iron breech-loaded guns are bought abroad, advancing civilisation by 3% a year at the price of dearer research. Available from 1860.;;;;;;;;;;;;;x
+modern_imported_artillery_desc;Steel breech-loaded guns are purchased abroad, advancing civilisation by 1% a year at a steep price in research. Available from 1880.;;;;;;;;;;;;;x
+military_levies_desc;Troops are called up as levies when war comes. Mobilisation is a little larger and the people calmer, but no drill of any kind is taught.;;;;;;;;;;;;;x
+field_drills_desc;Regular field drills add 2% land organisation and a little mobilisation, and advance civilisation by 1% a year at the price of dearer research.;;;;;;;;;;;;;x
+tactical_drills_desc;Tactical drill on the European model adds 5% land organisation and advances civilisation by 1% a year. Available from 1840.;;;;;;;;;;;;;x
+army_schools_desc;Army schools add 5% land organisation and give recruits 5 experience, advancing civilisation by 2% a year. Available from 1850.;;;;;;;;;;;;;x
+professional_armies_desc;A standing professional army adds 10% land organisation and 10 starting experience, advancing civilisation by 3% a year. Available from 1880.;;;;;;;;;;;;;x
+aristocratic_officers_desc;Commissions go to the nobility. Consciousness falls by 2%, but the army gains no professional leadership at all.;;;;;;;;;;;;;x
+foreign_officers_commanding_desc;Foreign officers command our regiments, adding 25% leadership and advancing civilisation by 1% a year at the price of dearer research.;;;;;;;;;;;;;x
+foreign_trained_officers_desc;Our own officers are trained abroad, adding 50% leadership and advancing civilisation by 1% a year. Available from 1850.;;;;;;;;;;;;;x
+unciv_officer_schools_desc;Officer schools of our own add 75% leadership and advance civilisation by 2% a year. Available from 1870.;;;;;;;;;;;;;x
+unciv_professional_officers_desc;A professional officer corps doubles our leadership and advances civilisation by 3% a year. Available from 1880.;;;;;;;;;;;;;x
 minor_group;Minor Ideologies;;;;;;;;;;;;;x
-Executive;Executive;;;;;;;;;;;;;x
+Executive;Executive Authority;;;;;;;;;;;;;x
 pro_slavery;Pro-Slavery;;;;;;;;;;;;;x
 abolitionist;Abolitionist;;;;;;;;;;;;;x
 cherokee_religion;Cherokee;;;;;;;;;;;;;x
 faroese;Faroese;;;;;;;;;;;;;x
 ossetian;Ossetian;;;;;;;;;;;;;x
 indonesian;Indonesian;;;;;;;;;;;;;x
-demand_concession_casus_belli6;Demand Concession;;;;;;;;;;;;;x
+demand_concession_casus_belli6;Demand Concession - huge;;;;;;;;;;;;;x
 status_quo;Status Quo;;;;;;;;;;;;;x
-great_war_install_revolution;Install Revolutionary Government;;;;;;;;;;;;;x
-great_war_install_revolution_desc;Overthrow the enemy government and install a revolutionary regime of our own ideology.;;;;;;;;;;;;;x
+great_war_install_revolution;Impose Revolutionary Government;;;;;;;;;;;;;x
+great_war_install_revolution_desc;In the settlement of a great war, sweep away the enemy government and impose a revolutionary regime of our own ideology.;;;;;;;;;;;;;x
 install_revolution;Install Revolutionary Government;;;;;;;;;;;;;x
 install_revolution_desc;Overthrow the enemy government and install a regime of our own ideology.;;;;;;;;;;;;;x
 call_allies_cb;Call Allies;;;;;;;;;;;;;x
@@ -105,7 +105,7 @@ modern_financial_institutions_1930_desc;Central banking and modern credit market
 modern_aesthetics_1930_desc;The modernist movement in art, architecture and letters.;;;;;;;;;;;;;x
 modern_power_generation_1930_desc;Generation and distribution of electric power on a national scale.;;;;;;;;;;;;;x
 modern_naval_doctrine_1930_desc;The carrier and the submarine displace the line of battle.;;;;;;;;;;;;;x
-School_of_firepower_desc;Doctrine now holds that concentrated firepower, not the bayonet, decides a battle.;;;;;;;;;;;;;x
+School_of_firepower_desc;Firepower doctrine drills the line to win the firefight: army units gain attack and need less supply, while artillery loses most of its attack.;;;;;;;;;;;;;x
 portland_steel;Portland Steel;;;;;;;;;;;;;x
 portland_steel_desc;High-pressure steam and Portland cement let our heavy industry produce more and waste less.;;;;;;;;;;;;;x
 luxury_industry_desc;Advances in medicine and comfort create a wide market for luxury manufactures.;;;;;;;;;;;;;x
@@ -113,3 +113,13 @@ rosendale_steel;Rosendale Steel;;;;;;;;;;;;;x
 rosendale_steel_desc;Inorganic chemistry improves the smelting of steel, raising heavy industry output and throughput.;;;;;;;;;;;;;x
 synthetic_steel;Synthetic Steel;;;;;;;;;;;;;x
 synthetic_steel_desc;Electric furnaces produce steel of consistent quality, raising heavy industry output and throughput.;;;;;;;;;;;;;x
+economic_reforms;Economic Reforms;;;;;;;;;;;;;x
+military_reforms;Military Reforms;;;;;;;;;;;;;x
+demand_concession_casus_belli6_setup;Demand that $RECIPIENT$ secede territory to form a colonial concession.;;;;;;;;;;;;;x
+demand_concession_casus_belli6_short;Demand $STATE$;;;;;;;;;;;;;x
+great_war_install_revolution_setup;Demand that $RECIPIENT$ submit to a revolutionary government of our own ideology.;;;;;;;;;;;;;x
+great_war_install_revolution_short;Impose Revolution;;;;;;;;;;;;;x
+install_revolution_setup;Demand that $RECIPIENT$ accept a government of our own ideology.;;;;;;;;;;;;;x
+install_revolution_short;Install Revolution;;;;;;;;;;;;;x
+call_allies_cb_setup;Call our allies into the war against $RECIPIENT$.;;;;;;;;;;;;;x
+call_allies_cb_short;Call Allies;;;;;;;;;;;;;x
