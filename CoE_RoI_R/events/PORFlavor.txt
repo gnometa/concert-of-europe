@@ -561,7 +561,10 @@ country_event = {
 				limit = {
 					OR = {
 						region = ENG_2036
-						region = ENG_2039
+						province_id = 2038 #Lindi; region ENG_2039 was merged into ENG_2044
+						province_id = 2039
+						province_id = 2040
+						province_id = 2041
 					}
 				}
 				secede_province = THIS
@@ -705,8 +708,7 @@ country_event = {
 				limit = {
 					OR = {
 						region = ENG_2068
-						region = ENG_2014
-						region = ENG_2016
+						region = ENG_2014 #includes former ENG_2016 (Kazembe)
 					}
 				}
 				secede_province = THIS
@@ -1469,7 +1471,10 @@ country_event = {
 			name = conservative_reaction
 			duration = 1825
 		}
-		country_event = 97024
+		random_owned = {
+			limit = { owner = { tag = UPB } }
+			owner = { country_event = 97024 }
+		}
 		ai_chance = {
 			factor = 80
 			modifier = {
@@ -1513,7 +1518,7 @@ country_event = {
 country_event = {
 	id = 1000300
 	title = "EVTNAME1000300" #Proposition for a new capital
-	desc = "EVTNAME1000300"
+	desc = "EVTDESC1000300"
 	picture = "Administration"
 	
 	trigger = {
@@ -1723,11 +1728,15 @@ country_event = {
 			casus_belli = {
 				target = THIS
 				type = free_peoples
+				country = BRZ
+				state_province_id = 2447
 				months = 60
 			}
 			casus_belli = {
 				target = IBR
 				type = free_peoples
+				country = BRZ
+				state_province_id = 2447
 				months = 60
 			}
 		}
@@ -1779,11 +1788,13 @@ country_event = {
 			casus_belli = {
 				target = THIS
 				type = release_puppet
+				country = BRZ
 				months = 60
 			}
 			casus_belli = {
 				target = IBR
 				type = release_puppet
+				country = BRZ
 				months = 60
 			}
 		}
@@ -1849,16 +1860,13 @@ country_event = {
 		name = "I've been waiting for this for a while!"
 		badboy = 2
 		GAZ = {
-			exists = yes
 			leave_alliance = POR
 			relation = { who = POR value = -400 }
 		}
-		POR = {	
-			add_casus_belli = {
-				target = GAZ
-				type = establish_protectorate_casus_belli
-				months = 12
-			}
+		casus_belli = {
+			target = GAZ
+			type = establish_protectorate_casus_belli
+			months = 12
 		}
 		ai_chance = { factor = 99 }
 	}
@@ -1900,8 +1908,11 @@ country_event = {
 	option = {
 		name = "Pedro will give the crown to Maria and reaffirm the constitution."
 		set_country_flag = por_charter_granted #read by PORMiguelistGVG.txt 1001000
-		relation = { who = BRZ value = 200 }
-		alliance = BRZ
+		random_country = {
+			limit = { tag = BRZ exists = yes }
+			relation = { who = THIS value = 200 }
+			alliance = THIS
+		}
 		any_pop = {
 			limit = {
 				type = capitalists
@@ -1950,8 +1961,12 @@ country_event = {
 		political_reform = none_voting
 		government = absolute_monarchy
 		ruling_party_ideology = reactionary
-		relation = { who = BRZ value = -100 }
-		leave_alliance = BRZ
+		random_country = {
+			limit = { tag = BRZ exists = yes }
+			relation = { who = THIS value = -100 }
+			leave_alliance = THIS
+			country_event = 46315 #Pedro's abdication in BRZFlavor.txt
+		}
 		any_greater_power = {
 			diplomatic_influence = { who = THIS value = -100 }
 		}
@@ -1986,7 +2001,6 @@ country_event = {
 			name = national_confusion
 			duration = 365
 		}
-		BRZ = { country_event = 46315 } #Pedro's abdication in BRZFlavor.txt
 		ai_chance = {
 			factor = 20
 		}
@@ -2006,7 +2020,11 @@ country_event = {
 			OR = { government = hms_government government = hms_government2 government = hms_government3 }
 			OR = { government = democracy government = democracy2 government = democracy3 }
 		}
-		POR = { OR = { government = absolute_monarchy government = absolute_monarchy2 government = absolute_monarchy3 } }
+		year = 1826
+		POR = {
+			exists = yes
+			OR = { government = absolute_monarchy government = absolute_monarchy2 government = absolute_monarchy3 }
+		}
 		NOT = {
 			year = 1836
 		}
@@ -2022,10 +2040,6 @@ country_event = {
 		name = "We can offer Pedro some support."
 		set_country_flag = por_intervention_considered
 		prestige = 3
-		military_industry = -2
-		military_industry = -5
-		military_industry = -2
-		military_industry = -5
 		money = -50000
 		diplomatic_influence = { who = POR value = 50 }
 		POR = {
