@@ -64,6 +64,7 @@ province_event = {
 			consciousness = 10
 		}
 		any_pop = {
+			limit = { NOT = { has_pop_religion = sunni } }
 			consciousness = 4
 		}
 	}
@@ -83,6 +84,7 @@ province_event = {
 				consciousness = 5
 			}
 			any_pop = {
+				limit = { NOT = { has_pop_religion = sunni } }
 				consciousness = 2
 			}
 		}

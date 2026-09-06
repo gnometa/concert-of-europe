@@ -40,7 +40,7 @@ country_event = {
 		set_country_flag = rebellion_1837_begun
 		any_pop = {
 			limit = {
-				has_pop_religion = anglo_canadian
+				has_pop_culture = anglo_canadian
 				location = { is_core = CAN }
 			}
 			consciousness = 6
@@ -440,7 +440,7 @@ country_event = {
 				duration = 1095
 			}
 			any_pop = {
-				limit = { has_pop_religion = anglo_canadian }
+				limit = { has_pop_culture = anglo_canadian }
 				militancy = 3
 				consciousness = 5
 			}
@@ -882,7 +882,7 @@ country_event = {
 				duration = 1095
 			}
 			any_pop = {
-				limit = { has_pop_religion = anglo_canadian }
+				limit = { has_pop_culture = anglo_canadian }
 				militancy = 6
 				consciousness = 6
 			}
@@ -1101,7 +1101,7 @@ country_event = {
 				duration = 1095
 			}
 			any_pop = {
-				limit = { has_pop_religion = anglo_canadian }
+				limit = { has_pop_culture = anglo_canadian }
 				militancy = 6
 				consciousness = 6
 			}
@@ -1529,7 +1529,7 @@ country_event = {
 			owner = {
 				any_pop = {
 					limit = {
-						has_pop_religion = anglo_canadian
+						has_pop_culture = anglo_canadian
 						location = { is_core = CAN }
 					}
 					militancy = 8
@@ -1652,7 +1652,7 @@ country_event = {
 		name = "This is not in our interests."
 		set_country_flag = british_columbia_confederation
 		any_pop = {
-			limit = { has_pop_religion = anglo_canadian }
+			limit = { has_pop_culture = anglo_canadian }
 			militancy = 4
 		}
 		any_owned = {
@@ -1974,7 +1974,7 @@ country_event = {
 		}
 		any_pop = {
 			limit = {
-				has_pop_religion = anglo_canadian
+				has_pop_culture = anglo_canadian
 			}
 			consciousness = 2
 		}
@@ -2002,7 +2002,7 @@ country_event = {
 		}
 		any_pop = {
 			limit = {
-				has_pop_religion = anglo_canadian
+				has_pop_culture = anglo_canadian
 			}
 			militancy = -1
 			consciousness = 1

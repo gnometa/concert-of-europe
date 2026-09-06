@@ -115,7 +115,7 @@ country_event = {
 			consciousness = 2
 		}
 		any_pop = {
-			limit = { has_pop_religion = north_german }
+			limit = { has_pop_culture = north_german }
 			militancy = -2
 			dominant_issue = {
 				factor = 0.05
@@ -213,7 +213,7 @@ country_event = {
 			add_core = THIS
 		}
 		any_pop = {
-			limit = { has_pop_religion = north_german }
+			limit = { has_pop_culture = north_german }
 			militancy = 3
 		}
 		any_country = {

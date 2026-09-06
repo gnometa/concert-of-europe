@@ -308,7 +308,8 @@ country_event = {
 		name = "EVTOPTA11103"
 		clr_country_flag = made_the_call_to_union
 		#add_accepted_culture = south_italian
-		add_accepted_culture = italian
+		add_accepted_culture = north_italian
+		add_accepted_culture = south_italian
 		change_tag = culture
 		any_country = {
 			limit = {
@@ -617,14 +618,14 @@ country_event = {
 				tag = NGF
 				any_owned_province = {
 					is_core = GER
-					religion = south_german
+					culture = south_german
 				}
 			}
 			AND = {
 				tag = SGF
 				any_owned_province = {
 					is_core = GER
-					religion = north_german
+					culture = north_german
 				}
 			}
 		}
@@ -649,7 +650,7 @@ country_event = {
 			limit = {
 				owner = { tag = SGF }
 			}
-			owner = { add_accepted_culture = german }
+			owner = { add_accepted_culture = north_german  add_accepted_culture = south_german }
 		}
 		change_tag = GER
 		random_country = {
@@ -964,7 +965,7 @@ country_event = {
 					any_core = {
 						NOT = { province_id = 370 }
 						NOT = { province_id = 371 }
-						religion = north_german
+						culture = north_german
 						owner = { NOT = { is_culture_group = germanic } }
 					}
 				}
@@ -980,7 +981,7 @@ country_event = {
 				any_core = {
 					NOT = { province_id = 370 }
 					NOT = { province_id = 371 }
-					religion = north_german
+					culture = north_german
 					owned_by = FRA
 				}
 			}

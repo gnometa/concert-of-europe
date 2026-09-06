@@ -412,7 +412,7 @@ country_event = {
 		any_country = {
 			limit = {
 				OR = {
-					primary_culture = italian
+					is_culture_group = italian
 					#primary_culture = south_italian
 				}
 				NOT = {
@@ -530,7 +530,7 @@ country_event = {
 		any_country = {
 			limit = {
 				OR = {
-					primary_culture = italian
+					is_culture_group = italian
 					#primary_culture = south_italian
 				}
 				NOT = {
@@ -601,8 +601,8 @@ country_event = {
 		any_pop = {
 			limit = {
 				OR = {
-					has_pop_religion = north_italian
-					has_pop_religion = south_italian
+					has_pop_culture = north_italian
+					has_pop_culture = south_italian
 				}
 			}
 			militancy = -3
@@ -638,8 +638,8 @@ country_event = {
 		any_pop = {
 			limit = {
 				OR = {
-					has_pop_religion = north_italian
-					has_pop_religion = south_italian
+					has_pop_culture = north_italian
+					has_pop_culture = south_italian
 				}
 			}
 			militancy = 2
@@ -679,8 +679,8 @@ country_event = {
 		any_pop = {
 			limit = {
 				OR = {
-					has_pop_religion = north_italian
-					has_pop_religion = south_italian
+					has_pop_culture = north_italian
+					has_pop_culture = south_italian
 				}
 			}
 			militancy = -1
@@ -726,8 +726,8 @@ country_event = {
 		any_pop = {
 			limit = {
 				OR = {
-					has_pop_religion = north_italian
-					has_pop_religion = south_italian
+					has_pop_culture = north_italian
+					has_pop_culture = south_italian
 				}
 			}
 			militancy = 2
@@ -982,7 +982,7 @@ country_event = {
 
 	trigger = {
 		exists = yes
-		primary_culture = italian
+		is_culture_group = italian
 		war = no
 		is_vassal = no
 		ai = yes
@@ -1338,7 +1338,8 @@ country_event = {
 			set_country_flag = objects_to_italy
 		}
 		#add_accepted_culture = south_italian
-		add_accepted_culture = italian
+		add_accepted_culture = north_italian
+		add_accepted_culture = south_italian
 		change_tag = culture
 		any_country = {
 			limit = {

@@ -480,8 +480,8 @@ political_decisions = {
 				any_pop = {
 					limit = {
 						OR = {
-							has_pop_religion = north_italian
-							has_pop_religion = south_italian
+							has_pop_culture = north_italian
+							has_pop_culture = south_italian
 						}
 					}
 					consciousness = 2
@@ -868,7 +868,7 @@ political_decisions = {
 			set_country_flag = perfect_fusion
 			#add_accepted_culture = south_italian
 			any_pop = {
-				limit = { has_pop_religion = south_italian }
+				limit = { has_pop_culture = south_italian }
 				militancy = -4
 			}
 		}
@@ -935,8 +935,8 @@ political_decisions = {
 				any_pop = {
 					limit = {
 						OR = {
-							has_pop_religion = north_italian
-							has_pop_religion = south_italian
+							has_pop_culture = north_italian
+							has_pop_culture = south_italian
 						}
 					}
 					consciousness = 2
@@ -974,7 +974,7 @@ political_decisions = {
 			any_pop = {
 				limit = {
 					#OR = {
-						has_pop_religion = north_italian
+						has_pop_culture = north_italian
 						#has_pop_culture = south_italian
 					#}
 				}
@@ -1150,7 +1150,7 @@ political_decisions = {
 			}
 			change_tag = SVY
 			any_pop = {
-				limit = { has_pop_religion = north_italian }
+				limit = { has_pop_culture = north_italian }
 				militancy = -3
 			}
 		}
@@ -1226,8 +1226,8 @@ political_decisions = {
 			owns = 782 #Dubrovnik
 			owns = 2582 #Kotor
 			OR = {
-				has_pop_religion = north_italian
-				has_pop_religion = south_italian
+				has_pop_culture = north_italian
+				has_pop_culture = south_italian
 			}
 			has_country_flag = italia_ulterior
 			NOT = { has_global_flag = italy_has_renamed_dalmatia }
@@ -1304,7 +1304,7 @@ political_decisions = {
 		potential = {
 			owns = 734 #Trient
 			owns = 735 #Bozen
-			primary_culture = italian
+			is_culture_group = italian
 			NOT = { has_global_flag = italy_has_renamed_trentino }
 		}
 		
@@ -1331,7 +1331,7 @@ political_decisions = {
 		potential = {
 			owns = 734 #Trient
 			owns = 735 #Bozen
-			primary_culture = german
+			is_culture_group = germanic
 			has_global_flag = italy_has_renamed_trentino
 		}
 		

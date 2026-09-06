@@ -515,7 +515,7 @@ country_event = {
 						}
 						any_owned_province = {
 							is_core = USA
-							religion = yankee
+							culture = yankee
 						}
 					}
 				}
@@ -582,7 +582,7 @@ country_event = {
 						}
 						any_owned_province = {
 							is_core = USA
-							religion = yankee
+							culture = yankee
 						}
 					}
 				}
@@ -644,7 +644,7 @@ country_event = {
 			owner = { capital = 211 }
 		}
 		any_pop = {
-			limit = { has_pop_religion = dixie }
+			limit = { has_pop_culture = dixie }
 			dominant_issue = {
 				factor = 0.10
 				value = jingoism
@@ -664,7 +664,7 @@ country_event = {
 				NOT = {
 					any_owned_province = {
 						OR = {
-							religion = dixie
+							culture = dixie
 							is_core = TEX
 						}
 					}
@@ -678,7 +678,7 @@ country_event = {
 					NOT = {
 						any_owned_province = {
 							OR = {
-								religion = dixie
+								culture = dixie
 								is_core = TEX
 							}
 						}

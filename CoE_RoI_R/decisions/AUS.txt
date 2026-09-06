@@ -51,7 +51,8 @@ political_decisions = {
 						culture = slovak
 						culture = croat
 						culture = slovene
-						culture = italian
+						culture = north_italian
+						culture = south_italian
 						culture = polish
 						culture = romanian
 						culture = ukrainian
@@ -144,7 +145,8 @@ political_decisions = {
 			set_country_flag = breslau_treaty
 			prestige = 10
 			badboy = 10
-			add_accepted_culture = german
+			add_accepted_culture = north_german
+			add_accepted_culture = south_german
 			PRU_684 = { #Upper Silesia
 				add_core = THIS
 				remove_core = GER
@@ -250,7 +252,7 @@ political_decisions = {
 			any_country = {
 				limit = {
 					#OR = {
-						primary_culture = german
+						is_culture_group = germanic
 						#primary_culture = south_german
 					#}
 					is_greater_power = no
@@ -716,7 +718,7 @@ political_decisions = {
 			AUS_734 = { add_core = AUS }
 			capital = 641
 			any_pop = {
-				limit = { has_pop_culture = german }
+				limit = { OR = { has_pop_culture = north_german  has_pop_culture = south_german } }
 				militancy = 4
 			}
 			any_pop = {
@@ -724,7 +726,8 @@ political_decisions = {
 				militancy = -4
 			}
 			primary_culture = hungarian
-			add_accepted_culture = german
+			add_accepted_culture = north_german
+			add_accepted_culture = south_german
 			clr_country_flag = dual_monarchy
 			change_tag = HUN
 		}
@@ -1420,7 +1423,7 @@ political_decisions = {
 
 		effect = {
 			prestige = -20
-			primary_culture = german
+			primary_culture = south_german
 			remove_accepted_culture = hungarian
 			remove_accepted_culture = slovak
 			remove_accepted_culture = slovene
@@ -1642,7 +1645,7 @@ political_decisions = {
 		effect = {
 			any_pop = {
 				limit = {
-					has_pop_religion = north_italian
+					has_pop_culture = north_italian
 				}
 				#literacy = 0.3
 			}

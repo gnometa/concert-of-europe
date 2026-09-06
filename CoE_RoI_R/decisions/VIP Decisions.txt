@@ -158,9 +158,9 @@ political_decisions = {
 		effect = {
 			plurality = 5
 			any_pop = { limit = { culture = slovene } consciousness = -1 militancy = -1 }
-			any_pop = { limit = { religion = south_german } consciousness = 1 }
+			any_pop = { limit = { has_pop_culture = south_german } consciousness = 1 }
 			767 = {
-				any_pop = { limit = { religion = south_german } consciousness = 1 militancy = 1 }
+				any_pop = { limit = { has_pop_culture = south_german } consciousness = 1 militancy = 1 }
 				any_pop = {
 					dominant_issue = {
 						value = limited_citizenship

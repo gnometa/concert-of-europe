@@ -97,7 +97,72 @@ for p in targets:
 sites = [s for s in sites if s[3] in allrel or s[3] in VANILLA or s[3] in groups]
 real_sites = [s for s in sites if s[3] in REAL or (s[3] in VANILLA)]
 
+
+# --- 4. re-runnable regression check (post religion-restoration) -----------------
+REAL_RELIGIONS = set("""catholic protestant mormon orthodox coptic sunni ibadi shiite druze
+jewish zoroastrian mahayana gelugpa theravada hindu shinto sikh animist fetishist""".split())
+SCRIPT_DIRS = ('events', 'decisions', 'common', 'poptypes', 'inventions', 'technologies', 'units')
+REL_KEY = re.compile(r'(?<![#\w])(has_pop_religion|pop_majority_religion|religion)\s*=\s*(\w+)')
+CUL_KEY = re.compile(r'(?<![#\w])(primary_culture|culture|has_pop_culture|add_accepted_culture'
+                     r'|pop_majority_culture|is_accepted_culture|remove_accepted_culture)'
+                     r'\s*=\s*(german|italian)(?!\w)')
+NON_VALUES = {'THIS', 'FROM', 'yes', 'no'}
+
+def _script_files():
+    for d in SCRIPT_DIRS:
+        for dp, _, fns in os.walk(os.path.join(MOD, d)):
+            for fn in fns:
+                if fn.endswith('.txt'):
+                    yield os.path.join(dp, fn)
+
+def run_check():
+    """Assert the religion restoration has not regressed. Returns a list of problems."""
+    bad = []
+    # (a) pops must carry real religions only
+    for fn in sorted(os.listdir(popdir)):
+        for i, line in enumerate(read(os.path.join(popdir, fn)).splitlines(), 1):
+            for mm in re.finditer(r'^\s*religion\s*=\s*([A-Za-z_0-9]+)', line.split('#')[0]):
+                v = mm.group(1)
+                if v not in REAL_RELIGIONS and not v.endswith('_religion'):
+                    bad.append("[high] history/pops/1821.9.1/%s:%d - pop religion '%s' is not a "
+                               "real religion (culture names belong in the culture field)" % (fn, i, v))
+    # (b) no culture-named religion triggers left in script
+    for p in sorted(_script_files()):
+        rel = os.path.relpath(p, MOD).replace(chr(92), '/')
+        if rel == 'common/religion.txt':
+            continue
+        for i, line in enumerate(read(p).splitlines(), 1):
+            code = line.split('#')[0]
+            for mm in REL_KEY.finditer(code):
+                v = mm.group(2)
+                if v in REAL_RELIGIONS or v.endswith('_religion') or v in NON_VALUES:
+                    continue
+                bad.append("[high] %s:%d - %s = %s tests a culture name as a religion; use "
+                           "has_pop_culture / culture" % (rel, i, mm.group(1), v))
+            for mm in CUL_KEY.finditer(code):
+                bad.append("[high] %s:%d - %s = %s but that culture has no pops; use the "
+                           "north_/south_ sub-culture or is_culture_group" % (rel, i, mm.group(1), mm.group(2)))
+    # (c) religion.txt must not redefine cultures as religions
+    fake = sorted(r for r in allrel if r not in REAL_RELIGIONS and r in cultures)
+    if fake:
+        bad.append("[high] common/religion.txt - %d cultures are still defined as religions "
+                   "(e.g. %s); truncate the file after the 'pagan' group"
+                   % (len(fake), ', '.join(fake[:5])))
+    # (d) every state religion must still be defined
+    for r in sorted(staterel):
+        if r not in allrel:
+            bad.append("[high] history/countries - state religion '%s' is UNDEFINED in "
+                       "common/religion.txt" % r)
+    return bad
+
+
 if __name__ == '__main__':
+    if len(sys.argv) > 1 and sys.argv[1] == 'check':
+        problems = run_check()
+        for line in problems:
+            print(line)
+        print('religion-restoration check: %d problem(s)' % len(problems))
+        sys.exit(1 if problems else 0)
     print("== religion.txt ==")
     print("groups:", len(groups), "religions:", len(allrel), "real vanilla religions still defined:", sorted(REAL))
     print("\n== pops 1821.9.1 (%d files) ==" % len(os.listdir(popdir)))

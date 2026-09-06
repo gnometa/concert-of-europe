@@ -672,8 +672,8 @@ the_port_of_novorossiysk = {
 				owner = { government = hms_government }
 			}			
 			prestige = 5
-			any_pop = { limit = { NOT = { has_pop_culture = german  has_pop_culture = russian_german } } militancy = -1  consciousness = -1 }
-			any_pop = { limit = { OR = { has_pop_culture = german  has_pop_culture = russian_german } } militancy = 1 }
+			any_pop = { limit = { NOT = { has_pop_culture = north_german  has_pop_culture = south_german  has_pop_culture = russian_german } } militancy = -1  consciousness = -1 }
+			any_pop = { limit = { OR = { has_pop_culture = north_german  has_pop_culture = south_german  has_pop_culture = russian_german } } militancy = 1 }
 			set_global_flag = petrograd_renamed
 		}
 		ai_will_do = {

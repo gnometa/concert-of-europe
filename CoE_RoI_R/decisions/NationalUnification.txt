@@ -377,7 +377,8 @@ political_decisions = {
 				add_core = GER
 			}
 			change_tag = GER
-			add_accepted_culture = german
+			add_accepted_culture = north_german
+			add_accepted_culture = south_german
 			#add_accepted_culture = south_german
 			set_global_flag = 3hurrahs
 			random_country = {
@@ -542,7 +543,8 @@ political_decisions = {
 			}
 			change_tag = GER
 			government = prussian_constitutionalism2
-			add_accepted_culture = german
+			add_accepted_culture = north_german
+			add_accepted_culture = south_german
 			#add_accepted_culture = south_german
 			set_global_flag = 3hurrahs
 			random_country = {
@@ -717,7 +719,8 @@ political_decisions = {
 			}
 			change_tag = GER
 			government = prussian_constitutionalism3
-			add_accepted_culture = german
+			add_accepted_culture = north_german
+			add_accepted_culture = south_german
 			set_global_flag = 3hurrahs
 			any_country = {
 				limit = {
@@ -872,7 +875,8 @@ political_decisions = {
 			all_core = { remove_core = THIS }
 			change_tag = ITA
 			capital = 749
-			add_accepted_culture = italian
+			add_accepted_culture = north_italian
+			add_accepted_culture = south_italian
 			#add_accepted_culture = south_italian
 			add_accepted_culture = maltese
 			any_country = {
@@ -1116,7 +1120,7 @@ political_decisions = {
 								is_greater_power = no
 							}
 						}
-						NOT = { religion = north_german }
+						NOT = { culture = north_german }
 						owner = {
 							NOT = { is_culture_group = germanic }
 						}

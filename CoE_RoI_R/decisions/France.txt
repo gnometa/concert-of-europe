@@ -234,7 +234,7 @@ political_decisions = {
 			any_country = {
 				limit = {
 					#OR = {
-						primary_culture = german
+						is_culture_group = germanic
 						#primary_culture = south_german
 					#}
 				}
@@ -497,7 +497,7 @@ political_decisions = {
 						is_core = OCC
 						is_core = BRT
 						is_core = WLL
-						religion = picard
+						culture = picard
 					}
 				}
 				add_province_modifier = {

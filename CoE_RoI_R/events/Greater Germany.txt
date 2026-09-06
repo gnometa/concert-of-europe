@@ -1017,8 +1017,8 @@ country_event = {
 			all_core = {
 				limit = {
 					OR = {
-						religion = south_german
-						religion = north_german
+						culture = south_german
+						culture = north_german
 					}
 					NOT = { is_core = HUN }
 					NOT = { is_core = SWI }

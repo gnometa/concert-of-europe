@@ -2490,6 +2490,10 @@ carlist_rebels = {
 		}
 		modifier = {
 			factor = 0
+			NOT = { has_pop_religion = catholic }
+		}
+		modifier = {
+			factor = 0
 			location = {
 				OR = {
 					NOT = { is_core = SPA }
