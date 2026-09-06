@@ -510,7 +510,7 @@ country_event = {
 	
 	option = {
 		name = "EVTOPTB3006"
-		social_reform = acceptable_health_care
+		social_reform = good_health_care
 		any_pop = {
 			scaled_consciousness = {
 				ideology = conservative
@@ -641,7 +641,7 @@ country_event = {
 	}
 	
 	option = {
-		name = "EVTOPTB3302"
+		name = "EVTOPTB3301"
 		upper_house = {
 			ideology = conservative
 			value = 0.15
@@ -656,7 +656,7 @@ country_event = {
 	}
 	
 	option = {
-		name = "EVTOPTC3302"
+		name = "EVTOPTC3301"
 		social_reform = no_pensions
 		any_pop = {
 			scaled_militancy = {
