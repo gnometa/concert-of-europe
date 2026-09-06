@@ -11,15 +11,19 @@ country_event = {
 	option = {
 		name = "We shall choose a new King!" 
 		nationalvalue = nv_order
-        POL = { country_event = 99956 }
+        country_event = 99956
 		ai_chance = {
 			factor = 60
+			modifier = {
+				factor = 0
+				has_country_flag = POL_union_refused
+			}
 		}
 	}
 	
 	option = {
 		name = "Long live the Republic!" 
-        POL = { country_event = 99955 }
+        country_event = 99955
 		ai_chance = {
 			factor = 40
 		}
@@ -335,7 +339,7 @@ country_event = {
 		name = "Propose to seced the title of King of Poland to one of our relatives" 
         POL = { country_event = 99946 }
 		ai_chance = {
-			factor = 60
+			factor = 10
 			modifier = {
 				factor = 0
                 has_country_flag = POL_refused
@@ -360,7 +364,7 @@ country_event = {
         POL = { country_event = 99950 }
 		set_country_flag = POL_refused
 		ai_chance = {
-			factor = 40
+			factor = 90
 		}
 	}
 	
@@ -464,6 +468,7 @@ country_event = {
 
 	option = {
 		name = "Back to the planning table" 
+		set_country_flag = POL_union_refused
         country_event = 99957
     }
 	
@@ -557,7 +562,7 @@ country_event = {
 	option = {
 		name = "But I hope that they don't keep the Dragon under the city anymore!" 
 		set_country_flag = krakow_integrated
-		POL = { inherit = KRA }
+		inherit = KRA
 		badboy = 3
 		prestige = 1
 	}

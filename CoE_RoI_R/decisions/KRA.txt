@@ -215,7 +215,6 @@ political_decisions = {
 		}
 
 		effect = {
-            country_event = 99957
 			prestige = 5
 			badboy = 20
 			all_core = {
@@ -254,6 +253,7 @@ political_decisions = {
 					months = 60
 				}
 			}
+			country_event = 99957
 		}
 
 		ai_will_do = {
