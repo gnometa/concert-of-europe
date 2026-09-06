@@ -286,15 +286,21 @@ country_event = {
 		months = 800
 		modifier = {
 			factor = 0.9
-			poor_strata_life_needs = 0.9
+			NOT = {
+				poor_strata_life_needs = 0.9
+			}
 		}
 		modifier = {
 			factor = 0.9
-			poor_strata_life_needs = 0.8
+			NOT = {
+				poor_strata_life_needs = 0.8
+			}
 		}
 		modifier = {
 			factor = 0.6
-			poor_strata_life_needs = 0.6
+			NOT = {
+				poor_strata_life_needs = 0.6
+			}
 		}
 		modifier = {
 			factor = 0.9
