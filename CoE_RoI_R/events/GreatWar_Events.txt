@@ -41,6 +41,7 @@ country_event = {
 		}
 		NOT = { has_country_modifier = great_war }
 		NOT = { has_country_flag = in_great_war }
+		NOT = { has_country_modifier = no_more_war }
 		any_greater_power = {
 			war_with = THIS
 			OR = {
