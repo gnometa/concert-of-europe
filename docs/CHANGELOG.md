@@ -141,6 +141,7 @@ new event chains. Nothing in this pass has been tested in a running game.
 - New `history/wars/OttomanPersianWar.txt` (1821-1823, PER vs TUR, `status_quo`).
 - Alliances: four impossible ECU/BOL pairs deleted, GCO/BOL re-dated to 1825, and the Quadruple Alliance (ENG with AUS/PRU/RUS) plus the Anglo-Portuguese alliance (ENG-UPB) added.
 - Xhosa and Farroupilha wars re-dated; the Ottoman restoration of Tripoli kept and dated.
+- The 39 country history files whose tag was never listed in `common/countries.txt` are now registered (22 US states UAL-UWV, plus BMK, DUR, ERT, KRL, KYR, LNA, LUZ, MAN, OAX, PML, SHI, SIE, SMI, SNG, SNZ, SON, UZB): they had `common/countries/*.txt` and full flag sets already, so registration was the only missing piece. Localisation for the 22 state tags and their party names added to `CountriesGVG.csv`; seven map colours de-clashed from neighbours (BMK/KRT, DUR/AFG, UZB/TKS, MAN/UNY, KRL/TKM, UAL/HAI, OAX/UPB); `LUZ_conservative` back-dated to 1820 and the AFG/KRL conservative windows extended so a ruling party exists all game; SON's ruling party moved to `SON_conservative` (`presidential_dictatorship` forbids liberals). `audit_countries.py` is at 0 highs.
 - Whole pass documented in `docs/audit/start-state-1821.md`: SPA (Trienio), UPB (Vintista), SIC, SAR, FRA, PRU, AUS and RUS were already correct, GRE deliberately stays absolute, PER `civilized = yes` is deliberate.
 
 ### Tooling

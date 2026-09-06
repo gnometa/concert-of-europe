@@ -80,7 +80,7 @@ Every script is expected at **0 `[high]`**. Baseline exceptions (re-measured 202
 
 | Script | Expected now | Note |
 |---|---|---|
-| `audit_countries.py` | 39 highs | all "history file for tag X is not registered in `common/countries.txt`" (BMK, DUR, ERT, KRL, KYR, ...). Deferred — register or delete. Its other counters (`capital_not_owned`, `party_inactive`, `party_undefined`, `ideology_not_allowed`, `missing_common_file`) must stay 0 |
+| `audit_countries.py` | 0 highs | the 39 unregistered tags (BMK, DUR, ERT, KRL, KYR, ...) were registered on 2026-09-06; `registered` is now 521. All its counters (`unregistered`, `capital_not_owned`, `party_inactive`, `party_undefined`, `ideology_not_allowed`, `missing_common_file`) must stay 0. The three remaining mediums are `REB` (the engine rebel tag has no capital/culture/government by design) plus the `D01`-`D50` dominion tags with no capital |
 | `audit_events.py` | 0 highs, 0 unknown keywords | any new high is a regression |
 | `audit_fire_once.py` | 124 findings (A 77, B 10, C 37) | a *list*, not a defect count: every self-firing `country_event` with engine-wide `fire_only_once` and no bare `tag =` / `owns =` test. Most class-A entries are alternative tags for one nation (`OR(ENG,ENL)`, ...); class C is genuine world events. Verdicts in `docs/audit/fire-only-once.md` — only review entries newer than that file |
 | `audit_owner_scope.py` | 0 highs, 148 lows (see `docs/audit/owner-scope.md`) | advisory. Every low is a conditional release/secede or cede branch where the scope may legitimately own the province later in the game; a **high** means the block is dead in every reachable state and must be rescoped (`TAG = { any_owned = ... }`) |

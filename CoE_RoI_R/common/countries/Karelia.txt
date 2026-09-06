@@ -1,10 +1,10 @@
-color = { 136  157  23 }
+color = { 108  142  72 }
 graphical_culture = EuropeanGC
 
 party = {
 	name = "KRL_conservative"
 	start_date = 1820.1.1
-	end_date = 1918.1.1
+	end_date = 2000.1.1
 
 	ideology = conservative
 

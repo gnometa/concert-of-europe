@@ -18,3 +18,201 @@ PAP_prussian_constitutionalism;Kingdom of Rome;;;;;;;;;;;;;x;;;;;;;;;;;;;;
 PAP_prussian_constitutionalism_ADJ;Roman;;;;;;;;;;;;;x;;;;;;;;;;;;;;
 PAP_hms_government;Kingdom of Rome;;;;;;;;;;;;;x;;;;;;;;;;;;;;
 PAP_hms_government_ADJ;Roman;;;;;;;;;;;;;x;;;;;;;;;;;;;;
+UAL;Alabama;;;;;;;;;;;;;x
+UAL_ADJ;Alabaman;;;;;;;;;;;;;x
+UAL_liberal;New Republican Party;;;;;;;;;;;;;x
+UAL_conservative;New Democratic Party;;;;;;;;;;;;;x
+UAL_socialist;Socialist Party;;;;;;;;;;;;;x
+UAL_reactionary;New American Party;;;;;;;;;;;;;x
+UAL_anarcho_liberal;Libertarian Party;;;;;;;;;;;;;x
+UAL_communist;Communist Party;;;;;;;;;;;;;x
+UAL_fascist;Supremacy Party;;;;;;;;;;;;;x
+UAR;Arkansas;;;;;;;;;;;;;x
+UAR_ADJ;Arkansan;;;;;;;;;;;;;x
+UAR_liberal;New Republican Party;;;;;;;;;;;;;x
+UAR_conservative;New Democratic Party;;;;;;;;;;;;;x
+UAR_socialist;Socialist Party;;;;;;;;;;;;;x
+UAR_reactionary;New American Party;;;;;;;;;;;;;x
+UAR_anarcho_liberal;Libertarian Party;;;;;;;;;;;;;x
+UAR_communist;Communist Party;;;;;;;;;;;;;x
+UAR_fascist;Supremacy Party;;;;;;;;;;;;;x
+UFL;Florida;;;;;;;;;;;;;x
+UFL_ADJ;Floridian;;;;;;;;;;;;;x
+UFL_liberal;New Republican Party;;;;;;;;;;;;;x
+UFL_conservative;New Democratic Party;;;;;;;;;;;;;x
+UFL_socialist;Socialist Party;;;;;;;;;;;;;x
+UFL_reactionary;New American Party;;;;;;;;;;;;;x
+UFL_anarcho_liberal;Libertarian Party;;;;;;;;;;;;;x
+UFL_communist;Communist Party;;;;;;;;;;;;;x
+UFL_fascist;Supremacy Party;;;;;;;;;;;;;x
+UGA;Georgia;;;;;;;;;;;;;x
+UGA_ADJ;Georgian;;;;;;;;;;;;;x
+UGA_liberal;New Republican Party;;;;;;;;;;;;;x
+UGA_conservative;New Democratic Party;;;;;;;;;;;;;x
+UGA_socialist;Socialist Party;;;;;;;;;;;;;x
+UGA_reactionary;New American Party;;;;;;;;;;;;;x
+UGA_anarcho_liberal;Libertarian Party;;;;;;;;;;;;;x
+UGA_communist;Communist Party;;;;;;;;;;;;;x
+UGA_fascist;Supremacy Party;;;;;;;;;;;;;x
+UIA;Iowa;;;;;;;;;;;;;x
+UIA_ADJ;Iowan;;;;;;;;;;;;;x
+UIA_liberal;New Republican Party;;;;;;;;;;;;;x
+UIA_conservative;New Democratic Party;;;;;;;;;;;;;x
+UIA_socialist;Socialist Party;;;;;;;;;;;;;x
+UIA_reactionary;New American Party;;;;;;;;;;;;;x
+UIA_anarcho_liberal;Libertarian Party;;;;;;;;;;;;;x
+UIA_communist;Communist Party;;;;;;;;;;;;;x
+UIA_fascist;Supremacy Party;;;;;;;;;;;;;x
+UIN;Indiana;;;;;;;;;;;;;x
+UIN_ADJ;Indianan;;;;;;;;;;;;;x
+UIN_liberal;New Republican Party;;;;;;;;;;;;;x
+UIN_conservative;New Democratic Party;;;;;;;;;;;;;x
+UIN_socialist;Socialist Party;;;;;;;;;;;;;x
+UIN_reactionary;New American Party;;;;;;;;;;;;;x
+UIN_anarcho_liberal;Libertarian Party;;;;;;;;;;;;;x
+UIN_communist;Communist Party;;;;;;;;;;;;;x
+UIN_fascist;Supremacy Party;;;;;;;;;;;;;x
+UKY;Kentucky;;;;;;;;;;;;;x
+UKY_ADJ;Kentuckian;;;;;;;;;;;;;x
+UKY_liberal;New Republican Party;;;;;;;;;;;;;x
+UKY_conservative;New Democratic Party;;;;;;;;;;;;;x
+UKY_socialist;Socialist Party;;;;;;;;;;;;;x
+UKY_reactionary;New American Party;;;;;;;;;;;;;x
+UKY_anarcho_liberal;Libertarian Party;;;;;;;;;;;;;x
+UKY_communist;Communist Party;;;;;;;;;;;;;x
+UKY_fascist;Supremacy Party;;;;;;;;;;;;;x
+ULA;Louisiana;;;;;;;;;;;;;x
+ULA_ADJ;Louisianan;;;;;;;;;;;;;x
+ULA_liberal;New Republican Party;;;;;;;;;;;;;x
+ULA_conservative;New Democratic Party;;;;;;;;;;;;;x
+ULA_socialist;Socialist Party;;;;;;;;;;;;;x
+ULA_reactionary;New American Party;;;;;;;;;;;;;x
+ULA_anarcho_liberal;Libertarian Party;;;;;;;;;;;;;x
+ULA_communist;Communist Party;;;;;;;;;;;;;x
+ULA_fascist;Supremacy Party;;;;;;;;;;;;;x
+UMI;Michigan;;;;;;;;;;;;;x
+UMI_ADJ;Michigander;;;;;;;;;;;;;x
+UMI_liberal;New Republican Party;;;;;;;;;;;;;x
+UMI_conservative;New Democratic Party;;;;;;;;;;;;;x
+UMI_socialist;Socialist Party;;;;;;;;;;;;;x
+UMI_reactionary;New American Party;;;;;;;;;;;;;x
+UMI_anarcho_liberal;Libertarian Party;;;;;;;;;;;;;x
+UMI_communist;Communist Party;;;;;;;;;;;;;x
+UMI_fascist;Supremacy Party;;;;;;;;;;;;;x
+UMN;Minnesota;;;;;;;;;;;;;x
+UMN_ADJ;Minnesotan;;;;;;;;;;;;;x
+UMN_liberal;New Republican Party;;;;;;;;;;;;;x
+UMN_conservative;New Democratic Party;;;;;;;;;;;;;x
+UMN_socialist;Socialist Party;;;;;;;;;;;;;x
+UMN_reactionary;New American Party;;;;;;;;;;;;;x
+UMN_anarcho_liberal;Libertarian Party;;;;;;;;;;;;;x
+UMN_communist;Communist Party;;;;;;;;;;;;;x
+UMN_fascist;Supremacy Party;;;;;;;;;;;;;x
+UMO;Missouri;;;;;;;;;;;;;x
+UMO_ADJ;Missourian;;;;;;;;;;;;;x
+UMO_liberal;New Republican Party;;;;;;;;;;;;;x
+UMO_conservative;New Democratic Party;;;;;;;;;;;;;x
+UMO_socialist;Socialist Party;;;;;;;;;;;;;x
+UMO_reactionary;New American Party;;;;;;;;;;;;;x
+UMO_anarcho_liberal;Libertarian Party;;;;;;;;;;;;;x
+UMO_communist;Communist Party;;;;;;;;;;;;;x
+UMO_fascist;Supremacy Party;;;;;;;;;;;;;x
+UMS;Mississippi;;;;;;;;;;;;;x
+UMS_ADJ;Mississippian;;;;;;;;;;;;;x
+UMS_liberal;New Republican Party;;;;;;;;;;;;;x
+UMS_conservative;New Democratic Party;;;;;;;;;;;;;x
+UMS_socialist;Socialist Party;;;;;;;;;;;;;x
+UMS_reactionary;New American Party;;;;;;;;;;;;;x
+UMS_anarcho_liberal;Libertarian Party;;;;;;;;;;;;;x
+UMS_communist;Communist Party;;;;;;;;;;;;;x
+UMS_fascist;Supremacy Party;;;;;;;;;;;;;x
+UNC;North Carolina;;;;;;;;;;;;;x
+UNC_ADJ;North Carolinian;;;;;;;;;;;;;x
+UNC_liberal;New Republican Party;;;;;;;;;;;;;x
+UNC_conservative;New Democratic Party;;;;;;;;;;;;;x
+UNC_socialist;Socialist Party;;;;;;;;;;;;;x
+UNC_reactionary;New American Party;;;;;;;;;;;;;x
+UNC_anarcho_liberal;Libertarian Party;;;;;;;;;;;;;x
+UNC_communist;Communist Party;;;;;;;;;;;;;x
+UNC_fascist;Supremacy Party;;;;;;;;;;;;;x
+UNJ;New Jersey;;;;;;;;;;;;;x
+UNJ_ADJ;New Jerseyan;;;;;;;;;;;;;x
+UNJ_liberal;New Republican Party;;;;;;;;;;;;;x
+UNJ_conservative;New Democratic Party;;;;;;;;;;;;;x
+UNJ_socialist;Socialist Party;;;;;;;;;;;;;x
+UNJ_reactionary;New American Party;;;;;;;;;;;;;x
+UNJ_anarcho_liberal;Libertarian Party;;;;;;;;;;;;;x
+UNJ_communist;Communist Party;;;;;;;;;;;;;x
+UNJ_fascist;Supremacy Party;;;;;;;;;;;;;x
+UNY;New York;;;;;;;;;;;;;x
+UNY_ADJ;New Yorker;;;;;;;;;;;;;x
+UNY_liberal;New Republican Party;;;;;;;;;;;;;x
+UNY_conservative;New Democratic Party;;;;;;;;;;;;;x
+UNY_socialist;Socialist Party;;;;;;;;;;;;;x
+UNY_reactionary;New American Party;;;;;;;;;;;;;x
+UNY_anarcho_liberal;Libertarian Party;;;;;;;;;;;;;x
+UNY_communist;Communist Party;;;;;;;;;;;;;x
+UNY_fascist;Supremacy Party;;;;;;;;;;;;;x
+UOH;Ohio;;;;;;;;;;;;;x
+UOH_ADJ;Ohioan;;;;;;;;;;;;;x
+UOH_liberal;New Republican Party;;;;;;;;;;;;;x
+UOH_conservative;New Democratic Party;;;;;;;;;;;;;x
+UOH_socialist;Socialist Party;;;;;;;;;;;;;x
+UOH_reactionary;New American Party;;;;;;;;;;;;;x
+UOH_anarcho_liberal;Libertarian Party;;;;;;;;;;;;;x
+UOH_communist;Communist Party;;;;;;;;;;;;;x
+UOH_fascist;Supremacy Party;;;;;;;;;;;;;x
+UPA;Pennsylvania;;;;;;;;;;;;;x
+UPA_ADJ;Pennsylvanian;;;;;;;;;;;;;x
+UPA_liberal;New Republican Party;;;;;;;;;;;;;x
+UPA_conservative;New Democratic Party;;;;;;;;;;;;;x
+UPA_socialist;Socialist Party;;;;;;;;;;;;;x
+UPA_reactionary;New American Party;;;;;;;;;;;;;x
+UPA_anarcho_liberal;Libertarian Party;;;;;;;;;;;;;x
+UPA_communist;Communist Party;;;;;;;;;;;;;x
+UPA_fascist;Supremacy Party;;;;;;;;;;;;;x
+USC;South Carolina;;;;;;;;;;;;;x
+USC_ADJ;South Carolinian;;;;;;;;;;;;;x
+USC_liberal;New Republican Party;;;;;;;;;;;;;x
+USC_conservative;New Democratic Party;;;;;;;;;;;;;x
+USC_socialist;Socialist Party;;;;;;;;;;;;;x
+USC_reactionary;New American Party;;;;;;;;;;;;;x
+USC_anarcho_liberal;Libertarian Party;;;;;;;;;;;;;x
+USC_communist;Communist Party;;;;;;;;;;;;;x
+USC_fascist;Supremacy Party;;;;;;;;;;;;;x
+UTN;Tennessee;;;;;;;;;;;;;x
+UTN_ADJ;Tennessean;;;;;;;;;;;;;x
+UTN_liberal;New Republican Party;;;;;;;;;;;;;x
+UTN_conservative;New Democratic Party;;;;;;;;;;;;;x
+UTN_socialist;Socialist Party;;;;;;;;;;;;;x
+UTN_reactionary;New American Party;;;;;;;;;;;;;x
+UTN_anarcho_liberal;Libertarian Party;;;;;;;;;;;;;x
+UTN_communist;Communist Party;;;;;;;;;;;;;x
+UTN_fascist;Supremacy Party;;;;;;;;;;;;;x
+UVA;Virginia;;;;;;;;;;;;;x
+UVA_ADJ;Virginian;;;;;;;;;;;;;x
+UVA_liberal;New Republican Party;;;;;;;;;;;;;x
+UVA_conservative;New Democratic Party;;;;;;;;;;;;;x
+UVA_socialist;Socialist Party;;;;;;;;;;;;;x
+UVA_reactionary;New American Party;;;;;;;;;;;;;x
+UVA_anarcho_liberal;Libertarian Party;;;;;;;;;;;;;x
+UVA_communist;Communist Party;;;;;;;;;;;;;x
+UVA_fascist;Supremacy Party;;;;;;;;;;;;;x
+UWI;Wisconsin;;;;;;;;;;;;;x
+UWI_ADJ;Wisconsinite;;;;;;;;;;;;;x
+UWI_liberal;New Republican Party;;;;;;;;;;;;;x
+UWI_conservative;New Democratic Party;;;;;;;;;;;;;x
+UWI_socialist;Socialist Party;;;;;;;;;;;;;x
+UWI_reactionary;New American Party;;;;;;;;;;;;;x
+UWI_anarcho_liberal;Libertarian Party;;;;;;;;;;;;;x
+UWI_communist;Communist Party;;;;;;;;;;;;;x
+UWI_fascist;Supremacy Party;;;;;;;;;;;;;x
+UWV;West Virginia;;;;;;;;;;;;;x
+UWV_ADJ;West Virginian;;;;;;;;;;;;;x
+UWV_liberal;New Republican Party;;;;;;;;;;;;;x
+UWV_conservative;New Democratic Party;;;;;;;;;;;;;x
+UWV_socialist;Socialist Party;;;;;;;;;;;;;x
+UWV_reactionary;New American Party;;;;;;;;;;;;;x
+UWV_anarcho_liberal;Libertarian Party;;;;;;;;;;;;;x
+UWV_communist;Communist Party;;;;;;;;;;;;;x
+UWV_fascist;Supremacy Party;;;;;;;;;;;;;x
