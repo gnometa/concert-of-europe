@@ -1041,7 +1041,7 @@ province_event = {
 					}
 				}
 			}
-			random_state = { #added -crownsteler
+			random_owned = { #added -crownsteler
 				limit = {
 					has_province_modifier = futile
 					owner = { safety_regulations = acceptable_safety }
@@ -1071,58 +1071,60 @@ province_event = {
 				consciousness = -4
 			}
 		}
-		random_owned = { #added -crownsteler
-			limit = {
-				has_province_modifier = futile
-				owner = { safety_regulations = no_safety }
-			}
-			state_scope = {
-				poor_strata = {
-					dominant_issue = {
-						value = trinket_safety
-						factor = 0.1
+		owner = {
+			random_owned = { #added -crownsteler
+				limit = {
+					has_province_modifier = futile
+					owner = { safety_regulations = no_safety }
+				}
+				state_scope = {
+					poor_strata = {
+						dominant_issue = {
+							value = trinket_safety
+							factor = 0.1
+						}
 					}
 				}
 			}
-		}
-		random_owned = { #added -crownsteler
-			limit = {
-				has_province_modifier = futile
-				owner = { safety_regulations = trinket_safety }
-			}
-			state_scope = {
-				poor_strata = {
-					dominant_issue = {
-						value = low_safety
-						factor = 0.1
+			random_owned = { #added -crownsteler
+				limit = {
+					has_province_modifier = futile
+					owner = { safety_regulations = trinket_safety }
+				}
+				state_scope = {
+					poor_strata = {
+						dominant_issue = {
+							value = low_safety
+							factor = 0.1
+						}
 					}
 				}
 			}
-		}
-		random_owned = { #added -crownsteler
-			limit = {
-				has_province_modifier = futile
-				owner = { safety_regulations = low_safety }
-			}
-			state_scope = {
-				poor_strata = {
-					dominant_issue = {
-						value = acceptable_safety
-						factor = 0.1
+			random_owned = { #added -crownsteler
+				limit = {
+					has_province_modifier = futile
+					owner = { safety_regulations = low_safety }
+				}
+				state_scope = {
+					poor_strata = {
+						dominant_issue = {
+							value = acceptable_safety
+							factor = 0.1
+						}
 					}
 				}
 			}
-		}
-		random_owned = { #added -crownsteler
-			limit = {
-				has_province_modifier = futile
-				owner = { safety_regulations = acceptable_safety }
-			}
-			state_scope = {
-				poor_strata = {
-					dominant_issue = {
-						value = good_safety
-						factor = 0.12
+			random_owned = { #added -crownsteler
+				limit = {
+					has_province_modifier = futile
+					owner = { safety_regulations = acceptable_safety }
+				}
+				state_scope = {
+					poor_strata = {
+						dominant_issue = {
+							value = good_safety
+							factor = 0.12
+						}
 					}
 				}
 			}
@@ -1148,58 +1150,60 @@ province_event = {
 				consciousness = 6
 			}
 		}
-		random_owned = { #added -crownsteler
-			limit = {
-				has_province_modifier = futile
-				owner = { safety_regulations = no_safety }
-			}
-			state_scope = {
-				craftsmen = {
-					dominant_issue = {
-						value = trinket_safety
-						factor = 0.10
+		owner = {
+			random_owned = { #added -crownsteler
+				limit = {
+					has_province_modifier = futile
+					owner = { safety_regulations = no_safety }
+				}
+				state_scope = {
+					craftsmen = {
+						dominant_issue = {
+							value = trinket_safety
+							factor = 0.10
+						}
 					}
 				}
 			}
-		}
-		random_owned = { #added -crownsteler
-			limit = {
-				has_province_modifier = futile
-				owner = { safety_regulations = trinket_safety }
-			}
-			state_scope = {
-				craftsmen = {
-					dominant_issue = {
-						value = low_safety
-						factor = 0.10
+			random_owned = { #added -crownsteler
+				limit = {
+					has_province_modifier = futile
+					owner = { safety_regulations = trinket_safety }
+				}
+				state_scope = {
+					craftsmen = {
+						dominant_issue = {
+							value = low_safety
+							factor = 0.10
+						}
 					}
 				}
 			}
-		}
-		random_owned = { #added -crownsteler
-			limit = {
-				has_province_modifier = futile
-				owner = { safety_regulations = low_safety }
-			}
-			state_scope = {
-				craftsmen = {
-					dominant_issue = {
-						value = acceptable_safety
-						factor = 0.10
+			random_owned = { #added -crownsteler
+				limit = {
+					has_province_modifier = futile
+					owner = { safety_regulations = low_safety }
+				}
+				state_scope = {
+					craftsmen = {
+						dominant_issue = {
+							value = acceptable_safety
+							factor = 0.10
+						}
 					}
 				}
 			}
-		}
-		random_owned = { #added -crownsteler
-			limit = {
-				has_province_modifier = futile
-				owner = { safety_regulations = acceptable_safety }
-			}
-			state_scope = {
-				craftsmen = {
-					dominant_issue = {
-						value = good_safety
-						factor = 0.15
+			random_owned = { #added -crownsteler
+				limit = {
+					has_province_modifier = futile
+					owner = { safety_regulations = acceptable_safety }
+				}
+				state_scope = {
+					craftsmen = {
+						dominant_issue = {
+							value = good_safety
+							factor = 0.15
+						}
 					}
 				}
 			}
@@ -1270,51 +1274,53 @@ province_event = {
 			militancy = 2
 			consciousness = 6
 		}
-		random_owned = { #added -crownsteler
-			limit = {
-				has_province_modifier = futile
-				owner = { safety_regulations = no_safety }
-			}
-			labourers = {
-				dominant_issue = {
-					value = trinket_safety
-					factor = 0.05
+		owner = {
+			random_owned = { #added -crownsteler
+				limit = {
+					has_province_modifier = futile
+					owner = { safety_regulations = no_safety }
+				}
+				labourers = {
+					dominant_issue = {
+						value = trinket_safety
+						factor = 0.05
+					}
 				}
 			}
-		}
-		random_owned = { #added -crownsteler
-			limit = {
-				has_province_modifier = futile
-				owner = { safety_regulations = trinket_safety }
-			}
-			labourers = {
-				dominant_issue = {
-					value = low_safety
-					factor = 0.10
+			random_owned = { #added -crownsteler
+				limit = {
+					has_province_modifier = futile
+					owner = { safety_regulations = trinket_safety }
+				}
+				labourers = {
+					dominant_issue = {
+						value = low_safety
+						factor = 0.10
+					}
 				}
 			}
-		}
-		random_owned = { #added -crownsteler
-			limit = {
-				has_province_modifier = futile
-				owner = { safety_regulations = low_safety }
-			}
-			labourers = {
-				dominant_issue = {
-					value = acceptable_safety
-					factor = 0.12
+			random_owned = { #added -crownsteler
+				limit = {
+					has_province_modifier = futile
+					owner = { safety_regulations = low_safety }
+				}
+				labourers = {
+					dominant_issue = {
+						value = acceptable_safety
+						factor = 0.12
+					}
 				}
 			}
-		}
-		random_owned = { #added -crownsteler
-			limit = {
-				has_province_modifier = futile
-				owner = { safety_regulations = acceptable_safety }
-			}
-			labourers = {
-				dominant_issue = {
-					value = good_safety
-					factor = 0.15
+			random_owned = { #added -crownsteler
+				limit = {
+					has_province_modifier = futile
+					owner = { safety_regulations = acceptable_safety }
+				}
+				labourers = {
+					dominant_issue = {
+						value = good_safety
+						factor = 0.15
+					}
 				}
 			}
 		}
