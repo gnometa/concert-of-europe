@@ -618,7 +618,7 @@ diplomacy = {
 pops = {
 	BASE_CLERGY_FOR_LITERACY = 0.003, 
 	MAX_CLERGY_FOR_LITERACY = 0.05, 
-	LITERACY_CHANGE_SPEED = 0.0050,
+	LITERACY_CHANGE_SPEED = 0.05, -- CoE 2026-09: calibrated to real-world 1820-1900 literacy growth, see docs/design/literacy-1821.md
 
 	ASSIMILATION_SCALE = 0.03,
 	CONVERSION_SCALE = 0.03,

@@ -28,7 +28,7 @@ CDIR = os.path.join(ROOT, 'CoE_RoI_R', 'history', 'countries')
 # tier -> (literacy, one-line justification)
 TIERS = {
     'prussia_saxony':   (0.55, 'Compulsory Volksschule since 1763/1805; the best-schooled states in Europe in 1821'),
-    'nordic':           (0.55, 'Lutheran household examination (husforhor) made reading near-universal'),
+    'nordic':           (0.70, 'Lutheran household examination (husforhor); reading literacy was near-universal by 1800'),
     'lowlands':         (0.55, 'Dutch 1806 school law and Swiss cantonal schools plus dense urban print culture'),
     'britain':          (0.55, 'English signature literacy ~0.55, Scottish parish schools ~0.75, Welsh Sunday schools; blended'),
     'usa_north':        (0.60, 'New England and Old Northwest common schools; the highest attested rate anywhere in 1821'),
@@ -36,6 +36,7 @@ TIERS = {
     'usa_south':        (0.35, 'Plantation South: no common-school system, slave literacy criminalised'),
     'usa_west':         (0.45, 'Anglo settler populations, no established school system yet'),
     'settler':          (0.50, 'British settler colonies: literate emigrant stock, church schools from the start'),
+    'canada':           (0.42, 'The Canadas in 1821 are majority French-Canadian stock; between Quebec and the anglophone colonies'),
     'north_german':     (0.50, 'Protestant north German states with Prussian-style school ordinances'),
     'german_unified':   (0.45, 'Unification tag: north German schooling blended with the Catholic south'),
     'south_german':     (0.35, 'Catholic south Germany and Austria proper: schooling later and thinner than Prussia'),
@@ -73,7 +74,7 @@ TIERS = {
     'himalaya':         (0.02, 'Nepal, Bhutan, Sikkim, Ladakh: monastic literacy only'),
     'india':            (0.05, 'Company India and the princely states; village and maktab schools, ~5-6% of adult males'),
     'japan':            (0.30, 'Terakoya and han schools; the highest non-Western rate in 1821'),
-    'qing':             (0.10, 'Qing China: lineage and charitable schools, classical literacy in a male minority'),
+    'qing':             (0.15, 'Qing China: Rawski puts adult male literacy at 30-45%, blended with a much lower female rate'),
     'qing_frontier':    (0.03, 'Tibet, Mongolia, Xinjiang: monastic or madrasa literacy only'),
     'korea':            (0.10, 'Joseon: hanja for the yangban, growing hangul literacy below it'),
     'ryukyu':           (0.10, 'Ryukyu kingdom, schooled on the Japanese and Chinese model'),
@@ -107,7 +108,7 @@ def _t(tier, *stems):
 
 _t('prussia_saxony', 'PRU - Prussia', 'SAX - Saxony')
 _t('nordic', 'DEN - Denmark', 'SWE - Sweden', 'NOR - Norway', 'ICL - Iceland',
-   'SCA - Scandinavia')
+   'SCA - Scandinavia', 'FIN - Finland')
 _t('lowlands', 'NET - Netherlands', 'SWI - Switzerland')
 _t('britain', 'ENG - United Kingdom', 'ENL - England', 'SCO - Scotland',
    'WHA - Wales')
@@ -123,7 +124,8 @@ _t('usa_south', 'UVA - Virginia', 'UNC - North Carolina', 'USC - South Carolina'
    'UTN - Tennessee', 'ULA - Louisiana', 'UFL - Florida', 'UWV - West Virginia',
    'UKY - Kentucky', 'UMO - Missouri', 'CSA - CSA', 'TEX - Texas')
 _t('usa_west', 'CAL - Californian Republic', 'DES - Deseret')
-_t('settler', 'CAN - Canada', 'NEW - Newfoundland', 'MRU - Maritime Union',
+_t('canada', 'CAN - Canada')
+_t('settler', 'NEW - Newfoundland', 'MRU - Maritime Union',
    'COL - Columbia', 'AST - Australia', 'NZL - New Zealand',
    'SNZ - South Island')
 _t('quebec', 'QUE - Quebec')
@@ -136,7 +138,7 @@ _t('north_german', 'HAM - Hamburg', 'LUB - Lubeck', 'BRE - Bremen',
    'HEK - HesseKassel', 'HES - HesseDarmstadt', 'SWH - Schleswig-Holstein',
    'HOL - Holstein', 'SCH - Schleswig', 'EFR - East Frisia', 'WES - Westfalen',
    'RHI - Rhineland', 'SAA - Saar', 'SLS - Silesia', 'DZG - Danzig',
-   'PML - Pomerelia', 'LUZ - Luzica', 'ALS - Elsass', 'NGF - North German Fed')
+   'PML - Pomerelia', 'LUZ - Luzica', 'NGF - North German Fed')
 _t('german_unified', 'GER - Germany')
 _t('south_german', 'BAV - Bavaria', 'WUR - Wurttemberg', 'BAD - Baden',
    'AUS - Austria', 'SGF - South German Fed')
@@ -149,9 +151,9 @@ _t('eastern_catholic', 'GLM - Galicia-Lodomeria', 'BKV - Bukovina',
    'SYL - Transylvania', 'SIE - Siebenburgen', 'DLM - Dalmatia',
    'LIT - Lithuania', 'RUT - Ruthenia')
 _t('france_belgium', 'FRA - France', 'BEL - Belgium', 'FLA - Flanders',
-   'WLL - Wallonia', 'LUX - Luxemburg')
+   'WLL - Wallonia', 'LUX - Luxemburg', 'ALS - Elsass')
 _t('france_periphery', 'BRT - Brittany', 'OCC - Occitania')
-_t('baltic_lutheran', 'EST - Estonia', 'LAT - Latvia', 'FIN - Finland',
+_t('baltic_lutheran', 'EST - Estonia', 'LAT - Latvia',
    'UBD - United Baltic Provinces')
 _t('north_italy', 'SAR - Sardinia', 'SRD - Sardinia', 'SVY - Savoy',
    'LOM - Lombardia', 'VEN - Venice', 'PAR - Parma', 'MOD - Modena',
@@ -279,6 +281,11 @@ HEAD_RE = re.compile(r'^(\s*literacy\s*=\s*)([0-9.]+)')
 DATE_RE = re.compile(r'^\s*1[89]\d\d\.\d+\.\d+\s*=')
 
 
+def tag_of(stem):
+    """Tag from a history filename stem. Handles 'QNG', 'D01' and 'BIM- Bima'."""
+    return re.split(r'\s*-\s*', stem, 1)[0].strip()
+
+
 def files():
     return sorted(f for f in os.listdir(CDIR) if f.endswith('.txt'))
 
@@ -300,7 +307,7 @@ def rewrite(path, value, dry):
         return None
     out = '\n'.join(lines)
     if out != text and not dry:
-        with open(path, 'w', newline='', encoding='ascii') as fh:
+        with open(path, 'w', newline='', encoding='cp1252') as fh:
             fh.write(out)
     return out != text
 
@@ -311,7 +318,7 @@ def main():
         print('| tier | literacy | justification | tags |')
         print('|---|---:|---|---|')
         for tier in sorted(TIERS, key=lambda t: (-TIERS[t][0], t)):
-            tags = sorted(s.split(' - ')[0] for s in ASSIGN if ASSIGN[s] == tier)
+            tags = sorted(set(tag_of(s) for s in ASSIGN if ASSIGN[s] == tier))
             print('| `%s` | %.2f | %s | %s |'
                   % (tier, TIERS[tier][0], TIERS[tier][1], ', '.join(tags)))
         return 0

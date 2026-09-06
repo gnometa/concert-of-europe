@@ -51,18 +51,19 @@ the `USA` blend averages.
 
 | tier | literacy | justification | tags |
 |---|---:|---|---|
+| `nordic` | 0.70 | Lutheran household examination (husforhor); reading literacy was near-universal by 1800 | DEN, FIN, ICL, NOR, SCA, SWE |
 | `usa_north` | 0.60 | New England and Old Northwest common schools; the highest attested rate anywhere in 1821 | DAK, FSA, MAN, NEN, UIA, UIL, UIN, UMI, UMN, UNB, UNJ, UNY, UOH, UOR, UPA, UWI |
 | `britain` | 0.55 | English signature literacy ~0.55, Scottish parish schools ~0.75, Welsh Sunday schools; blended | ENG, ENL, SCO, WHA |
 | `lowlands` | 0.55 | Dutch 1806 school law and Swiss cantonal schools plus dense urban print culture | NET, SWI |
-| `nordic` | 0.55 | Lutheran household examination (husforhor) made reading near-universal | DEN, ICL, NOR, SCA, SWE |
 | `prussia_saxony` | 0.55 | Compulsory Volksschule since 1763/1805; the best-schooled states in Europe in 1821 | PRU, SAX |
 | `usa` | 0.55 | Free-state ~0.60 blended with the slave South ~0.35 into one country | USA |
-| `north_german` | 0.50 | Protestant north German states with Prussian-style school ordinances | ALS, ANH, BRA, BRE, COB, DZG, EFR, FRM, HAM, HAN, HEK, HES, HOL, LIP, LUB, LUZ, MEC, MEI, NAS, NGF, OLD, PML, RHI, SAA, SCH, SLS, SWH, WEI, WES |
-| `settler` | 0.50 | British settler colonies: literate emigrant stock, church schools from the start | AST, CAN, COL, MRU, NEW, NZL, SNZ |
+| `north_german` | 0.50 | Protestant north German states with Prussian-style school ordinances | ANH, BRA, BRE, COB, DZG, EFR, FRM, HAM, HAN, HEK, HES, HOL, LIP, LUB, LUZ, MEC, MEI, NAS, NGF, OLD, PML, RHI, SAA, SCH, SLS, SWH, WEI, WES |
+| `settler` | 0.50 | British settler colonies: literate emigrant stock, church schools from the start | AST, COL, MRU, NEW, NZL, SNZ |
 | `german_unified` | 0.45 | Unification tag: north German schooling blended with the Catholic south | GER |
 | `usa_west` | 0.45 | Anglo settler populations, no established school system yet | CAL, DES |
-| `france_belgium` | 0.42 | Restoration France and the southern Netherlands; ~0.45 male, ~0.35 female | BEL, FLA, FRA, LUX, WLL |
-| `baltic_lutheran` | 0.40 | Estonian, Latvian and Finnish Lutheran reading literacy high, writing literacy low | EST, FIN, LAT, UBD |
+| `canada` | 0.42 | The Canadas in 1821 are majority French-Canadian stock; between Quebec and the anglophone colonies | CAN |
+| `france_belgium` | 0.42 | Restoration France and the southern Netherlands; ~0.45 male, ~0.35 female | ALS, BEL, FLA, FRA, LUX, WLL |
+| `baltic_lutheran` | 0.40 | Estonian, Latvian and Finnish Lutheran reading literacy high, writing literacy low | EST, LAT, UBD |
 | `boer` | 0.35 | Cape and Boer settler society, Dutch Reformed home schooling | NAL, ORA, SAF, TRN |
 | `south_german` | 0.35 | Catholic south Germany and Austria proper: schooling later and thinner than Prussia | AUS, BAD, BAV, SGF, WUR |
 | `usa_south` | 0.35 | Plantation South: no common-school system, slave literacy criminalised | CSA, TEX, UAL, UAR, UFL, UGA, UKY, ULA, UMO, UMS, UNC, USC, UTN, UVA, UWV |
@@ -80,6 +81,7 @@ the `USA` blend averages.
 | `poland` | 0.20 | Congress Poland and Krakow: the 1815-30 Polish school system before its suppression | CPL, KRA, PLC, POL, PZN |
 | `habsburg_south` | 0.18 | Croatian Military Frontier schooling, above the Ottoman Balkans | CRO |
 | `portugal` | 0.15 | Portugal and the Portugal-Brazil union: poorest schooling in western Europe | POR, UPB |
+| `qing` | 0.15 | Qing China: Rawski puts adult male literacy at 30-45%, blended with a much lower female rate | CHI, FJN, GMJ, GNG, GXI, HNN, HUI, KMT, MCK, QNG, SXI, SZC, TAI, TPG, XBI, YNN |
 | `caribbean` | 0.12 | Caribbean colonies: literate free population over an enslaved majority | ANC, CUB, GUY, JAM, PRI, TTB |
 | `eastern_catholic` | 0.12 | Galicia, Bukovina, Transylvania, Dalmatia, Lithuania: Habsburg and Polish periphery | BKV, DLM, GLM, LIT, RUT, SIE, SYL |
 | `latam_mid` | 0.12 | Larger post-independence republics: creole urban literacy over an illiterate countryside | ARG, BRZ, CHL, CLM, ENT, GCO, LPL, MEX, PNM, PRG, RGS, URU, VNZ |
@@ -90,7 +92,6 @@ the `USA` blend averages.
 | `korea` | 0.10 | Joseon: hanja for the yangban, growing hangul literacy below it | KOR |
 | `liberia` | 0.10 | Americo-Liberian settlers were literate; the interior was not | LIB |
 | `philippines` | 0.10 | Spanish parish schools in the Christianised lowlands | PHL |
-| `qing` | 0.10 | Qing China: lineage and charitable schools, classical literacy in a male minority | CHI, FJN, GMJ, GNG, GXI, HNN, HUI, KMT, MCK, QNG, SXI, SZC, TAI, TPG, XBI, YNN |
 | `ryukyu` | 0.10 | Ryukyu kingdom, schooled on the Japanese and Chinese model | RYU |
 | `latam_low` | 0.08 | Andean and Mesoamerican republics with large unschooled indigenous majorities | BOL, CHP, DOM, ECU, LOS, NPU, OAX, PBC, PEU, PTG, RGR, SON, SPU, UNM, YUC |
 | `ottoman_christian` | 0.08 | Armenian, Assyrian and Maronite communities ran their own schools | ASY, LBN |
@@ -113,10 +114,45 @@ the `USA` blend averages.
 | `russia_frontier` | 0.03 | Siberian, steppe and Arctic governorates | ALT, KAM, KMK, LSK, SIB, YAK |
 | `centralasia` | 0.02 | Afghan and Turkestani khanates: madrasa literacy in a few cities | AFG, BLC, BUK, DUR, HRT, HZJ, KAL, KAZ, KDH, KDS, KHI, KNZ, KOK, KYR, MAK, TAJ, TKM, TKS, UZB |
 | `himalaya` | 0.02 | Nepal, Bhutan, Sikkim, Ladakh: monastic literacy only | BHU, LAD, NEP, SIK |
-| `horn` | 0.02 | Ethiopian church schooling and Somali Quranic schooling, both very narrow | AWS, ERT, ETH, ETH, GEL, GON, MAJ, SHW, SOM, TIG |
+| `horn` | 0.02 | Ethiopian church schooling and Somali Quranic schooling, both very narrow | AWS, ERT, ETH, GEL, GON, MAJ, SHW, SOM, TIG |
 | `pacific_tribal` | 0.02 | Pacific and other tribal societies; mission schooling only beginning in 1821 | AIN, AOT, CHE, FIJ, HAW, TGA |
-| `seasia` | 0.02 | Malay and Indonesian archipelago states: pesantren literacy only | ATJ, BAL, BIM- Bima, BRU, DJA, INO, JAV, JOH, KCH, KLM, KTI, LAN, MAL, MLY, SAK, SHA, SLW, SUL, SWK |
+| `seasia` | 0.02 | Malay and Indonesian archipelago states: pesantren literacy only | ATJ, BAL, BIM, BRU, DJA, INO, JAV, JOH, KCH, KLM, KTI, LAN, MAL, MLY, SAK, SHA, SLW, SUL, SWK |
 | `africa` | 0.01 | Non-literate or newly-missionised African societies | ANG, ARO, ASH, AZA, BEN, BRD, BSH, BUG, CAR, CGO, CHD, CLA, CMR, CNG, DAH, GAB, GAZ, GMB, GNE, IVC, KNY, KON, KUB, KZB, LBA, LOA, LUN, MAD, MAT, MLW, MNG, MOZ, NGR, NIG, OYO, RHO, RWA, SHO, SLE, SNG, SUA, TNZ, TOG, TOO, TSW, WRI, XHO, ZAM, ZUL |
+
+## Literacy growth: `LITERACY_CHANGE_SPEED`
+
+A historical 1821 start is only half the job. Victoria 2 grows pop literacy from the
+clergy share of each state, scaled by `LITERACY_CHANGE_SPEED` in
+`CoE_RoI_R/common/defines.lua` (alongside `BASE_CLERGY_FOR_LITERACY = 0.003` and
+`MAX_CLERGY_FOR_LITERACY = 0.05`, both already tuned by this mod). There is **no script
+effect that sets literacy**, so this define is the only lever on the growth side.
+
+The mod had `LITERACY_CHANGE_SPEED = 0.0050`, one twentieth of vanilla's `0.1`. With a
+flat 0.01 start that was survivable, because education-efficiency modifiers were doing
+all the differentiating. With historical start values it is not: a state at 0.05 would
+still be at roughly 0.05 in 1900, which is the opposite of what happened.
+
+Real-world calibration:
+
+| | 1820 | ~1900 | change over 80 years |
+|---|---:|---:|---:|
+| Russia | ~0.06 | ~0.28 (1897 census) | +0.22 |
+| Prussia/Germany | ~0.55 | ~0.99 | +0.44 |
+
+So the slowest large state in Europe still quadrupled, and the fastest closed a
+0.45 gap. Set to **`LITERACY_CHANGE_SPEED = 0.05`** — half of vanilla, ten times the
+old mod value. Half of vanilla rather than vanilla itself because this mod already
+grants a flat `education_efficiency_modifier = 2.00` in `common/static_modifiers.txt`
+`base_values` (vanilla grants none) on top of a hundred-plus further education
+modifiers, so the effective rate is well above the raw define.
+
+RUS (0.06) and TUR (0.05) keep their historical start values: the problem those numbers
+appeared to cause was never the start value, it was the frozen growth rate.
+
+**Untested in game.** The interaction with the mod's clergy defines and the
+education-efficiency stack can only be checked by running the 1821 bookmark and
+sampling literacy in 1840/1860/1900 for RUS, TUR, QNG, PRU and ENG. This belongs on the
+play-test checklist; if literacy runs away, `0.02-0.03` is the next step down.
 
 ## Per-tag values
 
@@ -133,7 +169,7 @@ files carry them.
 | AKH | AKH - Astrakhan | `russia` | 0.06 | 0.04 |
 | ALB | ALB - Albania | `balkan_muslim` | 0.03 | 0.14 |
 | ALD | ALD - Aldjazair | `maghreb` | 0.03 | 0.04 |
-| ALS | ALS - Elsass | `north_german` | 0.5 | 0.8 |
+| ALS | ALS - Elsass | `france_belgium` | 0.42 | 0.8 |
 | ALT | ALT - Altai Republic | `russia_frontier` | 0.03 | 0.1 |
 | ANC | ANC - Antillean Confederation | `caribbean` | 0.12 | 0.17 |
 | ANG | ANG - Angola | `africa` | 0.01 | 0.13 |
@@ -170,7 +206,7 @@ files carry them.
 | BHU | BHU - Bhutan | `himalaya` | 0.02 | 0.01 |
 | BIH | BIH - Bihar | `india` | 0.05 | 0.09 |
 | BIK | BIK - Bikaner | `india` | 0.05 | 0.01 |
-| BIM- Bima | BIM- Bima | `seasia` | 0.02 | 0.03 |
+| BIM | BIM- Bima | `seasia` | 0.02 | 0.03 |
 | BKV | BKV - Bukovina | `eastern_catholic` | 0.12 | 0.1 |
 | BLC | BLC - Baluchistan | `centralasia` | 0.02 | 0.02 |
 | BMK | BMK - Bamako | `africa_muslim` | 0.03 | 0.004 |
@@ -195,13 +231,13 @@ files carry them.
 | BYZ | BYZ - Byzantium | `greece` | 0.1 | 0.22 |
 | CAL | CAL - Californian Republic | `usa_west` | 0.45 | 0.50 |
 | CAM | CAM - Cambodia | `seasia_buddhist` | 0.08 | 0.01 |
-| CAN | CAN - Canada | `settler` | 0.5 | 0.6 |
+| CAN | CAN - Canada | `canada` | 0.42 | 0.6 |
 | CAR | CAR - Central African Republic | `africa` | 0.01 | 0.004 |
 | CAT | CAT - Catalonia | `iberia` | 0.2 | 0.13 |
 | CGO | CGO - Congo-Brazzaville | `africa` | 0.01 | 0.004 |
 | CHD | CHD - Chad | `africa` | 0.01 | 0.002 |
 | CHE | CHE - Cherokee | `pacific_tribal` | 0.02 | 0.005 |
-| CHI | CHI - China | `qing` | 0.1 | 0.05 |
+| CHI | CHI - China | `qing` | 0.15 | 0.05 |
 | CHK | CHK - Champasak | `seasia_buddhist` | 0.08 | 0.01 |
 | CHL | CHL - Chile | `latam_mid` | 0.12 | 0.10 |
 | CHO | CHO - Choshu | `japan` | 0.3 | 0.39 |
@@ -280,7 +316,7 @@ files carry them.
 | DAK | DAK - Dakota | `usa_north` | 0.6 | 0.50 |
 | DAM | DAM - Damagaram | `africa_muslim` | 0.03 | 0.05 |
 | DAR | DAR - Darfur | `africa_muslim` | 0.03 | 0.05 |
-| DEN | DEN - Denmark | `nordic` | 0.55 | 0.69 |
+| DEN | DEN - Denmark | `nordic` | 0.7 | 0.69 |
 | DES | DES - Deseret | `usa_west` | 0.45 | 0.50 |
 | DJA | DJA - Jambi | `seasia` | 0.02 | 0.02 |
 | DLM | DLM - Dalmatia | `eastern_catholic` | 0.12 | 0.2 |
@@ -304,8 +340,8 @@ files carry them.
 | ETH | ETH - Abyssinia | `horn` | 0.02 | 0.07 |
 | ETH | ETH - Ethiopia | `horn` | 0.02 | 0.07 |
 | FIJ | FIJ - Fiji | `pacific_tribal` | 0.02 | 0.02 |
-| FIN | FIN - Finland | `baltic_lutheran` | 0.4 | 0.64 |
-| FJN | FJN - Fujian | `qing` | 0.1 | 0.03 |
+| FIN | FIN - Finland | `nordic` | 0.7 | 0.64 |
+| FJN | FJN - Fujian | `qing` | 0.15 | 0.03 |
 | FLA | FLA - Flanders | `france_belgium` | 0.42 | 0.28 |
 | FRA | FRA - France | `france_belgium` | 0.42 | 0.59 |
 | FRM | FRM - Frankfurt am Main | `north_german` | 0.5 | 0.69 |
@@ -320,15 +356,15 @@ files carry them.
 | GLM | GLM - Galicia-Lodomeria | `eastern_catholic` | 0.12 | 0.6 |
 | GLN | GLN - Gilan | `persia` | 0.05 | 0.3 |
 | GMB | GMB - Gambia | `africa` | 0.01 | 0.004 |
-| GMJ | GMJ - Guominjun | `qing` | 0.1 | 0.03 |
+| GMJ | GMJ - Guominjun | `qing` | 0.15 | 0.03 |
 | GNE | GNE - Guinea | `africa` | 0.01 | 0.004 |
-| GNG | GNG - Guangdong | `qing` | 0.1 | 0.04 |
+| GNG | GNG - Guangdong | `qing` | 0.15 | 0.04 |
 | GON | GON - Gonder | `horn` | 0.02 | 0.02 |
 | GRE | GRE - Greece | `greece` | 0.1 | 0.21 |
 | GUA | GUA - Guatemala | `centam` | 0.1 | 0.17 |
 | GUY | GUY - Guyana | `caribbean` | 0.12 | 0.08 |
 | GWA | GWA - Gwalior | `india` | 0.05 | 0.01 |
-| GXI | GXI - Guangxi Clique | `qing` | 0.1 | 0.04 |
+| GXI | GXI - Guangxi Clique | `qing` | 0.15 | 0.04 |
 | HAI | HAI - Haiti | `haiti` | 0.05 | 0.07 |
 | HAL | HAL - Hail | `arabia` | 0.03 | 0.025 |
 | HAM | HAM - Hamburg | `north_german` | 0.5 | 0.69 |
@@ -339,16 +375,16 @@ files carry them.
 | HEK | HEK - HesseKassel | `north_german` | 0.5 | 0.69 |
 | HES | HES - HesseDarmstadt | `north_german` | 0.5 | 0.69 |
 | HND | HND - India | `india` | 0.05 | 0.58 |
-| HNN | HNN - Hunan | `qing` | 0.1 | 0.04 |
+| HNN | HNN - Hunan | `qing` | 0.15 | 0.04 |
 | HOL | HOL - Holstein | `north_german` | 0.5 | 0.8 |
 | HON | HON - Honduras | `centam` | 0.1 | 0.17 |
 | HRT | HRT - Herat | `centralasia` | 0.02 | 0.01 |
-| HUI | HUI - Anhui | `qing` | 0.1 | 0.04 |
+| HUI | HUI - Anhui | `qing` | 0.15 | 0.04 |
 | HUN | HUN - Hungary | `hungary` | 0.22 | 0.25 |
 | HYD | HYD - Hyderabad | `india` | 0.05 | 0.01 |
 | HZJ | HZJ - Hazarajat | `centralasia` | 0.02 | 0.005 |
 | IBR | IBR - Iberia | `iberia` | 0.2 | 0.13 |
-| ICL | ICL - Iceland | `nordic` | 0.55 | 0.87 |
+| ICL | ICL - Iceland | `nordic` | 0.7 | 0.87 |
 | IND | IND - Indore | `india` | 0.05 | 0.01 |
 | INO | INO - Indonesia | `seasia` | 0.02 | 0.03 |
 | ION | ION - Ionian Islands | `greece` | 0.1 | 0.21 |
@@ -380,7 +416,7 @@ files carry them.
 | KHZ | KHZ - Khuzestan | `persia` | 0.05 | 0.009 |
 | KLM | KLM - Kalimantan | `seasia` | 0.02 | 0.02 |
 | KMK | KMK - Kalmykia | `russia_frontier` | 0.03 | 0.28 |
-| KMT | KMT - Nationalist China | `qing` | 0.1 | 0.05 |
+| KMT | KMT - Nationalist China | `qing` | 0.15 | 0.05 |
 | KNG | KNG - Kong | `africa_muslim` | 0.03 | 0.02 |
 | KNY | KNY - Kenya | `africa` | 0.01 | 0.004 |
 | KNZ | KNZ - Kunduz | `centralasia` | 0.02 | 0.009 |
@@ -429,7 +465,7 @@ files carry them.
 | MAS | MAS - Massina | `africa_muslim` | 0.03 | 0.006 |
 | MAT | MAT - Matabele | `africa` | 0.01 | 0.01 |
 | MCD | MCD - Macedonia | `balkan_ottoman` | 0.06 | 0.4 |
-| MCK | MCK - Manchukuo | `qing` | 0.1 | 0.04 |
+| MCK | MCK - Manchukuo | `qing` | 0.15 | 0.04 |
 | MEC | MEC - Mecklenburg | `north_german` | 0.5 | 0.69 |
 | MEI | MEI - Saxe | `north_german` | 0.5 | 0.69 |
 | MEW | MEW - Mewar | `india` | 0.05 | 0.01 |
@@ -464,7 +500,7 @@ files carry them.
 | NGR | NGR - Nigeria | `africa` | 0.01 | 0.004 |
 | NIC | NIC - Nicaragua | `centam` | 0.1 | 0.17 |
 | NIG | NIG - Niger | `africa` | 0.01 | 0.004 |
-| NOR | NOR - Norway | `nordic` | 0.55 | 0.69 |
+| NOR | NOR - Norway | `nordic` | 0.7 | 0.69 |
 | NPU | NPU - North Peru | `latam_low` | 0.08 | 0.1 |
 | NYE | NYE - North Yemen | `arabia` | 0.03 | 0.025 |
 | NZL | NZL - New Zealand | `settler` | 0.5 | 0.5 |
@@ -495,7 +531,7 @@ files carry them.
 | PRU | PRU - Prussia | `prussia_saxony` | 0.55 | 0.785 |
 | PTG | PTG - Patagonia | `latam_low` | 0.08 | 0.1 |
 | PZN | PZN - Poznan | `poland` | 0.2 | 0.6 |
-| QNG | QNG | `qing` | 0.1 | 0.045 |
+| QNG | QNG | `qing` | 0.15 | 0.045 |
 | QUE | QUE - Quebec | `quebec` | 0.3 | 0.6 |
 | RAJ | RAJ - Rajputana | `india` | 0.05 | 0.02 |
 | REB | REB - Rebels | - | - | - |
@@ -516,7 +552,7 @@ files carry them.
 | SAR | SAR - Sardinia | `north_italy` | 0.25 | 0.44 |
 | SAT | SAT - Satsuma | `japan` | 0.3 | 0.39 |
 | SAX | SAX - Saxony | `prussia_saxony` | 0.55 | 0.69 |
-| SCA | SCA - Scandinavia | `nordic` | 0.55 | 0.8 |
+| SCA | SCA - Scandinavia | `nordic` | 0.7 | 0.8 |
 | SCH | SCH - Schleswig | `north_german` | 0.5 | 0.8 |
 | SCO | SCO - Scotland | `britain` | 0.55 | 0.55 |
 | SEG | SEG - Segu | `africa_muslim` | 0.03 | 0.003 |
@@ -553,15 +589,15 @@ files carry them.
 | SUD | SUD - Sudan | `africa_muslim` | 0.03 | 0.01 |
 | SUL | SUL - Sulu | `seasia` | 0.02 | 0.02 |
 | SVY | SVY - Savoy | `north_italy` | 0.25 | 0.45 |
-| SWE | SWE - Sweden | `nordic` | 0.55 | 0.69 |
+| SWE | SWE - Sweden | `nordic` | 0.7 | 0.69 |
 | SWH | SWH - Schleswig-Holstein | `north_german` | 0.5 | 0.69 |
 | SWI | SWI - Switzerland | `lowlands` | 0.55 | 0.64 |
 | SWK | SWK - Sarawak | `seasia` | 0.02 | 0.02 |
-| SXI | SXI - Shanxi | `qing` | 0.1 | 0.04 |
+| SXI | SXI - Shanxi | `qing` | 0.15 | 0.04 |
 | SYL | SYL - Transylvania | `eastern_catholic` | 0.12 | 0.1 |
 | SYR | SYR - Syria | `ottoman_arab` | 0.05 | 0.08 |
-| SZC | SZC - Sichuan | `qing` | 0.1 | 0.04 |
-| TAI | TAI - Taiwan | `qing` | 0.1 | 0.03 |
+| SZC | SZC - Sichuan | `qing` | 0.15 | 0.04 |
+| TAI | TAI - Taiwan | `qing` | 0.15 | 0.03 |
 | TAJ | TAJ - Tajikstan | `centralasia` | 0.02 | 0.01 |
 | TAR | TAR - Tatarstan | `russia` | 0.06 | 0.1 |
 | TCA | TCA - Transcaucasia | `caucasus` | 0.04 | 0.1 |
@@ -578,7 +614,7 @@ files carry them.
 | TOO | TOO - Tooro | `africa` | 0.01 | 0.002 |
 | TOS | TOS - Tosa | `japan` | 0.3 | 0.39 |
 | TOU | TOU - Toucouleur | `africa_muslim` | 0.03 | 0.004 |
-| TPG | TPG - Taiping | `qing` | 0.1 | 0.05 |
+| TPG | TPG - Taiping | `qing` | 0.15 | 0.05 |
 | TRA | TRA - Travancore | `india` | 0.05 | 0.01 |
 | TRE | TRE - Trieste | `habsburg_dual` | 0.28 | 0.25 |
 | TRI | TRI - Tripoli | `maghreb` | 0.03 | 0.02 |
@@ -636,12 +672,12 @@ files carry them.
 | WOL | WOL - Wolof | `africa_muslim` | 0.03 | 0.002 |
 | WRI | WRI - Warri | `africa` | 0.01 | 0.002 |
 | WUR | WUR - Wurttemberg | `south_german` | 0.35 | 0.64 |
-| XBI | XBI - Xibei San Ma | `qing` | 0.1 | 0.04 |
+| XBI | XBI - Xibei San Ma | `qing` | 0.15 | 0.04 |
 | XHO | XHO - Xhosa | `africa` | 0.01 | 0.002 |
 | XIN | XIN - Xinjiang | `qing_frontier` | 0.03 | 0.04 |
 | YAK | YAK - Yakutia-Sakha | `russia_frontier` | 0.03 | 0.01 |
 | YEM | YEM - Yemen | `arabia` | 0.03 | 0.03 |
-| YNN | YNN - Yunnan | `qing` | 0.1 | 0.04 |
+| YNN | YNN - Yunnan | `qing` | 0.15 | 0.04 |
 | YUC | YUC - Yucatan | `latam_low` | 0.08 | 0.1 |
 | YUG | YUG - Yugoslavia | `balkan_ottoman` | 0.06 | 0.28 |
 | YZW | YZW - Yonezawa | `japan` | 0.3 | 0.39 |
