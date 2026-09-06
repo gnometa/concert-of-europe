@@ -870,7 +870,7 @@ occupied_capital = {
 admin_found_1 = {
 	trigger = {
 		bureaucrats = 0.003
-		NOT = { bureaucrats = 0.006 }
+		NOT = { bureaucrats = 0.004 }
 	}
 	prestige = 0.01
 	#research_points = 0.10
@@ -889,8 +889,8 @@ admin_found_1 = {
 
 admin_found_2 = {
 	trigger = {
-		bureaucrats = 0.006
-		NOT = { bureaucrats = 0.009 }
+		bureaucrats = 0.004
+		NOT = { bureaucrats = 0.005 }
 	}
 	prestige = 0.02
 	#research_points = 0.20
@@ -909,8 +909,8 @@ admin_found_2 = {
 
 admin_found_3 = {
 	trigger = {
-		bureaucrats = 0.009
-		NOT = { bureaucrats = 0.012 }
+		bureaucrats = 0.005
+		NOT = { bureaucrats = 0.006 }
 	}
 	prestige = 0.03
 	#research_points = 0.30
@@ -929,8 +929,8 @@ admin_found_3 = {
 
 admin_found_4 = {
 	trigger = {
-		bureaucrats = 0.012
-		NOT = { bureaucrats = 0.015 }
+		bureaucrats = 0.006
+		NOT = { bureaucrats = 0.007 }
 	}
 	prestige = 0.04
 	#research_points = 0.40
@@ -949,8 +949,8 @@ admin_found_4 = {
 
 admin_found_5 = {
 	trigger = {
-		bureaucrats = 0.015
-		NOT = { bureaucrats = 0.018 }
+		bureaucrats = 0.007
+		NOT = { bureaucrats = 0.008 }
 	}
 	prestige = 0.05
 	#research_points = 0.50
@@ -969,8 +969,8 @@ admin_found_5 = {
 
 admin_found_6 = {
 	trigger = {
-		bureaucrats = 0.018
-		NOT = { bureaucrats = 0.021 }
+		bureaucrats = 0.008
+		NOT = { bureaucrats = 0.009 }
 	}
 	prestige = 0.06
 	#research_points = 0.60
@@ -989,8 +989,8 @@ admin_found_6 = {
 
 admin_found_7 = {
 	trigger = {
-		bureaucrats = 0.021
-		NOT = { bureaucrats = 0.024 }
+		bureaucrats = 0.009
+		NOT = { bureaucrats = 0.010 }
 	}
 	prestige = 0.07
 	#research_points = 0.70
@@ -1009,8 +1009,8 @@ admin_found_7 = {
 
 admin_found_8 = {
 	trigger = {
-		bureaucrats = 0.024
-		NOT = { bureaucrats = 0.027 }
+		bureaucrats = 0.010
+		NOT = { bureaucrats = 0.011 }
 	}
 	prestige = 0.08
 	#research_points = 0.80
@@ -1029,8 +1029,8 @@ admin_found_8 = {
 
 admin_found_9 = {
 	trigger = {
-		bureaucrats = 0.027
-		NOT = { bureaucrats = 0.030 }
+		bureaucrats = 0.011
+		NOT = { bureaucrats = 0.012 }
 	}
 	prestige = 0.09
 	#research_points = 0.90
@@ -1049,7 +1049,7 @@ admin_found_9 = {
 
 admin_found_10 = {
 	trigger = {
-		bureaucrats = 0.030
+		bureaucrats = 0.012
 	}
 	prestige = 0.10
 	#research_points = 1.00

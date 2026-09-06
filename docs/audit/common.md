@@ -328,6 +328,10 @@ fraction, so they demanded 125-500 infamy and never fired. Converted to fraction
 - `events/RUSFlavor.txt:1897` - `badboy = 20` -> **0.8** (completes an
   `ai_chance` ladder whose other rungs are 0.2 / 0.4 / 0.6)
 - `events/RUSFlavor.txt:3181` - `badboy = 15` -> **0.6**
+- `inventions/culture_inventions.txt:1804` - the `expansionism` invention's `chance`
+  modifier used `badboy = 5` (125 infamy, never true), so the intended "warmongers get
+  this invention sooner" `factor = 2` never applied -> **0.4**. It is the only
+  trigger-scope `badboy` anywhere in `inventions/` or `technologies/`.
 
 Each of these was previously a dead `factor = 0` guard, so the AI took decisions it was
 supposed to refuse at high infamy; they now bite.
@@ -359,12 +363,12 @@ What this changes in game:
 
 - **Administrative efficiency** now starts at 20% and climbs with the bureaucrat share
   of each state's population, capped at `MAX_BUREAUCRACY_PERCENTAGE` (1.0%) plus
-  `BUREAUCRACY_PERCENTAGE_INCREMENT` (0.1%) per social administrative reform level. The
-  administrative social reforms in `common/issues.txt` (wage_reform, work_hours,
-  safety_regulations, health_care, child_labor, education, arts_endowment) carry
-  `administrative_multiplier` totalling roughly 19, so a fully reformed state's useful
-  band tops out around 2.9% bureaucrats. A 1821 state with no reforms and no bureaucrats
-  is at 20% efficiency; hiring to the 1% cap takes it to 100%.
+  `BUREAUCRACY_PERCENTAGE_INCREMENT` (0.1%) per administrative reform level. The only
+  administrative reform ladder is `admin_reform` (`common/issues.txt:1103`) and it has
+  **three** steps - `no_admin_reform`, `yes_admin_reform`, `advanced_admin_reform` - the
+  last of which is `allow = { year = 1850 }`. So the real cap is **1.1%** for a reformed
+  country before 1850 and **1.2%** after it, never more. A 1821 state with no reform and
+  no bureaucrats is at 20% efficiency; hiring to ~1% takes it to 100%.
 - **Tax efficiency** is the visible consequence. `BASE_COUNTRY_TAX_EFFICIENCY` is 0.50
   in this mod and administrative efficiency multiplies on top of it, so an
   unadministered country collects far less than it did yesterday. Early-game budgets get
@@ -380,13 +384,13 @@ What this changes in game:
   of the administration budget, so the cost shows up as administrative spending.
 
 **`common/triggered_modifiers.txt:872-1052` - the `admin_found_*` ladder re-cut.** The
-ten tiers stepped `bureaucrats = 0.005 / 0.010 / ... / 0.050`, i.e. up to five times the
-useful ceiling; the top four rungs rewarded hiring the engine ignores, and under the old
-0.1% cap every single rung did. They now step **0.003** at a time, 0.003 -> 0.030, so
-tier 4 sits at the unreformed cap (1.2% ~ 1.0%) and tier 10 at 3.0%, just past a fully
-reformed state's ~2.9%. The whole ladder is inside the band a player can actually reach,
-and the top tier is a full-social-reform reward rather than dead script. Only the
-`trigger` blocks moved; every modifier payload is unchanged.
+ten tiers stepped `bureaucrats = 0.005 / 0.010 / ... / 0.050`, i.e. up to forty times the
+useful ceiling; every rung above 0.012 rewarded hiring the engine ignores, and under the
+old 0.1% cap every single rung did. They now step **0.001** at a time, 0.003 -> 0.012,
+which is the whole reachable band: tier 8 sits at the base cap (1.0%), tier 9 at the
+pre-1850 reformed cap (1.1%) and tier 10 at the post-1850 `advanced_admin_reform` cap
+(1.2%). Nothing in the ladder is dead script any more, and the top tier is a genuine
+end-state reward. Only the `trigger` blocks moved; every modifier payload is unchanged.
 
 **[low] `common/issues.txt:1106, :1140, :1607, :1638`** - the four
 `administrative_efficiency(_modifier)` reform effects (-0.05, +0.05, +0.025, +0.05) and
