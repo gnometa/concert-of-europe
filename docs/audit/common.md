@@ -43,7 +43,6 @@ Vanilla casus belli absent from the mod override: 3 (acquire_substate_region, di
 | ARTISAN_MIN_PRODUCTIVITY | 1 | 0.50 | 671 |
 | ASKMILACCESS_DIPLOMATIC_COST | 1 | 10 | 425 |
 | ASSIMILATION_SCALE | 0.004 | 0.03 | 623 |
-| BADBOY_LIMIT | 25 | 50 | 16 |
 | BANKRUPCY_DURATION | 2 | 3 | 111 |
 | BASE_CLERGY_FOR_LITERACY | 0.005 | 0.003 | 619 |
 | BASE_COUNTRY_ADMIN_EFFICIENCY | 0.2 | 1.0 | 11 |
@@ -52,7 +51,6 @@ Vanilla casus belli absent from the mod override: 3 (acquire_substate_region, di
 | BASE_GREATPOWER_DAILY_INFLUENCE | 0.25 | 0.275 | 30 |
 | BASE_TARIFF_EFFICIENCY | 0.2 | 0.0 | 36 |
 | BASE_TRUCE_MONTHS | 60 | 12 | 515 |
-| BUREAUCRACY_PERCENTAGE_INCREMENT | 0.001 | 0.000 | 18 |
 | CANCELALLIANCE_RELATION_ON_ACCEPT | -20 | -90 | 416 |
 | CANCELASKMILACCESS_DIPLOMATIC_COST | 1 | 10 | 427 |
 | CAPITALIST_FRACTION | 0.001 | 0.05 | 699 |
@@ -107,7 +105,6 @@ Vanilla casus belli absent from the mod override: 3 (acquire_substate_region, di
 | INFAMY_RELEASE_PUPPET | 0.5 | 1.0 | 218 |
 | INFAMY_REMOVE_CORES | 0 | 1 | 225 |
 | INFAMY_REPARATIONS | 5 | 1 | 223 |
-| INFAMY_STATUS_QUO | 0 | 1 | 228 |
 | INFAMY_TRANSFER_PROVINCES | 5 | 1 | 224 |
 | INFAMY_UNINSTALL_COMMUNIST_GOV_TYPE | 5 | 1 | 232 |
 | INVENTION_IMPACT_ON_DEMAND | 0.005 | 0.02 | 669 |
@@ -117,7 +114,6 @@ Vanilla casus belli absent from the mod override: 3 (acquire_substate_region, di
 | LITERACY_CHANGE_SPEED | 0.1 | 0.0050 | 621 |
 | LOAN_BASE_INTEREST | 0.02 | 0.005 | 98 |
 | MAKE_CB_RELATION_LIMIT | 100 | 300 | 551 |
-| MAX_BUREAUCRACY_PERCENTAGE | 0.01 | 0.001 | 17 |
 | MAX_CLERGY_FOR_LITERACY | 0.04 | 0.05 | 620 |
 | MAX_LOAN_CAP_FROM_BANKS | 3 | 10 | 102 |
 | MAX_RESEARCH_POINTS | 25000 | 35000 | 93 |
@@ -181,7 +177,7 @@ Vanilla casus belli absent from the mod override: 3 (acquire_substate_region, di
 | WAR_FAILED_GOAL_PRESTIGE_BASE | -10 | 0 | 393 |
 | WRONG_REFORM_MILITANCY_IMPACT | 1 | 6 | 45 |
 
-151 changed or mod-only values.
+147 changed or mod-only values.
 
 ## Checks that came back clean
 
@@ -201,13 +197,9 @@ Repeated `rgo_goods_*` / `factory_goods_*` blocks inside one tech are vanilla id
 ### [high] (0)
 
 
-### [medium] (5)
+### [medium] (1)
 
-- `CoE_RoI_R/common/defines.lua:17` - MAX_BUREAUCRACY_PERCENTAGE cut 10x (0.01 -> 0.001): at most 0.1% of a pop may be bureaucrats, while BUREAUCRACY_PERCENTAGE_INCREMENT is 0, so admin efficiency is effectively frozen at BASE_COUNTRY_ADMIN_EFFICIENCY - fix: confirm the trio MAX_BUREAUCRACY_PERCENTAGE / BUREAUCRACY_PERCENTAGE_INCREMENT / BASE_COUNTRY_ADMIN_EFFICIENCY is intended, otherwise restore a non-zero increment
-- `CoE_RoI_R/common/defines.lua:18` - BUREAUCRACY_PERCENTAGE_INCREMENT set to 0, so bureaucrats add no administrative efficiency at all - fix: restore a small positive increment or document the flat-admin design
-- `CoE_RoI_R/common/defines.lua:228` - INFAMY_STATUS_QUO raised from 0 to 1: a white peace now costs infamy, which vanilla never does - fix: set back to 0 unless charging infamy for status quo is deliberate
 - `CoE_RoI_R/common/defines.lua:101` - SHADOWY_FINANCIERS_MAX_LOAN_AMOUNT raised from 1500 to 10000000, i.e. effectively unlimited loans from shadowy financiers - fix: cap it at a value the AI cannot exploit
-- `CoE_RoI_R/common/defines.lua:16` - BADBOY_LIMIT doubled from 25 to 50, so containment coalitions almost never form - fix: confirm intended for a Concert-of-Europe game where infamy is the main brake
 
 ### [low] (5)
 
