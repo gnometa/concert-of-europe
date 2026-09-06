@@ -345,13 +345,15 @@ country_event = {
 		372 = {
 			fort = 1
 		}
-		dominant_issue = {
-			factor = 0.1
-			value = anti_military
-		}
-		dominant_issue = {
-			factor = 0.05
-			value = jingoism
+		any_pop = {
+			dominant_issue = {
+				factor = 0.1
+				value = anti_military
+			}
+			dominant_issue = {
+				factor = 0.05
+				value = jingoism
+			}
 		}
 		ai_chance = {
 			factor = 50
@@ -517,7 +519,7 @@ country_event = {
 	picture = "Alberti"
 
 	option = {
-		name = "EVTOPTA36207" 
+		name = "EVTOPTA36208" 
 		set_country_flag = AlberiniAffair
 		election = yes
 		any_pop = {
@@ -1195,7 +1197,7 @@ country_event = {
 	picture = "Brandes"
 
 	option = {
-		name = "EVTOPTA36219" 
+		name = "EVTOPTA36220" 
 		any_pop = {
 			consciousness = 1
 		}

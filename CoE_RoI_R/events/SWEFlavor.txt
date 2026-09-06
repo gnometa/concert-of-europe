@@ -372,7 +372,7 @@ country_event = {
 	picture = "Boden"
 
 	option = {
-		name = "EVTOPTA36611" 
+		name = "EVTOPTA36612" 
 		321 = { fort = 1 }
 		treasury = -5000
 	}

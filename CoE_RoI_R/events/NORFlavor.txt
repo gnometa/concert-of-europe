@@ -533,7 +533,7 @@ country_event = {
 		prestige = -5
 		badboy = -2
 		release_vassal = NOR
-		SWE = { government = hms_government }
+		government = hms_government
 		NOR = {
 			any_pop = { militancy = -8 }
 			any_owned = {

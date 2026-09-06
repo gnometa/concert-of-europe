@@ -525,7 +525,7 @@ country_event = {
 				militancy = -4
 			}
 		}
-		badboy = -10
+		badboy = -2
 		set_country_flag = norway_demands_independence
 		ai_chance = {
 			factor = 90
